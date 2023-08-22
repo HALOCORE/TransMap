@@ -1,0 +1,148 @@
+{
+  "src_anno_stmts": [
+    [
+      "### rangeSum",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], n: int, left: int, right: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    arr = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        4
+      ]
+    ],
+    [
+      "        s = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "        for j in range(i, n):",
+      [
+        6
+      ]
+    ],
+    [
+      "            s += nums[j]",
+      [
+        7
+      ]
+    ],
+    [
+      "            arr.append(s)",
+      [
+        8
+      ]
+    ],
+    [
+      "    arr.sort()",
+      [
+        9
+      ]
+    ],
+    [
+      "    MOD = 10**9 + 7",
+      [
+        10
+      ]
+    ],
+    [
+      "    return sum(arr[left - 1 : right]) % MOD",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, n, left, right) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var arr = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var s = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var j = i; j < n; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            s += nums[j];",
+      [
+        7
+      ]
+    ],
+    [
+      "            arr.push(s);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    arr.sort();",
+      [
+        9
+      ]
+    ],
+    [
+      "    var MOD = Math.pow(10, 9) + 7;",
+      [
+        10
+      ]
+    ],
+    [
+      "    return arr.slice(left - 1, right).reduce(function (a, b) { return a + b; }) % MOD;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

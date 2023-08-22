@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var i = 0, ans = 0;",
+    "replacement": "    var i = ans = 0;"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        ans += Math.floor((1 + j - i) * (j - i) / 2);",
+    "replacement": "        ans += (1 + j - i) * (j - i) / 2;"
+  }
+]

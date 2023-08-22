@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "      if (level == k) sum += (tree[i].charCodeAt(0) - '0'.charCodeAt(0));",
+    "replacement": "      if (level == k) sum += (tree[i].charCodeAt(0) - tree[i].charCodeAt(0));"
+  }
+]

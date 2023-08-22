@@ -1,0 +1,44 @@
+{
+  "src_anno_stmts": [
+    [
+      "### percentageLetter",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, letter: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return s.count(letter) * 100 // len(s)",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, letter) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return s.count(letter) * 100 // len(s);",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

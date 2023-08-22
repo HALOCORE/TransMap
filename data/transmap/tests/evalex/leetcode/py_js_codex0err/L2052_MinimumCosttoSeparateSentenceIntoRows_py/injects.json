@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "    var s = [0].concat(t).map((sum => value => sum += value)(0));",
+    "replacement": "    var s = [0].concat(t).reduce(function (a, b) { return a + b; });"
+  }
+]

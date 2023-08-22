@@ -1,0 +1,88 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[12,4,12,18]",
+    "break_idx": 2,
+    "expected_src_pk": "[10,4,10,17]",
+    "actural_src_pk": "[10,4,10,17]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "tar_data": [
+      "{\"emails\":[\"A\",3,[\"S\",28,\"test.email+alex@leet\"],[\"S\",34,\"test.e.mail+bob.cath\"],[\"S\",29,\"testemail+david@lee.\"]],\"s\":[\"SET\",[\"S\",22,\"testemail@leetcode.c\"],[\"S\",23,\"teste.mail@leetcode.\"],[\"S\",23,\"testemail@lee.tcode.\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"emails\":[\"A\",3,[\"S\",28,\"test.email+alex@leet\"],[\"S\",34,\"test.e.mail+bob.cath\"],[\"S\",29,\"testemail+david@lee.\"]],\"s\":[\"SET\",[\"S\",23,\"testemail@lee.tcode.\"],[\"S\",22,\"testemail@leetcode.c\"]],\"email\":[\"S\",29,\"testemail+david@lee.\"],\"local\":[\"S\",9,\"testemail\"],\"domain\":[\"S\",13,\"lee.tcode.com\"],\"i\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,8,5,42]",
+    "break_idx": 2,
+    "expected_src_pk": "[6,8,6,38]",
+    "actural_src_pk": "[6,8,6,38]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"emails\":[\"A\",3,[\"S\",28,\"test.email+alex@leet\"],[\"S\",34,\"test.e.mail+bob.cath\"],[\"S\",29,\"testemail+david@lee.\"]],\"s\":[\"SET\"],\"email\":[\"S\",28,\"test.email+alex@leet\"],\"local\":[\"A\",2,[\"S\",15,\"test.email+alex\"],[\"S\",12,\"leetcode.com\"]],\"domain\":[\"S\",12,\"leetcode.com\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"emails\":[\"A\",3,[\"S\",28,\"test.email+alex@leet\"],[\"S\",34,\"test.e.mail+bob.cath\"],[\"S\",29,\"testemail+david@lee.\"]],\"s\":[\"SET\"],\"email\":[\"S\",28,\"test.email+alex@leet\"],\"local\":[\"S\",15,\"test.email+alex\"],\"domain\":[\"S\",12,\"leetcode.com\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "local"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,8,5,42]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,6,38]",
+    "actural_src_pk": "[6,8,6,38]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"emails\":[\"A\",3,[\"S\",28,\"test.email+alex@leet\"],[\"S\",34,\"test.e.mail+bob.cath\"],[\"S\",29,\"testemail+david@lee.\"]],\"s\":[\"SET\"],\"email\":[\"S\",28,\"test.email+alex@leet\"],\"local\":[\"A\",2,[\"S\",15,\"test.email+alex\"],[\"S\",12,\"leetcode.com\"]],\"domain\":[\"S\",12,\"leetcode.com\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"emails\":[\"A\",3,[\"S\",28,\"test.email+alex@leet\"],[\"S\",34,\"test.e.mail+bob.cath\"],[\"S\",29,\"testemail+david@lee.\"]],\"s\":[\"SET\"],\"email\":[\"S\",28,\"test.email+alex@leet\"],\"local\":[\"S\",15,\"test.email+alex\"],\"domain\":[\"S\",12,\"leetcode.com\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "local"
+    ]
+  }
+]

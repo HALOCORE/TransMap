@@ -1,0 +1,27 @@
+
+### Python
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(num: str) -> bool:   # --- py stmt 3
+    cnt = Counter(num)   # --- py stmt 4
+    return all(int(v) == cnt[str(i)] for i, v in enumerate(num))   # --- py stmt 5
+
+### JavaScript
+"use strict";
+function f_gold(num) {   // --- py stmt 3
+    var cnt = {};   // --- py stmt 4
+    for (var i = 0; i < num.length; i++) {   // --- py stmt 5
+        if (cnt[num[i]] == undefined) {   // --- py stmt 5
+            cnt[num[i]] = 1;   // --- py stmt 5
+        } else {   // --- py stmt 5
+            cnt[num[i]] += 1;   // --- py stmt 5
+        }
+    }
+    for (var i = 0; i < num.length; i++) {   // --- py stmt 5
+        if (parseInt(num[i]) != cnt[i]) {   // --- py stmt 5
+            return false;   // --- py stmt 5
+        }
+    }
+    return true;   // --- py stmt 5
+}
+

@@ -1,0 +1,31 @@
+
+### Python
+### countLetters 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    n = len(s)   # --- py stmt 3
+    i = ans = 0   # --- py stmt 4
+    while i < n:   # --- py stmt 5
+        j = i   # --- py stmt 6
+        while j < n and s[j] == s[i]:   # --- py stmt 7
+            j += 1   # --- py stmt 8
+        ans += (1 + j - i) * (j - i) // 2   # --- py stmt 9
+        i = j   # --- py stmt 10
+    return ans   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var n = s.length;   // --- py stmt 3
+    var i = ans = 0;   // --- py stmt 4
+    while (i < n) {   // --- py stmt 5
+        var j = i;   // --- py stmt 6
+        while (j < n && s[j] == s[i]) {   // --- py stmt 7
+            j += 1;   // --- py stmt 8
+        }
+        ans += Math.floor((1 + j - i) * (j - i) / 2);   // --- py stmt 9
+        i = j;   // --- py stmt 10
+    }
+    return ans;   // --- py stmt 11
+}
+

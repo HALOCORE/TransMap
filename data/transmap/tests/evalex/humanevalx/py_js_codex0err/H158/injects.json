@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "        return (new Set(b).size - new Set(a).size) || a.localeCompare(b);",
+    "replacement": "        return b.length - a.length || a.localeCompare(b);"
+  }
+]

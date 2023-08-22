@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "                v = Math.floor(v / 10);",
+    "replacement": "                v /= 10;"
+  }
+]

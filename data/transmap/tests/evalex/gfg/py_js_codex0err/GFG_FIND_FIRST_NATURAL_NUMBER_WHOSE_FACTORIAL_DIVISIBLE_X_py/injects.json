@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    fact = (fact * i) % x;",
+    "replacement": "    fact = fact * i;"
+  },
+  {
+    "line_start": 3,
+    "line_end": 8,
+    "content": "  for (i = 1; i < x; i++) {\n    fact = (fact * i) % x;\n    if (fact % x == 0) break;\n  }\n  return (i < x)? i : x-1;",
+    "replacement": "  for (i = 1; i < x; i++) {\n    fact = fact * i;\n    if (fact % x == 0) break;\n  }\n  return i;"
+  }
+]

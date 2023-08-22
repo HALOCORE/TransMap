@@ -1,0 +1,38 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "      let temp = a[mid];",
+    "replacement": "      a[lo] = a[lo] ^ a[mid];"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "      a[mid] = a[lo];",
+    "replacement": "      a[mid] = a[lo] ^ a[mid];"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "      a[lo] = temp;",
+    "replacement": "      a[lo] = a[lo] ^ a[mid];"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "      let temp = a[hi];",
+    "replacement": "      a[mid] = a[mid] ^ a[hi];"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "      a[hi] = a[mid];",
+    "replacement": "      a[hi] = a[mid] ^ a[hi];"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "      a[mid] = temp;",
+    "replacement": "      a[mid] = a[mid] ^ a[hi];"
+  }
+]

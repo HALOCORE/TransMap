@@ -1,0 +1,33 @@
+
+### Python
+### isMonotonic 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> bool:   # --- py stmt 2
+    isIncr = isDecr = False   # --- py stmt 3
+    for i, v in enumerate(nums[1:]):   # --- py stmt 4
+        if v < nums[i]:   # --- py stmt 5
+            isIncr = True   # --- py stmt 6
+        elif v > nums[i]:   # --- py stmt 7
+            isDecr = True   # --- py stmt 8
+        if isIncr and isDecr:   # --- py stmt 9
+            return False   # --- py stmt 10
+    return True   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var isIncr = isDecr = false;   // --- py stmt 3
+    for (var i = 0; i < nums.length - 1; i++) {   // --- py stmt 4
+        if (nums[i + 1] < nums[i]) {   // --- py stmt 5
+            isIncr = true;   // --- py stmt 6
+        }
+        else if (nums[i + 1] > nums[i]) {   // --- py stmt 7
+            isDecr = true;   // --- py stmt 8
+        }
+        if (isIncr && isDecr) {   // --- py stmt 9
+            return false;   // --- py stmt 10
+        }
+    }
+    return true;   // --- py stmt 11
+}
+

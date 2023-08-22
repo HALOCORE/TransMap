@@ -1,0 +1,44 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "  vis.add([0, 0, k].join(\",\"));",
+    "replacement": "  vis.add([0, 0, k]);"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    for (var _ = 0, ql = q.length; _ < ql; _++) {",
+    "replacement": "    for (var _ = 0; _ < q.length; _++) {"
+  },
+  {
+    "line_start": 17,
+    "line_end": 19,
+    "content": "      if (true) {\n        for (var [a, b] of [[0, -1], [0, 1], [1, 0], [-1, 0]]) {",
+    "replacement": "      for (var a = 0; a < 2; a++) {\n        for (var b = 0; b < 2; b++) {"
+  },
+  {
+    "line_start": 23,
+    "line_end": 24,
+    "content": "            if (grid[x][y] == 0 && !vis.has([x, y, k].join(\",\"))) {",
+    "replacement": "            if (grid[x][y] == 0 && !vis.has([x, y, k])) {"
+  },
+  {
+    "line_start": 25,
+    "line_end": 26,
+    "content": "              vis.add([x, y, k].join(\",\"));",
+    "replacement": "              vis.add([x, y, k]);"
+  },
+  {
+    "line_start": 27,
+    "line_end": 28,
+    "content": "            if (grid[x][y] == 1 && k > 0 && !vis.has([x, y, k - 1].join(\",\"))) {",
+    "replacement": "            if (grid[x][y] == 1 && k > 0 && !vis.has([x, y, k - 1])) {"
+  },
+  {
+    "line_start": 29,
+    "line_end": 30,
+    "content": "              vis.add([x, y, k - 1].join(\",\"));",
+    "replacement": "              vis.add([x, y, k - 1]);"
+  }
+]

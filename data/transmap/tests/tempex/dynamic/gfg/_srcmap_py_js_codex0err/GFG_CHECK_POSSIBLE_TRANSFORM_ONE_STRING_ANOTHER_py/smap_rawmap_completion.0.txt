@@ -1,0 +1,41 @@
+
+### Python
+def f_gold(s1, s2):   # --- py stmt 1
+  n = len(s1)   # --- py stmt 2
+  m = len(s2)   # --- py stmt 3
+  dp =([[False for i in range(m + 1)] for i in range(n + 1)])   # --- py stmt 4
+  dp[0][0] = True   # --- py stmt 5
+  for i in range(len(s1)):   # --- py stmt 6
+    for j in range(len(s2)+ 1):   # --- py stmt 7
+      if(dp[i][j]):   # --- py stmt 8
+        if((j < len(s2)and(s1[i].upper()== s2[j]))): dp[i + 1][j + 1] = True   # --- py stmt 9
+        if(s1[i].isupper()== False): dp[i + 1][j] = True   # --- py stmt 10
+  return(dp[n][m])   # --- py stmt 11
+
+
+### JavaScript
+"use strict";
+function f_gold(s1, s2) {   // --- py stmt 1
+  var n = s1.length;   // --- py stmt 2
+  var m = s2.length;   // --- py stmt 3
+  var dp = new Array(n + 1);   // --- py stmt 4
+  for (var i = 0; i < n + 1; i++) {   // --- py stmt 6
+    dp[i] = new Array(m + 1);   // --- py stmt 4
+    for (var j = 0; j < m + 1; j++) {   // --- py stmt 4
+      dp[i][j] = false;   // --- py stmt 4
+    }
+  }
+  dp[0][0] = true;   // --- py stmt 5
+  for (var i = 0; i < s1.length; i++) {   // --- py stmt 6
+    for (var j = 0; j < s2.length + 1; j++) {   // --- py stmt 7
+      if (dp[i][j]) {   // --- py stmt 8
+        if ((j < s2.length && (s1[i].toUpperCase() == s2[j]))) dp[i + 1][j + 1] = true;   // --- py stmt 9
+        if (s1[i].toUpperCase() == s1[i]) dp[i + 1][j] = true;   // --- py stmt 10
+      }
+    }
+  }
+  return dp[n][m];   // --- py stmt 11
+}
+
+
+

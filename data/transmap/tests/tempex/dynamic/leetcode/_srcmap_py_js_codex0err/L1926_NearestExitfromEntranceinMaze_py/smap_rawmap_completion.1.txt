@@ -1,0 +1,60 @@
+
+### Python
+### nearestExit 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(maze: List[List[str]], entrance: List[int]) -> int:   # --- py stmt 3
+    m, n = len(maze), len(maze[0])   # --- py stmt 4
+    i, j = entrance   # --- py stmt 5
+    q = deque([(i, j)])   # --- py stmt 6
+    maze[i][j] = '+'   # --- py stmt 7
+    ans = 0   # --- py stmt 8
+    while q:   # --- py stmt 9
+        ans += 1   # --- py stmt 10
+        for _ in range(len(q)):   # --- py stmt 11
+            i, j = q.popleft()   # --- py stmt 12
+            for a, b in [[0, -1], [0, 1], [-1, 0], [1, 0]]:   # --- py stmt 13
+                x, y = i + a, j + b   # --- py stmt 14
+                if 0 <= x < m and 0 <= y < n and maze[x][y] == '.':   # --- py stmt 15
+                    if x == 0 or x == m - 1 or y == 0 or y == n - 1:   # --- py stmt 16
+                        return ans   # --- py stmt 17
+                    q.append((x, y))   # --- py stmt 18
+                    maze[x][y] = '+'   # --- py stmt 19
+    return -1   # --- py stmt 20
+
+### JavaScript
+"use strict";
+
+function f_gold ( maze, entrance ) {   // --- py stmt 3
+    var m = maze.length;   // --- py stmt 4
+    var n = maze[0].length;   // --- py stmt 4
+    var i = entrance[0];   // --- py stmt 5
+    var j = entrance[1];   // --- py stmt 5
+    var q = [ [ i, j ] ];   // --- py stmt 6
+    maze[i][j] = '+';   // --- py stmt 7
+    var ans = 0;   // --- py stmt 8
+    while ( q.length > 0 ) {   // --- py stmt 9
+        ans += 1;   // --- py stmt 10
+        for ( var _ = 0, ql = q.length; _ < ql; _++ ) {   // --- py stmt 11
+            i = q.shift()[0];   // --- py stmt 12
+            j = q.shift()[1];   // --- py stmt 12
+            for ( var a = 0; a < 2; a++ ) {   // --- py stmt 13
+                for ( var b = 0; b < 2; b++ ) {   // --- py stmt 13
+                    var x = i + a;   // --- py stmt 14
+                    var y = j + b;   // --- py stmt 14
+                    if ( x >= 0 && x < m && y >= 0 && y < n && maze[x][y] == '.' ) {   // --- py stmt 15
+                        if ( x == 0 || x == m - 1 || y == 0 || y == n - 1 ) {   // --- py stmt 16
+                            return ans;   // --- py stmt 17
+                        }
+                        q.push( [ x, y ] );   // --- py stmt 18
+                        maze[x][y] = '+';   // --- py stmt 19
+                    }
+                }
+            }
+        }
+    }
+    return -1;   // --- py stmt 20
+}
+
+
+

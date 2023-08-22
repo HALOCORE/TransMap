@@ -1,0 +1,20 @@
+[
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/new_html/source.py",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/new_html/target.cleanchatgpt.js",
+    "SOURCEMAP_PIECES": "../tests/evalex/real/py_js_codex0err/new_html/target.cleanchatgpt.js.srcmappieces",
+    "SOURCEMAP": "../tests/evalex/real/py_js_codex0err/new_html/target.cleanchatgpt.js.srcmap"
+  },
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/new_colorsys/source.py",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/new_colorsys/target.cleanchatgpt.js",
+    "SOURCEMAP_PIECES": "../tests/evalex/real/py_js_codex0err/new_colorsys/target.cleanchatgpt.js.srcmappieces",
+    "SOURCEMAP": "../tests/evalex/real/py_js_codex0err/new_colorsys/target.cleanchatgpt.js.srcmap"
+  },
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/new_heapq/source.py",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/new_heapq/target.cleanchatgpt.js",
+    "SOURCEMAP_PIECES": "../tests/evalex/real/py_js_codex0err/new_heapq/target.cleanchatgpt.js.srcmappieces",
+    "SOURCEMAP": "../tests/evalex/real/py_js_codex0err/new_heapq/target.cleanchatgpt.js.srcmap"
+  }
+]

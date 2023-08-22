@@ -1,0 +1,49 @@
+
+### Python
+def f_gold(a, b):   # --- py stmt 1
+  n = len(a)   # --- py stmt 2
+  m = len(b)   # --- py stmt 3
+  if m == 0: return 1   # --- py stmt 4
+  dp =[[0] *(n + 1)for _ in range(m + 1)]   # --- py stmt 5
+  for i in range(m):   # --- py stmt 6
+    for j in range(i, n):   # --- py stmt 7
+      if i == 0:   # --- py stmt 8
+        if j == 0:   # --- py stmt 9
+          if a[j] == b[i]: dp[i][j] = 1   # --- py stmt 10
+          else: dp[i][j] = 0   # --- py stmt 11
+        elif a[j] == b[i]: dp[i][j] = dp[i][j - 1] + 1   # --- py stmt 12
+        else: dp[i][j] = dp[i][j - 1]   # --- py stmt 13
+      else:   # --- py stmt 14
+        if a[j] == b[i]: dp[i][j] =(dp[i][j - 1] + dp[i - 1][j - 1])   # --- py stmt 15
+        else: dp[i][j] = dp[i][j - 1]   # --- py stmt 16
+  return dp[m - 1][n - 1]   # --- py stmt 17
+
+
+### JavaScript
+"use strict";
+function f_gold(a, b) {   // --- py stmt 1
+  let n = a.length;   // --- py stmt 2
+  let m = b.length;   // --- py stmt 3
+  if (m == 0) return 1;   // --- py stmt 4
+  let dp = new Array(m + 1);   // --- py stmt 5
+  for (let _ = 0; _ < m + 1; _++) {   // --- py stmt 5
+    dp[_] = new Array(n + 1);   // --- py stmt 5
+  }
+  for (let i = 0; i < m; i++) {   // --- py stmt 6
+    for (let j = i; j < n; j++) {   // --- py stmt 7
+      if (i == 0) {   // --- py stmt 8
+        if (j == 0) {   // --- py stmt 9
+          if (a[j] == b[i]) dp[i][j] = 1;   // --- py stmt 10
+          else dp[i][j] = 0;   // --- py stmt 11
+        } else if (a[j] == b[i]) dp[i][j] = dp[i][j - 1] + 1;   // --- py stmt 12
+        else dp[i][j] = dp[i][j - 1];   // --- py stmt 13
+      } else {   // --- py stmt 14
+        if (a[j] == b[i]) dp[i][j] = dp[i][j - 1] + dp[i - 1][j - 1];   // --- py stmt 15
+        else dp[i][j] = dp[i][j - 1];   // --- py stmt 16
+      }
+    }
+  }
+  return dp[m - 1][n - 1];   // --- py stmt 17
+}
+
+

@@ -1,0 +1,41 @@
+
+### Python
+### arrayChange 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], operations: List[List[int]]) -> List[int]:   # --- py stmt 2
+    d = {v: i for i, v in enumerate(nums)}   # --- py stmt 3
+    for a, b in operations:   # --- py stmt 4
+        idx = d[a]   # --- py stmt 5
+        d.pop(a)   # --- py stmt 6
+        d[b] = idx   # --- py stmt 7
+    ans = [0] * len(nums)   # --- py stmt 8
+    for v, i in d.items():   # --- py stmt 9
+        ans[i] = v   # --- py stmt 10
+    return ans   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums, operations) {   // --- py stmt 2
+    var d = {};   // --- py stmt 3
+    for (var i = 0; i < nums.length; i++) {   // --- py stmt 4
+        d[nums[i]] = i;   // --- py stmt 5
+    }
+    for (var i = 0; i < operations.length; i++) {   // --- py stmt 6
+        var a = operations[i][0];   // --- py stmt 7
+        var b = operations[i][1];   // --- py stmt 7
+        var idx = d[a];   // --- py stmt 8
+        delete d[a];   // --- py stmt 9
+        d[b] = idx;   // --- py stmt 10
+    }
+    var ans = [];   // --- py stmt 11
+    for (var i = 0; i < nums.length; i++) {   // --- py stmt 12
+        ans.push(0);   // --- py stmt 13
+    }
+    for (var v in d) {   // --- py stmt 14
+        ans[d[v]] = v;   // --- py stmt 15
+    }
+    return ans;   // --- py stmt 16
+}
+
+
+

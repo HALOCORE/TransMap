@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "RangeError:",
+      "Maximum call stack size exceeded"
+    ],
+    "lineno": 4
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "Maximum call stack size exceeded",
+      "error_type": "RangeError:",
+      "line_content": "return needs.map((needs, i) => price[i] * needs).reduce((a, b) => a + b, 0);",
+      "lineno": [
+        "/tmp/codesnart_runner/e9f7dc53.js",
+        127
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/e9f7dc53.js:127\n        return needs.map((needs, i) => price[i] * needs).reduce((a, b) => a + b, 0);\n                     ^\n\nRangeError: Maximum call stack size exceeded\n    at Array.map (<anonymous>)\n    at total (/tmp/codesnart_runner/e9f7dc53.js:127:22)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:129:15)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n    at f_gold (/tmp/codesnart_runner/e9f7dc53.js:141:48)\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n",
+    "timespan": 0.06656750000547618
+  }
+}

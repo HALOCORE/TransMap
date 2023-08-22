@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    let left = 1, right = 1;",
+    "replacement": "    let left = right = 1;"
+  }
+]

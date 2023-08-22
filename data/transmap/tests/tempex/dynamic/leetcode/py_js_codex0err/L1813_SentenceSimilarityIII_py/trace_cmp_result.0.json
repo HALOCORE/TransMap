@@ -1,0 +1,54 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[13,4,13,40]",
+    "break_idx": 15,
+    "expected_src_pk": "[10,4,10,57]",
+    "actural_src_pk": "[10,4,10,57]",
+    "src_cov_lines": [
+      8,
+      9
+    ],
+    "tar_cov_lines": [
+      9,
+      10,
+      11
+    ],
+    "tar_data": [
+      "{\"sentence1\":[\"S\",14,\"A lot of words\"],\"sentence2\":[\"S\",14,\"A lot of words\"],\"n1\":[\"N\",\"2\"],\"n2\":[\"N\",\"14\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence1\":[\"S\",14,\"A lot of words\"],\"sentence2\":[\"S\",2,\"of\"],\"n1\":[\"N\",\"2\"],\"n2\":[\"N\",\"14\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "sentence2"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[13,4,13,40]",
+    "break_idx": 4,
+    "expected_src_pk": "[10,4,10,57]",
+    "actural_src_pk": "[10,4,10,57]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10,
+      11
+    ],
+    "tar_data": [
+      "{\"sentence1\":[\"S\",14,\"A lot of words\"],\"sentence2\":[\"S\",14,\"A lot of words\"],\"n1\":[\"N\",\"2\"],\"n2\":[\"N\",\"14\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence1\":[\"S\",14,\"A lot of words\"],\"sentence2\":[\"S\",2,\"of\"],\"n1\":[\"N\",\"2\"],\"n2\":[\"N\",\"14\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "sentence2"
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "src_anno_stmts": [
+    [
+      "def unique_digits(x):",
+      [
+        1
+      ]
+    ],
+    [
+      "    odd_digit_elements = []",
+      [
+        2
+      ]
+    ],
+    [
+      "    for i in x:",
+      [
+        3
+      ]
+    ],
+    [
+      "        if all (int(c) % 2 == 1 for c in str(i)):",
+      [
+        4
+      ]
+    ],
+    [
+      "            odd_digit_elements.append(i)",
+      [
+        5
+      ]
+    ],
+    [
+      "    return sorted(odd_digit_elements)",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function unique_digits(x) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let odd_digit_elements = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "    for (let i of x) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (Array.from(String(i), Number).every(c => c % 2 === 1)) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            odd_digit_elements.push(i);",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return odd_digit_elements.sort();",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(string):",
+      [
+        1
+      ]
+    ],
+    [
+      "  string = string[:: - 1]",
+      [
+        2
+      ]
+    ],
+    [
+      "  return string",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(string) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  string = string.split(\"\").reverse().join(\"\");",
+      [
+        2
+      ]
+    ],
+    [
+      "  return string;",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,2,1,47]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:2 MISMATCH_IDX:2 OBSERVED:[\\\"MYLOGEX:2\\\",[\\\"num\\\",46]] EXPECTED:[\\\"MYLOGEX:2\\\",[\\\"num\\\",45]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"N\",\"68\"],\"b\":[\"N\",\"79\"]}",
+      ""
+    ]
+  }
+]

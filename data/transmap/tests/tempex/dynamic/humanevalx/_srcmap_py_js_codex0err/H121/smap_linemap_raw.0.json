@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def solution(lst):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function solution(lst) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return lst.filter((x, idx) => idx % 2 === 0 && x % 2 === 1).reduce((a, b) => a + b);",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

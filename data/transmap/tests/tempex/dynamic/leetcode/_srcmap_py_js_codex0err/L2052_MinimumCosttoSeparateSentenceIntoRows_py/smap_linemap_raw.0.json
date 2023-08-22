@@ -1,0 +1,224 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minimumCost",
+      null
+    ],
+    [
+      "def cache(f): return f",
+      [
+        1
+      ]
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        2
+      ]
+    ],
+    [
+      "import math",
+      [
+        3
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        4
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        5
+      ]
+    ],
+    [
+      "def f_gold(sentence: str, k: int) -> int:",
+      [
+        6
+      ]
+    ],
+    [
+      "    @cache",
+      [
+        7
+      ]
+    ],
+    [
+      "    def dfs(i):",
+      [
+        8
+      ]
+    ],
+    [
+      "        if s[-1] - s[i] + n - i - 1 <= k:",
+      [
+        9
+      ]
+    ],
+    [
+      "            return 0",
+      [
+        10
+      ]
+    ],
+    [
+      "        ans, j = inf, i + 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        while j < n and (t := s[j] - s[i] + j - i - 1) <= k:",
+      [
+        12
+      ]
+    ],
+    [
+      "            ans = min(ans, (k - t) ** 2 + dfs(j))",
+      [
+        13
+      ]
+    ],
+    [
+      "            j += 1",
+      [
+        14
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        15
+      ]
+    ],
+    [
+      "    t = [len(w) for w in sentence.split()]",
+      [
+        16
+      ]
+    ],
+    [
+      "    n = len(t)",
+      [
+        17
+      ]
+    ],
+    [
+      "    s = list(accumulate(t, initial=0))",
+      [
+        18
+      ]
+    ],
+    [
+      "    return dfs(0)",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentence, k) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    function dfs(i) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (s[s.length - 1] - s[i] + n - i - 1 <= k) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            return 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        var ans = Number.POSITIVE_INFINITY;",
+      [
+        11
+      ]
+    ],
+    [
+      "        var j = i + 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "        while (j < n && (t = s[j] - s[i] + j - i - 1) <= k) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            ans = Math.min(ans, Math.pow(k - t, 2) + dfs(j));",
+      [
+        13
+      ]
+    ],
+    [
+      "            j += 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return ans;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var t = sentence.split(\" \").map(function (w) { return w.length; });",
+      [
+        16
+      ]
+    ],
+    [
+      "    var n = t.length;",
+      [
+        17
+      ]
+    ],
+    [
+      "    var s = [0].concat(t).reduce(function (a, b) { return a + b; });",
+      [
+        18
+      ]
+    ],
+    [
+      "    return dfs(0);",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

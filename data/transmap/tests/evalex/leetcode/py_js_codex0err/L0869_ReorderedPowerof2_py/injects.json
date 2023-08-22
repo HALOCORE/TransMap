@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "        if (convert(i).map((x, i) => x === s[i]).every(x => x)) {",
+    "replacement": "        if (convert(i) == s) {"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,6,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",9,[\"N\",\"-2\"],[\"N\",\"1\"],[\"N\",\"-3\"],[\"N\",\"4\"],[\"N\",\"-1\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"-5\"],[\"N\",\"4\"]],\"res\":[\"N\",\"-2\"],\"f\":[\"N\",\"-2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,6,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",9,[\"N\",\"-2\"],[\"N\",\"1\"],[\"N\",\"-3\"],[\"N\",\"4\"],[\"N\",\"-1\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"-5\"],[\"N\",\"4\"]],\"res\":[\"N\",\"-2\"],\"f\":[\"N\",\"-2\"]}",
+      ""
+    ]
+  }
+]

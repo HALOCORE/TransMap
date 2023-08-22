@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  let indexes = [];",
+    "replacement": "  let indexes = new Queue();"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        indexes.push(pages[i]);",
+    "replacement": "        indexes.put(pages[i]);"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "        let val = indexes[0];",
+    "replacement": "        let val = indexes.queue[0];"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "        indexes.shift();",
+    "replacement": "        indexes.get();"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "        indexes.push(pages[i]);",
+    "replacement": "        indexes.put(pages[i]);"
+  }
+]

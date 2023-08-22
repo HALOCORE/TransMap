@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "        if (['0', '1', '8'].includes(a)) {",
+    "replacement": "        if (a in {'0', '1', '8'}) {"
+  }
+]

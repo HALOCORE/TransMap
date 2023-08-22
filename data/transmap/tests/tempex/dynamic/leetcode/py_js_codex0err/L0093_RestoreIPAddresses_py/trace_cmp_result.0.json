@@ -1,0 +1,120 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[27,4,27,15]",
+    "break_idx": 2,
+    "expected_src_pk": "[21,4,21,14]",
+    "actural_src_pk": "[21,4,21,14]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20
+    ],
+    "tar_cov_lines": [
+      2,
+      5,
+      8,
+      11,
+      12,
+      13,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      26
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",11,\"25525511135\"],\"ans\":[\"A\",4,[\"S\",14,\"25.525.511.135\"],[\"S\",14,\"255.25.511.135\"],[\"S\",14,\"255.255.11.135\"],[\"S\",14,\"255.255.111.35\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"25525511135\"],\"check\":\"UNKNOWN\",\"dfs\":\"UNKNOWN\",\"ans\":[\"A\",2,[\"S\",14,\"255.255.11.135\"],[\"S\",14,\"255.255.111.35\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "ans"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 44,
+    "tar_pk": "[5,8,7,9]",
+    "expected_src_pk": "[6,8,7,24]",
+    "actural_src_pk": "[4,8,5,24]",
+    "src_cov_lines": [
+      4,
+      5,
+      15,
+      18
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"551\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"525\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 29,
+    "tar_pk": "[5,8,7,9]",
+    "expected_src_pk": "[6,8,7,24]",
+    "actural_src_pk": "[5,12,5,24]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"551\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"551\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 19,
+    "tar_pk": "[5,8,7,9]",
+    "expected_src_pk": "[6,8,7,24]",
+    "actural_src_pk": "[5,12,5,24]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"551\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"551\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

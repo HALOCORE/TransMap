@@ -1,0 +1,36 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -255,7 +255,7 @@ class OverlapCoefficient {
+ ///// Segment END
+ 
+ ///// Segment BEGIN QGram DONE
+-class QGram {
++class QGram extends classMultiExtend(ShingleBased, StringDistance) {
+     constructor(k = 3) {
+         super();
+         this.k = k;
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -399,21 +399,21 @@ class OverlapCoefficient {   // --- py stmt 102
+         let union = new Set();   // --- py stmt 114
+         let profile0 = this.get_profile(s0);   // --- py stmt 115
+         let profile1 = this.get_profile(s1);   // --- py stmt 115
+         for (let k of profile0.keys()) {   // --- py stmt 116
+             union.add(k);   // --- py stmt 117
+         }
+         for (let k of profile1.keys()) {   // --- py stmt 118
+             union.add(k);   // --- py stmt 119
+         }
+         let inter = Math.floor(profile0.size + profile1.size - union.size);   // --- py stmt 120
+         return inter / Math.min(profile0.size, profile1.size);   // --- py stmt 121
+     }
+ }
+ 
+ 
+ 
+ 
+-class QGram {   // --- py stmt 122
++class QGram extends classMultiExtend(ShingleBased, StringDistance) {   // --- py stmt 122
+     constructor(k = 3) {   // --- py stmt 123
+         super();   // --- py stmt 124
+         this.k = k;   // --- py stmt 124

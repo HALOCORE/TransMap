@@ -1,0 +1,16 @@
+
+### Python
+def find_max(words):   # --- py stmt 1
+    return sorted(words, key = lambda x: (-len(set(x)), x))[0]   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function find_max(words) {   // --- py stmt 1
+    return words.sort(function (a, b) {   // --- py stmt 2
+        return b.length - a.length || a.localeCompare(b);
+    })[0];
+}
+
+
+

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let c = 0, r = 0, o = 0, a = 0, k = 0, ans = 0;",
+    "replacement": "    let c = r = o = a = k = ans = 0;"
+  },
+  {
+    "line_start": 32,
+    "line_end": 33,
+    "content": "    return (c != 0 || r != 0 || o != 0 || a != 0) ? -1 : ans;",
+    "replacement": "    return -1 if c != 0 || r != 0 || o != 0 || a != 0 else ans;"
+  }
+]

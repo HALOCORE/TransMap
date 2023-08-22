@@ -1,0 +1,16 @@
+{
+  "result_symptom": {
+    "category": [
+      "SUCCESS",
+      null
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error": null,
+    "is_success": true,
+    "stderr": "",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n\n[\"MYLOGEX:1\",[\"list\",1,[[\"string\",18,\"writing code rocks\"]]]]\n\n[\"MYLOGAP:0\",[\"num\",1]]\n\n[\"MYLOGEX:1\",[\"list\",5,[[\"string\",30,\"a chip off the old block party\"],[\"string\",29,\"a man on a mission impossible\"],[\"string\",28,\"a man on a mission statement\"],[\"string\",28,\"a quick bite to eat my words\"],[\"string\",21,\"chocolate bar of soap\"]]]]\n\n[\"MYLOGAP:0\",[\"num\",2]]\n\n[\"MYLOGEX:1\",[\"list\",1,[[\"string\",1,\"a\"]]]]\n",
+    "timespan": 0.03421439998783171
+  }
+}

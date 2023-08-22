@@ -1,0 +1,196 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxFrequency",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    nums.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = 1",
+      [
+        4
+      ]
+    ],
+    [
+      "    window = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    l, r, n = 0, 1, len(nums)",
+      [
+        6
+      ]
+    ],
+    [
+      "    while r < n:",
+      [
+        7
+      ]
+    ],
+    [
+      "        window += (nums[r] - nums[r - 1]) * (r - l)",
+      [
+        8
+      ]
+    ],
+    [
+      "        r += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        while window > k:",
+      [
+        10
+      ]
+    ],
+    [
+      "            window -= nums[r - 1] - nums[l]",
+      [
+        11
+      ]
+    ],
+    [
+      "            l += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "        ans = max(ans, r - l)",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    nums.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ans = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var window = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var l = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var r = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var n = nums.length;",
+      [
+        6
+      ]
+    ],
+    [
+      "    while (r < n) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        window += (nums[r] - nums[r - 1]) * (r - l);",
+      [
+        8
+      ]
+    ],
+    [
+      "        r += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        while (window > k) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            window -= nums[r - 1] - nums[l];",
+      [
+        11
+      ]
+    ],
+    [
+      "            l += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans = Math.max(ans, r - l);",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

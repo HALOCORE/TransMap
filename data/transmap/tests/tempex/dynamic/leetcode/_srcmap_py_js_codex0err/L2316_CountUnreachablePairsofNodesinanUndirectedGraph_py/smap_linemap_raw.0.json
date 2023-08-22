@@ -1,0 +1,372 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countPairs",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(n: int, edges: List[List[int]]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    def dfs(i):",
+      [
+        4
+      ]
+    ],
+    [
+      "        vis[i] = True",
+      [
+        5
+      ]
+    ],
+    [
+      "        res = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j in g[i]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            if not vis[j]:",
+      [
+        8
+      ]
+    ],
+    [
+      "                res += dfs(j)",
+      [
+        9
+      ]
+    ],
+    [
+      "        return res",
+      [
+        10
+      ]
+    ],
+    [
+      "    g = defaultdict(list)",
+      [
+        11
+      ]
+    ],
+    [
+      "    for a, b in edges:",
+      [
+        12
+      ]
+    ],
+    [
+      "        g[a].append(b)",
+      [
+        13
+      ]
+    ],
+    [
+      "        g[b].append(a)",
+      [
+        14
+      ]
+    ],
+    [
+      "    vis = [False] * n",
+      [
+        15
+      ]
+    ],
+    [
+      "    arr = []",
+      [
+        16
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        17
+      ]
+    ],
+    [
+      "        if not vis[i]:",
+      [
+        18
+      ]
+    ],
+    [
+      "            arr.append(dfs(i))",
+      [
+        19
+      ]
+    ],
+    [
+      "    ans = t = 0",
+      [
+        20
+      ]
+    ],
+    [
+      "    for v in arr:",
+      [
+        21
+      ]
+    ],
+    [
+      "        t += v",
+      [
+        22
+      ]
+    ],
+    [
+      "        ans += v * (n - t)",
+      [
+        23
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        24
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (n, edges) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    function dfs (i) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        vis[i] = true;",
+      [
+        5
+      ]
+    ],
+    [
+      "        var res = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = 0; j < g[i].length; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (!vis[g[i][j]]) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                res += dfs(g[i][j]);",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return res;",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var g = {};",
+      [
+        11
+      ]
+    ],
+    [
+      "    for (var i = 0; i < edges.length; i++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        if (!g[edges[i][0]]) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            g[edges[i][0]] = [];",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (!g[edges[i][1]]) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            g[edges[i][1]] = [];",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        g[edges[i][0]].push(edges[i][1]);",
+      [
+        13
+      ]
+    ],
+    [
+      "        g[edges[i][1]].push(edges[i][0]);",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var vis = [];",
+      [
+        15
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        15
+      ]
+    ],
+    [
+      "        vis.push(false);",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var arr = [];",
+      [
+        16
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        17
+      ]
+    ],
+    [
+      "        if (!vis[i]) {",
+      [
+        18
+      ]
+    ],
+    [
+      "            arr.push(dfs(i));",
+      [
+        19
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = 0;",
+      [
+        20
+      ]
+    ],
+    [
+      "    var t = 0;",
+      [
+        20
+      ]
+    ],
+    [
+      "    for (var i = 0; i < arr.length; i++) {",
+      [
+        21
+      ]
+    ],
+    [
+      "        t += arr[i];",
+      [
+        22
+      ]
+    ],
+    [
+      "        ans += arr[i] * (n - t);",
+      [
+        23
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        24
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

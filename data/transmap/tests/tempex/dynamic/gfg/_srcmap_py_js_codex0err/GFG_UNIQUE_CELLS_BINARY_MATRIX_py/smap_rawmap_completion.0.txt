@@ -1,0 +1,36 @@
+
+### Python
+def f_gold(mat, n, m):   # --- py stmt 1
+  rowsum =[0] * n ;   # --- py stmt 2
+  colsum =[0] * m ;   # --- py stmt 3
+  for i in range(n):   # --- py stmt 4
+    for j in range(m):   # --- py stmt 5
+      if(mat[i][j] != 0): rowsum[i] += 1 ; colsum[j] += 1 ;   # --- py stmt 6
+  uniquecount = 0 ;   # --- py stmt 7
+  for i in range(n):   # --- py stmt 8
+    for j in range(m):   # --- py stmt 9
+      if(mat[i][j] != 0 and rowsum[i] == 1 and colsum[j] == 1): uniquecount += 1 ;   # --- py stmt 10
+  return uniquecount ;   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(mat, n, m) {   // --- py stmt 1
+  var rowsum = Array(n).fill(0);   // --- py stmt 2
+  var colsum = Array(m).fill(0);   // --- py stmt 3
+  for (var i = 0; i < n; i++) {   // --- py stmt 4
+    for (var j = 0; j < m; j++) {   // --- py stmt 5
+      if (mat[i][j] != 0) rowsum[i] += 1;   // --- py stmt 6
+      colsum[j] += 1;   // --- py stmt 6
+    }
+  }
+  var uniquecount = 0;   // --- py stmt 7
+  for (var i = 0; i < n; i++) {   // --- py stmt 8
+    for (var j = 0; j < m; j++) {   // --- py stmt 9
+      if (mat[i][j] != 0 && rowsum[i] == 1 && colsum[j] == 1) uniquecount += 1;   // --- py stmt 10
+    }
+  }
+  return uniquecount;   // --- py stmt 11
+}
+
+
+

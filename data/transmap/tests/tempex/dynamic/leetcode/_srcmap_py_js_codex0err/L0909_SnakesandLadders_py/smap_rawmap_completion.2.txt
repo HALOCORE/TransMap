@@ -1,0 +1,71 @@
+
+### Python
+### snakesAndLadders 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(board: List[List[int]]) -> int:   # --- py stmt 3
+    def get(x):   # --- py stmt 4
+        i, j = (x - 1) // n, (x - 1) % n   # --- py stmt 5
+        if i & 1:   # --- py stmt 6
+            j = n - 1 - j   # --- py stmt 7
+        return n - 1 - i, j   # --- py stmt 8
+    n = len(board)   # --- py stmt 9
+    q = deque([1])   # --- py stmt 10
+    vis = {1}   # --- py stmt 11
+    ans = 0   # --- py stmt 12
+    while q:   # --- py stmt 13
+        for _ in range(len(q)):   # --- py stmt 14
+            curr = q.popleft()   # --- py stmt 15
+            if curr == n * n:   # --- py stmt 16
+                return ans   # --- py stmt 17
+            for next in range(curr + 1, min(curr + 7, n * n + 1)):   # --- py stmt 18
+                i, j = get(next)   # --- py stmt 19
+                if board[i][j] != -1:   # --- py stmt 20
+                    next = board[i][j]   # --- py stmt 21
+                if next not in vis:   # --- py stmt 22
+                    q.append(next)   # --- py stmt 23
+                    vis.add(next)   # --- py stmt 24
+        ans += 1   # --- py stmt 25
+    return -1   # --- py stmt 26
+
+### JavaScript
+"use strict";
+
+function f_gold ( board ) {   // --- py stmt 3
+    function get ( x ) {   // --- py stmt 4
+        let i = Math.floor( ( x - 1 ) / n );   // --- py stmt 5
+        let j = ( x - 1 ) % n;   // --- py stmt 5
+        if ( i & 1 ) {   // --- py stmt 6
+            j = n - 1 - j;   // --- py stmt 7
+        }
+        return [n - 1 - i, j];   // --- py stmt 8
+    }
+    let n = board.length;   // --- py stmt 9
+    let q = [ 1 ];   // --- py stmt 10
+    let vis = { 1: true };   // --- py stmt 11
+    let ans = 0;   // --- py stmt 12
+    while ( q.length > 0 ) {   // --- py stmt 13
+        for ( let _ = 0; _ < q.length; _++ ) {   // --- py stmt 14
+            let curr = q.shift();   // --- py stmt 15
+            if ( curr == n * n ) {   // --- py stmt 16
+                return ans;   // --- py stmt 17
+            }
+            for ( let next = curr + 1; next < Math.min( curr + 7, n * n + 1 ); next++ ) {   // --- py stmt 18
+                let i = get( next )[ 0 ];   // --- py stmt 19
+                let j = get( next )[ 1 ];   // --- py stmt 19
+                if ( board[ i ] && board[ i ][ j ] != -1 ) {   // --- py stmt 20
+                    next = board[ i ][ j ];   // --- py stmt 21
+                }
+                if ( !vis[ next ] ) {   // --- py stmt 22
+                    q.push( next );   // --- py stmt 23
+                    vis[ next ] = true;   // --- py stmt 24
+                }
+            }
+        }
+        ans += 1;   // --- py stmt 25
+    }
+    return -1;   // --- py stmt 26
+}
+
+
+

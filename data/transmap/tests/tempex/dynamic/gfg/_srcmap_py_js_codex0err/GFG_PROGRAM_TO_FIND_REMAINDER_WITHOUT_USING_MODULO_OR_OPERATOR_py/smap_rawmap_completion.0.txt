@@ -1,0 +1,14 @@
+
+### Python
+def f_gold(num, divisor):   # --- py stmt 1
+  return(num - divisor *(num // divisor))   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function f_gold(num, divisor) {   // --- py stmt 1
+    return (num - divisor * (num / divisor));   // --- py stmt 2
+}
+
+
+

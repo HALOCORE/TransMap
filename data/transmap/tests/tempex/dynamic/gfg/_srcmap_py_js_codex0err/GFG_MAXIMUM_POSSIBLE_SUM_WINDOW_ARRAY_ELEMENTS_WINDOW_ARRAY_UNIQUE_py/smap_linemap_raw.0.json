@@ -1,0 +1,174 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(A, B, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  mp = set()",
+      [
+        2
+      ]
+    ],
+    [
+      "  result = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  curr_sum = curr_begin = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(0, n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    while A[i] in mp:",
+      [
+        6
+      ]
+    ],
+    [
+      "      mp.remove(A[curr_begin])",
+      [
+        7
+      ]
+    ],
+    [
+      "      curr_sum -= B[curr_begin]",
+      [
+        8
+      ]
+    ],
+    [
+      "      curr_begin += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    mp.add(A[i])",
+      [
+        10
+      ]
+    ],
+    [
+      "    curr_sum += B[i]",
+      [
+        11
+      ]
+    ],
+    [
+      "    result = max(result, curr_sum)",
+      [
+        12
+      ]
+    ],
+    [
+      "  return result",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(A, B, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let mp = new Set();",
+      [
+        2
+      ]
+    ],
+    [
+      "  let result = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  let curr_sum = curr_begin = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    while (mp.has(A[i])) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      mp.delete(A[curr_begin]);",
+      [
+        7
+      ]
+    ],
+    [
+      "      curr_sum -= B[curr_begin];",
+      [
+        8
+      ]
+    ],
+    [
+      "      curr_begin++;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    mp.add(A[i]);",
+      [
+        10
+      ]
+    ],
+    [
+      "    curr_sum += B[i];",
+      [
+        11
+      ]
+    ],
+    [
+      "    result = Math.max(result, curr_sum);",
+      [
+        12
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

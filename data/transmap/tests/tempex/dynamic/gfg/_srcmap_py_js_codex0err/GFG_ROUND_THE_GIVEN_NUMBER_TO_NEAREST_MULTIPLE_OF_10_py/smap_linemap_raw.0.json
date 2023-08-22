@@ -1,0 +1,58 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  a =(n // 10)* 10",
+      [
+        2
+      ]
+    ],
+    [
+      "  b = a + 10",
+      [
+        3
+      ]
+    ],
+    [
+      "  return(b if n - a > b - n else a)",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var a = (n / 10) * 10;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var b = a + 10;",
+      [
+        3
+      ]
+    ],
+    [
+      "  return (n - a > b - n)? b : a;",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

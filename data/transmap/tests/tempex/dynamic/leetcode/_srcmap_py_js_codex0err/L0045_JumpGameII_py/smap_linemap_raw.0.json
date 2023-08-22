@@ -1,0 +1,124 @@
+{
+  "src_anno_stmts": [
+    [
+      "### jump",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    end = mx = steps = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, num in enumerate(nums[:-1]):",
+      [
+        4
+      ]
+    ],
+    [
+      "        mx = max(mx, i + num)",
+      [
+        5
+      ]
+    ],
+    [
+      "        if i == end:",
+      [
+        6
+      ]
+    ],
+    [
+      "            end = mx",
+      [
+        7
+      ]
+    ],
+    [
+      "            steps += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "    return steps",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let end = mx = steps = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let i = 0; i < nums.length - 1; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        mx = Math.max(mx, i + nums[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (i == end) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            end = mx;",
+      [
+        7
+      ]
+    ],
+    [
+      "            steps += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return steps;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

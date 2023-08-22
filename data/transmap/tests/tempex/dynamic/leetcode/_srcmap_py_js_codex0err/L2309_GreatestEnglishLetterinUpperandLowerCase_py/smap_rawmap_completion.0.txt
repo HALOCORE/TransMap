@@ -1,0 +1,24 @@
+
+### Python
+### greatestLetter 
+from string import ascii_uppercase   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(s: str) -> str:   # --- py stmt 3
+    ss = set(s)   # --- py stmt 4
+    for c in ascii_uppercase[::-1]:   # --- py stmt 5
+        if c in ss and c.lower() in ss:   # --- py stmt 6
+            return c   # --- py stmt 7
+    return ''   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 3
+    var ss = new Set(s);   // --- py stmt 4
+    for (var c of ascii_uppercase.split("").reverse()) {   // --- py stmt 5
+        if (ss.has(c) && ss.has(c.toLowerCase())) {   // --- py stmt 6
+            return c;   // --- py stmt 7
+        }
+    }
+    return '';   // --- py stmt 8
+}
+

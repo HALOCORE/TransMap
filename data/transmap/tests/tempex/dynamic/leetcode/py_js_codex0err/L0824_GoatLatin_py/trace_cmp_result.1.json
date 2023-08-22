@@ -1,0 +1,81 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[10,4,10,24]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      7,
+      8,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'toLowerCase')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",4,[\"S\",4,\"Imaa\"],[\"S\",9,\"peaksmaaa\"],[\"S\",9,\"oatGmaaaa\"],[\"S\",11,\"atinLmaaaaa\"]],\"i\":[\"N\",\"3\"],\"word\":[\"S\",11,\"atinLmaaaaa\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,6,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,8,6,37]",
+    "actural_src_pk": "[5,8,6,37]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",0],\"i\":[\"N\",\"0\"],\"word\":[\"S\",18,\"I speak Goat Latin\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",0],\"i\":[\"N\",\"0\"],\"word\":[\"S\",1,\"I\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,6,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,8,6,37]",
+    "actural_src_pk": "[5,8,6,37]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",0],\"i\":[\"N\",\"0\"],\"word\":[\"S\",18,\"I speak Goat Latin\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",0],\"i\":[\"N\",\"0\"],\"word\":[\"S\",1,\"I\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  }
+]

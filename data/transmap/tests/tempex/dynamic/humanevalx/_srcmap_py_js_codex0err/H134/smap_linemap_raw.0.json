@@ -1,0 +1,50 @@
+{
+  "src_anno_stmts": [
+    [
+      "def check_if_last_char_is_a_letter(txt):",
+      [
+        1
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    check = txt.split(' ')[-1]",
+      [
+        2
+      ]
+    ],
+    [
+      "    return True if len(check) == 1 and (97 <= ord(check.lower()) <= 122) else False",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function check_if_last_char_is_a_letter(txt) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let check = txt.split(' ')[-1];",
+      [
+        2
+      ]
+    ],
+    [
+      "    return (check.length == 1 && (97 <= check.toLowerCase().charCodeAt(0) && check.toLowerCase().charCodeAt(0) <= 122)) ? true : false;",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

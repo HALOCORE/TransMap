@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    return (n & 1) == 0 ? y * y : y * y * x;",
+    "replacement": "    return y * y if (n & 1) == 0 else y * y * x;"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,14]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: \\\"#\\\".join is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",9,\"^#a#b#c#$\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,14]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: \\\"#\\\".join is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",9,\"^#a#b#c#$\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,14]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: \\\"#\\\".join is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",9,\"^#a#b#c#$\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,162 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minimumDeletions",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    mi = mx = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, num in enumerate(nums):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if num < nums[mi]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            mi = i",
+      [
+        6
+      ]
+    ],
+    [
+      "        if num > nums[mx]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            mx = i",
+      [
+        8
+      ]
+    ],
+    [
+      "    if mi > mx:",
+      [
+        9
+      ]
+    ],
+    [
+      "        mi, mx = mx, mi",
+      [
+        10
+      ]
+    ],
+    [
+      "    return min(mx + 1, len(nums) - mi, mi + 1 + len(nums) - mx)",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var mx = 0, mi = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < nums.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (nums[i] < nums[mi]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            mi = i;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (nums[i] > nums[mx]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            mx = i;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (mi > mx) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        mi = mx;",
+      [
+        10
+      ]
+    ],
+    [
+      "        mx = mi;",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.min(mx + 1, nums.length - mi, mi + 1 + nums.length - mx);",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

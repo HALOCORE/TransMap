@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return edges[1].includes(edges[0][0]) ? edges[0][0] : edges[0][1];",
+    "replacement": "    return edges[0][0] if (edges[0][0] in edges[1]) else edges[0][1];"
+  }
+]

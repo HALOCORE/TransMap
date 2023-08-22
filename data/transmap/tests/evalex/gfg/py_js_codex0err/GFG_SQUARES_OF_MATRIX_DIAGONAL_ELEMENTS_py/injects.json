@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  console.log(\"Diagonal one : \");",
+    "replacement": "  console.log(\"Diagonal one : \", end = \"\");"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "      if (i == j) console.log((mat[i][j] * mat[i][j]).toString()+' ');",
+    "replacement": "      if (i == j) console.log(\"{} \".format(mat[i][j] * mat[i][j]), end = \"\");"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "  console.log(\" \\n\\nDiagonal two : \");",
+    "replacement": "  console.log(\" \\n\\nDiagonal two : \", end = \"\");"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "      if (i + j == column - 1) console.log((mat[i][j] * mat[i][j]).toString()+' ');",
+    "replacement": "      if (i + j == column - 1) console.log(\"{} \".format(mat[i][j] * mat[i][j]), end = \"\");"
+  }
+]

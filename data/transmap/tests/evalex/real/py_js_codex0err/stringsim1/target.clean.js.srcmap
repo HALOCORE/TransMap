@@ -1,0 +1,456 @@
+### Python
+import re   # --- py stmt 1
+
+_SPACE_PATTERN = re.compile("\\s+")   # --- py stmt 2
+class ShingleBased:   # --- py stmt 3
+
+    def __init__(self, k=3):   # --- py stmt 4
+        self.k = k   # --- py stmt 5
+
+    def get_k(self):   # --- py stmt 6
+        return self.k   # --- py stmt 7
+
+    def get_profile(self, string):   # --- py stmt 8
+        shingles = dict()   # --- py stmt 9
+        no_space_str = _SPACE_PATTERN.sub(" ", string)   # --- py stmt 10
+        for i in range(len(no_space_str) - self.k + 1):   # --- py stmt 11
+            shingle = no_space_str[i:i + self.k]   # --- py stmt 12
+            old = shingles.get(shingle)   # --- py stmt 13
+            if old:   # --- py stmt 14
+                shingles[str(shingle)] = int(old + 1)   # --- py stmt 15
+            else:   # --- py stmt 16
+                shingles[str(shingle)] = 1   # --- py stmt 17
+        return shingles   # --- py stmt 18
+
+class StringDistance:   # --- py stmt 19
+
+    def distance(self, s0, s1):   # --- py stmt 20
+        raise NotImplementedError()   # --- py stmt 21
+
+class NormalizedStringDistance(StringDistance):   # --- py stmt 22
+
+    def distance(self, s0, s1):   # --- py stmt 23
+        raise NotImplementedError()   # --- py stmt 24
+
+class MetricStringDistance(StringDistance):   # --- py stmt 25
+
+    def distance(self, s0, s1):   # --- py stmt 26
+        raise NotImplementedError()   # --- py stmt 27
+
+class StringSimilarity:   # --- py stmt 28
+
+    def similarity(self, s0, s1):   # --- py stmt 29
+        raise NotImplementedError()   # --- py stmt 30
+
+class NormalizedStringSimilarity(StringSimilarity):   # --- py stmt 31
+
+    def similarity(self, s0, s1):   # --- py stmt 32
+        raise NotImplementedError()   # --- py stmt 33
+
+
+import math   # --- py stmt 34
+class Cosine(ShingleBased, NormalizedStringDistance,   # --- py stmt 35
+             NormalizedStringSimilarity):
+
+    def __init__(self, k):   # --- py stmt 36
+        super().__init__(k)   # --- py stmt 37
+
+    def distance(self, s0, s1):   # --- py stmt 38
+        return 1.0 - self.similarity(s0, s1)   # --- py stmt 39
+
+    def similarity(self, s0, s1):   # --- py stmt 40
+        if s0 is None:   # --- py stmt 41
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 42
+        if s1 is None:   # --- py stmt 43
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 44
+        if s0 == s1:   # --- py stmt 45
+            return 1.0   # --- py stmt 46
+        if len(s0) < self.get_k() or len(s1) < self.get_k():   # --- py stmt 47
+            return 0.0   # --- py stmt 48
+        profile0 = self.get_profile(s0)   # --- py stmt 49
+        profile1 = self.get_profile(s1)   # --- py stmt 50
+        return self._dot_product(profile0, profile1) / (self._norm(profile0) * self._norm(profile1))   # --- py stmt 51
+
+    def similarity_profiles(self, profile0, profile1):   # --- py stmt 52
+        return self._dot_product(profile0, profile1) / (self._norm(profile0) * self._norm(profile1))   # --- py stmt 53
+
+    @staticmethod   # --- py stmt 54
+    def _dot_product(profile0, profile1):   # --- py stmt 55
+        small = profile1   # --- py stmt 56
+        large = profile0   # --- py stmt 57
+        if len(profile0) < len(profile1):   # --- py stmt 58
+            small = profile0   # --- py stmt 59
+            large = profile1   # --- py stmt 60
+        agg = 0.0   # --- py stmt 61
+        for k, v in small.items():   # --- py stmt 62
+            i = large.get(k)   # --- py stmt 63
+            if not i:   # --- py stmt 64
+                continue   # --- py stmt 65
+            agg += 1.0 * v * i   # --- py stmt 66
+        return agg   # --- py stmt 67
+
+    @staticmethod   # --- py stmt 68
+    def _norm(profile):   # --- py stmt 69
+        agg = 0.0   # --- py stmt 70
+        for k, v in profile.items():   # --- py stmt 71
+            agg += 1.0 * v * v   # --- py stmt 72
+        return math.sqrt(agg)   # --- py stmt 73
+
+class Jaccard(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity):   # --- py stmt 74
+    def __init__(self, k):   # --- py stmt 75
+        super().__init__(k)   # --- py stmt 76
+    def distance(self, s0, s1):   # --- py stmt 77
+        return 1.0 - self.similarity(s0, s1)   # --- py stmt 78
+    def similarity(self, s0, s1):   # --- py stmt 79
+        if s0 is None:   # --- py stmt 80
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 81
+        if s1 is None:   # --- py stmt 82
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 83
+        if s0 == s1:   # --- py stmt 84
+            return 1.0   # --- py stmt 85
+        if len(s0) < self.get_k() or len(s1) < self.get_k():   # --- py stmt 86
+            return 0.0   # --- py stmt 87
+        profile0 = self.get_profile(s0)   # --- py stmt 88
+        profile1 = self.get_profile(s1)   # --- py stmt 89
+        union = set()   # --- py stmt 90
+        for ite in profile0.keys():   # --- py stmt 91
+            union.add(ite)   # --- py stmt 92
+        for ite in profile1.keys():   # --- py stmt 93
+            union.add(ite)   # --- py stmt 94
+        inter = int(len(profile0.keys()) + len(profile1.keys()) - len(union))   # --- py stmt 95
+        return 1.0 * inter / len(union)   # --- py stmt 96
+
+class JaroWinkler(NormalizedStringSimilarity, NormalizedStringDistance):   # --- py stmt 97
+    def __init__(self, threshold=0.7):   # --- py stmt 98
+        self.threshold = threshold   # --- py stmt 99
+        self.three = 3   # --- py stmt 100
+        self.jw_coef = 0.1   # --- py stmt 101
+    def get_threshold(self):   # --- py stmt 102
+        return self.threshold   # --- py stmt 103
+    def similarity(self, s0, s1):   # --- py stmt 104
+        if s0 is None:   # --- py stmt 105
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 106
+        if s1 is None:   # --- py stmt 107
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 108
+        if s0 == s1:   # --- py stmt 109
+            return 1.0   # --- py stmt 110
+        mtp = self.matches(s0, s1)   # --- py stmt 111
+        m = mtp[0]   # --- py stmt 112
+        if m == 0:   # --- py stmt 113
+            return 0.0   # --- py stmt 114
+        j = (m / len(s0) + m / len(s1) + (m - mtp[1]) / m) / self.three   # --- py stmt 115
+        jw = j   # --- py stmt 116
+        if j > self.get_threshold():   # --- py stmt 117
+            jw = j + min(self.jw_coef, 1.0 / mtp[self.three]) * mtp[2] * (1 - j)   # --- py stmt 118
+        return jw   # --- py stmt 119
+    def distance(self, s0, s1):   # --- py stmt 120
+        return 1.0 - self.similarity(s0, s1)   # --- py stmt 121
+
+    @staticmethod   # --- py stmt 122
+    def matches(s0, s1):   # --- py stmt 123
+        if len(s0) > len(s1):   # --- py stmt 124
+            max_str = s0   # --- py stmt 125
+            min_str = s1   # --- py stmt 126
+        else:   # --- py stmt 127
+            max_str = s1   # --- py stmt 128
+            min_str = s0   # --- py stmt 129
+        ran = int(max(len(max_str) / 2 - 1, 0))   # --- py stmt 130
+        match_indexes = [-1] * len(min_str)   # --- py stmt 131
+        match_flags = [False] * len(max_str)   # --- py stmt 132
+        matches = 0   # --- py stmt 133
+        for mi in range(len(min_str)):   # --- py stmt 134
+            c1 = min_str[mi]   # --- py stmt 135
+            for xi in range(max(mi - ran, 0), min(mi + ran + 1, len(max_str))):   # --- py stmt 136
+                if not match_flags[xi] and c1 == max_str[xi]:   # --- py stmt 137
+                    match_indexes[mi] = xi   # --- py stmt 138
+                    match_flags[xi] = True   # --- py stmt 139
+                    matches += 1   # --- py stmt 140
+                    break   # --- py stmt 141
+
+        ms0, ms1 = [0] * matches, [0] * matches   # --- py stmt 142
+        si = 0   # --- py stmt 143
+        for i in range(len(min_str)):   # --- py stmt 144
+            if match_indexes[i] != -1:   # --- py stmt 145
+                ms0[si] = min_str[i]   # --- py stmt 146
+                si += 1   # --- py stmt 147
+        si = 0   # --- py stmt 148
+        for j in range(len(max_str)):   # --- py stmt 149
+            if match_flags[j]:   # --- py stmt 150
+                ms1[si] = max_str[j]   # --- py stmt 151
+                si += 1   # --- py stmt 152
+        transpositions = 0   # --- py stmt 153
+        for mi in range(len(ms0)):   # --- py stmt 154
+            if ms0[mi] != ms1[mi]:   # --- py stmt 155
+                transpositions += 1   # --- py stmt 156
+        prefix = 0   # --- py stmt 157
+        for mi in range(len(min_str)):   # --- py stmt 158
+            if s0[mi] == s1[mi]:   # --- py stmt 159
+                prefix += 1   # --- py stmt 160
+            else:   # --- py stmt 161
+                break   # --- py stmt 162
+        return [matches, int(transpositions / 2), prefix, len(max_str)]   # --- py stmt 163
+
+
+
+
+
+### JavaScript
+"use strict";
+
+class ShingleBased {   // --- py stmt 3
+    constructor(k = 3) {   // --- py stmt 4
+        this.k = k;   // --- py stmt 5
+    }
+
+    get_k() {   // --- py stmt 6
+        return this.k;   // --- py stmt 7
+    }
+
+    get_profile(string) {   // --- py stmt 8
+        let shingles = {};   // --- py stmt 9
+        let no_space_str = string.replace(/\s+/g, " ");   // --- py stmt 10
+        for (let i = 0; i < no_space_str.length - this.k + 1; i++) {   // --- py stmt 11
+            let shingle = no_space_str.substring(i, i + this.k);   // --- py stmt 12
+            let old = shingles[shingle];   // --- py stmt 13
+            if (old) {   // --- py stmt 14
+                shingles[shingle] = parseInt(old) + 1;   // --- py stmt 15
+            } else {   // --- py stmt 16
+                shingles[shingle] = 1;   // --- py stmt 17
+            }
+        }
+        return shingles;   // --- py stmt 18
+    }
+}
+
+class StringDistance {   // --- py stmt 19
+    distance(s0, s1) {   // --- py stmt 20
+        throw new Error("NotImplementedError");   // --- py stmt 21
+    }
+}
+
+class NormalizedStringDistance extends StringDistance {   // --- py stmt 22
+    distance(s0, s1) {   // --- py stmt 23
+        throw new Error("NotImplementedError");   // --- py stmt 24
+    }
+}
+
+class MetricStringDistance extends StringDistance {   // --- py stmt 25
+    distance(s0, s1) {   // --- py stmt 26
+        throw new Error("NotImplementedError");   // --- py stmt 27
+    }
+}
+
+class StringSimilarity {   // --- py stmt 28
+    similarity(s0, s1) {   // --- py stmt 29
+        throw new Error("NotImplementedError");   // --- py stmt 30
+    }
+}
+
+class NormalizedStringSimilarity extends StringSimilarity {   // --- py stmt 31
+    similarity(s0, s1) {   // --- py stmt 32
+        throw new Error("NotImplementedError");   // --- py stmt 33
+    }
+}
+
+
+
+
+
+class Cosine {   // --- py stmt 35
+    constructor(k) {   // --- py stmt 36
+        this.k = k;   // --- py stmt 37
+    }   // --- py stmt 37
+
+    distance(s0, s1) {   // --- py stmt 38
+        return 1.0 - this.similarity(s0, s1);   // --- py stmt 39
+    }   // --- py stmt 39
+
+    similarity(s0, s1) {   // --- py stmt 40
+        if (s0 === null) {   // --- py stmt 41
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 42
+        }   // --- py stmt 42
+        if (s1 === null) {   // --- py stmt 43
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 44
+        }   // --- py stmt 44
+        if (s0 === s1) {   // --- py stmt 45
+            return 1.0;   // --- py stmt 46
+        }   // --- py stmt 46
+        if (s0.length < this.get_k() || s1.length < this.get_k()) {   // --- py stmt 47
+            return 0.0;   // --- py stmt 48
+        }   // --- py stmt 48
+        let profile0 = this.get_profile(s0);   // --- py stmt 49
+        let profile1 = this.get_profile(s1);   // --- py stmt 50
+        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));   // --- py stmt 51
+    }   // --- py stmt 51
+
+    similarity_profiles(profile0, profile1) {   // --- py stmt 52
+        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));   // --- py stmt 53
+    }   // --- py stmt 53
+
+    static _dot_product(profile0, profile1) {   // --- py stmt 55
+        let small = profile1;   // --- py stmt 56
+        let large = profile0;   // --- py stmt 57
+        if (profile0.length < profile1.length) {   // --- py stmt 58
+            small = profile0;   // --- py stmt 59
+            large = profile1;   // --- py stmt 60
+        }   // --- py stmt 60
+        let agg = 0.0;   // --- py stmt 61
+        for (let k in small) {   // --- py stmt 62
+            let v = small[k];   // --- py stmt 63
+            let i = large[k];   // --- py stmt 63
+            if (!i) {   // --- py stmt 64
+                continue;   // --- py stmt 65
+            }   // --- py stmt 65
+            agg += 1.0 * v * i;   // --- py stmt 66
+        }   // --- py stmt 66
+        return agg;   // --- py stmt 67
+    }   // --- py stmt 67
+
+    static _norm(profile) {   // --- py stmt 69
+        let agg = 0.0;   // --- py stmt 70
+        for (let k in profile) {   // --- py stmt 71
+            let v = profile[k];   // --- py stmt 71
+            agg += 1.0 * v * v;   // --- py stmt 72
+        }   // --- py stmt 72
+        return Math.sqrt(agg);   // --- py stmt 73
+    }   // --- py stmt 73
+}   // --- py stmt 73
+
+
+
+
+class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {   // --- py stmt 74
+    constructor(k) {   // --- py stmt 75
+        super(k);   // --- py stmt 76
+    }
+    distance(s0, s1) {   // --- py stmt 77
+        return 1.0 - this.similarity(s0, s1);   // --- py stmt 78
+    }
+    similarity(s0, s1) {   // --- py stmt 79
+        if (s0 === null) {   // --- py stmt 80
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 81
+        }
+        if (s1 === null) {   // --- py stmt 82
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 83
+        }
+        if (s0 === s1) {   // --- py stmt 84
+            return 1.0;   // --- py stmt 85
+        }
+        if (s0.length < this.get_k() || s1.length < this.get_k()) {   // --- py stmt 86
+            return 0.0;   // --- py stmt 87
+        }
+        let profile0 = this.get_profile(s0);   // --- py stmt 88
+        let profile1 = this.get_profile(s1);   // --- py stmt 89
+        let union = new Set();   // --- py stmt 90
+        for (let ite of profile0.keys()) {   // --- py stmt 91
+            union.add(ite);   // --- py stmt 92
+        }
+        for (let ite of profile1.keys()) {   // --- py stmt 93
+            union.add(ite);   // --- py stmt 94
+        }
+        let inter = parseInt(profile0.keys().length + profile1.keys().length - union.size());   // --- py stmt 95
+        return 1.0 * inter / union.size();   // --- py stmt 96
+    }
+}
+
+
+
+
+
+class JaroWinkler {   // --- py stmt 97
+    constructor(threshold = 0.7) {   // --- py stmt 98
+        this.threshold = threshold;   // --- py stmt 99
+        this.three = 3;   // --- py stmt 100
+        this.jw_coef = 0.1;   // --- py stmt 101
+    }   // --- py stmt 98
+
+    get_threshold() {   // --- py stmt 102
+        return this.threshold;   // --- py stmt 103
+    }   // --- py stmt 102
+
+    similarity(s0, s1) {   // --- py stmt 104
+        if (s0 === null) {   // --- py stmt 105
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 106
+        }   // --- py stmt 105
+        if (s1 === null) {   // --- py stmt 107
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 108
+        }   // --- py stmt 107
+        if (s0 === s1) {   // --- py stmt 109
+            return 1.0;   // --- py stmt 110
+        }   // --- py stmt 109
+        let mtp = this.matches(s0, s1);   // --- py stmt 111
+        let m = mtp[0];   // --- py stmt 112
+        if (m === 0) {   // --- py stmt 113
+            return 0.0;   // --- py stmt 114
+        }   // --- py stmt 113
+        let j = (m / s0.length + m / s1.length + (m - mtp[1]) / m) / this.three;   // --- py stmt 115
+        let jw = j;   // --- py stmt 116
+        if (j > this.get_threshold()) {   // --- py stmt 117
+            jw = j + Math.min(this.jw_coef, 1.0 / mtp[this.three]) * mtp[2] * (1 - j);   // --- py stmt 118
+        }   // --- py stmt 117
+        return jw;   // --- py stmt 119
+    }   // --- py stmt 104
+
+    distance(s0, s1) {   // --- py stmt 120
+        return 1.0 - this.similarity(s0, s1);   // --- py stmt 121
+    }   // --- py stmt 120
+
+
+    static matches(s0, s1) {   // --- py stmt 123
+        var max_str, min_str;   // --- py stmt 124, py stmt 125, py stmt 126, py stmt 128, py stmt 129
+        if (s0.length > s1.length) {   // --- py stmt 124
+            max_str = s0;   // --- py stmt 125
+            min_str = s1;   // --- py stmt 126
+        } else {   // --- py stmt 127
+            max_str = s1;   // --- py stmt 128
+            min_str = s0;   // --- py stmt 129
+        }
+        var ran = Math.max(Math.floor(max_str.length / 2 - 1), 0);   // --- py stmt 130
+        var match_indexes = new Array(min_str.length).fill(-1);   // --- py stmt 131
+        var match_flags = new Array(max_str.length).fill(false);   // --- py stmt 132
+        var matches = 0;   // --- py stmt 133
+        for (var mi = 0; mi < min_str.length; mi++) {   // --- py stmt 134
+            var c1 = min_str[mi];   // --- py stmt 135
+            for (var xi = Math.max(mi - ran, 0); xi < Math.min(mi + ran + 1, max_str.length); xi++) {   // --- py stmt 136
+                if (!match_flags[xi] && c1 == max_str[xi]) {   // --- py stmt 137
+                    match_indexes[mi] = xi;   // --- py stmt 138
+                    match_flags[xi] = true;   // --- py stmt 139
+                    matches += 1;   // --- py stmt 140
+                    break;   // --- py stmt 141
+                }
+            }
+        }
+        var ms0 = new Array(matches).fill(0);   // --- py stmt 142
+        var ms1 = new Array(matches).fill(0);   // --- py stmt 142
+        var si = 0;   // --- py stmt 143
+        for (var i = 0; i < min_str.length; i++) {   // --- py stmt 144
+            if (match_indexes[i] != -1) {   // --- py stmt 145
+                ms0[si] = min_str[i];   // --- py stmt 146
+                si += 1;   // --- py stmt 147
+            }
+        }
+        si = 0;   // --- py stmt 148
+        for (var j = 0; j < max_str.length; j++) {   // --- py stmt 149
+            if (match_flags[j]) {   // --- py stmt 150
+                ms1[si] = max_str[j];   // --- py stmt 151
+                si += 1;   // --- py stmt 152
+            }
+        }
+        var transpositions = 0;   // --- py stmt 153
+        for (var mi = 0; mi < ms0.length; mi++) {   // --- py stmt 154
+            if (ms0[mi] != ms1[mi]) {   // --- py stmt 155
+                transpositions += 1;   // --- py stmt 156
+            }
+        }
+        var prefix = 0;   // --- py stmt 157
+        for (var mi = 0; mi < min_str.length; mi++) {   // --- py stmt 158
+            if (s0[mi] == s1[mi]) {   // --- py stmt 159
+                prefix += 1;   // --- py stmt 160
+            } else {   // --- py stmt 161
+                break;   // --- py stmt 162
+            }
+        }
+        return [matches, Math.floor(transpositions / 2), prefix, max_str.length];   // --- py stmt 163
+    }
+}
+

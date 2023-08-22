@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 25,
+    "line_end": 26,
+    "content": "    let ldel = 0, rdel = 0;",
+    "replacement": "    ldel = rdel = 0;"
+  },
+  {
+    "line_start": 39,
+    "line_end": 40,
+    "content": "    let tdel = ldel + rdel;",
+    "replacement": "    tdel = ldel + rdel;"
+  },
+  {
+    "line_start": 40,
+    "line_end": 41,
+    "content": "    let ans = new Set();",
+    "replacement": "    ans = new Set();"
+  }
+]

@@ -1,0 +1,14 @@
+
+### Python
+from typing import *   # --- py stmt 1
+def f_gold(word: str, ch: str) -> str:   # --- py stmt 2
+    i = word.find(ch)   # --- py stmt 3
+    return word if i == -1 else word[i::-1] + word[i + 1 :]   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function f_gold(word, ch) {   // --- py stmt 2
+    var i = word.indexOf(ch);   // --- py stmt 3
+    return i == -1 ? word : word.substring(i, 0) + word.substring(i + 1, word.length);   // --- py stmt 4
+}
+

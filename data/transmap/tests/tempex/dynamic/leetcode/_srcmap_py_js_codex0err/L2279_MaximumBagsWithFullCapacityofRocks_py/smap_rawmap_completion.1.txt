@@ -1,0 +1,35 @@
+
+### Python
+### maximumBags 
+from typing import *   # --- py stmt 1
+def f_gold(capacity: List[int], rocks: List[int], additionalRocks: int   # --- py stmt 2
+) -> int:
+    d = [a - b for a, b in zip(capacity, rocks)]   # --- py stmt 3
+    d.sort()   # --- py stmt 4
+    ans = 0   # --- py stmt 5
+    for v in d:   # --- py stmt 6
+        if v <= additionalRocks:   # --- py stmt 7
+            ans += 1   # --- py stmt 8
+            additionalRocks -= v   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(capacity, rocks, additionalRocks) {   // --- py stmt 2
+    var d = [];   // --- py stmt 3
+    for (let i = 0; i < capacity.length; i++) {   // --- py stmt 3
+        d.push(capacity[i] - rocks[i]);   // --- py stmt 3
+    }
+    d.sort();   // --- py stmt 4
+    var ans = 0;   // --- py stmt 5
+    for (var v of d) {   // --- py stmt 6
+        if (v <= additionalRocks) {   // --- py stmt 7
+            ans += 1;   // --- py stmt 8
+            additionalRocks -= v;   // --- py stmt 9
+        }
+    }
+    return ans;   // --- py stmt 10
+}
+
+
+

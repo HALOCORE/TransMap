@@ -1,0 +1,2271 @@
+##### ///// Segment entitiesprocess Idx 0
+
+### Python
+```python
+# maps the Unicode code point to the HTML entity name
+codepoint2name = {}   # --- py stmt 1
+
+# maps the HTML entity name to the character
+# (or a character reference if the character is outside the Latin-1 range)
+entitydefs = {}   # --- py stmt 2
+
+for (name, codepoint) in name2codepoint.items():   # --- py stmt 3
+    codepoint2name[codepoint] = name   # --- py stmt 4
+    entitydefs[name] = chr(codepoint)   # --- py stmt 5
+
+del name, codepoint   # --- py stmt 6
+```
+
+### JavaScript
+```javascript
+// maps the Unicode code point to the HTML entity name
+let codepoint2name = {};   // --- py stmt 1
+
+// maps the HTML entity name to the character
+// (or a character reference if the character is outside the Latin-1 range)
+let entitydefs = {};   // --- py stmt 2
+
+for (let [name, codepoint] of Object.entries(name2codepoint)) {   // --- py stmt 3
+    codepoint2name[codepoint] = name;   // --- py stmt 4
+    entitydefs[name] = String.fromCharCode(codepoint);   // --- py stmt 5
+}
+
+// delete name, codepoint;   // --- py stmt 6
+```
+
+
+##### ///// Segment init1 Idx 1000
+
+### Python
+```python
+"""
+General functions for HTML manipulation.
+"""
+
+# import re as _re
+# from html.entities import html5 as _html5
+_html5 = html5   # --- py stmt 1003
+
+# __all__ = ['escape', 'unescape']
+
+
+def escape(s, quote=True):   # --- py stmt 1005
+    """
+    Replace special characters "&", "<" and ">" to HTML-safe sequences.
+    If the optional flag quote is true (the default), the quotation mark
+    characters, both double quote (") and single quote (') characters are also
+    translated.
+    """
+    s = s.replace("&", "&amp;") # Must be done first!   # --- py stmt 1010
+    s = s.replace("<", "&lt;")   # --- py stmt 1011
+    s = s.replace(">", "&gt;")   # --- py stmt 1012
+    if quote:   # --- py stmt 1013
+        s = s.replace('"', "&quot;")   # --- py stmt 1014
+        s = s.replace('\'', "&#x27;")   # --- py stmt 1015
+    return s   # --- py stmt 1016
+```
+
+### JavaScript
+```javascript
+/**
+ * General functions for HTML manipulation.
+ */
+
+// import { html5 } from 'html.entities';
+const _html5 = html5;   // --- py stmt 1003
+
+// export const escape = (s, quote = true) => {
+function escape(s, quote = true) {   // --- py stmt 1005
+    /**
+     * Replace special characters "&", "<" and ">" to HTML-safe sequences.
+     * If the optional flag quote is true (the default), the quotation mark
+     * characters, both double quote (") and single quote (') characters are also
+     * translated.
+     */
+    s = s.replace("&", "&amp;"); // Must be done first!   // --- py stmt 1010
+    s = s.replace("<", "&lt;");   // --- py stmt 1011
+    s = s.replace(">", "&gt;");   // --- py stmt 1012
+    if (quote) {   // --- py stmt 1013
+        s = s.replace('"', "&quot;");   // --- py stmt 1014
+        s = s.replace("'", "&#x27;");   // --- py stmt 1015
+    }
+    return s;   // --- py stmt 1016
+}
+// export { escape };
+```
+
+
+##### ///// Segment init2 Idx 2000
+
+### Python
+```python
+# see https://html.spec.whatwg.org/multipage/parsing.html#numeric-character-reference-end-state
+
+_invalid_charrefs = {   # --- py stmt 2001
+    0x00: '\ufffd',  # REPLACEMENT CHARACTER   # --- py stmt 2002
+    0x0d: '\r',      # CARRIAGE RETURN   # --- py stmt 2003
+    0x80: '\u20ac',  # EURO SIGN   # --- py stmt 2004
+    0x81: '\x81',    # <control>   # --- py stmt 2005
+    0x82: '\u201a',  # SINGLE LOW-9 QUOTATION MARK   # --- py stmt 2006
+    0x83: '\u0192',  # LATIN SMALL LETTER F WITH HOOK   # --- py stmt 2007
+    0x84: '\u201e',  # DOUBLE LOW-9 QUOTATION MARK   # --- py stmt 2008
+    0x85: '\u2026',  # HORIZONTAL ELLIPSIS   # --- py stmt 2009
+    0x86: '\u2020',  # DAGGER   # --- py stmt 2010
+    0x87: '\u2021',  # DOUBLE DAGGER   # --- py stmt 2011
+    0x88: '\u02c6',  # MODIFIER LETTER CIRCUMFLEX ACCENT   # --- py stmt 2012
+    0x89: '\u2030',  # PER MILLE SIGN   # --- py stmt 2013
+    0x8a: '\u0160',  # LATIN CAPITAL LETTER S WITH CARON   # --- py stmt 2014
+    0x8b: '\u2039',  # SINGLE LEFT-POINTING ANGLE QUOTATION MARK   # --- py stmt 2015
+    0x8c: '\u0152',  # LATIN CAPITAL LIGATURE OE   # --- py stmt 2016
+    0x8d: '\x8d',    # <control>   # --- py stmt 2017
+    0x8e: '\u017d',  # LATIN CAPITAL LETTER Z WITH CARON   # --- py stmt 2018
+    0x8f: '\x8f',    # <control>   # --- py stmt 2019
+    0x90: '\x90',    # <control>   # --- py stmt 2020
+    0x91: '\u2018',  # LEFT SINGLE QUOTATION MARK   # --- py stmt 2021
+    0x92: '\u2019',  # RIGHT SINGLE QUOTATION MARK   # --- py stmt 2022
+    0x93: '\u201c',  # LEFT DOUBLE QUOTATION MARK   # --- py stmt 2023
+    0x94: '\u201d',  # RIGHT DOUBLE QUOTATION MARK   # --- py stmt 2024
+    0x95: '\u2022',  # BULLET   # --- py stmt 2025
+    0x96: '\u2013',  # EN DASH   # --- py stmt 2026
+    0x97: '\u2014',  # EM DASH   # --- py stmt 2027
+    0x98: '\u02dc',  # SMALL TILDE   # --- py stmt 2028
+    0x99: '\u2122',  # TRADE MARK SIGN   # --- py stmt 2029
+    0x9a: '\u0161',  # LATIN SMALL LETTER S WITH CARON   # --- py stmt 2030
+    0x9b: '\u203a',  # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK   # --- py stmt 2031
+    0x9c: '\u0153',  # LATIN SMALL LIGATURE OE   # --- py stmt 2032
+    0x9d: '\x9d',    # <control>   # --- py stmt 2033
+    0x9e: '\u017e',  # LATIN SMALL LETTER Z WITH CARON   # --- py stmt 2034
+    0x9f: '\u0178',  # LATIN CAPITAL LETTER Y WITH DIAERESIS   # --- py stmt 2035
+}
+```
+
+### JavaScript
+```javascript
+const _invalid_charrefs = {   // --- py stmt 2001
+    0x00: '\ufffd',   // --- py stmt 2002
+    0x0d: '\r',   // --- py stmt 2003
+    0x80: '\u20ac',   // --- py stmt 2004
+    0x81: '\x81',   // --- py stmt 2005
+    0x82: '\u201a',   // --- py stmt 2006
+    0x83: '\u0192',   // --- py stmt 2007
+    0x84: '\u201e',   // --- py stmt 2008
+    0x85: '\u2026',   // --- py stmt 2009
+    0x86: '\u2020',   // --- py stmt 2010
+    0x87: '\u2021',   // --- py stmt 2011
+    0x88: '\u02c6',   // --- py stmt 2012
+    0x89: '\u2030',   // --- py stmt 2013
+    0x8a: '\u0160',   // --- py stmt 2014
+    0x8b: '\u2039',   // --- py stmt 2015
+    0x8c: '\u0152',   // --- py stmt 2016
+    0x8d: '\x8d',   // --- py stmt 2017
+    0x8e: '\u017d',   // --- py stmt 2018
+    0x8f: '\x8f',   // --- py stmt 2019
+    0x90: '\x90',   // --- py stmt 2020
+    0x91: '\u2018',   // --- py stmt 2021
+    0x92: '\u2019',   // --- py stmt 2022
+    0x93: '\u201c',   // --- py stmt 2023
+    0x94: '\u201d',   // --- py stmt 2024
+    0x95: '\u2022',   // --- py stmt 2025
+    0x96: '\u2013',   // --- py stmt 2026
+    0x97: '\u2014',   // --- py stmt 2027
+    0x98: '\u02dc',   // --- py stmt 2028
+    0x99: '\u2122',   // --- py stmt 2029
+    0x9a: '\u0161',   // --- py stmt 2030
+    0x9b: '\u203a',   // --- py stmt 2031
+    0x9c: '\u0153',   // --- py stmt 2032
+    0x9d: '\x9d',   // --- py stmt 2033
+    0x9e: '\u017e',   // --- py stmt 2034
+    0x9f: '\u0178',   // --- py stmt 2035
+};
+```
+
+
+##### ///// Segment init3 Idx 3000
+
+### Python
+```python
+_invalid_codepoints = {   # --- py stmt 3001
+    # 0x0001 to 0x0008
+    0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8,
+    # 0x000E to 0x001F
+    0xe, 0xf, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19,
+    0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f,
+    # 0x007F to 0x009F
+    0x7f, 0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8a,
+    0x8b, 0x8c, 0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94, 0x95, 0x96,
+    0x97, 0x98, 0x99, 0x9a, 0x9b, 0x9c, 0x9d, 0x9e, 0x9f,
+    # 0xFDD0 to 0xFDEF
+    0xfdd0, 0xfdd1, 0xfdd2, 0xfdd3, 0xfdd4, 0xfdd5, 0xfdd6, 0xfdd7, 0xfdd8,
+    0xfdd9, 0xfdda, 0xfddb, 0xfddc, 0xfddd, 0xfdde, 0xfddf, 0xfde0, 0xfde1,
+    0xfde2, 0xfde3, 0xfde4, 0xfde5, 0xfde6, 0xfde7, 0xfde8, 0xfde9, 0xfdea,
+    0xfdeb, 0xfdec, 0xfded, 0xfdee, 0xfdef,
+    # others
+    0xb, 0xfffe, 0xffff, 0x1fffe, 0x1ffff, 0x2fffe, 0x2ffff, 0x3fffe, 0x3ffff,
+    0x4fffe, 0x4ffff, 0x5fffe, 0x5ffff, 0x6fffe, 0x6ffff, 0x7fffe, 0x7ffff,
+    0x8fffe, 0x8ffff, 0x9fffe, 0x9ffff, 0xafffe, 0xaffff, 0xbfffe, 0xbffff,
+    0xcfffe, 0xcffff, 0xdfffe, 0xdffff, 0xefffe, 0xeffff, 0xffffe, 0xfffff,
+    0x10fffe, 0x10ffff
+}
+```
+
+### JavaScript
+```javascript
+const _invalid_codepoints = new Set([   // --- py stmt 3001
+    // 0x0001 to 0x0008
+    0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8,
+    // 0x000E to 0x001F
+    0xe, 0xf, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19,
+    0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f,
+    // 0x007F to 0x009F
+    0x7f, 0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8a,
+    0x8b, 0x8c, 0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94, 0x95, 0x96,
+    0x97, 0x98, 0x99, 0x9a, 0x9b, 0x9c, 0x9d, 0x9e, 0x9f,
+    // 0xFDD0 to 0xFDEF
+    0xfdd0, 0xfdd1, 0xfdd2, 0xfdd3, 0xfdd4, 0xfdd5, 0xfdd6, 0xfdd7, 0xfdd8,
+    0xfdd9, 0xfdda, 0xfddb, 0xfddc, 0xfddd, 0xfdde, 0xfddf, 0xfde0, 0xfde1,
+    0xfde2, 0xfde3, 0xfde4, 0xfde5, 0xfde6, 0xfde7, 0xfde8, 0xfde9, 0xfdea,
+    0xfdeb, 0xfdec, 0xfded, 0xfdee, 0xfdef,
+    // others
+    0xb, 0xfffe, 0xffff, 0x1fffe, 0x1ffff, 0x2fffe, 0x2ffff, 0x3fffe, 0x3ffff,
+    0x4fffe, 0x4ffff, 0x5fffe, 0x5ffff, 0x6fffe, 0x6ffff, 0x7fffe, 0x7ffff,
+    0x8fffe, 0x8ffff, 0x9fffe, 0x9ffff, 0xafffe, 0xaffff, 0xbfffe, 0xbffff,
+    0xcfffe, 0xcffff, 0xdfffe, 0xdffff, 0xefffe, 0xeffff, 0xffffe, 0xfffff,
+    0x10fffe, 0x10ffff
+]);
+```
+
+
+##### ///// Segment init4 Idx 4000
+
+### Python
+```python
+def _replace_charref(s):
+    s = s.group(1)   # --- py stmt 4001
+    if s[0] == '#':   # --- py stmt 4002
+        # numeric charref
+        if s[1] in 'xX':   # --- py stmt 4003
+            num = int(s[2:].rstrip(';'), 16)   # --- py stmt 4004
+        else:
+            num = int(s[1:].rstrip(';'))   # --- py stmt 4005
+        if num in _invalid_charrefs:   # --- py stmt 4006
+            return _invalid_charrefs[num]   # --- py stmt 4007
+        if 0xD800 <= num <= 0xDFFF or num > 0x10FFFF:   # --- py stmt 4008
+            return '\uFFFD'   # --- py stmt 4009
+        if num in _invalid_codepoints:   # --- py stmt 4010
+            return ''   # --- py stmt 4011
+        return chr(num)   # --- py stmt 4012
+    else:
+        # named charref
+        if s in _html5:   # --- py stmt 4013
+            return _html5[s]   # --- py stmt 4014
+        # find the longest matching name (as defined by the standard)
+        for x in range(len(s)-1, 1, -1):   # --- py stmt 4015
+            if s[:x] in _html5:   # --- py stmt 4016
+                return _html5[s[:x]] + s[x:]   # --- py stmt 4017
+        else:
+            return '&' + s   # --- py stmt 4018
+
+
+_charref = re.compile(r'&(#[0-9]+;?'
+                       r'|#[xX][0-9a-fA-F]+;?'
+                       r'|[^\t\n\f <&#;]{1,32};?)')   # --- py stmt 4019
+
+def unescape(s):
+    """
+    Convert all named and numeric character references (e.g. &gt;, &#62;,
+    &x3e;) in the string s to the corresponding unicode characters.
+    This function uses the rules defined by the HTML 5 standard
+    for both valid and invalid character references, and the list of
+    HTML 5 named character references defined in html.entities.html5.
+    """
+    if '&' not in s:   # --- py stmt 4020
+        return s   # --- py stmt 4021
+    return _charref.sub(_replace_charref, s)   # --- py stmt 4022
+```
+
+### JavaScript
+```javascript
+function _replace_charref(s) {
+    s = s.group(1);   // --- py stmt 4001
+    if (s[0] === '#') {   // --- py stmt 4002
+        // numeric charref
+        let num;
+        if (s[1] === 'x' || s[1] === 'X') {   // --- py stmt 4003
+            num = parseInt(s.slice(2, -1), 16);   // --- py stmt 4004
+        } else {
+            num = parseInt(s.slice(1, -1));   // --- py stmt 4005
+        }
+        if (_invalid_charrefs.includes(num)) {   // --- py stmt 4006
+            return _invalid_charrefs[num];   // --- py stmt 4007
+        }
+        if (num >= 0xD800 && num <= 0xDFFF || num > 0x10FFFF) {   // --- py stmt 4008
+            return '\uFFFD';   // --- py stmt 4009
+        }
+        if (_invalid_codepoints.includes(num)) {   // --- py stmt 4010
+            return '';   // --- py stmt 4011
+        }
+        return String.fromCharCode(num);   // --- py stmt 4012
+    } else {
+        // named charref
+        if (_html5[s]) {   // --- py stmt 4013
+            return _html5[s];   // --- py stmt 4014
+        }
+        // find the longest matching name (as defined by the standard)
+        for (let x = s.length - 1; x > 1; x--) {   // --- py stmt 4015
+            if (_html5[s.slice(0, x)]) {   // --- py stmt 4016
+                return _html5[s.slice(0, x)] + s.slice(x);   // --- py stmt 4017
+            }
+        }
+        return '&' + s;   // --- py stmt 4018
+    }
+}
+
+const _charref = /&(#[0-9]+;?|#[xX][0-9a-fA-F]+;?|[^\t\n\f <&#;]{1,32};?)/g;   // --- py stmt 4019
+
+function unescape(s) {
+    /*
+    Convert all named and numeric character references (e.g. &gt;, &#62;,
+    &x3e;) in the string s to the corresponding unicode characters.
+    This function uses the rules defined by the HTML 5 standard
+    for both valid and invalid character references, and the list of
+    HTML 5 named character references defined in html.entities.html5.
+    */
+    if (!s.includes('&')) {   // --- py stmt 4020
+        return s;   // --- py stmt 4021
+    }
+    return s.replace(_charref, _replace_charref);   // --- py stmt 4022
+}
+```
+
+
+##### ///// Segment markupbase1 Idx 5000
+
+### Python
+```python
+"""Shared support for scanning document type declarations in HTML and XHTML.
+
+This module is used as a foundation for the html.parser module.  It has no
+documented public API and should not be used directly.
+
+"""
+# TRANSLATION NOTE: convert those into plain JavaScript RegExp constants, like /.../g instead.
+import re   # --- py stmt 5001
+
+_declname_match = re.compile(r'[a-zA-Z][-_.a-zA-Z0-9]*\s*').match   # --- py stmt 5002
+_declstringlit_match = re.compile(r'(\'[^\']*\'|"[^"]*")\s*').match   # --- py stmt 5003
+_commentclose = re.compile(r'--\s*>')   # --- py stmt 5004
+_markedsectionclose = re.compile(r']\s*]\s*>')   # --- py stmt 5005
+
+# An analysis of the MS-Word extensions is available at
+# http://www.planetpublish.com/xmlarena/xap/Thursday/WordtoXML.pdf
+
+_msmarkedsectionclose = re.compile(r']\s*>')   # --- py stmt 5006
+```
+
+### JavaScript
+```javascript
+const _declname_match = /[a-zA-Z][-_.a-zA-Z0-9]*\s*/.exec;   // --- py stmt 5002
+const _declstringlit_match = /(\'[^\']*\'|"[^"]*")\s*/.exec;   // --- py stmt 5003
+const _commentclose = /--\s*>/;   // --- py stmt 5004
+const _markedsectionclose = /]\s*]\s*>/;   // --- py stmt 5005
+const _msmarkedsectionclose = /]\s*>/;   // --- py stmt 5006
+```
+
+
+##### ///// Segment markupbase2 Idx 6000
+
+### Python
+```python
+class ParserBase:   # --- py stmt 6001
+    """Parser base class which provides some common support methods used
+    by the SGML/HTML and XHTML parsers."""
+
+    def __init__(self):   # --- py stmt 6002
+        if self.__class__ is ParserBase:   # --- py stmt 6003
+            raise RuntimeError(
+                "ParserBase must be subclassed")
+
+    def reset(self):   # --- py stmt 6004
+        self.lineno = 1   # --- py stmt 6005
+        self.offset = 0   # --- py stmt 6006
+
+    def getpos(self):   # --- py stmt 6007
+        """Return current line number and offset."""
+        return self.lineno, self.offset   # --- py stmt 6008
+
+    # Internal -- update line number and offset.  This should be
+    # called for each piece of data exactly once, in order -- in other
+    # words the concatenation of all the input strings to this
+    # function should be exactly the entire input.
+    def updatepos(self, i, j):   # --- py stmt 6009
+        if i >= j:   # --- py stmt 6010
+            return j   # --- py stmt 6011
+        rawdata = self.rawdata   # --- py stmt 6012
+        nlines = rawdata.count("\n", i, j)   # --- py stmt 6013
+        if nlines:   # --- py stmt 6014
+            self.lineno = self.lineno + nlines   # --- py stmt 6015
+            pos = rawdata.rindex("\n", i, j) # Should not fail   # --- py stmt 6016
+            self.offset = j-(pos+1)   # --- py stmt 6017
+        else:   # --- py stmt 6018
+            self.offset = self.offset + j-i   # --- py stmt 6019
+        return j   # --- py stmt 6020
+
+    _decl_otherchars = ''   # --- py stmt 6021
+```
+
+### JavaScript
+```javascript
+class ParserBase {   // --- py stmt 6001
+    constructor() {   // --- py stmt 6002
+        if (this.constructor === ParserBase) {   // --- py stmt 6003
+            throw new Error("ParserBase must be subclassed");
+        }
+    }
+
+    reset() {   // --- py stmt 6004
+        this.lineno = 1;   // --- py stmt 6005
+        this.offset = 0;   // --- py stmt 6006
+    }
+
+    getpos() {   // --- py stmt 6007
+        return [this.lineno, this.offset];   // --- py stmt 6008
+    }
+
+    updatepos(i, j) {   // --- py stmt 6009
+        if (i >= j) {   // --- py stmt 6010
+            return j;   // --- py stmt 6011
+        }
+        let rawdata = this.rawdata;   // --- py stmt 6012
+        let nlines = rawdata.split("\n").length - 1;   // --- py stmt 6013
+        if (nlines) {   // --- py stmt 6014
+            this.lineno += nlines;   // --- py stmt 6015
+            let pos = rawdata.lastIndexOf("\n", j);   // --- py stmt 6016
+            this.offset = j - (pos + 1);   // --- py stmt 6017
+        } else {   // --- py stmt 6018
+            this.offset += j - i;   // --- py stmt 6019
+        }
+        return j;   // --- py stmt 6020
+    }
+
+    _decl_otherchars = '';   // --- py stmt 6021
+```
+
+
+##### ///// Segment markupbase3 Idx 7000
+
+### Python
+```python
+    # TRANSLATION NOTE: this function is inside a class `ParserBase.`
+    # Internal -- parse declaration (for use by subclasses).
+    def parse_declaration(self, i):   # --- py stmt 7001
+        # This is some sort of declaration; in "HTML as
+        # deployed," this should only be the document type
+        # declaration ("<!DOCTYPE html...>").
+        # ISO 8879:1986, however, has more complex
+        # declaration syntax for elements in <!...>, including:
+        # --comment--
+        # [marked section]
+        # name in the following list: ENTITY, DOCTYPE, ELEMENT,
+        # ATTLIST, NOTATION, SHORTREF, USEMAP,
+        # LINKTYPE, LINK, IDLINK, USELINK, SYSTEM
+        rawdata = self.rawdata   # --- py stmt 7002
+        j = i + 2   # --- py stmt 7003
+        assert rawdata[i:j] == "<!", "unexpected call to parse_declaration"   # --- py stmt 7004
+        if rawdata[j:j+1] == ">":   # --- py stmt 7005
+            # the empty comment <!>
+            return j + 1   # --- py stmt 7006
+        if rawdata[j:j+1] in ("-", ""):   # --- py stmt 7007
+            # Start of comment followed by buffer boundary,
+            # or just a buffer boundary.
+            return -1   # --- py stmt 7008
+        # A simple, practical version could look like: ((name|stringlit) S*) + '>'
+        n = len(rawdata)   # --- py stmt 7009
+        if rawdata[j:j+2] == '--': #comment   # --- py stmt 7010
+            # Locate --.*-- as the body of the comment
+            return self.parse_comment(i)   # --- py stmt 7011
+        elif rawdata[j] == '[': #marked section   # --- py stmt 7012
+            # Locate [statusWord [...arbitrary SGML...]] as the body of the marked section
+            # Where statusWord is one of TEMP, CDATA, IGNORE, INCLUDE, RCDATA
+            # Note that this is extended by Microsoft Office "Save as Web" function
+            # to include [if...] and [endif].
+            return self.parse_marked_section(i)   # --- py stmt 7013
+        else: #all other declaration elements   # --- py stmt 7014
+            decltype, j = self._scan_name(j, i)   # --- py stmt 7015
+        if j < 0:   # --- py stmt 7016
+            return j   # --- py stmt 7017
+        if decltype == "doctype":   # --- py stmt 7018
+            self._decl_otherchars = ''   # --- py stmt 7019
+        while j < n:   # --- py stmt 7020
+            c = rawdata[j]   # --- py stmt 7021
+            if c == ">":   # --- py stmt 7022
+                # end of declaration syntax
+                data = rawdata[i+2:j]   # --- py stmt 7023
+                if decltype == "doctype":   # --- py stmt 7024
+                    self.handle_decl(data)   # --- py stmt 7025
+                else:   # --- py stmt 7026
+                    # According to the HTML5 specs sections "8.2.4.44 Bogus
+                    # comment state" and "8.2.4.45 Markup declaration open
+                    # state", a comment token should be emitted.
+                    # Calling unknown_decl provides more flexibility though.
+                    self.unknown_decl(data)   # --- py stmt 7027
+                return j + 1   # --- py stmt 7028
+            if c in "\"'":   # --- py stmt 7029
+                m = _declstringlit_match(rawdata, j)   # --- py stmt 7030
+                if not m:   # --- py stmt 7031
+                    return -1 # incomplete   # --- py stmt 7032
+                j = m.end()   # --- py stmt 7033
+            elif c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":   # --- py stmt 7034
+                name, j = self._scan_name(j, i)   # --- py stmt 7035
+            elif c in self._decl_otherchars:   # --- py stmt 7036
+                j = j + 1   # --- py stmt 7037
+            elif c == "[":   # --- py stmt 7038
+                # this could be handled in a separate doctype parser
+                if decltype == "doctype":   # --- py stmt 7039
+                    j = self._parse_doctype_subset(j + 1, i)   # --- py stmt 7040
+                elif decltype in {"attlist", "linktype", "link", "element"}:   # --- py stmt 7041
+                    # must tolerate []'d groups in a content model in an element declaration
+                    # also in data attribute specifications of attlist declaration
+                    # also link type declaration subsets in linktype declarations
+                    # also link attribute specification lists in link declarations
+                    raise AssertionError("unsupported '[' char in %s declaration" % decltype)   # --- py stmt 7042
+                else:   # --- py stmt 7043
+                    raise AssertionError("unexpected '[' char in declaration")   # --- py stmt 7044
+            else:   # --- py stmt 7045
+                raise AssertionError("unexpected %r char in declaration" % rawdata[j])   # --- py stmt 7046
+            if j < 0:   # --- py stmt 7047
+                return j   # --- py stmt 7048
+        return -1 # incomplete   # --- py stmt 7049
+
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: this function is inside a class `ParserBase.`
+    // Internal -- parse declaration (for use by subclasses).
+    parse_declaration(i) {   // --- py stmt 7001
+        // This is some sort of declaration; in "HTML as
+        // deployed," this should only be the document type
+        // declaration ("<!DOCTYPE html...>").
+        // ISO 8879:1986, however, has more complex
+        // declaration syntax for elements in <!...>, including:
+        // --comment--
+        // [marked section]
+        // name in the following list: ENTITY, DOCTYPE, ELEMENT,
+        // ATTLIST, NOTATION, SHORTREF, USEMAP,
+        // LINKTYPE, LINK, IDLINK, USELINK, SYSTEM
+        const rawdata = this.rawdata;   // --- py stmt 7002
+        let j = i + 2;   // --- py stmt 7003
+        assert(rawdata.slice(i, j) === "<!", "unexpected call to parse_declaration");   // --- py stmt 7004
+        if (rawdata.slice(j, j + 1) === ">") {   // --- py stmt 7005
+            // the empty comment <!>
+            return j + 1;   // --- py stmt 7006
+        }
+        if (rawdata.slice(j, j + 1) in ["-", ""]) {   // --- py stmt 7007
+            // Start of comment followed by buffer boundary,
+            // or just a buffer boundary.
+            return -1;   // --- py stmt 7008
+        }
+        // A simple, practical version could look like: ((name|stringlit) S*) + '>'
+        const n = rawdata.length;   // --- py stmt 7009
+        if (rawdata.slice(j, j + 2) === "--") { //comment   // --- py stmt 7010
+            // Locate --.*-- as the body of the comment
+            return this.parse_comment(i);   // --- py stmt 7011
+        } else if (rawdata[j] === "[") { //marked section   // --- py stmt 7012
+            // Locate [statusWord [...arbitrary SGML...]] as the body of the marked section
+            // Where statusWord is one of TEMP, CDATA, IGNORE, INCLUDE, RCDATA
+            // Note that this is extended by Microsoft Office "Save as Web" function
+            // to include [if...] and [endif].
+            return this.parse_marked_section(i);   // --- py stmt 7013
+        } else { //all other declaration elements   // --- py stmt 7014
+            const [decltype, j] = this._scan_name(j, i);   // --- py stmt 7015
+        }
+        if (j < 0) {   // --- py stmt 7016
+            return j;   // --- py stmt 7017
+        }
+        if (decltype === "doctype") {   // --- py stmt 7018
+            this._decl_otherchars = '';   // --- py stmt 7019
+        }
+        while (j < n) {   // --- py stmt 7020
+            const c = rawdata[j];   // --- py stmt 7021
+            if (c === ">") {   // --- py stmt 7022
+                // end of declaration syntax
+                const data = rawdata.slice(i + 2, j);   // --- py stmt 7023
+                if (decltype === "doctype") {   // --- py stmt 7024
+                    this.handle_decl(data);   // --- py stmt 7025
+                } else {   // --- py stmt 7026
+                    // According to the HTML5 specs sections "8.2.4.44 Bogus
+                    // comment state" and "8.2.4.45 Markup declaration open
+                    // state", a comment token should be emitted.
+                    // Calling unknown_decl provides more flexibility though.
+                    this.unknown_decl(data);   // --- py stmt 7027
+                }
+                return j + 1;   // --- py stmt 7028
+            }
+            if (c in ["\"", "'"]) {   // --- py stmt 7029
+                const m = _declstringlit_match(rawdata, j);   // --- py stmt 7030
+                if (!m) {   // --- py stmt 7031
+                    return -1; // incomplete   // --- py stmt 7032
+                }
+                j = m.end();   // --- py stmt 7033
+            } else if (c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") {   // --- py stmt 7034
+                const [name, j] = this._scan_name(j, i);   // --- py stmt 7035
+            } else if (this._decl_otherchars.includes(c)) {   // --- py stmt 7036
+                j = j + 1;   // --- py stmt 7037
+            } else if (c === "[") {   // --- py stmt 7038
+                // this could be handled in a separate doctype parser
+                if (decltype === "doctype") {   // --- py stmt 7039
+                    j = this._parse_doctype_subset(j + 1, i);   // --- py stmt 7040
+                } else if (new Set(["attlist", "linktype", "link", "element"]).has(decltype)) {   // --- py stmt 7041
+                    // must tolerate []'d groups in a content model in an element declaration
+                    // also in data attribute specifications of attlist declaration
+                    // also link type declaration subsets in linktype declarations
+                    // also link attribute specification lists in link declarations
+                    throw new Error(`unsupported '[' char in ${decltype} declaration`);   // --- py stmt 7042
+                } else {   // --- py stmt 7043
+                    throw new Error("unexpected '[' char in declaration");   // --- py stmt 7044
+                }
+            } else {   // --- py stmt 7045
+                throw new Error(`unexpected ${rawdata[j]} char in declaration`);   // --- py stmt 7046
+            }
+            if (j < 0) {   // --- py stmt 7047
+                return j;   // --- py stmt 7048
+            }
+        }
+        return -1; // incomplete   // --- py stmt 7049
+    }
+```
+
+
+##### ///// Segment markupbase4 Idx 8000
+
+### Python
+```python
+    # TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    # Internal -- parse a marked section
+    # Override this to handle MS-word extension syntax <![if word]>content<![endif]>
+    def parse_marked_section(self, i, report=1):   # --- py stmt 8001
+        rawdata= self.rawdata   # --- py stmt 8002
+        assert rawdata[i:i+3] == '<![', "unexpected call to parse_marked_section()"   # --- py stmt 8003
+        sectName, j = self._scan_name( i+3, i )   # --- py stmt 8004
+        if j < 0:   # --- py stmt 8005
+            return j   # --- py stmt 8006
+        if sectName in {"temp", "cdata", "ignore", "include", "rcdata"}:   # --- py stmt 8007
+            # look for standard ]]> ending
+            match= _markedsectionclose.search(rawdata, i+3)   # --- py stmt 8008
+        elif sectName in {"if", "else", "endif"}:   # --- py stmt 8009
+            # look for MS Office ]> ending
+            match= _msmarkedsectionclose.search(rawdata, i+3)   # --- py stmt 8010
+        else:
+            raise AssertionError(
+                'unknown status keyword %r in marked section' % rawdata[i+3:j]
+            )   # --- py stmt 8011
+        if not match:   # --- py stmt 8012
+            return -1   # --- py stmt 8013
+        if report:   # --- py stmt 8014
+            j = match.start(0)   # --- py stmt 8015
+            self.unknown_decl(rawdata[i+3: j])   # --- py stmt 8016
+        return match.end(0)   # --- py stmt 8017
+
+    # Internal -- parse comment, return length or -1 if not terminated
+    def parse_comment(self, i, report=1):   # --- py stmt 8018
+        rawdata = self.rawdata   # --- py stmt 8019
+        if rawdata[i:i+4] != '<!--':   # --- py stmt 8020
+            raise AssertionError('unexpected call to parse_comment()')   # --- py stmt 8021
+        match = _commentclose.search(rawdata, i+4)   # --- py stmt 8022
+        if not match:   # --- py stmt 8023
+            return -1   # --- py stmt 8024
+        if report:   # --- py stmt 8025
+            j = match.start(0)   # --- py stmt 8026
+            self.handle_comment(rawdata[i+4: j])   # --- py stmt 8027
+        return match.end(0)   # --- py stmt 8028
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    // Internal -- parse a marked section
+    // Override this to handle MS-word extension syntax <![if word]>content<![endif]>
+    parse_marked_section(i, report = 1) {   // --- py stmt 8001
+        let rawdata = this.rawdata;   // --- py stmt 8002
+        assert(rawdata.slice(i, i + 3) === '<![', "unexpected call to parse_marked_section()");   // --- py stmt 8003
+        let [sectName, j] = this._scan_name(i + 3, i);   // --- py stmt 8004
+        if (j < 0) {   // --- py stmt 8005
+            return j;   // --- py stmt 8006
+        }
+        if (new Set(["temp", "cdata", "ignore", "include", "rcdata"]).has(sectName)) {   // --- py stmt 8007
+            // look for standard ]]> ending
+            match = _markedsectionclose.search(rawdata, i + 3);   // --- py stmt 8008
+        } else if (new Set(["if", "else", "endif"]).has(sectName)) {   // --- py stmt 8009
+            // look for MS Office ]> ending
+            match = _msmarkedsectionclose.search(rawdata, i + 3);   // --- py stmt 8010
+        } else {
+            throw new AssertionError(
+                `unknown status keyword ${rawdata.slice(i + 3, j)} in marked section`
+            );   // --- py stmt 8011
+        }
+        if (!match) {   // --- py stmt 8012
+            return -1;   // --- py stmt 8013
+        }
+        if (report) {   // --- py stmt 8014
+            j = match.start(0);   // --- py stmt 8015
+            this.unknown_decl(rawdata.slice(i + 3, j));   // --- py stmt 8016
+        }
+        return match.end(0);   // --- py stmt 8017
+    }
+
+    // Internal -- parse comment, return length or -1 if not terminated
+    parse_comment(i, report = 1) {   // --- py stmt 8018
+        let rawdata = this.rawdata;   // --- py stmt 8019
+        if (rawdata.slice(i, i + 4) !== '<!--') {   // --- py stmt 8020
+            throw new AssertionError('unexpected call to parse_comment()');   // --- py stmt 8021
+        }
+        let match = _commentclose.search(rawdata, i + 4);   // --- py stmt 8022
+        if (!match) {   // --- py stmt 8023
+            return -1;   // --- py stmt 8024
+        }
+        if (report) {   // --- py stmt 8025
+            let j = match.start(0);   // --- py stmt 8026
+            this.handle_comment(rawdata.slice(i + 4, j));   // --- py stmt 8027
+        }
+        return match.end(0);   // --- py stmt 8028
+    }
+```
+
+
+##### ///// Segment markupbase5 Idx 9000
+
+### Python
+```python
+    # TRANSLATION NOTE: this function is inside a class `ParserBase.`
+    # Internal -- scan past the internal subset in a <!DOCTYPE declaration,
+    # returning the index just past any whitespace following the trailing ']'.
+    def _parse_doctype_subset(self, i, declstartpos):   # --- py stmt 9001
+        rawdata = self.rawdata   # --- py stmt 9002
+        n = len(rawdata)   # --- py stmt 9003
+        j = i   # --- py stmt 9004
+        while j < n:   # --- py stmt 9005
+            c = rawdata[j]   # --- py stmt 9006
+            if c == "<":   # --- py stmt 9007
+                s = rawdata[j:j+2]   # --- py stmt 9008
+                if s == "<":   # --- py stmt 9009
+                    # end of buffer; incomplete
+                    return -1   # --- py stmt 9010
+                if s != "<!":   # --- py stmt 9011
+                    self.updatepos(declstartpos, j + 1)   # --- py stmt 9012
+                    raise AssertionError(
+                        "unexpected char in internal subset (in %r)" % s
+                    )   # --- py stmt 9013
+                if (j + 2) == n:   # --- py stmt 9014
+                    # end of buffer; incomplete
+                    return -1   # --- py stmt 9015
+                if (j + 4) > n:   # --- py stmt 9016
+                    # end of buffer; incomplete
+                    return -1   # --- py stmt 9017
+                if rawdata[j:j+4] == "<!--":   # --- py stmt 9018
+                    j = self.parse_comment(j, report=0)   # --- py stmt 9019
+                    if j < 0:   # --- py stmt 9020
+                        return j   # --- py stmt 9021
+                    continue   # --- py stmt 9022
+                name, j = self._scan_name(j + 2, declstartpos)   # --- py stmt 9023
+                if j == -1:   # --- py stmt 9024
+                    return -1   # --- py stmt 9025
+                if name not in {"attlist", "element", "entity", "notation"}:   # --- py stmt 9026
+                    self.updatepos(declstartpos, j + 2)   # --- py stmt 9027
+                    raise AssertionError(
+                        "unknown declaration %r in internal subset" % name
+                    )   # --- py stmt 9028
+                # handle the individual names
+                meth = getattr(self, "_parse_doctype_" + name)   # --- py stmt 9029
+                j = meth(j, declstartpos)   # --- py stmt 9030
+                if j < 0:   # --- py stmt 9031
+                    return j   # --- py stmt 9032
+            elif c == "%":   # --- py stmt 9033
+                # parameter entity reference
+                if (j + 1) == n:   # --- py stmt 9034
+                    # end of buffer; incomplete
+                    return -1   # --- py stmt 9035
+                s, j = self._scan_name(j + 1, declstartpos)   # --- py stmt 9036
+                if j < 0:   # --- py stmt 9037
+                    return j   # --- py stmt 9038
+                if rawdata[j] == ";":   # --- py stmt 9039
+                    j = j + 1   # --- py stmt 9040
+            elif c == "]":   # --- py stmt 9041
+                j = j + 1   # --- py stmt 9042
+                while j < n and rawdata[j].isspace():   # --- py stmt 9043
+                    j = j + 1   # --- py stmt 9044
+                if j < n:   # --- py stmt 9045
+                    if rawdata[j] == ">":   # --- py stmt 9046
+                        return j   # --- py stmt 9047
+                    self.updatepos(declstartpos, j)   # --- py stmt 9048
+                    raise AssertionError("unexpected char after internal subset")   # --- py stmt 9049
+                else:   # --- py stmt 9050
+                    return -1   # --- py stmt 9051
+            elif c.isspace():   # --- py stmt 9052
+                j = j + 1   # --- py stmt 9053
+            else:   # --- py stmt 9054
+                self.updatepos(declstartpos, j)   # --- py stmt 9055
+                raise AssertionError("unexpected char %r in internal subset" % c)   # --- py stmt 9056
+        # end of buffer reached
+        return -1   # --- py stmt 9057
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: this function is inside a class `ParserBase.`
+    // Internal -- scan past the internal subset in a <!DOCTYPE declaration,
+    // returning the index just past any whitespace following the trailing ']'.
+    _parse_doctype_subset(i, declstartpos) {   // --- py stmt 9001
+        let rawdata = this.rawdata;   // --- py stmt 9002
+        let n = rawdata.length;   // --- py stmt 9003
+        let j = i;   // --- py stmt 9004
+        while (j < n) {   // --- py stmt 9005
+            let c = rawdata[j];   // --- py stmt 9006
+            if (c === "<") {   // --- py stmt 9007
+                let s = rawdata.slice(j, j + 2);   // --- py stmt 9008
+                if (s === "<<") {   // --- py stmt 9009
+                    // end of buffer; incomplete
+                    return -1;   // --- py stmt 9010
+                }
+                if (s !== "<!") {   // --- py stmt 9011
+                    this.updatepos(declstartpos, j + 1);   // --- py stmt 9012
+                    throw new Error(
+                        `unexpected char in internal subset (in ${s})`
+                    );   // --- py stmt 9013
+                }
+                if ((j + 2) === n) {   // --- py stmt 9014
+                    // end of buffer; incomplete
+                    return -1;   // --- py stmt 9015
+                }
+                if ((j + 4) > n) {   // --- py stmt 9016
+                    // end of buffer; incomplete
+                    return -1;   // --- py stmt 9017
+                }
+                if (rawdata.slice(j, j + 4) === "<!--") {   // --- py stmt 9018
+                    j = this.parse_comment(j, { report: 0 });   // --- py stmt 9019
+                    if (j < 0) {   // --- py stmt 9020
+                        return j;   // --- py stmt 9021
+                    }
+                    continue;   // --- py stmt 9022
+                }
+                let [name, newJ] = this._scan_name(j + 2, declstartpos);   // --- py stmt 9023
+                j = newJ;   // --- py stmt 9023
+                if (j === -1) {   // --- py stmt 9024
+                    return -1;   // --- py stmt 9025
+                }
+                if (!["attlist", "element", "entity", "notation"].includes(name)) {   // --- py stmt 9026
+                    this.updatepos(declstartpos, j + 2);   // --- py stmt 9027
+                    throw new Error(
+                        `unknown declaration ${name} in internal subset`
+                    );   // --- py stmt 9028
+                }
+                // handle the individual names
+                let meth = this[`_parse_doctype_${name}`];   // --- py stmt 9029
+                j = meth(j, declstartpos);   // --- py stmt 9030
+                if (j < 0) {   // --- py stmt 9031
+                    return j;   // --- py stmt 9032
+                }
+            } else if (c === "%") {   // --- py stmt 9033
+                // parameter entity reference
+                if ((j + 1) === n) {   // --- py stmt 9034
+                    // end of buffer; incomplete
+                    return -1;   // --- py stmt 9035
+                }
+                let [s, newJ] = this._scan_name(j + 1, declstartpos);   // --- py stmt 9036
+                j = newJ;   // --- py stmt 9036
+                if (j < 0) {   // --- py stmt 9037
+                    return j;   // --- py stmt 9038
+                }
+                if (rawdata[j] === ";") {   // --- py stmt 9039
+                    j = j + 1;   // --- py stmt 9040
+                }
+            } else if (c === "]") {   // --- py stmt 9041
+                j = j + 1;   // --- py stmt 9042
+                while (j < n && rawdata[j].trim().length === 0) {   // --- py stmt 9043
+                    j = j + 1;   // --- py stmt 9044
+                }
+                if (j < n) {   // --- py stmt 9045
+                    if (rawdata[j] === ">") {   // --- py stmt 9046
+                        return j;   // --- py stmt 9047
+                    }
+                    this.updatepos(declstartpos, j);   // --- py stmt 9048
+                    throw new Error("unexpected char after internal subset");   // --- py stmt 9049
+                } else {   // --- py stmt 9050
+                    return -1;   // --- py stmt 9051
+                }
+            } else if (c.trim().length === 0) {   // --- py stmt 9052
+                j = j + 1;   // --- py stmt 9053
+            } else {   // --- py stmt 9054
+                this.updatepos(declstartpos, j);   // --- py stmt 9055
+                throw new Error(`unexpected char ${c} in internal subset`);   // --- py stmt 9056
+            }
+        }
+        // end of buffer reached
+        return -1;   // --- py stmt 9057
+    }
+```
+
+
+##### ///// Segment markupbase6 Idx 10000
+
+### Python
+```python
+    # TRANSLATION NOTE: this function is inside a class `ParserBase.`
+    # Internal -- scan past <!ELEMENT declarations
+    def _parse_doctype_element(self, i, declstartpos):   # --- py stmt 10001
+        name, j = self._scan_name(i, declstartpos)   # --- py stmt 10002
+        if j == -1:   # --- py stmt 10003
+            return -1   # --- py stmt 10004
+        # style content model; just skip until '>'
+        rawdata = self.rawdata   # --- py stmt 10005
+        if '>' in rawdata[j:]:   # --- py stmt 10006
+            return rawdata.find(">", j) + 1   # --- py stmt 10007
+        return -1   # --- py stmt 10008
+
+    # Internal -- scan past <!ATTLIST declarations
+    def _parse_doctype_attlist(self, i, declstartpos):   # --- py stmt 10009
+        rawdata = self.rawdata   # --- py stmt 10010
+        name, j = self._scan_name(i, declstartpos)   # --- py stmt 10011
+        c = rawdata[j:j+1]   # --- py stmt 10012
+        if c == "":   # --- py stmt 10013
+            return -1   # --- py stmt 10014
+        if c == ">":   # --- py stmt 10015
+            return j + 1   # --- py stmt 10016
+        while 1:   # --- py stmt 10017
+            # scan a series of attribute descriptions; simplified:
+            #   name type [value] [#constraint]
+            name, j = self._scan_name(j, declstartpos)   # --- py stmt 10018
+            if j < 0:   # --- py stmt 10019
+                return j   # --- py stmt 10020
+            c = rawdata[j:j+1]   # --- py stmt 10021
+            if c == "":   # --- py stmt 10022
+                return -1   # --- py stmt 10023
+            if c == "(":   # --- py stmt 10024
+                # an enumerated type; look for ')'
+                if ")" in rawdata[j:]:   # --- py stmt 10025
+                    j = rawdata.find(")", j) + 1   # --- py stmt 10026
+                else:
+                    return -1   # --- py stmt 10027
+                while rawdata[j:j+1].isspace():   # --- py stmt 10028
+                    j = j + 1   # --- py stmt 10029
+                if not rawdata[j:]:   # --- py stmt 10030
+                    # end of buffer, incomplete
+                    return -1   # --- py stmt 10031
+            else:
+                name, j = self._scan_name(j, declstartpos)   # --- py stmt 10032
+            c = rawdata[j:j+1]   # --- py stmt 10033
+            if not c:   # --- py stmt 10034
+                return -1   # --- py stmt 10035
+            if c in "'\"":   # --- py stmt 10036
+                m = _declstringlit_match(rawdata, j)   # --- py stmt 10037
+                if m:   # --- py stmt 10038
+                    j = m.end()   # --- py stmt 10039
+                else:
+                    return -1   # --- py stmt 10040
+                c = rawdata[j:j+1]   # --- py stmt 10041
+                if not c:   # --- py stmt 10042
+                    return -1   # --- py stmt 10043
+            if c == "#":   # --- py stmt 10044
+                if rawdata[j:] == "#":   # --- py stmt 10045
+                    # end of buffer
+                    return -1   # --- py stmt 10046
+                name, j = self._scan_name(j + 1, declstartpos)   # --- py stmt 10047
+                if j < 0:   # --- py stmt 10048
+                    return j   # --- py stmt 10049
+                c = rawdata[j:j+1]   # --- py stmt 10050
+                if not c:   # --- py stmt 10051
+                    return -1   # --- py stmt 10052
+            if c == '>':   # --- py stmt 10053
+                # all done
+                return j + 1   # --- py stmt 10054
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: this function is inside a class `ParserBase.`
+    // Internal -- scan past <!ELEMENT declarations
+    _parse_doctype_element(i, declstartpos) {   // --- py stmt 10001
+        let [name, j] = this._scan_name(i, declstartpos);   // --- py stmt 10002
+        if (j === -1) {   // --- py stmt 10003
+            return -1;   // --- py stmt 10004
+        }
+        // style content model; just skip until '>'
+        let rawdata = this.rawdata;   // --- py stmt 10005
+        if (rawdata.slice(j).includes('>')) {   // --- py stmt 10006
+            return rawdata.indexOf('>', j) + 1;   // --- py stmt 10007
+        }
+        return -1;   // --- py stmt 10008
+    }
+
+    // Internal -- scan past <!ATTLIST declarations
+    _parse_doctype_attlist(i, declstartpos) {   // --- py stmt 10009
+        let rawdata = this.rawdata;   // --- py stmt 10010
+        let [name, j] = this._scan_name(i, declstartpos);   // --- py stmt 10011
+        let c = rawdata.slice(j, j + 1);   // --- py stmt 10012
+        if (c === '') {   // --- py stmt 10013
+            return -1;   // --- py stmt 10014
+        }
+        if (c === '>') {   // --- py stmt 10015
+            return j + 1;   // --- py stmt 10016
+        }
+        while (true) {   // --- py stmt 10017
+            // scan a series of attribute descriptions; simplified:
+            //   name type [value] [#constraint]
+            let [name, j] = this._scan_name(j, declstartpos);   // --- py stmt 10018
+            if (j < 0) {   // --- py stmt 10019
+                return j;   // --- py stmt 10020
+            }
+            c = rawdata.slice(j, j + 1);   // --- py stmt 10021
+            if (c === '') {   // --- py stmt 10022
+                return -1;   // --- py stmt 10023
+            }
+            if (c === '(') {   // --- py stmt 10024
+                // an enumerated type; look for ')'
+                if (rawdata.slice(j).includes(')')) {   // --- py stmt 10025
+                    j = rawdata.indexOf(')', j) + 1;   // --- py stmt 10026
+                } else {
+                    return -1;   // --- py stmt 10027
+                }
+                while (rawdata.slice(j, j + 1).trim().length) {   // --- py stmt 10028
+                    j = j + 1;   // --- py stmt 10029
+                }
+                if (!rawdata.slice(j)) {   // --- py stmt 10030
+                    // end of buffer, incomplete
+                    return -1;   // --- py stmt 10031
+                }
+            } else {
+                [name, j] = this._scan_name(j, declstartpos);   // --- py stmt 10032
+            }
+            c = rawdata.slice(j, j + 1);   // --- py stmt 10033
+            if (!c) {   // --- py stmt 10034
+                return -1;   // --- py stmt 10035
+            }
+            if (c === "'" || c === '"') {   // --- py stmt 10036
+                let m = _declstringlit_match(rawdata, j);   // --- py stmt 10037
+                if (m) {   // --- py stmt 10038
+                    j = m.end();   // --- py stmt 10039
+                } else {
+                    return -1;   // --- py stmt 10040
+                }
+                c = rawdata.slice(j, j + 1);   // --- py stmt 10041
+                if (!c) {   // --- py stmt 10042
+                    return -1;   // --- py stmt 10043
+                }
+            }
+            if (c === '#') {   // --- py stmt 10044
+                if (rawdata.slice(j) === '#') {   // --- py stmt 10045
+                    // end of buffer
+                    return -1;   // --- py stmt 10046
+                }
+                let [name, j] = this._scan_name(j + 1, declstartpos);   // --- py stmt 10047
+                if (j < 0) {   // --- py stmt 10048
+                    return j;   // --- py stmt 10049
+                }
+                c = rawdata.slice(j, j + 1);   // --- py stmt 10050
+                if (!c) {   // --- py stmt 10051
+                    return -1;   // --- py stmt 10052
+                }
+            }
+            if (c === '>') {   // --- py stmt 10053
+                // all done
+                return j + 1;   // --- py stmt 10054
+            }
+        }
+    }
+```
+
+
+##### ///// Segment markupbase7a Idx 11000
+
+### Python
+```python
+    # TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    # Internal -- scan past <!NOTATION declarations
+    def _parse_doctype_notation(self, i, declstartpos):
+        name, j = self._scan_name(i, declstartpos)   # --- py stmt 11001
+        if j < 0:   # --- py stmt 11002
+            return j   # --- py stmt 11003
+        rawdata = self.rawdata   # --- py stmt 11004
+        while 1:   # --- py stmt 11005
+            c = rawdata[j:j+1]   # --- py stmt 11006
+            if not c:   # --- py stmt 11007
+                # end of buffer; incomplete
+                return -1   # --- py stmt 11008
+            if c == '>':   # --- py stmt 11009
+                return j + 1   # --- py stmt 11010
+            if c in "'\"":   # --- py stmt 11011
+                m = _declstringlit_match(rawdata, j)   # --- py stmt 11012
+                if not m:   # --- py stmt 11013
+                    return -1   # --- py stmt 11014
+                j = m.end()   # --- py stmt 11015
+            else:   # --- py stmt 11016
+                name, j = self._scan_name(j, declstartpos)   # --- py stmt 11017
+                if j < 0:   # --- py stmt 11018
+                    return j   # --- py stmt 11019
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    // Internal -- scan past <!NOTATION declarations
+    _parse_doctype_notation(i, declstartpos) {
+        let name, j;   // --- py stmt 11001
+        [name, j] = this._scan_name(i, declstartpos);   // --- py stmt 11001
+        if (j < 0) {   // --- py stmt 11002
+            return j;   // --- py stmt 11003
+        }
+        let rawdata = this.rawdata;   // --- py stmt 11004
+        while (true) {   // --- py stmt 11005
+            let c = rawdata.slice(j, j + 1);   // --- py stmt 11006
+            if (!c) {   // --- py stmt 11007
+                // end of buffer; incomplete
+                return -1;   // --- py stmt 11008
+            }
+            if (c === '>') {   // --- py stmt 11009
+                return j + 1;   // --- py stmt 11010
+            }
+            if (c === "'" || c === '"') {   // --- py stmt 11011
+                let m = _declstringlit_match(rawdata, j);   // --- py stmt 11012
+                if (!m) {   // --- py stmt 11013
+                    return -1;   // --- py stmt 11014
+                }
+                j = m.end();   // --- py stmt 11015
+            } else {   // --- py stmt 11016
+                [name, j] = this._scan_name(j, declstartpos);   // --- py stmt 11017
+                if (j < 0) {   // --- py stmt 11018
+                    return j;   // --- py stmt 11019
+                }
+            }
+        }
+    }
+```
+
+
+##### ///// Segment markupbase7b Idx 12000
+
+### Python
+```python
+    # TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    # Internal -- scan past <!ENTITY declarations
+    def _parse_doctype_entity(self, i, declstartpos):
+        rawdata = self.rawdata   # --- py stmt 12001
+        if rawdata[i:i+1] == "%":   # --- py stmt 12002
+            j = i + 1   # --- py stmt 12003
+            while 1:   # --- py stmt 12004
+                c = rawdata[j:j+1]   # --- py stmt 12005
+                if not c:   # --- py stmt 12006
+                    return -1   # --- py stmt 12007
+                if c.isspace():   # --- py stmt 12008
+                    j = j + 1   # --- py stmt 12009
+                else:
+                    break   # --- py stmt 12010
+        else:
+            j = i   # --- py stmt 12011
+        name, j = self._scan_name(j, declstartpos)   # --- py stmt 12012
+        if j < 0:   # --- py stmt 12013
+            return j   # --- py stmt 12014
+        while 1:   # --- py stmt 12015
+            c = self.rawdata[j:j+1]   # --- py stmt 12016
+            if not c:   # --- py stmt 12017
+                return -1   # --- py stmt 12018
+            if c in "'\"":   # --- py stmt 12019
+                m = _declstringlit_match(rawdata, j)   # --- py stmt 12020
+                if m:   # --- py stmt 12021
+                    j = m.end()   # --- py stmt 12022
+                else:
+                    return -1    # incomplete   # --- py stmt 12023
+            elif c == ">":   # --- py stmt 12024
+                return j + 1   # --- py stmt 12025
+            else:
+                name, j = self._scan_name(j, declstartpos)   # --- py stmt 12026
+                if j < 0:   # --- py stmt 12027
+                    return j   # --- py stmt 12028
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    // Internal -- scan past <!ENTITY declarations
+    _parse_doctype_entity(i, declstartpos) {
+        let rawdata = this.rawdata;   // --- py stmt 12001
+        if (rawdata.slice(i, i + 1) === "%") {   // --- py stmt 12002
+            let j = i + 1;   // --- py stmt 12003
+            while (true) {   // --- py stmt 12004
+                let c = rawdata.slice(j, j + 1);   // --- py stmt 12005
+                if (!c) {   // --- py stmt 12006
+                    return -1;   // --- py stmt 12007
+                }
+                if (c.isspace()) {   // --- py stmt 12008
+                    j = j + 1;   // --- py stmt 12009
+                } else {
+                    break;   // --- py stmt 12010
+                }
+            }
+        } else {
+            j = i;   // --- py stmt 12011
+        }
+        let name, j = this._scan_name(j, declstartpos);   // --- py stmt 12012
+        if (j < 0) {   // --- py stmt 12013
+            return j;   // --- py stmt 12014
+        }
+        while (true) {   // --- py stmt 12015
+            let c = this.rawdata.slice(j, j + 1);   // --- py stmt 12016
+            if (!c) {   // --- py stmt 12017
+                return -1;   // --- py stmt 12018
+            }
+            if (c === "'" || c === "\"") {   // --- py stmt 12019
+                let m = _declstringlit_match(rawdata, j);   // --- py stmt 12020
+                if (m) {   // --- py stmt 12021
+                    j = m.end();   // --- py stmt 12022
+                } else {
+                    return -1;    // incomplete   // --- py stmt 12023
+                }
+            } else if (c === ">") {   // --- py stmt 12024
+                return j + 1;   // --- py stmt 12025
+            } else {
+                let name, j = this._scan_name(j, declstartpos);   // --- py stmt 12026
+                if (j < 0) {   // --- py stmt 12027
+                    return j;   // --- py stmt 12028
+                }
+            }
+        }
+    }
+```
+
+
+##### ///// Segment markupbase8 Idx 13000
+
+### Python
+```python
+    # TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    # Internal -- scan a name token and the new position and the token, or
+    # return -1 if we've reached the end of the buffer.
+    def _scan_name(self, i, declstartpos):
+        rawdata = self.rawdata   # --- py stmt 13001
+        n = len(rawdata)   # --- py stmt 13002
+        if i == n:   # --- py stmt 13003
+            return None, -1   # --- py stmt 13004
+        m = _declname_match(rawdata, i)   # --- py stmt 13005
+        if m:   # --- py stmt 13006
+            s = m.group()   # --- py stmt 13007
+            name = s.strip()   # --- py stmt 13008
+            if (i + len(s)) == n:   # --- py stmt 13009
+                return None, -1  # end of buffer   # --- py stmt 13010
+            return name.lower(), m.end()   # --- py stmt 13011
+        else:
+            self.updatepos(declstartpos, i)   # --- py stmt 13012
+            raise AssertionError(
+                "expected name token at %r" % rawdata[declstartpos:declstartpos+20]   # --- py stmt 13013
+            )
+
+    # To be overridden -- handlers for unknown objects
+    def unknown_decl(self, data):   # --- py stmt 13014
+        pass   # --- py stmt 13015
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: these functions are inside a class `ParserBase.`
+    // Internal -- scan a name token and the new position and the token, or
+    // return -1 if we've reached the end of the buffer.
+    _scan_name(i, declstartpos) {   // --- py stmt 13001, py stmt 13002
+        let rawdata = this.rawdata;   // --- py stmt 13001
+        let n = rawdata.length;   // --- py stmt 13002
+        if (i === n) {   // --- py stmt 13003
+            return [null, -1];   // --- py stmt 13004
+        }
+        let m = _declname_match(rawdata, i);   // --- py stmt 13005
+        if (m) {   // --- py stmt 13006
+            let s = m[0];   // --- py stmt 13007
+            let name = s.trim();   // --- py stmt 13008
+            if ((i + s.length) === n) {   // --- py stmt 13009
+                return [null, -1]; // end of buffer   // --- py stmt 13010
+            }
+            return [name.toLowerCase(), m.index + s.length];   // --- py stmt 13011
+        } else {
+            this.updatepos(declstartpos, i);   // --- py stmt 13012
+            throw new Error(`expected name token at ${rawdata.slice(declstartpos, declstartpos + 20)}`);   // --- py stmt 13013
+        }
+    }
+
+    // To be overridden -- handlers for unknown objects
+    unknown_decl(data) {   // --- py stmt 13014
+        // pass   // --- py stmt 13015
+    }
+}
+```
+
+
+##### ///// Segment htmlparser1 Idx 14000
+
+### Python
+```python
+"""A parser for HTML and XHTML."""   # --- py stmt 14001
+
+import re   # --- py stmt 14002
+# Regular expressions used for parsing
+
+# TRANSLATION NOTE: convert those into plain JavaScript RegExp constants, like /.../g instead.
+interesting_normal = re.compile('[&<]')   # --- py stmt 14005
+incomplete = re.compile('&[a-zA-Z#]')   # --- py stmt 14006
+
+entityref = re.compile('&([a-zA-Z][-.a-zA-Z0-9]*)[^a-zA-Z0-9]')   # --- py stmt 14007
+charref = re.compile('&#(?:[0-9]+|[xX][0-9a-fA-F]+)[^0-9a-fA-F]')   # --- py stmt 14008
+
+starttagopen = re.compile('<[a-zA-Z]')   # --- py stmt 14009
+piclose = re.compile('>')   # --- py stmt 14010
+commentclose = re.compile(r'--\s*>')   # --- py stmt 14011
+# Note:
+#  1) if you change tagfind/attrfind remember to update locatestarttagend too;
+#  2) if you change tagfind/attrfind and/or locatestarttagend the parser will
+#     explode, so don't do it.
+# see http://www.w3.org/TR/html5/tokenization.html#tag-open-state
+# and http://www.w3.org/TR/html5/tokenization.html#tag-name-state
+tagfind_tolerant = re.compile(r'([a-zA-Z][^\t\n\r\f />\x00]*)(?:\s|/(?!>))*')   # --- py stmt 14012
+attrfind_tolerant = re.compile(
+    r'((?<=[\'"\s/])[^\s/>][^\s/=>]*)(\s*=+\s*'
+    r'(\'[^\']*\'|"[^"]*"|(?![\'"])[^>\s]*))?(?:\s|/(?!>))*')   # --- py stmt 14013
+locatestarttagend_tolerant = re.compile(r"""
+  <[a-zA-Z][^\t\n\r\f />\x00]*       # tag name
+  (?:[\s/]*                          # optional whitespace before attribute name
+    (?:(?<=['"\s/])[^\s/>][^\s/=>]*  # attribute name
+      (?:\s*=+\s*                    # value indicator
+        (?:'[^']*'                   # LITA-enclosed value
+          |"[^"]*"                   # LIT-enclosed value
+          |(?!['"])[^>\s]*           # bare value
+         )
+        \s*                          # possibly followed by a space
+       )?(?:\s|/(?!>))*
+     )*
+   )?
+  \s*                                # trailing whitespace
+""", re.VERBOSE)   # --- py stmt 14014
+endendtag = re.compile('>')   # --- py stmt 14015
+# the HTML 5 spec, section 8.1.2.2, doesn't allow spaces between
+# </ and the tag name, so maybe this should be fixed
+endtagfind = re.compile(r'</\s*([a-zA-Z][-.a-zA-Z0-9:_]*)\s*>')   # --- py stmt 14016
+```
+
+### JavaScript
+```javascript
+const interesting_normal = /[&<]/g;   // --- py stmt 14005
+const incomplete = /&[a-zA-Z#]/g;   // --- py stmt 14006
+
+const entityref = /&([a-zA-Z][-.a-zA-Z0-9]*)[^a-zA-Z0-9]/g;   // --- py stmt 14007
+const charref = /&#(?:[0-9]+|[xX][0-9a-fA-F]+)[^0-9a-fA-F]/g;   // --- py stmt 14008
+
+const starttagopen = /<[a-zA-Z]/g;   // --- py stmt 14009
+const piclose = />/g;   // --- py stmt 14010
+const commentclose = /--\s*>/g;   // --- py stmt 14011
+
+const tagfind_tolerant = /([a-zA-Z][^\t\n\r\f />\x00]*)(?:\s|\/(?!>))*]/g;   // --- py stmt 14012
+const attrfind_tolerant = /((?<=[\'"\s/])[^\s/>][^\s/=>]*)(\s*=+\s*('[^']*'|"[^"]*"|(?![\'"])[^>\s]*))?(?:\s|\/(?!>))*]/g;   // --- py stmt 14013
+const locatestarttagend_tolerant = /<[a-zA-Z][^\t\n\r\f />\x00]*(?:[\s/]*(?:(?<=['"\s/])[^\s/>][^\s/=>]*(?:\s*=+\s*(?:'[^']*'|"[^"]*"|(?!['"])[^>\s]*)\s*)?(?:\s|\/(?!>))*)*)?\s*/g;   // --- py stmt 14014
+const endendtag = />/g;   // --- py stmt 14015
+const endtagfind = /<\/\s*([a-zA-Z][-.a-zA-Z0-9:_]*)\s*>/g;   // --- py stmt 14016
+```
+
+
+##### ///// Segment htmlparser2 Idx 15000
+
+### Python
+```python
+class HTMLParser(ParserBase):   # --- py stmt 15001
+    """Find tags and other markup and call handler functions.
+
+    Usage:
+        p = HTMLParser()
+        p.feed(data)
+        ...
+        p.close()
+
+    Start tags are handled by calling self.handle_starttag() or
+    self.handle_startendtag(); end tags by self.handle_endtag().  The
+    data between tags is passed from the parser to the derived class
+    by calling self.handle_data() with the data as argument (the data
+    may be split up in arbitrary chunks).  If convert_charrefs is
+    True the character references are converted automatically to the
+    corresponding Unicode character (and self.handle_data() is no
+    longer split in chunks), otherwise they are passed by calling
+    self.handle_entityref() or self.handle_charref() with the string
+    containing respectively the named or numeric reference as the
+    argument.
+    """
+
+    CDATA_CONTENT_ELEMENTS = ("script", "style")   # --- py stmt 15002
+
+    def __init__(self, *, convert_charrefs=True):   # --- py stmt 15003
+        """Initialize and reset this instance.
+
+        If convert_charrefs is True (the default), all character references
+        are automatically converted to the corresponding Unicode characters.
+        """
+        self.convert_charrefs = convert_charrefs   # --- py stmt 15004
+        self.reset()   # --- py stmt 15005
+
+    def reset(self):   # --- py stmt 15006
+        """Reset this instance.  Loses all unprocessed data."""
+        self.rawdata = ''   # --- py stmt 15007
+        self.lasttag = '???'   # --- py stmt 15008
+        self.interesting = interesting_normal   # --- py stmt 15009
+        self.cdata_elem = None   # --- py stmt 15010
+        ParserBase.reset(self)   # --- py stmt 15011
+
+    def feed(self, data):   # --- py stmt 15012
+        r"""Feed data to the parser.
+
+        Call this as often as you want, with as little or as much text
+        as you want (may include '\n').
+        """
+        self.rawdata = self.rawdata + data   # --- py stmt 15013
+        self.goahead(0)   # --- py stmt 15014
+
+    def close(self):   # --- py stmt 15015
+        """Handle any buffered data."""
+        self.goahead(1)   # --- py stmt 15016
+
+    __starttag_text = None   # --- py stmt 15017
+
+    def get_starttag_text(self):   # --- py stmt 15018
+        """Return full source of start tag: '<...>'."""
+        return self.__starttag_text   # --- py stmt 15019
+
+    def set_cdata_mode(self, elem):   # --- py stmt 15020
+        self.cdata_elem = elem.lower()   # --- py stmt 15021
+        self.interesting = re.compile(r'</\s*%s\s*>' % self.cdata_elem, re.I)   # --- py stmt 15022
+
+    def clear_cdata_mode(self):   # --- py stmt 15023
+        self.interesting = interesting_normal   # --- py stmt 15024
+        self.cdata_elem = None   # --- py stmt 15025
+```
+
+### JavaScript
+```javascript
+class HTMLParser extends ParserBase {   // --- py stmt 15001
+    CDATA_CONTENT_ELEMENTS = ["script", "style"];   // --- py stmt 15002
+    constructor({ convert_charrefs = true } = {}) {   // --- py stmt 15003
+        super();   // --- py stmt 15011
+        this.convert_charrefs = convert_charrefs;   // --- py stmt 15004
+        this.reset();   // --- py stmt 15005
+    }
+
+    reset() {   // --- py stmt 15006
+        this.rawdata = '';   // --- py stmt 15007
+        this.lasttag = '???';   // --- py stmt 15008
+        this.interesting = interesting_normal;   // --- py stmt 15009
+        this.cdata_elem = null;   // --- py stmt 15010
+        super.reset();   // --- py stmt 15011
+    }
+
+    feed(data) {   // --- py stmt 15012
+        this.rawdata = this.rawdata + data;   // --- py stmt 15013
+        this.goahead(0);   // --- py stmt 15014
+    }
+
+    close() {   // --- py stmt 15015
+        this.goahead(1);   // --- py stmt 15016
+    }
+
+    get_starttag_text() {   // --- py stmt 15018
+        return this.__starttag_text;   // --- py stmt 15019
+    }
+
+    set_cdata_mode(elem) {   // --- py stmt 15020
+        this.cdata_elem = elem.toLowerCase();   // --- py stmt 15021
+        this.interesting = new RegExp(`</\\s*${this.cdata_elem}\\s*>`, 'i');   // --- py stmt 15022
+    }
+
+    clear_cdata_mode() {   // --- py stmt 15023
+        this.interesting = interesting_normal;   // --- py stmt 15024
+        this.cdata_elem = null;   // --- py stmt 15025
+    }
+```
+
+
+##### ///// Segment htmlparser3 Idx 16000
+
+### Python
+```python
+    # TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    # Internal -- handle data as far as reasonable.  May leave state
+    # and data to be processed by a subsequent call.  If 'end' is
+    # true, force handling all data as if followed by EOF marker.
+    def goahead(self, end):   # --- py stmt 16001
+        rawdata = self.rawdata   # --- py stmt 16002
+        i = 0   # --- py stmt 16003
+        n = len(rawdata)   # --- py stmt 16004
+        while i < n:   # --- py stmt 16005
+            if self.convert_charrefs and not self.cdata_elem:   # --- py stmt 16006
+                j = rawdata.find('<', i)   # --- py stmt 16007
+                if j < 0:   # --- py stmt 16008
+                    # if we can't find the next <, either we are at the end
+                    # or there's more text incoming.  If the latter is True,
+                    # we can't pass the text to handle_data in case we have
+                    # a charref cut in half at end.  Try to determine if
+                    # this is the case before proceeding by looking for an
+                    # & near the end and see if it's followed by a space or ;.
+                    amppos = rawdata.rfind('&', max(i, n-34))   # --- py stmt 16009
+                    if (amppos >= 0 and
+                        not re.compile(r'[\s;]').search(rawdata, amppos)):   # --- py stmt 16010
+                        break  # wait till we get all the text   # --- py stmt 16011
+                    j = n   # --- py stmt 16012
+            else:   # --- py stmt 16013
+                match = self.interesting.search(rawdata, i)  # < or &   # --- py stmt 16014
+                if match:   # --- py stmt 16015
+                    j = match.start()   # --- py stmt 16016
+                else:   # --- py stmt 16017
+                    if self.cdata_elem:   # --- py stmt 16018
+                        break   # --- py stmt 16019
+                    j = n   # --- py stmt 16020
+            if i < j:   # --- py stmt 16021
+                if self.convert_charrefs and not self.cdata_elem:   # --- py stmt 16022
+                    self.handle_data(unescape(rawdata[i:j]))   # --- py stmt 16023
+                else:   # --- py stmt 16024
+                    self.handle_data(rawdata[i:j])   # --- py stmt 16025
+            i = self.updatepos(i, j)   # --- py stmt 16026
+            if i == n: break   # --- py stmt 16027
+            startswith = rawdata.startswith   # --- py stmt 16028
+            if startswith('<', i):   # --- py stmt 16029
+                if starttagopen.match(rawdata, i): # < + letter   # --- py stmt 16030
+                    k = self.parse_starttag(i)   # --- py stmt 16031
+                elif startswith("</", i):   # --- py stmt 16032
+                    k = self.parse_endtag(i)   # --- py stmt 16033
+                elif startswith("<!--", i):   # --- py stmt 16034
+                    k = self.parse_comment(i)   # --- py stmt 16035
+                elif startswith("<?", i):   # --- py stmt 16036
+                    k = self.parse_pi(i)   # --- py stmt 16037
+                elif startswith("<!", i):   # --- py stmt 16038
+                    k = self.parse_html_declaration(i)   # --- py stmt 16039
+                elif (i + 1) < n:   # --- py stmt 16040
+                    self.handle_data("<")   # --- py stmt 16041
+                    k = i + 1   # --- py stmt 16042
+                else:   # --- py stmt 16043
+                    break   # --- py stmt 16044
+                if k < 0:   # --- py stmt 16045
+                    if not end:   # --- py stmt 16046
+                        break   # --- py stmt 16047
+                    k = rawdata.find('>', i + 1)   # --- py stmt 16048
+                    if k < 0:   # --- py stmt 16049
+                        k = rawdata.find('<', i + 1)   # --- py stmt 16050
+                        if k < 0:   # --- py stmt 16051
+                            k = i + 1   # --- py stmt 16052
+                    else:   # --- py stmt 16053
+                        k += 1   # --- py stmt 16054
+                    if self.convert_charrefs and not self.cdata_elem:   # --- py stmt 16055
+                        self.handle_data(unescape(rawdata[i:k]))   # --- py stmt 16056
+                    else:   # --- py stmt 16057
+                        self.handle_data(rawdata[i:k])   # --- py stmt 16058
+                i = self.updatepos(i, k)   # --- py stmt 16059
+            elif startswith("&#", i):   # --- py stmt 16060
+                match = charref.match(rawdata, i)   # --- py stmt 16061
+                if match:   # --- py stmt 16062
+                    name = match.group()[2:-1]   # --- py stmt 16063
+                    self.handle_charref(name)   # --- py stmt 16064
+                    k = match.end()   # --- py stmt 16065
+                    if not startswith(';', k-1):   # --- py stmt 16066
+                        k = k - 1   # --- py stmt 16067
+                    i = self.updatepos(i, k)   # --- py stmt 16068
+                    continue   # --- py stmt 16069
+                else:   # --- py stmt 16070
+                    if ";" in rawdata[i:]:  # bail by consuming &#   # --- py stmt 16071
+                        self.handle_data(rawdata[i:i+2])   # --- py stmt 16072
+                        i = self.updatepos(i, i+2)   # --- py stmt 16073
+                    break   # --- py stmt 16074
+            elif startswith('&', i):   # --- py stmt 16075
+                match = entityref.match(rawdata, i)   # --- py stmt 16076
+                if match:   # --- py stmt 16077
+                    name = match.group(1)   # --- py stmt 16078
+                    self.handle_entityref(name)   # --- py stmt 16079
+                    k = match.end()   # --- py stmt 16080
+                    if not startswith(';', k-1):   # --- py stmt 16081
+                        k = k - 1   # --- py stmt 16082
+                    i = self.updatepos(i, k)   # --- py stmt 16083
+                    continue   # --- py stmt 16084
+                match = incomplete.match(rawdata, i)   # --- py stmt 16085
+                if match:   # --- py stmt 16086
+                    # match.group() will contain at least 2 chars
+                    if end and match.group() == rawdata[i:]:   # --- py stmt 16087
+                        k = match.end()   # --- py stmt 16088
+                        if k <= i:   # --- py stmt 16089
+                            k = n   # --- py stmt 16090
+                        i = self.updatepos(i, i + 1)   # --- py stmt 16091
+                    # incomplete
+                    break   # --- py stmt 16092
+                elif (i + 1) < n:   # --- py stmt 16093
+                    # not the end of the buffer, and can't be confused
+                    # with some other construct
+                    self.handle_data("&")   # --- py stmt 16094
+                    i = self.updatepos(i, i + 1)   # --- py stmt 16095
+                else:   # --- py stmt 16096
+                    break   # --- py stmt 16097
+            else:   # --- py stmt 16098
+                assert 0, "interesting.search() lied"   # --- py stmt 16099
+        # end while   # --- py stmt 16100
+        if end and i < n and not self.cdata_elem:   # --- py stmt 16101
+            if self.convert_charrefs and not self.cdata_elem:   # --- py stmt 16102
+                self.handle_data(unescape(rawdata[i:n]))   # --- py stmt 16103
+            else:   # --- py stmt 16104
+                self.handle_data(rawdata[i:n])   # --- py stmt 16105
+            i = self.updatepos(i, n)   # --- py stmt 16106
+        self.rawdata = rawdata[i:]   # --- py stmt 16107
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    // Internal -- handle data as far as reasonable.  May leave state
+    // and data to be processed by a subsequent call.  If 'end' is
+    // true, force handling all data as if followed by EOF marker.
+    goahead(end) {   // --- py stmt 16001
+        let rawdata = this.rawdata;   // --- py stmt 16002
+        let i = 0;   // --- py stmt 16003
+        let n = rawdata.length;   // --- py stmt 16004
+        while (i < n) {   // --- py stmt 16005
+            if (this.convert_charrefs && !this.cdata_elem) {   // --- py stmt 16006
+                let j = rawdata.indexOf('<', i);   // --- py stmt 16007
+                if (j < 0) {   // --- py stmt 16008
+                    // if we can't find the next <, either we are at the end
+                    // or there's more text incoming.  If the latter is True,
+                    // we can't pass the text to handle_data in case we have
+                    // a charref cut in half at end.  Try to determine if
+                    // this is the case before proceeding by looking for an
+                    // & near the end and see if it's followed by a space or ;.
+                    let amppos = rawdata.lastIndexOf('&', Math.max(i, n - 34));   // --- py stmt 16009
+                    if (amppos >= 0 &&
+                        !RegExp('[\\s;]').test(rawdata.slice(amppos))) {   // --- py stmt 16010
+                        break;  // wait till we get all the text   // --- py stmt 16011
+                    }
+                    j = n;   // --- py stmt 16012
+                }
+            } else {   // --- py stmt 16013
+                let match = this.interesting.exec(rawdata.slice(i));  // < or &   // --- py stmt 16014
+                if (match) {   // --- py stmt 16015
+                    let j = match.index + i;   // --- py stmt 16016
+                } else {   // --- py stmt 16017
+                    if (this.cdata_elem) {   // --- py stmt 16018
+                        break;   // --- py stmt 16019
+                    }
+                    let j = n;   // --- py stmt 16020
+                }
+            }
+            if (i < j) {   // --- py stmt 16021
+                if (this.convert_charrefs && !this.cdata_elem) {   // --- py stmt 16022
+                    this.handle_data(unescape(rawdata.slice(i, j)));   // --- py stmt 16023
+                } else {   // --- py stmt 16024
+                    this.handle_data(rawdata.slice(i, j));   // --- py stmt 16025
+                }
+            }
+            i = this.updatepos(i, j);   // --- py stmt 16026
+            if (i == n) break;   // --- py stmt 16027
+            let startswith = rawdata.startsWith;   // --- py stmt 16028
+            if (startswith('<', i)) {   // --- py stmt 16029
+                if (starttagopen.test(rawdata.slice(i))) { // < + letter   // --- py stmt 16030
+                    let k = this.parse_starttag(i);   // --- py stmt 16031
+                } else if (startswith("</", i)) {   // --- py stmt 16032
+                    let k = this.parse_endtag(i);   // --- py stmt 16033
+                } else if (startswith("<!--", i)) {   // --- py stmt 16034
+                    let k = this.parse_comment(i);   // --- py stmt 16035
+                } else if (startswith("<?", i)) {   // --- py stmt 16036
+                    let k = this.parse_pi(i);   // --- py stmt 16037
+                } else if (startswith("<!", i)) {   // --- py stmt 16038
+                    let k = this.parse_html_declaration(i);   // --- py stmt 16039
+                } else if ((i + 1) < n) {   // --- py stmt 16040
+                    this.handle_data("<");   // --- py stmt 16041
+                    let k = i + 1;   // --- py stmt 16042
+                } else {   // --- py stmt 16043
+                    break;   // --- py stmt 16044
+                }
+                if (k < 0) {   // --- py stmt 16045
+                    if (!end) {   // --- py stmt 16046
+                        break;   // --- py stmt 16047
+                    }
+                    let k = rawdata.indexOf('>', i + 1);   // --- py stmt 16048
+                    if (k < 0) {   // --- py stmt 16049
+                        let k = rawdata.indexOf('<', i + 1);   // --- py stmt 16050
+                        if (k < 0) {   // --- py stmt 16051
+                            let k = i + 1;   // --- py stmt 16052
+                        }
+                    } else {   // --- py stmt 16053
+                        k += 1;   // --- py stmt 16054
+                    }
+                    if (this.convert_charrefs && !this.cdata_elem) {   // --- py stmt 16055
+                        this.handle_data(unescape(rawdata.slice(i, k)));   // --- py stmt 16056
+                    } else {   // --- py stmt 16057
+                        this.handle_data(rawdata.slice(i, k));   // --- py stmt 16058
+                    }
+                }
+                i = this.updatepos(i, k);   // --- py stmt 16059
+            } else if (startswith("&#", i)) {   // --- py stmt 16060
+                let match = charref.exec(rawdata.slice(i));   // --- py stmt 16061
+                if (match) {   // --- py stmt 16062
+                    let name = match[0].slice(2, -1);   // --- py stmt 16063
+                    this.handle_charref(name);   // --- py stmt 16064
+                    let k = match.index + match[0].length;   // --- py stmt 16065
+                    if (!startswith(';', k - 1)) {   // --- py stmt 16066
+                        k = k - 1;   // --- py stmt 16067
+                    }
+                    i = this.updatepos(i, k);   // --- py stmt 16068
+                    continue;   // --- py stmt 16069
+                } else {   // --- py stmt 16070
+                    if (rawdata.slice(i).includes(';')) {  // bail by consuming &#   // --- py stmt 16071
+                        this.handle_data(rawdata.slice(i, i + 2));   // --- py stmt 16072
+                        i = this.updatepos(i, i + 2);   // --- py stmt 16073
+                    }
+                    break;   // --- py stmt 16074
+                }
+            } else if (startswith('&', i)) {   // --- py stmt 16075
+                let match = entityref.exec(rawdata.slice(i));   // --- py stmt 16076
+                if (match) {   // --- py stmt 16077
+                    let name = match[1];   // --- py stmt 16078
+                    this.handle_entityref(name);   // --- py stmt 16079
+                    let k = match.index + match[0].length;   // --- py stmt 16080
+                    if (!startswith(';', k - 1)) {   // --- py stmt 16081
+                        k = k - 1;   // --- py stmt 16082
+                    }
+                    i = this.updatepos(i, k);   // --- py stmt 16083
+                    continue;   // --- py stmt 16084
+                }
+                match = incomplete.exec(rawdata.slice(i));   // --- py stmt 16085
+                if (match) {   // --- py stmt 16086
+                    // match.group() will contain at least 2 chars
+                    if (end && match[0] == rawdata.slice(i)) {   // --- py stmt 16087
+                        let k = match.index + match[0].length;   // --- py stmt 16088
+                        if (k <= i) {   // --- py stmt 16089
+                            k = n;   // --- py stmt 16090
+                        }
+                        i = this.updatepos(i, i + 1);   // --- py stmt 16091
+                    }
+                    // incomplete
+                    break;   // --- py stmt 16092
+                } else if ((i + 1) < n) {   // --- py stmt 16093
+                    // not the end of the buffer, and can't be confused
+                    // with some other construct
+                    this.handle_data("&");   // --- py stmt 16094
+                    i = this.updatepos(i, i + 1);   // --- py stmt 16095
+                } else {   // --- py stmt 16096
+                    break;   // --- py stmt 16097
+                }
+            } else {   // --- py stmt 16098
+                assert(0, "interesting.search() lied");   // --- py stmt 16099
+            }
+        }
+        // end while   // --- py stmt 16100
+        if (end && i < n && !this.cdata_elem) {   // --- py stmt 16101
+            if (this.convert_charrefs && !this.cdata_elem) {   // --- py stmt 16102
+                this.handle_data(unescape(rawdata.slice(i)));   // --- py stmt 16103
+            } else {   // --- py stmt 16104
+                this.handle_data(rawdata.slice(i));   // --- py stmt 16105
+            }
+            i = this.updatepos(i, n);   // --- py stmt 16106
+        }
+        this.rawdata = rawdata.slice(i);   // --- py stmt 16107
+    }
+```
+
+
+##### ///// Segment htmlparser4 Idx 17000
+
+### Python
+```python
+    # TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    # Internal -- parse html declarations, return length or -1 if not terminated
+    # See w3.org/TR/html5/tokenization.html#markup-declaration-open-state
+    # See also parse_declaration in _markupbase
+    def parse_html_declaration(self, i):   # --- py stmt 17001
+        rawdata = self.rawdata   # --- py stmt 17002
+        assert rawdata[i:i+2] == '<!', ('unexpected call to '   # --- py stmt 17003
+                                        'parse_html_declaration()')
+        if rawdata[i:i+4] == '<!--':   # --- py stmt 17004
+            # this case is actually already handled in goahead()
+            return self.parse_comment(i)   # --- py stmt 17005
+        elif rawdata[i:i+3] == '<![':   # --- py stmt 17006
+            return self.parse_marked_section(i)   # --- py stmt 17007
+        elif rawdata[i:i+9].lower() == '<!doctype':   # --- py stmt 17008
+            # find the closing >
+            gtpos = rawdata.find('>', i+9)   # --- py stmt 17009
+            if gtpos == -1:   # --- py stmt 17010
+                return -1   # --- py stmt 17011
+            self.handle_decl(rawdata[i+2:gtpos])   # --- py stmt 17012
+            return gtpos+1   # --- py stmt 17013
+        else:
+            return self.parse_bogus_comment(i)   # --- py stmt 17014
+
+    # Internal -- parse bogus comment, return length or -1 if not terminated
+    # see http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state
+    def parse_bogus_comment(self, i, report=1):   # --- py stmt 17015
+        rawdata = self.rawdata   # --- py stmt 17016
+        assert rawdata[i:i+2] in ('<!', '</'), ('unexpected call to '   # --- py stmt 17017
+                                                'parse_comment()')
+        pos = rawdata.find('>', i+2)   # --- py stmt 17018
+        if pos == -1:   # --- py stmt 17019
+            return -1   # --- py stmt 17020
+        if report:   # --- py stmt 17021
+            self.handle_comment(rawdata[i+2:pos])   # --- py stmt 17022
+        return pos + 1   # --- py stmt 17023
+
+    # Internal -- parse processing instr, return end or -1 if not terminated
+    def parse_pi(self, i):   # --- py stmt 17024
+        rawdata = self.rawdata   # --- py stmt 17025
+        assert rawdata[i:i+2] == '<?', 'unexpected call to parse_pi()'   # --- py stmt 17026
+        match = piclose.search(rawdata, i+2) # >   # --- py stmt 17027
+        if not match:   # --- py stmt 17028
+            return -1   # --- py stmt 17029
+        j = match.start()   # --- py stmt 17030
+        self.handle_pi(rawdata[i+2: j])   # --- py stmt 17031
+        j = match.end()   # --- py stmt 17032
+        return j   # --- py stmt 17033
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    // Internal -- parse html declarations, return length or -1 if not terminated
+    // See w3.org/TR/html5/tokenization.html#markup-declaration-open-state
+    // See also parse_declaration in _markupbase
+    parse_html_declaration(i) {   // --- py stmt 17001
+        let rawdata = this.rawdata;   // --- py stmt 17002
+        console.assert(rawdata.slice(i, i+2) === '<!', 'unexpected call to parse_html_declaration()');   // --- py stmt 17003
+        if (rawdata.slice(i, i+4) === '<!--') {   // --- py stmt 17004
+            // this case is actually already handled in goahead()
+            return this.parse_comment(i);   // --- py stmt 17005
+        } else if (rawdata.slice(i, i+3) === '<![') {   // --- py stmt 17006
+            return this.parse_marked_section(i);   // --- py stmt 17007
+        } else if (rawdata.slice(i, i+9).toLowerCase() === '<!doctype') {   // --- py stmt 17008
+            // find the closing >
+            let gtpos = rawdata.indexOf('>', i+9);   // --- py stmt 17009
+            if (gtpos === -1) {   // --- py stmt 17010
+                return -1;   // --- py stmt 17011
+            }
+            this.handle_decl(rawdata.slice(i+2, gtpos));   // --- py stmt 17012
+            return gtpos+1;   // --- py stmt 17013
+        } else {
+            return this.parse_bogus_comment(i);   // --- py stmt 17014
+        }
+    }
+
+    // Internal -- parse bogus comment, return length or -1 if not terminated
+    // see http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state
+    parse_bogus_comment(i, report=1) {   // --- py stmt 17015
+        let rawdata = this.rawdata;   // --- py stmt 17016
+        console.assert(rawdata.slice(i, i+2) in ['<!', '</'], 'unexpected call to parse_comment()');   // --- py stmt 17017
+        let pos = rawdata.indexOf('>', i+2);   // --- py stmt 17018
+        if (pos === -1) {   // --- py stmt 17019
+            return -1;   // --- py stmt 17020
+        }
+        if (report) {   // --- py stmt 17021
+            this.handle_comment(rawdata.slice(i+2, pos));   // --- py stmt 17022
+        }
+        return pos + 1;   // --- py stmt 17023
+    }
+
+    // Internal -- parse processing instr, return end or -1 if not terminated
+    parse_pi(i) {   // --- py stmt 17024
+        let rawdata = this.rawdata;   // --- py stmt 17025
+        console.assert(rawdata.slice(i, i+2) === '<?', 'unexpected call to parse_pi()');   // --- py stmt 17026
+        let match = piclose.exec(rawdata.slice(i+2)); // >   // --- py stmt 17027
+        if (!match) {   // --- py stmt 17028
+            return -1;   // --- py stmt 17029
+        }
+        let j = match.index + i + 2;   // --- py stmt 17030
+        this.handle_pi(rawdata.slice(i+2, j));   // --- py stmt 17031
+        j = match.index + match[0].length + i + 2;   // --- py stmt 17032
+        return j;   // --- py stmt 17033
+    }
+```
+
+
+##### ///// Segment htmlparser5 Idx 18000
+
+### Python
+```python
+    # TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    # Internal -- handle starttag, return end or -1 if not terminated
+    def parse_starttag(self, i):   # --- py stmt 18001
+        self.__starttag_text = None   # --- py stmt 18002
+        endpos = self.check_for_whole_start_tag(i)   # --- py stmt 18003
+        if endpos < 0:   # --- py stmt 18004
+            return endpos   # --- py stmt 18005
+        rawdata = self.rawdata   # --- py stmt 18006
+        self.__starttag_text = rawdata[i:endpos]   # --- py stmt 18007
+
+        # Now parse the data between i+1 and j into a tag and attrs
+        attrs = []   # --- py stmt 18008
+        match = tagfind_tolerant.match(rawdata, i+1)   # --- py stmt 18009
+        assert match, 'unexpected call to parse_starttag()'   # --- py stmt 18010
+        k = match.end()   # --- py stmt 18011
+        self.lasttag = tag = match.group(1).lower()   # --- py stmt 18012
+        while k < endpos:   # --- py stmt 18013
+            m = attrfind_tolerant.match(rawdata, k)   # --- py stmt 18014
+            if not m:   # --- py stmt 18015
+                break   # --- py stmt 18016
+            attrname, rest, attrvalue = m.group(1, 2, 3)   # --- py stmt 18017
+            if not rest:   # --- py stmt 18018
+                attrvalue = None   # --- py stmt 18019
+            elif attrvalue[:1] == '\'' == attrvalue[-1:] or \
+                 attrvalue[:1] == '"' == attrvalue[-1:]:   # --- py stmt 18020
+                attrvalue = attrvalue[1:-1]   # --- py stmt 18021
+            if attrvalue:   # --- py stmt 18022
+                attrvalue = unescape(attrvalue)   # --- py stmt 18023
+            attrs.append((attrname.lower(), attrvalue))   # --- py stmt 18024
+            k = m.end()   # --- py stmt 18025
+
+        end = rawdata[k:endpos].strip()   # --- py stmt 18026
+        if end not in (">", "/>"):   # --- py stmt 18027
+            self.handle_data(rawdata[i:endpos])   # --- py stmt 18028
+            return endpos   # --- py stmt 18029
+        if end.endswith('/>'):   # --- py stmt 18030
+            # XHTML-style empty tag: <span attr="value" />
+            self.handle_startendtag(tag, attrs)   # --- py stmt 18031
+        else:   # --- py stmt 18032
+            self.handle_starttag(tag, attrs)   # --- py stmt 18033
+            if tag in self.CDATA_CONTENT_ELEMENTS:   # --- py stmt 18034
+                self.set_cdata_mode(tag)   # --- py stmt 18035
+        return endpos   # --- py stmt 18036
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    // Internal -- handle starttag, return end or -1 if not terminated
+    parse_starttag(i) {   // --- py stmt 18001
+        this.__starttag_text = null;   // --- py stmt 18002
+        let endpos = this.check_for_whole_start_tag(i);   // --- py stmt 18003
+        if (endpos < 0) {   // --- py stmt 18004
+            return endpos;   // --- py stmt 18005
+        }
+        let rawdata = this.rawdata;   // --- py stmt 18006
+        this.__starttag_text = rawdata.slice(i, endpos);   // --- py stmt 18007
+
+        // Now parse the data between i+1 and j into a tag and attrs
+        let attrs = [];   // --- py stmt 18008
+        let match = tagfind_tolerant.exec(rawdata.slice(i + 1));   // --- py stmt 18009
+        if (!match) {   // --- py stmt 18010
+            throw new Error('unexpected call to parse_starttag()');   // --- py stmt 18010
+        }
+        let k = match[0].length + 1;   // --- py stmt 18011
+        this.lasttag = match[1].toLowerCase();   // --- py stmt 18012
+        while (k < endpos) {   // --- py stmt 18013
+            let m = attrfind_tolerant.exec(rawdata.slice(k));   // --- py stmt 18014
+            if (!m) {   // --- py stmt 18015
+                break;   // --- py stmt 18016
+            }
+            let [_, attrname, rest, attrvalue] = m;   // --- py stmt 18017
+            if (!rest) {   // --- py stmt 18018
+                attrvalue = null;   // --- py stmt 18019
+            } else if (attrvalue.startsWith("'") && attrvalue.endsWith("'") || attrvalue.startsWith('"') && attrvalue.endsWith('"')) {   // --- py stmt 18020
+                attrvalue = attrvalue.slice(1, -1);   // --- py stmt 18021
+            }
+            if (attrvalue) {   // --- py stmt 18022
+                attrvalue = unescape(attrvalue);   // --- py stmt 18023
+            }
+            attrs.push([attrname.toLowerCase(), attrvalue]);   // --- py stmt 18024
+            k += m[0].length;   // --- py stmt 18025
+        }
+
+        let end = rawdata.slice(k, endpos).trim();   // --- py stmt 18026
+        if (end !== ">" && end !== "/>") {   // --- py stmt 18027
+            this.handle_data(rawdata.slice(i, endpos));   // --- py stmt 18028
+            return endpos;   // --- py stmt 18029
+        }
+        if (end.endsWith('/>')) {   // --- py stmt 18030
+            // XHTML-style empty tag: <span attr="value" />
+            this.handle_startendtag(this.lasttag, attrs);   // --- py stmt 18031
+        } else {   // --- py stmt 18032
+            this.handle_starttag(this.lasttag, attrs);   // --- py stmt 18033
+            if (this.CDATA_CONTENT_ELEMENTS.includes(this.lasttag)) {   // --- py stmt 18034
+                this.set_cdata_mode(this.lasttag);   // --- py stmt 18035
+            }
+        }
+        return endpos;   // --- py stmt 18036
+    }
+```
+
+
+##### ///// Segment htmlparser6 Idx 19000
+
+### Python
+```python
+    # TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    # Internal -- check to see if we have a complete starttag; return end
+    # or -1 if incomplete.
+    def check_for_whole_start_tag(self, i):   # --- py stmt 19001
+        rawdata = self.rawdata   # --- py stmt 19002
+        m = locatestarttagend_tolerant.match(rawdata, i)   # --- py stmt 19003
+        if m:   # --- py stmt 19004
+            j = m.end()   # --- py stmt 19005
+            next = rawdata[j:j+1]   # --- py stmt 19006
+            if next == ">":   # --- py stmt 19007
+                return j + 1   # --- py stmt 19008
+            if next == "/":   # --- py stmt 19009
+                if rawdata.startswith("/>", j):   # --- py stmt 19010
+                    return j + 2   # --- py stmt 19011
+                if rawdata.startswith("/", j):   # --- py stmt 19012
+                    # buffer boundary
+                    return -1   # --- py stmt 19013
+                # else bogus input
+                if j > i:   # --- py stmt 19014
+                    return j   # --- py stmt 19015
+                else:
+                    return i + 1   # --- py stmt 19016
+            if next == "":   # --- py stmt 19017
+                # end of input
+                return -1   # --- py stmt 19018
+            if next in ("abcdefghijklmnopqrstuvwxyz=/"
+                        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"):   # --- py stmt 19019
+                # end of input in or before attribute value, or we have the
+                # '/' from a '/>' ending
+                return -1   # --- py stmt 19020
+            if j > i:   # --- py stmt 19021
+                return j   # --- py stmt 19022
+            else:
+                return i + 1   # --- py stmt 19023
+        raise AssertionError("we should not get here!")   # --- py stmt 19024
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    // Internal -- check to see if we have a complete starttag; return end
+    // or -1 if incomplete.
+    check_for_whole_start_tag(i) {   // --- py stmt 19001
+        let rawdata = this.rawdata;   // --- py stmt 19002
+        let m = locatestarttagend_tolerant.exec(rawdata.slice(i));   // --- py stmt 19003
+        if (m) {   // --- py stmt 19004
+            let j = i + m.index + m[0].length;   // --- py stmt 19005
+            let next = rawdata[j];   // --- py stmt 19006
+            if (next == ">") {   // --- py stmt 19007
+                return j + 1;   // --- py stmt 19008
+            }
+            if (next == "/") {   // --- py stmt 19009
+                if (rawdata.startsWith("/>", j)) {   // --- py stmt 19010
+                    return j + 2;   // --- py stmt 19011
+                }
+                if (rawdata.startsWith("/", j)) {   // --- py stmt 19012
+                    // buffer boundary
+                    return -1;   // --- py stmt 19013
+                }
+                // else bogus input
+                if (j > i) {   // --- py stmt 19014
+                    return j;   // --- py stmt 19015
+                } else {
+                    return i + 1;   // --- py stmt 19016
+                }
+            }
+            if (next == "") {   // --- py stmt 19017
+                // end of input
+                return -1;   // --- py stmt 19018
+            }
+            if ("abcdefghijklmnopqrstuvwxyz=/ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(next)) {   // --- py stmt 19019
+                // end of input in or before attribute value, or we have the
+                // '/' from a '/>' ending
+                return -1;   // --- py stmt 19020
+            }
+            if (j > i) {   // --- py stmt 19021
+                return j;   // --- py stmt 19022
+            } else {
+                return i + 1;   // --- py stmt 19023
+            }
+        }
+        throw new Error("we should not get here!");   // --- py stmt 19024
+    }
+```
+
+
+##### ///// Segment htmlparser7 Idx 20000
+
+### Python
+```python
+    # TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    # Internal -- parse endtag, return end or -1 if incomplete
+    def parse_endtag(self, i):   # --- py stmt 20001
+        rawdata = self.rawdata   # --- py stmt 20002
+        assert rawdata[i:i+2] == "</", "unexpected call to parse_endtag"   # --- py stmt 20003
+        match = endendtag.search(rawdata, i+1) # >   # --- py stmt 20004
+        if not match:   # --- py stmt 20005
+            return -1   # --- py stmt 20006
+        gtpos = match.end()   # --- py stmt 20007
+        match = endtagfind.match(rawdata, i) # </ + tag + >   # --- py stmt 20008
+        if not match:   # --- py stmt 20009
+            if self.cdata_elem is not None:   # --- py stmt 20010
+                self.handle_data(rawdata[i:gtpos])   # --- py stmt 20011
+                return gtpos   # --- py stmt 20012
+            # find the name: w3.org/TR/html5/tokenization.html#tag-name-state
+            namematch = tagfind_tolerant.match(rawdata, i+2)   # --- py stmt 20013
+            if not namematch:   # --- py stmt 20014
+                # w3.org/TR/html5/tokenization.html#end-tag-open-state
+                if rawdata[i:i+3] == '</>':   # --- py stmt 20015
+                    return i+3   # --- py stmt 20016
+                else:
+                    return self.parse_bogus_comment(i)   # --- py stmt 20017
+            tagname = namematch.group(1).lower()   # --- py stmt 20018
+            # consume and ignore other stuff between the name and the >
+            # Note: this is not 100% correct, since we might have things like
+            # </tag attr=">">, but looking for > after the name should cover
+            # most of the cases and is much simpler
+            gtpos = rawdata.find('>', namematch.end())   # --- py stmt 20019
+            self.handle_endtag(tagname)   # --- py stmt 20020
+            return gtpos+1   # --- py stmt 20021
+
+        elem = match.group(1).lower() # script or style   # --- py stmt 20022
+        if self.cdata_elem is not None:   # --- py stmt 20023
+            if elem != self.cdata_elem:   # --- py stmt 20024
+                self.handle_data(rawdata[i:gtpos])   # --- py stmt 20025
+                return gtpos   # --- py stmt 20026
+
+        self.handle_endtag(elem)   # --- py stmt 20027
+        self.clear_cdata_mode()   # --- py stmt 20028
+        return gtpos   # --- py stmt 20029
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    // Internal -- parse endtag, return end or -1 if incomplete
+    parse_endtag(i) {   // --- py stmt 20001
+        let rawdata = this.rawdata;   // --- py stmt 20002
+        assert(rawdata.slice(i, i + 2) === "</", "unexpected call to parse_endtag");   // --- py stmt 20003
+        let match = endendtag.exec(rawdata.slice(i + 1)); // >   // --- py stmt 20004
+        if (!match) {   // --- py stmt 20005
+            return -1;   // --- py stmt 20006
+        }
+        let gtpos = match.index + match[0].length;   // --- py stmt 20007
+        match = endtagfind.exec(rawdata.slice(i)); // </ + tag + >   // --- py stmt 20008
+        if (!match) {   // --- py stmt 20009
+            if (this.cdata_elem !== null) {   // --- py stmt 20010
+                this.handle_data(rawdata.slice(i, gtpos));   // --- py stmt 20011
+                return gtpos;   // --- py stmt 20012
+            }
+            // find the name: w3.org/TR/html5/tokenization.html#tag-name-state
+            let namematch = tagfind_tolerant.exec(rawdata.slice(i + 2));   // --- py stmt 20013
+            if (!namematch) {   // --- py stmt 20014
+                // w3.org/TR/html5/tokenization.html#end-tag-open-state
+                if (rawdata.slice(i, i + 3) === '</>') {   // --- py stmt 20015
+                    return i + 3;   // --- py stmt 20016
+                } else {
+                    return this.parse_bogus_comment(i);   // --- py stmt 20017
+                }
+            }
+            let tagname = namematch[1].toLowerCase();   // --- py stmt 20018
+            // consume and ignore other stuff between the name and the >
+            // Note: this is not 100% correct, since we might have things like
+            // </tag attr=">">, but looking for > after the name should cover
+            // most of the cases and is much simpler
+            gtpos = rawdata.indexOf('>', namematch.index + namematch[0].length);   // --- py stmt 20019
+            this.handle_endtag(tagname);   // --- py stmt 20020
+            return gtpos + 1;   // --- py stmt 20021
+        }
+
+        let elem = match[1].toLowerCase(); // script or style   // --- py stmt 20022
+        if (this.cdata_elem !== null) {   // --- py stmt 20023
+            if (elem !== this.cdata_elem) {   // --- py stmt 20024
+                this.handle_data(rawdata.slice(i, gtpos));   // --- py stmt 20025
+                return gtpos;   // --- py stmt 20026
+            }
+        }
+
+        this.handle_endtag(elem);   // --- py stmt 20027
+        this.clear_cdata_mode();   // --- py stmt 20028
+        return gtpos;   // --- py stmt 20029
+    }
+```
+
+
+##### ///// Segment htmlparser8 Idx 21000
+
+### Python
+```python
+    # TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    # Overridable -- finish processing of start+end tag: <tag.../>
+    def handle_startendtag(self, tag, attrs):   # --- py stmt 21001
+        self.handle_starttag(tag, attrs)   # --- py stmt 21002
+        self.handle_endtag(tag)   # --- py stmt 21003
+
+    # Overridable -- handle start tag
+    def handle_starttag(self, tag, attrs):   # --- py stmt 21004
+        pass   # --- py stmt 21005
+
+    # Overridable -- handle end tag
+    def handle_endtag(self, tag):   # --- py stmt 21006
+        pass   # --- py stmt 21007
+
+    # Overridable -- handle character reference
+    def handle_charref(self, name):   # --- py stmt 21008
+        pass   # --- py stmt 21009
+
+    # Overridable -- handle entity reference
+    def handle_entityref(self, name):   # --- py stmt 21010
+        pass   # --- py stmt 21011
+
+    # Overridable -- handle data
+    def handle_data(self, data):   # --- py stmt 21012
+        pass   # --- py stmt 21013
+
+    # Overridable -- handle comment
+    def handle_comment(self, data):   # --- py stmt 21014
+        pass   # --- py stmt 21015
+
+    # Overridable -- handle declaration
+    def handle_decl(self, decl):   # --- py stmt 21016
+        pass   # --- py stmt 21017
+
+    # Overridable -- handle processing instruction
+    def handle_pi(self, data):   # --- py stmt 21018
+        pass   # --- py stmt 21019
+
+    def unknown_decl(self, data):   # --- py stmt 21020
+        pass   # --- py stmt 21021
+```
+
+### JavaScript
+```javascript
+    // TRANSLATION NOTE: the following function(s) is inside a class `HTMLParser`
+    // Overridable -- finish processing of start+end tag: <tag.../>
+    handle_startendtag(tag, attrs) {   // --- py stmt 21001
+        this.handle_starttag(tag, attrs);   // --- py stmt 21002
+        this.handle_endtag(tag);   // --- py stmt 21003
+    }
+
+    // Overridable -- handle start tag
+    handle_starttag(tag, attrs) {   // --- py stmt 21004
+        // pass   // --- py stmt 21005
+    }
+
+    // Overridable -- handle end tag
+    handle_endtag(tag) {   // --- py stmt 21006
+        // pass   // --- py stmt 21007
+    }
+
+    // Overridable -- handle character reference
+    handle_charref(name) {   // --- py stmt 21008
+        // pass   // --- py stmt 21009
+    }
+
+    // Overridable -- handle entity reference
+    handle_entityref(name) {   // --- py stmt 21010
+        // pass   // --- py stmt 21011
+    }
+
+    // Overridable -- handle data
+    handle_data(data) {   // --- py stmt 21012
+        // pass   // --- py stmt 21013
+    }
+
+    // Overridable -- handle comment
+    handle_comment(data) {   // --- py stmt 21014
+        // pass   // --- py stmt 21015
+    }
+
+    // Overridable -- handle declaration
+    handle_decl(decl) {   // --- py stmt 21016
+        // pass   // --- py stmt 21017
+    }
+
+    // Overridable -- handle processing instruction
+    handle_pi(data) {   // --- py stmt 21018
+        // pass   // --- py stmt 21019
+    }
+
+    unknown_decl(data) {   // --- py stmt 21020
+        // pass   // --- py stmt 21021
+    }
+}
+```

@@ -1,0 +1,44 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,2,5,10]",
+    "src_cov_lines": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      1,
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"rKZ\"],\"str2\":[\"S\",7,\"VkfzrPG\"],\"t\":[\"S\",7,\"VkfzrPG\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,15]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",7,\"VkfzrPG\"],\"str2\":[\"S\",3,\"rKZ\"],\"t\":[\"S\",7,\"VkfzrPG\"]}",
+      ""
+    ]
+  }
+]

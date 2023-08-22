@@ -1,0 +1,21 @@
+
+### Python
+def encode(message):   # --- py stmt 1
+    vowels = "aeiouAEIOU"   # --- py stmt 2
+    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])   # --- py stmt 3
+    message = message.swapcase()   # --- py stmt 4
+    return ''.join([vowels_replace[i] if i in vowels else i for i in message])   # --- py stmt 5
+
+### JavaScript
+"use strict";
+
+function encode(message) {   // --- py stmt 1
+    let vowels = "aeiouAEIOU";   // --- py stmt 2
+    let vowels_replace = {};   // --- py stmt 3
+    vowels.split("").forEach((value) => vowels_replace[value] = String.fromCharCode(value.charCodeAt(0) + 2))   // --- py stmt 3
+    message = message.split("").map(i => i.toUpperCase() === i ? i.toLowerCase() : i.toUpperCase()).join("");   // --- py stmt 4
+    return [...message].map(i => typeof(vowels_replace[i]) !== 'undefined' ? vowels_replace[i] : i).join("");   // --- py stmt 5
+}
+
+
+

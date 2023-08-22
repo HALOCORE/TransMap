@@ -1,0 +1,24 @@
+{
+  "result_symptom": {
+    "category": [
+      "BEHAVIOR_MISMATCH",
+      null
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "MISMATCH CALL_ID:-1 MISMATCH_IDX:5 OBSERVED:[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",10]]]] EXPECTED:[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",4]]]]",
+      "error_type": "Error: MyLogError",
+      "line_content": "throw Error(\"MyLogError MISMATCH CALL_ID:\" + String(arguments[1])",
+      "lineno": [
+        "/tmp/codesnart_runner/583620cd.js",
+        73
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/583620cd.js:73\n      throw Error(\"MyLogError MISMATCH CALL_ID:\" + String(arguments[1]) \n      ^\n\nError: MyLogError MISMATCH CALL_ID:-1 MISMATCH_IDX:5 OBSERVED:[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",10]]]] EXPECTED:[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",4]]]]\n    at _mylog (/tmp/codesnart_runner/583620cd.js:73:13)\n    at myexactlog (/tmp/codesnart_runner/583620cd.js:84:3)\n    at console.log (/tmp/codesnart_runner/583620cd.js:87:3)\n    at f_gold (/tmp/codesnart_runner/583620cd.js:143:13)\n    at test (/tmp/codesnart_runner/583620cd.js:129:9)\n    at Object.<anonymous> (/tmp/codesnart_runner/583620cd.js:153:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"list\",10,[\"list\",2,[\"list\",45,[\"num\",1],[\"num\",4]],[\"num\",42]],[\"list\",2,[\"list\",35,[\"num\",64],[\"num\",32]],[\"num\",19]]]]\n\n[\"MYLOGEX:1\",[\"num\",0]]\n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",89]]]]\n89\n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",1]]]]\n1\n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",86]]]]\n86\n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"num\",10]]]]\n",
+    "timespan": 0.0665702999685891
+  }
+}

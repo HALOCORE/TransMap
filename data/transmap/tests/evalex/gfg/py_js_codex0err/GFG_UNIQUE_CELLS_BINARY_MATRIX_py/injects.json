@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 7,
+    "content": "      if (mat[i][j] != 0) {rowsum[i] += 1;\n      colsum[j] += 1;}",
+    "replacement": "      if (mat[i][j] != 0) rowsum[i] += 1;\n      colsum[j] += 1;"
+  }
+]

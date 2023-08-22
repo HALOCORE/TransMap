@@ -1,0 +1,29 @@
+
+### Python
+def sort_even(l: list):   # --- py stmt 1
+    evens = l[::2]   # --- py stmt 2
+    odds = l[1::2]   # --- py stmt 3
+    evens.sort()   # --- py stmt 4
+    ans = []   # --- py stmt 5
+    for e, o in zip(evens, odds):   # --- py stmt 6
+        ans.extend([e, o])   # --- py stmt 7
+    if len(evens) > len(odds):   # --- py stmt 8
+        ans.append(evens[-1])   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function sort_even(l) {   // --- py stmt 1
+    let evens = l.filter((x, i) => i % 2 === 0);   // --- py stmt 2
+    let odds = l.filter((x, i) => i % 2 === 1);   // --- py stmt 3
+    evens.sort((a ,b) => a-b);   // --- py stmt 4
+    let ans = [];   // --- py stmt 5
+    for (let i = 0; i < evens.length; i++) {   // --- py stmt 6
+        ans.push(evens[i], odds[i]);   // --- py stmt 7
+    }
+    if (evens.length > odds.length) {   // --- py stmt 8
+        ans.push(evens[evens.length - 1]);   // --- py stmt 9
+    }
+    return ans;   // --- py stmt 10
+}
+

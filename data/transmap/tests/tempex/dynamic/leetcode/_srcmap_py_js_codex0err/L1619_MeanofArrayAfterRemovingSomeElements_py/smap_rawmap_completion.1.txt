@@ -1,0 +1,22 @@
+
+### Python
+### trimMean 
+from typing import *   # --- py stmt 1
+def f_gold(arr: List[int]) -> float:   # --- py stmt 2
+    n = len(arr)   # --- py stmt 3
+    start, end = int(n * 0.05), int(n * 0.95)   # --- py stmt 4
+    arr.sort()   # --- py stmt 5
+    t = arr[start:end]   # --- py stmt 6
+    return round(sum(t) / len(t), 5)   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(arr) {   // --- py stmt 2
+    var n = arr.length;   // --- py stmt 3
+    var start = Math.floor(n * 0.05);   // --- py stmt 4
+    var end = Math.floor(n * 0.95);   // --- py stmt 4
+    arr.sort((a, b) => (a - b));   // --- py stmt 5
+    var t = arr.slice(start, end);   // --- py stmt 6
+    return Math.round(t.reduce((a, b) => a + b) / t.length, 5);   // --- py stmt 7
+}
+

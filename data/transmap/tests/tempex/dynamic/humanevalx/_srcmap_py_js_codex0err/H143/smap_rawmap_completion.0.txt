@@ -1,0 +1,38 @@
+
+### Python
+def words_in_sentence(sentence):   # --- py stmt 1
+    new_lst = []   # --- py stmt 2
+    for word in sentence.split():   # --- py stmt 3
+        flg = 0   # --- py stmt 4
+        if len(word) == 1:   # --- py stmt 5
+            flg = 1   # --- py stmt 6
+        for i in range(2, len(word)):   # --- py stmt 7
+            if len(word)%i == 0:   # --- py stmt 8
+                flg = 1   # --- py stmt 9
+        if flg == 0 or len(word) == 2:   # --- py stmt 10
+            new_lst.append(word)   # --- py stmt 11
+    return " ".join(new_lst)   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function words_in_sentence(sentence) {   // --- py stmt 1
+    let new_lst = [];   // --- py stmt 2
+    for (let word of sentence.split()) {   // --- py stmt 3
+        let flg = 0;   // --- py stmt 4
+        if (word.length == 1) {   // --- py stmt 5
+            flg = 1;   // --- py stmt 6
+        }
+        for (let i = 2; i < word.length; i++) {   // --- py stmt 7
+            if (word.length % i == 0) {   // --- py stmt 8
+                flg = 1;   // --- py stmt 9
+            }
+        }
+        if (flg == 0 || word.length == 2) {   // --- py stmt 10
+            new_lst.push(word);   // --- py stmt 11
+        }
+    }
+    return new_lst.join(" ");   // --- py stmt 12
+}
+
+
+

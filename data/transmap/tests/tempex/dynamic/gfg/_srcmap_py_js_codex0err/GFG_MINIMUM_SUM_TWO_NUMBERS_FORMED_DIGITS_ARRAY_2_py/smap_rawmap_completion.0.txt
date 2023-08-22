@@ -1,0 +1,26 @@
+
+### Python
+def f_gold(a, n):   # --- py stmt 1
+  a = sorted(a)   # --- py stmt 2
+  num1, num2 = 0, 0   # --- py stmt 3
+  for i in range(n):   # --- py stmt 4
+    if i % 2 == 0: num1 = num1 * 10 + a[i]   # --- py stmt 5
+    else: num2 = num2 * 10 + a[i]   # --- py stmt 6
+  return num2 + num1   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(a, n) {   // --- py stmt 1
+  a = a.sort();   // --- py stmt 2
+  var num1 = 0;   // --- py stmt 3
+  var num2 = 0;   // --- py stmt 3
+  for (var i = 0; i < n; i++) {   // --- py stmt 4
+    if (i % 2 == 0) num1 = num1 * 10 + a[i];   // --- py stmt 5
+    else num2 = num2 * 10 + a[i];   // --- py stmt 6
+  }
+  return num2 + num1;   // --- py stmt 7
+}
+
+
+

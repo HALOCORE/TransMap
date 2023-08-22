@@ -1,0 +1,26 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,4,3,135]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,4,3,83]",
+    "actural_src_pk": "[3,4,3,83]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"txt\":[\"S\",5,\"apple\"],\"check\":\"UNKNOWN\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"txt\":[\"S\",5,\"apple\"],\"check\":[\"S\",5,\"apple\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "check"
+    ]
+  }
+]

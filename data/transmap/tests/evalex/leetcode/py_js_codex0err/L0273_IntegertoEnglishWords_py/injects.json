@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 47,
+    "line_end": 48,
+    "content": "            return tens[Math.floor(num / 10)] + ' ' + transfer(num % 10);",
+    "replacement": "            return tens[num / 10] + ' ' + transfer(num % 10);"
+  },
+  {
+    "line_start": 49,
+    "line_end": 50,
+    "content": "        return lt20[Math.floor(num / 100)] + ' Hundred ' + transfer(num % 100);",
+    "replacement": "        return lt20[num / 100] + ' Hundred ' + transfer(num % 100);"
+  },
+  {
+    "line_start": 55,
+    "line_end": 56,
+    "content": "        if (Math.floor(num / i) != 0) {",
+    "replacement": "        if (num / i != 0) {"
+  },
+  {
+    "line_start": 56,
+    "line_end": 57,
+    "content": "            res.push(transfer(Math.floor(num / i)));",
+    "replacement": "            res.push(transfer(num / i));"
+  },
+  {
+    "line_start": 62,
+    "line_end": 63,
+    "content": "        i = Math.floor(i / 1000);",
+    "replacement": "        i /= 1000;"
+  }
+]

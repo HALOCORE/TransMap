@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 5,
+    "content": "    for (var _i = 0; _i < reservedSeats.length; _i++) {\n        var [i, j] = reservedSeats[_i];",
+    "replacement": "    for (var i = 0; i < reservedSeats.length; i++) {\n        var j = reservedSeats[i];"
+  }
+]

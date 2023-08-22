@@ -1,0 +1,107 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[33,4,33,18]",
+    "src_cov_lines": [
+      4,
+      7,
+      8,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      18,
+      20,
+      21,
+      24,
+      25,
+      26,
+      28,
+      29,
+      31,
+      32
+    ],
+    "tar_cov_lines": [
+      2,
+      7,
+      8,
+      11,
+      18,
+      29,
+      30,
+      31,
+      32,
+      35,
+      36
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: c.isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"code\":[\"S\",51,\"<DIV>This is the fir\"],\"check\":\"UNKNOWN\",\"stk\":[\"A\",0],\"i\":[\"N\",\"51\"],\"n\":[\"N\",\"51\"],\"j\":[\"N\",\"47\"],\"t\":[\"S\",3,\"DIV\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[32,8,32,14]",
+    "src_cov_lines": [
+      4,
+      31
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: c.isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"code\":[\"S\",51,\"<DIV>This is the fir\"],\"check\":\"UNKNOWN\",\"stk\":[\"A\",1,[\"S\",3,\"DIV\"]],\"i\":[\"N\",\"4\"],\"n\":[\"N\",\"51\"],\"j\":[\"N\",\"1\"],\"t\":[\"S\",3,\"DIV\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[31,12,31,25]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: c.isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"code\":[\"S\",51,\"<DIV>This is the fir\"],\"check\":\"UNKNOWN\",\"stk\":[\"A\",0],\"i\":[\"N\",\"4\"],\"n\":[\"N\",\"51\"],\"j\":[\"N\",\"1\"],\"t\":[\"S\",3,\"DIV\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[31,12,31,25]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: c.isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"code\":[\"S\",51,\"<DIV>This is the fir\"],\"check\":\"UNKNOWN\",\"stk\":[\"A\",0],\"i\":[\"N\",\"4\"],\"n\":[\"N\",\"51\"],\"j\":[\"N\",\"1\"],\"t\":[\"S\",3,\"DIV\"]}",
+      ""
+    ]
+  }
+]

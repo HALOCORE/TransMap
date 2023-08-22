@@ -1,0 +1,74 @@
+
+### Python
+### countPairs 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(n: int, edges: List[List[int]]) -> int:   # --- py stmt 3
+    def dfs(i):   # --- py stmt 4
+        vis[i] = True   # --- py stmt 5
+        res = 1   # --- py stmt 6
+        for j in g[i]:   # --- py stmt 7
+            if not vis[j]:   # --- py stmt 8
+                res += dfs(j)   # --- py stmt 9
+        return res   # --- py stmt 10
+    g = defaultdict(list)   # --- py stmt 11
+    for a, b in edges:   # --- py stmt 12
+        g[a].append(b)   # --- py stmt 13
+        g[b].append(a)   # --- py stmt 14
+    vis = [False] * n   # --- py stmt 15
+    arr = []   # --- py stmt 16
+    for i in range(n):   # --- py stmt 17
+        if not vis[i]:   # --- py stmt 18
+            arr.append(dfs(i))   # --- py stmt 19
+    ans = t = 0   # --- py stmt 20
+    for v in arr:   # --- py stmt 21
+        t += v   # --- py stmt 22
+        ans += v * (n - t)   # --- py stmt 23
+    return ans   # --- py stmt 24
+
+### JavaScript
+"use strict";
+
+function f_gold (n, edges) {   // --- py stmt 3
+    function dfs (i) {   // --- py stmt 4
+        vis[i] = true;   // --- py stmt 5
+        var res = 1;   // --- py stmt 6
+        for (var j = 0; j < g[i].length; j++) {   // --- py stmt 7
+            if (!vis[g[i][j]]) {   // --- py stmt 8
+                res += dfs(g[i][j]);   // --- py stmt 9
+            }
+        }
+        return res;   // --- py stmt 10
+    }
+    var g = {};   // --- py stmt 11
+    for (var i = 0; i < edges.length; i++) {   // --- py stmt 12
+        if (!g[edges[i][0]]) {   // --- py stmt 13
+            g[edges[i][0]] = [];   // --- py stmt 13
+        }
+        if (!g[edges[i][1]]) {   // --- py stmt 14
+            g[edges[i][1]] = [];   // --- py stmt 14
+        }
+        g[edges[i][0]].push(edges[i][1]);   // --- py stmt 13
+        g[edges[i][1]].push(edges[i][0]);   // --- py stmt 14
+    }
+    var vis = [];   // --- py stmt 15
+    for (var i = 0; i < n; i++) {   // --- py stmt 15
+        vis.push(false);   // --- py stmt 15
+    }
+    var arr = [];   // --- py stmt 16
+    for (var i = 0; i < n; i++) {   // --- py stmt 17
+        if (!vis[i]) {   // --- py stmt 18
+            arr.push(dfs(i));   // --- py stmt 19
+        }
+    }
+    var ans = 0;   // --- py stmt 20
+    var t = 0;   // --- py stmt 20
+    for (var i = 0; i < arr.length; i++) {   // --- py stmt 21
+        t += arr[i];   // --- py stmt 22
+        ans += arr[i] * (n - t);   // --- py stmt 23
+    }
+    return ans;   // --- py stmt 24
+}
+
+
+

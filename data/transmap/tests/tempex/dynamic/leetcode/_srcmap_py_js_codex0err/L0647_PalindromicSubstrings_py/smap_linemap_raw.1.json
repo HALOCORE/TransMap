@@ -1,0 +1,218 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countSubstrings",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    t = '^#' + '#'.join(s) + '#$'",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = len(t)",
+      [
+        4
+      ]
+    ],
+    [
+      "    p = [0 for _ in range(n)]",
+      [
+        5
+      ]
+    ],
+    [
+      "    pos, maxRight = 0, 0",
+      [
+        6
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(1, n - 1):",
+      [
+        8
+      ]
+    ],
+    [
+      "        p[i] = min(maxRight - i, p[2 * pos - i]) if maxRight > i else 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        while t[i - p[i]] == t[i + p[i]]:",
+      [
+        10
+      ]
+    ],
+    [
+      "            p[i] += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        if i + p[i] > maxRight:",
+      [
+        12
+      ]
+    ],
+    [
+      "            maxRight = i + p[i]",
+      [
+        13
+      ]
+    ],
+    [
+      "            pos = i",
+      [
+        14
+      ]
+    ],
+    [
+      "        ans += p[i] // 2",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var t = '^#' + Array.from(s).join('#') + '#$';",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = t.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var p = new Array(n);",
+      [
+        5
+      ]
+    ],
+    [
+      "    var pos = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var maxRight = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (var i = 1; i < n - 1; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        p[i] = (maxRight > i) ? Math.min(maxRight - i, p[2 * pos - i]) : 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        while (t[i - p[i]] == t[i + p[i]]) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            p[i] += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (i + p[i] > maxRight) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            maxRight = i + p[i];",
+      [
+        13
+      ]
+    ],
+    [
+      "            pos = i;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans += p[i] / 2;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

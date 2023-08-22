@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  let dp = Array(n + 1).fill().map(_ => Array(k + 1).fill().map(_ => Array(2).fill(0)));",
+    "replacement": "  let dp = [[[0, 0] for __ in range(k + 1)] for _ in range(n + 1)];"
+  }
+]

@@ -1,0 +1,52 @@
+
+### Python
+### letterCombinations 
+from typing import *   # --- py stmt 1
+def f_gold(digits: str) -> List[str]:   # --- py stmt 2
+    n = len(digits)   # --- py stmt 3
+    if n == 0:   # --- py stmt 4
+        return []   # --- py stmt 5
+    chars = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']   # --- py stmt 6
+    strs = [chars[int(d) - 2] for d in digits]   # --- py stmt 7
+    res = []   # --- py stmt 8
+    for s in strs:   # --- py stmt 9
+        if not res:   # --- py stmt 10
+            res = list(s)   # --- py stmt 11
+        else:   # --- py stmt 12
+            cache = []   # --- py stmt 13
+            for item in res:   # --- py stmt 14
+                for letter in s:   # --- py stmt 15
+                    cache.append(item + letter)   # --- py stmt 16
+            res = cache   # --- py stmt 17
+    return res   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(digits) {   // --- py stmt 2
+    var n = digits.length;   // --- py stmt 3
+    if (n == 0) {   // --- py stmt 4
+        return [];   // --- py stmt 5
+    }
+    var chars = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];   // --- py stmt 6
+    var strs = [];   // --- py stmt 7
+    for (var d of digits) {   // --- py stmt 7
+        strs.push(chars[parseInt(d) - 2]);   // --- py stmt 7
+    }
+    var res = [];   // --- py stmt 8
+    for (var s of strs) {   // --- py stmt 9
+        if (res.length === 0) {   // --- py stmt 10
+            res = Array.from(s);   // --- py stmt 11
+        }
+        else {   // --- py stmt 12
+            var cache = [];   // --- py stmt 13
+            for (var item of res) {   // --- py stmt 14
+                for (var letter of s) {   // --- py stmt 15
+                    cache.append(item + letter);   // --- py stmt 16
+                }
+            }
+            res = cache;   // --- py stmt 17
+        }
+    }
+    return res;   // --- py stmt 18
+}
+

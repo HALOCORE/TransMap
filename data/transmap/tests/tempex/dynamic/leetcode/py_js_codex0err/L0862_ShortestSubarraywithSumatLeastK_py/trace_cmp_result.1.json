@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[9,4,9,18]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: float is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",1,[\"N\",\"1\"]],\"k\":[\"N\",\"1\"],\"s\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"ans\":[\"N\",\"inf\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[9,4,9,18]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: float is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",1,[\"N\",\"1\"]],\"k\":[\"N\",\"1\"],\"s\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"ans\":[\"N\",\"inf\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[9,4,9,18]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: float is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",1,[\"N\",\"1\"]],\"k\":[\"N\",\"1\"],\"s\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"ans\":[\"N\",\"inf\"]}",
+      ""
+    ]
+  }
+]

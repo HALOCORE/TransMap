@@ -1,0 +1,40 @@
+
+### Python
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(values: List[int], labels: List[int], numWanted: int, useLimit: int   # --- py stmt 3
+) -> int:   # --- py stmt 4
+    arr = list(zip(values, labels))   # --- py stmt 5
+    arr.sort(reverse=True)   # --- py stmt 6
+    cnt = Counter()   # --- py stmt 7
+    ans = num = 0   # --- py stmt 8
+    for v, l in arr:   # --- py stmt 9
+        if cnt[l] < useLimit:   # --- py stmt 10
+            cnt[l] += 1   # --- py stmt 11
+            num += 1   # --- py stmt 12
+            ans += v   # --- py stmt 13
+        if num == numWanted:   # --- py stmt 14
+            break   # --- py stmt 15
+    return ans   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(values, labels, numWanted, useLimit) {   // --- py stmt 3
+    var arr = Array.from(values, (x, i) => [x, labels[i]]);   // --- py stmt 5
+    arr.sort(function (a, b) { return b[0] - a[0]; });   // --- py stmt 6
+    var cnt = {};   // --- py stmt 7
+    var ans = num = 0;   // --- py stmt 8
+    for (var i = 0; i < arr.length; i++) {   // --- py stmt 9
+        var v = arr[i][0];   // --- py stmt 9
+        var l = arr[i][1];   // --- py stmt 9
+        if (cnt[l] == null || cnt[l] < useLimit) {   // --- py stmt 10
+            if (cnt[l] == null) cnt[l] = 0;   // --- py stmt 11
+            cnt[l] += 1;   // --- py stmt 11
+            num += 1;   // --- py stmt 12
+            ans += v;   // --- py stmt 13
+        }
+        if (num == numWanted) break;   // --- py stmt 14, py stmt 15
+    }
+    return ans;   // --- py stmt 16
+}
+

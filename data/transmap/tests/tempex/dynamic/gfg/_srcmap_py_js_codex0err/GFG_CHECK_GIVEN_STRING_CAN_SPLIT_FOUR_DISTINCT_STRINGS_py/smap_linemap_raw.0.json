@@ -1,0 +1,154 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(s):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if(len(s)>= 10): return True",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(1, len(s)):",
+      [
+        3
+      ]
+    ],
+    [
+      "    for j in range(i + 1, len(s)):",
+      [
+        4
+      ]
+    ],
+    [
+      "      for k in range(j + 1, len(s)):",
+      [
+        5
+      ]
+    ],
+    [
+      "        s1 = s[0: i]",
+      [
+        6
+      ]
+    ],
+    [
+      "        s2 = s[i: j - i]",
+      [
+        7
+      ]
+    ],
+    [
+      "        s3 = s[j: k - j]",
+      [
+        8
+      ]
+    ],
+    [
+      "        s4 = s[k: len(s)- k]",
+      [
+        9
+      ]
+    ],
+    [
+      "        if(s1 != s2 and s1 != s3 and s1 != s4 and s2 != s3 and s2 != s4 and s3 != s4): return True",
+      [
+        10
+      ]
+    ],
+    [
+      "  return False",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (s.length >= 10) return true;",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (let i = 1; i < s.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let j = i + 1; j < s.length; j++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "      for (let k = j + 1; k < s.length; k++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        let s1 = s.substring(0, i);",
+      [
+        6
+      ]
+    ],
+    [
+      "        let s2 = s.substring(i, j - i);",
+      [
+        7
+      ]
+    ],
+    [
+      "        let s3 = s.substring(j, k - j);",
+      [
+        8
+      ]
+    ],
+    [
+      "        let s4 = (s.length - k > k)? s.substring(k, s.length - k) : '';",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (s1 != s2 && s1 != s3 && s1 != s4 && s2 != s3 && s2 != s4 && s3 != s4) return true;",
+      [
+        10
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return false;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

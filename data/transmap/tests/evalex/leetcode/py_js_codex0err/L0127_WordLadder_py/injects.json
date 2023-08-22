@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "        for (var _ = 0, ql = q.length; _ < ql; _++) {",
+    "replacement": "        for (var _ = 0; _ < q.length; _++) {"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "                    if (t in m1 || !(words.has(t))) continue;",
+    "replacement": "                    if (t in m1 || !(t in words)) continue;"
+  },
+  {
+    "line_start": 22,
+    "line_end": 23,
+    "content": "    if (!(words.has(endWord))) return 0;",
+    "replacement": "    if (!(endWord in words)) return 0;"
+  }
+]

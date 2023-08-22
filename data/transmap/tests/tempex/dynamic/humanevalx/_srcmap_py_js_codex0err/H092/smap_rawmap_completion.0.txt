@@ -1,0 +1,24 @@
+
+### Python
+def any_int(x, y, z):   # --- py stmt 1
+    
+    if isinstance(x,int) and isinstance(y,int) and isinstance(z,int):   # --- py stmt 2
+        if (x+y==z) or (x+z==y) or (y+z==x):   # --- py stmt 3
+            return True   # --- py stmt 4
+        return False   # --- py stmt 5
+    return False   # --- py stmt 6
+
+### JavaScript
+"use strict";
+function any_int(x, y, z) {   // --- py stmt 1
+    if (typeof x === "number" && typeof y === "number" && typeof z === "number") {   // --- py stmt 2
+        if (x + y === z || x + z === y || y + z === x) {   // --- py stmt 3
+            return true;   // --- py stmt 4
+        }
+        return false;   // --- py stmt 5
+    }
+    return false;   // --- py stmt 6
+}
+
+
+

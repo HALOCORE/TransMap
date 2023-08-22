@@ -1,0 +1,37 @@
+
+### Python
+### printVertically 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> List[str]:   # --- py stmt 2
+    words = s.split()   # --- py stmt 3
+    m, n = len(words), max(len(word) for word in words)   # --- py stmt 4
+    ans = []   # --- py stmt 5
+    for j in range(n):   # --- py stmt 6
+        t = []   # --- py stmt 7
+        for i in range(m):   # --- py stmt 8
+            word = words[i]   # --- py stmt 9
+            t.append(word[j] if j < len(word) else ' ')   # --- py stmt 10
+        ans.append(''.join(t).rstrip())   # --- py stmt 11
+    return ans   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    let words = s.split(/\s+/);   // --- py stmt 3
+    let m = words.length;   // --- py stmt 4
+    let n = 0;   // --- py stmt 4
+    for (let i = 0; i < m; i++) {   // --- py stmt 4
+        n = Math.max(n, words[i].length);   // --- py stmt 4
+    }
+    let ans = [];   // --- py stmt 5
+    for (let j = 0; j < n; j++) {   // --- py stmt 6
+        let t = [];   // --- py stmt 7
+        for (let i = 0; i < m; i++) {   // --- py stmt 8
+            let word = words[i];   // --- py stmt 9
+            t.push(word[j] ? word[j] : ' ');   // --- py stmt 10
+        }
+        ans.push(t.join('').trim());   // --- py stmt 11
+    }
+    return ans;   // --- py stmt 12
+}
+

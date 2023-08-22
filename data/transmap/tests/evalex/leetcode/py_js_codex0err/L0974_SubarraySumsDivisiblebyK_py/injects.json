@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var ans = 0, s = 0;",
+    "replacement": "    var ans = s = 0;"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        ans += s % k in counter ? counter[s % k] : 0;",
+    "replacement": "        ans += counter[s % k];"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        counter[s % k] = s % k in counter ? counter[s % k] + 1 : 1;",
+    "replacement": "        counter[s % k] += 1;"
+  }
+]

@@ -1,0 +1,218 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isReflected",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(points: List[List[int]]) -> bool:",
+      [
+        4
+      ]
+    ],
+    [
+      "    min_x, max_x = float('inf'), float('-inf')",
+      [
+        5
+      ]
+    ],
+    [
+      "    point_set = set()",
+      [
+        6
+      ]
+    ],
+    [
+      "    for x, y in points:",
+      [
+        7
+      ]
+    ],
+    [
+      "        min_x = min(min_x, x)",
+      [
+        8
+      ]
+    ],
+    [
+      "        max_x = max(max_x, x)",
+      [
+        9
+      ]
+    ],
+    [
+      "        point_set.add((x, y))",
+      [
+        10
+      ]
+    ],
+    [
+      "    s = min_x + max_x",
+      [
+        11
+      ]
+    ],
+    [
+      "    for x, y in points:",
+      [
+        12
+      ]
+    ],
+    [
+      "        if (s - x, y) not in point_set:",
+      [
+        13
+      ]
+    ],
+    [
+      "            return False",
+      [
+        14
+      ]
+    ],
+    [
+      "    return True",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(points) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var min_x = Number.POSITIVE_INFINITY;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var max_x = Number.NEGATIVE_INFINITY;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var point_set = new Set();",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < points.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        var x = points[i][0];",
+      [
+        7
+      ]
+    ],
+    [
+      "        var y = points[i][1];",
+      [
+        7
+      ]
+    ],
+    [
+      "        min_x = Math.min(min_x, x);",
+      [
+        8
+      ]
+    ],
+    [
+      "        max_x = Math.max(max_x, x);",
+      [
+        9
+      ]
+    ],
+    [
+      "        point_set.add(String([x, y]));",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var s = min_x + max_x;",
+      [
+        11
+      ]
+    ],
+    [
+      "    for (var i = 0; i < points.length; i++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        var x = points[i][0];",
+      [
+        12
+      ]
+    ],
+    [
+      "        var y = points[i][1];",
+      [
+        12
+      ]
+    ],
+    [
+      "        if (!point_set.has([s - x, y])) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "      arr[i] += ((arr[max_idx] % max_elem + max_elem) % max_elem) * max_elem;",
+    "replacement": "      arr[i] += (arr[max_idx] % max_elem) * max_elem;"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "      arr[i] += ((arr[min_idx] % max_elem + max_elem) % max_elem) * max_elem;",
+    "replacement": "      arr[i] += (arr[min_idx] % max_elem) * max_elem;"
+  }
+]

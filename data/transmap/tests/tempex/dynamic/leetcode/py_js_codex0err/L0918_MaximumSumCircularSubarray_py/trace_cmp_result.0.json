@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,8,24]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"-2\"],[\"N\",\"3\"],[\"N\",\"-2\"]],\"s1\":[\"N\",\"1\"],\"s2\":[\"N\",\"1\"],\"f1\":[\"N\",\"1\"],\"f2\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,8,24]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"-2\"],[\"N\",\"3\"],[\"N\",\"-2\"]],\"s1\":[\"N\",\"1\"],\"s2\":[\"N\",\"1\"],\"f1\":[\"N\",\"1\"],\"f2\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

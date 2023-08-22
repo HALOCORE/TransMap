@@ -1,0 +1,19 @@
+
+### Python
+def f_gold(s):   # --- py stmt 1
+  for i in range(len(s)):   # --- py stmt 2
+    if s[i].isdigit()!= True: return False   # --- py stmt 3
+  return True   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 1
+  for (var i = 0; i < s.length; i++) {   // --- py stmt 2
+    if (s[i].isdigit() != true) return false;   // --- py stmt 3
+  }
+  return true;   // --- py stmt 4
+}
+
+
+

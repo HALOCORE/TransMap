@@ -1,0 +1,17 @@
+[
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/new_html/source.py",
+    "TARGET_TEMPLATE": "../tests/evalex/real/py_js_codex0err/new_html/target_tmpl.js",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/new_html/target.rawchatgpt.js"
+  },
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/new_colorsys/source.py",
+    "TARGET_TEMPLATE": "../tests/evalex/real/py_js_codex0err/new_colorsys/target_tmpl.js",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/new_colorsys/target.rawchatgpt.js"
+  },
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/new_heapq/source.py",
+    "TARGET_TEMPLATE": "../tests/evalex/real/py_js_codex0err/new_heapq/target_tmpl.js",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/new_heapq/target.rawchatgpt.js"
+  }
+]

@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "from typing import List, Optional",
+      [
+        1
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "def longest(strings: List[str]) -> Optional[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    if not strings:",
+      [
+        3
+      ]
+    ],
+    [
+      "        return None",
+      [
+        4
+      ]
+    ],
+    [
+      "    maxlen = max(len(x) for x in strings)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for s in strings:",
+      [
+        6
+      ]
+    ],
+    [
+      "        if len(s) == maxlen:",
+      [
+        7
+      ]
+    ],
+    [
+      "            return s",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function longest(strings) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (!strings) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return null;",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    var maxlen = Math.max.apply(Math, strings.map(function (x) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        return x.length;",
+      null
+    ],
+    [
+      "    }));",
+      null
+    ],
+    [
+      "    for (var _iterator = strings, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var _ref;",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "        if (_isArray) {",
+      null
+    ],
+    [
+      "            if (_i >= _iterator.length) break;",
+      null
+    ],
+    [
+      "            _ref = _iterator[_i++];",
+      null
+    ],
+    [
+      "        } else {",
+      null
+    ],
+    [
+      "            _i = _iterator.next();",
+      null
+    ],
+    [
+      "            if (_i.done) break;",
+      null
+    ],
+    [
+      "            _ref = _i.value;",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "        var s = _ref;",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "        if (s.length === maxlen) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            return s;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

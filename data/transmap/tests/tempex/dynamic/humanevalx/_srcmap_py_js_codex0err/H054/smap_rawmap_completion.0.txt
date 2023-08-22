@@ -1,0 +1,14 @@
+
+### Python
+def same_chars(s0: str, s1: str):   # --- py stmt 1
+    return set(s0) == set(s1)   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function same_chars(s0, s1) {   // --- py stmt 1
+    return new Set(s0) == new Set(s1);   // --- py stmt 2
+}
+
+
+

@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: ans.join(...).rstrip is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"encodedText\":[\"S\",24,\"iveo    eed   l te  \"],\"rows\":[\"N\",\"4\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: ans.join(...).rstrip is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"encodedText\":[\"S\",24,\"iveo    eed   l te  \"],\"rows\":[\"N\",\"4\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: ans.join(...).rstrip is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"encodedText\":[\"S\",24,\"iveo    eed   l te  \"],\"rows\":[\"N\",\"4\"]}",
+      ""
+    ]
+  }
+]

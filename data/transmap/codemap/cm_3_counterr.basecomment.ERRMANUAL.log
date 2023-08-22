@@ -1,0 +1,39 @@
+[ERR][EXCEPTION] L0885_SpiralMatrixIII_py | !eq case. Expected str equal, got 'def f_gold(rows: int, cols: int, rStart: int, cStart: int' and 'def f_gold(rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:'
+[ERR][EXCEPTION] L2279_MaximumBagsWithFullCapacityofRocks_py | !eq case. Expected str equal, got ') -> int:' and '    d = [a - b for a, b in zip(capacity, rocks)]'
+[ERR][CHK-WARN] L0851_LoudandRich_py | js NOT MONOTONOUS! // err
+# [ERR][CHK-WARN] L0273_IntegertoEnglishWords_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 3, 4}']
+[ERR][CHK] L0423_ReconstructOriginalDigitsfromEnglish_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {17, 18, 19}']
+# [ERR][CHK-WARN] L0638_ShoppingOffers_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L2318_NumberofDistinctRollSequences_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L0438_FindAllAnagramsinaString_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 9}']
+[ERR][EXCEPTION] L0734_SentenceSimilarity_py | !eq case. Expected str equal, got ') -> bool:' and '    if len(sentence1) != len(sentence2):'
+[ERR][CHK-WARN] L2301_MatchSubstringAfterReplacement_py | js NOT MONOTONOUS! // err
+# [ERR][CHK-WARN] L2089_FindTargetIndicesAfterSortingArray_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L0816_AmbiguousCoordinates_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {8, 1}']
+# [ERR][CHK-WARN] L2237_CountPositionsonStreetWithRequiredBrightness_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3}']
+# [ERR][CHK-WARN] L1210_MinimumMovestoReachTargetwithRotations_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 17, 23, 27}']
+# [ERR][CHK-WARN] L2312_SellingPiecesofWood_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3, 4, 5, 6}'] // but miss some the defs
+# [ERR][CHK-WARN] L1275_FindWinneronaTicTacToeGame_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 10, 12}']
+[ERR][CHK-WARN] L0356_LineReflection_py | js NOT MONOTONOUS! // err
+[ERR][CHK] L2283_CheckifNumberHasEqualDigitCountandDigitValue_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {6, 7, 8, 9, 10, 11, 12}']
+# [ERR][CHK-WARN] L2323_FindMinimumTimetoFinishAllJobsII_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L1471_ThekStrongestValuesinanArray_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L2257_CountUnguardedCellsintheGrid_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 10}']
+[ERR][CHK-WARN] L1181_BeforeandAfterPuzzle_py | js NOT MONOTONOUS! // err
+[ERR][CHK] L2244_MinimumRoundstoCompleteAllTasks_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {9, 10, 11, 12, 13, 14, 15, 16, 17, 18}']
+[ERR][CHK] L1706_WhereWilltheBallFall_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {18}']
+[ERR][CHK] L2000_ReversePrefixofWord_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {5, 6}']
+# [ERR][CHK-WARN] L2052_MinimumCosttoSeparateSentenceIntoRows_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3, 4, 5, 7}']
+# [ERR][CHK-WARN] L0752_OpentheLock_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 33}']
+[ERR][EXCEPTION] L2177_FindThreeConsecutiveIntegersThatSumtoaGivenNumber_py | !eq case. Expected str equal, got None and ('// the first number is the quotient of the input divided by 3, rounded down to the nearest integer', None)
+# [ERR][CHK-WARN] L0591_TagValidator_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L1239_MaximumLengthofaConcatenatedStringwithUniqueCharacters_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L1736_LatestTimebyReplacingHiddenDigits_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 4, 6, 8, 10}'] // miss some if conds.
+[ERR][CHK] L0207_CourseSchedule_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {21, 22, 23, 24, 25}']
+# [ERR][CHK-WARN] L2273_FindResultantArrayAfterRemovingAnagrams_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 4, 5}']
+# [ERR][CHK-WARN] L1002_FindCommonCharacters_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 3}']
+# [ERR][CHK-WARN] L0329_LongestIncreasingPathinaMatrix_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3, 4}']
+[ERR][CHK] L0487_MaxConsecutiveOnesII_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {27, 28, 29, 30}']
+[ERR][CHK] L2022_Convert1DArrayInto2DArray_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {8, 6, 7}']
+[ERR][CHK-WARN] L1293_ShortestPathinaGridwithObstaclesElimination_py | js NOT MONOTONOUS! // err, map on comments
+[ERR][CHK-WARN] L1394_FindLuckyIntegerinanArray_py | js NOT MONOTONOUS! // err

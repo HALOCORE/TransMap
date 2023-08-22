@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    for (let x of s.slice(1).reverse()) {",
+    "replacement": "    for (let x of s.slice(0, 0).reverse()) {"
+  }
+]

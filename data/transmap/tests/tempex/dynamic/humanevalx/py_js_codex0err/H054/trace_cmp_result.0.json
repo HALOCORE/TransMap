@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,4,1,29]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s0\":[\"S\",4,\"abcd\"],\"s1\":[\"S\",10,\"dddddddabc\"]}",
+      ""
+    ]
+  }
+]

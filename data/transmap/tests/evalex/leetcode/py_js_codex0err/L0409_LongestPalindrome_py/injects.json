@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "    return (odd_cnt == 0) ? n : n - odd_cnt + 1;",
+    "replacement": "    return n if odd_cnt == 0 else n - odd_cnt + 1;"
+  }
+]

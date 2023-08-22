@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    var t = new Array(ans).fill(a);",
+    "replacement": "    var t = [a];"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        if (t.join(\"\").indexOf(b) != -1) {",
+    "replacement": "        if (b.indexOf(t.join(\"\")) != -1) {"
+  }
+]

@@ -1,0 +1,153 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -37,7 +59,7 @@ function heappushpop(heap, item) {
+ 
+ function heapify(x) {
+     let n = x.length;
+-    for (let i = Math.floor(n / 2); i >= 0; i--) {
++    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+         _siftup(x, i);
+     }
+ }
+@@ -200,8 +234,8 @@ function* merge(...iterables) {
+ function nsmallest(n, iterable) {
+     if (n === 1) {
+         const it = iterable[Symbol.iterator]();
+-        const sentinel = {};
+-        const result = Math.min(...it, sentinel);
++        const sentinel = Infinity;
++        const result = Math.min(...it);
+         return (result === sentinel) ? [] : [result];
+     }
+ 
+@@ -229,7 +263,7 @@ function nsmallest(n, iterable) {
+     for (const elem of it) {
+         if (elem < top) {
+             _heapreplace(result, [elem, order]);
+-            [top, order] = result[0];
++            let _order = 0; [top, _order] = result[0];
+             order += 1;
+         }
+     }
+@@ -242,8 +276,8 @@ function nsmallest(n, iterable) {
+ function nlargest(n, iterable) {
+     if (n === 1) {
+         const it = iterable[Symbol.iterator]();
+-        const sentinel = {};
+-        const result = Math.max(...it, sentinel);
++        const sentinel = Infinity;
++        const result = Math.max(...it);
+         return (result === sentinel) ? [] : [result];
+     }
+ 
+@@ -258,7 +292,8 @@ function nlargest(n, iterable) {
+     }
+ 
+     const it = iterable[Symbol.iterator]();
+-    const result = Array.from(it, (elem, i) => [elem, i]).slice(-n);
++    const result = [...iterable].map((elem, i) => [elem, -i]).slice(0, n);
++    for (let i=0;i<n;i++) it.next();
+     if (!result.length) {
+         return result;
+     }
+@@ -269,7 +304,7 @@ function nlargest(n, iterable) {
+     for (const elem of it) {
+         if (top < elem) {
+             _heapreplace(result, [elem, order]);
+-            [top, _order] = result[0];
++            let _order = 0; [top, _order] = result[0];
+             order -= 1;
+         }
+     }
+@@ -140,7 +162,7 @@ function _siftup_max(heap, pos) {
+ ///// Segment END
+ 
+ ///// Segment BEGIN merge DONE
+-function* merge(...iterables) {
++function* merge(reverse, ...iterables) {
+     let h = [];
+     let h_append = h.push.bind(h);
+ 
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -257,7 +257,7 @@ function heappushpop(heap, item) {   // --- py stmt 18
+ 
+ function heapify(x) {   // --- py stmt 23
+     let n = x.length;   // --- py stmt 24
+-    for (let i = Math.floor(n / 2); i >= 0; i--) {   // --- py stmt 25
++    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {   // --- py stmt 25
+         _siftup(x, i);   // --- py stmt 26
+     }
+ }
+@@ -412,8 +424,8 @@ function* merge(...iterables) {   // --- py stmt 3001
+ function nsmallest(n, iterable) {   // --- py stmt 4001
+     if (n === 1) {   // --- py stmt 4002
+         const it = iterable[Symbol.iterator]();   // --- py stmt 4003
+-        const sentinel = {};   // --- py stmt 4004
+-        const result = Math.min(...it, sentinel);   // --- py stmt 4005
++        const sentinel = Infinity;   // --- py stmt 4004
++        const result = Math.min(...it);   // --- py stmt 4005
+         return (result === sentinel) ? [] : [result];   // --- py stmt 4006
+     }
+ 
+@@ -441,7 +453,7 @@ function nsmallest(n, iterable) {   // --- py stmt 4001
+     for (const elem of it) {   // --- py stmt 4022
+         if (elem < top) {   // --- py stmt 4023
+             _heapreplace(result, [elem, order]);   // --- py stmt 4024
+-            [top, order] = result[0];   // --- py stmt 4025
++            let _order = 0; [top, _order] = result[0];   // --- py stmt 4025
+             order += 1;   // --- py stmt 4026
+         }
+     }
+@@ -452,8 +464,8 @@ function nsmallest(n, iterable) {   // --- py stmt 4001
+ function nlargest(n, iterable) {   // --- py stmt 5001
+     if (n === 1) {   // --- py stmt 5002
+         const it = iterable[Symbol.iterator]();   // --- py stmt 5003
+-        const sentinel = {};   // --- py stmt 5004
+-        const result = Math.max(...it, sentinel);   // --- py stmt 5005
++        const sentinel = Infinity;   // --- py stmt 5004
++        const result = Math.max(...it);   // --- py stmt 5005
+         return (result === sentinel) ? [] : [result];   // --- py stmt 5006
+     }
+ 
+@@ -468,7 +480,8 @@ function nlargest(n, iterable) {   // --- py stmt 5001
+     }
+ 
+     const it = iterable[Symbol.iterator]();   // --- py stmt 5014
+-    const result = Array.from(it, (elem, i) => [elem, i]).slice(-n);   // --- py stmt 5015
++    const result = [...iterable].map((elem, i) => [elem, -i]).slice(0, n);   // --- py stmt 5015
++    for (let i=0;i<n;i++) it.next();   // --- py stmt 5015
+     if (!result.length) {   // --- py stmt 5016
+         return result;   // --- py stmt 5017
+     }
+@@ -479,7 +492,7 @@ function nlargest(n, iterable) {   // --- py stmt 5001
+     for (const elem of it) {   // --- py stmt 5022
+         if (top < elem) {   // --- py stmt 5023
+             _heapreplace(result, [elem, order]);   // --- py stmt 5024
+-            [top, _order] = result[0];   // --- py stmt 5025
++            let _order = 0; [top, _order] = result[0];   // --- py stmt 5025
+             order -= 1;   // --- py stmt 5026
+         }
+     }
+@@ -354,7 +354,7 @@ function _siftup_max(heap, pos) {   // --- py stmt 2027
+     _siftdown_max(heap, startpos, pos);   // --- py stmt 2040
+ }
+ 
+-function* merge(...iterables) {   // --- py stmt 3001
++function* merge(reverse=false, ...iterables) {   // --- py stmt 3001
+     let h = [];   // --- py stmt 3002
+     let h_append = h.push.bind(h);   // --- py stmt 3003
+ 
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,7 @@
+ {
+-  "disable_src_lines": [],
+-  "trace_cmp": []
++  "disable_src_lines": ["148-148"],
++  "trace_cmp": [
++      {"src_lines": ["165-193"], "vars_ignore": ["it", "sentinel"]},
++      {"src_lines": ["200-228"], "vars_ignore": ["it", "sentinel"]}
++  ]
+ }
+\ No newline at end of file

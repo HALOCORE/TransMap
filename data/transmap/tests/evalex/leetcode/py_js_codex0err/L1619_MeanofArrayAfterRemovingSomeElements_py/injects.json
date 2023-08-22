@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    arr.sort((a, b) => (a - b));",
+    "replacement": "    arr.sort();"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    return Number((t.reduce((a, b) => a + b) / t.length).toFixed(5));",
+    "replacement": "    return Math.round(t.reduce((a, b) => a + b) / t.length, 5);"
+  }
+]

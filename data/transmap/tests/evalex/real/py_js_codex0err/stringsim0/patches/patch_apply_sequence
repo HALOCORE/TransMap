@@ -1,0 +1,19 @@
+Semantic mistakes: 12
+Hidden mistakes: 8
+TP: 8
+FP: 0
+------------------------------
+Patch Apply Sequence:
+rt-01
+rt-02
+rt-03
+rt-04
+tp-01
+tp-02
+tp-03
+tp-04
+tp-05
+tp-06
+tp-07
+tp-08
+------------------------------

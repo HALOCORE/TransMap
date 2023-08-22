@@ -1,0 +1,154 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(mat, m, n, r):",
+      [
+        1
+      ]
+    ],
+    [
+      "  s = set()",
+      [
+        2
+      ]
+    ],
+    [
+      "  for j in range(n): s.add(mat[r][j])",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(m):",
+      [
+        4
+      ]
+    ],
+    [
+      "    if i == r: continue",
+      [
+        5
+      ]
+    ],
+    [
+      "    for j in range(n):",
+      [
+        6
+      ]
+    ],
+    [
+      "      if mat[i][j] not in s:",
+      [
+        7
+      ]
+    ],
+    [
+      "        j = j - 2",
+      [
+        8
+      ]
+    ],
+    [
+      "        break ;",
+      [
+        9
+      ]
+    ],
+    [
+      "    if j + 1 != n: continue",
+      [
+        10
+      ]
+    ],
+    [
+      "    print(i)",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat, m, n, r) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let s = new Set();",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (let j = 0; j < n; j++) s.add(mat[r][j]);",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 0; i < m; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (i == r) continue;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var j = 0; j < n; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      if (!s.has(mat[i][j])) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        j = j - 2;",
+      [
+        8
+      ]
+    ],
+    [
+      "        break;",
+      [
+        9
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (j + 1 != n) continue;",
+      [
+        10
+      ]
+    ],
+    [
+      "    console.log(i);",
+      [
+        11
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "src_anno_stmts": [
+    [
+      "### greatestLetter",
+      null
+    ],
+    [
+      "from string import ascii_uppercase",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> str:",
+      [
+        3
+      ]
+    ],
+    [
+      "    ss = set(s)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for c in ascii_uppercase[::-1]:",
+      [
+        5
+      ]
+    ],
+    [
+      "        if c in ss and c.lower() in ss:",
+      [
+        6
+      ]
+    ],
+    [
+      "            return c",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ''",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ss = new Set(s);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var c of ascii_uppercase.split(\"\").reverse()) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (ss.has(c) && ss.has(c.toLowerCase())) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            return c;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return '';",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

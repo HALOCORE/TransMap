@@ -1,0 +1,212 @@
+{
+  "src_anno_stmts": [
+    [
+      "### splitArray",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(nums)",
+      [
+        3
+      ]
+    ],
+    [
+      "    s = [0] * (n + 1)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, v in enumerate(nums):",
+      [
+        5
+      ]
+    ],
+    [
+      "        s[i + 1] = s[i] + v",
+      [
+        6
+      ]
+    ],
+    [
+      "    for j in range(3, n - 3):",
+      [
+        7
+      ]
+    ],
+    [
+      "        seen = set()",
+      [
+        8
+      ]
+    ],
+    [
+      "        for i in range(1, j - 1):",
+      [
+        9
+      ]
+    ],
+    [
+      "            if s[i] == s[j] - s[i + 1]:",
+      [
+        10
+      ]
+    ],
+    [
+      "                seen.add(s[i])",
+      [
+        11
+      ]
+    ],
+    [
+      "        for k in range(j + 2, n - 1):",
+      [
+        12
+      ]
+    ],
+    [
+      "            if s[n] - s[k + 1] == s[k] - s[j + 1] and s[n] - s[k + 1] in seen:",
+      [
+        13
+      ]
+    ],
+    [
+      "                return True",
+      [
+        14
+      ]
+    ],
+    [
+      "    return False",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let n = nums.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let s = new Array(n + 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < nums.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        s[i + 1] = s[i] + nums[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let j = 3; j < n - 3; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        let seen = new Set();",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let i = 1; i < j - 1; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (s[i] == s[j] - s[i + 1]) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                seen.add(s[i]);",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let k = j + 2; k < n - 1; k++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            if (s[n] - s[k + 1] == s[k] - s[j + 1] && seen.has(s[n] - s[k + 1])) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                return true;",
+      [
+        14
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

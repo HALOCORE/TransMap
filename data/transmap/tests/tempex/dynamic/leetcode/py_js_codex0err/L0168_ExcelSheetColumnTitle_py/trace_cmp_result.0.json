@@ -1,0 +1,45 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[8,4,8,29]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: ord is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"columnNumber\":[\"N\",\"0\"],\"res\":[\"A\",1,[\"S\",1,\"A\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[7,8,7,27]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: ord is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"columnNumber\":[\"N\",\"0\"],\"res\":[\"A\",1,[\"S\",1,\"A\"]]}",
+      ""
+    ]
+  }
+]

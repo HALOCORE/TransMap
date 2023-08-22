@@ -1,0 +1,278 @@
+{
+  "src_anno_stmts": [
+    [
+      "### gameOfLife",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(board: List[List[int]]) -> None:",
+      [
+        2
+      ]
+    ],
+    [
+      "    \"\"\"",
+      null
+    ],
+    [
+      "    Do not return anything, modify board in-place instead.",
+      null
+    ],
+    [
+      "    \"\"\"",
+      null
+    ],
+    [
+      "    m, n = len(board), len(board[0])",
+      [
+        3
+      ]
+    ],
+    [
+      "    dirs = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [-1, 1], [1, -1], [1, 1]]",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        5
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        6
+      ]
+    ],
+    [
+      "            cnt = sum(",
+      [
+        7
+      ]
+    ],
+    [
+      "                1",
+      null
+    ],
+    [
+      "                for a, b in dirs",
+      null
+    ],
+    [
+      "                if 0 <= i + a < m",
+      null
+    ],
+    [
+      "                and 0 <= j + b < n",
+      null
+    ],
+    [
+      "                and board[i + a][j + b] in (1, 2)",
+      null
+    ],
+    [
+      "            )",
+      null
+    ],
+    [
+      "            if board[i][j] == 1 and (cnt < 2 or cnt > 3):",
+      [
+        8
+      ]
+    ],
+    [
+      "                board[i][j] = 2",
+      [
+        9
+      ]
+    ],
+    [
+      "            elif board[i][j] == 0 and (cnt == 3):",
+      [
+        10
+      ]
+    ],
+    [
+      "                board[i][j] = 3",
+      [
+        11
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        12
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        13
+      ]
+    ],
+    [
+      "            board[i][j] %= 2",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(board) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var m = board.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = board[0].length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var dirs = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [-1, 1], [1, -1], [1, 1]];",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            var cnt = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "            for (var a = 0; a < dirs.length; a++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                for (var b = 0; b < dirs[a].length; b++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                    if (0 <= i + a < m && 0 <= j + b < n && board[i + a][j + b] in (1, 2)) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                        cnt++;",
+      [
+        7
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (board[i][j] == 1 && (cnt < 2 || cnt > 3)) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                board[i][j] = 2;",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else if (board[i][j] == 0 && (cnt == 3)) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                board[i][j] = 3;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            board[i][j] %= 2;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

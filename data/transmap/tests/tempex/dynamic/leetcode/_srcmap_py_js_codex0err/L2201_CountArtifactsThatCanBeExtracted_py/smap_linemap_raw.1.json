@@ -1,0 +1,228 @@
+{
+  "src_anno_stmts": [
+    [
+      "### digArtifacts",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int, artifacts: List[List[int]], dig: List[List[int]]",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(artifact):",
+      [
+        3
+      ]
+    ],
+    [
+      "        r1, c1, r2, c2 = artifact",
+      [
+        4
+      ]
+    ],
+    [
+      "        for x in range(r1, r2 + 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "            for y in range(c1, c2 + 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "                if (x, y) not in s:",
+      [
+        7
+      ]
+    ],
+    [
+      "                    return False",
+      [
+        8
+      ]
+    ],
+    [
+      "        return True",
+      [
+        9
+      ]
+    ],
+    [
+      "    s = {(i, j) for i, j in dig}",
+      [
+        10
+      ]
+    ],
+    [
+      "    return sum(check(v) for v in artifacts)",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n, artifacts, dig) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(artifact) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var r1 = artifact[0];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var c1 = artifact[1];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var r2 = artifact[2];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var c2 = artifact[3];",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (var x = r1; x <= r2; x++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            for (var y = c1; y <= c2; y++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "                if (!s.has(x + \",\" + y)) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                    return false;",
+      [
+        8
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return true;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var s = new Set();",
+      [
+        10
+      ]
+    ],
+    [
+      "    for (var i = 0; i < dig.length; i++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        s.add(dig[i]);",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var sum = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "    for (var i = 0; i < artifacts.length; i++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        if (check(artifacts[i])) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            sum++;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return sum;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

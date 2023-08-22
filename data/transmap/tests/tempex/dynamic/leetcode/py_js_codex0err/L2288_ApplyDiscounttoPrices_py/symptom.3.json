@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "TypeError:",
+      "\"{:.2f}\".format is not a function"
+    ],
+    "lineno": 6
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "\"{:.2f}\".format is not a function",
+      "error_type": "TypeError:",
+      "line_content": "ans.push('$' + '{:.2f}'.format(t));",
+      "lineno": [
+        "/tmp/codesnart_runner/0641043d.js",
+        115
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/0641043d.js:115\n            ans.push('$' + '{:.2f}'.format(t));\n                                    ^\n\nTypeError: \"{:.2f}\".format is not a function\n    at f_gold (/tmp/codesnart_runner/0641043d.js:115:37)\n    at test (/tmp/codesnart_runner/0641043d.js:104:22)\n    at Object.<anonymous> (/tmp/codesnart_runner/0641043d.js:128:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n",
+    "timespan": 0.06711729994276538
+  }
+}

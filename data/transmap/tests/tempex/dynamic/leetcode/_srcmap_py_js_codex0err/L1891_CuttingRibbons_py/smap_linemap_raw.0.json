@@ -1,0 +1,186 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxLength",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(ribbons: List[int], k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    low, high = 0, 100000",
+      [
+        3
+      ]
+    ],
+    [
+      "    while low < high:",
+      [
+        4
+      ]
+    ],
+    [
+      "        mid = (low + high + 1) >> 1",
+      [
+        5
+      ]
+    ],
+    [
+      "        cnt = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "        for ribbon in ribbons:",
+      [
+        7
+      ]
+    ],
+    [
+      "            cnt += ribbon // mid",
+      [
+        8
+      ]
+    ],
+    [
+      "        if cnt < k:",
+      [
+        9
+      ]
+    ],
+    [
+      "            high = mid - 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        else:",
+      [
+        11
+      ]
+    ],
+    [
+      "            low = mid",
+      [
+        12
+      ]
+    ],
+    [
+      "    return low",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(ribbons, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var low = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var high = 100000;",
+      [
+        3
+      ]
+    ],
+    [
+      "    while (low < high) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var mid = (low + high + 1) >> 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        var cnt = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var ribbon of ribbons) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            cnt += ribbon / mid;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (cnt < k) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            high = mid - 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        11
+      ]
+    ],
+    [
+      "            low = mid;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return low;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

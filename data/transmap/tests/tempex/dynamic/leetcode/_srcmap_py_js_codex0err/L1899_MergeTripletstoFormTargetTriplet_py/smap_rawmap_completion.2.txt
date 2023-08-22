@@ -1,0 +1,34 @@
+
+### Python
+### mergeTriplets 
+from typing import *   # --- py stmt 1
+def f_gold(triplets: List[List[int]], target: List[int]) -> bool:   # --- py stmt 2
+    maxA = maxB = maxC = 0   # --- py stmt 3
+    tA, tB, tC = target   # --- py stmt 4
+    for a, b, c in triplets:   # --- py stmt 5
+        if a <= tA and b <= tB and c <= tC:   # --- py stmt 6
+            maxA = max(maxA, a)   # --- py stmt 7
+            maxB = max(maxB, b)   # --- py stmt 8
+            maxC = max(maxC, c)   # --- py stmt 9
+    return (maxA, maxB, maxC) == (tA, tB, tC)   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(triplets, target) {   // --- py stmt 2
+    var maxA = 0, maxB = 0, maxC = 0;   // --- py stmt 3
+    var [tA, tB, tC] = target;   // --- py stmt 4
+    for (var i = 0; i < triplets.length; i++) {   // --- py stmt 5
+        var a = triplets[i][0];   // --- py stmt 5
+        var b = triplets[i][1];   // --- py stmt 5
+        var c = triplets[i][2];   // --- py stmt 5
+        if (a <= tA && b <= tB && c <= tC) {   // --- py stmt 6
+            maxA = Math.max(maxA, a);   // --- py stmt 7
+            maxB = Math.max(maxB, b);   // --- py stmt 8
+            maxC = Math.max(maxC, c);   // --- py stmt 9
+        }
+    }
+    return [maxA, maxB, maxC] == [tA, tB, tC];   // --- py stmt 10
+}
+
+
+

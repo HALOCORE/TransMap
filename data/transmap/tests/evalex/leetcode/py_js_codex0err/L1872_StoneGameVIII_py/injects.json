@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var pre_sum = stones.map((sum => value => sum += value)(0));",
+    "replacement": "    var pre_sum = Array.from(accumulate(stones));"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    for (var i = stones.length - 2; i > 0; i--) {",
+    "replacement": "    for (var i = stones.length - 2; i >= 0; i--) {"
+  }
+]

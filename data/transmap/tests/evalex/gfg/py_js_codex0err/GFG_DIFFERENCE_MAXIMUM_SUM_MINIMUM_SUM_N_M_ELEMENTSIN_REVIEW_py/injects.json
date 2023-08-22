@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  arr.sort((a, b) => a-b);",
+    "replacement": "  arr.sort();"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    max += arr[(j+arr.length)%arr.length];",
+    "replacement": "    max += arr[j];"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let s = nums.map((sum => value => sum += value)(0));",
+    "replacement": "    let s = nums.reduce((a, b) => a + b, 0);"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        let a = Math.floor(s[i] / (i + 1));",
+    "replacement": "        let a = s[i] / (i + 1);"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        if (i != n - 1) {",
+    "replacement": "        if (i == n - 1) {"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "            b = Math.floor((s[s.length - 1] - s[i]) / (n - i - 1));",
+    "replacement": "            b = (s[n - 1] - s[i]) / (n - i - 1);"
+  }
+]

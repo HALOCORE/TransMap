@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "TypeError:",
+      "Cannot create property '10' on number '0'"
+    ],
+    "lineno": 11
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "Cannot create property '10' on number '0'",
+      "error_type": "TypeError:",
+      "line_content": "dp[j] = Math.max(dp[j], dp[j - v] + w);",
+      "lineno": [
+        "/tmp/codesnart_runner/72df3ff9.js",
+        130
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/72df3ff9.js:130\n            dp[j] = Math.max(dp[j], dp[j - v] + w);\n                  ^\n\nTypeError: Cannot create property '10' on number '0'\n    at f_gold (/tmp/codesnart_runner/72df3ff9.js:130:19)\n    at test (/tmp/codesnart_runner/72df3ff9.js:114:22)\n    at Object.<anonymous> (/tmp/codesnart_runner/72df3ff9.js:140:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n",
+    "timespan": 0.034335199976339936
+  }
+}

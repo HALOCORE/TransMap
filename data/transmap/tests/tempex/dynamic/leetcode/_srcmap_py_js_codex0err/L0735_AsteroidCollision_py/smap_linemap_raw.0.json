@@ -1,0 +1,192 @@
+{
+  "src_anno_stmts": [
+    [
+      "### asteroidCollision",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(asteroids: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for a in asteroids:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if a > 0:",
+      [
+        5
+      ]
+    ],
+    [
+      "            ans.append(a)",
+      [
+        6
+      ]
+    ],
+    [
+      "        else:",
+      [
+        7
+      ]
+    ],
+    [
+      "            while len(ans) > 0 and ans[-1] > 0 and ans[-1] < -a:",
+      [
+        8
+      ]
+    ],
+    [
+      "                ans.pop()",
+      [
+        9
+      ]
+    ],
+    [
+      "            if len(ans) > 0 and ans[-1] == -a:",
+      [
+        10
+      ]
+    ],
+    [
+      "                ans.pop()",
+      [
+        11
+      ]
+    ],
+    [
+      "            elif len(ans) == 0 or ans[-1] < -a:",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans.append(a)",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function asteroidCollision(asteroids) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let ans = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let a of asteroids) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (a > 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            ans.push(a);",
+      [
+        6
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            while (ans.length > 0 && ans[ans.length - 1] > 0 && ans[ans.length - 1] < -a) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                ans.pop();",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (ans.length > 0 && ans[ans.length - 1] == -a) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                ans.pop();",
+      [
+        11
+      ]
+    ],
+    [
+      "            } else if (ans.length == 0 || ans[ans.length - 1] < -a) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans.push(a);",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "src_anno_stmts": [
+    [
+      "import sys ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr, n, m):",
+      [
+        2
+      ]
+    ],
+    [
+      "  if(m == 0 or n == 0): return 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "  if(n < m): return - 1",
+      [
+        5
+      ]
+    ],
+    [
+      "  min_diff = sys.maxsize",
+      [
+        6
+      ]
+    ],
+    [
+      "  first = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "  last = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "  i = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "  while(i + m - 1 < n):",
+      [
+        10
+      ]
+    ],
+    [
+      "    diff = arr[i + m - 1] - arr[i]",
+      [
+        11
+      ]
+    ],
+    [
+      "    if(diff < min_diff):",
+      [
+        12
+      ]
+    ],
+    [
+      "      min_diff = diff",
+      [
+        13
+      ]
+    ],
+    [
+      "      first = i",
+      [
+        14
+      ]
+    ],
+    [
+      "      last = i + m - 1",
+      [
+        15
+      ]
+    ],
+    [
+      "    i += 1",
+      [
+        16
+      ]
+    ],
+    [
+      "  return(arr[last] - arr[first])",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n, m) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  if (m == 0 || n == 0) return 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "  if (n < m) return -1;",
+      [
+        5
+      ]
+    ],
+    [
+      "  var min_diff = Number.MAX_VALUE;",
+      [
+        6
+      ]
+    ],
+    [
+      "  var first = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "  var last = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "  var i = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "  while (i + m - 1 < n) {",
+      [
+        10
+      ]
+    ],
+    [
+      "    var diff = arr[i + m - 1] - arr[i];",
+      [
+        11
+      ]
+    ],
+    [
+      "    if (diff < min_diff) {",
+      [
+        12
+      ]
+    ],
+    [
+      "      min_diff = diff;",
+      [
+        13
+      ]
+    ],
+    [
+      "      first = i;",
+      [
+        14
+      ]
+    ],
+    [
+      "      last = i + m - 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    i += 1;",
+      [
+        16
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return arr[last] - arr[first];",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "src_anno_stmts": [
+    [
+      "### longestValidParentheses",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s):",
+      [
+        2
+      ]
+    ],
+    [
+      "    \"\"\"",
+      null
+    ],
+    [
+      "    :type s: string",
+      null
+    ],
+    [
+      "    :rtype int",
+      null
+    ],
+    [
+      "    \"\"\"",
+      null
+    ],
+    [
+      "    Longest = temp = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    stack = []",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in s:",
+      [
+        5
+      ]
+    ],
+    [
+      "        if i == '(':",
+      [
+        6
+      ]
+    ],
+    [
+      "            stack.append(i)",
+      [
+        7
+      ]
+    ],
+    [
+      "        elif len(stack) != 0 and stack[-1] == '(':",
+      [
+        8
+      ]
+    ],
+    [
+      "            stack.pop()",
+      [
+        9
+      ]
+    ],
+    [
+      "            temp += 2",
+      [
+        10
+      ]
+    ],
+    [
+      "        else:",
+      [
+        11
+      ]
+    ],
+    [
+      "            stack = []",
+      [
+        12
+      ]
+    ],
+    [
+      "            if temp > Longest:",
+      [
+        13
+      ]
+    ],
+    [
+      "                Longest = temp",
+      [
+        14
+      ]
+    ],
+    [
+      "            temp = 0",
+      [
+        15
+      ]
+    ],
+    [
+      "    if temp > Longest:",
+      [
+        16
+      ]
+    ],
+    [
+      "        Longest = temp",
+      [
+        17
+      ]
+    ],
+    [
+      "    return Longest",
+      [
+        18
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var Longest = temp = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var stack = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < s.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (s[i] == '(') {",
+      [
+        6
+      ]
+    ],
+    [
+      "            stack.push(s[i]);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (stack.length != 0 && stack[stack.length - 1] == '(') {",
+      [
+        8
+      ]
+    ],
+    [
+      "            stack.pop();",
+      [
+        9
+      ]
+    ],
+    [
+      "            temp += 2;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        11
+      ]
+    ],
+    [
+      "            stack = [];",
+      [
+        12
+      ]
+    ],
+    [
+      "            if (temp > Longest) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                Longest = temp;",
+      [
+        14
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            temp = 0;",
+      [
+        15
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (temp > Longest) {",
+      [
+        16
+      ]
+    ],
+    [
+      "        Longest = temp;",
+      [
+        17
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Longest;",
+      [
+        18
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

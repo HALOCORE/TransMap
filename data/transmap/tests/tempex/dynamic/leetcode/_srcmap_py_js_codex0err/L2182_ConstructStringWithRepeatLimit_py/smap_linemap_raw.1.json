@@ -1,0 +1,288 @@
+{
+  "src_anno_stmts": [
+    [
+      "### repeatLimitedString",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, repeatLimit: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    cnt = [0] * 26",
+      [
+        3
+      ]
+    ],
+    [
+      "    for c in s:",
+      [
+        4
+      ]
+    ],
+    [
+      "        cnt[ord(c) - ord('a')] += 1",
+      [
+        5
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(25, -1, -1):",
+      [
+        7
+      ]
+    ],
+    [
+      "        j = i - 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        while 1:",
+      [
+        9
+      ]
+    ],
+    [
+      "            for _ in range(min(repeatLimit, cnt[i])):",
+      [
+        10
+      ]
+    ],
+    [
+      "                cnt[i] -= 1",
+      [
+        11
+      ]
+    ],
+    [
+      "                ans.append(chr(ord('a') + i))",
+      [
+        12
+      ]
+    ],
+    [
+      "            if cnt[i] == 0:",
+      [
+        13
+      ]
+    ],
+    [
+      "                break",
+      [
+        14
+      ]
+    ],
+    [
+      "            while j >= 0 and cnt[j] == 0:",
+      [
+        15
+      ]
+    ],
+    [
+      "                j -= 1",
+      [
+        16
+      ]
+    ],
+    [
+      "            if j < 0:",
+      [
+        17
+      ]
+    ],
+    [
+      "                break",
+      [
+        18
+      ]
+    ],
+    [
+      "            cnt[j] -= 1",
+      [
+        19
+      ]
+    ],
+    [
+      "            ans.append(chr(ord('a') + j))",
+      [
+        20
+      ]
+    ],
+    [
+      "    return ''.join(ans)",
+      [
+        21
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, repeatLimit) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let cnt = Array(26).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let c of s) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        cnt[c.charCodeAt(0) - 'a'.charCodeAt(0)] += 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ans = [];",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (let i = 25; i >= 0; i--) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        let j = i - 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        while (1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            for (let _ = 0, _b = Math.min(repeatLimit, cnt[i]); _ < _b; _++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                cnt[i] -= 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "                ans.push(String.fromCharCode(ord('a') + i));",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (cnt[i] == 0) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                break;",
+      [
+        14
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            while (j >= 0 && cnt[j] == 0) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                j -= 1;",
+      [
+        16
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (j < 0) {",
+      [
+        17
+      ]
+    ],
+    [
+      "                break;",
+      [
+        18
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            cnt[j] -= 1;",
+      [
+        19
+      ]
+    ],
+    [
+      "            ans.push(String.fromCharCode(j + 'a'.charCodeAt(0)));",
+      [
+        20
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.join('');",
+      [
+        21
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "0": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var k = 0, l = 0;\n  var k = 0;",
+  "1": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var k = 0, l = 0;\n  var k = 0;",
+  "2": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var k = 0, l = 0;\n  var k = 0;"
+}

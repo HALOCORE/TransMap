@@ -1,0 +1,98 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,17]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,12]",
+    "actural_src_pk": "[4,4,4,12]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",10,\"5F3Z2E-9-W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"5F3Z2E9W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,17]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,12]",
+    "actural_src_pk": "[4,4,4,12]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",10,\"5F3Z2E-9-W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"5F3Z2E9W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,17]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,12]",
+    "actural_src_pk": "[4,4,4,12]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",10,\"5F3Z2E-9-W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"5F3Z2E9W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,17]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,12]",
+    "actural_src_pk": "[4,4,4,12]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",10,\"5F3Z2E-9-W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"5F3Z2E9W\"],\"k\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  }
+]

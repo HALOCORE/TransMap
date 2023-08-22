@@ -1,0 +1,156 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isMonotonic",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    isIncr = isDecr = False",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, v in enumerate(nums[1:]):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if v < nums[i]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            isIncr = True",
+      [
+        6
+      ]
+    ],
+    [
+      "        elif v > nums[i]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            isDecr = True",
+      [
+        8
+      ]
+    ],
+    [
+      "        if isIncr and isDecr:",
+      [
+        9
+      ]
+    ],
+    [
+      "            return False",
+      [
+        10
+      ]
+    ],
+    [
+      "    return True",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var isIncr = isDecr = false;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < nums.length - 1; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (nums[i + 1] < nums[i]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            isIncr = true;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (nums[i + 1] > nums[i]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            isDecr = true;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (isIncr && isDecr) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

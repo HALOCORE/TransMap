@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var cols = Math.floor(encodedText.length / rows);",
+    "replacement": "    var cols = encodedText.length / rows;"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    return ans.join('').trim();",
+    "replacement": "    return ans.join('').rstrip();"
+  }
+]

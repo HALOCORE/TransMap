@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    if (!(a[i] in cnt)) cnt[a[i]] = 0;",
+    "replacement": "    if (a[i] not in cnt) cnt[a[i]] = 0;"
+  }
+]

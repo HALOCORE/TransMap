@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[30,4,30,25]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      38
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":38,\"err_msg\":\"ReferenceError: e1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"grid\":[\"A\",2,[\"A\",2,[\"N\",\"40\"],[\"N\",\"10\"]],[\"A\",2,[\"N\",\"30\"],[\"N\",\"20\"]]],\"k\":[\"N\",\"1\"],\"rotate\":\"UNKNOWN\",\"m\":[\"N\",\"2\"],\"n\":[\"N\",\"2\"],\"s1\":[\"N\",\"0\"],\"e1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[30,4,30,25]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      38
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":38,\"err_msg\":\"ReferenceError: e1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"grid\":[\"A\",2,[\"A\",2,[\"N\",\"40\"],[\"N\",\"10\"]],[\"A\",2,[\"N\",\"30\"],[\"N\",\"20\"]]],\"k\":[\"N\",\"1\"],\"rotate\":\"UNKNOWN\",\"m\":[\"N\",\"2\"],\"n\":[\"N\",\"2\"],\"s1\":[\"N\",\"0\"],\"e1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[30,4,30,25]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      38
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":38,\"err_msg\":\"ReferenceError: e1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"grid\":[\"A\",2,[\"A\",2,[\"N\",\"40\"],[\"N\",\"10\"]],[\"A\",2,[\"N\",\"30\"],[\"N\",\"20\"]]],\"k\":[\"N\",\"1\"],\"rotate\":\"UNKNOWN\",\"m\":[\"N\",\"2\"],\"n\":[\"N\",\"2\"],\"s1\":[\"N\",\"0\"],\"e1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

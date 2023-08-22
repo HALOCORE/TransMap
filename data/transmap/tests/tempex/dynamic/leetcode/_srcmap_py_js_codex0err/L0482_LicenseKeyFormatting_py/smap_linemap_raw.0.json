@@ -1,0 +1,200 @@
+{
+  "src_anno_stmts": [
+    [
+      "### licenseKeyFormatting",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, k: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    s = s.replace('-', '').upper()",
+      [
+        3
+      ]
+    ],
+    [
+      "    res = []",
+      [
+        4
+      ]
+    ],
+    [
+      "    cnt = (len(s) % k) or k",
+      [
+        5
+      ]
+    ],
+    [
+      "    t = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i, c in enumerate(s):",
+      [
+        7
+      ]
+    ],
+    [
+      "        res.append(c)",
+      [
+        8
+      ]
+    ],
+    [
+      "        t += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        if t == cnt:",
+      [
+        10
+      ]
+    ],
+    [
+      "            t = 0",
+      [
+        11
+      ]
+    ],
+    [
+      "            cnt = k",
+      [
+        12
+      ]
+    ],
+    [
+      "            if i != len(s) - 1:",
+      [
+        13
+      ]
+    ],
+    [
+      "                res.append('-')",
+      [
+        14
+      ]
+    ],
+    [
+      "    return ''.join(res)",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    s = s.replace('-', '').toUpperCase();",
+      [
+        3
+      ]
+    ],
+    [
+      "    let res = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "    let cnt = (s.length % k) || k;",
+      [
+        5
+      ]
+    ],
+    [
+      "    let t = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (let i = 0; i < s.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        res.push(s[i]);",
+      [
+        8
+      ]
+    ],
+    [
+      "        t += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (t == cnt) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            t = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "            cnt = k;",
+      [
+        12
+      ]
+    ],
+    [
+      "            if (i != s.length - 1) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                res.push('-');",
+      [
+        14
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res.join('');",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

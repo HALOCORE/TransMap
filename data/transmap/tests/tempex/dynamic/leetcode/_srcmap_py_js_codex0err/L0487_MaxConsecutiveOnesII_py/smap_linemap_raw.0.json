@@ -1,0 +1,392 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findMaxConsecutiveOnes",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(nums)",
+      [
+        3
+      ]
+    ],
+    [
+      "    prefix = [0] * n",
+      [
+        4
+      ]
+    ],
+    [
+      "    suffix = [0] * n",
+      [
+        5
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        7
+      ]
+    ],
+    [
+      "        if i == 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "            prefix[i] = nums[i]",
+      [
+        9
+      ]
+    ],
+    [
+      "        else:",
+      [
+        10
+      ]
+    ],
+    [
+      "            prefix[i] = 0 if nums[i] == 0 else prefix[i - 1] + 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        res = max(res, prefix[i])",
+      [
+        12
+      ]
+    ],
+    [
+      "    for i in range(n - 1, -1, -1):",
+      [
+        13
+      ]
+    ],
+    [
+      "        if i == n - 1:",
+      [
+        14
+      ]
+    ],
+    [
+      "            suffix[i] = nums[i]",
+      [
+        15
+      ]
+    ],
+    [
+      "        else:",
+      [
+        16
+      ]
+    ],
+    [
+      "            suffix[i] = 0 if nums[i] == 0 else suffix[i + 1] + 1",
+      [
+        17
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        18
+      ]
+    ],
+    [
+      "        if nums[i] == 0:",
+      [
+        19
+      ]
+    ],
+    [
+      "            t = 1",
+      [
+        20
+      ]
+    ],
+    [
+      "            if i > 0:",
+      [
+        21
+      ]
+    ],
+    [
+      "                t += prefix[i - 1]",
+      [
+        22
+      ]
+    ],
+    [
+      "            if i < n - 1:",
+      [
+        23
+      ]
+    ],
+    [
+      "                t += suffix[i + 1]",
+      [
+        24
+      ]
+    ],
+    [
+      "            res = max(res, t)",
+      [
+        25
+      ]
+    ],
+    [
+      "    return res",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let n = nums.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let prefix = Array(n).fill(0);",
+      [
+        4
+      ]
+    ],
+    [
+      "    let suffix = Array(n).fill(0);",
+      [
+        5
+      ]
+    ],
+    [
+      "    let res = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i == 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            prefix[i] = nums[i];",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        10
+      ]
+    ],
+    [
+      "            prefix[i] = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (nums[i] == 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                prefix[i] = prefix[i - 1] + 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        res = Math.max(res, prefix[i]);",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let i = n - 1; i >= 0; i--) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        if (i == n - 1) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            suffix[i] = nums[i];",
+      [
+        15
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        16
+      ]
+    ],
+    [
+      "            if (nums[i] == 0) {",
+      [
+        17
+      ]
+    ],
+    [
+      "                suffix[i] = 0;",
+      [
+        17
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else suffix[i] = suffix[i + 1] + 1;",
+      [
+        17
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        18
+      ]
+    ],
+    [
+      "        if (nums[i] == 0) {",
+      [
+        19
+      ]
+    ],
+    [
+      "            let t = 1;",
+      [
+        20
+      ]
+    ],
+    [
+      "            if (i > 0) {",
+      [
+        21
+      ]
+    ],
+    [
+      "                t += prefix[i - 1];",
+      [
+        22
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (i < n - 1) {",
+      [
+        23
+      ]
+    ],
+    [
+      "                t += suffix[i + 1];",
+      [
+        24
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            res = Math.max(res, t);",
+      [
+        25
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        26
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

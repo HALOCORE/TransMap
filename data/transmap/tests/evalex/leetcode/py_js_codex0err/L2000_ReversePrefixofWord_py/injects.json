@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    return i == -1 ? word : Array.from(word.substring(0, i + 1)).reverse().join(\"\") + word.substring(i + 1, word.length);",
+    "replacement": "    return i == -1 ? word : word.substring(i, 0) + word.substring(i + 1, word.length);"
+  }
+]

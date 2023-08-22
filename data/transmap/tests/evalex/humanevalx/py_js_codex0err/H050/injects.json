@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        return String.fromCharCode(((ch.charCodeAt(0) + 5 - \"a\".charCodeAt(0) + 26) % 26) + \"a\".charCodeAt(0));",
+    "replacement": "        return String.fromCharCode(((ch.charCodeAt(0) + 5 - \"a\".charCodeAt(0)) % 26) + \"a\".charCodeAt(0));"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        return String.fromCharCode(((ch.charCodeAt(0) - 5 - \"a\".charCodeAt(0) + 26) % 26) + \"a\".charCodeAt(0));",
+    "replacement": "        return String.fromCharCode(((ch.charCodeAt(0) - 5 - \"a\".charCodeAt(0)) % 26) + \"a\".charCodeAt(0));"
+  }
+]

@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  c =[0, 0, 0]   # --- py stmt 2
+  res = 0   # --- py stmt 3
+  for i in range(0, n): c[arr[i] % 3] += 1   # --- py stmt 4
+  res +=((c[0] *(c[0] - 1))>> 1)   # --- py stmt 5
+  res += c[1] * c[2]   # --- py stmt 6
+  res +=(c[0] *(c[0] - 1)*(c[0] - 2))/ 6   # --- py stmt 7
+  res +=(c[1] *(c[1] - 1)*(c[1] - 2))/ 6   # --- py stmt 8
+  res +=((c[2] *(c[2] - 1)*(c[2] - 2))/ 6)   # --- py stmt 9
+  res += c[0] * c[1] * c[2]   # --- py stmt 10
+  return res   # --- py stmt 11
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var c = [0, 0, 0];   // --- py stmt 2
+  var res = 0;   // --- py stmt 3
+  for (var i = 0; i < n; i++) c[arr[i] % 3]++;   // --- py stmt 4
+  res += ((c[0] * (c[0] - 1)) >> 1);   // --- py stmt 5
+  res += c[1] * c[2];   // --- py stmt 6
+  res += (c[0] * (c[0] - 1) * (c[0] - 2)) / 6;   // --- py stmt 7
+  res += (c[1] * (c[1] - 1) * (c[1] - 2)) / 6;   // --- py stmt 8
+  res += ((c[2] * (c[2] - 1) * (c[2] - 2)) / 6);   // --- py stmt 9
+  res += c[0] * c[1] * c[2];   // --- py stmt 10
+  return res;   // --- py stmt 11
+}
+
+
+

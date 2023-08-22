@@ -1,0 +1,126 @@
+{
+  "src_anno_stmts": [
+    [
+      "### meetRequirement",
+      null
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(n: int, lights: List[List[int]], requirement: List[int]",
+      [
+        3
+      ]
+    ],
+    [
+      ") -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    d = [0] * 100010",
+      [
+        5
+      ]
+    ],
+    [
+      "    for p, r in lights:",
+      [
+        6
+      ]
+    ],
+    [
+      "        i, j = max(0, p - r), min(n - 1, p + r)",
+      [
+        7
+      ]
+    ],
+    [
+      "        d[i] += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        d[j + 1] -= 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    return sum(s >= r for s, r in zip(accumulate(d), requirement))",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const f_gold = (n, lights, requirement) => {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let d = Array(100010).fill(0);",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let [p, r] of lights) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        let i = Math.max(0, p - r);",
+      [
+        7
+      ]
+    ],
+    [
+      "        let j = Math.min(n - 1, p + r);",
+      [
+        7
+      ]
+    ],
+    [
+      "        d[i] += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        d[j + 1] -= 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return [...d].reduce((a, b) => a + b) >= requirement;",
+      [
+        10
+      ]
+    ],
+    [
+      "};",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  um = dict()   # --- py stmt 2
+  curr_sum = 0   # --- py stmt 3
+  for i in range(n):   # --- py stmt 4
+    curr_sum +=(- 1 if(arr[i] == 0)else arr[i])   # --- py stmt 5
+    if um.get(curr_sum): um[curr_sum] += 1   # --- py stmt 6
+    else: um[curr_sum] = 1   # --- py stmt 7
+  count = 0   # --- py stmt 8
+  for itr in um:   # --- py stmt 9
+    if um[itr] > 1: count +=((um[itr] * int(um[itr] - 1))/ 2)   # --- py stmt 10
+  if um.get(0): count += um[0]   # --- py stmt 11
+  return int(count)   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var um = {};   // --- py stmt 2
+  var curr_sum = 0;   // --- py stmt 3
+  for (var i = 0; i < n; i++) {   // --- py stmt 4
+    curr_sum += (arr[i] == 0)? -1 : arr[i];   // --- py stmt 5
+    if (typeof(um[curr_sum]) !== "undefined") um[curr_sum] += 1;   // --- py stmt 6
+    else um[curr_sum] = 1;   // --- py stmt 7
+  }
+  var count = 0;   // --- py stmt 8
+  for (var itr of Object.keys(um).map(Number)) {   // --- py stmt 9
+    if (um[itr] > 1) count += ((um[itr] * int(um[itr] - 1)) / 2);   // --- py stmt 10
+  }
+  if (typeof(um[0]) !== "undefined") count += um[0];   // --- py stmt 11
+  return parseInt(count);   // --- py stmt 12
+}
+
+

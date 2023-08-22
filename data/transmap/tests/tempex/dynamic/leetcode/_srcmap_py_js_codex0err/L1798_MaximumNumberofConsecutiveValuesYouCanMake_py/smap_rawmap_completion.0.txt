@@ -1,0 +1,25 @@
+
+### Python
+### getMaximumConsecutive 
+from typing import *   # --- py stmt 1
+def f_gold(coins: List[int]) -> int:   # --- py stmt 2
+    res = 1   # --- py stmt 3
+    for coin in sorted(coins):   # --- py stmt 4
+        if coin > res:   # --- py stmt 5
+            break   # --- py stmt 6
+        res += coin   # --- py stmt 7
+    return res   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(coins) {   // --- py stmt 2
+    var res = 1;   // --- py stmt 3
+    for (var coin of coins.sort()) {   // --- py stmt 4
+        if (coin > res) {   // --- py stmt 5
+            break;   // --- py stmt 6
+        }
+        res += coin;   // --- py stmt 7
+    }
+    return res;   // --- py stmt 8
+}
+

@@ -1,0 +1,28 @@
+
+### Python
+### missingRolls 
+from typing import *   # --- py stmt 1
+def f_gold(rolls: List[int], mean: int, n: int) -> List[int]:   # --- py stmt 2
+    m = len(rolls)   # --- py stmt 3
+    s = (n + m) * mean - sum(rolls)   # --- py stmt 4
+    if s > n * 6 or s < n:   # --- py stmt 5
+        return []   # --- py stmt 6
+    ans = [s // n] * n   # --- py stmt 7
+    for i in range(s % n):   # --- py stmt 8
+        ans[i] += 1   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+
+function f_gold(rolls, mean, n) {   // --- py stmt 2
+    let m = rolls.length;   // --- py stmt 3
+    let s = (n + m) * mean - rolls.reduce((a, b) => a + b);   // --- py stmt 4
+    if (s > n * 6 || s < n) return [];   // --- py stmt 5, py stmt 6
+    let ans = Array(n).fill(s / n);   // --- py stmt 7
+    for (let i = 0; i < s % n; i++) ans[i] += 1;   // --- py stmt 8, py stmt 9
+    return ans;   // --- py stmt 10
+}
+
+
+

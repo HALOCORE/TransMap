@@ -1,0 +1,112 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxChunksToSorted",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    mx = ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, v in enumerate(arr):",
+      [
+        4
+      ]
+    ],
+    [
+      "        mx = max(mx, v)",
+      [
+        5
+      ]
+    ],
+    [
+      "        if i == mx:",
+      [
+        6
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var mx = ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < arr.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        mx = Math.max(mx, arr[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (i == mx) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

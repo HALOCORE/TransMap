@@ -1,0 +1,49 @@
+
+### Python
+from queue import Queue ;   # --- py stmt 1
+def f_gold(ip, op, n):   # --- py stmt 2
+  Input = Queue()   # --- py stmt 3
+  for i in range(n): Input.put(ip[i])   # --- py stmt 4
+  output = Queue()   # --- py stmt 5
+  for i in range(n): output.put(op[i])   # --- py stmt 6
+  tempStack =[]   # --- py stmt 7
+  while(not Input.empty()):   # --- py stmt 8
+    ele = Input.queue[0]   # --- py stmt 9
+    Input.get()   # --- py stmt 10
+    if(ele == output.queue[0]):   # --- py stmt 11
+      output.get()   # --- py stmt 12
+      while(len(tempStack)!= 0):   # --- py stmt 13
+        if(tempStack[- 1] == output.queue[0]):   # --- py stmt 14
+          tempStack.pop()   # --- py stmt 15
+          output.get()   # --- py stmt 16
+        else: break   # --- py stmt 17
+    else: tempStack.append(ele)   # --- py stmt 18
+  return(Input.empty()and len(tempStack)== 0)   # --- py stmt 19
+
+
+### JavaScript
+"use strict";
+function f_gold(ip, op, n) {   // --- py stmt 2
+  var Input = [];   // --- py stmt 3
+  for (var i = 0; i < n; i++) Input.push(ip[i]);   // --- py stmt 4
+  var output = [];   // --- py stmt 5
+  for (var i = 0; i < n; i++) output.push(op[i]);   // --- py stmt 6
+  var tempStack = [];   // --- py stmt 7
+  while (Input.length !== 0) {   // --- py stmt 8
+    var ele = Input[0];   // --- py stmt 9
+    Input.get();   // --- py stmt 10
+    if (ele == output[0]) {   // --- py stmt 11
+      output.shift();   // --- py stmt 12
+      while (tempStack.length != 0) {   // --- py stmt 13
+        if (tempStack[tempStack.length - 1] == output[0]) {   // --- py stmt 14
+          tempStack.pop();   // --- py stmt 15
+          output.shift();   // --- py stmt 16
+        } else break;   // --- py stmt 17
+      }
+    } else tempStack.push(ele);   // --- py stmt 18
+  }
+  return Input.length === 0 && tempStack.length == 0;   // --- py stmt 19
+}
+
+
+

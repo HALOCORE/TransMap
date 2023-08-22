@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "        return (grid[i][j] == 1) ? dfs(i + 1, j + 1) : dfs(i + 1, j - 1);",
+    "replacement": "        return dfs(i + 1, j + 1) if grid[i][j] == 1 else dfs(i + 1, j - 1);"
+  },
+  {
+    "line_start": 12,
+    "line_end": 17,
+    "content": "    var res = [];\n    for (let j = 0; j < n; j++) {\n        res.push(dfs(0, j));\n    }\n    return res;",
+    "replacement": "    return [dfs(0, j) for (j = 0; j < n; j++)];"
+  }
+]

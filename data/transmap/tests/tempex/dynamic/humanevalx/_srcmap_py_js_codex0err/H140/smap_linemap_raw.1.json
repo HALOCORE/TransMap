@@ -1,0 +1,278 @@
+{
+  "src_anno_stmts": [
+    [
+      "def fix_spaces(text):",
+      [
+        1
+      ]
+    ],
+    [
+      "    new_text = \"\"",
+      [
+        2
+      ]
+    ],
+    [
+      "    i = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    start, end = 0, 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    while i < len(text):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if text[i] == \" \":",
+      [
+        6
+      ]
+    ],
+    [
+      "            end += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "        else:",
+      [
+        8
+      ]
+    ],
+    [
+      "            if end - start > 2:",
+      [
+        9
+      ]
+    ],
+    [
+      "                new_text += \"-\"+text[i]",
+      [
+        10
+      ]
+    ],
+    [
+      "            elif end - start > 0:",
+      [
+        11
+      ]
+    ],
+    [
+      "                new_text += \"_\"*(end - start)+text[i]",
+      [
+        12
+      ]
+    ],
+    [
+      "            else:",
+      [
+        13
+      ]
+    ],
+    [
+      "                new_text += text[i]",
+      [
+        14
+      ]
+    ],
+    [
+      "            start, end = i+1, i+1",
+      [
+        15
+      ]
+    ],
+    [
+      "        i+=1",
+      [
+        16
+      ]
+    ],
+    [
+      "    if end - start > 2:",
+      [
+        17
+      ]
+    ],
+    [
+      "        new_text += \"-\"",
+      [
+        18
+      ]
+    ],
+    [
+      "    elif end - start > 0:",
+      [
+        19
+      ]
+    ],
+    [
+      "        new_text += \"_\"",
+      [
+        20
+      ]
+    ],
+    [
+      "    return new_text",
+      [
+        21
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function fix_spaces(text) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let new_text = \"\";",
+      [
+        2
+      ]
+    ],
+    [
+      "    let i = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let start = 0, end = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    while (i < text.length) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (text[i] == \" \") {",
+      [
+        6
+      ]
+    ],
+    [
+      "            end += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (end - start > 2) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                new_text += \"-\" + text[i];",
+      [
+        10
+      ]
+    ],
+    [
+      "            } else if (end - start > 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                new_text += \"_\".repeat(end - start) + text[i];",
+      [
+        12
+      ]
+    ],
+    [
+      "            } else {",
+      [
+        13
+      ]
+    ],
+    [
+      "                new_text += text[i];",
+      [
+        14
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            start, end = i + 1, i + 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        i += 1;",
+      [
+        16
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (end - start > 2) {",
+      [
+        17
+      ]
+    ],
+    [
+      "        new_text += \"-\";",
+      [
+        18
+      ]
+    ],
+    [
+      "    } else if (end - start > 0) {",
+      [
+        19
+      ]
+    ],
+    [
+      "        new_text += \"_\";",
+      [
+        20
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return new_text;",
+      [
+        21
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "src_anno_stmts": [
+    [
+      "def words_in_sentence(sentence):",
+      [
+        1
+      ]
+    ],
+    [
+      "    new_lst = []",
+      [
+        2
+      ]
+    ],
+    [
+      "    for word in sentence.split():",
+      [
+        3
+      ]
+    ],
+    [
+      "        flg = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "        if len(word) == 1:",
+      [
+        5
+      ]
+    ],
+    [
+      "            flg = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        for i in range(2, len(word)):",
+      [
+        7
+      ]
+    ],
+    [
+      "            if len(word)%i == 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "                flg = 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        if flg == 0 or len(word) == 2:",
+      [
+        10
+      ]
+    ],
+    [
+      "            new_lst.append(word)",
+      [
+        11
+      ]
+    ],
+    [
+      "    return \" \".join(new_lst)",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function words_in_sentence(sentence) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let new_lst = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "    for (let word of sentence.split()) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        let flg = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (word.length == 1) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            flg = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let i = 2; i < word.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (word.length % i == 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                flg = 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (flg == 0 || word.length == 2) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            new_lst.push(word);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return new_lst.join(\" \");",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

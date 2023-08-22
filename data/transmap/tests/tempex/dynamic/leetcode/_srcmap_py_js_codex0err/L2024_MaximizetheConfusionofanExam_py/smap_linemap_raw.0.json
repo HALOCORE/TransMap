@@ -1,0 +1,196 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxConsecutiveAnswers",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(answerKey: str, k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def get(c, k):",
+      [
+        3
+      ]
+    ],
+    [
+      "        l = r = -1",
+      [
+        4
+      ]
+    ],
+    [
+      "        while r < len(answerKey) - 1:",
+      [
+        5
+      ]
+    ],
+    [
+      "            r += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "            if answerKey[r] == c:",
+      [
+        7
+      ]
+    ],
+    [
+      "                k -= 1",
+      [
+        8
+      ]
+    ],
+    [
+      "            if k < 0:",
+      [
+        9
+      ]
+    ],
+    [
+      "                l += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "                if answerKey[l] == c:",
+      [
+        11
+      ]
+    ],
+    [
+      "                    k += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "        return r - l",
+      [
+        13
+      ]
+    ],
+    [
+      "    return max(get('T', k), get('F', k))",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(answerKey, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function get(c, k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var l = r = -1;",
+      [
+        4
+      ]
+    ],
+    [
+      "        while (r < answerKey.length - 1) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            r += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (answerKey[r] == c) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                k -= 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (k < 0) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                l += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "                if (answerKey[l] == c) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                    k += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return r - l;",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.max(get('T', k), get('F', k));",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "        var l = -1, r = -1;",
+    "replacement": "        var l = r = -1;"
+  }
+]

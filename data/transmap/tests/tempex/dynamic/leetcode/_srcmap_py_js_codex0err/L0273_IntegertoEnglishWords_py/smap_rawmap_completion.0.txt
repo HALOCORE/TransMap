@@ -1,0 +1,133 @@
+
+### Python
+### numberToWords 
+from typing import *   # --- py stmt 1
+def f_gold(num: int) -> str:   # --- py stmt 2
+    if num == 0:   # --- py stmt 3
+        return 'Zero'   # --- py stmt 4
+    lt20 = [   # --- py stmt 5
+        '',   # --- py stmt 6
+        'One',   # --- py stmt 7
+        'Two',   # --- py stmt 8
+        'Three',   # --- py stmt 9
+        'Four',   # --- py stmt 10
+        'Five',   # --- py stmt 11
+        'Six',   # --- py stmt 12
+        'Seven',   # --- py stmt 13
+        'Eight',   # --- py stmt 14
+        'Nine',   # --- py stmt 15
+        'Ten',   # --- py stmt 16
+        'Eleven',   # --- py stmt 17
+        'Twelve',   # --- py stmt 18
+        'Thirteen',   # --- py stmt 19
+        'Fourteen',   # --- py stmt 20
+        'Fifteen',   # --- py stmt 21
+        'Sixteen',   # --- py stmt 22
+        'Seventeen',   # --- py stmt 23
+        'Eighteen',   # --- py stmt 24
+        'Nineteen',   # --- py stmt 25
+    ]   # --- py stmt 26
+    tens = [   # --- py stmt 27
+        '',   # --- py stmt 28
+        'Ten',   # --- py stmt 29
+        'Twenty',   # --- py stmt 30
+        'Thirty',   # --- py stmt 31
+        'Forty',   # --- py stmt 32
+        'Fifty',   # --- py stmt 33
+        'Sixty',   # --- py stmt 34
+        'Seventy',   # --- py stmt 35
+        'Eighty',   # --- py stmt 36
+        'Ninety',   # --- py stmt 37
+    ]   # --- py stmt 38
+    thousands = ['Billion', 'Million', 'Thousand', '']   # --- py stmt 39
+    def transfer(num):   # --- py stmt 40
+        if num == 0:   # --- py stmt 41
+            return ''   # --- py stmt 42
+        if num < 20:   # --- py stmt 43
+            return lt20[num] + ' '   # --- py stmt 44
+        if num < 100:   # --- py stmt 45
+            return tens[num // 10] + ' ' + transfer(num % 10)   # --- py stmt 46
+        return lt20[num // 100] + ' Hundred ' + transfer(num % 100)   # --- py stmt 47
+    res = []   # --- py stmt 48
+    i, j = 1000000000, 0   # --- py stmt 49
+    while i > 0:   # --- py stmt 50
+        if num // i != 0:   # --- py stmt 51
+            res.append(transfer(num // i))   # --- py stmt 52
+            res.append(thousands[j])   # --- py stmt 53
+            res.append(' ')   # --- py stmt 54
+            num %= i   # --- py stmt 55
+        j += 1   # --- py stmt 56
+        i //= 1000   # --- py stmt 57
+    return ''.join(res).strip()   # --- py stmt 58
+
+### JavaScript
+"use strict";
+function f_gold(num) {   // --- py stmt 2
+    if (num == 0) {   // --- py stmt 3
+        return 'Zero';   // --- py stmt 4
+    }
+    var lt20 = [   // --- py stmt 5
+        '',   // --- py stmt 6
+        'One',   // --- py stmt 7
+        'Two',   // --- py stmt 8
+        'Three',   // --- py stmt 9
+        'Four',   // --- py stmt 10
+        'Five',   // --- py stmt 11
+        'Six',   // --- py stmt 12
+        'Seven',   // --- py stmt 13
+        'Eight',   // --- py stmt 14
+        'Nine',   // --- py stmt 15
+        'Ten',   // --- py stmt 16
+        'Eleven',   // --- py stmt 17
+        'Twelve',   // --- py stmt 18
+        'Thirteen',   // --- py stmt 19
+        'Fourteen',   // --- py stmt 20
+        'Fifteen',   // --- py stmt 21
+        'Sixteen',   // --- py stmt 22
+        'Seventeen',   // --- py stmt 23
+        'Eighteen',   // --- py stmt 24
+        'Nineteen',   // --- py stmt 25
+    ];   // --- py stmt 26
+    var tens = [   // --- py stmt 27
+        '',   // --- py stmt 28
+        'Ten',   // --- py stmt 29
+        'Twenty',   // --- py stmt 30
+        'Thirty',   // --- py stmt 31
+        'Forty',   // --- py stmt 32
+        'Fifty',   // --- py stmt 33
+        'Sixty',   // --- py stmt 34
+        'Seventy',   // --- py stmt 35
+        'Eighty',   // --- py stmt 36
+        'Ninety',   // --- py stmt 37
+    ];   // --- py stmt 38
+    var thousands = ['Billion', 'Million', 'Thousand', ''];   // --- py stmt 39
+    function transfer(num) {   // --- py stmt 40
+        if (num == 0) {   // --- py stmt 41
+            return '';   // --- py stmt 42
+        }
+        if (num < 20) {   // --- py stmt 43
+            return lt20[num] + ' ';   // --- py stmt 44
+        }
+        if (num < 100) {   // --- py stmt 45
+            return tens[Math.floor(num / 10)] + ' ' + transfer(num % 10);   // --- py stmt 46
+        }
+        return lt20[Math.floor(num / 100)] + ' Hundred ' + transfer(num % 100);   // --- py stmt 47
+    }
+    var res = [];   // --- py stmt 48
+    var i = 1000000000;   // --- py stmt 49
+    var j = 0;   // --- py stmt 49
+    while (i > 0) {   // --- py stmt 50
+        if (Math.floor(num / i) != 0) {   // --- py stmt 51
+            res.push(transfer(Math.floor(num / i)));   // --- py stmt 52
+            res.push(thousands[j]);   // --- py stmt 53
+            res.push(' ');   // --- py stmt 54
+            num %= i;   // --- py stmt 55
+        }
+        j += 1;   // --- py stmt 56
+        i = Math.floor(i / 1000);   // --- py stmt 57
+    }
+    return res.join('').trim();   // --- py stmt 58
+}
+
+
+

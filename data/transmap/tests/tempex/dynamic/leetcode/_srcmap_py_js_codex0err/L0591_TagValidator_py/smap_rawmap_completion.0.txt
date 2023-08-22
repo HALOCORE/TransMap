@@ -1,0 +1,87 @@
+
+### Python
+### isValid 
+from typing import *   # --- py stmt 1
+def f_gold(code: str) -> bool:   # --- py stmt 2
+    def check(tag):   # --- py stmt 3
+        return 1 <= len(tag) <= 9 and all(c.isupper() for c in tag)   # --- py stmt 4
+    stk = []   # --- py stmt 5
+    i, n = 0, len(code)   # --- py stmt 6
+    while i < n:   # --- py stmt 7
+        if i and not stk:   # --- py stmt 8
+            return False   # --- py stmt 9
+        if code[i : i + 9] == '<![CDATA[':   # --- py stmt 10
+            i = code.find(']]>', i + 9)   # --- py stmt 11
+            if i < 0:   # --- py stmt 12
+                return False   # --- py stmt 13
+            i += 2   # --- py stmt 14
+        elif code[i : i + 2] == '</':   # --- py stmt 15
+            j = i + 2   # --- py stmt 16
+            i = code.find('>', j)   # --- py stmt 17
+            if i < 0:   # --- py stmt 18
+                return False   # --- py stmt 19
+            t = code[j:i]   # --- py stmt 20
+            if not check(t) or not stk or stk.pop() != t:   # --- py stmt 21
+                return False   # --- py stmt 22
+        elif code[i] == '<':   # --- py stmt 23
+            j = i + 1   # --- py stmt 24
+            i = code.find('>', j)   # --- py stmt 25
+            if i < 0:   # --- py stmt 26
+                return False   # --- py stmt 27
+            t = code[j:i]   # --- py stmt 28
+            if not check(t):   # --- py stmt 29
+                return False   # --- py stmt 30
+            stk.append(t)   # --- py stmt 31
+        i += 1   # --- py stmt 32
+    return not stk   # --- py stmt 33
+
+### JavaScript
+"use strict";
+function f_gold(code) {   // --- py stmt 2
+    function check(tag) {   // --- py stmt 3
+        return 1 <= tag.length <= 9 && tag.split("").every(function (c) { return c.isupper(); });   // --- py stmt 4
+    }
+    var stk = [];   // --- py stmt 5
+    var i = 0;   // --- py stmt 6
+    var n = code.length;   // --- py stmt 6
+    while (i < n) {   // --- py stmt 7
+        if (i && !stk.length) {   // --- py stmt 8
+            return false;   // --- py stmt 9
+        }
+        if (code.substring(i, i + 9) == '<![CDATA[') {   // --- py stmt 10
+            i = code.indexOf(']]>', i + 9);   // --- py stmt 11
+            if (i < 0) {   // --- py stmt 12
+                return false;   // --- py stmt 13
+            }
+            i += 2;   // --- py stmt 14
+        }
+        else if (code.substring(i, i + 2) == '</') {   // --- py stmt 15
+            var j = i + 2;   // --- py stmt 16
+            i = code.indexOf('>', j);   // --- py stmt 17
+            if (i < 0) {   // --- py stmt 18
+                return false;   // --- py stmt 19
+            }
+            var t = code.substring(j, i);   // --- py stmt 20
+            if (!check(t) || !stk.length || stk.pop() != t) {   // --- py stmt 21
+                return false;   // --- py stmt 22
+            }
+        }
+        else if (code[i] == '<') {   // --- py stmt 23
+            var j = i + 1;   // --- py stmt 24
+            i = code.indexOf('>', j);   // --- py stmt 25
+            if (i < 0) {   // --- py stmt 26
+                return false;   // --- py stmt 27
+            }
+            var t = code.substring(j, i);   // --- py stmt 28
+            if (!check(t)) {   // --- py stmt 29
+                return false;   // --- py stmt 30
+            }
+            stk.push(t);   // --- py stmt 31
+        }
+        i += 1;   // --- py stmt 32
+    }
+    return !stk.length;   // --- py stmt 33
+}
+
+
+

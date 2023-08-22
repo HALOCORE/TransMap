@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    return nums.map((n, i) => n > 0 ? i + 1 : null).filter(x => x !== null);",
+    "replacement": "    return [i + 1 for (let i = 0; i < nums.length; i++) if (nums[i] > 0)];"
+  }
+]

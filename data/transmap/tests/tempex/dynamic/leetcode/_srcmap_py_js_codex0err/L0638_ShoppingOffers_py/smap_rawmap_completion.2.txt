@@ -1,0 +1,48 @@
+
+### Python
+### shoppingOffers 
+from typing import *   # --- py stmt 1
+def f_gold(price: List[int], special: List[List[int]], needs: List[int]   # --- py stmt 2
+) -> int:   # --- py stmt 2
+    def total(price, needs):   # --- py stmt 3
+        return sum(price[i] * needs[i] for i in range(len(needs)))   # --- py stmt 4
+    ans = total(price, needs)   # --- py stmt 5
+    t = []   # --- py stmt 6
+    for offer in special:   # --- py stmt 7
+        t.clear()   # --- py stmt 8
+        for j in range(len(needs)):   # --- py stmt 9
+            if offer[j] > needs[j]:   # --- py stmt 10
+                t.clear()   # --- py stmt 11
+                break   # --- py stmt 12
+            t.append(needs[j] - offer[j])   # --- py stmt 13
+        if t:   # --- py stmt 14
+            ans = min(ans, offer[-1] + f_gold(price, special, t))   # --- py stmt 15
+    return ans   # --- py stmt 16
+
+### JavaScript
+"use strict";
+
+function f_gold(price, special, needs) {   // --- py stmt 2
+    function total(price, needs) {   // --- py stmt 3
+        return needs.map((needs, i) => price[i] * needs).reduce((a, b) => a + b, 0);   // --- py stmt 4
+    }
+    var ans = total(price, needs);   // --- py stmt 5
+    t = [];   // --- py stmt 6
+    for (let offer of special) {   // --- py stmt 7
+        t.length = 0;   // --- py stmt 8
+        for (let j = 0; j < needs.length; j++) {   // --- py stmt 9
+            if (offer[j] > needs[j]) {   // --- py stmt 10
+                t.length = 0;   // --- py stmt 11
+                break;   // --- py stmt 12
+            }
+            t.push(needs[j] - offer[j]);   // --- py stmt 13
+        }
+        if (t.length > 0) {   // --- py stmt 14
+            ans = Math.min(ans, offer.at(-1) + f_gold(price, special, t));   // --- py stmt 15
+        }
+    }
+    return ans;   // --- py stmt 16
+}
+
+
+

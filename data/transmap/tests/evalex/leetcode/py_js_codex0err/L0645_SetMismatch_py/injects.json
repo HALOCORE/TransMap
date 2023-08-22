@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "const f_gold = (nums) => {",
+    "replacement": "const findErrorNums = (nums) => {"
+  }
+]

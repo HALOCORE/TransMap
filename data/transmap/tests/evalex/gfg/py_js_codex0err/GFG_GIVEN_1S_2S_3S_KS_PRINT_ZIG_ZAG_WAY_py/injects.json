@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  var arr = Array(rows).fill().map(_ => Array(columns).fill(0));",
+    "replacement": "  var arr = [[0]];"
+  },
+  {
+    "line_start": 22,
+    "line_end": 23,
+    "content": "  for (let i of arr) {",
+    "replacement": "  for (var i = 0; i < arr.length; i++) {"
+  },
+  {
+    "line_start": 23,
+    "line_end": 24,
+    "content": "    for (var j = 0; j < i.length; j++) console.log(i[j]);",
+    "replacement": "    for (var j = 0; j < arr[i].length; j++) console.log(arr[i][j], end = \" \");"
+  }
+]

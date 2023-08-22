@@ -1,0 +1,20 @@
+
+### Python
+def do_algebra(operator, operand):   # --- py stmt 1
+    expression = str(operand[0])   # --- py stmt 2
+    for oprt, oprn in zip(operator, operand[1:]):   # --- py stmt 3
+        expression+= oprt + str(oprn)   # --- py stmt 4
+    return eval(expression)   # --- py stmt 5
+
+### JavaScript
+"use strict";
+function do_algebra(operator, operand) {   // --- py stmt 1
+    let expression = operand[0].toString();   // --- py stmt 2
+    for (let i = 0; i < operator.length; i++) {   // --- py stmt 3
+        expression += operator[i] + operand[i + 1].toString();   // --- py stmt 4
+    }
+    return eval(expression);   // --- py stmt 5
+}
+
+
+

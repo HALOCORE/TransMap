@@ -1,0 +1,214 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxNumberOfFamilies",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(n: int, reservedSeats: List[List[int]]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    m = defaultdict(int)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, j in reservedSeats:",
+      [
+        5
+      ]
+    ],
+    [
+      "        m[i] = m[i] | (1 << (10 - j))",
+      [
+        6
+      ]
+    ],
+    [
+      "    masks = (0b0111100000, 0b0000011110, 0b0001111000)",
+      [
+        7
+      ]
+    ],
+    [
+      "    ans = (n - len(m)) << 1",
+      [
+        8
+      ]
+    ],
+    [
+      "    for v in m.values():",
+      [
+        9
+      ]
+    ],
+    [
+      "        for mask in masks:",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (v & mask) == 0:",
+      [
+        11
+      ]
+    ],
+    [
+      "                v |= mask",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans += 1",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n, reservedSeats) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var m = new Map();",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < reservedSeats.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var j = reservedSeats[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (m.has(i)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            m.set(i, m.get(i) | (1 << (10 - j)));",
+      [
+        6
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        6
+      ]
+    ],
+    [
+      "            m.set(i, (1 << (10 - j)));",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var masks = [0b0111100000, 0b0000011110, 0b0001111000];",
+      [
+        7
+      ]
+    ],
+    [
+      "    var ans = (n - m.size) << 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var v of m.values()) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        for (var mask of masks) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            if ((v & mask) == 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                v |= mask;",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans += 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

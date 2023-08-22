@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    return (ans == 1000000) ? -1 : ans;",
+    "replacement": "    return -1 if ans == 1000000 else ans;"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return (num - divisor * Math.floor(num / divisor));",
+    "replacement": "    return (num - divisor * (num / divisor));"
+  }
+]

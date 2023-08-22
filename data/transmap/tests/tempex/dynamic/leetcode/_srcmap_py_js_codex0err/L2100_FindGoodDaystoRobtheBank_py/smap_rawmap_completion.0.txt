@@ -1,0 +1,47 @@
+
+### Python
+### goodDaysToRobBank 
+from typing import *   # --- py stmt 1
+def f_gold(security: List[int], time: int) -> List[int]:   # --- py stmt 2
+    n = len(security)   # --- py stmt 3
+    if n <= time * 2:   # --- py stmt 4
+        return []   # --- py stmt 5
+    left, right = [0] * n, [0] * n   # --- py stmt 6
+    for i in range(1, n):   # --- py stmt 7
+        if security[i] <= security[i - 1]:   # --- py stmt 8
+            left[i] = left[i - 1] + 1   # --- py stmt 9
+    for i in range(n - 2, -1, -1):   # --- py stmt 10
+        if security[i] <= security[i + 1]:   # --- py stmt 11
+            right[i] = right[i + 1] + 1   # --- py stmt 12
+    return [i for i in range(n) if time <= min(left[i], right[i])]   # --- py stmt 13
+
+### JavaScript
+"use strict";
+
+function f_gold(security, time) {   // --- py stmt 2
+    var n = security.length;   // --- py stmt 3
+    if (n <= time * 2) {   // --- py stmt 4
+        return [];   // --- py stmt 5
+    }
+    var left = [], right = [];   // --- py stmt 6
+    for (var i = 1; i < n; i++) {   // --- py stmt 7
+        if (security[i] <= security[i - 1]) {   // --- py stmt 8
+            left[i] = left[i - 1] + 1;   // --- py stmt 9
+        }
+    }
+    for (var i = n - 2; i >= 0; i--) {   // --- py stmt 10
+        if (security[i] <= security[i + 1]) {   // --- py stmt 11
+            right[i] = right[i + 1] + 1;   // --- py stmt 12
+        }
+    }
+    var result = [];   // --- py stmt 13
+    for (var i = 0; i < n; i++) {   // --- py stmt 13
+        if (time <= Math.min(left[i], right[i])) {   // --- py stmt 13
+            result.push(i);   // --- py stmt 13
+        }
+    }
+    return result;   // --- py stmt 13
+}
+
+
+

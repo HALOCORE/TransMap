@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var lst = file_name.split('.');",
+    "replacement": "    var lst = file_name.split(sep='.');"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    if (!suf.includes(lst[1])) {",
+    "replacement": "    if (!lst[1] in suf) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    if(!/[a-zA-Z]/.test(lst[0][0])){",
+    "replacement": "    if (!lst[0][0].isalpha()) {"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "    var t = lst[0].split('').filter(x => /[0-9]/.test(x)).length;",
+    "replacement": "    var t = len([x for x in lst[0] if x.isdigit()]);"
+  }
+]

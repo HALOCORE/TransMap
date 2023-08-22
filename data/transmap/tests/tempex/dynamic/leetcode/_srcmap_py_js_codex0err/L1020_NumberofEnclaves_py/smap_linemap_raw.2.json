@@ -1,0 +1,200 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numEnclaves",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(grid: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def dfs(i, j):",
+      [
+        3
+      ]
+    ],
+    [
+      "        grid[i][j] = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "        for a, b in [[0, -1], [0, 1], [-1, 0], [1, 0]]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            x, y = i + a, j + b",
+      [
+        6
+      ]
+    ],
+    [
+      "            if 0 <= x < m and 0 <= y < n and grid[x][y] == 1:",
+      [
+        7
+      ]
+    ],
+    [
+      "                dfs(x, y)",
+      [
+        8
+      ]
+    ],
+    [
+      "    m, n = len(grid), len(grid[0])",
+      [
+        9
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        10
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        11
+      ]
+    ],
+    [
+      "            if grid[i][j] == 1 and (i == 0 or i == m - 1 or j == 0 or j == n - 1):",
+      [
+        12
+      ]
+    ],
+    [
+      "                dfs(i, j)",
+      [
+        13
+      ]
+    ],
+    [
+      "    return sum(grid[i][j] for i in range(m) for j in range(n))",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(grid) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs(i, j) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        grid[i][j] = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (let [a, b] of [[0, -1], [0, 1], [-1, 0], [1, 0]]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            let [x, y] = [i + a, j + b];",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (0 <= x < m && 0 <= y < n && grid[x][y] == 1) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                dfs(x, y);",
+      [
+        8
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let [m, n] = [grid.length, grid[0].length];",
+      [
+        9
+      ]
+    ],
+    [
+      "    for (let i = 0; i < m; i++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        for (let j = 0; j < n; j++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (grid[i][j] == 1 && (i == 0 || i == m - 1 || j == 0 || j == n - 1)) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                dfs(i, j);",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return grid.reduce((a, b) => b.reduce((x, y) => x + y) + a, 0);",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

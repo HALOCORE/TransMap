@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    var cnt = arr.reduce((a, b) => a + b) / 3;",
+    "replacement": "    var cnt = sum(arr) / 3;"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "    var mod = arr.reduce((a, b) => a + b) % 3;",
+    "replacement": "    var mod = sum(arr) % 3;"
+  },
+  {
+    "line_start": 25,
+    "line_end": 28,
+    "content": "        i = i + 1;\n        j = j + 1;\n        k = k + 1;",
+    "replacement": "        i, j, k = i + 1, j + 1, k + 1;"
+  }
+]

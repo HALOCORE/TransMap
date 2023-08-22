@@ -1,0 +1,87 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[13,4,13,16]",
+    "src_cov_lines": [
+      8,
+      9,
+      10,
+      12
+    ],
+    "tar_cov_lines": [
+      10,
+      11,
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\",[[\"S\",1,\"a\"],[\"N\",\"2\"]],[[\"S\",1,\"b\"],[\"N\",\"2\"]]],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"a\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[13,4,13,16]",
+    "src_cov_lines": [
+      9,
+      10,
+      12
+    ],
+    "tar_cov_lines": [
+      11,
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\",[[\"S\",1,\"a\"],[\"N\",\"2\"]],[[\"S\",1,\"b\"],[\"N\",\"2\"]]],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"a\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[10,12,12,26]",
+    "src_cov_lines": [
+      10,
+      12
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\",[[\"S\",1,\"a\"],[\"N\",\"2\"]]],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[12,16,12,26]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\"],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"a\"]}",
+      ""
+    ]
+  }
+]

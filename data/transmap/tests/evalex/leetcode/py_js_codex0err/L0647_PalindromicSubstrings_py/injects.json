@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var t = '^#' + Array.from(s).join('#') + '#$';",
+    "replacement": "    var t = '^#' + '#'.join(s) + '#$';"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "        ans += Math.floor(p[i] / 2);",
+    "replacement": "        ans += p[i] / 2;"
+  }
+]

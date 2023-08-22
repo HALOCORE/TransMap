@@ -1,0 +1,40 @@
+{
+  "src_anno_stmts": [
+    [
+      "def string_to_md5(text):",
+      [
+        1
+      ]
+    ],
+    [
+      "    import hashlib",
+      [
+        2
+      ]
+    ],
+    [
+      "    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function string_to_md5(text) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return require('crypto').createHash('md5').update(text).digest('hex');",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

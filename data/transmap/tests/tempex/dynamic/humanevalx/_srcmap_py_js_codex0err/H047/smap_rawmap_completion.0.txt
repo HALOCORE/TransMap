@@ -1,0 +1,22 @@
+
+### Python
+def median(l: list):   # --- py stmt 1
+    l = sorted(l)   # --- py stmt 2
+    if len(l) % 2 == 1:   # --- py stmt 3
+        return l[len(l) // 2]   # --- py stmt 4
+    else:   # --- py stmt 5
+        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0   # --- py stmt 6
+
+### JavaScript
+"use strict";
+function median(l) {   // --- py stmt 1
+    l = l.sort();   // --- py stmt 2
+    if (l.length % 2 == 1) {   // --- py stmt 3
+        return l[Math.floor(l.length / 2)];   // --- py stmt 4
+    } else {   // --- py stmt 5
+        return (l[Math.floor(l.length / 2) - 1] + l[Math.floor(l.length / 2)]) / 2.0;   // --- py stmt 6
+    }
+}
+
+
+

@@ -1,0 +1,150 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(s):",
+      [
+        1
+      ]
+    ],
+    [
+      "  n = len(s)",
+      [
+        2
+      ]
+    ],
+    [
+      "  auxArr =[0 for i in range(n)]",
+      [
+        3
+      ]
+    ],
+    [
+      "  if(s[0] == '1'): auxArr[0] = 1",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(0, n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(s[i] == '1'): auxArr[i] = auxArr[i - 1] + 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    else: auxArr[i] = auxArr[i - 1]",
+      [
+        7
+      ]
+    ],
+    [
+      "  count = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "  for i in range(n - 1, - 1, - 1):",
+      [
+        9
+      ]
+    ],
+    [
+      "    if(s[i] == '1'): count += auxArr[i]",
+      [
+        10
+      ]
+    ],
+    [
+      "  return count",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var n = s.length;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var auxArr = Array(n).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "  if(s[0] == '1') auxArr[0] = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for(var i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(s[i] == '1') auxArr[i] = auxArr[(i - 1 + n) % n] + 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    else auxArr[i] = auxArr[i - 1];",
+      [
+        7
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var count = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "  for(var i = n - 1; i >= 0; i--) {",
+      [
+        9
+      ]
+    ],
+    [
+      "    if(s[i] == '1') count += auxArr[i];",
+      [
+        10
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return count;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

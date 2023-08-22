@@ -1,0 +1,70 @@
+version: "2.4"
+services:
+  backend-file:
+    image: backendpybase
+    # ports:
+    #   - "8777:8777"
+    volumes:
+      - type: bind
+        source: "$PWD/../backend/file-server"
+        target: "/opt/file-server"
+      - type: bind
+        source: "$PWD/../backend/_common"
+        target: "/opt/_common"
+      - type: bind
+        source: "$PWD/../data"
+        target: "/data"
+      - type: bind
+        source: "$PWD/__gitstatus"
+        target: "/tmp/__gitstatus"
+        read_only: true
+    working_dir : '/opt/file-server/'
+    command: 'python server_files.py --reloader nonemptystr'
+  backend-codex:
+    image: backendopenai
+    # ports:
+    #   - "8780:8780"
+    volumes:
+    - type: bind
+      source: "$PWD/../backend/codex-server"
+      target: "/opt/codex-server"
+    - type: bind
+      source: "$PWD/../backend/_common"
+      target: "/opt/_common"
+    working_dir: "/opt/codex-server"
+    command: "python3.9 server-codex.py --reloader nonemptystr"
+  backend-test:
+    image: backendtestingbase
+    # ports:
+    #   - "8776:8776"
+    volumes:
+    - type: bind
+      source: "$PWD/../backend/test-server"
+      target: "/opt/test-server"
+    - type: bind
+      source: "$PWD/../backend/_common"
+      target: "/opt/_common"
+    - type: bind
+      source: "$PWD/../data"
+      target: "/data"
+    working_dir: "/opt/test-server"
+    command: "python3 server_testing.py --reloader nonemptystr"
+    # server_testing.py: error: argument --reloader: expected one argument
+  nginx:
+    image: nginxbase
+    depends_on:
+      - backend-file
+      - backend-codex
+      - backend-test
+    ports:
+      - "127.0.0.1:8000:80"
+      - "127.0.0.1:18000:80"
+    volumes:
+      - type: bind
+        source: "$PWD/../frontend"
+        target: "/opt/frontend"
+        read_only: true
+      - type: bind
+        source: "$PWD/transmap.nginx.conf"
+        target: "/etc/nginx/nginx.conf"
+        read_only: true

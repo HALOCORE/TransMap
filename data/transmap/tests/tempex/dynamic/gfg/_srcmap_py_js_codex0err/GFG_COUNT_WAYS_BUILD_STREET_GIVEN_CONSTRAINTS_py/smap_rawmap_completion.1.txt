@@ -1,0 +1,24 @@
+
+### Python
+def f_gold(n):   # --- py stmt 1
+  dp =[[0] *(n + 1)for i in range(2)]   # --- py stmt 2
+  dp[0][1] = 1   # --- py stmt 3
+  dp[1][1] = 2   # --- py stmt 4
+  for i in range(2, n + 1):   # --- py stmt 5
+    dp[0][i] = dp[0][i - 1] + dp[1][i - 1]   # --- py stmt 6
+    dp[1][i] =(dp[0][i - 1] * 2 + dp[1][i - 1])   # --- py stmt 7
+  return dp[0][n] + dp[1][n]   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 1
+  let dp = Array(2).fill().map(_ => Array(n+1).fill(0));   // --- py stmt 2
+  dp[0][1] = 1;   // --- py stmt 3
+  dp[1][1] = 2;   // --- py stmt 4
+  for (i = 2; i < n + 1; i++) {   // --- py stmt 5
+    dp[0][i] = dp[0][i - 1] + dp[1][i - 1];   // --- py stmt 6
+    dp[1][i] = dp[0][i - 1] * 2 + dp[1][i - 1];   // --- py stmt 7
+  }
+  return dp[0][n] + dp[1][n];   // --- py stmt 8
+}
+

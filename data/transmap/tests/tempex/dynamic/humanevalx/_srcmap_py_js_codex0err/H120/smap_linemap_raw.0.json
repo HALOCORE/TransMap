@@ -1,0 +1,86 @@
+{
+  "src_anno_stmts": [
+    [
+      "def maximum(arr, k):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if k == 0:",
+      [
+        2
+      ]
+    ],
+    [
+      "        return []",
+      [
+        3
+      ]
+    ],
+    [
+      "    arr.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = arr[-k:]",
+      [
+        5
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function maximum(arr, k) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (k === 0) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    arr.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "    let ans = arr.slice(-k);",
+      [
+        5
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

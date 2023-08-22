@@ -1,0 +1,29 @@
+
+### Python
+from typing import *   # --- py stmt 1
+def f_gold(sentence: str) -> str:   # --- py stmt 2
+    ans = []   # --- py stmt 3
+    for i, word in enumerate(sentence.split()):   # --- py stmt 4
+        if word.lower()[0] not in ['a', 'e', 'i', 'o', 'u']:   # --- py stmt 5
+            word = word[1:] + word[0]   # --- py stmt 6
+        word += 'ma'   # --- py stmt 7
+        word += 'a' * (i + 1)   # --- py stmt 8
+        ans.append(word)   # --- py stmt 9
+    return ' '.join(ans)   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(sentence) {   // --- py stmt 2
+    var ans = [];   // --- py stmt 3
+    for (var i = 0; i < sentence.split(/\s+/).length; i++) {   // --- py stmt 4
+        var word = sentence.split()[i];   // --- py stmt 4
+        if (word.toLowerCase()[0] != 'a' && word.toLowerCase()[0] != 'e' && word.toLowerCase()[0] != 'i' && word.toLowerCase()[0] != 'o' && word.toLowerCase()[0] != 'u') {   // --- py stmt 5
+            word = word.substring(1) + word[0];   // --- py stmt 6
+        }
+        word += 'ma';   // --- py stmt 7
+        word += 'a'.repeat(i + 1);   // --- py stmt 8
+        ans.push(word);   // --- py stmt 9
+    }
+    return ans.join(' ');   // --- py stmt 10
+}
+

@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(mat, row, column):   # --- py stmt 1
+  print("Diagonal one : ", end = "")   # --- py stmt 2
+  for i in range(0, row):   # --- py stmt 3
+    for j in range(0, column):   # --- py stmt 4
+      if(i == j): print("{} ".format(mat[i][j] * mat[i][j]), end = "")   # --- py stmt 5
+  print(" \n\nDiagonal two : ", end = "")   # --- py stmt 6
+  for i in range(0, row):   # --- py stmt 7
+    for j in range(0, column):   # --- py stmt 8
+      if(i + j == column - 1): print("{} ".format(mat[i][j] * mat[i][j]), end = "")   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(mat, row, column) {   // --- py stmt 1
+  console.log("Diagonal one : ", end = "");   // --- py stmt 2
+  for (let i = 0; i < row; i++) {   // --- py stmt 3
+    for (let j = 0; j < column; j++) {   // --- py stmt 4
+      if (i == j) console.log((mat[i][j] * mat[i][j]).toString()+' ');   // --- py stmt 5
+    }
+  }
+  console.log(" \n\nDiagonal two : ");   // --- py stmt 6
+  for (let i = 0; i < row; i++) {   // --- py stmt 7
+    for (let j = 0; j < column; j++) {   // --- py stmt 8
+      if (i + j == column - 1) console.log((mat[i][j] * mat[i][j]).toString()+' ');   // --- py stmt 9
+    }
+  }
+}
+
+
+

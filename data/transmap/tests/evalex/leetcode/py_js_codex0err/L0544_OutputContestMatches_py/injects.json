@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 5,
+    "content": "    var team = [];\n    for (var i = 0; i < n; i++) {\n        team.push(i + 1);\n    }",
+    "replacement": "    var team = [str(i + 1) for i in range(n)];"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "            team[i] = `(${team[i]},${team[n - 1 - i]})`;",
+    "replacement": "            team[i] = f'({team[i]},{team[n - 1 - i]})';"
+  }
+]

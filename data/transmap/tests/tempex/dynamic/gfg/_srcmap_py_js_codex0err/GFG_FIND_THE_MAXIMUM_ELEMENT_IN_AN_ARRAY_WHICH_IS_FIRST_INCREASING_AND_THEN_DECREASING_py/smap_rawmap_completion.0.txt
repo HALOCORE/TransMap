@@ -1,0 +1,23 @@
+
+### Python
+def f_gold(arr, low, high):   # --- py stmt 1
+  max = arr[low]   # --- py stmt 2
+  i = low   # --- py stmt 3
+  for i in range(high + 1):   # --- py stmt 4
+    if arr[i] > max: max = arr[i]   # --- py stmt 5
+  return max   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, low, high) {   // --- py stmt 1
+  let max = arr[low];   // --- py stmt 2
+  let i = low;   // --- py stmt 3
+  for (i = low; i <= high; i++) {   // --- py stmt 4
+    if (arr[i] > max) max = arr[i];   // --- py stmt 5
+  }
+  return max;   // --- py stmt 6
+}
+
+
+

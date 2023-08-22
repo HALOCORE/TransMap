@@ -1,0 +1,43 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 9,
+    "actural_src_pk": "[19,2,19,35]",
+    "src_cov_lines": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"ReferenceError: i is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"ZKr\"],\"str2\":[\"S\",7,\"GPrzfkV\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",7,\"5587254\"],\"n1\":[\"N\",\"3\"],\"n2\":[\"N\",\"7\"],\"carry\":[\"N\",\"4\"],\"i\":[\"N\",\"6\"],\"sum\":[\"N\",\"44\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[16,4,16,36]",
+    "src_cov_lines": [
+      15
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"ReferenceError: i is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"ZKr\"],\"str2\":[\"S\",7,\"GPrzfkV\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",3,\"558\"],\"n1\":[\"N\",\"3\"],\"n2\":[\"N\",\"7\"],\"carry\":[\"N\",\"13\"],\"i\":[\"N\",\"3\"],\"sum\":[\"N\",\"138\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### sortSentence",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    words = s.split(' ')",
+      [
+        3
+      ]
+    ],
+    [
+      "    arr = [None] * len(words)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for word in words:",
+      [
+        5
+      ]
+    ],
+    [
+      "        idx = int(word[-1]) - 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        arr[idx] = word[:-1]",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ' '.join(arr)",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var words = s.split(' ');",
+      [
+        3
+      ]
+    ],
+    [
+      "    var arr = [null] * words.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var word of words) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var idx = parseInt(word[word.length - 1]) - 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        arr[idx] = word.substring(0, word.length - 1);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return arr.join(' ');",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

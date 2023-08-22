@@ -1,0 +1,316 @@
+{
+  "src_anno_stmts": [
+    [
+      "### matchReplacement",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(s: str, sub: str, mappings: List[List[str]]) -> bool:",
+      [
+        3
+      ]
+    ],
+    [
+      "    d = defaultdict(set)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for a, b in mappings:",
+      [
+        5
+      ]
+    ],
+    [
+      "        d[a].add(b)",
+      [
+        6
+      ]
+    ],
+    [
+      "    n, k = len(s), len(sub)",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(n - k + 1):",
+      [
+        8
+      ]
+    ],
+    [
+      "        flag = True",
+      [
+        9
+      ]
+    ],
+    [
+      "        for j in range(k):",
+      [
+        10
+      ]
+    ],
+    [
+      "            a, b = s[i + j], sub[j]",
+      [
+        11
+      ]
+    ],
+    [
+      "            if a == b or a in d[b]:",
+      [
+        12
+      ]
+    ],
+    [
+      "                continue",
+      [
+        13
+      ]
+    ],
+    [
+      "            else:",
+      [
+        14
+      ]
+    ],
+    [
+      "                flag = False",
+      [
+        15
+      ]
+    ],
+    [
+      "                break",
+      [
+        16
+      ]
+    ],
+    [
+      "        if flag:",
+      [
+        17
+      ]
+    ],
+    [
+      "            return True",
+      [
+        18
+      ]
+    ],
+    [
+      "    return False",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, sub, mappings) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let d = new Map();",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < mappings.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        let a = mappings[i][0];",
+      [
+        5
+      ]
+    ],
+    [
+      "        let b = mappings[i][1];",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (d.has(a)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            d.get(a).add(b);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        6
+      ]
+    ],
+    [
+      "            let set = new Set();",
+      [
+        6
+      ]
+    ],
+    [
+      "            set.add(b);",
+      [
+        6
+      ]
+    ],
+    [
+      "            d.set(a, set);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let n = s.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    let k = sub.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n - k + 1; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        let flag = true;",
+      [
+        9
+      ]
+    ],
+    [
+      "        for (let j = 0; j < k; j++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            let a = s[i + j];",
+      [
+        11
+      ]
+    ],
+    [
+      "            let b = sub[j];",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (a == b || d.has(a) && d.get(a).has(b)) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                continue;",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        14
+      ]
+    ],
+    [
+      "                flag = false;",
+      [
+        15
+      ]
+    ],
+    [
+      "                break;",
+      [
+        16
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (flag) {",
+      [
+        17
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        18
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

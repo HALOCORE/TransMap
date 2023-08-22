@@ -1,0 +1,33 @@
+
+### Python
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(arr: List[int]) -> int:   # --- py stmt 3
+    counter = Counter(arr)   # --- py stmt 4
+    ans = -1   # --- py stmt 5
+    for num, n in counter.items():   # --- py stmt 6
+        if num == n and ans < num:   # --- py stmt 7
+            ans = num   # --- py stmt 8
+    return ans   # --- py stmt 9
+
+### JavaScript
+"use strict";
+function f_gold(arr) {   // --- py stmt 3
+    var counter = {};   // --- py stmt 4
+    var ans = -1;   // --- py stmt 5
+    for (var i = 0; i < arr.length; i++) {   // --- py stmt 6
+        if (counter[arr[i]] == undefined) {   // --- py stmt 7
+            counter[arr[i]] = 1;   // --- py stmt 8
+        }
+        else {
+            counter[arr[i]] += 1;   // --- py stmt 8
+        }
+    }
+    for (var num in counter) {   // --- py stmt 6
+        if (parseInt(num) == counter[num] && ans < parseInt(num)) {   // --- py stmt 7
+            ans = num;   // --- py stmt 8
+        }
+    }
+    return ans;   // --- py stmt 9
+}
+

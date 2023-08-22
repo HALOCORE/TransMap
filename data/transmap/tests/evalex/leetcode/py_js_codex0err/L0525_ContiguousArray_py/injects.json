@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let s = 0, ans = 0;",
+    "replacement": "    let s = ans = 0;"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        s += nums[i] == 1 ? 1 : -1;",
+    "replacement": "        s += 1 if v == 1 else -1;"
+  }
+]

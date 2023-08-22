@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  return sum(arr)-(((n - 1)* n)// 2)",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sum(arr) - (((n - 1) * n) / 2);",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

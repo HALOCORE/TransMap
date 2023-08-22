@@ -1,0 +1,196 @@
+{
+  "src_anno_stmts": [
+    [
+      "### commonChars",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(words: List[str]) -> List[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    freq = [10000] * 26",
+      [
+        3
+      ]
+    ],
+    [
+      "    for word in words:",
+      [
+        4
+      ]
+    ],
+    [
+      "        t = [0] * 26",
+      [
+        5
+      ]
+    ],
+    [
+      "        for c in word:",
+      [
+        6
+      ]
+    ],
+    [
+      "            t[ord(c) - ord('a')] += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "        for i in range(26):",
+      [
+        8
+      ]
+    ],
+    [
+      "            freq[i] = min(freq[i], t[i])",
+      [
+        9
+      ]
+    ],
+    [
+      "    res = []",
+      [
+        10
+      ]
+    ],
+    [
+      "    for i in range(26):",
+      [
+        11
+      ]
+    ],
+    [
+      "        if freq[i] > 0:",
+      [
+        12
+      ]
+    ],
+    [
+      "            res.extend([chr(i + ord(\"a\"))] * freq[i])",
+      [
+        13
+      ]
+    ],
+    [
+      "    return res",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(words) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var freq = [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var word of words) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var t = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var c in word) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            t[c.charCodeAt(0) - 'a'.charCodeAt(0)] += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (var i = 0; i < 26; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            freq[i] = Math.min(freq[i], t[i]);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var res = [];",
+      [
+        10
+      ]
+    ],
+    [
+      "    for (var i = 0; i < 26; i++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        if (freq[i] > 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            res = res.concat(new Array(freq[i]).fill(String.fromCharCode(i + \"a\".charCodeAt(0))));",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

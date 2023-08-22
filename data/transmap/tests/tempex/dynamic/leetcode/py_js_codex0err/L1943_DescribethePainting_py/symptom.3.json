@@ -1,0 +1,16 @@
+{
+  "result_symptom": {
+    "category": [
+      "SUCCESS",
+      null
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error": null,
+    "is_success": true,
+    "stderr": "",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n\n[\"MYLOGEX:1\",[\"list\",2,[[\"list\",3,[[\"num\",1],[\"num\",4],[\"num\",14]]],[\"list\",3,[[\"num\",4],[\"num\",7],[\"num\",16]]]]]]\n\n[\"MYLOGAP:0\",[\"num\",1]]\n\n[\"MYLOGEX:1\",[\"list\",4,[[\"list\",3,[[\"num\",1],[\"num\",6],[\"num\",9]]],[\"list\",3,[[\"num\",6],[\"num\",7],[\"num\",24]]],[\"list\",3,[[\"num\",7],[\"num\",8],[\"num\",15]]],[\"list\",3,[[\"num\",8],[\"num\",10],[\"num\",7]]]]]]\n\n[\"MYLOGAP:0\",[\"num\",2]]\n\n[\"MYLOGEX:1\",[\"list\",2,[[\"list\",3,[[\"num\",1],[\"num\",4],[\"num\",12]]],[\"list\",3,[[\"num\",4],[\"num\",7],[\"num\",12]]]]]]\n",
+    "timespan": 0.034864199988078326
+  }
+}

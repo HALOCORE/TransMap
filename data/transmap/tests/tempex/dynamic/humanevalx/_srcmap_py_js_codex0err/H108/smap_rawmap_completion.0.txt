@@ -1,0 +1,26 @@
+
+### Python
+def count_nums(arr):   # --- py stmt 1
+    def digits_sum(n):   # --- py stmt 2
+        neg = 1   # --- py stmt 3
+        if n < 0: n, neg = -1 * n, -1   # --- py stmt 4
+        n = [int(i) for i in str(n)]   # --- py stmt 5
+        n[0] = n[0] * neg   # --- py stmt 6
+        return sum(n)   # --- py stmt 7
+    return len(list(filter(lambda x: x > 0, [digits_sum(i) for i in arr])))   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function count_nums(arr) {   // --- py stmt 1
+    function digits_sum(n) {   // --- py stmt 2
+        let neg = 1;   // --- py stmt 3
+        if (n < 0) { n, neg = -1 * n, -1; }   // --- py stmt 4
+        n = [...String(n)].map(Number);   // --- py stmt 5
+        n[0] = n[0] * neg;   // --- py stmt 6
+        return n.reduce((a, b) => a + b);   // --- py stmt 7
+    }
+    return arr.map(digits_sum).filter(x => x > 0).length;   // --- py stmt 8
+}
+
+
+

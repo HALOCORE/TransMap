@@ -1,0 +1,213 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -12,15 +12,26 @@ Math.random = function(){
+ }
+ ///// Segment IGNORE END
+ ///// Segment BEGIN p1 DONE
++function factorial(n){
++  if(n < 0) return undefined;
++  if(n == 0 || n == 1) return 1;
++  var fac = 1;
++  for(let i = 1;i <= n;i++){
++      fac *= i;
++  }
++  return fac;
++}
++Math.factorial = factorial;
++
+ function combinations(max_lengthgth = 20) {
+     const a = Math.floor(Math.random() * (max_lengthgth - 10 + 1) + 10);
+     const b = Math.floor(Math.random() * 10);
+ 
+     const solution = Math.floor(
+-        math.factorial(a) / (math.factorial(b) * math.factorial(a - b))
++        Math.factorial(a) / (Math.factorial(b) * Math.factorial(a - b))
+     );
+ 
+-    const problem = `Find the number of combinations from ${a} objects picked ${b} at a time.`;
++    const problem = `Find the number of combinations from $${a}$ objects picked $${b}$ at a time.`;
+     return [problem, `$${solution}$`];
+ }
+ ///// Segment END
+@@ -42,7 +53,7 @@ function conditional_probability() {
+ 
+     const answer = Math.round(BayesFormula(P_disease, true_positive, true_negative) * 100) / 100;
+ 
+-    const problem = `Someone tested positive for a nasty disease which only ${P_disease.toFixed(2)}% of the population have. Test sensitivity (true positive) is equal to $SN=${true_positive.toFixed(2)}$% whereas test specificity (true negative) $SP=${true_negative.toFixed(2)}$%. What is the probability that this guy really has that disease?`;
++    const problem = `Someone tested positive for a nasty disease which only $${P_disease.toFixed(2)}$% of the population have. Test sensitivity (true positive) is equal to $SN=${true_positive.toFixed(2)}$% whereas test specificity (true negative) $SP=${true_negative.toFixed(2)}$%. What is the probability that this guy really has that disease?`;
+     const solution = `$${answer.toFixed(2)}$%`;
+     return [problem, solution];
+ }
+@@ -74,11 +85,11 @@ function confidence_interval() {
+ 
+     sd = sd / n;
+     const standard_error = lst_t[j] * Math.sqrt(sd / n);
+-    const upper = Math.round(mean + standard_error, 2);
+-    const lower = Math.round(mean - standard_error, 2);
++    const upper = Math.round((mean + standard_error) * 100) / 100;
++    const lower = Math.round((mean - standard_error) * 100) / 100;
+ 
+-    const problem = `The confidence interval for sample ${lst} with ${lst_per[j]}% confidence is`;
+-    const solution = `(${upper}, ${lower})`;
++    const problem = `The confidence interval for sample $[${lst}]$ with $${lst_per[j]}$% confidence is`;
++    const solution = `$(${upper}, ${lower})$`;
+     return [problem, solution];
+ }
+ ///// Segment END
+@@ -103,8 +114,8 @@ function data_summary(number_values = 15, min_val = 5, max_val = 50) {
+     let standardDeviation = parseFloat((_var / number_values).toFixed(2));
+     let variance = parseFloat(Math.sqrt(_var / number_values).toFixed(2));
+ 
+-    let problem = `Find the mean, standard deviation and variance for the data ${random_list.join(", ")}`;
+-    let solution = `The Mean is ${mean}, Standard Deviation is ${standardDeviation}, Variance is ${variance}`;
++    let problem = `Find the mean,standard deviation and variance for the data $${random_list.join(", ")}$`;
++    let solution = `The Mean is $${mean}$, Standard Deviation is $${standardDeviation}$, Variance is $${variance}$`;
+     return [problem, solution];
+ }
+ ///// Segment END
+@@ -137,7 +148,7 @@ function dice_sum_probability(max_dice = 3) {
+         }
+     }
+ 
+-    let problem = `If ${a} dice are rolled at the same time, the probability of getting a sum of ${b} =`;
++    let problem = `If $${a}$ dice are rolled at the same time, the probability of getting a sum of $${b} =$`;
+     let solution = `\\frac{${count}}{${6 ** a}}`;
+     return [problem, solution];
+ }
+@@ -154,8 +165,8 @@ function meanMedian(max_length = 10) {
+     randomlist.sort((a, b) => a - b);
+     const median = (randomlist[4] + randomlist[5]) / 2;
+ 
+-    const problem = `Given the series of numbers ${randomlist}. Find the arithmatic mean and median of the series`;
+-    const solution = `Arithmetic mean of the series is ${mean} and arithmetic median of this series is ${median}`;
++    const problem = `Given the series of numbers $[${randomlist}]$. Find the arithmatic mean and median of the series`;
++    const solution = `Arithmetic mean of the series is $${mean}$ and arithmetic median of this series is $${median}$`;
+     return [problem, solution];
+ }
+ ///// Segment END
+@@ -164,10 +175,10 @@ function meanMedian(max_length = 10) {
+ function permutation(max_lengthgth = 20) {
+   const a = Math.floor(Math.random() * (max_lengthgth - 10 + 1) + 10);
+   const b = Math.floor(Math.random() * 10);
+-  const solution = parseInt(math.factorial(a) / (math.factorial(a - b)));
++  const solution = parseInt(Math.factorial(a) / (Math.factorial(a - b)));
+ 
+-  const problem = `Number of Permutations from ${a} objects picked ${b} at a time is: `;
+-  return [problem, `${solution}`];
++  const problem = `Number of Permutations from $${a}$ objects picked $${b}$ at a time is: `;
++  return [problem, `$${solution}$`];
+ }
+ ///// Segment END
+ 
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -125,15 +125,26 @@ def permutation(max_lengthgth=20):   # --- py stmt 6001
+ 
+ ### JavaScript
+ 
++function factorial(n){
++  if(n < 0) return undefined;
++  if(n == 0 || n == 1) return 1;
++  var fac = 1;
++  for(let i = 1;i <= n;i++){
++      fac *= i;
++  }
++  return fac;
++}
++Math.factorial = factorial;
++
+ function combinations(max_lengthgth = 20) {   // --- py stmt 1
+     const a = Math.floor(Math.random() * (max_lengthgth - 10 + 1) + 10);   // --- py stmt 2
+     const b = Math.floor(Math.random() * 10);   // --- py stmt 3
+ 
+     const solution = Math.floor(   // --- py stmt 4
+-        math.factorial(a) / (math.factorial(b) * math.factorial(a - b))
++        Math.factorial(a) / (Math.factorial(b) * Math.factorial(a - b))
+     );
+ 
+-    const problem = `Find the number of combinations from ${a} objects picked ${b} at a time.`;   // --- py stmt 5
++    const problem = `Find the number of combinations from $${a}$ objects picked $${b}$ at a time.`;   // --- py stmt 5
+     return [problem, `$${solution}$`];   // --- py stmt 6
+ }
+ 
+@@ -153,7 +164,7 @@ function conditional_probability() {   // --- py stmt 1001
+ 
+     const answer = Math.round(BayesFormula(P_disease, true_positive, true_negative) * 100) / 100;   // --- py stmt 1011
+ 
+-    const problem = `Someone tested positive for a nasty disease which only ${P_disease.toFixed(2)}% of the population have. Test sensitivity (true positive) is equal to $SN=${true_positive.toFixed(2)}$% whereas test specificity (true negative) $SP=${true_negative.toFixed(2)}$%. What is the probability that this guy really has that disease?`;   // --- py stmt 1012
++    const problem = `Someone tested positive for a nasty disease which only $${P_disease.toFixed(2)}$% of the population have. Test sensitivity (true positive) is equal to $SN=${true_positive.toFixed(2)}$% whereas test specificity (true negative) $SP=${true_negative.toFixed(2)}$%. What is the probability that this guy really has that disease?`;   // --- py stmt 1012
+     const solution = `$${answer.toFixed(2)}$%`;   // --- py stmt 1013
+     return [problem, solution];   // --- py stmt 1014
+ }
+@@ -183,11 +194,11 @@ function confidence_interval() {   // --- py stmt 2001
+ 
+     sd = sd / n;   // --- py stmt 2016
+     const standard_error = lst_t[j] * Math.sqrt(sd / n);   // --- py stmt 2017
+-    const upper = Math.round(mean + standard_error, 2);   // --- py stmt 2018
+-    const lower = Math.round(mean - standard_error, 2);   // --- py stmt 2019
++    const upper = Math.round((mean + standard_error) * 100) / 100;   // --- py stmt 2018
++    const lower = Math.round((mean - standard_error) * 100) / 100;   // --- py stmt 2019
+ 
+-    const problem = `The confidence interval for sample ${lst} with ${lst_per[j]}% confidence is`;   // --- py stmt 2020
+-    const solution = `(${upper}, ${lower})`;   // --- py stmt 2021
++    const problem = `The confidence interval for sample $[${lst}]$ with $${lst_per[j]}$% confidence is`;   // --- py stmt 2020
++    const solution = `$(${upper}, ${lower})$`;   // --- py stmt 2021
+     return [problem, solution];   // --- py stmt 2022
+ }
+ 
+@@ -210,8 +221,8 @@ function data_summary(number_values = 15, min_val = 5, max_val = 50) {   // ---
+     let standardDeviation = parseFloat((_var / number_values).toFixed(2));   // --- py stmt 3013
+     let variance = parseFloat(Math.sqrt(_var / number_values).toFixed(2));   // --- py stmt 3014
+ 
+-    let problem = `Find the mean, standard deviation and variance for the data ${random_list.join(", ")}`;   // --- py stmt 3015
+-    let solution = `The Mean is ${mean}, Standard Deviation is ${standardDeviation}, Variance is ${variance}`;   // --- py stmt 3016
++    let problem = `Find the mean,standard deviation and variance for the data $${random_list.join(", ")}$`;   // --- py stmt 3015
++    let solution = `The Mean is $${mean}$, Standard Deviation is $${standardDeviation}$, Variance is $${variance}$`;   // --- py stmt 3016
+     return [problem, solution];   // --- py stmt 3017
+ }
+ 
+@@ -242,7 +253,7 @@ function dice_sum_probability(max_dice = 3) {   // --- py stmt 4001
+         }
+     }
+ 
+-    let problem = `If ${a} dice are rolled at the same time, the probability of getting a sum of ${b} =`;   // --- py stmt 4018
++    let problem = `If $${a}$ dice are rolled at the same time, the probability of getting a sum of $${b} =$`;   // --- py stmt 4018
+     let solution = `\\frac{${count}}{${6 ** a}}`;   // --- py stmt 4019
+     return [problem, solution];   // --- py stmt 4020
+ }
+@@ -257,16 +268,16 @@ function meanMedian(max_length = 10) {   // --- py stmt 5001
+     randomlist.sort((a, b) => a - b);   // --- py stmt 5007
+     const median = (randomlist[4] + randomlist[5]) / 2;   // --- py stmt 5008
+ 
+-    const problem = `Given the series of numbers ${randomlist}. Find the arithmatic mean and median of the series`;   // --- py stmt 5009
+-    const solution = `Arithmetic mean of the series is ${mean} and arithmetic median of this series is ${median}`;   // --- py stmt 5010
++    const problem = `Given the series of numbers $[${randomlist}]$. Find the arithmatic mean and median of the series`;   // --- py stmt 5009
++    const solution = `Arithmetic mean of the series is $${mean}$ and arithmetic median of this series is $${median}$`;   // --- py stmt 5010
+     return [problem, solution];   // --- py stmt 5011
+ }
+ 
+ function permutation(max_lengthgth = 20) {   // --- py stmt 6001
+   const a = Math.floor(Math.random() * (max_lengthgth - 10 + 1) + 10);   // --- py stmt 6002
+   const b = Math.floor(Math.random() * 10);   // --- py stmt 6003
+-  const solution = parseInt(math.factorial(a) / (math.factorial(a - b)));   // --- py stmt 6004
++  const solution = parseInt(Math.factorial(a) / (Math.factorial(a - b)));   // --- py stmt 6004
+ 
+-  const problem = `Number of Permutations from ${a} objects picked ${b} at a time is: `;   // --- py stmt 6005
+-  return [problem, `${solution}`];   // --- py stmt 6006
++  const problem = `Number of Permutations from $${a}$ objects picked $${b}$ at a time is: `;   // --- py stmt 6005
++  return [problem, `$${solution}$`];   // --- py stmt 6006
+ }
+\ No newline at end of file
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,8 @@
+ {
+   "disable_src_lines": [],
+-  "trace_cmp": []
++  "trace_cmp": [
++    {"src_lines": ["91-94"], "vars_ignore": ["problem"]},
++    {"src_lines": ["115-117"], "vars_ignore": ["solution"]},
++    {"src_lines": ["154-157"], "vars_ignore": ["problem", "solution"]}
++  ]
+ }
+\ No newline at end of file

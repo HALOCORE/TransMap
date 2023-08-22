@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 24,
+    "line_end": 25,
+    "content": "        for (let i = 0; i < edges.get(b)?.length; i++) {",
+    "replacement": "        for (let i = 0; i < edges.get(b).length; i++) {"
+  }
+]

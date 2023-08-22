@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,4,9,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"k\":[\"N\",\"2\"],\"counter\":[\"DICT\",[[\"N\",\"0\"],[\"N\",\"1\"]]],\"ans\":[\"N\",\"0\"],\"s\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,9,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"k\":[\"N\",\"2\"],\"counter\":[\"DICT\",[[\"N\",\"0\"],[\"N\",\"1\"]]],\"ans\":[\"N\",\"0\"],\"s\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

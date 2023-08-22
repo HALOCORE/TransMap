@@ -1,0 +1,38 @@
+
+### Python
+### findTheLongestSubstring 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(s: str) -> int:   # --- py stmt 4
+    pos = [float('inf')] * 32   # --- py stmt 5
+    pos[0] = -1   # --- py stmt 6
+    vowels = 'aeiou'   # --- py stmt 7
+    state = ans = 0   # --- py stmt 8
+    for i, c in enumerate(s):   # --- py stmt 9
+        for j, v in enumerate(vowels):   # --- py stmt 10
+            if c == v:   # --- py stmt 11
+                state ^= 1 << j   # --- py stmt 12
+        ans = max(ans, i - pos[state])   # --- py stmt 13
+        pos[state] = min(pos[state], i)   # --- py stmt 14
+    return ans   # --- py stmt 15
+
+### JavaScript
+"use strict";
+const f_gold = (s) => {   // --- py stmt 4
+    let pos = new Array(32).fill(Infinity);   // --- py stmt 5
+    pos[0] = -1;   // --- py stmt 6
+    let vowels = 'aeiou';   // --- py stmt 7
+    let state = ans = 0;   // --- py stmt 8
+    for (let i = 0; i < s.length; i++) {   // --- py stmt 9
+        for (let j = 0; j < vowels.length; j++) {   // --- py stmt 10
+            if (s[i] == vowels[j]) {   // --- py stmt 11
+                state ^= 1 << j;   // --- py stmt 12
+            }
+        }
+        ans = Math.max(ans, i - pos[state]);   // --- py stmt 13
+        pos[state] = Math.min(pos[state], i);   // --- py stmt 14
+    }
+    return ans;   // --- py stmt 15
+}
+

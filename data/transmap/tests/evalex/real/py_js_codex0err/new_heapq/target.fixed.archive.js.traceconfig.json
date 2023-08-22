@@ -1,0 +1,8 @@
+{
+  "disable_src_lines": ["148-148"],
+  "trace_cmp": [
+      {"src_lines": ["165-193"], "vars_ignore": ["it", "sentinel"]},
+      {"src_lines": ["200-228"], "vars_ignore": ["it", "sentinel"]},
+      {"src_lines": ["139-144"], "vars_ignore": ["it"]}
+  ]
+}

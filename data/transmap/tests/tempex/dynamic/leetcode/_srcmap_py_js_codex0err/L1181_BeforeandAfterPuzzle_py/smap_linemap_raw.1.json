@@ -1,0 +1,282 @@
+{
+  "src_anno_stmts": [
+    [
+      "### beforeAndAfterPuzzles",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(phrases: List[str]) -> List[str]:",
+      [
+        3
+      ]
+    ],
+    [
+      "    same_first_word = defaultdict(set)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, phrase in enumerate(phrases):",
+      [
+        5
+      ]
+    ],
+    [
+      "        same_first_word[phrase.split()[0]].add(i)",
+      [
+        6
+      ]
+    ],
+    [
+      "    res = set()",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i, phrase in enumerate(phrases):",
+      [
+        8
+      ]
+    ],
+    [
+      "        words = phrase.split()",
+      [
+        9
+      ]
+    ],
+    [
+      "        last_word = words[-1]",
+      [
+        10
+      ]
+    ],
+    [
+      "        if last_word in same_first_word:",
+      [
+        11
+      ]
+    ],
+    [
+      "            for j in same_first_word[last_word]:",
+      [
+        12
+      ]
+    ],
+    [
+      "                if i != j:",
+      [
+        13
+      ]
+    ],
+    [
+      "                    res.add(' '.join(words[:-1] + phrases[j].split()))",
+      [
+        14
+      ]
+    ],
+    [
+      "    return sorted(list(res))",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(phrases) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var same_first_word = new Map();",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < phrases.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var phrase = phrases[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "        var words = phrase.split(\" \");",
+      [
+        9
+      ]
+    ],
+    [
+      "        var first_word = words[0];",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (same_first_word.has(first_word)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            var set = same_first_word.get(first_word);",
+      [
+        6
+      ]
+    ],
+    [
+      "            set.add(i);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        6
+      ]
+    ],
+    [
+      "            var set = new Set();",
+      [
+        6
+      ]
+    ],
+    [
+      "            set.add(i);",
+      [
+        6
+      ]
+    ],
+    [
+      "            same_first_word.set(first_word, set);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var res = new Set();",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (var i = 0; i < phrases.length; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        var phrase = phrases[i];",
+      [
+        8
+      ]
+    ],
+    [
+      "        var words = phrase.split(\" \");",
+      [
+        9
+      ]
+    ],
+    [
+      "        var last_word = words[words.length - 1];",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (same_first_word.has(last_word)) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            var set = same_first_word.get(last_word);",
+      [
+        12
+      ]
+    ],
+    [
+      "            for (var j of set) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                if (i != j) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                    var new_phrase = words.slice(0, words.length - 1).concat(phrases[j].split(\" \")).join(\" \");",
+      [
+        14
+      ]
+    ],
+    [
+      "                    res.add(new_phrase);",
+      [
+        14
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Array.from(res).sort();",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

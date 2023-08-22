@@ -1,0 +1,16 @@
+{
+  "result_symptom": {
+    "category": [
+      "SUCCESS",
+      null
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error": null,
+    "is_success": true,
+    "stderr": "",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n\n[\"MYLOGEX:1\",[\"string\",6,\"cipher\"]]\n\n[\"MYLOGAP:0\",[\"num\",1]]\n\n[\"MYLOGEX:1\",[\"string\",15,\"i love leetcode\"]]\n\n[\"MYLOGAP:0\",[\"num\",2]]\n\n[\"MYLOGEX:1\",[\"string\",6,\"coding\"]]\n",
+    "timespan": 0.033913300023414195
+  }
+}

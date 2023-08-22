@@ -1,0 +1,26 @@
+
+### Python
+def triangle_area(a, b, c):   # --- py stmt 1
+    if a + b <= c or a + c <= b or b + c <= a:   # --- py stmt 2
+        return -1   # --- py stmt 3
+    s = (a + b + c)/2   # --- py stmt 4
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5   # --- py stmt 5
+    area = round(area, 2)   # --- py stmt 6
+    
+    return area   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function triangle_area(a, b, c) {   // --- py stmt 1
+    if (a + b <= c || a + c <= b || b + c <= a) {   // --- py stmt 2
+        return -1;   // --- py stmt 3
+    }
+    var s = (a + b + c) / 2;   // --- py stmt 4
+    var area = Math.pow(s * (s - a) * (s - b) * (s - c), 0.5);   // --- py stmt 5
+    area = Math.round(area, 2);   // --- py stmt 6
+    return area;   // --- py stmt 7
+}
+
+
+

@@ -1,0 +1,65 @@
+
+### Python
+### highestPeak 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(isWater: List[List[int]]) -> List[List[int]]:   # --- py stmt 3
+    m, n = len(isWater), len(isWater[0])   # --- py stmt 4
+    ans = [[-1] * n for _ in range(m)]   # --- py stmt 5
+    q = deque()   # --- py stmt 6
+    for i in range(m):   # --- py stmt 7
+        for j in range(n):   # --- py stmt 8
+            if isWater[i][j] == 1:   # --- py stmt 9
+                ans[i][j] = 0   # --- py stmt 10
+                q.append((i, j))   # --- py stmt 11
+    while q:   # --- py stmt 12
+        i, j = q.popleft()   # --- py stmt 13
+        for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:   # --- py stmt 14
+            x, y = i + a, j + b   # --- py stmt 15
+            if 0 <= x < m and 0 <= y < n and ans[x][y] == -1:   # --- py stmt 16
+                ans[x][y] = ans[i][j] + 1   # --- py stmt 17
+                q.append((x, y))   # --- py stmt 18
+    return ans   # --- py stmt 19
+
+### JavaScript
+"use strict";
+
+function f_gold(isWater) {   // --- py stmt 3
+    var m = isWater.length;   // --- py stmt 4
+    var n = isWater[0].length;   // --- py stmt 4
+    var ans = new Array(m);   // --- py stmt 5
+    for (var i = 0; i < m; i++) {   // --- py stmt 7
+        ans[i] = new Array(n);   // --- py stmt 5
+        for (var j = 0; j < n; j++) {   // --- py stmt 8
+            ans[i][j] = -1;   // --- py stmt 5
+        }
+    }
+    var q = [];   // --- py stmt 6
+    for (var i = 0; i < m; i++) {   // --- py stmt 7
+        for (var j = 0; j < n; j++) {   // --- py stmt 8
+            if (isWater[i][j] == 1) {   // --- py stmt 9
+                ans[i][j] = 0;   // --- py stmt 10
+                q.push([i, j]);   // --- py stmt 11
+            }
+        }
+    }
+    while (q.length > 0) {   // --- py stmt 12
+        var i = q[0][0];   // --- py stmt 13
+        var j = q[0][1];   // --- py stmt 13
+        q.shift();   // --- py stmt 13
+        for (var a = 0; a < 2; a++) {   // --- py stmt 14
+            for (var b = 0; b < 2; b++) {   // --- py stmt 14
+                var x = i + a;   // --- py stmt 15
+                var y = j + b;   // --- py stmt 15
+                if (0 <= x && x < m && 0 <= y && y < n && ans[x][y] == -1) {   // --- py stmt 16
+                    ans[x][y] = ans[i][j] + 1;   // --- py stmt 17
+                    q.push([x, y]);   // --- py stmt 18
+                }
+            }
+        }
+    }
+    return ans;   // --- py stmt 19
+}
+
+
+

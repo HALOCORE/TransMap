@@ -1,0 +1,24 @@
+
+### Python
+### sortSentence 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> str:   # --- py stmt 2
+    words = s.split(' ')   # --- py stmt 3
+    arr = [None] * len(words)   # --- py stmt 4
+    for word in words:   # --- py stmt 5
+        idx = int(word[-1]) - 1   # --- py stmt 6
+        arr[idx] = word[:-1]   # --- py stmt 7
+    return ' '.join(arr)   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var words = s.split(' ');   // --- py stmt 3
+    var arr = [null] * words.length;   // --- py stmt 4
+    for (var word of words) {   // --- py stmt 5
+        var idx = parseInt(word[word.length - 1]) - 1;   // --- py stmt 6
+        arr[idx] = word.substring(0, word.length - 1);   // --- py stmt 7
+    }
+    return arr.join(' ');   // --- py stmt 8
+}
+

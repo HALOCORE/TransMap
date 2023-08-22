@@ -1,0 +1,62 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        return needs.map((needs, i) => price[i] * needs).reduce((a, b) => a + b, 0);",
+    "replacement": "        return sum(price[i] * needs[i] for i in range(len(needs)));"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    var ans = total(price, needs);",
+    "replacement": "    ans = total(price, needs);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    var t = [];",
+    "replacement": "    t = [];"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    for (let offer of special) {",
+    "replacement": "    for (offer in special) {"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        t.length = 0;",
+    "replacement": "        t.clear();"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        for (let j = 0; j < needs.length; j++) {",
+    "replacement": "        for (j in range(len(needs))) {"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "                t.length = 0;",
+    "replacement": "                t.clear();"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "            t.push(needs[j] - offer[j]);",
+    "replacement": "            t.append(needs[j] - offer[j]);"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "        if (t.length > 0) {",
+    "replacement": "        if (t) {"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "            ans = Math.min(ans, offer.at(-1) + f_gold(price, special, t));",
+    "replacement": "            ans = min(ans, offer[-1] + f_gold(price, special, t));"
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(mat, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  row_sum = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  col_sum = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n): row_sum += mat[n // 2][i]",
+      [
+        4
+      ]
+    ],
+    [
+      "  print(\"Sum of middle row = \", row_sum)",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(n): col_sum += mat[i][n // 2]",
+      [
+        6
+      ]
+    ],
+    [
+      "  print(\"Sum of middle column = \", col_sum)",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var row_sum = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var col_sum = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) row_sum += mat[Math.floor(n / 2)][i];",
+      [
+        4
+      ]
+    ],
+    [
+      "  console.log(\"Sum of middle row = \", row_sum);",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) col_sum += mat[i][n / 2];",
+      [
+        6
+      ]
+    ],
+    [
+      "  console.log(\"Sum of middle column = \", col_sum);",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

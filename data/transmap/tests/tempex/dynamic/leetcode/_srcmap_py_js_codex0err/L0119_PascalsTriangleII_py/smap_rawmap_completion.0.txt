@@ -1,0 +1,23 @@
+
+### Python
+### getRow 
+from typing import *   # --- py stmt 1
+def f_gold(rowIndex: int) -> List[int]:   # --- py stmt 2
+    row = [1] * (rowIndex + 1)   # --- py stmt 3
+    for i in range(2, rowIndex + 1):   # --- py stmt 4
+        for j in range(i - 1, 0, -1):   # --- py stmt 5
+            row[j] += row[j - 1]   # --- py stmt 6
+    return row   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(rowIndex) {   // --- py stmt 2
+    var row = Array(rowIndex + 1).fill(1);   // --- py stmt 3
+    for (var i = 2; i <= rowIndex; i++) {   // --- py stmt 4
+        for (var j = i - 1; j >= 0; j--) {   // --- py stmt 5
+            row[j] += row[j - 1];   // --- py stmt 6
+        }
+    }
+    return row;   // --- py stmt 7
+}
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 4,
+    "content": "    let maxf = nums[0];\n    let minf = nums[0];\n    let res = nums[0];",
+    "replacement": "    let maxf = minf = res = nums[0];"
+  }
+]

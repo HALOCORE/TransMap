@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "            if (d[pattern[i]] == t) {",
+    "replacement": "            if (d.get(pattern[i]) == t) {"
+  }
+]

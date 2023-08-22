@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return (n & 1) ? 'a'.repeat(n) : 'a'.repeat(n - 1) + 'b';",
+    "replacement": "    return 'a'.repeat(n) if (n & 1) else 'a'.repeat(n - 1) + 'b';"
+  }
+]

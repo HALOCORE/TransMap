@@ -1,0 +1,92 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[19,4,19,15]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      18
+    ],
+    "tar_cov_lines": [
+      2,
+      14,
+      15,
+      16
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"m\":[\"N\",\"6\"],\"n\":[\"N\",\"2\"],\"left\":[\"N\",\"2\"],\"right\":[\"N\",\"2\"],\"mid\":[\"N\",\"3\"],\"p\":[\"S\",2,\"ab\"],\"removable\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"1\"],[\"N\",\"0\"]],\"s\":[\"S\",6,\"abcacb\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[5,8,5,32]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"k\":[\"N\",\"2\"],\"m\":[\"N\",\"6\"],\"n\":[\"N\",\"2\"],\"p\":[\"S\",2,\"ab\"],\"removable\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"1\"],[\"N\",\"0\"]],\"s\":[\"S\",6,\"abcacb\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,8,5,32]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"k\":[\"N\",\"2\"],\"m\":[\"N\",\"6\"],\"n\":[\"N\",\"2\"],\"p\":[\"S\",2,\"ab\"],\"removable\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"1\"],[\"N\",\"0\"]],\"s\":[\"S\",6,\"abcacb\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,8,5,32]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"k\":[\"N\",\"2\"],\"m\":[\"N\",\"6\"],\"n\":[\"N\",\"2\"],\"p\":[\"S\",2,\"ab\"],\"removable\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"1\"],[\"N\",\"0\"]],\"s\":[\"S\",6,\"abcacb\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

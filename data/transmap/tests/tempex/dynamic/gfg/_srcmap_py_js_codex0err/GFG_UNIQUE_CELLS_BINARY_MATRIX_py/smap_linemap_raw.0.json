@@ -1,0 +1,164 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(mat, n, m):",
+      [
+        1
+      ]
+    ],
+    [
+      "  rowsum =[0] * n ;",
+      [
+        2
+      ]
+    ],
+    [
+      "  colsum =[0] * m ;",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        4
+      ]
+    ],
+    [
+      "    for j in range(m):",
+      [
+        5
+      ]
+    ],
+    [
+      "      if(mat[i][j] != 0): rowsum[i] += 1 ; colsum[j] += 1 ;",
+      [
+        6
+      ]
+    ],
+    [
+      "  uniquecount = 0 ;",
+      [
+        7
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        8
+      ]
+    ],
+    [
+      "    for j in range(m):",
+      [
+        9
+      ]
+    ],
+    [
+      "      if(mat[i][j] != 0 and rowsum[i] == 1 and colsum[j] == 1): uniquecount += 1 ;",
+      [
+        10
+      ]
+    ],
+    [
+      "  return uniquecount ;",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat, n, m) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var rowsum = Array(n).fill(0);",
+      [
+        2
+      ]
+    ],
+    [
+      "  var colsum = Array(m).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var j = 0; j < m; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      if (mat[i][j] != 0) rowsum[i] += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "      colsum[j] += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var uniquecount = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var j = 0; j < m; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "      if (mat[i][j] != 0 && rowsum[i] == 1 && colsum[j] == 1) uniquecount += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return uniquecount;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

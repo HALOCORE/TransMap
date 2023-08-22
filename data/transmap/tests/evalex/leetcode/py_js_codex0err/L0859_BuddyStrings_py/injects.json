@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 28,
+    "line_end": 29,
+    "content": "    if (JSON.stringify(Object.entries(cnt1).sort()) != JSON.stringify(Object.entries(cnt2).sort())) {",
+    "replacement": "    if (JSON.stringify(cnt1) != JSON.stringify(cnt2)) {"
+  }
+]

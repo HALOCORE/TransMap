@@ -1,0 +1,57 @@
+
+### Python
+### maximumBobPoints 
+from typing import *   # --- py stmt 1
+def f_gold(numArrows: int, aliceArrows: List[int]) -> List[int]:   # --- py stmt 2
+    n = len(aliceArrows)   # --- py stmt 3
+    state = 0   # --- py stmt 4
+    mx = -1   # --- py stmt 5
+    for mask in range(1 << n):   # --- py stmt 6
+        cnt = points = 0   # --- py stmt 7
+        for i, alice in enumerate(aliceArrows):   # --- py stmt 8
+            if (mask >> i) & 1:   # --- py stmt 9
+                cnt += alice + 1   # --- py stmt 10
+                points += i   # --- py stmt 11
+        if cnt <= numArrows and mx < points:   # --- py stmt 12
+            state = mask   # --- py stmt 13
+            mx = points   # --- py stmt 14
+    ans = [0] * n   # --- py stmt 15
+    for i, alice in enumerate(aliceArrows):   # --- py stmt 16
+        if (state >> i) & 1:   # --- py stmt 17
+            ans[i] = alice + 1   # --- py stmt 18
+            numArrows -= ans[i]   # --- py stmt 19
+    ans[0] = numArrows   # --- py stmt 20
+    return ans   # --- py stmt 21
+
+### JavaScript
+"use strict";
+function f_gold(numArrows, aliceArrows) {   // --- py stmt 2
+    let n = aliceArrows.length;   // --- py stmt 3
+    let state = 0;   // --- py stmt 4
+    let mx = -1;   // --- py stmt 5
+    for (let mask = 1 << n; mask >= 0; mask--) {   // --- py stmt 6
+        let cnt = 0, points = 0;   // --- py stmt 7
+        for (let i = 0; i < aliceArrows.length; i++) {   // --- py stmt 8
+            if ((mask >> i) & 1) {   // --- py stmt 9
+                cnt += aliceArrows[i] + 1;   // --- py stmt 10
+                points += i;   // --- py stmt 11
+            }
+        }
+        if (cnt <= numArrows && mx < points) {   // --- py stmt 12
+            state = mask;   // --- py stmt 13
+            mx = points;   // --- py stmt 14
+        }
+    }
+    var ans = Array(aliceArrows.length).fill(0);   // --- py stmt 15
+    for (let i = 0; i < aliceArrows.length; i++) {   // --- py stmt 16
+        if ((state >> i) & 1) {   // --- py stmt 17
+            ans[i] = aliceArrows[i] + 1;   // --- py stmt 18
+            numArrows -= ans[i];   // --- py stmt 19
+        }
+    }
+    ans[0] = numArrows;   // --- py stmt 20
+    return ans;   // --- py stmt 21
+}
+
+
+

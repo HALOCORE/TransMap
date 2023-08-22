@@ -1,0 +1,1 @@
+{"error":null,"is_success":true,"stderr":"","stdout":"0 0\n1 ['a1b2', 'a1B2', 'A1B2', 'A1b2']\n0 1\n1 ['3z4', '3Z4']\n","timespan":0.03472220478579402}

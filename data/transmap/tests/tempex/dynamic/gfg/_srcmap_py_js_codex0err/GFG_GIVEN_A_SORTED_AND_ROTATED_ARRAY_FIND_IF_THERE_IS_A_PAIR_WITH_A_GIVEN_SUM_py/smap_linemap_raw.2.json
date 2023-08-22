@@ -1,0 +1,138 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n, x):",
+      [
+        1
+      ]
+    ],
+    [
+      "  for i in range(0, n - 1):",
+      [
+        2
+      ]
+    ],
+    [
+      "    if(arr[i] > arr[i + 1]): break ;",
+      [
+        3
+      ]
+    ],
+    [
+      "  l =(i + 1)% n",
+      [
+        4
+      ]
+    ],
+    [
+      "  r = i",
+      [
+        5
+      ]
+    ],
+    [
+      "  while(l != r):",
+      [
+        6
+      ]
+    ],
+    [
+      "    if(arr[l] + arr[r] == x): return True ;",
+      [
+        7
+      ]
+    ],
+    [
+      "    if(arr[l] + arr[r] < x): l =(l + 1)% n ;",
+      [
+        8
+      ]
+    ],
+    [
+      "    else: r =(n + r - 1)% n ;",
+      [
+        9
+      ]
+    ],
+    [
+      "  return False ;",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n, x) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n - 1; i++) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (arr[i] > arr[i + 1]) break;",
+      [
+        3
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  let l = ((i === n - 1)? n - 1 : i + 1) % n;",
+      [
+        4
+      ]
+    ],
+    [
+      "  let r = i;",
+      [
+        5
+      ]
+    ],
+    [
+      "  while (l != r) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    if (arr[l] + arr[r] == x) return true;",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (arr[l] + arr[r] < x) l = (l + 1) % n;",
+      [
+        8
+      ]
+    ],
+    [
+      "    else r = (n + r - 1) % n;",
+      [
+        9
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return false;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

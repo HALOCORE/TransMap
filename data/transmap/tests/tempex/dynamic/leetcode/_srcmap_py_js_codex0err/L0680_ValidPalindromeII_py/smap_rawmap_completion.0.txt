@@ -1,0 +1,40 @@
+
+### Python
+### validPalindrome 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> bool:   # --- py stmt 2
+    def check(i, j):   # --- py stmt 3
+        while i < j:   # --- py stmt 4
+            if s[i] != s[j]:   # --- py stmt 5
+                return False   # --- py stmt 6
+            i, j = i + 1, j - 1   # --- py stmt 7
+        return True   # --- py stmt 8
+    i, j = 0, len(s) - 1   # --- py stmt 9
+    while i < j:   # --- py stmt 10
+        if s[i] != s[j]:   # --- py stmt 11
+            return check(i, j - 1) or check(i + 1, j)   # --- py stmt 12
+        i, j = i + 1, j - 1   # --- py stmt 13
+    return True   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    function check(i, j) {   // --- py stmt 3
+        while (i < j) {   // --- py stmt 4
+            if (s[i] != s[j]) {   // --- py stmt 5
+                return false;   // --- py stmt 6
+            }
+            [i, j] = [i + 1, j - 1];   // --- py stmt 7
+        }
+        return true;   // --- py stmt 8
+    }
+    var i = 0, j = s.length - 1;   // --- py stmt 9
+    while (i < j) {   // --- py stmt 10
+        if (s[i] != s[j]) {   // --- py stmt 11
+            return check(i, j - 1) || check(i + 1, j);   // --- py stmt 12
+        }
+        [i, j] = [i + 1, j - 1];   // --- py stmt 13
+    }
+    return true;   // --- py stmt 14
+}
+

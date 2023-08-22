@@ -1,0 +1,116 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[25,4,25,49]",
+    "src_cov_lines": [
+      23
+    ],
+    "tar_cov_lines": [
+      22
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":22,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",0]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",5]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beginWord\":[\"S\",3,\"hit\"],\"endWord\":[\"S\",3,\"cog\"],\"wordList\":[\"A\",6,[\"S\",3,\"hot\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"],[\"S\",3,\"cog\"]],\"extend\":\"UNKNOWN\",\"words\":[\"SET\",[\"S\",3,\"hot\"],[\"S\",3,\"log\"],[\"S\",3,\"dot\"],[\"S\",3,\"lot\"],[\"S\",3,\"dog\"],[\"S\",3,\"cog\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[25,4,25,49]",
+    "src_cov_lines": [
+      23
+    ],
+    "tar_cov_lines": [
+      22
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":22,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",0]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",5]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beginWord\":[\"S\",3,\"hit\"],\"endWord\":[\"S\",3,\"cog\"],\"wordList\":[\"A\",6,[\"S\",3,\"hot\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"],[\"S\",3,\"cog\"]],\"extend\":\"UNKNOWN\",\"words\":[\"SET\",[\"S\",3,\"dog\"],[\"S\",3,\"cog\"],[\"S\",3,\"dot\"],[\"S\",3,\"hot\"],[\"S\",3,\"log\"],[\"S\",3,\"lot\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[25,4,25,49]",
+    "src_cov_lines": [
+      23
+    ],
+    "tar_cov_lines": [
+      22
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":22,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",0]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",5]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beginWord\":[\"S\",3,\"hit\"],\"endWord\":[\"S\",3,\"cog\"],\"wordList\":[\"A\",6,[\"S\",3,\"hot\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"],[\"S\",3,\"cog\"]],\"extend\":\"UNKNOWN\",\"words\":[\"SET\",[\"S\",3,\"dot\"],[\"S\",3,\"hot\"],[\"S\",3,\"lot\"],[\"S\",3,\"dog\"],[\"S\",3,\"cog\"],[\"S\",3,\"log\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[25,4,25,49]",
+    "src_cov_lines": [
+      23
+    ],
+    "tar_cov_lines": [
+      22
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":22,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",0]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",5]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beginWord\":[\"S\",3,\"hit\"],\"endWord\":[\"S\",3,\"cog\"],\"wordList\":[\"A\",6,[\"S\",3,\"hot\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"],[\"S\",3,\"cog\"]],\"extend\":\"UNKNOWN\",\"words\":[\"SET\",[\"S\",3,\"hot\"],[\"S\",3,\"dog\"],[\"S\",3,\"dot\"],[\"S\",3,\"cog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[25,4,25,49]",
+    "src_cov_lines": [
+      23
+    ],
+    "tar_cov_lines": [
+      22
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":22,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",0]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",5]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beginWord\":[\"S\",3,\"hit\"],\"endWord\":[\"S\",3,\"cog\"],\"wordList\":[\"A\",6,[\"S\",3,\"hot\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"],[\"S\",3,\"cog\"]],\"extend\":\"UNKNOWN\",\"words\":[\"SET\",[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"cog\"],[\"S\",3,\"hot\"],[\"S\",3,\"log\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[25,4,25,49]",
+    "src_cov_lines": [
+      23
+    ],
+    "tar_cov_lines": [
+      22
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":22,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",0]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",5]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beginWord\":[\"S\",3,\"hit\"],\"endWord\":[\"S\",3,\"cog\"],\"wordList\":[\"A\",6,[\"S\",3,\"hot\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"],[\"S\",3,\"cog\"]],\"extend\":\"UNKNOWN\",\"words\":[\"SET\",[\"S\",3,\"cog\"],[\"S\",3,\"dot\"],[\"S\",3,\"dog\"],[\"S\",3,\"hot\"],[\"S\",3,\"lot\"],[\"S\",3,\"log\"]]}",
+      ""
+    ]
+  }
+]

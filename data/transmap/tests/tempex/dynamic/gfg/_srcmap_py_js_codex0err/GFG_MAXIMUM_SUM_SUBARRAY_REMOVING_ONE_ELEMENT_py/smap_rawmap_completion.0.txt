@@ -1,0 +1,47 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  fw =[0 for k in range(n)]   # --- py stmt 2
+  bw =[0 for k in range(n)]   # --- py stmt 3
+  cur_max, max_so_far = arr[0], arr[0]   # --- py stmt 4
+  for i in range(n):   # --- py stmt 5
+    cur_max = max(arr[i], cur_max + arr[i])   # --- py stmt 6
+    max_so_far = max(max_so_far, cur_max)   # --- py stmt 7
+    fw[i] = cur_max   # --- py stmt 8
+  cur_max = max_so_far = bw[n - 1] = arr[n - 1]   # --- py stmt 9
+  i = n - 2   # --- py stmt 10
+  while i >= 0:   # --- py stmt 11
+    cur_max = max(arr[i], cur_max + arr[i])   # --- py stmt 12
+    max_so_far = max(max_so_far, cur_max)   # --- py stmt 13
+    bw[i] = cur_max   # --- py stmt 14
+    i -= 1   # --- py stmt 15
+  fans = max_so_far   # --- py stmt 16
+  for i in range(1, n - 1): fans = max(fans, fw[i - 1] + bw[i + 1])   # --- py stmt 17
+  return fans   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  let fw = Array(n).fill(0);   // --- py stmt 2
+  let bw = Array(n).fill(0);   // --- py stmt 3
+  let cur_max = max_so_far = arr[0];   // --- py stmt 4
+  for (let i = 0; i < n; i++) {   // --- py stmt 5
+    cur_max = Math.max(arr[i], cur_max + arr[i]);   // --- py stmt 6
+    max_so_far = Math.max(max_so_far, cur_max);   // --- py stmt 7
+    fw[i] = cur_max;   // --- py stmt 8
+  }
+  cur_max = max_so_far = bw[n - 1] = arr[n - 1];   // --- py stmt 9
+  let i = n - 2;   // --- py stmt 10
+  while (i >= 0) {   // --- py stmt 11
+    cur_max = Math.max(arr[i], cur_max + arr[i]);   // --- py stmt 12
+    max_so_far = Math.max(max_so_far, cur_max);   // --- py stmt 13
+    bw[i] = cur_max;   // --- py stmt 14
+    i -= 1;   // --- py stmt 15
+  }
+  let fans = max_so_far;   // --- py stmt 16
+  for (let i = 1; i < n - 1; i++) fans = Math.max(fans, fw[i - 1] + bw[i + 1]);   // --- py stmt 17
+  return fans;   // --- py stmt 18
+}
+
+
+

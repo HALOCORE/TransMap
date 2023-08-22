@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### averageWaitingTime",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(customers: List[List[int]]) -> float:",
+      [
+        2
+      ]
+    ],
+    [
+      "    f = total_waiting_time = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for arrival, time in customers:",
+      [
+        4
+      ]
+    ],
+    [
+      "        f = max(arrival, f) + time",
+      [
+        5
+      ]
+    ],
+    [
+      "        total_waiting_time += f - arrival",
+      [
+        6
+      ]
+    ],
+    [
+      "    return total_waiting_time / len(customers)",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(customers) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var f = total_waiting_time = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < customers.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var arrival = customers[i][0];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var time = customers[i][1];",
+      [
+        4
+      ]
+    ],
+    [
+      "        f = Math.max(arrival, f) + time;",
+      [
+        5
+      ]
+    ],
+    [
+      "        total_waiting_time += f - arrival;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return total_waiting_time / customers.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

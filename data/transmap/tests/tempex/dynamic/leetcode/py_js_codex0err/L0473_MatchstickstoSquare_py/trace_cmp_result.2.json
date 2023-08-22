@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[17,4,17,19]",
+    "src_cov_lines": [
+      15
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"ReferenceError: max is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[17,4,17,19]",
+    "src_cov_lines": [
+      15
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"ReferenceError: max is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[17,4,17,19]",
+    "src_cov_lines": [
+      15
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"ReferenceError: max is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[17,4,17,19]",
+    "src_cov_lines": [
+      15
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"ReferenceError: max is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]]}",
+      ""
+    ]
+  }
+]

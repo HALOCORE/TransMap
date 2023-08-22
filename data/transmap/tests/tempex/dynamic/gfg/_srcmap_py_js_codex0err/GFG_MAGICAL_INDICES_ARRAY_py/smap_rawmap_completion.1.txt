@@ -1,0 +1,54 @@
+
+### Python
+def f_gold(A, n):   # --- py stmt 1
+  cnt = 0   # --- py stmt 2
+  parent =[None] *(n + 1)   # --- py stmt 3
+  vis =[None] *(n + 1)   # --- py stmt 4
+  for i in range(0, n + 1):   # --- py stmt 5
+    parent[i] = - 1   # --- py stmt 6
+    vis[i] = 0   # --- py stmt 7
+  for i in range(0, n):   # --- py stmt 8
+    j = i   # --- py stmt 9
+    if(parent[j] == - 1):   # --- py stmt 10
+      while(parent[j] == - 1):   # --- py stmt 11
+        parent[j] = i   # --- py stmt 12
+        j =(j + A[j] + 1)% n   # --- py stmt 13
+      if(parent[j] == i):   # --- py stmt 14
+        while(vis[j] == 0):   # --- py stmt 15
+          vis[j] = 1   # --- py stmt 16
+          cnt = cnt + 1   # --- py stmt 17
+          j =(j + A[j] + 1)% n   # --- py stmt 18
+  return cnt   # --- py stmt 19
+
+
+### JavaScript
+"use strict";
+function f_gold(A, n) {   // --- py stmt 1
+  let cnt = 0;   // --- py stmt 2
+  let parent = Array(n + 1);   // --- py stmt 3
+  let vis = Array(n + 1);   // --- py stmt 4
+  for (let i = 0; i < n + 1; i++) {   // --- py stmt 5
+    parent[i] = -1;   // --- py stmt 6
+    vis[i] = 0;   // --- py stmt 7
+  }
+  for (let i = 0; i < n; i++) {   // --- py stmt 8
+    let j = i;   // --- py stmt 9
+    if (parent[j] == -1) {   // --- py stmt 10
+      while (parent[j] == -1) {   // --- py stmt 11
+        parent[j] = i;   // --- py stmt 12
+        j = ((j + A[j] + 1) % n + n) % n;   // --- py stmt 13
+      }
+      if (parent[j] == i) {   // --- py stmt 14
+        while (vis[j] == 0) {   // --- py stmt 15
+          vis[j] = 1;   // --- py stmt 16
+          cnt = cnt + 1;   // --- py stmt 17
+          j = (j + A[j] + 1) % n;   // --- py stmt 18
+        }
+      }
+    }
+  }
+  return cnt;   // --- py stmt 19
+}
+
+
+

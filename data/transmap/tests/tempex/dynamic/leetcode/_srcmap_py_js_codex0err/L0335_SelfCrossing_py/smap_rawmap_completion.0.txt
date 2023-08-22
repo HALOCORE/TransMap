@@ -1,0 +1,41 @@
+
+### Python
+### isSelfCrossing 
+from typing import *   # --- py stmt 1
+def f_gold(distance: List[int]) -> bool:   # --- py stmt 2
+    d = distance   # --- py stmt 3
+    for i in range(3, len(d)):   # --- py stmt 4
+        if d[i] >= d[i - 2] and d[i - 1] <= d[i - 3]:   # --- py stmt 5
+            return True   # --- py stmt 6
+        if i >= 4 and d[i - 1] == d[i - 3] and d[i] + d[i - 4] >= d[i - 2]:   # --- py stmt 7
+            return True   # --- py stmt 8
+        if (   # --- py stmt 9
+            i >= 5
+            and d[i - 2] >= d[i - 4]
+            and d[i - 1] <= d[i - 3]
+            and d[i] >= d[i - 2] - d[i - 4]
+            and d[i - 1] + d[i - 5] >= d[i - 3]
+        ):
+            return True   # --- py stmt 10
+    return False   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function isSelfCrossing(distance) {   // --- py stmt 2
+    let d = distance;   // --- py stmt 3
+    for (let i = 3; i < d.length; i++) {   // --- py stmt 4
+        if (d[i] >= d[i - 2] && d[i - 1] <= d[i - 3]) {   // --- py stmt 5
+            return true;   // --- py stmt 6
+        }
+        if (i >= 4 && d[i - 1] == d[i - 3] && d[i] + d[i - 4] >= d[i - 2]) {   // --- py stmt 7
+            return true;   // --- py stmt 8
+        }
+        if (i >= 5 && d[i - 2] >= d[i - 4] && d[i - 1] <= d[i - 3] && d[i] >= d[i - 2] - d[i - 4] && d[i - 1] + d[i - 5] >= d[i - 3]) {   // --- py stmt 9
+            return true;   // --- py stmt 10
+        }
+    }
+    return false;   // --- py stmt 11
+}
+
+
+

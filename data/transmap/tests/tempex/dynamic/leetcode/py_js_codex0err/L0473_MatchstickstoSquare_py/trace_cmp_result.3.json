@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[19,4,19,17]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      23
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":23,\"err_msg\":\"ReferenceError: reverse is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"edges\":[\"A\",4,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"matchsticks\":[\"A\",5,[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[19,4,19,17]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      23
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":23,\"err_msg\":\"ReferenceError: reverse is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"edges\":[\"A\",4,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"matchsticks\":[\"A\",5,[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[19,4,19,17]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      23
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":23,\"err_msg\":\"ReferenceError: reverse is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"edges\":[\"A\",4,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"matchsticks\":[\"A\",5,[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[19,4,19,17]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      23
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":23,\"err_msg\":\"ReferenceError: reverse is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"x\":[\"N\",\"2\"],\"edges\":[\"A\",4,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"matchsticks\":[\"A\",5,[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  }
+]

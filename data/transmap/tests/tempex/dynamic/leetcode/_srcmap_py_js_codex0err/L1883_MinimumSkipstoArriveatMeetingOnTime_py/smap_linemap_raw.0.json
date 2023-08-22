@@ -1,0 +1,240 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minSkips",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(dist: List[int], speed: int, hoursBefore: int) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(dist)",
+      [
+        5
+      ]
+    ],
+    [
+      "    dp = [[float('inf')] * (n + 1) for _ in range(n + 1)]",
+      [
+        6
+      ]
+    ],
+    [
+      "    dp[0][0] = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(1, n + 1):",
+      [
+        8
+      ]
+    ],
+    [
+      "        for j in range(i + 1):",
+      [
+        9
+      ]
+    ],
+    [
+      "            if i != j:",
+      [
+        10
+      ]
+    ],
+    [
+      "                dp[i][j] = min(",
+      [
+        11
+      ]
+    ],
+    [
+      "                    dp[i][j],",
+      null
+    ],
+    [
+      "                    ((dp[i - 1][j] + dist[i - 1] - 1) // speed + 1) * speed,",
+      null
+    ],
+    [
+      "                )",
+      null
+    ],
+    [
+      "            if j > 0:",
+      [
+        12
+      ]
+    ],
+    [
+      "                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + dist[i - 1])",
+      null
+    ],
+    [
+      "    for i in range(n + 1):",
+      [
+        13
+      ]
+    ],
+    [
+      "        if dp[n][i] <= hoursBefore * speed:",
+      [
+        14
+      ]
+    ],
+    [
+      "            return i",
+      null
+    ],
+    [
+      "    return -1",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(dist, speed, hoursBefore) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    let n = dist.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    let dp = Array(n + 1).fill(0).map(() => Array(n + 1).fill(Number.POSITIVE_INFINITY));",
+      [
+        6
+      ]
+    ],
+    [
+      "    dp[0][0] = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 1; i <= n; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let j = 0; j <= i; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (i != j) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                dp[i][j] = Math.min(",
+      [
+        11
+      ]
+    ],
+    [
+      "                    dp[i][j],",
+      null
+    ],
+    [
+      "                    ((dp[i - 1][j] + dist[i - 1] - 1) / speed + 1) * speed,",
+      null
+    ],
+    [
+      "                );",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (j > 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                dp[i][j] = Math.min(dp[i][j], dp[i - 1][j - 1] + dist[i - 1]);",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let i = 0; i <= n; i++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        if (dp[n][i] <= hoursBefore * speed) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            return i;",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return -1;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

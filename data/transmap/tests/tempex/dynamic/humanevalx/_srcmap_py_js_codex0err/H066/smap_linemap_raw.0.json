@@ -1,0 +1,58 @@
+{
+  "src_anno_stmts": [
+    [
+      "def digitSum(s):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if s == \"\": return 0",
+      [
+        2
+      ]
+    ],
+    [
+      "    return sum(ord(char) if char.isupper() else 0 for char in s)",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function digitSum(s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (s === \"\") return 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "    return s.split(\"\").reduce((acc, char) => {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return acc + (char.toUpperCase() === char ? char.charCodeAt(0) : 0);",
+      [
+        3
+      ]
+    ],
+    [
+      "    }, 0);",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

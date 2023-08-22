@@ -1,0 +1,38 @@
+
+### Python
+def move_one_ball(arr):   # --- py stmt 1
+    if len(arr)==0:   # --- py stmt 2
+      return True   # --- py stmt 3
+    sorted_array=sorted(arr)   # --- py stmt 4
+    my_arr=[]   # --- py stmt 5
+    
+    min_value=min(arr)   # --- py stmt 6
+    min_index=arr.index(min_value)   # --- py stmt 7
+    my_arr=arr[min_index:]+arr[0:min_index]   # --- py stmt 8
+    for i in range(len(arr)):   # --- py stmt 9
+      if my_arr[i]!=sorted_array[i]:   # --- py stmt 10
+        return False   # --- py stmt 11
+    return True   # --- py stmt 12
+
+
+### JavaScript
+"use strict";
+function move_one_ball(arr) {   // --- py stmt 1
+    if (arr.length == 0) {   // --- py stmt 2
+        return true;   // --- py stmt 3
+    }
+    var sorted_array = arr.sort();   // --- py stmt 4
+    var my_arr = [];   // --- py stmt 5
+    var min_value = Math.min.apply(Math, arr);   // --- py stmt 6
+    var min_index = arr.indexOf(min_value);   // --- py stmt 7
+    my_arr = arr.slice(min_index).concat(arr.slice(0, min_index));   // --- py stmt 8
+    for (var i = 0; i < arr.length; i++) {   // --- py stmt 9
+        if (my_arr[i] != sorted_array[i]) {   // --- py stmt 10
+            return false;   // --- py stmt 11
+        }
+    }
+    return true;   // --- py stmt 12
+}
+
+
+

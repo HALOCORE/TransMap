@@ -1,0 +1,16 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 12,
+    "actural_src_pk": "NOT_EXIST",
+    "src_cov_lines": "NOT_EXIST",
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"RangeError: Invalid array length\"}",
+      ""
+    ],
+    "src_data": "NOT_EXIST"
+  }
+]

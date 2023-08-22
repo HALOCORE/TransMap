@@ -1,0 +1,132 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxProduct",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    maxf = minf = res = nums[0]",
+      [
+        5
+      ]
+    ],
+    [
+      "    for num in nums[1:]:",
+      [
+        6
+      ]
+    ],
+    [
+      "        m, n = maxf, minf",
+      [
+        7
+      ]
+    ],
+    [
+      "        maxf = max(num, m * num, n * num)",
+      [
+        8
+      ]
+    ],
+    [
+      "        minf = min(num, m * num, n * num)",
+      [
+        9
+      ]
+    ],
+    [
+      "        res = max(res, maxf)",
+      [
+        10
+      ]
+    ],
+    [
+      "    return res",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    let maxf = minf = res = nums[0];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let num of nums.slice(1)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        let m = maxf, n = minf;",
+      [
+        7
+      ]
+    ],
+    [
+      "        maxf = Math.max(num, m * num, n * num);",
+      [
+        8
+      ]
+    ],
+    [
+      "        minf = Math.min(num, m * num, n * num);",
+      [
+        9
+      ]
+    ],
+    [
+      "        res = Math.max(res, maxf);",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

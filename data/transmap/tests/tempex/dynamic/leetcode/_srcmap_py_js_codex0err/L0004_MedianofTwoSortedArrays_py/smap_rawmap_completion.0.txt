@@ -1,0 +1,52 @@
+
+### Python
+### findMedianSortedArrays 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(nums1: List[int], nums2: List[int]) -> float:   # --- py stmt 4
+    def findKth(i, j, k):   # --- py stmt 5
+        if i >= m:   # --- py stmt 6
+            return nums2[j + k - 1]   # --- py stmt 7
+        if j >= n:   # --- py stmt 8
+            return nums1[i + k - 1]   # --- py stmt 9
+        if k == 1:   # --- py stmt 10
+            return min(nums1[i], nums2[j])   # --- py stmt 11
+        midVal1 = nums1[i + k // 2 - 1] if i + k // 2 - 1 < m else float('inf')   # --- py stmt 12
+        midVal2 = nums2[j + k // 2 - 1] if j + k // 2 - 1 < n else float('inf')   # --- py stmt 13
+        if midVal1 < midVal2:   # --- py stmt 14
+            return findKth(i + k // 2, j, k - k // 2)   # --- py stmt 15
+        return findKth(i, j + k // 2, k - k // 2)   # --- py stmt 16
+    m, n = len(nums1), len(nums2)   # --- py stmt 17
+    left, right = (m + n + 1) // 2, (m + n + 2) // 2   # --- py stmt 18
+    return (findKth(0, 0, left) + findKth(0, 0, right)) / 2   # --- py stmt 19
+
+### JavaScript
+"use strict";
+const findMedianSortedArrays = (nums1, nums2) => {   // --- py stmt 4
+    const findKth = (i, j, k) => {   // --- py stmt 5
+        if (i >= m) {   // --- py stmt 6
+            return nums2[j + k - 1];   // --- py stmt 7
+        }
+        if (j >= n) {   // --- py stmt 8
+            return nums1[i + k - 1];   // --- py stmt 9
+        }
+        if (k === 1) {   // --- py stmt 10
+            return Math.min(nums1[i], nums2[j]);   // --- py stmt 11
+        }
+        const midVal1 = nums1[i + Math.floor(k / 2) - 1] || Infinity;   // --- py stmt 12
+        const midVal2 = nums2[j + Math.floor(k / 2) - 1] || Infinity;   // --- py stmt 13
+        if (midVal1 < midVal2) {   // --- py stmt 14
+            return findKth(i + Math.floor(k / 2), j, k - Math.floor(k / 2));   // --- py stmt 15
+        }
+        return findKth(i, j + Math.floor(k / 2), k - Math.floor(k / 2));   // --- py stmt 16
+    };
+    const m = nums1.length;   // --- py stmt 17
+    const n = nums2.length;   // --- py stmt 17
+    const left = Math.floor((m + n + 1) / 2);   // --- py stmt 18
+    const right = Math.floor((m + n + 2) / 2);   // --- py stmt 18
+    return (findKth(0, 0, left) + findKth(0, 0, right)) / 2;   // --- py stmt 19
+};
+
+
+

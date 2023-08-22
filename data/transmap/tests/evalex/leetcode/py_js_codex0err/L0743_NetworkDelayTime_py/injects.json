@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 20,
+    "line_end": 21,
+    "content": "        for (var i = 0; i < g.get(u)?.length; i++) {",
+    "replacement": "        for (var i = 0; i < g.get(u).length; i++) {"
+  },
+  {
+    "line_start": 30,
+    "line_end": 31,
+    "content": "    return (ans == INF) ? -1 : ans;",
+    "replacement": "    return -1 if (ans == INF) else ans;"
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minimumTime",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(jobs: List[int], workers: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    jobs.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "    workers.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "    return max((a + b - 1) // b for a, b in zip(jobs, workers))",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(jobs, workers) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    jobs.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "    workers.sort((a, b) => a - b);",
+      [
+        4
+      ]
+    ],
+    [
+      "    return Math.max(...(jobs.map((a, i) => Math.floor((a + workers[i] - 1) / workers[i]))));",
+      [
+        5
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

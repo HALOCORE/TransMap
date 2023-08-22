@@ -1,0 +1,214 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countValidWords",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(sentence: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(token):",
+      [
+        3
+      ]
+    ],
+    [
+      "        hyphen = False",
+      [
+        4
+      ]
+    ],
+    [
+      "        for i, c in enumerate(token):",
+      [
+        5
+      ]
+    ],
+    [
+      "            if c.isdigit() or (c in '!.,' and i < len(token) - 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "                return False",
+      [
+        7
+      ]
+    ],
+    [
+      "            if c == '-':",
+      [
+        8
+      ]
+    ],
+    [
+      "                if (",
+      [
+        9
+      ]
+    ],
+    [
+      "                    hyphen",
+      null
+    ],
+    [
+      "                    or i == 0",
+      null
+    ],
+    [
+      "                    or i == len(token) - 1",
+      null
+    ],
+    [
+      "                    or not token[i - 1].islower()",
+      null
+    ],
+    [
+      "                    or not token[i + 1].islower()",
+      null
+    ],
+    [
+      "                ):",
+      null
+    ],
+    [
+      "                    return False",
+      [
+        10
+      ]
+    ],
+    [
+      "                hyphen = True",
+      [
+        11
+      ]
+    ],
+    [
+      "        return True",
+      [
+        12
+      ]
+    ],
+    [
+      "    return sum(check(token) for token in sentence.split())",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentence) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(token) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var hyphen = false;",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (var i = 0; i < token.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            var c = token[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "            if (c.match(/^\\d+$/) || ('!.,'.includes(c) && i < token.length - 1)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        7
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (c == '-') {",
+      [
+        8
+      ]
+    ],
+    [
+      "                if (hyphen || i == 0 || i == token.length - 1 || !token[i - 1].islower() || !token[i + 1].islower()) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                    return false;",
+      [
+        10
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "                hyphen = true;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return true;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return sentence.split(/\\s+/).map(check).reduce((a, b) => a + b, 0);",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

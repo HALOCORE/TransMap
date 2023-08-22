@@ -1,0 +1,13 @@
+
+### Python
+def unique(l: list):   # --- py stmt 1
+    return sorted(list(set(l)))   # --- py stmt 2
+
+### JavaScript
+"use strict";
+function unique(l) {   // --- py stmt 1
+    return l.filter((v, i, a) => a.indexOf(v) === i);   // --- py stmt 2
+}
+
+
+

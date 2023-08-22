@@ -1,0 +1,43 @@
+
+### Python
+### isReflected 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(points: List[List[int]]) -> bool:   # --- py stmt 4
+    min_x, max_x = float('inf'), float('-inf')   # --- py stmt 5
+    point_set = set()   # --- py stmt 6
+    for x, y in points:   # --- py stmt 7
+        min_x = min(min_x, x)   # --- py stmt 8
+        max_x = max(max_x, x)   # --- py stmt 9
+        point_set.add((x, y))   # --- py stmt 10
+    s = min_x + max_x   # --- py stmt 11
+    for x, y in points:   # --- py stmt 12
+        if (s - x, y) not in point_set:   # --- py stmt 13
+            return False   # --- py stmt 14
+    return True   # --- py stmt 15
+
+### JavaScript
+"use strict";
+function f_gold(points) {   // --- py stmt 4
+    var min_x = Number.POSITIVE_INFINITY;   // --- py stmt 5
+    var max_x = Number.NEGATIVE_INFINITY;   // --- py stmt 5
+    var point_set = new Set();   // --- py stmt 6
+    for (var i = 0; i < points.length; i++) {   // --- py stmt 7
+        var x = points[i][0];   // --- py stmt 7
+        var y = points[i][1];   // --- py stmt 7
+        min_x = Math.min(min_x, x);   // --- py stmt 8
+        max_x = Math.max(max_x, x);   // --- py stmt 9
+        point_set.add([x, y]);   // --- py stmt 10
+    }
+    var s = min_x + max_x;   // --- py stmt 11
+    for (var i = 0; i < points.length; i++) {   // --- py stmt 12
+        var x = points[i][0];   // --- py stmt 12
+        var y = points[i][1];   // --- py stmt 12
+        if (!point_set.has(String([s - x, y]))) {   // --- py stmt 13
+            return false;   // --- py stmt 14
+        }
+    }
+    return true;   // --- py stmt 15
+}
+

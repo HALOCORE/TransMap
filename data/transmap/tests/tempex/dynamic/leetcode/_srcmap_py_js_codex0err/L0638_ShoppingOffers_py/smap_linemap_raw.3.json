@@ -1,0 +1,226 @@
+{
+  "src_anno_stmts": [
+    [
+      "### shoppingOffers",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(price: List[int], special: List[List[int]], needs: List[int]",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def total(price, needs):",
+      [
+        3
+      ]
+    ],
+    [
+      "        return sum(price[i] * needs[i] for i in range(len(needs)))",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = total(price, needs)",
+      [
+        5
+      ]
+    ],
+    [
+      "    t = []",
+      [
+        6
+      ]
+    ],
+    [
+      "    for offer in special:",
+      [
+        7
+      ]
+    ],
+    [
+      "        t.clear()",
+      [
+        8
+      ]
+    ],
+    [
+      "        for j in range(len(needs)):",
+      [
+        9
+      ]
+    ],
+    [
+      "            if offer[j] > needs[j]:",
+      [
+        10
+      ]
+    ],
+    [
+      "                t.clear()",
+      [
+        11
+      ]
+    ],
+    [
+      "                break",
+      [
+        12
+      ]
+    ],
+    [
+      "            t.append(needs[j] - offer[j])",
+      [
+        13
+      ]
+    ],
+    [
+      "        if t:",
+      [
+        14
+      ]
+    ],
+    [
+      "            ans = min(ans, offer[-1] + f_gold(price, special, t))",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(price, special, needs) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function total(price, needs) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return needs.map((needs, i) => price[i] * needs).reduce((a, b) => a + b, 0);",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = total(price, needs);",
+      [
+        5
+      ]
+    ],
+    [
+      "    var t = [];",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (offer in special) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        t.length = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let j = 0; j < needs.length; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (offer[j] > needs[j]) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                t.length = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "                break;",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            t.push(needs[j] - offer[j]);",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (t.length > 0) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            ans = Math.min(ans, offer.at(-1) + f_gold(price, special, t));",
+      [
+        15
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

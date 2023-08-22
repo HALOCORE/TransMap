@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 4,
+    "content": "    var reslut = 0;\n    for(let i=0;i<n+1;i++) reslut += i;\n    return reslut;",
+    "replacement": "    return sum(range(n + 1));"
+  }
+]

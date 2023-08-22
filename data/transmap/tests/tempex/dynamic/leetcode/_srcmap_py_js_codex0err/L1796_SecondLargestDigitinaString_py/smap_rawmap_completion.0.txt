@@ -1,0 +1,34 @@
+
+### Python
+### secondHighest 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    largest_digit = second_largest_digit = -1   # --- py stmt 3
+    for c in s:   # --- py stmt 4
+        if c.isdigit():   # --- py stmt 5
+            num = int(c)   # --- py stmt 6
+            if num > largest_digit:   # --- py stmt 7
+                second_largest_digit, largest_digit = largest_digit, num   # --- py stmt 8
+            elif num > second_largest_digit and num < largest_digit:   # --- py stmt 9
+                second_largest_digit = num   # --- py stmt 10
+    return second_largest_digit   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var largest_digit = second_largest_digit = -1;   // --- py stmt 3
+    for (var c of s) {   // --- py stmt 4
+        if (c.match(/^\d+$/)) {   // --- py stmt 5
+            var num = parseInt(c);   // --- py stmt 6
+            if (num > largest_digit) {   // --- py stmt 7
+                second_largest_digit = largest_digit;   // --- py stmt 8
+                largest_digit = num;   // --- py stmt 8
+            }
+            else if (num > second_largest_digit && num < largest_digit) {   // --- py stmt 9
+                second_largest_digit = num;   // --- py stmt 10
+            }
+        }
+    }
+    return second_largest_digit;   // --- py stmt 11
+}
+

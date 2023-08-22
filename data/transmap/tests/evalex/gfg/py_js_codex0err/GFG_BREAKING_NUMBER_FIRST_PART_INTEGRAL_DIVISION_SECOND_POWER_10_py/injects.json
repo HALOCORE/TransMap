@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "      if (s[0] == '0' || t[0] == '0' || s.length === 0 || t.length === 0) continue;",
+    "replacement": "      if (s[0] == '0' || t[0] == '0') continue;"
+  }
+]

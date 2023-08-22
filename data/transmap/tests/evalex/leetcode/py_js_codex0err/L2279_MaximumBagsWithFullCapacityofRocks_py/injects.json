@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 5,
+    "content": "    var d = [];\n    for (let i = 0; i < capacity.length; i++) {\n        d.push(capacity[i] - rocks[i]);\n    }",
+    "replacement": "    var d = [a - b for a, b in zip(capacity, rocks)];"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    d.sort((a, b) => (a - b));",
+    "replacement": "    d.sort();"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    for (var v of d) {",
+    "replacement": "    for (var v in d) {"
+  }
+]

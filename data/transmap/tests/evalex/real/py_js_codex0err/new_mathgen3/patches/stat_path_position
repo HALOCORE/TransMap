@@ -1,0 +1,22 @@
+Semantic mistakes: 62
+--------------------------------------------
+Runtime error:  0
+--------------------------------------------
+Hidden mistakes: 62
+--------------------------------------------
+TP: 62
+python line number when found (correction at the same line):
+57, 64, 67, 79, 80, 89, 90, 96, 97, 99,
+101, 102, 104, 106, 114, 119, 129, 144, 145, 156,
+167, 214, 236, 245, 247, 248, 255, 257, 258, 267,
+269, 292, 301, 302, 313, 314, 325, 347, 356, 357,
+367, 368, 380, 383, 395, 404, 405, 416, 417, 427,
+440, 447, 449, 450, 463, 472, 473, 482
+python line number when found (correction at a different line):
+py: 165; js: 153, modification to multiple lines due to variable name change
+py: 333; js: 366, random.sample implementation
+py: 337; js: 377
+py: 338; js: 379, random.sample implementation
+--------------------------------------------
+FP: 2
+--------------------------------------------

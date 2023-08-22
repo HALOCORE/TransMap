@@ -1,0 +1,6 @@
+{
+  "H012": "App-Reactor Terminated: Error: (Error Saved) FAILED H012\n{\n  \"0\": \"FAILED:Error: FAILED to find trace difference and target DID NOT PASS!\"\n}",
+  "H093": "App-Reactor Terminated: Error: (Error Saved) FAILED H093\n{\n  \"1\": \"FAILED:Error: WARN no trace difference and target PASS.\"\n}",
+  "H095": "App-Reactor Terminated: Error: (Error Saved) FAILED H095\n{\n  \"0\": \"FAILED:Error: More than 0 line(s) of the translation are different from the source map: \\n--- line 11 ---\\n                if (/^[A-Z]+$/.test(key)) {\\n                if (key.isupper()) {\"\n}",
+  "H111": "App-Reactor Terminated: Error: (Error Saved) FAILED H111\n{\n  \"0\": \"FAILED:Error: More than 0 line(s) of the translation are different from the source map: \\n--- line 6 ---\\n        if (list1.filter(x => x == i).length > t && i != '') {\\n        if (list1.count(i) > t && i != '') {\"\n}"
+}

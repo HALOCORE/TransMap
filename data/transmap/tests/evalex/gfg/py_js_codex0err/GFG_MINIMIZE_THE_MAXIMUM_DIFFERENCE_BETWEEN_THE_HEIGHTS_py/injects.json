@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  arr.sort((a, b) => a-b);",
+    "replacement": "  arr.sort();"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  var ans = arr[(n - 1 + arr.length)%arr.length] - arr[0];",
+    "replacement": "  var ans = arr[n - 1] - arr[0];"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "  var big = arr[(n - 1 + arr.length)%arr.length] - k;",
+    "replacement": "  var big = arr[n - 1] - k;"
+  },
+  {
+    "line_start": 7,
+    "line_end": 10,
+    "content": "    let temp = small;\n    small = big;\n    big = temp;",
+    "replacement": "    small = big;\n    big = small;"
+  }
+]

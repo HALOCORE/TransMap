@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var s1 = nums[0], s2 = nums[0], f1 = nums[0], f2 = nums[0];",
+    "replacement": "    var s1 = s2 = f1 = f2 = nums[0];"
+  }
+]

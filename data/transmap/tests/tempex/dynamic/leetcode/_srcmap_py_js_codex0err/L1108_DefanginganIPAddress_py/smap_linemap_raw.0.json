@@ -1,0 +1,40 @@
+{
+  "src_anno_stmts": [
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(address: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return address.replace('.', '[.]')",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(address) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return address.replace('.', '[.]');",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

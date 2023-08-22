@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,10,28]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: res is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"2\"],[\"N\",\"3\"],[\"N\",\"-2\"],[\"N\",\"4\"]],\"maxf\":[\"N\",\"2\"],\"minf\":[\"N\",\"2\"],\"res\":[\"N\",\"2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,10,28]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: res is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"2\"],[\"N\",\"3\"],[\"N\",\"-2\"],[\"N\",\"4\"]],\"maxf\":[\"N\",\"2\"],\"minf\":[\"N\",\"2\"],\"res\":[\"N\",\"2\"]}",
+      ""
+    ]
+  }
+]

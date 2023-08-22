@@ -1,0 +1,18 @@
+
+### Python
+def monotonic(l: list):   # --- py stmt 1
+    if l == sorted(l) or l == sorted(l, reverse=True):   # --- py stmt 2
+        return True   # --- py stmt 3
+    return False   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function monotonic(l) {   // --- py stmt 1
+    if (l === l.sort() || l === l.sort().reverse()) {   // --- py stmt 2
+        return true;   // --- py stmt 3
+    }
+    return false;   // --- py stmt 4
+}
+
+
+

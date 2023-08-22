@@ -1,0 +1,16 @@
+
+### Python
+from typing import List, Any   # --- py stmt 1
+
+def filter_integers(values: List[Any]) -> List[int]:   # --- py stmt 2
+    return [x for x in values if isinstance(x, int)]   # --- py stmt 3
+
+### JavaScript
+"use strict";
+
+function filterIntegers(values) {   // --- py stmt 2
+    return values.filter(x => typeof x === "number");   // --- py stmt 3
+}
+
+
+

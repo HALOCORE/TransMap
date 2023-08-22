@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var bits = 1, t = 9;",
+    "replacement": "    var bits, t = 1, t = 9;"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    var start = Math.pow(10, bits - 1) + (Math.floor(n / bits)) - 1;",
+    "replacement": "    var start = Math.pow(10, bits - 1) + (n / bits) - 1;"
+  }
+]

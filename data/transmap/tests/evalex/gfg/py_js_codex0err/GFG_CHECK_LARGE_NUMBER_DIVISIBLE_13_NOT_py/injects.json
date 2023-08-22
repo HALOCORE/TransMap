@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "    let k = ((i - 1) + length) % length;",
+    "replacement": "    i--;"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    group += (num.charCodeAt(k) - '0'.charCodeAt(0)) * 10;",
+    "replacement": "    group += (num.charCodeAt(i) - '0'.charCodeAt(0)) * 10;"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "    k = ((k - 1) + length) % length;",
+    "replacement": "    i--;"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "    group += (num.charCodeAt(k) - '0'.charCodeAt(0)) * 100;",
+    "replacement": "    group += (num.charCodeAt(i) - '0'.charCodeAt(0)) * 100;"
+  }
+]

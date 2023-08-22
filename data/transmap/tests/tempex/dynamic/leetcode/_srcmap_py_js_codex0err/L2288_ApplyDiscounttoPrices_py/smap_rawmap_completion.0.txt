@@ -1,0 +1,30 @@
+
+### Python
+### discountPrices 
+from typing import *   # --- py stmt 1
+def f_gold(sentence: str, discount: int) -> str:   # --- py stmt 2
+    ans = []   # --- py stmt 3
+    for w in sentence.split():   # --- py stmt 4
+        if w[0] == '$' and w[1:].isdigit():   # --- py stmt 5
+            t = int(w[1:]) * (1 - discount / 100)   # --- py stmt 6
+            ans.append('$' + '{:.2f}'.format(t))   # --- py stmt 7
+        else:   # --- py stmt 8
+            ans.append(w)   # --- py stmt 9
+    return ' '.join(ans)   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(sentence, discount) {   // --- py stmt 2
+    var ans = [];   // --- py stmt 3
+    for (var w of sentence.split()) {   // --- py stmt 4
+        if (w[0] == '$' && /^\d+$/.test(w.slice(1))) {   // --- py stmt 5
+            var t = parseInt(w.substring(1)) * (1 - discount / 100);   // --- py stmt 6
+            ans.push('$' + t.toFixed(2));   // --- py stmt 7
+        }
+        else {   // --- py stmt 8
+            ans.push(w);   // --- py stmt 9
+        }
+    }
+    return ans.join(' ');   // --- py stmt 10
+}
+

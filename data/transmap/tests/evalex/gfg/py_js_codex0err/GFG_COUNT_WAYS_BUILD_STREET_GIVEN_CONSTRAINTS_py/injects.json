@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  let dp = Array(2).fill().map(_ => Array(n+1).fill(0));",
+    "replacement": "  let dp = [[0] * (n + 1) for (i = 0; i < 2; i++)];"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  for (let i = 2; i < n + 1; i++) {",
+    "replacement": "  for (i = 2; i < n + 1; i++) {"
+  }
+]

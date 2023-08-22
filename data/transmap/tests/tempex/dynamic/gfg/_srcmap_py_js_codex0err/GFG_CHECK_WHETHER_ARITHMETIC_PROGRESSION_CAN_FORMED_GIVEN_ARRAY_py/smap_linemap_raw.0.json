@@ -1,0 +1,98 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if(n == 1): return True",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  d = arr[1] - arr[0]",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(2, n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(arr[i] - arr[i - 1] != d): return False",
+      [
+        6
+      ]
+    ],
+    [
+      "  return True",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (n == 1) return true;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  var d = arr[1] - arr[0];",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var i = 2; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (arr[i] - arr[i - 1] != d) return false;",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return true;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

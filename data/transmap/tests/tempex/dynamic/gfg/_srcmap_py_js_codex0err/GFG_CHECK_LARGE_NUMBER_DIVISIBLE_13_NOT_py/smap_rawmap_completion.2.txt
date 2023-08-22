@@ -1,0 +1,56 @@
+
+### Python
+def f_gold(num):   # --- py stmt 1
+  length = len(num)   # --- py stmt 2
+  if(length == 1 and num[0] == '0'): return True   # --- py stmt 3
+  if(length % 3 == 1):   # --- py stmt 4
+    num = str(num)+ "00"   # --- py stmt 5
+    length += 2   # --- py stmt 6
+  elif(length % 3 == 2):   # --- py stmt 7
+    num = str(num)+ "0"   # --- py stmt 8
+    length += 1   # --- py stmt 9
+  sum = 0   # --- py stmt 10
+  p = 1   # --- py stmt 11
+  for i in range(length - 1, - 1, - 1):   # --- py stmt 12
+    group = 0   # --- py stmt 13
+    group += ord(num[i])- ord('0')   # --- py stmt 14
+    i -= 1   # --- py stmt 15
+    group +=(ord(num[i])- ord('0'))* 10   # --- py stmt 16
+    i -= 1   # --- py stmt 17
+    group +=(ord(num[i])- ord('0'))* 100   # --- py stmt 18
+    sum = sum + group * p   # --- py stmt 19
+    p *=(- 1)   # --- py stmt 20
+  sum = abs(sum)   # --- py stmt 21
+  return(sum % 13 == 0)   # --- py stmt 22
+
+### JavaScript
+"use strict";
+function f_gold(num) {   // --- py stmt 1
+  var length = num.length;   // --- py stmt 2
+  if(length == 1 && num[0] == '0') return true;   // --- py stmt 3
+  if(length % 3 == 1) {   // --- py stmt 4
+    num = num + "00";   // --- py stmt 5
+    length += 2;   // --- py stmt 6
+  }
+  else if(length % 3 == 2) {   // --- py stmt 7
+    num = num + "0";   // --- py stmt 8
+    length += 1;   // --- py stmt 9
+  }
+  var sum = 0;   // --- py stmt 10
+  var p = 1;   // --- py stmt 11
+  for(var i = length - 1;i >= 0;i--) {   // --- py stmt 12
+    var group = 0;   // --- py stmt 13
+    group += num.charCodeAt(i) - '0'.charCodeAt(0);   // --- py stmt 14
+    let k = ((i - 1) + length) % length;   // --- py stmt 15
+    group += (num.charCodeAt(k) - '0'.charCodeAt(0)) * 10;   // --- py stmt 16
+    i--;   // --- py stmt 17
+    group += (num.charCodeAt(k) - '0'.charCodeAt(0)) * 100;   // --- py stmt 18
+    sum = sum + group * p;   // --- py stmt 19
+    p *= (- 1);   // --- py stmt 20
+  }
+  sum = Math.abs(sum);   // --- py stmt 21
+  return (sum % 13 == 0);   // --- py stmt 22
+}
+
+
+

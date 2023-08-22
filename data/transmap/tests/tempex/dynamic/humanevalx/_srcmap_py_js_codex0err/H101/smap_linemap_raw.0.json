@@ -1,0 +1,178 @@
+{
+  "src_anno_stmts": [
+    [
+      "def words_string(s):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if not s:",
+      [
+        2
+      ]
+    ],
+    [
+      "        return []",
+      [
+        3
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    s_list = []",
+      [
+        4
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    for letter in s:",
+      [
+        5
+      ]
+    ],
+    [
+      "        if letter == ',':",
+      [
+        6
+      ]
+    ],
+    [
+      "            s_list.append(' ')",
+      [
+        7
+      ]
+    ],
+    [
+      "        else:",
+      [
+        8
+      ]
+    ],
+    [
+      "            s_list.append(letter)",
+      [
+        9
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    s_list = \"\".join(s_list)",
+      [
+        10
+      ]
+    ],
+    [
+      "    return s_list.split()",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function words_string(s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (!s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    let s_list = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    for (let letter of s) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (letter === ',') {",
+      [
+        6
+      ]
+    ],
+    [
+      "            s_list.push(' ');",
+      [
+        7
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            s_list.push(letter);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    s_list = s_list.join('');",
+      [
+        10
+      ]
+    ],
+    [
+      "    return s_list.split(' ');",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

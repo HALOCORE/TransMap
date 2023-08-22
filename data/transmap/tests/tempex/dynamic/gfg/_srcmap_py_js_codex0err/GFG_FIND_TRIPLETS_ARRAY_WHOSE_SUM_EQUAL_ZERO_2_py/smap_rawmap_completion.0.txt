@@ -1,0 +1,44 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  found = False   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  for i in range(0, n - 1):   # --- py stmt 4
+    l = i + 1   # --- py stmt 5
+    r = n - 1   # --- py stmt 6
+    x = arr[i]   # --- py stmt 7
+    while(l < r):   # --- py stmt 8
+      if(x + arr[l] + arr[r] == 0):   # --- py stmt 9
+        print(x, arr[l], arr[r])   # --- py stmt 10
+        l += 1   # --- py stmt 11
+        r -= 1   # --- py stmt 12
+        found = True   # --- py stmt 13
+      elif(x + arr[l] + arr[r] < 0): l += 1   # --- py stmt 14
+      else: r -= 1   # --- py stmt 15
+  if(found == False): print(" No Triplet Found")   # --- py stmt 16
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var found = false;   // --- py stmt 2
+  arr.sort();   // --- py stmt 3
+  for (var i = 0; i < n - 1; i++) {   // --- py stmt 4
+    var l = i + 1;   // --- py stmt 5
+    var r = n - 1;   // --- py stmt 6
+    var x = arr[i];   // --- py stmt 7
+    while (l < r) {   // --- py stmt 8
+      if (x + arr[l] + arr[r] == 0) {   // --- py stmt 9
+        console.log(x, arr[l], arr[r]);   // --- py stmt 10
+        l += 1;   // --- py stmt 11
+        r -= 1;   // --- py stmt 12
+        found = true;   // --- py stmt 13
+      } else if (x + arr[l] + arr[r] < 0) l += 1;   // --- py stmt 14
+      else r -= 1;   // --- py stmt 15
+    }
+  }
+  if (found == false) console.log(" No Triplet Found");   // --- py stmt 16
+}
+
+
+

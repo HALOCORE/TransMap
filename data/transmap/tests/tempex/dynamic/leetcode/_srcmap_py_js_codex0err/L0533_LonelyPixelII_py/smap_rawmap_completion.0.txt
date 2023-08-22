@@ -1,0 +1,82 @@
+
+### Python
+### findBlackPixel 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(picture: List[List[str]], target: int) -> int:   # --- py stmt 3
+    m, n = len(picture), len(picture[0])   # --- py stmt 4
+    rows = [0] * m   # --- py stmt 5
+    cols = defaultdict(list)   # --- py stmt 6
+    for i in range(m):   # --- py stmt 7
+        for j in range(n):   # --- py stmt 8
+            if picture[i][j] == 'B':   # --- py stmt 9
+                rows[i] += 1   # --- py stmt 10
+                cols[j].append(i)   # --- py stmt 11
+    t = [[False] * m for _ in range(m)]   # --- py stmt 12
+    for i in range(m):   # --- py stmt 13
+        for k in range(i, m):   # --- py stmt 14
+            if i == k:   # --- py stmt 15
+                t[i][k] = True   # --- py stmt 16
+            else:   # --- py stmt 17
+                t[i][k] = all([picture[i][j] == picture[k][j] for j in range(n)])   # --- py stmt 18
+            t[k][i] = t[i][k]   # --- py stmt 19
+    res = 0   # --- py stmt 20
+    for i in range(m):   # --- py stmt 21
+        if rows[i] == target:   # --- py stmt 22
+            for j in range(n):   # --- py stmt 23
+                if len(cols[j]) == target and all([t[i][k] for k in cols[j]]):   # --- py stmt 24
+                    res += 1   # --- py stmt 25
+    return res   # --- py stmt 26
+
+### JavaScript
+"use strict";
+
+function f_gold (picture, target) {   // --- py stmt 3
+  var m = picture.length;   // --- py stmt 4
+  var n = picture[0].length;   // --- py stmt 4
+  var rows = Array(m).fill(0);   // --- py stmt 5
+  var cols = new Map();   // --- py stmt 6
+  for (var i = 0; i < m; i++) {   // --- py stmt 7
+    for (var j = 0; j < n; j++) {   // --- py stmt 8
+      if (picture[i][j] == 'B') {   // --- py stmt 9
+        rows[i] += 1;   // --- py stmt 10
+        if (cols.has(j)) {   // --- py stmt 11
+          cols.get(j).push(i);   // --- py stmt 11
+        } else {   // --- py stmt 11
+          cols.set(j, [i]);   // --- py stmt 11
+        }
+      }
+    }
+  }
+  var t = Array(m).fill(0).map(() => Array(m).fill(false));   // --- py stmt 12
+  for (var i = 0; i < m; i++) {   // --- py stmt 13
+    for (var k = i; k < m; k++) {   // --- py stmt 14
+      if (i == k) {   // --- py stmt 15
+        t[i][k] = true;   // --- py stmt 16
+      } else {   // --- py stmt 17
+        t[i][k] = true;   // --- py stmt 18
+        for (var j = 0; j < n; j++) {   // --- py stmt 18
+          if (picture[i][j] != picture[k][j]) {   // --- py stmt 18
+            t[i][k] = false;   // --- py stmt 18
+            break;   // --- py stmt 18
+          }
+        }
+      }
+      t[k][i] = t[i][k];   // --- py stmt 19
+    }
+  }
+  var res = 0;   // --- py stmt 20
+  for (var i = 0; i < m; i++) {   // --- py stmt 21
+    if (rows[i] == target) {   // --- py stmt 22
+      for (var j = 0; j < n; j++) {   // --- py stmt 23
+        if (cols.get(j).length == target && cols.get(j).every(k => t[i][k])) {   // --- py stmt 24
+          res += 1;   // --- py stmt 25
+        }
+      }
+    }
+  }
+  return res;   // --- py stmt 26
+}
+
+
+

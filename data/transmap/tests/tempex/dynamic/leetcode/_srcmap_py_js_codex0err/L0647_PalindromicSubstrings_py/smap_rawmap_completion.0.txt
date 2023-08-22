@@ -1,0 +1,43 @@
+
+### Python
+### countSubstrings 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    t = '^#' + '#'.join(s) + '#$'   # --- py stmt 3
+    n = len(t)   # --- py stmt 4
+    p = [0 for _ in range(n)]   # --- py stmt 5
+    pos, maxRight = 0, 0   # --- py stmt 6
+    ans = 0   # --- py stmt 7
+    for i in range(1, n - 1):   # --- py stmt 8
+        p[i] = min(maxRight - i, p[2 * pos - i]) if maxRight > i else 1   # --- py stmt 9
+        while t[i - p[i]] == t[i + p[i]]:   # --- py stmt 10
+            p[i] += 1   # --- py stmt 11
+        if i + p[i] > maxRight:   # --- py stmt 12
+            maxRight = i + p[i]   # --- py stmt 13
+            pos = i   # --- py stmt 14
+        ans += p[i] // 2   # --- py stmt 15
+    return ans   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var t = '^#' + '#'.join(s) + '#$';   // --- py stmt 3
+    var n = t.length;   // --- py stmt 4
+    var p = new Array(n);   // --- py stmt 5
+    var pos = 0;   // --- py stmt 6
+    var maxRight = 0;   // --- py stmt 6
+    var ans = 0;   // --- py stmt 7
+    for (var i = 1; i < n - 1; i++) {   // --- py stmt 8
+        p[i] = (maxRight > i) ? Math.min(maxRight - i, p[2 * pos - i]) : 1;   // --- py stmt 9
+        while (t[i - p[i]] == t[i + p[i]]) {   // --- py stmt 10
+            p[i] += 1;   // --- py stmt 11
+        }
+        if (i + p[i] > maxRight) {   // --- py stmt 12
+            maxRight = i + p[i];   // --- py stmt 13
+            pos = i;   // --- py stmt 14
+        }
+        ans += Math.floor(p[i] / 2);   // --- py stmt 15
+    }
+    return ans;   // --- py stmt 16
+}
+

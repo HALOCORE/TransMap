@@ -1,0 +1,210 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n, k):",
+      [
+        1
+      ]
+    ],
+    [
+      "  for i in range(k, n):",
+      [
+        2
+      ]
+    ],
+    [
+      "    max_var = arr[k - 1]",
+      [
+        3
+      ]
+    ],
+    [
+      "    pos = k - 1",
+      [
+        4
+      ]
+    ],
+    [
+      "    for j in range(k - 2, - 1, - 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "      if(arr[j] > max_var):",
+      [
+        6
+      ]
+    ],
+    [
+      "        max_var = arr[j]",
+      [
+        7
+      ]
+    ],
+    [
+      "        pos = j",
+      [
+        8
+      ]
+    ],
+    [
+      "    if(max_var > arr[i]):",
+      [
+        9
+      ]
+    ],
+    [
+      "      j = pos",
+      [
+        10
+      ]
+    ],
+    [
+      "      while(j < k - 1):",
+      [
+        11
+      ]
+    ],
+    [
+      "        arr[j] = arr[j + 1]",
+      [
+        12
+      ]
+    ],
+    [
+      "        j += 1",
+      [
+        13
+      ]
+    ],
+    [
+      "      arr[k - 1] = arr[i]",
+      [
+        14
+      ]
+    ],
+    [
+      "  for i in range(0, k): print(arr[i], end = \" \")",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n, k) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  for (let i = k; i < n; i++) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let max_var = arr[k - 1];",
+      [
+        3
+      ]
+    ],
+    [
+      "    let pos = k - 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let j = k - 2; j >= 0; j--) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      if (arr[j] > max_var) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        max_var = arr[j];",
+      [
+        7
+      ]
+    ],
+    [
+      "        pos = j;",
+      [
+        8
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (max_var > arr[i]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "      let j = pos;",
+      [
+        10
+      ]
+    ],
+    [
+      "      while (j < k - 1) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        arr[j] = arr[j + 1];",
+      [
+        12
+      ]
+    ],
+    [
+      "        j++;",
+      [
+        13
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "      arr[k - 1] = arr[i];",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let i = 0; i < k; i++) console.log(arr[i], end = \" \");",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

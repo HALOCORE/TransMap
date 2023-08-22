@@ -1,0 +1,166 @@
+{
+  "src_anno_stmts": [
+    [
+      "### repeatedStringMatch",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import ceil",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(a: str, b: str) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    m, n = len(a), len(b)",
+      [
+        5
+      ]
+    ],
+    [
+      "    ans = ceil(n / m)",
+      [
+        6
+      ]
+    ],
+    [
+      "    t = [a] * ans",
+      [
+        7
+      ]
+    ],
+    [
+      "    for _ in range(3):",
+      [
+        8
+      ]
+    ],
+    [
+      "        if b in ''.join(t):",
+      [
+        9
+      ]
+    ],
+    [
+      "            return ans",
+      [
+        10
+      ]
+    ],
+    [
+      "        ans += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        t.append(a)",
+      [
+        12
+      ]
+    ],
+    [
+      "    return -1",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(a, b) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var m = a.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var n = b.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var ans = Math.ceil(n / m);",
+      [
+        6
+      ]
+    ],
+    [
+      "    var t = new Array(ans).fill(a);",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (var _ = 0; _ < 3; _++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (b.indexOf(t.join(\"\")) != -1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "        t.push(a);",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return -1;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

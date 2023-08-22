@@ -1,0 +1,214 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximumsSplicedArray",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums1: List[int], nums2: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def f(nums1, nums2):",
+      [
+        3
+      ]
+    ],
+    [
+      "        d = [a - b for a, b in zip(nums1, nums2)]",
+      [
+        4
+      ]
+    ],
+    [
+      "        t = mx = d[0]",
+      [
+        5
+      ]
+    ],
+    [
+      "        for v in d[1:]:",
+      [
+        6
+      ]
+    ],
+    [
+      "            if t > 0:",
+      [
+        7
+      ]
+    ],
+    [
+      "                t += v",
+      [
+        8
+      ]
+    ],
+    [
+      "            else:",
+      [
+        9
+      ]
+    ],
+    [
+      "                t = v",
+      [
+        10
+      ]
+    ],
+    [
+      "            mx = max(mx, t)",
+      [
+        11
+      ]
+    ],
+    [
+      "        return mx",
+      [
+        12
+      ]
+    ],
+    [
+      "    s1, s2 = sum(nums1), sum(nums2)",
+      [
+        13
+      ]
+    ],
+    [
+      "    return max(s2 + f(nums1, nums2), s1 + f(nums2, nums1))",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums1, nums2) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function f(nums1, nums2) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var d = nums1.map((a, i) => a - nums2[i]);",
+      [
+        4
+      ]
+    ],
+    [
+      "        var t = mx = d[0];",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var v of d.slice(1)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (t > 0) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                t += v;",
+      [
+        8
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        9
+      ]
+    ],
+    [
+      "                t = v;",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            mx = Math.max(mx, t);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return mx;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var s1 = nums1.reduce(function(a, b) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        return a + b;",
+      null
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "    var s2 = nums2.reduce(function(a, b) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        return a + b;",
+      null
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "    return Math.max(s2 + f(nums1, nums2), s1 + f(nums2, nums1));",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

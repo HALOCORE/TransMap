@@ -1,0 +1,68 @@
+
+### Python
+### minNumberOfFrogs 
+from typing import *   # --- py stmt 1
+def f_gold(croakOfFrogs: str) -> int:   # --- py stmt 2
+    c = r = o = a = k = ans = 0   # --- py stmt 3
+    for ch in croakOfFrogs:   # --- py stmt 4
+        if ch == 'c':   # --- py stmt 5
+            c += 1   # --- py stmt 6
+            if k > 0:   # --- py stmt 7
+                k -= 1   # --- py stmt 8
+            else:   # --- py stmt 9
+                ans += 1   # --- py stmt 10
+        elif ch == 'r':   # --- py stmt 11
+            r += 1   # --- py stmt 12
+            c -= 1   # --- py stmt 13
+        elif ch == 'o':   # --- py stmt 14
+            o += 1   # --- py stmt 15
+            r -= 1   # --- py stmt 16
+        elif ch == 'a':   # --- py stmt 17
+            a += 1   # --- py stmt 18
+            o -= 1   # --- py stmt 19
+        else:   # --- py stmt 20
+            k += 1   # --- py stmt 21
+            a -= 1   # --- py stmt 22
+        if c < 0 or r < 0 or o < 0 or a < 0:   # --- py stmt 23
+            return -1   # --- py stmt 24
+    return -1 if c != 0 or r != 0 or o != 0 or a != 0 else ans   # --- py stmt 25
+
+### JavaScript
+"use strict";
+function f_gold(croakOfFrogs) {   // --- py stmt 2
+    let c = r = o = a = k = ans = 0;   // --- py stmt 3
+    for (let ch of croakOfFrogs) {   // --- py stmt 4
+        if (ch == 'c') {   // --- py stmt 5
+            c += 1;   // --- py stmt 6
+            if (k > 0) {   // --- py stmt 7
+                k -= 1;   // --- py stmt 8
+            }
+            else {   // --- py stmt 9
+                ans += 1;   // --- py stmt 10
+            }
+        }
+        else if (ch == 'r') {   // --- py stmt 11
+            r += 1;   // --- py stmt 12
+            c -= 1;   // --- py stmt 13
+        }
+        else if (ch == 'o') {   // --- py stmt 14
+            o += 1;   // --- py stmt 15
+            r -= 1;   // --- py stmt 16
+        }
+        else if (ch == 'a') {   // --- py stmt 17
+            a += 1;   // --- py stmt 18
+            o -= 1;   // --- py stmt 19
+        }
+        else {   // --- py stmt 20
+            k += 1;   // --- py stmt 21
+            a -= 1;   // --- py stmt 22
+        }
+        if (c < 0 || r < 0 || o < 0 || a < 0) {   // --- py stmt 23
+            return -1;   // --- py stmt 24
+        }
+    }
+    return (c != 0 || r != 0 || o != 0 || a != 0) ? -1 : ans;   // --- py stmt 25
+}
+
+
+

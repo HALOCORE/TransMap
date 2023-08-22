@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    for (var j = 0; j < n; j++) {",
+    "replacement": "    for (let j = 0; j < n; j++) {"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    if (j + 1 != n && j != n) continue;",
+    "replacement": "    if (j + 1 != n) continue;"
+  }
+]

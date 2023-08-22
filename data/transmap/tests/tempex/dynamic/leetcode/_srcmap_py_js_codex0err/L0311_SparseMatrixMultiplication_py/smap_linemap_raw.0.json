@@ -1,0 +1,270 @@
+{
+  "src_anno_stmts": [
+    [
+      "### multiply",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(mat1: List[List[int]], mat2: List[List[int]]) -> List[List[int]]:",
+      [
+        3
+      ]
+    ],
+    [
+      "    r1, c1, c2 = len(mat1), len(mat1[0]), len(mat2[0])",
+      [
+        4
+      ]
+    ],
+    [
+      "    res = [[0] * c2 for _ in range(r1)]",
+      [
+        5
+      ]
+    ],
+    [
+      "    mp = defaultdict(list)",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(r1):",
+      [
+        7
+      ]
+    ],
+    [
+      "        for j in range(c1):",
+      [
+        8
+      ]
+    ],
+    [
+      "            if mat1[i][j] != 0:",
+      [
+        9
+      ]
+    ],
+    [
+      "                mp[i].append(j)",
+      [
+        10
+      ]
+    ],
+    [
+      "    for i in range(r1):",
+      [
+        11
+      ]
+    ],
+    [
+      "        for j in range(c2):",
+      [
+        12
+      ]
+    ],
+    [
+      "            for k in mp[i]:",
+      [
+        13
+      ]
+    ],
+    [
+      "                res[i][j] += mat1[i][k] * mat2[k][j]",
+      [
+        14
+      ]
+    ],
+    [
+      "    return res",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat1, mat2) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var r1 = mat1.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var c1 = mat1[0].length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var c2 = mat2[0].length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var res = new Array(r1);",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < r1; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        res[i] = new Array(c2);",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var j = 0; j < c2; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            res[i][j] = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var mp = new Map();",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < r1; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (var j = 0; j < c1; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (mat1[i][j] != 0) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                if (mp.has(i)) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                    mp.get(i).push(j);",
+      [
+        10
+      ]
+    ],
+    [
+      "                } else {",
+      null
+    ],
+    [
+      "                    mp.set(i, [j]);",
+      [
+        10
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < r1; i++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        for (var j = 0; j < c2; j++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            for (var k = 0; k < mp.get(i).length; k++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                res[i][j] += mat1[i][mp.get(i)[k]] * mat2[mp.get(i)[k]][j];",
+      [
+        14
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,28 @@
+
+### Python
+### areNumbersAscending 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> bool:   # --- py stmt 2
+    curr = 0   # --- py stmt 3
+    for t in s.split(' '):   # --- py stmt 4
+        if t[0].isdigit():   # --- py stmt 5
+            if curr >= int(t):   # --- py stmt 6
+                return False   # --- py stmt 7
+            curr = int(t)   # --- py stmt 8
+    return True   # --- py stmt 9
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var curr = 0;   // --- py stmt 3
+    for (var t of s.split(' ')) {   // --- py stmt 4
+        if (t[0].isdigit()) {   // --- py stmt 5
+            if (curr >= parseInt(t)) {   // --- py stmt 6
+                return false;   // --- py stmt 7
+            }
+            curr = parseInt(t);   // --- py stmt 8
+        }
+    }
+    return true;   // --- py stmt 9
+}
+

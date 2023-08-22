@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minimumRemoval",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(beans: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    beans.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = s = sum(beans)",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(beans)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i, v in enumerate(beans):",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans = min(ans, s - v * (n - i))",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(beans) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    beans.sort((a, b) => a - b);",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ans = s = beans.reduce((a, b) => a + b, 0);",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = beans.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < beans.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans = Math.min(ans, s - beans[i] * (n - i));",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

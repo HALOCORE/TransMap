@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    return s_list.split(' ').filter((x) => x !== '');",
+    "replacement": "    return s_list.split(' ');"
+  }
+]

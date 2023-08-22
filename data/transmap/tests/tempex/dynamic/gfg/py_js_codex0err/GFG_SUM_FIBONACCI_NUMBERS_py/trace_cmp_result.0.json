@@ -1,0 +1,50 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,2,3,14]",
+    "break_idx": 2,
+    "expected_src_pk": "[3,2,3,13]",
+    "actural_src_pk": "[3,2,3,13]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"9\"],\"fibo\":[\"A\",10,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"9\"],\"fibo\":[\"A\",10,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "fibo"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,2,3,14]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,2,3,13]",
+    "actural_src_pk": "[3,2,3,13]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"9\"],\"fibo\":[\"A\",10,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"9\"],\"fibo\":[\"A\",10,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "fibo"
+    ]
+  }
+]

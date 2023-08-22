@@ -1,0 +1,501 @@
+### Python
+
+__all__ = ['heappush', 'heappop', 'heapify', 'heapreplace', 'merge', 'nlargest', 'nsmallest', 'heappushpop']   # --- py stmt 1
+
+def heappush(heap, item):   # --- py stmt 2
+    heap.append(item)   # --- py stmt 3
+    _siftdown(heap, 0, len(heap)-1)   # --- py stmt 4
+
+def heappop(heap):   # --- py stmt 5
+    lastelt = heap.pop()   # --- py stmt 6
+    if heap:   # --- py stmt 7
+        returnitem = heap[0]   # --- py stmt 8
+        heap[0] = lastelt   # --- py stmt 9
+        _siftup(heap, 0)   # --- py stmt 10
+        return returnitem   # --- py stmt 11
+    return lastelt   # --- py stmt 12
+
+def heapreplace(heap, item):   # --- py stmt 13
+    returnitem = heap[0]   # --- py stmt 14
+    heap[0] = item   # --- py stmt 15
+    _siftup(heap, 0)   # --- py stmt 16
+    return returnitem   # --- py stmt 17
+
+def heappushpop(heap, item):   # --- py stmt 18
+    if heap and heap[0] < item:   # --- py stmt 19
+        item, heap[0] = heap[0], item   # --- py stmt 20
+        _siftup(heap, 0)   # --- py stmt 21
+    return item   # --- py stmt 22
+
+def heapify(x):   # --- py stmt 23
+    n = len(x)   # --- py stmt 24
+    for i in reversed(range(n//2)):   # --- py stmt 25
+        _siftup(x, i)   # --- py stmt 26
+
+
+def _heappop_max(heap):   # --- py stmt 1001
+    lastelt = heap.pop()   # --- py stmt 1002
+    if heap:   # --- py stmt 1003
+        returnitem = heap[0]   # --- py stmt 1004
+        heap[0] = lastelt   # --- py stmt 1005
+        _siftup_max(heap, 0)   # --- py stmt 1006
+        return returnitem   # --- py stmt 1007
+    return lastelt   # --- py stmt 1008
+
+def _heapreplace_max(heap, item):   # --- py stmt 1009
+    returnitem = heap[0]   # --- py stmt 1010
+    heap[0] = item   # --- py stmt 1011
+    _siftup_max(heap, 0)   # --- py stmt 1012
+    return returnitem   # --- py stmt 1013
+
+def _heapify_max(x):   # --- py stmt 1014
+    n = len(x)   # --- py stmt 1015
+    for i in reversed(range(n//2)):   # --- py stmt 1016
+        _siftup_max(x, i)   # --- py stmt 1017
+
+def _siftdown(heap, startpos, pos):   # --- py stmt 1018
+    newitem = heap[pos]   # --- py stmt 1019
+
+    while pos > startpos:   # --- py stmt 1020
+        parentpos = (pos - 1) >> 1   # --- py stmt 1021
+        parent = heap[parentpos]   # --- py stmt 1022
+        if newitem < parent:   # --- py stmt 1023
+            heap[pos] = parent   # --- py stmt 1024
+            pos = parentpos   # --- py stmt 1025
+            continue   # --- py stmt 1026
+        break   # --- py stmt 1027
+    heap[pos] = newitem   # --- py stmt 1028
+
+
+def _siftup(heap, pos):   # --- py stmt 2001
+    endpos = len(heap)   # --- py stmt 2002
+    startpos = pos   # --- py stmt 2003
+    newitem = heap[pos]   # --- py stmt 2004
+    childpos = 2*pos + 1   # --- py stmt 2005
+    while childpos < endpos:   # --- py stmt 2006
+        rightpos = childpos + 1   # --- py stmt 2007
+        if rightpos < endpos and not heap[childpos] < heap[rightpos]:   # --- py stmt 2008
+            childpos = rightpos   # --- py stmt 2009
+        
+        heap[pos] = heap[childpos]   # --- py stmt 2010
+        pos = childpos   # --- py stmt 2011
+        childpos = 2*pos + 1   # --- py stmt 2012
+    heap[pos] = newitem   # --- py stmt 2013
+    _siftdown(heap, startpos, pos)   # --- py stmt 2014
+
+def _siftdown_max(heap, startpos, pos):   # --- py stmt 2015
+    'Maxheap variant of _siftdown'   # --- py stmt 2016
+    newitem = heap[pos]   # --- py stmt 2017
+    
+    while pos > startpos:   # --- py stmt 2018
+        parentpos = (pos - 1) >> 1   # --- py stmt 2019
+        parent = heap[parentpos]   # --- py stmt 2020
+        if parent < newitem:   # --- py stmt 2021
+            heap[pos] = parent   # --- py stmt 2022
+            pos = parentpos   # --- py stmt 2023
+            continue   # --- py stmt 2024
+        break   # --- py stmt 2025
+    heap[pos] = newitem   # --- py stmt 2026
+
+def _siftup_max(heap, pos):   # --- py stmt 2027
+    endpos = len(heap)   # --- py stmt 2028
+    startpos = pos   # --- py stmt 2029
+    newitem = heap[pos]   # --- py stmt 2030
+    childpos = 2*pos + 1   # --- py stmt 2031
+    while childpos < endpos:   # --- py stmt 2032
+        rightpos = childpos + 1   # --- py stmt 2033
+        if rightpos < endpos and not heap[rightpos] < heap[childpos]:   # --- py stmt 2034
+            childpos = rightpos   # --- py stmt 2035
+        
+        heap[pos] = heap[childpos]   # --- py stmt 2036
+        pos = childpos   # --- py stmt 2037
+        childpos = 2*pos + 1   # --- py stmt 2038
+    
+    heap[pos] = newitem   # --- py stmt 2039
+    _siftdown_max(heap, startpos, pos)   # --- py stmt 2040
+
+
+def merge(*iterables, reverse=False):   # --- py stmt 3001
+    h = []   # --- py stmt 3002
+    h_append = h.append   # --- py stmt 3003
+
+    if reverse:   # --- py stmt 3004
+        _heapify = _heapify_max   # --- py stmt 3005
+        _heappop = _heappop_max   # --- py stmt 3006
+        _heapreplace = _heapreplace_max   # --- py stmt 3007
+        direction = -1   # --- py stmt 3008
+    else:
+        _heapify = heapify   # --- py stmt 3009
+        _heappop = heappop   # --- py stmt 3010
+        _heapreplace = heapreplace   # --- py stmt 3011
+        direction = 1   # --- py stmt 3012
+
+
+    for order, it in enumerate(map(iter, iterables)):   # --- py stmt 3013
+        try:
+            next = it.__next__   # --- py stmt 3014
+            h_append([next(), order * direction, next])   # --- py stmt 3015
+        except StopIteration:   # --- py stmt 3016
+            pass   # --- py stmt 3017
+    _heapify(h)   # --- py stmt 3018
+    while len(h) > 1:   # --- py stmt 3019
+        try:
+            while True:
+                value, order, next = s = h[0]   # --- py stmt 3020
+                yield value   # --- py stmt 3021
+                s[0] = next()   # --- py stmt 3022
+                _heapreplace(h, s)   # --- py stmt 3023
+        except StopIteration:   # --- py stmt 3024
+            _heappop(h)   # --- py stmt 3025
+    if h:   # --- py stmt 3026
+        value, order, next = h[0]   # --- py stmt 3027
+        yield value   # --- py stmt 3028
+        yield from next.__self__   # --- py stmt 3029
+    return   # --- py stmt 3030
+
+
+def nsmallest(n, iterable):   # --- py stmt 4001
+    if n == 1:   # --- py stmt 4002
+        it = iter(iterable)   # --- py stmt 4003
+        sentinel = object()   # --- py stmt 4004
+        result = min(it, default=sentinel)   # --- py stmt 4005
+        return [] if result is sentinel else [result]   # --- py stmt 4006
+
+    try:   # --- py stmt 4007
+        size = len(iterable)   # --- py stmt 4008
+    except (TypeError, AttributeError):   # --- py stmt 4009
+        pass   # --- py stmt 4010
+    else:   # --- py stmt 4011
+        if n >= size:   # --- py stmt 4012
+            return sorted(iterable)[:n]   # --- py stmt 4013
+
+    it = iter(iterable)   # --- py stmt 4014
+    result = [(elem, i) for i, elem in zip(range(n), it)]   # --- py stmt 4015
+    if not result:   # --- py stmt 4016
+        return result   # --- py stmt 4017
+    _heapify_max(result)   # --- py stmt 4018
+    top = result[0][0]   # --- py stmt 4019
+    order = n   # --- py stmt 4020
+    _heapreplace = _heapreplace_max   # --- py stmt 4021
+    for elem in it:   # --- py stmt 4022
+        if elem < top:   # --- py stmt 4023
+            _heapreplace(result, (elem, order))   # --- py stmt 4024
+            top, _order = result[0]   # --- py stmt 4025
+            order += 1   # --- py stmt 4026
+    result.sort()   # --- py stmt 4027
+    return [elem for (elem, order) in result]   # --- py stmt 4028
+
+
+
+def nlargest(n, iterable):   # --- py stmt 5001
+    if n == 1:   # --- py stmt 5002
+        it = iter(iterable)   # --- py stmt 5003
+        sentinel = object()   # --- py stmt 5004
+        result = max(it, default=sentinel)   # --- py stmt 5005
+        return [] if result is sentinel else [result]   # --- py stmt 5006
+
+    try:   # --- py stmt 5007
+        size = len(iterable)   # --- py stmt 5008
+    except (TypeError, AttributeError):   # --- py stmt 5009
+        pass   # --- py stmt 5010
+    else:   # --- py stmt 5011
+        if n >= size:   # --- py stmt 5012
+            return sorted(iterable, reverse=True)[:n]   # --- py stmt 5013
+
+    it = iter(iterable)   # --- py stmt 5014
+    result = [(elem, i) for i, elem in zip(range(0, -n, -1), it)]   # --- py stmt 5015
+    if not result:   # --- py stmt 5016
+        return result   # --- py stmt 5017
+    heapify(result)   # --- py stmt 5018
+    top = result[0][0]   # --- py stmt 5019
+    order = -n   # --- py stmt 5020
+    _heapreplace = heapreplace   # --- py stmt 5021
+    for elem in it:   # --- py stmt 5022
+        if top < elem:   # --- py stmt 5023
+            _heapreplace(result, (elem, order))   # --- py stmt 5024
+            top, _order = result[0]   # --- py stmt 5025
+            order -= 1   # --- py stmt 5026
+    result.sort(reverse=True)   # --- py stmt 5027
+    return [elem for (elem, order) in result]   # --- py stmt 5028
+
+
+
+### JavaScript
+
+const __all__ = ['heappush', 'heappop', 'heapify', 'heapreplace', 'merge', 'nlargest', 'nsmallest', 'heappushpop'];   // --- py stmt 1
+
+function heappush(heap, item) {   // --- py stmt 2
+    heap.push(item);   // --- py stmt 3
+    _siftdown(heap, 0, heap.length - 1);   // --- py stmt 4
+}
+
+function heappop(heap) {   // --- py stmt 5
+    let lastelt = heap.pop();   // --- py stmt 6
+    if (heap.length) {   // --- py stmt 7
+        let returnitem = heap[0];   // --- py stmt 8
+        heap[0] = lastelt;   // --- py stmt 9
+        _siftup(heap, 0);   // --- py stmt 10
+        return returnitem;   // --- py stmt 11
+    }
+    return lastelt;   // --- py stmt 12
+}
+
+function heapreplace(heap, item) {   // --- py stmt 13
+    let returnitem = heap[0];   // --- py stmt 14
+    heap[0] = item;   // --- py stmt 15
+    _siftup(heap, 0);   // --- py stmt 16
+    return returnitem;   // --- py stmt 17
+}
+
+function heappushpop(heap, item) {   // --- py stmt 18
+    if (heap.length && heap[0] < item) {   // --- py stmt 19
+        [item, heap[0]] = [heap[0], item];   // --- py stmt 20
+        _siftup(heap, 0);   // --- py stmt 21
+    }
+    return item;   // --- py stmt 22
+}
+
+function heapify(x) {   // --- py stmt 23
+    let n = x.length;   // --- py stmt 24
+    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {   // --- py stmt 25
+        _siftup(x, i);   // --- py stmt 26
+    }
+}
+
+function _heappop_max(heap) {   // --- py stmt 1001
+    let lastelt = heap.pop();   // --- py stmt 1002
+    if (heap.length) {   // --- py stmt 1003
+        let returnitem = heap[0];   // --- py stmt 1004
+        heap[0] = lastelt;   // --- py stmt 1005
+        _siftup_max(heap, 0);   // --- py stmt 1006
+        return returnitem;   // --- py stmt 1007
+    }
+    return lastelt;   // --- py stmt 1008
+}
+
+function _heapreplace_max(heap, item) {   // --- py stmt 1009
+    let returnitem = heap[0];   // --- py stmt 1010
+    heap[0] = item;   // --- py stmt 1011
+    _siftup_max(heap, 0);   // --- py stmt 1012
+    return returnitem;   // --- py stmt 1013
+}
+
+function _heapify_max(x) {   // --- py stmt 1014
+    let n = x.length;   // --- py stmt 1015
+    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {   // --- py stmt 1016
+        _siftup_max(x, i);   // --- py stmt 1017
+    }
+}
+
+function _siftdown(heap, startpos, pos) {   // --- py stmt 1018
+    let newitem = heap[pos];   // --- py stmt 1019
+
+    while (pos > startpos) {   // --- py stmt 1020
+        let parentpos = (pos - 1) >> 1;   // --- py stmt 1021
+        let parent = heap[parentpos];   // --- py stmt 1022
+        if (compare(parent, newitem) > 0) {   // --- py stmt 1023
+            heap[pos] = parent;   // --- py stmt 1024
+            pos = parentpos;   // --- py stmt 1025
+            continue;   // --- py stmt 1026
+        }
+        break;   // --- py stmt 1027
+    }
+    heap[pos] = newitem;   // --- py stmt 1028
+}
+
+function _siftup(heap, pos) {   // --- py stmt 2001
+    let endpos = heap.length;   // --- py stmt 2002
+    let startpos = pos;   // --- py stmt 2003
+    let newitem = heap[pos];   // --- py stmt 2004
+    let childpos = 2 * pos + 1;   // --- py stmt 2005
+    while (childpos < endpos) {   // --- py stmt 2006
+        let rightpos = childpos + 1;   // --- py stmt 2007
+        if (rightpos < endpos && !(compare(heap[childpos], heap[rightpos]) < 0)) {   // --- py stmt 2008
+            childpos = rightpos;   // --- py stmt 2009
+        }
+        heap[pos] = heap[childpos];   // --- py stmt 2010
+        pos = childpos;   // --- py stmt 2011
+        childpos = 2 * pos + 1;   // --- py stmt 2012
+    }
+    heap[pos] = newitem;   // --- py stmt 2013
+    _siftdown(heap, startpos, pos);   // --- py stmt 2014
+}
+
+function _siftdown_max(heap, startpos, pos) {   // --- py stmt 2015
+    let newitem = heap[pos];   // --- py stmt 2017
+    while (pos > startpos) {   // --- py stmt 2018
+        let parentpos = (pos - 1) >> 1;   // --- py stmt 2019
+        let parent = heap[parentpos];   // --- py stmt 2020
+        if (parent < newitem) {   // --- py stmt 2021
+            heap[pos] = parent;   // --- py stmt 2022
+            pos = parentpos;   // --- py stmt 2023
+            continue;   // --- py stmt 2024
+        }
+        break;   // --- py stmt 2025
+    }
+    heap[pos] = newitem;   // --- py stmt 2026
+}
+
+function _siftup_max(heap, pos) {   // --- py stmt 2027
+    let endpos = heap.length;   // --- py stmt 2028
+    let startpos = pos;   // --- py stmt 2029
+    let newitem = heap[pos];   // --- py stmt 2030
+    let childpos = 2 * pos + 1;   // --- py stmt 2031
+    while (childpos < endpos) {   // --- py stmt 2032
+        let rightpos = childpos + 1;   // --- py stmt 2033
+        if (rightpos < endpos && !(heap[rightpos] < heap[childpos])) {   // --- py stmt 2034
+            childpos = rightpos;   // --- py stmt 2035
+        }
+        heap[pos] = heap[childpos];   // --- py stmt 2036
+        pos = childpos;   // --- py stmt 2037
+        childpos = 2 * pos + 1;   // --- py stmt 2038
+    }
+    heap[pos] = newitem;   // --- py stmt 2039
+    _siftdown_max(heap, startpos, pos);   // --- py stmt 2040
+}
+
+function* merge(reverse=false, ...iterables) {   // --- py stmt 3001
+    let h = [];   // --- py stmt 3002
+    let h_append = h.push.bind(h);   // --- py stmt 3003
+
+    let _heapify, _heappop, _heapreplace, direction;   // --- py stmt 3004
+    if (reverse) {   // --- py stmt 3004
+        _heapify = _heapify_max;   // --- py stmt 3005
+        _heappop = _heappop_max;   // --- py stmt 3006
+        _heapreplace = _heapreplace_max;   // --- py stmt 3007
+        direction = -1;   // --- py stmt 3008
+    } else {
+        _heapify = heapify;   // --- py stmt 3009
+        _heappop = heappop;   // --- py stmt 3010
+        _heapreplace = heapreplace;   // --- py stmt 3011
+        direction = 1;   // --- py stmt 3012
+    }
+
+    for (let order = 0; order < iterables.length; order++) {   // --- py stmt 3013
+        let it = iterables[order][Symbol.iterator]();   // --- py stmt 3013
+        try {
+            let next = it.next.bind(it);   // --- py stmt 3014
+            let next_elem = next();  // --- py stmt 3015
+            if (next_elem.done) continue;  // --- py stmt 3015
+            h_append([next_elem.value, order * direction, next]);   // --- py stmt 3015
+        } catch (e) {
+            // pass   // --- py stmt 3016
+            throw e;   // --- py stmt 3017
+        }
+    }
+    _heapify(h);   // --- py stmt 3018
+    while (h.length > 1) {   // --- py stmt 3019
+        try {
+            while (true) {
+                let s = h[0];   // --- py stmt 3020
+                let [value, order, next] = s;   // --- py stmt 3020
+                yield value;   // --- py stmt 3021
+                let next_elem = next();   // --- py stmt 3022
+                let done = next_elem.done;
+                if (done) {   // --- py stmt 3024
+                    _heappop(h);   // --- py stmt 3025
+                    break;   // --- py stmt 3025
+                }
+                s[0] = next_elem.value;   // --- py stmt 3022
+                _heapreplace(h, s);   // --- py stmt 3023
+            }
+        } catch (e) {
+            throw e;   // --- py stmt 3025
+        }
+    }
+    if (h.length > 0) {   // --- py stmt 3026
+        let [value, order, next] = h[0];   // --- py stmt 3027
+        yield value;   // --- py stmt 3028
+        yield* (function* next_wrap() {   // --- py stmt 3029
+            while(true) {
+                let next_elem = next();
+                let val = next_elem.value;
+                let done = next_elem.done;
+                if (done) {
+                    break;
+                }
+                yield val;
+            };
+        })();
+    }
+    return;   // --- py stmt 3030
+}
+
+function nsmallest(n, iterable) {   // --- py stmt 4001
+    if (n === 1) {   // --- py stmt 4002
+        const it = iterable[Symbol.iterator]();   // --- py stmt 4003
+        const sentinel = Infinity;   // --- py stmt 4004
+        const result = Math.min(...it);   // --- py stmt 4005
+        return (result === sentinel) ? [] : [result];   // --- py stmt 4006
+    }
+
+    let size;   // --- py stmt 4007
+    try {   // --- py stmt 4008
+        size = iterable.length;   // --- py stmt 4008
+    } catch (error) {   // --- py stmt 4009
+        size = undefined;   // --- py stmt 4009
+    }
+
+    if (size !== undefined && n >= size) {   // --- py stmt 4012
+        return iterable.slice().sort().slice(0, n);   // --- py stmt 4013
+    }
+
+    const it = iterable[Symbol.iterator]();   // --- py stmt 4014
+    const result = Array.from({ length: n }, (_, i) => [it.next().value, i]);   // --- py stmt 4015
+    if (result.length === 0) {   // --- py stmt 4016
+        return result;   // --- py stmt 4017
+    }
+
+    _heapify_max(result);   // --- py stmt 4018
+    let top = result[0][0];   // --- py stmt 4019
+    let order = n;   // --- py stmt 4020
+    const _heapreplace = _heapreplace_max;   // --- py stmt 4021
+    for (const elem of it) {   // --- py stmt 4022
+        if (elem < top) {   // --- py stmt 4023
+            _heapreplace(result, [elem, order]);   // --- py stmt 4024
+            let _order = 0; [top, _order] = result[0];   // --- py stmt 4025
+            order += 1;   // --- py stmt 4026
+        }
+    }
+    result.sort();   // --- py stmt 4027
+    return result.map(([elem, order]) => elem);   // --- py stmt 4028
+}
+
+function nlargest(n, iterable) {   // --- py stmt 5001
+    if (n === 1) {   // --- py stmt 5002
+        const it = iterable[Symbol.iterator]();   // --- py stmt 5003
+        const sentinel = Infinity;   // --- py stmt 5004
+        const result = Math.max(...it);   // --- py stmt 5005
+        return (result === sentinel) ? [] : [result];   // --- py stmt 5006
+    }
+
+    let size;   // --- py stmt 5007
+    try {   // --- py stmt 5007
+        size = iterable.length;   // --- py stmt 5008
+    } catch (e) {}   // --- py stmt 5009
+    if (size !== undefined) {   // --- py stmt 5011
+        if (n >= size) {   // --- py stmt 5012
+            return iterable.sort((a, b) => b - a).slice(0, n);   // --- py stmt 5013
+        }
+    }
+
+    const it = iterable[Symbol.iterator]();   // --- py stmt 5014
+    const result = [...iterable].map((elem, i) => [elem, -i]).slice(0, n);   // --- py stmt 5015
+    for (let i=0;i<n;i++) it.next();   // --- py stmt 5015
+    if (!result.length) {   // --- py stmt 5016
+        return result;   // --- py stmt 5017
+    }
+    heapify(result);   // --- py stmt 5018
+    let top = result[0][0];   // --- py stmt 5019
+    let order = -n;   // --- py stmt 5020
+    const _heapreplace = heapreplace;   // --- py stmt 5021
+    for (const elem of it) {   // --- py stmt 5022
+        if (top < elem) {   // --- py stmt 5023
+            _heapreplace(result, [elem, order]);   // --- py stmt 5024
+            let _order = 0; [top, _order] = result[0];   // --- py stmt 5025
+            order -= 1;   // --- py stmt 5026
+        }
+    }
+    result.sort((a, b) => b[0] - a[0]);   // --- py stmt 5027
+    return result.map(([elem, order]) => elem);   // --- py stmt 5028
+}

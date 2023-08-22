@@ -1,0 +1,39 @@
+
+### Python
+def f_gold(N):   # --- py stmt 1
+  length = len(N)   # --- py stmt 2
+  l = int((length)/ 2)   # --- py stmt 3
+  count = 0   # --- py stmt 4
+  for i in range(l + 1):   # --- py stmt 5
+    s = N[0: 0 + i]   # --- py stmt 6
+    l1 = len(s)   # --- py stmt 7
+    t = N[i: l1 + i]   # --- py stmt 8
+    try:   # --- py stmt 9
+      if s[0] == '0' or t[0] == '0': continue   # --- py stmt 10
+    except: continue   # --- py stmt 11
+    if s == t: count += 1   # --- py stmt 12
+  return count   # --- py stmt 13
+
+
+### JavaScript
+"use strict";
+function f_gold(N) {   // --- py stmt 1
+  var length = N.length;   // --- py stmt 2
+  var l = Math.floor((length) / 2);   // --- py stmt 3
+  var count = 0;   // --- py stmt 4
+  for (var i = 0; i < l + 1; i++) {   // --- py stmt 5
+    var s = N.substring(0, 0 + i);   // --- py stmt 6
+    var l1 = s.length;   // --- py stmt 7
+    var t = N.substring(i, l1 + i);   // --- py stmt 8
+    try {   // --- py stmt 9
+      if (s[0] == '0' || t[0] == '0') continue;   // --- py stmt 10
+    } catch (e) {   // --- py stmt 11
+      continue;   // --- py stmt 11
+    }
+    if (s == t) count += 1;   // --- py stmt 12
+  }
+  return count;   // --- py stmt 13
+}
+
+
+

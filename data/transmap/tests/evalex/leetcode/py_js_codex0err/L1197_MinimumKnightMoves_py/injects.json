@@ -1,0 +1,44 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    vis.add([0, 0].join(\",\"));",
+    "replacement": "    vis.add([0, 0]);"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        for (var _ = 0, length = q.length; _ < length; _++) {",
+    "replacement": "        for (var _ = 0; _ < q.length; _++) {"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "            for (var [a, b] of dirs) {",
+    "replacement": "            for (var a = 0; a < dirs.length; a++) {\n                var b = a + 1;"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "                var c = i + a;",
+    "replacement": "                var c = i + dirs[a][0];"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "                var d = j + b;",
+    "replacement": "                var d = j + dirs[a][1];"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "                if (!vis.has([c, d].join(\",\"))) {",
+    "replacement": "                if (!vis.has([c, d])) {"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "                    vis.add([c, d].join(\",\"));",
+    "replacement": "                    vis.add([c, d]);"
+  }
+]

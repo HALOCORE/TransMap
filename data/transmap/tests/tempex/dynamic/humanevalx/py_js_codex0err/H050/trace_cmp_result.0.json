@@ -1,0 +1,56 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,4,16]",
+    "break_idx": 0,
+    "expected_src_pk": "[4,4,4,81]",
+    "actural_src_pk": "[4,4,4,81]",
+    "src_cov_lines": [
+      0,
+      1,
+      7
+    ],
+    "tar_cov_lines": [
+      1,
+      7
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",1,\"m\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",15,\"nxlsccorobxqrak\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,4,16]",
+    "break_idx": 0,
+    "expected_src_pk": "[4,4,4,81]",
+    "actural_src_pk": "[4,4,4,81]",
+    "src_cov_lines": [
+      0,
+      1,
+      7
+    ],
+    "tar_cov_lines": [
+      1,
+      7
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",7,\"bloosgr\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",18,\"zejrsycbgbwalbyvgk\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "s"
+    ]
+  }
+]

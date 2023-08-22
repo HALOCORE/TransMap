@@ -1,0 +1,44 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minimumHealth",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(damage: List[int], armor: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return sum(damage) - min(max(damage), armor) + 1",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(damage, armor) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return sum(damage) - min(max(damage), armor) + 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

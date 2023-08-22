@@ -1,0 +1,74 @@
+
+### Python
+### minJumps 
+from collections import deque   # --- py stmt 1
+from collections import defaultdict   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(arr: List[int]) -> int:   # --- py stmt 4
+    idx = defaultdict(list)   # --- py stmt 5
+    for i, v in enumerate(arr):   # --- py stmt 6
+        idx[v].append(i)   # --- py stmt 7
+    q = deque([(0, 0)])   # --- py stmt 8
+    vis = {0}   # --- py stmt 9
+    while q:   # --- py stmt 10
+        i, step = q.popleft()   # --- py stmt 11
+        if i == len(arr) - 1:   # --- py stmt 12
+            return step   # --- py stmt 13
+        v = arr[i]   # --- py stmt 14
+        step += 1   # --- py stmt 15
+        for j in idx[v]:   # --- py stmt 16
+            if j not in vis:   # --- py stmt 17
+                vis.add(j)   # --- py stmt 18
+                q.append((j, step))   # --- py stmt 19
+        del idx[v]   # --- py stmt 20
+        if i + 1 < len(arr) and (i + 1) not in vis:   # --- py stmt 21
+            vis.add(i + 1)   # --- py stmt 22
+            q.append((i + 1, step))   # --- py stmt 23
+        if i - 1 >= 0 and (i - 1) not in vis:   # --- py stmt 24
+            vis.add(i - 1)   # --- py stmt 25
+            q.append((i - 1, step))   # --- py stmt 26
+
+### JavaScript
+"use strict";
+
+function f_gold(arr) {   // --- py stmt 4
+    let idx = new Map();   // --- py stmt 5
+    for (let i = 0; i < arr.length; i++) {   // --- py stmt 6
+        if (idx.has(arr[i])) {   // --- py stmt 7
+            idx.get(arr[i]).push(i);   // --- py stmt 7
+        } else {   // --- py stmt 7
+            idx.set(arr[i], [i]);   // --- py stmt 7
+        }
+    }
+    let q = [[0, 0]];   // --- py stmt 8
+    let vis = new Set();   // --- py stmt 9
+    vis.add(0);   // --- py stmt 9
+    while (q.length > 0) {   // --- py stmt 10
+        let i = q[0][0];   // --- py stmt 11
+        let step = q[0][1];   // --- py stmt 11
+        q.shift();   // --- py stmt 11
+        if (i == arr.length - 1) {   // --- py stmt 12
+            return step;   // --- py stmt 13
+        }
+        let v = arr[i];   // --- py stmt 14
+        step += 1;   // --- py stmt 15
+        for (let j = 0; j < idx.get(v).length; j++) {   // --- py stmt 16
+            if (!vis.has(idx.get(v)[j])) {   // --- py stmt 17
+                vis.add(idx.get(v)[j]);   // --- py stmt 18
+                q.push([idx.get(v)[j], step]);   // --- py stmt 19
+            }
+        }
+        idx.delete(v);   // --- py stmt 20
+        if (i + 1 < arr.length && !vis.has(i + 1)) {   // --- py stmt 21
+            vis.add(i + 1);   // --- py stmt 22
+            q.push([i + 1, step]);   // --- py stmt 23
+        }
+        if (i - 1 >= 0 && !vis.has(i - 1)) {   // --- py stmt 24
+            vis.add(i - 1);   // --- py stmt 25
+            q.push([i - 1, step]);   // --- py stmt 26
+        }
+    }
+}
+
+
+

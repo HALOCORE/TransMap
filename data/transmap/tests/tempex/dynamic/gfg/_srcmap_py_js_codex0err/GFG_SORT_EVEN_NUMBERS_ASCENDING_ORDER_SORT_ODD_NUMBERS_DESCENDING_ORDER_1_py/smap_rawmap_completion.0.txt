@@ -1,0 +1,24 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  for i in range(0, n):   # --- py stmt 2
+    if(arr[i] & 1): arr[i] *= - 1   # --- py stmt 3
+  arr.sort()   # --- py stmt 4
+  for i in range(0, n):   # --- py stmt 5
+    if(arr[i] & 1): arr[i] *= - 1   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  for (let i = 0; i < n; i++) {   // --- py stmt 2
+    if (arr[i] & 1) arr[i] *= -1;   // --- py stmt 3
+  }
+  arr.sort();   // --- py stmt 4
+  for (let i = 0; i < n; i++) {   // --- py stmt 5
+    if (arr[i] & 1) arr[i] *= -1;   // --- py stmt 6
+  }
+}
+
+
+

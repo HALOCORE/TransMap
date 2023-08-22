@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,2,4,13]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: c is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,2,4,13]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: c is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"]}",
+      ""
+    ]
+  }
+]

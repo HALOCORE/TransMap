@@ -1,0 +1,44 @@
+{
+  "src_anno_stmts": [
+    [
+      "### mostWordsFound",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(sentences: List[str]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return 1 + max(s.count(' ') for s in sentences)",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentences) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return 1 + Math.max(...sentences.map(s => s.split(' ').length));",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

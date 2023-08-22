@@ -1,0 +1,234 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -13,8 +13,8 @@ Math.random = function(){
+ ///// Segment IGNORE END
+ ///// Segment BEGIN p1 DONE
+ function absolute_difference(max_a = 100, max_b = 100) {
+-    const a = Math.floor(Math.random() * (max_a + 1) * 2) - max_a;
+-    const b = Math.floor(Math.random() * (max_b + 1) * 2) - max_b;
++    const a = Math.floor(Math.random() * (2 * max_a + 1)) - max_a;
++    const b = Math.floor(Math.random() * (2 * max_b + 1)) - max_b;
+     const absDiff = Math.abs(a - b);
+ 
+     return [`$|${a}-${b}|=$`, `$${absDiff}$`];
+@@ -106,7 +106,7 @@ function divide_fractions(max_val = 10) {
+     let sol_numerator = Math.floor(tmp_n / gcd);
+     let sol_denominator = Math.floor(tmp_d / gcd);
+ 
+-    return `$\\frac{${a}}{${b}}\\div\\frac{${c}}{${d}}=$`, `$\\frac{${sol_numerator}}{${sol_denominator}}$`;
++    return [`$\\frac{${a}}{${b}}\\div\\frac{${c}}{${d}}=$`, `$\\frac{${sol_numerator}}{${sol_denominator}}$`];
+ }
+ ///// Segment END
+ 
+@@ -225,7 +225,7 @@ function greatest_common_divisor(numbers_count = 2, max_num = 10 ** 3) {
+ function is_composite(max_num = 250) {
+     const a = Math.floor(Math.random() * (max_num - 2 + 1) + 2);
+ 
+-    const problem = `Is ${a} composite?`;
++    const problem = `Is $${a}$ composite?`;
+     if (a === 0 || a === 1) {
+         return [problem, "No"];
+     }
+@@ -243,7 +243,7 @@ function is_composite(max_num = 250) {
+ ///// Segment BEGIN p13 DONE
+ function is_prime(max_num = 100) {
+     const a = Math.floor(Math.random() * (max_num - 2 + 1) + 2);
+-    const problem = `Is ${a} prime?`;
++    const problem = `Is $${a}$ prime?`;
+     if (a === 2) {
+         return [problem, "Yes"];
+     }
+@@ -266,7 +266,7 @@ function multiplication(max_multi = 12) {
+     const b = Math.floor(Math.random() * (max_multi + 1));
+     const c = a * b;
+ 
+-    return [`\\(${a}\\cdot${b}=\\)`, `\\(${c}\\)`];
++    return [`$${a}\\cdot${b}=$`, `$${c}$`];
+ }
+ ///// Segment END
+ 
+@@ -274,7 +274,7 @@ function multiplication(max_multi = 12) {
+ function percentage(max_value = 99, max_percentage = 99) {
+     const a = Math.floor(Math.random() * max_percentage) + 1;
+     const b = Math.floor(Math.random() * max_value) + 1;
+-    const problem = `What is ${a}% of ${b}?`;
++    const problem = `What is $${a}$% of $${b}$?`;
+     const percentage = (a / 100) * b;
+     const formatted_float = percentage.toFixed(2);
+     const solution = `$${formatted_float}$`;
+@@ -299,7 +299,7 @@ function percentage_difference(max_value = 200, min_value = 0) {
+ 
+ ///// Segment BEGIN p17 DONE
+ function percentage_error(max_value = 100, min_value = -100) {
+-    const observed_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);
++    let observed_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);
+     const exact_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);
+ 
+     if (observed_value * exact_value < 0) {
+@@ -320,10 +320,10 @@ function power_of_powers(max_base = 50, max_power = 10) {
+     const base = Math.floor(Math.random() * max_base) + 1;
+     const power1 = Math.floor(Math.random() * max_power) + 1;
+     const power2 = Math.floor(Math.random() * max_power) + 1;
+-    const step = power1 ** power2;
++    const step = power1 * power2;
+ 
+-    const problem = `Simplify ${base}^(${power1}^(${power2}))`;
+-    const solution = `${base}^(${step})`;
++    const problem = `Simplify $${base}^{${power1}^{${power2}}}$`;
++    const solution = `$${base}^{${step}}$`;
+     return [problem, solution];
+ }
+ ///// Segment END
+@@ -348,7 +348,8 @@ function square_root(min_no = 1, max_no = 12) {
+ 
+ ///// Segment BEGIN p21 DONE
+ function simplify_square_root(max_variable = 100) {
+-    let y = x = Math.floor(Math.random() * max_variable) + 1;
++    let x = Math.floor(Math.random() * max_variable) + 1;
++    let y = x;
+     let factors = {};
+     let f = 2;
+     while (x !== 1) {
+@@ -362,7 +363,8 @@ function simplify_square_root(max_variable = 100) {
+             f += 1;
+         }
+     }
+-    let a = b = 1;
++    let b = 1;
++    let a = b;
+     for (let i in factors) {
+         if (factors[i] % 2 === 0) {
+             a *= Math.pow(i, factors[i] / 2);
+@@ -374,7 +376,7 @@ function simplify_square_root(max_variable = 100) {
+     if (a === 1 || b === 1) {
+         return simplify_square_root(max_variable);
+     } else {
+-        return `$\\sqrt{${y}}$`, `$${a}\\sqrt{${b}}$`;
++        return [`$\\sqrt{${y}}$`, `$${a}\\sqrt{${b}}$`];
+     }
+ }
+ ///// Segment END
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -279,8 +279,8 @@ def subtraction(max_minuend=99, max_diff=99):   # --- py stmt 21001
+ ### JavaScript
+ 
+ function absolute_difference(max_a = 100, max_b = 100) {   // --- py stmt 1
+-    const a = Math.floor(Math.random() * (max_a + 1) * 2) - max_a;   // --- py stmt 2
+-    const b = Math.floor(Math.random() * (max_b + 1) * 2) - max_b;   // --- py stmt 3
++    const a = Math.floor(Math.random() * (2 * max_a + 1)) - max_a;   // --- py stmt 2
++    const b = Math.floor(Math.random() * (2 * max_b + 1)) - max_b;   // --- py stmt 3
+     const absDiff = Math.abs(a - b);   // --- py stmt 4
+ 
+     return [`$|${a}-${b}|=$`, `$${absDiff}$`];   // --- py stmt 5
+@@ -364,7 +364,7 @@ function divide_fractions(max_val = 10) {   // --- py stmt 4001
+     let sol_numerator = Math.floor(tmp_n / gcd);   // --- py stmt 4017
+     let sol_denominator = Math.floor(tmp_d / gcd);   // --- py stmt 4018
+ 
+-    return `$\\frac{${a}}{${b}}\\div\\frac{${c}}{${d}}=$`, `$\\frac{${sol_numerator}}{${sol_denominator}}$`;   // --- py stmt 4019
++    return [`$\\frac{${a}}{${b}}\\div\\frac{${c}}{${d}}=$`, `$\\frac{${sol_numerator}}{${sol_denominator}}$`];   // --- py stmt 4019
+ }
+ 
+ function division(max_a = 25, max_b = 25) {   // --- py stmt 5001
+@@ -404,11 +404,11 @@ function fraction_multiplication(max_val = 10) {   // --- py stmt 8001
+     let d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 8005
+ 
+     while (a === b) {   // --- py stmt 8006
+-        b = Math.floor(Math.random() * max_val) + 1;
++        b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 800106
+     }
+ 
+     while (c === d) {   // --- py stmt 8007
+-        d = Math.floor(Math.random() * max_val) + 1;
++        d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 800107
+     }
+ 
+     function calculate_gcd(x, y) {   // --- py stmt 8008
+@@ -469,7 +469,7 @@ function greatest_common_divisor(numbers_count = 2, max_num = 10 ** 3) {   // --
+ function is_composite(max_num = 250) {   // --- py stmt 11001
+     const a = Math.floor(Math.random() * (max_num - 2 + 1) + 2);   // --- py stmt 11002
+ 
+-    const problem = `Is ${a} composite?`;   // --- py stmt 11003
++    const problem = `Is $${a}$ composite?`;   // --- py stmt 11003
+     if (a === 0 || a === 1) {   // --- py stmt 11004
+         return [problem, "No"];   // --- py stmt 11005
+     }
+@@ -485,7 +485,7 @@ function is_composite(max_num = 250) {   // --- py stmt 11001
+ 
+ function is_prime(max_num = 100) {   // --- py stmt 12001
+     const a = Math.floor(Math.random() * (max_num - 2 + 1) + 2);   // --- py stmt 12002
+-    const problem = `Is ${a} prime?`;   // --- py stmt 12003
++    const problem = `Is $${a}$ prime?`;   // --- py stmt 12003
+     if (a === 2) {   // --- py stmt 12004
+         return [problem, "Yes"];   // --- py stmt 12005
+     }
+@@ -512,7 +512,7 @@ function multiplication(max_multi = 12) {   // --- py stmt 13001
+ function percentage(max_value = 99, max_percentage = 99) {   // --- py stmt 14001
+     const a = Math.floor(Math.random() * max_percentage) + 1;   // --- py stmt 14002
+     const b = Math.floor(Math.random() * max_value) + 1;   // --- py stmt 14003
+-    const problem = `What is ${a}% of ${b}?`;   // --- py stmt 14004
++    const problem = `What is $${a}$% of $${b}$?`;   // --- py stmt 14004
+     const percentage = (a / 100) * b;   // --- py stmt 14005
+     const formatted_float = percentage.toFixed(2);   // --- py stmt 14006
+     const solution = `$${formatted_float}$`;   // --- py stmt 14007
+@@ -533,7 +533,7 @@ function percentage_difference(max_value = 200, min_value = 0) {   // --- py stm
+ }
+ 
+ function percentage_error(max_value = 100, min_value = -100) {   // --- py stmt 16001
+-    const observed_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 16002
++    let observed_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 16002
+     const exact_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 16003
+ 
+     if (observed_value * exact_value < 0) {   // --- py stmt 16004
+@@ -552,10 +552,10 @@ function power_of_powers(max_base = 50, max_power = 10) {   // --- py stmt 17001
+     const base = Math.floor(Math.random() * max_base) + 1;   // --- py stmt 17002
+     const power1 = Math.floor(Math.random() * max_power) + 1;   // --- py stmt 17003
+     const power2 = Math.floor(Math.random() * max_power) + 1;   // --- py stmt 17004
+-    const step = power1 ** power2;   // --- py stmt 17005
++    const step = power1 * power2;   // --- py stmt 17005
+ 
+-    const problem = `Simplify ${base}^(${power1}^(${power2}))`;   // --- py stmt 17006
+-    const solution = `${base}^(${step})`;   // --- py stmt 17007
++    const problem = `Simplify $${base}^{${power1}^{${power2}}}$`;   // --- py stmt 17006
++    const solution = `$${base}^{${step}}$`;   // --- py stmt 17007
+     return [problem, solution];   // --- py stmt 17008
+ }
+ 
+@@ -574,7 +574,8 @@ function square_root(min_no = 1, max_no = 12) {   // --- py stmt 19001
+ }
+ 
+ function simplify_square_root(max_variable = 100) {   // --- py stmt 20001
+-    let y = x = Math.floor(Math.random() * max_variable) + 1;   // --- py stmt 20002
++    let x = Math.floor(Math.random() * max_variable) + 1;   // --- py stmt 20002
++    let y = x;   // --- py stmt 20002
+     let factors = {};   // --- py stmt 20003
+     let f = 2;   // --- py stmt 20004
+     while (x !== 1) {   // --- py stmt 20005
+@@ -588,7 +589,8 @@ function simplify_square_root(max_variable = 100) {   // --- py stmt 20001
+             f += 1;   // --- py stmt 20012
+         }
+     }
+-    let a = b = 1;   // --- py stmt 20013
++    let b = 1;   // --- py stmt 20013
++    let a = b;   // --- py stmt 20013
+     for (let i in factors) {   // --- py stmt 20014
+         if (factors[i] % 2 === 0) {   // --- py stmt 20015
+             a *= Math.pow(i, factors[i] / 2);   // --- py stmt 20016
+@@ -600,7 +602,7 @@ function simplify_square_root(max_variable = 100) {   // --- py stmt 20001
+     if (a === 1 || b === 1) {   // --- py stmt 20020
+         return simplify_square_root(max_variable);   // --- py stmt 20021
+     } else {   // --- py stmt 20022
+-        return `$\\sqrt{${y}}$`, `$${a}\\sqrt{${b}}$`;   // --- py stmt 20023
++        return [`$\\sqrt{${y}}$`, `$${a}\\sqrt{${b}}$`];   // --- py stmt 20023
+     }
+ }
+ 
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,4 @@
+ {
+-  "disable_src_lines": [],
++  "disable_src_lines": [151,154],
+   "trace_cmp": []
+ }
+\ No newline at end of file

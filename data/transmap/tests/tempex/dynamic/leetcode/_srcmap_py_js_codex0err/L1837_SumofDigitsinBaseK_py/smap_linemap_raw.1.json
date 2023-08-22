@@ -1,0 +1,102 @@
+{
+  "src_anno_stmts": [
+    [
+      "### sumBase",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int, k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    while n != 0:",
+      [
+        4
+      ]
+    ],
+    [
+      "        n, t = divmod(n, k)",
+      [
+        5
+      ]
+    ],
+    [
+      "        res += t",
+      [
+        6
+      ]
+    ],
+    [
+      "    return res",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    while (n != 0) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var t;",
+      [
+        5
+      ]
+    ],
+    [
+      "        [n, t] = [Math.floor(n / k), n % k];",
+      [
+        5
+      ]
+    ],
+    [
+      "        res += n % k;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

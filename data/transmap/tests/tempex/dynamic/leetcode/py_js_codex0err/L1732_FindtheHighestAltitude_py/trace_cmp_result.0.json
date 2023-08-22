@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,6,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"gain\":[\"A\",5,[\"N\",\"-5\"],[\"N\",\"1\"],[\"N\",\"5\"],[\"N\",\"0\"],[\"N\",\"-7\"]],\"res\":[\"N\",\"0\"],\"t\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,6,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"gain\":[\"A\",5,[\"N\",\"-5\"],[\"N\",\"1\"],[\"N\",\"5\"],[\"N\",\"0\"],[\"N\",\"-7\"]],\"res\":[\"N\",\"0\"],\"t\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

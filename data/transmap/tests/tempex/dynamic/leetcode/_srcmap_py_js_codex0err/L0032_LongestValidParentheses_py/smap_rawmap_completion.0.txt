@@ -1,0 +1,55 @@
+
+### Python
+### longestValidParentheses 
+from typing import *   # --- py stmt 1
+def f_gold(s):   # --- py stmt 2
+    """
+    :type s: string
+    :rtype int
+    """
+    Longest = temp = 0   # --- py stmt 3
+    stack = []   # --- py stmt 4
+    for i in s:   # --- py stmt 5
+        if i == '(':   # --- py stmt 6
+            stack.append(i)   # --- py stmt 7
+        elif len(stack) != 0 and stack[-1] == '(':   # --- py stmt 8
+            stack.pop()   # --- py stmt 9
+            temp += 2   # --- py stmt 10
+        else:   # --- py stmt 11
+            stack = []   # --- py stmt 12
+            if temp > Longest:   # --- py stmt 13
+                Longest = temp   # --- py stmt 14
+            temp = 0   # --- py stmt 15
+    if temp > Longest:   # --- py stmt 16
+        Longest = temp   # --- py stmt 17
+    return Longest   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var Longest = temp = 0;   // --- py stmt 3
+    var stack = [];   // --- py stmt 4
+    for (var i = 0; i < s.length; i++) {   // --- py stmt 5
+        if (s[i] == '(') {   // --- py stmt 6
+            stack.push(s[i]);   // --- py stmt 7
+        }
+        else if (stack.length != 0 && stack[stack.length - 1] == '(') {   // --- py stmt 8
+            stack.pop();   // --- py stmt 9
+            temp += 2;   // --- py stmt 10
+        }
+        else {   // --- py stmt 11
+            stack = [];   // --- py stmt 12
+            if (temp > Longest) {   // --- py stmt 13
+                Longest = temp;   // --- py stmt 14
+            }
+            temp = 0;   // --- py stmt 15
+        }
+    }
+    if (temp > Longest) {   // --- py stmt 16
+        Longest = temp;   // --- py stmt 17
+    }
+    return Longest;   // --- py stmt 18
+}
+
+
+

@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[8,2,8,16]",
+    "break_idx": 4,
+    "expected_src_pk": "[7,2,7,11]",
+    "actural_src_pk": "[7,2,7,11]",
+    "src_cov_lines": [
+      4,
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      4,
+      5,
+      6
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",7,\"OGiOkJF\"],\"n\":[\"N\",\"7\"],\"auxArr\":[\"A\",7,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"OGiOkJF\"],\"n\":[\"N\",\"7\"],\"auxArr\":[\"A\",7,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"i\":[\"N\",\"6\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "auxArr"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,6,35]",
+    "break_idx": 2,
+    "expected_src_pk": "[5,4,6,35]",
+    "actural_src_pk": "[5,4,6,35]",
+    "src_cov_lines": [
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      5,
+      6
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",7,\"OGiOkJF\"],\"n\":[\"N\",\"7\"],\"auxArr\":[\"A\",7,\"UNKNOWN\",[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"OGiOkJF\"],\"n\":[\"N\",\"7\"],\"auxArr\":[\"A\",7,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "auxArr"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,6,35]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,4,6,35]",
+    "actural_src_pk": "[5,4,6,35]",
+    "src_cov_lines": [
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      5,
+      6
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",7,\"OGiOkJF\"],\"n\":[\"N\",\"7\"],\"auxArr\":[\"A\",7,\"UNKNOWN\",[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"OGiOkJF\"],\"n\":[\"N\",\"7\"],\"auxArr\":[\"A\",7,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "auxArr"
+    ]
+  }
+]

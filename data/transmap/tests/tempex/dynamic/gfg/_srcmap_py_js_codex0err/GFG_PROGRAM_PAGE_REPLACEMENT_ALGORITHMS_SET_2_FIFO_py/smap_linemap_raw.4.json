@@ -1,0 +1,260 @@
+{
+  "src_anno_stmts": [
+    [
+      "from queue import Queue ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(pages, n, capacity):",
+      [
+        2
+      ]
+    ],
+    [
+      "  s = set()",
+      [
+        3
+      ]
+    ],
+    [
+      "  indexes = Queue()",
+      [
+        4
+      ]
+    ],
+    [
+      "  page_faults = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        6
+      ]
+    ],
+    [
+      "    if(len(s)< capacity):",
+      [
+        7
+      ]
+    ],
+    [
+      "      if(pages[i] not in s):",
+      [
+        8
+      ]
+    ],
+    [
+      "        s.add(pages[i])",
+      [
+        9
+      ]
+    ],
+    [
+      "        page_faults += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        indexes.put(pages[i])",
+      [
+        11
+      ]
+    ],
+    [
+      "    else:",
+      [
+        12
+      ]
+    ],
+    [
+      "      if(pages[i] not in s):",
+      [
+        13
+      ]
+    ],
+    [
+      "        val = indexes.queue[0]",
+      [
+        14
+      ]
+    ],
+    [
+      "        indexes.get()",
+      [
+        15
+      ]
+    ],
+    [
+      "        s.remove(val)",
+      [
+        16
+      ]
+    ],
+    [
+      "        s.add(pages[i])",
+      [
+        17
+      ]
+    ],
+    [
+      "        indexes.put(pages[i])",
+      [
+        18
+      ]
+    ],
+    [
+      "        page_faults += 1",
+      [
+        19
+      ]
+    ],
+    [
+      "  return page_faults",
+      [
+        20
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(pages, n, capacity) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  let s = new Set();",
+      [
+        3
+      ]
+    ],
+    [
+      "  let indexes = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "  let page_faults = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    if (s.size < capacity) {",
+      [
+        7
+      ]
+    ],
+    [
+      "      if (!s.has(pages[i])) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        s.add(pages[i]);",
+      [
+        9
+      ]
+    ],
+    [
+      "        page_faults += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        indexes.push(pages[i]);",
+      [
+        11
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    } else {",
+      [
+        12
+      ]
+    ],
+    [
+      "      if (!s.has(pages[i])) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        let val = indexes[0];",
+      [
+        14
+      ]
+    ],
+    [
+      "        indexes.shift();",
+      [
+        15
+      ]
+    ],
+    [
+      "        s.delete(val);",
+      [
+        16
+      ]
+    ],
+    [
+      "        s.add(pages[i]);",
+      [
+        17
+      ]
+    ],
+    [
+      "        indexes.put(pages[i]);",
+      [
+        18
+      ]
+    ],
+    [
+      "        page_faults += 1;",
+      [
+        19
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return page_faults;",
+      [
+        20
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

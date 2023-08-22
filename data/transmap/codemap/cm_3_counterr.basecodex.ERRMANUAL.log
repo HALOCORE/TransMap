@@ -1,0 +1,31 @@
+[ERR][EXCEPTION] L0885_SpiralMatrixIII_py | !eq case. Expected str equal, got 'def f_gold(rows: int, cols: int, rStart: int, cStart: int' and 'def f_gold(rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:'
+[ERR][CHK-WARN] L1376_TimeNeededtoInformAllEmployees_py | js NOT MONOTONOUS! // err
+[ERR][CHK-WARN] L2285_MaximumTotalImportanceofRoads_py | js NOT MONOTONOUS! // err
+[ERR][EXCEPTION] L2279_MaximumBagsWithFullCapacityofRocks_py | !eq case. Expected str equal, got ') -> int:' and '    d = [a - b for a, b in zip(capacity, rocks)]'
+[ERR][CHK] L0851_LoudandRich_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {20, 21, 22}']
+[ERR][EXCEPTION] L0273_IntegertoEnglishWords_py | !eq case. Expected str equal, got '    var i = 1000000000;' and '    var i = 1000000000, j = 0;'
+[ERR][EXCEPTION] L0050_Pow_x_n__py | !eq case. Expected str equal, got '    return y * y if (n & 1) == 0 else y * y * x;' and '    return (n & 1) == 0 ? y * y : y * y * x;'
+# [ERR][CHK-WARN] L2318_NumberofDistinctRollSequences_py | js NOT MONOTONOUS!
+[ERR][EXCEPTION] L0869_ReorderedPowerof2_py | !eq case. Expected str equal, got '    var i = 1;' and '    var i = 1, s = convert(n);'
+[ERR][EXCEPTION] L0734_SentenceSimilarity_py | !eq case. Expected str equal, got '        var similar = (pairs.has([sentence1[i], sentence2[i]]) || pairs.has([sentence2[i], sentence1[i]]) || sentence1[i] == sentence2[i]);' and '        var similar = ('
+[ERR][CHK-WARN] L2301_MatchSubstringAfterReplacement_py | js NOT MONOTONOUS! // err
+[ERR][CHK-WARN] L2312_SellingPiecesofWood_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {11, 12, 13, 14, 15, 16}'] // [UNMAP]
+[ERR][EXCEPTION] L1275_FindWinneronaTicTacToeGame_py | !eq case. Expected str equal, got '            return "A" if (i % 2) == 0 else "B";' and '            return (i % 2) == 0 ? "A" : "B";'
+# [ERR][EXCEPTION] L2099_FindSubsequenceofLengthKWiththeLargestSum_py | expected 2 splits (begin), got 3 for 
+[ERR][CHK] L2283_CheckifNumberHasEqualDigitCountandDigitValue_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {6, 7, 8, 9, 10, 11}']
+# [ERR][CHK-WARN] L2257_CountUnguardedCellsintheGrid_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 10}']
+[ERR][CHK-WARN] L1181_BeforeandAfterPuzzle_py | js NOT MONOTONOUS! // err
+[ERR][EXCEPTION] L0076_MinimumWindowSubstring_py | !eq case. Expected str equal, got '    var i = 0;' and '    var i = 0, cnt = 0, mi = Number.MAX_VALUE;'
+[ERR][EXCEPTION] L1706_WhereWilltheBallFall_py | !eq case. Expected str equal, got '        return dfs(i + 1, j + 1) if grid[i][j] == 1 else dfs(i + 1, j - 1);' and '        return (grid[i][j] == 1) ? dfs(i + 1, j + 1) : dfs(i + 1, j - 1);'
+# [ERR][CHK-WARN] L2052_MinimumCosttoSeparateSentenceIntoRows_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3, 4, 5, 7}']
+# [ERR][CHK-WARN] L0752_OpentheLock_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 33}']
+[ERR][CHK] L0409_LongestPalindrome_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {8, 9, 10, 11, 12, 13}']
+[ERR][CHK] L0207_CourseSchedule_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {24, 25, 26, 23}']
+# [ERR][EXCEPTION] L0453_MinimumMovestoEqualArrayElements_py | expected 2 splits (begin), got 3 for 
+# [ERR][CHK-WARN] L2273_FindResultantArrayAfterRemovingAnagrams_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {2, 3, 5}']
+[ERR][CHK] L1899_MergeTripletstoFormTargetTriplet_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {11}']
+# [ERR][CHK-WARN] L0329_LongestIncreasingPathinaMatrix_py | js NOT MONOTONOUS!
+[ERR][EXCEPTION] L2293_MinMaxGame_py | !eq case. Expected str equal, got '            Math.max(nums[i << 1], nums[i << 1 | 1])' and '            (i & 1) ? Math.max(nums[i << 1], nums[i << 1 | 1]) : Math.min(nums[i << 1], nums[i << 1 | 1])'
+# [ERR][CHK-WARN] L2316_CountUnreachablePairsofNodesinanUndirectedGraph_py | js NOT MONOTONOUS!
+[ERR][CHK-WARN] L1394_FindLuckyIntegerinanArray_py | js NOT MONOTONOUS! // err
+[ERR][EXCEPTION] L1953_MaximumNumberofWeeksforWhichYouCanWork_py | !eq case. Expected str equal, got '    return rest * 2 + 1 if mx > rest + 1 else s;' and '    return mx > rest + 1 ? rest * 2 + 1 : s;'

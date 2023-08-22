@@ -1,0 +1,13 @@
+
+### Python
+def sort_array(array):   # --- py stmt 1
+    return [] if len(array) == 0 else sorted(array, reverse= (array[0]+array[-1]) % 2 == 0)   # --- py stmt 2
+
+### JavaScript
+"use strict";
+function sort_array(array) {   // --- py stmt 1
+    return array.length === 0 ? [] : array.sort((a, b) => (a + b) % 2 === 0 ? b - a : a - b);   // --- py stmt 2
+}
+
+
+

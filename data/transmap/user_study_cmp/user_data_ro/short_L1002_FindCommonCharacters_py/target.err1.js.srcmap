@@ -1,0 +1,42 @@
+
+### Python
+### commonChars 
+from typing import *   # --- py stmt 1
+def f_gold(words: List[str]) -> List[str]:   # --- py stmt 2
+    freq = [10000] * 26   # --- py stmt 3
+    for word in words:   # --- py stmt 4
+        t = [0] * 26   # --- py stmt 5
+        for c in word:   # --- py stmt 6
+            t[ord(c) - ord('a')] += 1   # --- py stmt 7
+        for i in range(26):   # --- py stmt 8
+            freq[i] = min(freq[i], t[i])   # --- py stmt 9
+    res = []   # --- py stmt 10
+    for i in range(26):   # --- py stmt 11
+        if freq[i] > 0:   # --- py stmt 12
+            res.extend([chr(i + ord("a"))] * freq[i])   # --- py stmt 13
+    return res   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(words) {   // --- py stmt 2
+    var freq = [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000];   // --- py stmt 3
+    for (var word of words) {   // --- py stmt 4
+        var t = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];   // --- py stmt 5
+        for (var c in word) {   // --- py stmt 6
+            t[c.charCodeAt(0) - 'a'.charCodeAt(0)] += 1;   // --- py stmt 7
+        }
+        for (var i = 0; i < 26; i++) {   // --- py stmt 8
+            freq[i] = Math.min(freq[i], t[i]);   // --- py stmt 9
+        }
+    }
+    var res = [];   // --- py stmt 10
+    for (var i = 0; i < 26; i++) {   // --- py stmt 11
+        if (freq[i] > 0) {   // --- py stmt 12
+            res = res.concat(new Array(freq[i]).fill(String.fromCharCode(i + "a".charCodeAt(0))));   // --- py stmt 13
+        }
+    }
+    return res;   // --- py stmt 14
+}
+
+
+

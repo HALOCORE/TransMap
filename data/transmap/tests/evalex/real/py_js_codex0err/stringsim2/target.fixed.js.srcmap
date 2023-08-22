@@ -1,0 +1,458 @@
+### Python
+import re   # --- py stmt 1
+
+_SPACE_PATTERN = re.compile("\\s+")   # --- py stmt 2
+
+class ShingleBased:   # --- py stmt 3
+
+    def __init__(self, k=3):   # --- py stmt 4
+        self.k = k   # --- py stmt 5
+
+    def get_k(self):   # --- py stmt 6
+        return self.k   # --- py stmt 7
+
+    def get_profile(self, string):   # --- py stmt 8
+        shingles = dict()   # --- py stmt 9
+        no_space_str = _SPACE_PATTERN.sub(" ", string)   # --- py stmt 10
+        for i in range(len(no_space_str) - self.k + 1):   # --- py stmt 11
+            shingle = no_space_str[i:i + self.k]   # --- py stmt 12
+            old = shingles.get(shingle)   # --- py stmt 13
+            if old:   # --- py stmt 14
+                shingles[str(shingle)] = int(old + 1)   # --- py stmt 15
+            else:   # --- py stmt 16
+                shingles[str(shingle)] = 1   # --- py stmt 17
+        return shingles   # --- py stmt 18
+
+class StringDistance:   # --- py stmt 19
+
+    def distance(self, s0, s1):   # --- py stmt 20
+        raise NotImplementedError()   # --- py stmt 21
+
+class NormalizedStringDistance(StringDistance):   # --- py stmt 22
+
+    def distance(self, s0, s1):   # --- py stmt 23
+        raise NotImplementedError()   # --- py stmt 24
+
+class MetricStringDistance(StringDistance):   # --- py stmt 25
+
+    def distance(self, s0, s1):   # --- py stmt 26
+        raise NotImplementedError()   # --- py stmt 27
+
+class StringSimilarity:   # --- py stmt 28
+
+    def similarity(self, s0, s1):   # --- py stmt 29
+        raise NotImplementedError()   # --- py stmt 30
+
+class NormalizedStringSimilarity(StringSimilarity):   # --- py stmt 31
+
+    def similarity(self, s0, s1):   # --- py stmt 32
+        raise NotImplementedError()   # --- py stmt 33
+
+
+class Levenshtein(MetricStringDistance):   # --- py stmt 34
+
+    def distance(self, s0, s1):   # --- py stmt 35
+        if s0 is None:   # --- py stmt 36
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 37
+        if s1 is None:   # --- py stmt 38
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 39
+        if s0 == s1:   # --- py stmt 40
+            return 0.0   # --- py stmt 41
+        if len(s0) == 0:   # --- py stmt 42
+            return len(s1)   # --- py stmt 43
+        if len(s1) == 0:   # --- py stmt 44
+            return len(s0)   # --- py stmt 45
+
+        v0 = [0] * (len(s1) + 1)   # --- py stmt 46
+        v1 = [0] * (len(s1) + 1)   # --- py stmt 47
+
+        for i in range(len(v0)):   # --- py stmt 48
+            v0[i] = i   # --- py stmt 49
+
+        for i in range(len(s0)):   # --- py stmt 50
+            v1[0] = i + 1   # --- py stmt 51
+            for j in range(len(s1)):   # --- py stmt 52
+                cost = 1   # --- py stmt 53
+                if s0[i] == s1[j]:   # --- py stmt 54
+                    cost = 0   # --- py stmt 55
+                v1[j + 1] = min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost)   # --- py stmt 56
+            v0, v1 = v1, v0   # --- py stmt 57
+
+        return v0[len(s1)]   # --- py stmt 58
+
+class NormalizedLevenshtein(NormalizedStringDistance, NormalizedStringSimilarity):   # --- py stmt 59
+    def __init__(self):   # --- py stmt 60
+        self.levenshtein = Levenshtein()   # --- py stmt 61
+    def distance(self, s0, s1):   # --- py stmt 62
+        if s0 is None:   # --- py stmt 63
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 64
+        if s1 is None:   # --- py stmt 65
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 66
+        if s0 == s1:   # --- py stmt 67
+            return 0.0   # --- py stmt 68
+        m_len = max(len(s0), len(s1))   # --- py stmt 69
+        if m_len == 0:   # --- py stmt 70
+            return 0.0   # --- py stmt 71
+        return self.levenshtein.distance(s0, s1) / m_len   # --- py stmt 72
+    def similarity(self, s0, s1):   # --- py stmt 73
+        return 1.0 - self.distance(s0, s1)   # --- py stmt 74
+
+class OptimalStringAlignment(StringDistance):   # --- py stmt 75
+
+    def distance(self, s0, s1):   # --- py stmt 76
+        if s0 is None:   # --- py stmt 77
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 78
+        if s1 is None:   # --- py stmt 79
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 80
+        if s0 == s1:   # --- py stmt 81
+            return 0.0   # --- py stmt 82
+
+        n, m = len(s0), len(s1)   # --- py stmt 83
+        if n == 0:   # --- py stmt 84
+            return 1.0 * n   # --- py stmt 85
+        if m == 0:   # --- py stmt 86
+            return 1.0 * m   # --- py stmt 87
+
+        d = [[0] * (m + 2) for _ in range(n + 2)]   # --- py stmt 88
+        for i in range(n + 1):   # --- py stmt 89
+            d[i][0] = i   # --- py stmt 90
+        for j in range(m + 1):   # --- py stmt 91
+            d[0][j] = j   # --- py stmt 92
+
+        for i in range(1, n + 1):   # --- py stmt 93
+            for j in range(1, m + 1):   # --- py stmt 94
+                cost = 1   # --- py stmt 95
+                if s0[i - 1] == s1[j - 1]:   # --- py stmt 96
+                    cost = 0   # --- py stmt 97
+                d[i][j] = min(d[i - 1][j - 1] + cost, d[i][j - 1] + 1, d[i - 1][j] + 1)   # --- py stmt 98
+
+                if i > 1 and j > 1 and s0[i - 1] == s1[j - 2] and s0[i - 2] == s1[j - 1]:   # --- py stmt 99
+                    d[i][j] = min(d[i][j], d[i - 2][j - 2] + cost)   # --- py stmt 100
+
+        return d[n][m]   # --- py stmt 101
+
+class OverlapCoefficient(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity):   # --- py stmt 102
+    def __init__(self, k=3):   # --- py stmt 103
+        super().__init__(k)   # --- py stmt 104
+    def distance(self, s0, s1):   # --- py stmt 105
+        return 1.0 - self.similarity(s0, s1)   # --- py stmt 106
+    def similarity(self, s0, s1):   # --- py stmt 107
+        if s0 is None:   # --- py stmt 108
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 109
+        if s1 is None:   # --- py stmt 110
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 111
+        if s0 == s1:   # --- py stmt 112
+            return 1.0   # --- py stmt 113
+        union = set()   # --- py stmt 114
+        profile0, profile1 = self.get_profile(s0), self.get_profile(s1)   # --- py stmt 115
+        for k in profile0.keys():   # --- py stmt 116
+            union.add(k)   # --- py stmt 117
+        for k in profile1.keys():   # --- py stmt 118
+            union.add(k)   # --- py stmt 119
+        inter = int(len(profile0.keys()) + len(profile1.keys()) - len(union))   # --- py stmt 120
+        return inter / min(len(profile0), len(profile1))   # --- py stmt 121
+
+class QGram(ShingleBased, StringDistance):   # --- py stmt 122
+
+    def __init__(self, k=3):   # --- py stmt 123
+        super().__init__(k)   # --- py stmt 124
+
+    def distance(self, s0, s1):   # --- py stmt 125
+        if s0 is None:   # --- py stmt 126
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 127
+        if s1 is None:   # --- py stmt 128
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 129
+        if s0 == s1:   # --- py stmt 130
+            return 0.0   # --- py stmt 131
+
+        profile0 = self.get_profile(s0)   # --- py stmt 132
+        profile1 = self.get_profile(s1)   # --- py stmt 133
+        return self.distance_profile(profile0, profile1)   # --- py stmt 134
+
+    @staticmethod   # --- py stmt 135
+    def distance_profile(profile0, profile1):   # --- py stmt 136
+        union = set()   # --- py stmt 137
+        for k in profile0.keys():   # --- py stmt 138
+            union.add(k)   # --- py stmt 139
+        for k in profile1.keys():   # --- py stmt 140
+            union.add(k)   # --- py stmt 141
+        agg = 0   # --- py stmt 142
+        for k in union:   # --- py stmt 143
+            v0, v1 = 0, 0   # --- py stmt 144
+            if profile0.get(k) is not None:   # --- py stmt 145
+                v0 = int(profile0.get(k))   # --- py stmt 146
+            if profile1.get(k) is not None:   # --- py stmt 147
+                v1 = int(profile1.get(k))   # --- py stmt 148
+            agg += abs(v0 - v1)   # --- py stmt 149
+        return agg   # --- py stmt 150
+
+
+
+### JavaScript
+"use strict";
+
+class ShingleBased {   // --- py stmt 3
+    constructor(k = 3) {   // --- py stmt 4
+        this.k = k;   // --- py stmt 5
+    }
+
+    get_k() {   // --- py stmt 6
+        return this.k;   // --- py stmt 7
+    }
+
+    get_profile(string) {   // --- py stmt 8
+        let shingles = {};   // --- py stmt 9
+        let no_space_str = string.replace(/\s+/g, " ");   // --- py stmt 10
+        for (let i = 0; i < no_space_str.length - this.k + 1; i++) {   // --- py stmt 11
+            let shingle = no_space_str.substring(i, i + this.k);   // --- py stmt 12
+            let old = shingles[shingle];   // --- py stmt 13
+            if (old) {   // --- py stmt 14
+                shingles[shingle] = parseInt(old) + 1;   // --- py stmt 15
+            } else {   // --- py stmt 16
+                shingles[shingle] = 1;   // --- py stmt 17
+            }
+        }
+        return shingles;   // --- py stmt 18
+    }
+}
+
+class StringDistance {   // --- py stmt 19
+    distance(s0, s1) {   // --- py stmt 20
+        throw new Error("NotImplementedError");   // --- py stmt 21
+    }
+}
+
+class NormalizedStringDistance extends StringDistance {   // --- py stmt 22
+    distance(s0, s1) {   // --- py stmt 23
+        throw new Error("NotImplementedError");   // --- py stmt 24
+    }
+}
+
+class MetricStringDistance extends StringDistance {   // --- py stmt 25
+    distance(s0, s1) {   // --- py stmt 26
+        throw new Error("NotImplementedError");   // --- py stmt 27
+    }
+}
+
+class StringSimilarity {   // --- py stmt 28
+    similarity(s0, s1) {   // --- py stmt 29
+        throw new Error("NotImplementedError");   // --- py stmt 30
+    }
+}
+
+class NormalizedStringSimilarity extends StringSimilarity {   // --- py stmt 31
+    similarity(s0, s1) {   // --- py stmt 32
+        throw new Error("NotImplementedError");   // --- py stmt 33
+    }
+}
+
+
+
+
+
+class Levenshtein extends MetricStringDistance {   // --- py stmt 34
+
+    distance(s0, s1) {   // --- py stmt 35
+        if (s0 === null) {   // --- py stmt 36
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 37
+        }
+        if (s1 === null) {   // --- py stmt 38
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 39
+        }
+        if (s0 === s1) {   // --- py stmt 40
+            return 0.0;   // --- py stmt 41
+        }
+        if (s0.length === 0) {   // --- py stmt 42
+            return s1.length;   // --- py stmt 43
+        }
+        if (s1.length === 0) {   // --- py stmt 44
+            return s0.length;   // --- py stmt 45
+        }
+
+        let v0 = new Array(s1.length + 1).fill(0);   // --- py stmt 46
+        let v1 = new Array(s1.length + 1).fill(0);   // --- py stmt 47
+
+        for (let i = 0; i < v0.length; i++) {   // --- py stmt 48
+            v0[i] = i;   // --- py stmt 49
+        }
+
+        for (let i = 0; i < s0.length; i++) {   // --- py stmt 50
+            v1[0] = i + 1;   // --- py stmt 51
+            for (let j = 0; j < s1.length; j++) {   // --- py stmt 52
+                let cost = 1;   // --- py stmt 53
+                if (s0[i] === s1[j]) {   // --- py stmt 54
+                    cost = 0;   // --- py stmt 55
+                }
+                v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);   // --- py stmt 56
+            }
+            [v0, v1] = [v1, v0];   // --- py stmt 57
+            //v1 = new Array(s1.length + 1);   // --- py stmt 57
+        }
+
+        return v0[s1.length];   // --- py stmt 58
+    }
+}
+
+
+
+
+class NormalizedLevenshtein {   // --- py stmt 59
+    constructor() {   // --- py stmt 60
+        this.levenshtein = new Levenshtein();   // --- py stmt 61
+    }
+    distance(s0, s1) {   // --- py stmt 62
+        if (s0 === null) {   // --- py stmt 63
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 64
+        }
+        if (s1 === null) {   // --- py stmt 65
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 66
+        }
+        if (s0 === s1) {   // --- py stmt 67
+            return 0.0;   // --- py stmt 68
+        }
+        let m_len = Math.max(s0.length, s1.length);   // --- py stmt 69
+        if (m_len === 0) {   // --- py stmt 70
+            return 0.0;   // --- py stmt 71
+        }
+        return this.levenshtein.distance(s0, s1) / m_len;   // --- py stmt 72
+    }
+    similarity(s0, s1) {   // --- py stmt 73
+        return 1.0 - this.distance(s0, s1);   // --- py stmt 74
+    }
+}
+
+
+
+class OptimalStringAlignment extends StringDistance {   // --- py stmt 75
+    distance(s0, s1) {   // --- py stmt 76
+        if (s0 === null) {   // --- py stmt 77
+            throw new TypeError("Argument s0 is null.");   // --- py stmt 78
+        }
+        if (s1 === null) {   // --- py stmt 79
+            throw new TypeError("Argument s1 is null.");   // --- py stmt 80
+        }
+        if (s0 === s1) {   // --- py stmt 81
+            return 0.0;   // --- py stmt 82
+        }
+
+        let n = s0.length;   // --- py stmt 83
+        let m = s1.length;   // --- py stmt 83
+        if (n === 0) {   // --- py stmt 84
+            return 1.0 * n;   // --- py stmt 85
+        }
+        if (m === 0) {   // --- py stmt 86
+            return 1.0 * m;   // --- py stmt 87
+        }
+
+        let d = [];   // --- py stmt 88
+        for (let i = 0; i < n + 2; i++) {   // --- py stmt 88
+            d.push([]);   // --- py stmt 88
+            for (let j = 0; j < m + 2; j++) {   // --- py stmt 88
+                d[i].push(0);   // --- py stmt 88
+            }
+        }
+        for (let i = 0; i < n + 1; i++) {   // --- py stmt 89
+            d[i][0] = i;   // --- py stmt 90
+        }
+        for (let j = 0; j < m + 1; j++) {   // --- py stmt 91
+            d[0][j] = j;   // --- py stmt 92
+        }
+
+        for (let i = 1; i < n + 1; i++) {   // --- py stmt 93
+            for (let j = 1; j < m + 1; j++) {   // --- py stmt 94
+                let cost = 1;   // --- py stmt 95
+                if (s0[i - 1] === s1[j - 1]) {   // --- py stmt 96
+                    cost = 0;   // --- py stmt 97
+                }
+                d[i][j] = Math.min(d[i - 1][j - 1] + cost, d[i][j - 1] + 1, d[i - 1][j] + 1);   // --- py stmt 98
+
+                if (i > 1 && j > 1 && s0[i - 1] === s1[j - 2] && s0[i - 2] === s1[j - 1]) {   // --- py stmt 99
+                    d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + cost);   // --- py stmt 100
+                }
+            }
+        }
+
+        return d[n][m];   // --- py stmt 101
+    }
+}
+
+
+
+
+class OverlapCoefficient {   // --- py stmt 102
+    constructor(k = 3) {   // --- py stmt 103
+        this.k = k;   // --- py stmt 104
+    }
+    distance(s0, s1) {   // --- py stmt 105
+        return 1.0 - this.similarity(s0, s1);   // --- py stmt 106
+    }
+    similarity(s0, s1) {   // --- py stmt 107
+        if (s0 === null) {   // --- py stmt 108
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 109
+        }
+        if (s1 === null) {   // --- py stmt 110
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 111
+        }
+        if (s0 === s1) {   // --- py stmt 112
+            return 1.0;   // --- py stmt 113
+        }
+        let union = new Set();   // --- py stmt 114
+        let profile0 = this.get_profile(s0);   // --- py stmt 115
+        let profile1 = this.get_profile(s1);   // --- py stmt 115
+        for (let k of profile0.keys()) {   // --- py stmt 116
+            union.add(k);   // --- py stmt 117
+        }
+        for (let k of profile1.keys()) {   // --- py stmt 118
+            union.add(k);   // --- py stmt 119
+        }
+        let inter = Math.floor(profile0.size + profile1.size - union.size);   // --- py stmt 120
+        return inter / Math.min(profile0.size, profile1.size);   // --- py stmt 121
+    }
+}
+
+
+
+
+class QGram {   // --- py stmt 122
+    constructor(k = 3) {   // --- py stmt 123
+        super();   // --- py stmt 124
+        this.k = k;   // --- py stmt 124
+    }
+    distance(s0, s1) {   // --- py stmt 125
+        if (s0 === null) {   // --- py stmt 126
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 127
+        }
+        if (s1 === null) {   // --- py stmt 128
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 129
+        }
+        if (s0 === s1) {   // --- py stmt 130
+            return 0.0;   // --- py stmt 131
+        }
+        let profile0 = this.get_profile(s0);   // --- py stmt 132
+        let profile1 = this.get_profile(s1);   // --- py stmt 133
+        return this.distance_profile(profile0, profile1);   // --- py stmt 134
+    }
+    static distance_profile(profile0, profile1) {   // --- py stmt 135, py stmt 136
+        let union = new Set();   // --- py stmt 137
+        for (let k of profile0.keys()) {   // --- py stmt 138
+            union.add(k);   // --- py stmt 139
+        }
+        for (let k of profile1.keys()) {   // --- py stmt 140
+            union.add(k);   // --- py stmt 141
+        }
+        let agg = 0;   // --- py stmt 142
+        for (let k of union) {   // --- py stmt 143
+            let v0 = 0, v1 = 0;   // --- py stmt 144
+            if (profile0.get(k) !== null) {   // --- py stmt 145
+                v0 = parseInt(profile0.get(k));   // --- py stmt 146
+            }
+            if (profile1.get(k) !== null) {   // --- py stmt 147
+                v1 = parseInt(profile1.get(k));   // --- py stmt 148
+            }
+            agg += Math.abs(v0 - v1);   // --- py stmt 149
+        }
+        return agg;   // --- py stmt 150
+    }
+}
+
+

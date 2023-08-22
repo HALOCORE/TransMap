@@ -1,0 +1,84 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "[5,2,5,18]",
+    "src_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"TypeError: count.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"A\",2,[\"N\",\"-47\"],[\"N\",\"72\"]],\"n\":[\"N\",\"1\"],\"count\":[\"DICT\",[[\"N\",\"-47\"],[\"N\",\"1\"]]],\"i\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[5,2,5,18]",
+    "src_cov_lines": [
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"TypeError: count.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"A\",2,[\"N\",\"-47\"],[\"N\",\"72\"]],\"n\":[\"N\",\"1\"],\"count\":[\"DICT\",[[\"N\",\"-47\"],[\"N\",\"1\"]]],\"i\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,2,5,18]",
+    "src_cov_lines": [
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"TypeError: count.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"A\",2,[\"N\",\"-47\"],[\"N\",\"72\"]],\"n\":[\"N\",\"1\"],\"count\":[\"DICT\",[[\"N\",\"-47\"],[\"N\",\"1\"]]],\"i\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,2,5,18]",
+    "src_cov_lines": [
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"TypeError: count.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"A\",2,[\"N\",\"-47\"],[\"N\",\"72\"]],\"n\":[\"N\",\"1\"],\"count\":[\"DICT\",[[\"N\",\"-47\"],[\"N\",\"1\"]]],\"i\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

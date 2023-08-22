@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "  for (let i = 0; i < k; i++) console.log(arr[i]);",
+    "replacement": "  for (let i = 0; i < k; i++) console.log(arr[i], end = \" \");"
+  }
+]

@@ -1,0 +1,48 @@
+
+### Python
+def f_gold(m, n, a):   # --- py stmt 1
+  k = 0   # --- py stmt 2
+  l = 0   # --- py stmt 3
+  stk =[]   # --- py stmt 4
+  while(k <= m and l <= n):   # --- py stmt 5
+    for i in range(l, n + 1): stk.append(a[k][i])   # --- py stmt 6
+    k += 1   # --- py stmt 7
+    for i in range(k, m + 1): stk.append(a[i][n])   # --- py stmt 8
+    n -= 1   # --- py stmt 9
+    if(k <= m):   # --- py stmt 10
+      for i in range(n, l - 1, - 1): stk.append(a[m][i])   # --- py stmt 11
+      m -= 1   # --- py stmt 12
+    if(l <= n):   # --- py stmt 13
+      for i in range(m, k - 1, - 1): stk.append(a[i][l])   # --- py stmt 14
+      l += 1   # --- py stmt 15
+  while len(stk)!= 0:   # --- py stmt 16
+    print(str(stk[- 1]), end = " ")   # --- py stmt 17
+    stk.pop()   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(m, n, a) {   // --- py stmt 1
+  var k = 0, l = 0;   // --- py stmt 2, py stmt 3
+  var stk = [];   // --- py stmt 4
+  while(k <= m && l <= n) {   // --- py stmt 5
+    for(var i = l;i <= n;i++) stk.push(a[k][i]);   // --- py stmt 6
+    k++;   // --- py stmt 7
+    for(var i = k;i <= m;i++) stk.push(a[i][n]);   // --- py stmt 8
+    n--;   // --- py stmt 9
+    if(k <= m) {   // --- py stmt 10
+      for(var i = n;i > l - 1;i--) stk.push(a[m][i]);   // --- py stmt 11
+      m--;   // --- py stmt 12
+    }
+    if(l <= n) {   // --- py stmt 13
+      for(var i = m;i >= k - 1;i--) stk.push(a[i][l]);   // --- py stmt 14
+      l++;   // --- py stmt 15
+    }
+  }
+  while(stk.length != 0) {   // --- py stmt 16
+    console.log(stk[stk.length - 1].toString());   // --- py stmt 17
+    stk.pop();   // --- py stmt 18
+  }
+}
+
+
+

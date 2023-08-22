@@ -1,0 +1,334 @@
+{
+  "src_anno_stmts": [
+    [
+      "### wordPatternMatch",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(pattern: str, s: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def dfs(i, j):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if i == m and j == n:",
+      [
+        4
+      ]
+    ],
+    [
+      "            return True",
+      [
+        5
+      ]
+    ],
+    [
+      "        if i == m or j == n or n - j < m - i:",
+      [
+        6
+      ]
+    ],
+    [
+      "            return False",
+      [
+        7
+      ]
+    ],
+    [
+      "        for k in range(j, n):",
+      [
+        8
+      ]
+    ],
+    [
+      "            t = s[j : k + 1]",
+      [
+        9
+      ]
+    ],
+    [
+      "            if d.get(pattern[i]) == t:",
+      [
+        10
+      ]
+    ],
+    [
+      "                if dfs(i + 1, k + 1):",
+      [
+        11
+      ]
+    ],
+    [
+      "                    return True",
+      [
+        12
+      ]
+    ],
+    [
+      "            if pattern[i] not in d and t not in vis:",
+      [
+        13
+      ]
+    ],
+    [
+      "                d[pattern[i]] = t",
+      [
+        14
+      ]
+    ],
+    [
+      "                vis.add(t)",
+      [
+        15
+      ]
+    ],
+    [
+      "                if dfs(i + 1, k + 1):",
+      [
+        16
+      ]
+    ],
+    [
+      "                    return True",
+      [
+        17
+      ]
+    ],
+    [
+      "                d.pop(pattern[i])",
+      [
+        18
+      ]
+    ],
+    [
+      "                vis.remove(t)",
+      [
+        19
+      ]
+    ],
+    [
+      "        return False",
+      [
+        20
+      ]
+    ],
+    [
+      "    m, n = len(pattern), len(s)",
+      [
+        21
+      ]
+    ],
+    [
+      "    d = {}",
+      [
+        22
+      ]
+    ],
+    [
+      "    vis = set()",
+      [
+        23
+      ]
+    ],
+    [
+      "    return dfs(0, 0)",
+      [
+        24
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (pattern, s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs (i, j) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (i == m && j == n) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (i == m || j == n || n - j < m - i) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let k = j; k < n; k++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            let t = s.substring(j, k + 1);",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (d.get(pattern[i]) == t) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                if (dfs(i + 1, k + 1)) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                    return true;",
+      [
+        12
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (!d.hasOwnProperty(pattern[i]) && !vis.has(t)) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                d[pattern[i]] = t;",
+      [
+        14
+      ]
+    ],
+    [
+      "                vis.add(t);",
+      [
+        15
+      ]
+    ],
+    [
+      "                if (dfs(i + 1, k + 1)) {",
+      [
+        16
+      ]
+    ],
+    [
+      "                    return true;",
+      [
+        17
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "                delete d[pattern[i]];",
+      [
+        18
+      ]
+    ],
+    [
+      "                vis.delete(t);",
+      [
+        19
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return false;",
+      [
+        20
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let m = pattern.length;",
+      [
+        21
+      ]
+    ],
+    [
+      "    let n = s.length;",
+      [
+        21
+      ]
+    ],
+    [
+      "    let d = {};",
+      [
+        22
+      ]
+    ],
+    [
+      "    let vis = new Set();",
+      [
+        23
+      ]
+    ],
+    [
+      "    return dfs(0, 0);",
+      [
+        24
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

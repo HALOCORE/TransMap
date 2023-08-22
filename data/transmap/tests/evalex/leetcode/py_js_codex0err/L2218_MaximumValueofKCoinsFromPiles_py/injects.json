@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 6,
+    "content": "        return [0].concat(p.map(\n            (sum => value =>\n                sum += value)(0)));",
+    "replacement": "        return p.reduce(function (acc, curr) {\n            return acc + curr;\n        }, 0);"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    for (var s of presum) {",
+    "replacement": "    for (var s = 0; s < presum.length; s++) {"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "            for (var idx = 0; idx < s.length; idx++) {",
+    "replacement": "            for (var idx = 0; idx < presum[s].length; idx++) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "                    dp[j] = Math.max(dp[j], dp[j - idx] + s[idx]);",
+    "replacement": "                    dp[j] = Math.max(dp[j], dp[j - idx] + presum[s][idx]);"
+  }
+]

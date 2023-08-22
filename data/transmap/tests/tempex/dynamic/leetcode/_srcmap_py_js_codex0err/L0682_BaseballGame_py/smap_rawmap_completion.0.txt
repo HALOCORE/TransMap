@@ -1,0 +1,40 @@
+
+### Python
+### calPoints 
+from typing import *   # --- py stmt 1
+def f_gold(ops: List[str]) -> int:   # --- py stmt 2
+    stk = []   # --- py stmt 3
+    for op in ops:   # --- py stmt 4
+        if op == '+':   # --- py stmt 5
+            stk.append(stk[-1] + stk[-2])   # --- py stmt 6
+        elif op == 'D':   # --- py stmt 7
+            stk.append(stk[-1] << 1)   # --- py stmt 8
+        elif op == 'C':   # --- py stmt 9
+            stk.pop()   # --- py stmt 10
+        else:   # --- py stmt 11
+            stk.append(int(op))   # --- py stmt 12
+    return sum(stk)   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(ops) {   // --- py stmt 2
+    let stk = [];   // --- py stmt 3
+    for (let op of ops) {   // --- py stmt 4
+        if (op == '+') {   // --- py stmt 5
+            stk.push(stk[stk.length - 1] + stk[stk.length - 2]);   // --- py stmt 6
+        }
+        else if (op == 'D') {   // --- py stmt 7
+            stk.push(stk[stk.length - 1] << 1);   // --- py stmt 8
+        }
+        else if (op == 'C') {   // --- py stmt 9
+            stk.pop();   // --- py stmt 10
+        }
+        else {   // --- py stmt 11
+            stk.push(parseInt(op));   // --- py stmt 12
+        }
+    }
+    return stk.reduce((a, b) => a + b);   // --- py stmt 13
+}
+
+
+

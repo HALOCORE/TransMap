@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 3,
+    "content": "    var f = nums[0];\n    var res = f;",
+    "replacement": "    var res = f = nums[0];"
+  }
+]

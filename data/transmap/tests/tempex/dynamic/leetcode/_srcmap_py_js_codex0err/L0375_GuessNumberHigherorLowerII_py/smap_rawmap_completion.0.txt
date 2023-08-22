@@ -1,0 +1,40 @@
+
+### Python
+### getMoneyAmount 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(n: int) -> int:   # --- py stmt 4
+    dp = [[0] * (n + 10) for _ in range(n + 10)]   # --- py stmt 5
+    for l in range(2, n + 1):   # --- py stmt 6
+        for i in range(1, n - l + 2):   # --- py stmt 7
+            j = i + l - 1   # --- py stmt 8
+            dp[i][j] = float('inf')   # --- py stmt 9
+            for k in range(i, j + 1):   # --- py stmt 10
+                t = max(dp[i][k - 1], dp[k + 1][j]) + k   # --- py stmt 11
+                dp[i][j] = min(dp[i][j], t)   # --- py stmt 12
+    return dp[1][n]   # --- py stmt 13
+
+### JavaScript
+"use strict";
+
+function f_gold(n) {   // --- py stmt 4
+    var dp = [[0] * (n + 10)];   // --- py stmt 5
+    for (var _i = 0; _i < n + 10; _i++) {   // --- py stmt 5
+        dp[_i] = [0];   // --- py stmt 5
+    }
+    for (var l = 2; l < n + 1; l++) {   // --- py stmt 6
+        for (var i = 1; i < n - l + 2; i++) {   // --- py stmt 7
+            var j = i + l - 1;   // --- py stmt 8
+            dp[i][j] = Number.POSITIVE_INFINITY;   // --- py stmt 9
+            for (var k = i; k < j + 1; k++) {   // --- py stmt 10
+                var t = Math.max(dp[i][k - 1], dp[k + 1][j]) + k;   // --- py stmt 11
+                dp[i][j] = Math.min(dp[i][j], t);   // --- py stmt 12
+            }
+        }
+    }
+    return dp[1][n];   // --- py stmt 13
+}
+
+
+

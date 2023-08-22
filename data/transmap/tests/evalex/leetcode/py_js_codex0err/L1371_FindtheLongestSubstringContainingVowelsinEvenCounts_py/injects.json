@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 0,
+    "line_end": 1,
+    "content": "const f_gold = (s) => {",
+    "replacement": "const findTheLongestSubstring = (s) => {"
+  },
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let pos = new Array(32).fill(Infinity);",
+    "replacement": "    let pos = [Infinity] * 32;"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    let state = 0, ans = 0;",
+    "replacement": "    let state = ans = 0;"
+  }
+]

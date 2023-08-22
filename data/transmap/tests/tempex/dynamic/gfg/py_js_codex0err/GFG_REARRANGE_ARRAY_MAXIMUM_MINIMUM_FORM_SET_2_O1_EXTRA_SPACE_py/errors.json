@@ -1,0 +1,4 @@
+{
+  "0": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var max_idx = n - 1, min_idx = 0;\n  var max_idx = n - 1;",
+  "1": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var max_idx = n - 1, min_idx = 0;\n  var max_idx = n - 1;"
+}

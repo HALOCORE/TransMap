@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[2,2,2,15]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: string.split is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"string\":[\"A\",8,[\"S\",1,\"o\"],[\"S\",1,\"g\"],[\"S\",1,\"d\"],[\"S\",1,\"R\"],[\"S\",1,\"M\"],[\"S\",1,\"E\"],[\"S\",1,\"C\"],[\"S\",1,\"A\"]]}",
+      ""
+    ]
+  }
+]

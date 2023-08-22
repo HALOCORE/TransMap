@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[3,4,3,26]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"triplets\":[\"A\",2,[\"A\",3,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"5\"]],[\"A\",3,[\"N\",\"4\"],[\"N\",\"5\"],[\"N\",\"6\"]]],\"target\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"5\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,26]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"triplets\":[\"A\",2,[\"A\",3,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"5\"]],[\"A\",3,[\"N\",\"4\"],[\"N\",\"5\"],[\"N\",\"6\"]]],\"target\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"5\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,26]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"triplets\":[\"A\",2,[\"A\",3,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"5\"]],[\"A\",3,[\"N\",\"4\"],[\"N\",\"5\"],[\"N\",\"6\"]]],\"target\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"5\"]]}",
+      ""
+    ]
+  }
+]

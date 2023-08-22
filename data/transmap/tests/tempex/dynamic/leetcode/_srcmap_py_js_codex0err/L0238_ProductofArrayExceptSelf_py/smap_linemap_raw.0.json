@@ -1,0 +1,160 @@
+{
+  "src_anno_stmts": [
+    [
+      "### productExceptSelf",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(nums)",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = [1] * n",
+      [
+        4
+      ]
+    ],
+    [
+      "    left = right = 1",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans[i] = left",
+      [
+        7
+      ]
+    ],
+    [
+      "        left *= nums[i]",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i in range(n - 1, -1, -1):",
+      [
+        9
+      ]
+    ],
+    [
+      "        ans[i] *= right",
+      [
+        10
+      ]
+    ],
+    [
+      "        right *= nums[i]",
+      [
+        11
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let n = nums.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let ans = Array(n).fill(1);",
+      [
+        4
+      ]
+    ],
+    [
+      "    let left = right = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans[i] = left;",
+      [
+        7
+      ]
+    ],
+    [
+      "        left *= nums[i];",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let i = n - 1; i >= 0; i--) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        ans[i] *= right;",
+      [
+        10
+      ]
+    ],
+    [
+      "        right *= nums[i];",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

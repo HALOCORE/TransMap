@@ -1,0 +1,24 @@
+
+### Python
+### averageWaitingTime 
+from typing import *   # --- py stmt 1
+def f_gold(customers: List[List[int]]) -> float:   # --- py stmt 2
+    f = total_waiting_time = 0   # --- py stmt 3
+    for arrival, time in customers:   # --- py stmt 4
+        f = max(arrival, f) + time   # --- py stmt 5
+        total_waiting_time += f - arrival   # --- py stmt 6
+    return total_waiting_time / len(customers)   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(customers) {   // --- py stmt 2
+    var f = total_waiting_time = 0;   // --- py stmt 3
+    for (var i = 0; i < customers.length; i++) {   // --- py stmt 4
+        var arrival = customers[i][0];   // --- py stmt 4
+        var time = customers[i][1];   // --- py stmt 4
+        f = Math.max(arrival, f) + time;   // --- py stmt 5
+        total_waiting_time += f - arrival;   // --- py stmt 6
+    }
+    return total_waiting_time / customers.length;   // --- py stmt 7
+}
+

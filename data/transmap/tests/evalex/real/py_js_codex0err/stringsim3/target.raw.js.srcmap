@@ -1,0 +1,427 @@
+### Python
+class StringDistance:   # --- py stmt 1
+
+    def distance(self, s0, s1):   # --- py stmt 2
+        raise NotImplementedError()   # --- py stmt 3
+
+class NormalizedStringDistance(StringDistance):   # --- py stmt 4
+
+    def distance(self, s0, s1):   # --- py stmt 5
+        raise NotImplementedError()   # --- py stmt 6
+
+class MetricStringDistance(StringDistance):   # --- py stmt 7
+
+    def distance(self, s0, s1):   # --- py stmt 8
+        raise NotImplementedError()   # --- py stmt 9
+
+class SIFT4Options(MetricStringDistance):   # --- py stmt 10
+    def __init__(self, options=None):   # --- py stmt 11
+        self.options = {   # --- py stmt 12
+            'maxdistance': 0,   # --- py stmt 13
+            'tokenizer': lambda x: [i for i in x],   # --- py stmt 14
+            'tokenmatcher': lambda t1, t2: t1 == t2,   # --- py stmt 15
+            'matchingevaluator': lambda t1, t2: 1,   # --- py stmt 16
+            'locallengthevaluator': lambda x: x,   # --- py stmt 17
+            'transpositioncostevaluator': lambda c1, c2: 1,   # --- py stmt 18
+            'transpositionsevaluator': lambda lcss, trans: lcss - trans   # --- py stmt 19
+        }   # --- py stmt 20
+        otheroptions = {   # --- py stmt 21
+            'tokenizer': {   # --- py stmt 22
+                'ngram': self.ngramtokenizer,   # --- py stmt 23
+                'wordsplit': self.wordsplittokenizer,   # --- py stmt 24
+                'characterfrequency': self.characterfrequencytokenizer   # --- py stmt 25
+            },   # --- py stmt 26
+            'tokematcher': {'sift4tokenmatcher': self.sift4tokenmatcher},   # --- py stmt 27
+            'matchingevaluator': {'sift4matchingevaluator': self.sift4matchingevaluator},   # --- py stmt 28
+            'locallengthevaluator': {   # --- py stmt 29
+                'rewardlengthevaluator': self.rewardlengthevaluator,   # --- py stmt 30
+                'rewardlengthevaluator2': self.rewardlengthevaluator2   # --- py stmt 31
+            },   # --- py stmt 32
+            'transpositioncostevaluator': {'longertranspositionsaremorecostly':self.longertranspositionsaremorecostly},   # --- py stmt 33
+            'transpositionsevaluator': {}   # --- py stmt 34
+        }   # --- py stmt 35
+        if isinstance(options, dict):   # --- py stmt 36
+            for k, v in options.items():   # --- py stmt 37
+                if k in self.options.keys():   # --- py stmt 38
+                    if k == 'maxdistance':   # --- py stmt 39
+                        if isinstance(v, int):   # --- py stmt 40
+                            self.options[k] = v   # --- py stmt 41
+                        else:   # --- py stmt 42
+                            raise ValueError("Option maxdistance should be int")   # --- py stmt 43
+                    else:   # --- py stmt 44
+                        if callable(v):   # --- py stmt 45
+                            self.options[k] = v   # --- py stmt 46
+                        else:   # --- py stmt 47
+                            if v in otheroptions[k].keys():   # --- py stmt 48
+                                self.options[k] = otheroptions[k][v]   # --- py stmt 49
+                            else:   # --- py stmt 50
+                                msg = "Option {} should be callable or one of [{}]".format(k, ', '.join(otheroptions[k].keys()))   # --- py stmt 51
+                                raise ValueError(msg)   # --- py stmt 52
+                else:   # --- py stmt 53
+                    raise ValueError("Option {} not recognized.".format(k))   # --- py stmt 54
+        elif options is not None:   # --- py stmt 55
+            raise ValueError("options should be a dictionary")   # --- py stmt 56
+        self.maxdistance = self.options['maxdistance']   # --- py stmt 57
+        self.tokenizer = self.options['tokenizer']   # --- py stmt 58
+        self.tokenmatcher = self.options['tokenmatcher']   # --- py stmt 59
+        self.matchingevaluator = self.options['matchingevaluator']   # --- py stmt 60
+        self.locallengthevaluator = self.options['locallengthevaluator']   # --- py stmt 61
+        self.transpositioncostevaluator = self.options['transpositioncostevaluator']   # --- py stmt 62
+        self.transpositionsevaluator = self.options['transpositionsevaluator']   # --- py stmt 63
+
+
+    # tokenizers:   # --- py stmt 64
+    @staticmethod   # --- py stmt 65
+    def ngramtokenizer(s, n):   # --- py stmt 66
+        result = []   # --- py stmt 67
+        if not s:   # --- py stmt 68
+            return result   # --- py stmt 69
+        for i in range(len(s) - n - 1):   # --- py stmt 70
+            result.append(s[i:(i + n)])   # --- py stmt 71
+        return result   # --- py stmt 72
+
+    @staticmethod   # --- py stmt 73
+    def wordsplittokenizer(s):   # --- py stmt 74
+        if not s:   # --- py stmt 75
+            return []   # --- py stmt 76
+        return s.split()   # --- py stmt 77
+
+    @staticmethod   # --- py stmt 78
+    def characterfrequencytokenizer(s):   # --- py stmt 79
+        letters = [i for i in 'abcdefghijklmnopqrstuvwxyz']   # --- py stmt 80
+        return [s.lower().count(x) for x in letters]   # --- py stmt 81
+
+    # tokenMatchers:   # --- py stmt 82
+    @staticmethod   # --- py stmt 83
+    def sift4tokenmatcher(t1, t2):   # --- py stmt 84
+        similarity = 1 - SIFT4().distance(t1, t2, 5) / max(len(t1), len(t2))   # --- py stmt 85
+        return similarity > 0.7   # --- py stmt 86
+
+    # matchingEvaluators:   # --- py stmt 87
+    @staticmethod   # --- py stmt 88
+    def sift4matchingevaluator(t1, t2):   # --- py stmt 89
+        similarity = 1 - SIFT4().distance(t1, t2, 5) / max(len(t1), len(t2))   # --- py stmt 90
+        return similarity   # --- py stmt 91
+
+    # localLengthEvaluators:   # --- py stmt 92
+    @staticmethod   # --- py stmt 93
+    def rewardlengthevaluator(l):   # --- py stmt 94
+        if l < 1:   # --- py stmt 95
+            return l   # --- py stmt 96
+        return l - 1 / (l + 1)   # --- py stmt 97
+
+    @staticmethod   # --- py stmt 98
+    def rewardlengthevaluator2(l):   # --- py stmt 99
+        return pow(l, 1.5)   # --- py stmt 100
+
+    # transpositionCostEvaluators:   # --- py stmt 101
+    @staticmethod   # --- py stmt 102
+    def longertranspositionsaremorecostly(c1, c2):   # --- py stmt 103
+        return abs(c2 - c1) / 9 + 1   # --- py stmt 104
+
+
+
+class SIFT4:   # --- py stmt 105
+    # As described in https://siderite.dev/blog/super-fast-and-accurate-string-distance.html/   # --- py stmt 106
+    def distance(self, s1, s2, maxoffset=5, options=None):   # --- py stmt 107
+        options = SIFT4Options(options)   # --- py stmt 108
+        t1, t2 = options.tokenizer(s1), options.tokenizer(s2)   # --- py stmt 109
+        l1, l2 = len(t1), len(t2)   # --- py stmt 110
+        if l1 == 0:   # --- py stmt 111
+            return l2   # --- py stmt 112
+        if l2 == 0:   # --- py stmt 113
+            return l1   # --- py stmt 114
+
+
+        c1, c2, lcss, local_cs, trans, offset_arr = 0, 0, 0, 0, 0, []   # --- py stmt 115
+        while (c1 < l1) and (c2 < l2):   # --- py stmt 116
+            if options.tokenmatcher(t1[c1], t2[c2]):   # --- py stmt 117
+                local_cs += options.matchingevaluator(t1[c1], t2[c2])   # --- py stmt 118
+                isTrans = False   # --- py stmt 119
+                i = 0   # --- py stmt 120
+                while i < len(offset_arr):   # --- py stmt 121
+                    ofs = offset_arr[i]   # --- py stmt 122
+                    if (c1 <= ofs['c1']) or (c2 <= ofs['c2']):   # --- py stmt 123
+                        isTrans = abs(c2 - c1) >= abs(ofs['c2'] - ofs['c1'])   # --- py stmt 124
+                        if isTrans:   # --- py stmt 125
+                            trans += options.transpositioncostevaluator(c1, c2)   # --- py stmt 126
+                        else:   # --- py stmt 127
+                            if not ofs['trans']:   # --- py stmt 128
+                                ofs['trans'] = True   # --- py stmt 129
+                                trans += options.transpositioncostevaluator(ofs['c1'], ofs['c2'])   # --- py stmt 130
+                        break   # --- py stmt 131
+                    else:   # --- py stmt 132
+                        if (c1 > ofs['c2']) and (c2 > ofs['c1']):   # --- py stmt 133
+                            offset_arr.pop(i)   # --- py stmt 134
+                        else:   # --- py stmt 135
+                            i += 1   # --- py stmt 136
+                offset_arr.append({'c1': c1, 'c2': c2, 'trans': isTrans})   # --- py stmt 137
+            else:   # --- py stmt 138
+                lcss += options.locallengthevaluator(local_cs)   # --- py stmt 139
+                local_cs = 0   # --- py stmt 140
+                if c1 != c2:   # --- py stmt 141
+                    c1 = c2 = min(c1, c2)   # --- py stmt 142
+                for i in range(maxoffset):   # --- py stmt 143
+                    if (c1 + i < l1) or (c2 + i < l2):   # --- py stmt 144
+                        if (c1 + i < l1) and options.tokenmatcher(t1[c1 + i], t2[c2]):   # --- py stmt 145
+                            c1 += i - 1   # --- py stmt 146
+                            c2 -= 1   # --- py stmt 147
+                            break   # --- py stmt 148
+                    if (c2 + i < l2) and options.tokenmatcher(t1[c1], t2[c2 + i]):   # --- py stmt 149
+                        c1 -= 1   # --- py stmt 150
+                        c2 += i - 1   # --- py stmt 151
+                        break   # --- py stmt 152
+            c1 += 1   # --- py stmt 153
+            c2 += 1   # --- py stmt 154
+            if options.maxdistance:   # --- py stmt 155
+                temporarydistance = options.locallengthevaluator(max(c1, c2)) - options.transpositionsevaluator(lcss, trans)   # --- py stmt 156
+                if temporarydistance >= options.maxdistance:   # --- py stmt 157
+                    return round(temporarydistance)   # --- py stmt 158
+            if (c1 >= l1) or (c2 >= l2):   # --- py stmt 159
+                lcss += options.locallengthevaluator(local_cs)   # --- py stmt 160
+                local_cs = 0   # --- py stmt 161
+                c1 = c2 = min(c1, c2)   # --- py stmt 162
+        lcss += options.locallengthevaluator(local_cs)   # --- py stmt 163
+        return round(options.locallengthevaluator(max(l1, l2)) - options.transpositionsevaluator(lcss, trans))   # --- py stmt 164
+
+
+
+### JavaScript
+"use strict";
+
+class StringDistance {   // --- py stmt 1
+    distance(s0, s1) {   // --- py stmt 2
+        throw new Error("Not implemented");   // --- py stmt 3
+    }
+}
+
+class NormalizedStringDistance extends StringDistance {   // --- py stmt 4
+    distance(s0, s1) {   // --- py stmt 5
+        throw new Error("Not implemented");   // --- py stmt 6
+    }
+}
+
+class MetricStringDistance extends StringDistance {   // --- py stmt 7
+    distance(s0, s1) {   // --- py stmt 8
+        throw new Error("Not implemented");   // --- py stmt 9
+    }
+}
+
+
+class SIFT4Options {   // --- py stmt 10
+    constructor(options) {   // --- py stmt 11
+        this.options = {   // --- py stmt 12
+            'maxdistance': 0,   // --- py stmt 13
+            'tokenizer': x => [i for i in x],   // --- py stmt 14
+            'tokenmatcher': (t1, t2) => t1 == t2,   // --- py stmt 15
+            'matchingevaluator': (t1, t2) => 1,   // --- py stmt 16
+            'locallengthevaluator': x => x,   // --- py stmt 17
+            'transpositioncostevaluator': (c1, c2) => 1,   // --- py stmt 18
+            'transpositionsevaluator': (lcss, trans) => lcss - trans   // --- py stmt 19
+        };   // --- py stmt 20
+        let otheroptions = {   // --- py stmt 21
+            'tokenizer': {   // --- py stmt 22
+                'ngram': this.ngramtokenizer,   // --- py stmt 23
+                'wordsplit': this.wordsplittokenizer,   // --- py stmt 24
+                'characterfrequency': this.characterfrequencytokenizer   // --- py stmt 25
+            },   // --- py stmt 26
+            'tokematcher': {'sift4tokenmatcher': this.sift4tokenmatcher},   // --- py stmt 27
+            'matchingevaluator': {'sift4matchingevaluator': this.sift4matchingevaluator},   // --- py stmt 28
+            'locallengthevaluator': {   // --- py stmt 29
+                'rewardlengthevaluator': this.rewardlengthevaluator,   // --- py stmt 30
+                'rewardlengthevaluator2': this.rewardlengthevaluator2   // --- py stmt 31
+            },   // --- py stmt 32
+            'transpositioncostevaluator': {'longertranspositionsaremorecostly': this.longertranspositionsaremorecostly},   // --- py stmt 33
+            'transpositionsevaluator': {}   // --- py stmt 34
+        };   // --- py stmt 35
+        if (typeof options === 'object') {   // --- py stmt 36
+            for (let k in options) {   // --- py stmt 37
+                if (options.hasOwnProperty(k)) {   // --- py stmt 37
+                    let v = options[k];   // --- py stmt 37
+                    if (this.options.hasOwnProperty(k)) {   // --- py stmt 38
+                        if (k === 'maxdistance') {   // --- py stmt 39
+                            if (typeof v === 'number') {   // --- py stmt 40
+                                this.options[k] = v;   // --- py stmt 41
+                            }
+                            else {   // --- py stmt 42
+                                throw new ValueError("Option maxdistance should be int");   // --- py stmt 43
+                            }
+                        }
+                        else {   // --- py stmt 44
+                            if (typeof v === 'function') {   // --- py stmt 45
+                                this.options[k] = v;   // --- py stmt 46
+                            }
+                            else {   // --- py stmt 47
+                                if (otheroptions[k].hasOwnProperty(v)) {   // --- py stmt 48
+                                    this.options[k] = otheroptions[k][v];   // --- py stmt 49
+                                }
+                                else {   // --- py stmt 50
+                                    let msg = "Option " + k + " should be callable or one of [" + Object.keys(otheroptions[k]).join(', ') + "]";   // --- py stmt 51
+                                    throw new ValueError(msg);   // --- py stmt 52
+                                }
+                            }
+                        }
+                    }
+                    else {   // --- py stmt 53
+                        throw new ValueError("Option " + k + " not recognized.");   // --- py stmt 54
+                    }
+                }
+            }
+        }
+        else if (options !== null) {   // --- py stmt 55
+            throw new ValueError("options should be a dictionary");   // --- py stmt 56
+        }
+        this.maxdistance = this.options['maxdistance'];   // --- py stmt 57
+        this.tokenizer = this.options['tokenizer'];   // --- py stmt 58
+        this.tokenmatcher = this.options['tokenmatcher'];   // --- py stmt 59
+        this.matchingevaluator = this.options['matchingevaluator'];   // --- py stmt 60
+        this.locallengthevaluator = this.options['locallengthevaluator'];   // --- py stmt 61
+        this.transpositioncostevaluator = this.options['transpositioncostevaluator'];   // --- py stmt 62
+        this.transpositionsevaluator = this.options['transpositionsevaluator'];   // --- py stmt 63
+    }   // --- py stmt 11
+}   // --- py stmt 10
+
+
+
+
+
+function ngramtokenizer(s, n) {   // --- py stmt 66
+    var result = [];   // --- py stmt 67
+    if (!s) {   // --- py stmt 68
+        return result;   // --- py stmt 69
+    }
+    for (var i = 0; i < s.length - n - 1; i++) {   // --- py stmt 70
+        result.push(s.slice(i, i + n));   // --- py stmt 71
+    }
+    return result;   // --- py stmt 72
+}
+
+function wordsplittokenizer(s) {   // --- py stmt 74
+    if (!s) {   // --- py stmt 75
+        return [];   // --- py stmt 76
+    }
+    return s.split();   // --- py stmt 77
+}
+
+function characterfrequencytokenizer(s) {   // --- py stmt 79
+    var letters = [i for i in 'abcdefghijklmnopqrstuvwxyz'];   // --- py stmt 80
+    return [s.lower().count(x) for x in letters];   // --- py stmt 81
+}
+
+function sift4tokenmatcher(t1, t2) {   // --- py stmt 84
+    var similarity = 1 - SIFT4().distance(t1, t2, 5) / Math.max(t1.length, t2.length);   // --- py stmt 85
+    return similarity > 0.7;   // --- py stmt 86
+}
+
+function sift4matchingevaluator(t1, t2) {   // --- py stmt 89
+    var similarity = 1 - SIFT4().distance(t1, t2, 5) / Math.max(t1.length, t2.length);   // --- py stmt 90
+    return similarity;   // --- py stmt 91
+}
+
+function rewardlengthevaluator(l) {   // --- py stmt 94
+    if (l < 1) {   // --- py stmt 95
+        return l;   // --- py stmt 96
+    }
+    return l - 1 / (l + 1);   // --- py stmt 97
+}
+
+function rewardlengthevaluator2(l) {   // --- py stmt 99
+    return Math.pow(l, 1.5);   // --- py stmt 100
+}
+
+function longertranspositionsaremorecostly(c1, c2) {   // --- py stmt 103
+    return Math.abs(c2 - c1) / 9 + 1;   // --- py stmt 104
+}
+
+
+
+
+class SIFT4 {   // --- py stmt 105
+    // As described in https://siderite.dev/blog/super-fast-and-accurate-string-distance.html/   // --- py stmt 106
+    distance(s1, s2, maxoffset = 5, options = null) {   // --- py stmt 107
+        options = SIFT4Options(options);   // --- py stmt 108
+        let t1, t2 = options.tokenizer(s1), options.tokenizer(s2);   // --- py stmt 109
+        let l1, l2 = t1.length, t2.length;   // --- py stmt 110
+        if (l1 == 0) {   // --- py stmt 111
+            return l2;   // --- py stmt 112
+        }
+        if (l2 == 0) {   // --- py stmt 113
+            return l1;   // --- py stmt 114
+        }
+    }
+}
+
+
+
+
+var c1 = 0, c2 = 0, lcss = 0, local_cs = 0, trans = 0, offset_arr = [];   // --- py stmt 115
+while ((c1 < l1) && (c2 < l2)) {   // --- py stmt 116
+    if (options.tokenmatcher(t1[c1], t2[c2])) {   // --- py stmt 117
+        local_cs += options.matchingevaluator(t1[c1], t2[c2]);   // --- py stmt 118
+        var isTrans = false;   // --- py stmt 119
+        var i = 0;   // --- py stmt 120
+        while (i < offset_arr.length) {   // --- py stmt 121
+            var ofs = offset_arr[i];   // --- py stmt 122
+            if ((c1 <= ofs['c1']) || (c2 <= ofs['c2'])) {   // --- py stmt 123
+                isTrans = Math.abs(c2 - c1) >= Math.abs(ofs['c2'] - ofs['c1']);   // --- py stmt 124
+                if (isTrans) {   // --- py stmt 125
+                    trans += options.transpositioncostevaluator(c1, c2);   // --- py stmt 126
+                }
+                else {   // --- py stmt 127
+                    if (!ofs['trans']) {   // --- py stmt 128
+                        ofs['trans'] = true;   // --- py stmt 129
+                        trans += options.transpositioncostevaluator(ofs['c1'], ofs['c2']);   // --- py stmt 130
+                    }
+                }
+                break;   // --- py stmt 131
+            }
+            else {   // --- py stmt 132
+                if ((c1 > ofs['c2']) && (c2 > ofs['c1'])) {   // --- py stmt 133
+                    offset_arr.pop(i);   // --- py stmt 134
+                }
+                else {   // --- py stmt 135
+                    i += 1;   // --- py stmt 136
+                }
+            }
+        }
+        offset_arr.push({ 'c1': c1, 'c2': c2, 'trans': isTrans });   // --- py stmt 137
+    }
+    else {   // --- py stmt 138
+        lcss += options.locallengthevaluator(local_cs);   // --- py stmt 139
+        local_cs = 0;   // --- py stmt 140
+        if (c1 != c2) {   // --- py stmt 141
+            c1 = c2 = Math.min(c1, c2);   // --- py stmt 142
+        }
+        for (var i = 0; i < maxoffset; i++) {   // --- py stmt 143
+            if ((c1 + i < l1) || (c2 + i < l2)) {   // --- py stmt 144
+                if ((c1 + i < l1) && options.tokenmatcher(t1[c1 + i], t2[c2])) {   // --- py stmt 145
+                    c1 += i - 1;   // --- py stmt 146
+                    c2 -= 1;   // --- py stmt 147
+                    break;   // --- py stmt 148
+                }
+            }
+            if ((c2 + i < l2) && options.tokenmatcher(t1[c1], t2[c2 + i])) {   // --- py stmt 149
+                c1 -= 1;   // --- py stmt 150
+                c2 += i - 1;   // --- py stmt 151
+                break;   // --- py stmt 152
+            }
+        }
+    }
+    c1 += 1;   // --- py stmt 153
+    c2 += 1;   // --- py stmt 154
+    if (options.maxdistance) {   // --- py stmt 155
+        var temporarydistance = options.locallengthevaluator(Math.max(c1, c2)) - options.transpositionsevaluator(lcss, trans);   // --- py stmt 156
+        if (temporarydistance >= options.maxdistance) {   // --- py stmt 157
+            return Math.round(temporarydistance);   // --- py stmt 158
+        }
+    }
+    if ((c1 >= l1) || (c2 >= l2)) {   // --- py stmt 159
+        lcss += options.locallengthevaluator(local_cs);   // --- py stmt 160
+        local_cs = 0;   // --- py stmt 161
+        c1 = c2 = Math.min(c1, c2);   // --- py stmt 162
+    }
+}
+lcss += options.locallengthevaluator(local_cs);   // --- py stmt 163
+return Math.round(options.locallengthevaluator(Math.max(l1, l2)) - options.transpositionsevaluator(lcss, trans));   // --- py stmt 164
+
+

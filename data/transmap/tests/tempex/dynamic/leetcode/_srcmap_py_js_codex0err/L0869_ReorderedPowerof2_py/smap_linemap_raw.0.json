@@ -1,0 +1,198 @@
+{
+  "src_anno_stmts": [
+    [
+      "### reorderedPowerOf2",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def convert(n):",
+      [
+        3
+      ]
+    ],
+    [
+      "        counter = [0] * 10",
+      [
+        4
+      ]
+    ],
+    [
+      "        while n > 0:",
+      [
+        5
+      ]
+    ],
+    [
+      "            counter[n % 10] += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "            n //= 10",
+      [
+        7
+      ]
+    ],
+    [
+      "        return counter",
+      [
+        8
+      ]
+    ],
+    [
+      "    i, s = 1, convert(n)",
+      [
+        9
+      ]
+    ],
+    [
+      "    while i <= 10**9:",
+      [
+        10
+      ]
+    ],
+    [
+      "        if convert(i) == s:",
+      [
+        11
+      ]
+    ],
+    [
+      "            return True",
+      [
+        12
+      ]
+    ],
+    [
+      "        i <<= 1",
+      [
+        13
+      ]
+    ],
+    [
+      "    return False",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function convert(n) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var counter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];",
+      [
+        4
+      ]
+    ],
+    [
+      "        while (n > 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            counter[n % 10] += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "            n = Math.floor(n / 10);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return counter;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var i = 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    var s = convert(n);",
+      [
+        9
+      ]
+    ],
+    [
+      "    while (i <= 1000000000) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (convert(i) == s) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        i <<= 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

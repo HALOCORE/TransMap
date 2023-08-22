@@ -1,0 +1,88 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,18]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: x is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[6,8,8,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: x is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"2\"],\"mx\":[\"N\",\"99\"],\"a\":[\"N\",\"99\"],\"b\":[\"N\",\"99\"],\"x\":[\"N\",\"99\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,8,8,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: x is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"2\"],\"mx\":[\"N\",\"99\"],\"a\":[\"N\",\"99\"],\"b\":[\"N\",\"99\"],\"x\":[\"N\",\"99\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,8,8,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: x is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"2\"],\"mx\":[\"N\",\"99\"],\"a\":[\"N\",\"99\"],\"b\":[\"N\",\"99\"],\"x\":[\"N\",\"99\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### largestAltitude",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(gain: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = t = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for h in gain:",
+      [
+        4
+      ]
+    ],
+    [
+      "        t += h",
+      [
+        5
+      ]
+    ],
+    [
+      "        res = max(res, t)",
+      [
+        6
+      ]
+    ],
+    [
+      "    return res",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(gain) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = t = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var h of gain) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        t += h;",
+      [
+        5
+      ]
+    ],
+    [
+      "        res = Math.max(res, t);",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

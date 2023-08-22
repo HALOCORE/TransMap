@@ -1,0 +1,35 @@
+
+### Python
+### characterReplacement 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, k: int) -> int:   # --- py stmt 2
+    counter = [0] * 26   # --- py stmt 3
+    i = j = maxCnt = 0   # --- py stmt 4
+    while i < len(s):   # --- py stmt 5
+        counter[ord(s[i]) - ord('A')] += 1   # --- py stmt 6
+        maxCnt = max(maxCnt, counter[ord(s[i]) - ord('A')])   # --- py stmt 7
+        if i - j + 1 > maxCnt + k:   # --- py stmt 8
+            counter[ord(s[j]) - ord('A')] -= 1   # --- py stmt 9
+            j += 1   # --- py stmt 10
+        i += 1   # --- py stmt 11
+    return i - j   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(s, k) {   // --- py stmt 2
+    var counter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];   // --- py stmt 3
+    var i = j = maxCnt = 0;   // --- py stmt 4
+    while (i < s.length) {   // --- py stmt 5
+        counter[s.charCodeAt(i) - 65] += 1;   // --- py stmt 6
+        maxCnt = Math.max(maxCnt, counter[s.charCodeAt(i) - 65]);   // --- py stmt 7
+        if (i - j + 1 > maxCnt + k) {   // --- py stmt 8
+            counter[s.charCodeAt(j) - 65] -= 1;   // --- py stmt 9
+            j += 1;   // --- py stmt 10
+        }
+        i += 1;   // --- py stmt 11
+    }
+    return i - j;   // --- py stmt 12
+}
+
+
+

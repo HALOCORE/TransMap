@@ -1,0 +1,128 @@
+{
+  "src_anno_stmts": [
+    [
+      "### getLucky",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    s = ''.join([str(ord(c) - ord('a') + 1) for c in s])",
+      [
+        3
+      ]
+    ],
+    [
+      "    for _ in range(k):",
+      [
+        4
+      ]
+    ],
+    [
+      "        t = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "        for c in s:",
+      [
+        6
+      ]
+    ],
+    [
+      "            t += ord(c) - ord('0')",
+      [
+        7
+      ]
+    ],
+    [
+      "        s = str(t)",
+      [
+        8
+      ]
+    ],
+    [
+      "    return int(s)",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    s = s.split(\"\").map(function (c) { return String.fromCharCode(c.charCodeAt(0) - \"a\".charCodeAt(0) + 1); }).join(\"\");",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var _ = 0; _ < k; _++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var t = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var _i = 0, s_1 = s; _i < s_1.length; _i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            var c = s_1[_i];",
+      null
+    ],
+    [
+      "            t += c.charCodeAt(0) - \"0\".charCodeAt(0);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        s = String(t);",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return parseInt(s);",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

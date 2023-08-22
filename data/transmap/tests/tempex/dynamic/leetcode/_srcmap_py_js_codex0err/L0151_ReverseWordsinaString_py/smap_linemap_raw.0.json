@@ -1,0 +1,56 @@
+{
+  "src_anno_stmts": [
+    [
+      "### reverseWords",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    words = s.strip().split()",
+      [
+        3
+      ]
+    ],
+    [
+      "    return ' '.join(words[::-1])",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var words = s.trim().split();",
+      [
+        3
+      ]
+    ],
+    [
+      "    return words.reverse().join(' ');",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

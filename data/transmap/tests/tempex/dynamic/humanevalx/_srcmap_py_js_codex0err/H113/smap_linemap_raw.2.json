@@ -1,0 +1,86 @@
+{
+  "src_anno_stmts": [
+    [
+      "def odd_count(lst):",
+      [
+        1
+      ]
+    ],
+    [
+      "    res = []",
+      [
+        2
+      ]
+    ],
+    [
+      "    for arr in lst:",
+      [
+        3
+      ]
+    ],
+    [
+      "        n = sum(int(d)%2==1 for d in arr)",
+      [
+        4
+      ]
+    ],
+    [
+      "        res.append(\"the number of odd elements \" + str(n) + \"n the str\"+ str(n) +\"ng \"+ str(n) +\" of the \"+ str(n) +\"nput.\")",
+      [
+        5
+      ]
+    ],
+    [
+      "    return res",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function odd_count(lst) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    var res = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "    for (let arr of lst) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var n = arr.split('').filter(x => parseInt(x)%2==1).length;",
+      [
+        4
+      ]
+    ],
+    [
+      "        res.append(\"the number of odd elements \" + str(n) + \"n the str\" + str(n) + \"ng \" + str(n) + \" of the \" + str(n) + \"nput.\");",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

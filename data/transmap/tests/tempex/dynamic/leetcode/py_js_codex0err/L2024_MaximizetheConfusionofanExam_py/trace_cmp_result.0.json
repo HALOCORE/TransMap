@@ -1,0 +1,106 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[14,4,14,40]",
+    "src_cov_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13,
+      14
+    ],
+    "tar_cov_lines": [
+      2,
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: r is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"k\":[\"N\",\"1\"],\"get\":\"UNKNOWN\",\"answerKey\":[\"S\",4,\"TFFT\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,8,12,26]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: r is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"c\":[\"S\",1,\"T\"],\"k\":[\"N\",\"2\"],\"answerKey\":[\"S\",4,\"TTFF\"],\"l\":[\"N\",\"-1\"],\"r\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,8,12,26]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: r is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"c\":[\"S\",1,\"T\"],\"k\":[\"N\",\"2\"],\"answerKey\":[\"S\",4,\"TTFF\"],\"l\":[\"N\",\"-1\"],\"r\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,8,12,26]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: r is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"c\":[\"S\",1,\"T\"],\"k\":[\"N\",\"2\"],\"answerKey\":[\"S\",4,\"TTFF\"],\"l\":[\"N\",\"-1\"],\"r\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,8,12,26]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: r is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"c\":[\"S\",1,\"T\"],\"k\":[\"N\",\"2\"],\"answerKey\":[\"S\",4,\"TTFF\"],\"l\":[\"N\",\"-1\"],\"r\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  }
+]

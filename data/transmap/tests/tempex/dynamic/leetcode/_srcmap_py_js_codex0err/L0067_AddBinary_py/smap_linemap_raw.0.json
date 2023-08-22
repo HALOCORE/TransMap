@@ -1,0 +1,44 @@
+{
+  "src_anno_stmts": [
+    [
+      "### addBinary",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(a: str, b: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return bin(int(a, 2) + int(b, 2))[2:]",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(a, b) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return (a + b).toString(2);",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

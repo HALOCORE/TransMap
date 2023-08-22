@@ -1,0 +1,197 @@
+{
+  "src_anno_stmts": [
+    [
+      "### thirdMax",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    m1 = m2 = m3 = float('-inf')",
+      [
+        5
+      ]
+    ],
+    [
+      "    for num in nums:",
+      [
+        6
+      ]
+    ],
+    [
+      "        if num in [m1, m2, m3]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            continue",
+      [
+        8
+      ]
+    ],
+    [
+      "        if num > m1:",
+      [
+        9
+      ]
+    ],
+    [
+      "            m3, m2, m1 = m2, m1, num",
+      [
+        10
+      ]
+    ],
+    [
+      "        elif num > m2:",
+      [
+        11
+      ]
+    ],
+    [
+      "            m3, m2 = m2, num",
+      [
+        12
+      ]
+    ],
+    [
+      "        elif num > m3:",
+      [
+        13
+      ]
+    ],
+    [
+      "            m3 = num",
+      [
+        14
+      ]
+    ],
+    [
+      "    return m3 if m3 != float('-inf') else m1",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var m1 = m2 = m3 = -Infinity;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var num of nums) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if ([m1, m2, m3].includes(num)) continue;",
+      [
+        7,
+        8
+      ]
+    ],
+    [
+      "        if (num > m1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            m3 = m2;",
+      [
+        10
+      ]
+    ],
+    [
+      "            m2 = m1;",
+      [
+        10
+      ]
+    ],
+    [
+      "            m1 = num;",
+      [
+        10
+      ]
+    ],
+    [
+      "        } else if (num > m2) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            m3 = m2;",
+      [
+        12
+      ]
+    ],
+    [
+      "            m2 = num;",
+      [
+        12
+      ]
+    ],
+    [
+      "        } else if (num > m3) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            m3 = num;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return m3 != -Infinity ? m3 : m1;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

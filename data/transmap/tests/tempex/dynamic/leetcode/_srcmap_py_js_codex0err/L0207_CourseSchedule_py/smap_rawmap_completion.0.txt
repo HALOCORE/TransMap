@@ -1,0 +1,65 @@
+
+### Python
+### canFinish 
+from collections import deque   # --- py stmt 1
+from collections import defaultdict   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(numCourses: int, prerequisites: List[List[int]]) -> bool:   # --- py stmt 4
+    edges = defaultdict(list)   # --- py stmt 5
+    indegree = [0] * numCourses   # --- py stmt 6
+    for a, b in prerequisites:   # --- py stmt 7
+        edges[b].append(a)   # --- py stmt 8
+        indegree[a] += 1   # --- py stmt 9
+    q = deque()   # --- py stmt 10
+    for i in range(numCourses):   # --- py stmt 11
+        if indegree[i] == 0:   # --- py stmt 12
+            q.append(i)   # --- py stmt 13
+    n = 0   # --- py stmt 14
+    while q:   # --- py stmt 15
+        b = q.popleft()   # --- py stmt 16
+        n += 1   # --- py stmt 17
+        for a in edges[b]:   # --- py stmt 18
+            indegree[a] -= 1   # --- py stmt 19
+            if indegree[a] == 0:   # --- py stmt 20
+                q.append(a)   # --- py stmt 21
+    return n == numCourses   # --- py stmt 22
+
+### JavaScript
+"use strict";
+
+function f_gold(numCourses, prerequisites) {   // --- py stmt 4
+    let edges = new Map();   // --- py stmt 5
+    let indegree = new Array(numCourses).fill(0);   // --- py stmt 6
+    for (let i = 0; i < prerequisites.length; i++) {   // --- py stmt 7
+        let a = prerequisites[i][0];   // --- py stmt 7
+        let b = prerequisites[i][1];   // --- py stmt 7
+        if (edges.has(b)) {   // --- py stmt 8
+            edges.get(b).push(a);   // --- py stmt 8
+        } else {   // --- py stmt 8
+            edges.set(b, [a]);   // --- py stmt 8
+        }
+        indegree[a] += 1;   // --- py stmt 9
+    }
+    let q = [];   // --- py stmt 10
+    for (let i = 0; i < numCourses; i++) {   // --- py stmt 11
+        if (indegree[i] == 0) {   // --- py stmt 12
+            q.push(i);   // --- py stmt 13
+        }
+    }
+    let n = 0;   // --- py stmt 14
+    while (q.length > 0) {   // --- py stmt 15
+        let b = q.shift();   // --- py stmt 16
+        n += 1;   // --- py stmt 17
+        for (let i = 0; i < edges.get(b).length; i++) {   // --- py stmt 18
+            let a = edges.get(b)[i];   // --- py stmt 18
+            indegree[a] -= 1;   // --- py stmt 19
+            if (indegree[a] == 0) {   // --- py stmt 20
+                q.push(a);   // --- py stmt 21
+            }
+        }
+    }
+    return n == numCourses;   // --- py stmt 22
+}
+
+
+

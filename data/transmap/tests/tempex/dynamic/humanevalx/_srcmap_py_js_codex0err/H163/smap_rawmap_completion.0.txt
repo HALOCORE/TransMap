@@ -1,0 +1,21 @@
+
+### Python
+def generate_integers(a, b):   # --- py stmt 1
+    lower = max(2, min(a, b))   # --- py stmt 2
+    upper = min(8, max(a, b))   # --- py stmt 3
+
+    return [i for i in range(lower, upper+1) if i % 2 == 0]   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+
+function generate_integers(a, b) {   // --- py stmt 1
+    let lower = Math.max(2, Math.min(a, b));   // --- py stmt 2
+    let upper = Math.min(8, Math.max(a, b));   // --- py stmt 3
+
+    return [...Array(upper - lower + 1).keys()].map(i => i + lower).filter(i => i % 2 == 0);   // --- py stmt 4
+}
+
+
+

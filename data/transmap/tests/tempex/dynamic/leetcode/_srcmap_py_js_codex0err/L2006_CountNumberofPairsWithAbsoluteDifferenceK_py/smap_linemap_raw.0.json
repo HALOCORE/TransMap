@@ -1,0 +1,114 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countKDifference",
+      null
+    ],
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    counter = Counter()",
+      [
+        5
+      ]
+    ],
+    [
+      "    for num in nums:",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans += counter[num - k] + counter[num + k]",
+      [
+        7
+      ]
+    ],
+    [
+      "        counter[num] += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var counter = {};",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var num of nums) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans += counter[num - k] + counter[num + k];",
+      [
+        7
+      ]
+    ],
+    [
+      "        counter[num] = num in counter ? counter[num] + 1 : 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

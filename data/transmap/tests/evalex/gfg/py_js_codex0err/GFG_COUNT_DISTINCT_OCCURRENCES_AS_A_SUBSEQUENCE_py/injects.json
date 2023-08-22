@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  var mat = Array(m+1).fill().map(_ => Array(n+1).fill(0));",
+    "replacement": "  var mat = [[0], [0]];"
+  }
+]

@@ -1,0 +1,127 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,4,22,51]",
+    "src_cov_lines": [
+      1,
+      4,
+      5,
+      7,
+      10,
+      11,
+      14,
+      21,
+      22
+    ],
+    "tar_cov_lines": [
+      1,
+      4,
+      5,
+      6,
+      10,
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: key.islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dict\":[\"DICT\",[[\"S\",1,\"p\"],[\"S\",9,\"pineapple\"]],[[\"S\",1,\"A\"],[\"S\",6,\"banana\"]],[[\"S\",1,\"B\"],[\"S\",6,\"banana\"]]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[22,8,22,51]",
+    "src_cov_lines": [
+      5,
+      7,
+      10,
+      11,
+      14,
+      21
+    ],
+    "tar_cov_lines": [
+      5,
+      6,
+      10,
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: key.islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dict\":[\"DICT\",[[\"S\",1,\"p\"],[\"S\",9,\"pineapple\"]],[[\"S\",1,\"b\"],[\"S\",6,\"banana\"]]],\"state\":[\"S\",5,\"lower\"],\"key\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[7,12,9,21]",
+    "src_cov_lines": [
+      10,
+      11,
+      14
+    ],
+    "tar_cov_lines": [
+      10,
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: key.islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dict\":[\"DICT\",[[\"S\",1,\"p\"],[\"S\",9,\"pineapple\"]],[[\"S\",1,\"b\"],[\"S\",6,\"banana\"]]],\"state\":[\"S\",5,\"lower\"],\"key\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[7,12,9,21]",
+    "src_cov_lines": [
+      11,
+      14
+    ],
+    "tar_cov_lines": [
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: key.islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dict\":[\"DICT\",[[\"S\",1,\"p\"],[\"S\",9,\"pineapple\"]],[[\"S\",1,\"b\"],[\"S\",6,\"banana\"]]],\"state\":[\"S\",5,\"lower\"],\"key\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[14,20,14,35]",
+    "src_cov_lines": [
+      11
+    ],
+    "tar_cov_lines": [
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: key.islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dict\":[\"DICT\",[[\"S\",1,\"p\"],[\"S\",9,\"pineapple\"]],[[\"S\",1,\"b\"],[\"S\",6,\"banana\"]]],\"state\":[\"S\",5,\"start\"],\"key\":[\"S\",1,\"p\"]}",
+      ""
+    ]
+  }
+]

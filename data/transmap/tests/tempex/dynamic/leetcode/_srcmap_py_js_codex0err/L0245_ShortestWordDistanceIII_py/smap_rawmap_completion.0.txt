@@ -1,0 +1,55 @@
+
+### Python
+### shortestWordDistance 
+from typing import *   # --- py stmt 1
+def f_gold(wordsDict: List[str], word1: str, word2: str) -> int:   # --- py stmt 2
+    i1 = i2 = -1   # --- py stmt 3
+    shortest_distance = len(wordsDict)   # --- py stmt 4
+    same = word1 == word2   # --- py stmt 5
+    for i in range(len(wordsDict)):   # --- py stmt 6
+        if same:   # --- py stmt 7
+            if word1 == wordsDict[i]:   # --- py stmt 8
+                if i1 != -1:   # --- py stmt 9
+                    shortest_distance = min(shortest_distance, i - i1)   # --- py stmt 10
+                i1 = i   # --- py stmt 11
+        else:   # --- py stmt 12
+            if word1 == wordsDict[i]:   # --- py stmt 13
+                i1 = i   # --- py stmt 14
+            if word2 == wordsDict[i]:   # --- py stmt 15
+                i2 = i   # --- py stmt 16
+            if i1 != -1 and i2 != -1:   # --- py stmt 17
+                shortest_distance = min(shortest_distance, abs(i1 - i2))   # --- py stmt 18
+    return shortest_distance   # --- py stmt 19
+
+### JavaScript
+"use strict";
+
+function f_gold(wordsDict, word1, word2) {   // --- py stmt 2
+    var i1 = i2 = -1;   // --- py stmt 3
+    var shortest_distance = wordsDict.length;   // --- py stmt 4
+    var same = word1 == word2;   // --- py stmt 5
+    for (var i = 0; i < wordsDict.length; i++) {   // --- py stmt 6
+        if (same) {   // --- py stmt 7
+            if (word1 == wordsDict[i]) {   // --- py stmt 8
+                if (i1 != -1) {   // --- py stmt 9
+                    shortest_distance = Math.min(shortest_distance, i - i1);   // --- py stmt 10
+                }
+                i1 = i;   // --- py stmt 11
+            }
+        } else {   // --- py stmt 12
+            if (word1 == wordsDict[i]) {   // --- py stmt 13
+                i1 = i;   // --- py stmt 14
+            }
+            if (word2 == wordsDict[i]) {   // --- py stmt 15
+                i2 = i;   // --- py stmt 16
+            }
+            if (i1 != -1 && i2 != -1) {   // --- py stmt 17
+                shortest_distance = Math.min(shortest_distance, Math.abs(i1 - i2));   // --- py stmt 18
+            }
+        }
+    }
+    return shortest_distance;   // --- py stmt 19
+}
+
+
+

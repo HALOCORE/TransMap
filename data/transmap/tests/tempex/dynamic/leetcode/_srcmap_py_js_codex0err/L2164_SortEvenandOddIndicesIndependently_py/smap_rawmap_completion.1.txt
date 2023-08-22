@@ -1,0 +1,21 @@
+
+### Python
+### sortEvenOdd 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> List[int]:   # --- py stmt 2
+    a = sorted(nums[::2])   # --- py stmt 3
+    b = sorted(nums[1::2], reverse=True)   # --- py stmt 4
+    nums[::2] = a   # --- py stmt 5
+    nums[1::2] = b   # --- py stmt 6
+    return nums   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var a = nums.filter((_, i) => i % 2 == 0).sort(function (a, b) { return a - b; });   // --- py stmt 3
+    var b = nums.slice(1, nums.length).sort(function (a, b) { return b - a; });   // --- py stmt 4
+    for (let i = 0; i < a.length; i++) nums[i * 2] = a[i];   // --- py stmt 5
+    for (let i = 0; i < b.length; i++) nums[1 + i * 2] = b[i];   // --- py stmt 6
+    return nums;   // --- py stmt 7
+}
+

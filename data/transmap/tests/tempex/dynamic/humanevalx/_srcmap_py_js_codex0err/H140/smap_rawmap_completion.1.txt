@@ -1,0 +1,55 @@
+
+### Python
+def fix_spaces(text):   # --- py stmt 1
+    new_text = ""   # --- py stmt 2
+    i = 0   # --- py stmt 3
+    start, end = 0, 0   # --- py stmt 4
+    while i < len(text):   # --- py stmt 5
+        if text[i] == " ":   # --- py stmt 6
+            end += 1   # --- py stmt 7
+        else:   # --- py stmt 8
+            if end - start > 2:   # --- py stmt 9
+                new_text += "-"+text[i]   # --- py stmt 10
+            elif end - start > 0:   # --- py stmt 11
+                new_text += "_"*(end - start)+text[i]   # --- py stmt 12
+            else:   # --- py stmt 13
+                new_text += text[i]   # --- py stmt 14
+            start, end = i+1, i+1   # --- py stmt 15
+        i+=1   # --- py stmt 16
+    if end - start > 2:   # --- py stmt 17
+        new_text += "-"   # --- py stmt 18
+    elif end - start > 0:   # --- py stmt 19
+        new_text += "_"   # --- py stmt 20
+    return new_text   # --- py stmt 21
+
+### JavaScript
+"use strict";
+function fix_spaces(text) {   // --- py stmt 1
+    let new_text = "";   // --- py stmt 2
+    let i = 0;   // --- py stmt 3
+    let start = 0, end = 0;   // --- py stmt 4
+    while (i < text.length) {   // --- py stmt 5
+        if (text[i] == " ") {   // --- py stmt 6
+            end += 1;   // --- py stmt 7
+        } else {   // --- py stmt 8
+            if (end - start > 2) {   // --- py stmt 9
+                new_text += "-" + text[i];   // --- py stmt 10
+            } else if (end - start > 0) {   // --- py stmt 11
+                new_text += "_".repeat(end - start) + text[i];   // --- py stmt 12
+            } else {   // --- py stmt 13
+                new_text += text[i];   // --- py stmt 14
+            }
+            start, end = i + 1, i + 1;   // --- py stmt 15
+        }
+        i += 1;   // --- py stmt 16
+    }
+    if (end - start > 2) {   // --- py stmt 17
+        new_text += "-";   // --- py stmt 18
+    } else if (end - start > 0) {   // --- py stmt 19
+        new_text += "_";   // --- py stmt 20
+    }
+    return new_text;   // --- py stmt 21
+}
+
+
+

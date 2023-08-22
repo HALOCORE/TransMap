@@ -1,0 +1,86 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(a, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  i, total = 0, 1",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(2, n + 2):",
+      [
+        3
+      ]
+    ],
+    [
+      "    total += i",
+      [
+        4
+      ]
+    ],
+    [
+      "    total -= a[i - 2]",
+      [
+        5
+      ]
+    ],
+    [
+      "  return total",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(a, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var i = 0, total = 1;",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (i = 0; i < n + 2; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    total += i;",
+      [
+        4
+      ]
+    ],
+    [
+      "    total -= a[i - 2];",
+      [
+        5
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return total;",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

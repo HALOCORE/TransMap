@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  var um = {}, curr_rem = 0, maxSum = 0;",
+    "replacement": "  var um, curr_rem, maxSum = { }, 0, 0;"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  var sm = Array(n).fill(0);",
+    "replacement": "  var sm = Array(n);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    curr_rem = (sm[i] % k + k) % k;",
+    "replacement": "    curr_rem = sm[i] % k;"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    else if (!(curr_rem in um)) um[curr_rem] = i;",
+    "replacement": "    else if (!curr_rem in um) um[curr_rem] = i;"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "  return Math.floor(maxSum / k);",
+    "replacement": "  return maxSum / k;"
+  }
+]

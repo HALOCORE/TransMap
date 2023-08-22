@@ -1,0 +1,32 @@
+
+### Python
+### numSquares 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(n: int) -> int:   # --- py stmt 4
+    dp = [0] * (n + 1)   # --- py stmt 5
+    for i in range(1, n + 1):   # --- py stmt 6
+        j, mi = 1, float('inf')   # --- py stmt 7
+        while j * j <= i:   # --- py stmt 8
+            mi = min(mi, dp[i - j * j])   # --- py stmt 9
+            j += 1   # --- py stmt 10
+        dp[i] = mi + 1   # --- py stmt 11
+    return dp[-1]   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 4
+    var dp = new Array(n + 1);   // --- py stmt 5
+    for (var i = 1; i <= n; i++) {   // --- py stmt 6
+        var j = 1;   // --- py stmt 7
+        var mi = Number.POSITIVE_INFINITY;   // --- py stmt 7
+        while (j * j <= i) {   // --- py stmt 8
+            mi = Math.min(mi, dp[i - j * j]);   // --- py stmt 9
+            j += 1;   // --- py stmt 10
+        }
+        dp[i] = mi + 1;   // --- py stmt 11
+    }
+    return dp[n];   // --- py stmt 12
+}
+

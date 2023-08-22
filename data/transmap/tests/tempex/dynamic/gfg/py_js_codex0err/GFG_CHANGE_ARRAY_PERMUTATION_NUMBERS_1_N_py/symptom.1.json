@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "TypeError:",
+      "count.get is not a function"
+    ],
+    "lineno": 11
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "count.get is not a function",
+      "error_type": "TypeError:",
+      "line_content": "while (count.get(next_missing)) next_missing += 1;",
+      "lineno": [
+        "/tmp/codesnart_runner/cc215cd2.js",
+        146
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/cc215cd2.js:146\n      while (count.get(next_missing)) next_missing += 1;\n                   ^\n\nTypeError: count.get is not a function\n    at f_gold (/tmp/codesnart_runner/cc215cd2.js:146:20)\n    at test (/tmp/codesnart_runner/cc215cd2.js:129:9)\n    at Object.<anonymous> (/tmp/codesnart_runner/cc215cd2.js:157:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"list\",10,[\"list\",2,[\"list\",1,[\"num\",19],\"EMPTY\"],[\"num\",0]],[\"list\",2,[\"list\",2,[\"num\",-47],[\"num\",72]],[\"num\",1]]]]\n\n[\"MYLOGEX:1\",[\"num\",0]]\n\n[\"MYLOGEX:2\",[\"list\",2,[[\"list\",1,[[\"num\",19]]],[\"num\",0]]]]\n\n[\"MYLOGEX:1\",[\"num\",1]]\n",
+    "timespan": 0.03515890002017841
+  }
+}

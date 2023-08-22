@@ -1,0 +1,386 @@
+{
+  "src_anno_stmts": [
+    [
+      "### ladderLength",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(beginWord: str, endWord: str, wordList: List[str]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    def extend(m1, m2, q):",
+      [
+        4
+      ]
+    ],
+    [
+      "        for _ in range(len(q)):",
+      [
+        5
+      ]
+    ],
+    [
+      "            s = q.popleft()",
+      [
+        6
+      ]
+    ],
+    [
+      "            step = m1[s]",
+      [
+        7
+      ]
+    ],
+    [
+      "            s = list(s)",
+      [
+        8
+      ]
+    ],
+    [
+      "            for i in range(len(s)):",
+      [
+        9
+      ]
+    ],
+    [
+      "                ch = s[i]",
+      [
+        10
+      ]
+    ],
+    [
+      "                for j in range(26):",
+      [
+        11
+      ]
+    ],
+    [
+      "                    s[i] = chr(ord('a') + j)",
+      [
+        12
+      ]
+    ],
+    [
+      "                    t = ''.join(s)",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if t in m1 or t not in words:",
+      [
+        14
+      ]
+    ],
+    [
+      "                        continue",
+      [
+        15
+      ]
+    ],
+    [
+      "                    if t in m2:",
+      [
+        16
+      ]
+    ],
+    [
+      "                        return step + 1 + m2[t]",
+      [
+        17
+      ]
+    ],
+    [
+      "                    m1[t] = step + 1",
+      [
+        18
+      ]
+    ],
+    [
+      "                    q.append(t)",
+      [
+        19
+      ]
+    ],
+    [
+      "                s[i] = ch",
+      [
+        20
+      ]
+    ],
+    [
+      "        return -1",
+      [
+        21
+      ]
+    ],
+    [
+      "    words = set(wordList)",
+      [
+        22
+      ]
+    ],
+    [
+      "    if endWord not in words:",
+      [
+        23
+      ]
+    ],
+    [
+      "        return 0",
+      [
+        24
+      ]
+    ],
+    [
+      "    q1, q2 = deque([beginWord]), deque([endWord])",
+      [
+        25
+      ]
+    ],
+    [
+      "    m1, m2 = {beginWord: 0}, {endWord: 0}",
+      [
+        26
+      ]
+    ],
+    [
+      "    while q1 and q2:",
+      [
+        27
+      ]
+    ],
+    [
+      "        t = extend(m1, m2, q1) if len(q1) <= len(q2) else extend(m2, m1, q2)",
+      [
+        28
+      ]
+    ],
+    [
+      "        if t != -1:",
+      [
+        29
+      ]
+    ],
+    [
+      "            return t + 1",
+      [
+        30
+      ]
+    ],
+    [
+      "    return 0",
+      [
+        31
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (beginWord, endWord, wordList) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    function extend (m1, m2, q) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (var _ = 0; _ < q.length; _++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            var s = q.shift();",
+      [
+        6
+      ]
+    ],
+    [
+      "            var step = m1[s];",
+      [
+        7
+      ]
+    ],
+    [
+      "            s = s.split('');",
+      [
+        8
+      ]
+    ],
+    [
+      "            for (var i = 0; i < s.length; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                var ch = s[i];",
+      [
+        10
+      ]
+    ],
+    [
+      "                for (var j = 0; j < 26; j++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                    s[i] = String.fromCharCode(97 + j);",
+      [
+        12
+      ]
+    ],
+    [
+      "                    var t = s.join('');",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if (t in m1 || !(words.has(t))) continue;",
+      [
+        14,
+        15
+      ]
+    ],
+    [
+      "                    if (t in m2) return step + 1 + m2[t];",
+      [
+        16,
+        17
+      ]
+    ],
+    [
+      "                    m1[t] = step + 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "                    q.push(t);",
+      [
+        19
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "                s[i] = ch;",
+      [
+        20
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return -1;",
+      [
+        21
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var words = new Set(wordList);",
+      [
+        22
+      ]
+    ],
+    [
+      "    if (!(words.has(endWord))) return 0;",
+      [
+        23,
+        24
+      ]
+    ],
+    [
+      "    var q1 = [beginWord], q2 = [endWord];",
+      [
+        25
+      ]
+    ],
+    [
+      "    var m1 = {}, m2 = {};",
+      [
+        26
+      ]
+    ],
+    [
+      "    m1[beginWord] = 0;",
+      [
+        26
+      ]
+    ],
+    [
+      "    m2[endWord] = 0;",
+      [
+        26
+      ]
+    ],
+    [
+      "    while (q1.length > 0 && q2.length > 0) {",
+      [
+        27
+      ]
+    ],
+    [
+      "        var t = q1.length <= q2.length ? extend(m1, m2, q1) : extend(m2, m1, q2);",
+      [
+        28
+      ]
+    ],
+    [
+      "        if (t != -1) return t + 1;",
+      [
+        29,
+        30
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return 0;",
+      [
+        31
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

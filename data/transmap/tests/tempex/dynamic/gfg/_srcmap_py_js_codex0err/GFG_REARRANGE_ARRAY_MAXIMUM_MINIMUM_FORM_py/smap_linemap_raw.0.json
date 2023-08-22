@@ -1,0 +1,192 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  temp = n *[None]",
+      [
+        2
+      ]
+    ],
+    [
+      "  small, large = 0, n - 1",
+      [
+        3
+      ]
+    ],
+    [
+      "  flag = True",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if flag is True:",
+      [
+        6
+      ]
+    ],
+    [
+      "      temp[i] = arr[large]",
+      [
+        7
+      ]
+    ],
+    [
+      "      large -= 1",
+      [
+        8
+      ]
+    ],
+    [
+      "    else:",
+      [
+        9
+      ]
+    ],
+    [
+      "      temp[i] = arr[small]",
+      [
+        10
+      ]
+    ],
+    [
+      "      small += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    flag = bool(1 - flag)",
+      [
+        12
+      ]
+    ],
+    [
+      "  for i in range(n): arr[i] = temp[i]",
+      [
+        13
+      ]
+    ],
+    [
+      "  return arr",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var temp = n * [null];",
+      [
+        2
+      ]
+    ],
+    [
+      "  var small = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var large = n - 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var flag = true;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (flag === true) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      temp[i] = arr[large];",
+      [
+        7
+      ]
+    ],
+    [
+      "      large -= 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    } else {",
+      [
+        9
+      ]
+    ],
+    [
+      "      temp[i] = arr[small];",
+      [
+        10
+      ]
+    ],
+    [
+      "      small += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    flag = Boolean(1 - flag);",
+      [
+        12
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (var i = 0; i < n; i++) arr[i] = temp[i];",
+      [
+        13
+      ]
+    ],
+    [
+      "  return arr;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

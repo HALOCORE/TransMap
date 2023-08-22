@@ -1,0 +1,150 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  hash = dict()",
+      [
+        2
+      ]
+    ],
+    [
+      "  maximum = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in arr:",
+      [
+        4
+      ]
+    ],
+    [
+      "    if(i < 0):",
+      [
+        5
+      ]
+    ],
+    [
+      "      if abs(i)not in hash.keys(): hash[abs(i)] = - 1",
+      [
+        6
+      ]
+    ],
+    [
+      "      else: hash[abs(i)] -= 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    else: hash[i] = hash.get(i, 0)+ 1",
+      [
+        8
+      ]
+    ],
+    [
+      "  for i in arr:",
+      [
+        9
+      ]
+    ],
+    [
+      "    if i in hash.keys()and hash[i] > 0: return i",
+      [
+        10
+      ]
+    ],
+    [
+      "  return - 1",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let hash = {};",
+      [
+        2
+      ]
+    ],
+    [
+      "  let maximum = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i of arr) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (i < 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      if (!(Math.abs(i) in hash)) hash[Math.abs(i)] = -1;",
+      [
+        6
+      ]
+    ],
+    [
+      "      else hash[Math.abs(i)] -= 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    } else hash[i] = hash.get(i, 0) + 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let i of arr) {",
+      [
+        9
+      ]
+    ],
+    [
+      "    if (i in hash && hash[i] > 0) return i;",
+      [
+        10
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return -1;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

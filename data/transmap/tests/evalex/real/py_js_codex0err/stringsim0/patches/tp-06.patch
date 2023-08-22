@@ -1,0 +1,127 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -83,7 +83,7 @@ class LongestCommonSubsequence extends StringDistance {
+         if (s0 === s1) {
+             return 0.0;
+         }
+-        return s0.length + s1.length - 2 * this.length(s0, s1);
++        return s0.length + s1.length - 2 * this.constructor.length(s0, s1);
+     }
+     static length(s0, s1) {
+         if (s0 === null) {
+@@ -133,7 +133,7 @@ class MetricLCS {
+         if (max_len === 0) {
+             return 0.0;
+         }
+-        return 1.0 - (1.0 * this.lcs.length(s0, s1)) / max_len;
++        return 1.0 - (1.0 * this.lcs.constructor.length(s0, s1)) / max_len;
+     }
+ }
+ 
+@@ -186,9 +186,9 @@ class NGram {
+             }
+         }
+ 
+-        const p = new Array(sl + 1);
+-        const d = new Array(sl + 1);
+-        const t_j = new Array(this.n);
++        let p = new Array(sl + 1).fill(0);
++        let d = new Array(sl + 1).fill(0);
++        let t_j = new Array(this.n);
+         for (let i = 0; i < sl + 1; i++) {
+             p[i] = 1.0 * i;
+         }
+@@ -44,8 +44,8 @@ class Levenshtein extends MetricStringDistance {
+             return s0.length;
+         }
+ 
+-        let v0 = new Array(s1.length + 1);
+-        let v1 = new Array(s1.length + 1);
++        let v0 = new Array(s1.length + 1).fill(0);
++        let v1 = new Array(s1.length + 1).fill(0);
+ 
+         for (let i = 0; i < v0.length; i++) {
+             v0[i] = i;
+@@ -60,8 +60,8 @@ class Levenshtein extends MetricStringDistance {
+                 }
+                 v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);
+             }
+-            v0 = v1;
+-            v1 = new Array(s1.length + 1);
++            [v0, v1] = [v1, v0];
++            //v1 = new Array(s1.length + 1);
+         }
+ 
+         return v0[s1.length];
+@@ -176,7 +176,7 @@ class NGram {
+             return 1.0 - cost / Math.max(sl, tl);
+         }
+ 
+-        const sa = new Array(sl + this.n - 1);
++        const sa = new Array(sl + this.n - 1).fill('');
+ 
+         for (let i = 0; i < sa.length; i++) {
+             if (i < this.n - 1) {
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -281,7 +281,7 @@ class LongestCommonSubsequence extends StringDistance {   // --- py stmt 35
+         if (s0 === s1) {   // --- py stmt 41
+             return 0.0;   // --- py stmt 42
+         }
+-        return s0.length + s1.length - 2 * this.length(s0, s1);   // --- py stmt 43
++        return s0.length + s1.length - 2 * this.constructor.length(s0, s1);   // --- py stmt 43
+     }
+     static length(s0, s1) {   // --- py stmt 45
+         if (s0 === null) {   // --- py stmt 46
+@@ -330,7 +330,7 @@ class MetricLCS {   // --- py stmt 60
+         if (max_len === 0) {   // --- py stmt 71
+             return 0.0;   // --- py stmt 72
+         }
+-        return 1.0 - (1.0 * this.lcs.length(s0, s1)) / max_len;   // --- py stmt 73
++        return 1.0 - (1.0 * this.lcs.constructor.length(s0, s1)) / max_len;   // --- py stmt 73
+     }
+ }
+ 
+@@ -382,9 +382,9 @@ class NGram {   // --- py stmt 74
+             }
+         }
+ 
+-        const p = new Array(sl + 1);   // --- py stmt 101
+-        const d = new Array(sl + 1);   // --- py stmt 102
+-        const t_j = new Array(this.n);   // --- py stmt 103
++        let p = new Array(sl + 1).fill(0);   // --- py stmt 101
++        let d = new Array(sl + 1).fill(0);   // --- py stmt 102
++        let t_j = new Array(this.n);   // --- py stmt 103
+         for (let i = 0; i < sl + 1; i++) {   // --- py stmt 104
+             p[i] = 1.0 * i;   // --- py stmt 105
+         }
+@@ -244,7 +244,7 @@ class Levenshtein extends MetricStringDistance {   // --- py stmt 10
+         }
+ 
+-        let v0 = new Array(s1.length + 1);   // --- py stmt 22
+-        let v1 = new Array(s1.length + 1);   // --- py stmt 23
++        let v0 = new Array(s1.length + 1).fill(0);   // --- py stmt 22
++        let v1 = new Array(s1.length + 1).fill(0);   // --- py stmt 23
+ 
+         for (let i = 0; i < v0.length; i++) {   // --- py stmt 24
+             v0[i] = i;   // --- py stmt 25
+@@ -259,8 +259,8 @@ class Levenshtein extends MetricStringDistance {   // --- py stmt 10
+                 }
+                 v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);   // --- py stmt 32
+             }
+-            v0 = v1;   // --- py stmt 33
+-            v1 = new Array(s1.length + 1);   // --- py stmt 33
++            [v0, v1] = [v1, v0];   // --- py stmt 33
++            //v1 = new Array(s1.length + 1);   // --- py stmt 33
+         }
+ 
+         return v0[s1.length];   // --- py stmt 34
+@@ -372,7 +372,7 @@ class NGram {   // --- py stmt 74
+             return 1.0 - cost / Math.max(sl, tl);   // --- py stmt 94
+         }
+ 
+-        const sa = new Array(sl + this.n - 1);   // --- py stmt 95
++        const sa = new Array(sl + this.n - 1).fill('');   // --- py stmt 95
+ 
+         for (let i = 0; i < sa.length; i++) {   // --- py stmt 96
+             if (i < this.n - 1) {   // --- py stmt 97

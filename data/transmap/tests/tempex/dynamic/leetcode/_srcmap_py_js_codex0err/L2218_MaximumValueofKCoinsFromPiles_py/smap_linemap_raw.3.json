@@ -1,0 +1,172 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxValueOfCoins",
+      null
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(piles: List[List[int]], k: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    presum = [list(accumulate(p, initial=0)) for p in piles]",
+      [
+        4
+      ]
+    ],
+    [
+      "    dp = [0] * (k + 1)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for s in presum:",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j in range(k, -1, -1):",
+      [
+        7
+      ]
+    ],
+    [
+      "            for idx, v in enumerate(s):",
+      [
+        8
+      ]
+    ],
+    [
+      "                if j >= idx:",
+      [
+        9
+      ]
+    ],
+    [
+      "                    dp[j] = max(dp[j], dp[j - idx] + v)",
+      [
+        10
+      ]
+    ],
+    [
+      "    return dp[-1]",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(piles, k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var presum = piles.map(function (p) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return [0].concat(p.map(",
+      [
+        4
+      ]
+    ],
+    [
+      "            (sum => value =>",
+      [
+        4
+      ]
+    ],
+    [
+      "                sum += value)(0)));",
+      [
+        4
+      ]
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "    var dp = new Array(k + 1).fill(0);",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var s of presum) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = k; j >= 0; j--) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            for (var idx = 0; idx < s.length; idx++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                if (j >= idx) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                    dp[j] = Math.max(dp[j], dp[j - idx] + presum[s][idx]);",
+      [
+        10
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dp[k];",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

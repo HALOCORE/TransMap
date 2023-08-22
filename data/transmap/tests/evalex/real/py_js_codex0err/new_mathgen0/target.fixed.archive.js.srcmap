@@ -1,0 +1,615 @@
+### Python
+
+def absolute_difference(max_a=100, max_b=100):   # --- py stmt 1
+    a = random.randint(-1 * max_a, max_a)   # --- py stmt 2
+    b = random.randint(-1 * max_b, max_b)   # --- py stmt 3
+    absDiff = abs(a - b)   # --- py stmt 4
+
+    return f'$|{a}-{b}|=$', f"${absDiff}$"   # --- py stmt 5
+
+def addition(max_sum=99, max_addend=50):   # --- py stmt 1001
+    if max_addend > max_sum:   # --- py stmt 1002
+        max_addend = max_sum   # --- py stmt 1003
+    a = random.randint(0, max_addend)   # --- py stmt 1004
+    b = random.randint(0, min((max_sum - a), max_addend))   # --- py stmt 1005
+    c = a + b   # --- py stmt 1006
+
+    problem = f'${a}+{b}=$'   # --- py stmt 1007
+    solution = f'${c}$'   # --- py stmt 1008
+    return problem, solution   # --- py stmt 1009
+
+def compare_fractions(max_val=10):   # --- py stmt 2001
+    a = random.randint(1, max_val)   # --- py stmt 2002
+    b = random.randint(1, max_val)   # --- py stmt 2003
+    c = random.randint(1, max_val)   # --- py stmt 2004
+    d = random.randint(1, max_val)   # --- py stmt 2005
+
+    while (a == b):   # --- py stmt 2006
+        b = random.randint(1, max_val)   # --- py stmt 2007
+    while (c == d):   # --- py stmt 2008
+        d = random.randint(1, max_val)   # --- py stmt 2009
+
+    first = a / b   # --- py stmt 2010
+    second = c / d   # --- py stmt 2011
+
+    if (first > second):   # --- py stmt 2012
+        solution = ">"   # --- py stmt 2013
+    elif (first < second):   # --- py stmt 2014
+        solution = "<"   # --- py stmt 2015
+    else:   # --- py stmt 2016
+        solution = "="   # --- py stmt 2017
+
+    problem = rf"Which symbol represents the comparison between $\frac{{{a}}}{{{b}}}$ and $\frac{{{c}}}{{{d}}}$?"   # --- py stmt 2018
+    return problem, solution   # --- py stmt 2019
+
+def cube_root(min_no=1, max_no=1000):   # --- py stmt 3001
+    b = random.randint(min_no, max_no)   # --- py stmt 3002
+    a = b**(1 / 3)   # --- py stmt 3003
+
+    return (rf"What is the cube root of: $\sqrt[3]{{{b}}}=$ to 2 decimal places?", f"${round(a, 2)}$")   # --- py stmt 3004
+
+def divide_fractions(max_val=10):   # --- py stmt 4001
+    a = random.randint(1, max_val)   # --- py stmt 4002
+    b = random.randint(1, max_val)   # --- py stmt 4003
+
+    while (a == b):   # --- py stmt 4004
+        b = random.randint(1, max_val)   # --- py stmt 4005
+
+    c = random.randint(1, max_val)   # --- py stmt 4006
+    d = random.randint(1, max_val)   # --- py stmt 4007
+    while (c == d):   # --- py stmt 4008
+        d = random.randint(1, max_val)   # --- py stmt 4009
+
+    def calculate_gcd(x, y):   # --- py stmt 4010
+        while (y):   # --- py stmt 4011
+            x, y = y, x % y   # --- py stmt 4012
+        return x   # --- py stmt 4013
+
+    tmp_n = a * d   # --- py stmt 4014
+    tmp_d = b * c   # --- py stmt 4015
+
+    gcd = calculate_gcd(tmp_n, tmp_d)   # --- py stmt 4016
+    sol_numerator = tmp_n // gcd   # --- py stmt 4017
+    sol_denominator = tmp_d // gcd   # --- py stmt 4018
+
+    return rf'$\frac{{{a}}}{{{b}}}\div\frac{{{c}}}{{{d}}}=$', f'$\frac{{{sol_numerator}}}{{{sol_denominator}}}$'   # --- py stmt 4019
+
+def division(max_a=25, max_b=25):   # --- py stmt 5001
+    a = random.randint(1, max_a)   # --- py stmt 5002
+    b = random.randint(1, max_b)   # --- py stmt 5003
+
+    divisor = a * b   # --- py stmt 5004
+    dividend = random.choice([a, b])   # --- py stmt 5005
+    quotient = int(divisor / dividend)   # --- py stmt 5006
+
+    return rf'${divisor}\div{dividend}=$', f'${quotient}$'   # --- py stmt 5007
+
+def exponentiation(max_base=20, max_expo=10):   # --- py stmt 6001
+    base = random.randint(1, max_base)   # --- py stmt 6002
+    expo = random.randint(1, max_expo)   # --- py stmt 6003
+
+    return f'${base}^{{{expo}}}=$', f'${base**expo}$'   # --- py stmt 6004
+
+def factorial(max_input=6):   # --- py stmt 7001
+    a = random.randint(0, max_input)   # --- py stmt 7002
+    n = a   # --- py stmt 7003
+    b = 1   # --- py stmt 7004
+    while a != 1 and n > 0:   # --- py stmt 7005
+        b *= n   # --- py stmt 7006
+        n -= 1   # --- py stmt 7007
+
+    return f'${a}! =$', f'${b}$'   # --- py stmt 7008
+
+def fraction_multiplication(max_val=10):   # --- py stmt 8001
+    a = random.randint(1, max_val)   # --- py stmt 8002
+    b = random.randint(1, max_val)   # --- py stmt 8003
+    c = random.randint(1, max_val)   # --- py stmt 8004
+    d = random.randint(1, max_val)   # --- py stmt 8005
+
+    while (a == b):   # --- py stmt 8006
+        b = random.randint(1, max_val)
+
+    while (c == d):   # --- py stmt 8007
+        d = random.randint(1, max_val)
+
+    def calculate_gcd(x, y):   # --- py stmt 8008
+        while (y):   # --- py stmt 8009
+            x, y = y, x % y   # --- py stmt 8010
+        return x   # --- py stmt 8011
+
+    tmp_n = a * c   # --- py stmt 8012
+    tmp_d = b * d   # --- py stmt 8013
+
+    gcd = calculate_gcd(tmp_n, tmp_d)   # --- py stmt 8014
+
+    problem = rf"$\frac{{{a}}}{{{b}}}\cdot\frac{{{c}}}{{{d}}}=$"   # --- py stmt 8015
+    if (tmp_d == 1 or tmp_d == gcd):   # --- py stmt 8016
+        solution = rf"$\frac{{{tmp_n}}}{{{gcd}}}$"   # --- py stmt 8017
+    else:   # --- py stmt 8018
+        solution = rf"$\frac{{{tmp_n//gcd}}}{{{tmp_d//gcd}}}$"   # --- py stmt 8019
+    return problem, solution   # --- py stmt 8020
+
+def fraction_to_decimal(max_res=99, max_divid=99):   # --- py stmt 9001
+    a = random.randint(0, max_divid)   # --- py stmt 9002
+    b = random.randint(1, min(max_res, max_divid))   # --- py stmt 9003
+    c = round(a / b, 2)   # --- py stmt 9004
+
+    return rf'${a}\div{b}=$', f'${c}$'   # --- py stmt 9005
+
+def greatest_common_divisor(numbers_count=2, max_num=10**3):   # --- py stmt 10001
+    def greatestCommonDivisorOfTwoNumbers(number1, number2):   # --- py stmt 10002
+        number1 = abs(number1)   # --- py stmt 10003
+        number2 = abs(number2)   # --- py stmt 10004
+        while number2 > 0:   # --- py stmt 10005
+            number1, number2 = number2, number1 % number2   # --- py stmt 10006
+        return number1   # --- py stmt 10007
+
+    numbers_count = max(numbers_count, 2)   # --- py stmt 10008
+    numbers = [random.randint(0, max_num) for _ in range(numbers_count)]   # --- py stmt 10009
+
+    greatestCommonDivisor = greatestCommonDivisorOfTwoNumbers(numbers[0], numbers[1])   # --- py stmt 10010
+
+    for index in range(1, numbers_count):   # --- py stmt 10011
+        greatestCommonDivisor = greatestCommonDivisorOfTwoNumbers(numbers[index], greatestCommonDivisor)   # --- py stmt 10012
+
+    return f'$GCD({",".join(map(str, numbers))})=$', f"${greatestCommonDivisor}$"   # --- py stmt 10013
+
+def is_composite(max_num=250):   # --- py stmt 11001
+    a = random.randint(2, max_num)   # --- py stmt 11002
+
+    problem = f"Is ${a}$ composite?"   # --- py stmt 11003
+    if a == 0 or a == 1:   # --- py stmt 11004
+        return problem, "No"   # --- py stmt 11005
+    for i in range(2, a):   # --- py stmt 11006
+        if a % i == 0:   # --- py stmt 11007
+            return problem, "Yes"   # --- py stmt 11008
+    solution = "No"   # --- py stmt 11009
+
+    return problem, solution   # --- py stmt 11010
+
+def is_prime(max_num=100):   # --- py stmt 12001
+    a = random.randint(2, max_num)   # --- py stmt 12002
+    problem = f"Is ${a}$ prime?"   # --- py stmt 12003
+    if a == 2:   # --- py stmt 12004
+        return problem, "Yes"   # --- py stmt 12005
+    if a % 2 == 0:   # --- py stmt 12006
+        return problem, "No"   # --- py stmt 12007
+    for i in range(3, a // 2 + 1, 2):   # --- py stmt 12008
+        if a % i == 0:   # --- py stmt 12009
+            return problem, "No"   # --- py stmt 12010
+    solution = "Yes"   # --- py stmt 12011
+
+    return problem, solution   # --- py stmt 12012
+
+def multiplication(max_multi=12):   # --- py stmt 13001
+    a = random.randint(0, max_multi)   # --- py stmt 13002
+    b = random.randint(0, max_multi)   # --- py stmt 13003
+    c = a * b   # --- py stmt 13004
+
+    return rf'${a}\cdot{b}=$', f'${c}$'   # --- py stmt 13005
+
+def percentage(max_value=99, max_percentage=99):   # --- py stmt 14001
+    a = random.randint(1, max_percentage)   # --- py stmt 14002
+    b = random.randint(1, max_value)   # --- py stmt 14003
+    problem = f"What is ${a}$% of ${b}$?"   # --- py stmt 14004
+    percentage = a / 100 * b   # --- py stmt 14005
+    formatted_float = "{:.2f}".format(percentage)   # --- py stmt 14006
+    solution = f"${formatted_float}$"   # --- py stmt 14007
+
+    return problem, solution   # --- py stmt 14008
+
+def percentage_difference(max_value=200, min_value=0):   # --- py stmt 15001
+    value_a = random.randint(min_value, max_value)   # --- py stmt 15002
+    value_b = random.randint(min_value, max_value)   # --- py stmt 15003
+
+    diff = 2 * (abs(value_a - value_b) / abs(value_a + value_b)) * 100   # --- py stmt 15004
+    diff = round(diff, 2)   # --- py stmt 15005
+
+    problem = f"What is the percentage difference between ${value_a}$ and ${value_b}$?"   # --- py stmt 15006
+    solution = f'${diff}$%'   # --- py stmt 15007
+    return problem, solution   # --- py stmt 15008
+
+def percentage_error(max_value=100, min_value=-100):   # --- py stmt 16001
+    observed_value = random.randint(min_value, max_value)   # --- py stmt 16002
+    exact_value = random.randint(min_value, max_value)   # --- py stmt 16003
+
+    if observed_value * exact_value < 0:   # --- py stmt 16004
+        observed_value *= -1   # --- py stmt 16005
+
+    error = (abs(observed_value - exact_value) / abs(exact_value)) * 100   # --- py stmt 16006
+    error = round(error, 2)   # --- py stmt 16007
+
+    problem = f"Find the percentage error when observed value equals ${observed_value}$ and exact value equals ${exact_value}$."   # --- py stmt 16008
+    solution = f'${error}$%'   # --- py stmt 16009
+    return problem, solution   # --- py stmt 16010
+
+def power_of_powers(max_base=50, max_power=10):   # --- py stmt 17001
+    base = random.randint(1, max_base)   # --- py stmt 17002
+    power1 = random.randint(1, max_power)   # --- py stmt 17003
+    power2 = random.randint(1, max_power)   # --- py stmt 17004
+    step = power1 * power2   # --- py stmt 17005
+
+    problem = f"Simplify ${base}^{{{power1}^{{{power2}}}}}$"   # --- py stmt 17006
+    solution = f"${base}^{{{step}}}$"   # --- py stmt 17007
+    return problem, solution   # --- py stmt 17008
+
+def square(max_square_num=20):   # --- py stmt 18001
+    a = random.randint(1, max_square_num)   # --- py stmt 18002
+    b = a ** 2   # --- py stmt 18003
+
+    return f'${a}^2=$', f'${b}$'   # --- py stmt 18004
+
+def square_root(min_no=1, max_no=12):   # --- py stmt 19001
+    b = random.randint(min_no, max_no)   # --- py stmt 19002
+    a = b ** 2   # --- py stmt 19003
+
+    return rf'$\sqrt{{{a}}}=$', f'${b}$'   # --- py stmt 19004
+
+def simplify_square_root(max_variable=100):   # --- py stmt 20001
+    y = x = random.randint(1, max_variable)   # --- py stmt 20002
+    factors = {}   # --- py stmt 20003
+    f = 2   # --- py stmt 20004
+    while x != 1:   # --- py stmt 20005
+        if x % f == 0:   # --- py stmt 20006
+            if f not in factors:   # --- py stmt 20007
+                factors[f] = 0   # --- py stmt 20008
+            factors[f] += 1   # --- py stmt 20009
+            x /= f   # --- py stmt 20010
+        else:   # --- py stmt 20011
+            f += 1   # --- py stmt 20012
+    a = b = 1   # --- py stmt 20013
+    for i in factors.keys():   # --- py stmt 20014
+        if factors[i] & 1 == 0:   # --- py stmt 20015
+            a *= i ** (factors[i] // 2)   # --- py stmt 20016
+        else:   # --- py stmt 20017
+            a *= i ** ((factors[i] - 1) // 2)   # --- py stmt 20018
+            b *= i   # --- py stmt 20019
+    if a == 1 or b == 1:   # --- py stmt 20020
+        return simplify_square_root(max_variable)   # --- py stmt 20021
+    else:   # --- py stmt 20022
+        return rf'$\sqrt{{{y}}}$', rf'${a}\sqrt{{{b}}}$'   # --- py stmt 20023
+
+def subtraction(max_minuend=99, max_diff=99):   # --- py stmt 21001
+    a = random.randint(0, max_minuend)   # --- py stmt 21002
+    b = random.randint(max(0, (a - max_diff)), a)   # --- py stmt 21003
+    c = a - b   # --- py stmt 21004
+
+    return f'${a}-{b}=$', f'${c}$'   # --- py stmt 21005
+
+### JavaScript
+
+function absolute_difference(max_a = 100, max_b = 100) {   // --- py stmt 1
+    const a = Math.floor(Math.random() * (2 * max_a + 1)) - max_a;   // --- py stmt 2
+    const b = Math.floor(Math.random() * (2 * max_b + 1)) - max_b;   // --- py stmt 3
+    const absDiff = Math.abs(a - b);   // --- py stmt 4
+
+    return [`$|${a}-${b}|=$`, `$${absDiff}$`];   // --- py stmt 5
+}
+
+function addition(max_sum = 99, max_addend = 50) {   // --- py stmt 1001
+    if (max_addend > max_sum) {   // --- py stmt 1002
+        max_addend = max_sum;   // --- py stmt 1003
+    }
+    const a = Math.floor(Math.random() * (max_addend + 1));   // --- py stmt 1004
+    const b = Math.floor(Math.random() * (Math.min(max_sum - a, max_addend) + 1));   // --- py stmt 1005
+    const c = a + b;   // --- py stmt 1006
+
+    const problem = `$${a}+${b}=$`;   // --- py stmt 1007
+    const solution = `$${c}$`;   // --- py stmt 1008
+    return [problem, solution];   // --- py stmt 1009
+}
+
+function compare_fractions(max_val = 10) {   // --- py stmt 2001
+    let a = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 2002
+    let b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 2003
+    let c = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 2004
+    let d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 2005
+
+    while (a === b) {   // --- py stmt 2006
+        b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 2007
+    }
+    while (c === d) {   // --- py stmt 2008
+        d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 2009
+    }
+
+    let first = a / b;   // --- py stmt 2010
+    let second = c / d;   // --- py stmt 2011
+
+    let solution;   // --- py stmt 2012
+    if (first > second) {   // --- py stmt 2012
+        solution = ">";   // --- py stmt 2013
+    } else if (first < second) {   // --- py stmt 2014
+        solution = "<";   // --- py stmt 2015
+    } else {   // --- py stmt 2016
+        solution = "=";   // --- py stmt 2017
+    }
+
+    let problem = `Which symbol represents the comparison between $\\frac{${a}}{${b}}$ and $\\frac{${c}}{${d}}$?`;   // --- py stmt 2018
+    return [problem, solution];   // --- py stmt 2019
+}
+
+function cube_root(min_no = 1, max_no = 1000) {   // --- py stmt 3001
+    let b = Math.floor(Math.random() * (max_no - min_no + 1) + min_no);   // --- py stmt 3002
+    let a = Math.cbrt(b);   // --- py stmt 3003
+
+    return [`What is the cube root of: $\\sqrt[3]{${b}}=$ to 2 decimal places?`, `$${a.toFixed(2)}$`];   // --- py stmt 3004
+}
+
+function divide_fractions(max_val = 10) {   // --- py stmt 4001
+    let a = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 4002
+    let b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 4003
+
+    while (a === b) {   // --- py stmt 4004
+        b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 4005
+    }
+
+    let c = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 4006
+    let d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 4007
+
+    while (c === d) {   // --- py stmt 4008
+        d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 4009
+    }
+
+    function calculate_gcd(x, y) {   // --- py stmt 4010
+        while (y) {   // --- py stmt 4011
+            [x, y] = [y, x % y];   // --- py stmt 4012
+        }
+        return x;   // --- py stmt 4013
+    }
+
+    let tmp_n = a * d;   // --- py stmt 4014
+    let tmp_d = b * c;   // --- py stmt 4015
+
+    let gcd = calculate_gcd(tmp_n, tmp_d);   // --- py stmt 4016
+    let sol_numerator = Math.floor(tmp_n / gcd);   // --- py stmt 4017
+    let sol_denominator = Math.floor(tmp_d / gcd);   // --- py stmt 4018
+
+    return [`$\\frac{${a}}{${b}}\\div\\frac{${c}}{${d}}=$`, `$\\frac{${sol_numerator}}{${sol_denominator}}$`];   // --- py stmt 4019
+}
+
+function division(max_a = 25, max_b = 25) {   // --- py stmt 5001
+    const a = Math.floor(Math.random() * max_a) + 1;   // --- py stmt 5002
+    const b = Math.floor(Math.random() * max_b) + 1;   // --- py stmt 5003
+
+    const divisor = a * b;   // --- py stmt 5004
+    const dividend = Math.random() < 0.5 ? a : b;   // --- py stmt 5005
+    const quotient = Math.floor(divisor / dividend);   // --- py stmt 5006
+
+    return [`$${divisor}\\div${dividend}=$`, `$${quotient}$`];   // --- py stmt 5007
+}
+
+function exponentiation(max_base = 20, max_expo = 10) {   // --- py stmt 6001
+    const base = Math.floor(Math.random() * max_base) + 1;   // --- py stmt 6002
+    const expo = Math.floor(Math.random() * max_expo) + 1;   // --- py stmt 6003
+
+    return [`$${base}^{${expo}}=$`, `$${base ** expo}$`];   // --- py stmt 6004
+}
+
+function factorial(max_input = 6) {   // --- py stmt 7001
+    let a = Math.floor(Math.random() * (max_input + 1));   // --- py stmt 7002
+    let n = a;   // --- py stmt 7003
+    let b = 1;   // --- py stmt 7004
+    while (a !== 1 && n > 0) {   // --- py stmt 7005
+        b *= n;   // --- py stmt 7006
+        n -= 1;   // --- py stmt 7007
+    }
+
+    return [`$${a}! =$`, `$${b}$`];   // --- py stmt 7008
+}
+
+function fraction_multiplication(max_val = 10) {   // --- py stmt 8001
+    let a = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 8002
+    let b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 8003
+    let c = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 8004
+    let d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 8005
+
+    while (a === b) {   // --- py stmt 8006
+        b = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 800106
+    }
+
+    while (c === d) {   // --- py stmt 8007
+        d = Math.floor(Math.random() * max_val) + 1;   // --- py stmt 800107
+    }
+
+    function calculate_gcd(x, y) {   // --- py stmt 8008
+        while (y) {   // --- py stmt 8009
+            [x, y] = [y, x % y];   // --- py stmt 8010
+        }
+        return x;   // --- py stmt 8011
+    }
+
+    let tmp_n = a * c;   // --- py stmt 8012
+    let tmp_d = b * d;   // --- py stmt 8013
+
+    let gcd = calculate_gcd(tmp_n, tmp_d);   // --- py stmt 8014
+
+    let problem = `$\\frac{${a}}{${b}}\\cdot\\frac{${c}}{${d}}=$`;   // --- py stmt 8015
+    let solution;   // --- py stmt 8016
+    if (tmp_d === 1 || tmp_d === gcd) {   // --- py stmt 8016
+        solution = `$\\frac{${tmp_n}}{${gcd}}$`;   // --- py stmt 8017
+    } else {   // --- py stmt 8018
+        solution = `$\\frac{${Math.floor(tmp_n / gcd)}}{${Math.floor(tmp_d / gcd)}}$`;   // --- py stmt 8019
+    }
+    return [problem, solution];   // --- py stmt 8020
+}
+
+function fraction_to_decimal(max_res = 99, max_divid = 99) {   // --- py stmt 9001
+    const a = Math.floor(Math.random() * (max_divid + 1));   // --- py stmt 9002
+    const b = Math.floor(Math.random() * (Math.min(max_res, max_divid) - 1)) + 1;   // --- py stmt 9003
+    const c = Math.round(a / b * 100) / 100;   // --- py stmt 9004
+
+    return [`$${a}\\div${b}=$`, `$${c}$`];   // --- py stmt 9005
+}
+
+function greatest_common_divisor(numbers_count = 2, max_num = 10 ** 3) {   // --- py stmt 10001
+    function greatestCommonDivisorOfTwoNumbers(number1, number2) {   // --- py stmt 10002
+        number1 = Math.abs(number1);   // --- py stmt 10003
+        number2 = Math.abs(number2);   // --- py stmt 10004
+        while (number2 > 0) {   // --- py stmt 10005
+            [number1, number2] = [number2, number1 % number2];   // --- py stmt 10006
+        }
+        return number1;   // --- py stmt 10007
+    }
+
+    numbers_count = Math.max(numbers_count, 2);   // --- py stmt 10008
+    let numbers = [];   // --- py stmt 10009
+    for (let i = 0; i < numbers_count; i++) {
+        numbers.push(Math.floor(Math.random() * (max_num + 1)));   // --- py stmt 10009
+    }
+
+    let greatestCommonDivisor = greatestCommonDivisorOfTwoNumbers(numbers[0], numbers[1]);   // --- py stmt 10010
+
+    for (let index = 1; index < numbers_count; index++) {   // --- py stmt 10011
+        greatestCommonDivisor = greatestCommonDivisorOfTwoNumbers(numbers[index], greatestCommonDivisor);   // --- py stmt 10012
+    }
+
+    return [`$GCD(${numbers.join(",")})=$`, `$${greatestCommonDivisor}$`];   // --- py stmt 10013
+}
+
+function is_composite(max_num = 250) {   // --- py stmt 11001
+    const a = Math.floor(Math.random() * (max_num - 2 + 1) + 2);   // --- py stmt 11002
+
+    const problem = `Is $${a}$ composite?`;   // --- py stmt 11003
+    if (a === 0 || a === 1) {   // --- py stmt 11004
+        return [problem, "No"];   // --- py stmt 11005
+    }
+    for (let i = 2; i < a; i++) {   // --- py stmt 11006
+        if (a % i === 0) {   // --- py stmt 11007
+            return [problem, "Yes"];   // --- py stmt 11008
+        }
+    }
+    const solution = "No";   // --- py stmt 11009
+
+    return [problem, solution];   // --- py stmt 11010
+}
+
+function is_prime(max_num = 100) {   // --- py stmt 12001
+    const a = Math.floor(Math.random() * (max_num - 2 + 1) + 2);   // --- py stmt 12002
+    const problem = `Is $${a}$ prime?`;   // --- py stmt 12003
+    if (a === 2) {   // --- py stmt 12004
+        return [problem, "Yes"];   // --- py stmt 12005
+    }
+    if (a % 2 === 0) {   // --- py stmt 12006
+        return [problem, "No"];   // --- py stmt 12007
+    }
+    for (let i = 3; i <= Math.floor(a / 2) + 1; i += 2) {   // --- py stmt 12008
+        if (a % i === 0) {   // --- py stmt 12009
+            return [problem, "No"];   // --- py stmt 12010
+        }
+    }
+    const solution = "Yes";   // --- py stmt 12011
+    return [problem, solution];   // --- py stmt 12012
+}
+
+function multiplication(max_multi = 12) {   // --- py stmt 13001
+    const a = Math.floor(Math.random() * (max_multi + 1));   // --- py stmt 13002
+    const b = Math.floor(Math.random() * (max_multi + 1));   // --- py stmt 13003
+    const c = a * b;   // --- py stmt 13004
+
+    return [`\\(${a}\\cdot${b}=\\)`, `\\(${c}\\)`];   // --- py stmt 13005
+}
+
+function percentage(max_value = 99, max_percentage = 99) {   // --- py stmt 14001
+    const a = Math.floor(Math.random() * max_percentage) + 1;   // --- py stmt 14002
+    const b = Math.floor(Math.random() * max_value) + 1;   // --- py stmt 14003
+    const problem = `What is $${a}$% of $${b}$?`;   // --- py stmt 14004
+    const percentage = (a / 100) * b;   // --- py stmt 14005
+    const formatted_float = percentage.toFixed(2);   // --- py stmt 14006
+    const solution = `$${formatted_float}$`;   // --- py stmt 14007
+
+    return [problem, solution];   // --- py stmt 14008
+}
+
+function percentage_difference(max_value = 200, min_value = 0) {   // --- py stmt 15001
+    const value_a = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 15002
+    const value_b = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 15003
+
+    let diff = 2 * (Math.abs(value_a - value_b) / Math.abs(value_a + value_b)) * 100;   // --- py stmt 15004
+    diff = Math.round(diff * 100) / 100;   // --- py stmt 15005
+
+    const problem = `What is the percentage difference between $${value_a}$ and $${value_b}$?`;   // --- py stmt 15006
+    const solution = `$${diff}$%`;   // --- py stmt 15007
+    return [problem, solution];   // --- py stmt 15008
+}
+
+function percentage_error(max_value = 100, min_value = -100) {   // --- py stmt 16001
+    let observed_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 16002
+    const exact_value = Math.floor(Math.random() * (max_value - min_value + 1) + min_value);   // --- py stmt 16003
+
+    if (observed_value * exact_value < 0) {   // --- py stmt 16004
+        observed_value *= -1;   // --- py stmt 16005
+    }
+
+    let error = (Math.abs(observed_value - exact_value) / Math.abs(exact_value)) * 100;   // --- py stmt 16006
+    error = Math.round(error * 100) / 100;   // --- py stmt 16007
+
+    const problem = `Find the percentage error when observed value equals $${observed_value}$ and exact value equals $${exact_value}$.`;   // --- py stmt 16008
+    const solution = `$${error}$%`;   // --- py stmt 16009
+    return [problem, solution];   // --- py stmt 16010
+}
+
+function power_of_powers(max_base = 50, max_power = 10) {   // --- py stmt 17001
+    const base = Math.floor(Math.random() * max_base) + 1;   // --- py stmt 17002
+    const power1 = Math.floor(Math.random() * max_power) + 1;   // --- py stmt 17003
+    const power2 = Math.floor(Math.random() * max_power) + 1;   // --- py stmt 17004
+    const step = power1 * power2;   // --- py stmt 17005
+
+    const problem = `Simplify $${base}^{${power1}^{${power2}}}$`;   // --- py stmt 17006
+    const solution = `$${base}^{${step}}$`;   // --- py stmt 17007
+    return [problem, solution];   // --- py stmt 17008
+}
+
+function square(max_square_num = 20) {   // --- py stmt 18001
+    const a = Math.floor(Math.random() * max_square_num) + 1;   // --- py stmt 18002
+    const b = a ** 2;   // --- py stmt 18003
+
+    return [`$${a}^2=$`, `$${b}$`];   // --- py stmt 18004
+}
+
+function square_root(min_no = 1, max_no = 12) {   // --- py stmt 19001
+    let b = Math.floor(Math.random() * (max_no - min_no + 1) + min_no);   // --- py stmt 19002
+    let a = b ** 2;   // --- py stmt 19003
+
+    return [`$\\sqrt{${a}}=$`, `$${b}$`];   // --- py stmt 19004
+}
+
+function simplify_square_root(max_variable = 100) {   // --- py stmt 20001
+    let x = Math.floor(Math.random() * max_variable) + 1;   // --- py stmt 20002
+    let y = x;   // --- py stmt 20002
+    let factors = {};   // --- py stmt 20003
+    let f = 2;   // --- py stmt 20004
+    while (x !== 1) {   // --- py stmt 20005
+        if (x % f === 0) {   // --- py stmt 20006
+            if (!(f in factors)) {   // --- py stmt 20007
+                factors[f] = 0;   // --- py stmt 20008
+            }
+            factors[f] += 1;   // --- py stmt 20009
+            x /= f;   // --- py stmt 20010
+        } else {   // --- py stmt 20011
+            f += 1;   // --- py stmt 20012
+        }
+    }
+    let b = 1;   // --- py stmt 20013
+    let a = b;   // --- py stmt 20013
+    for (let i in factors) {   // --- py stmt 20014
+        if (factors[i] % 2 === 0) {   // --- py stmt 20015
+            a *= Math.pow(i, factors[i] / 2);   // --- py stmt 20016
+        } else {   // --- py stmt 20017
+            a *= Math.pow(i, (factors[i] - 1) / 2);   // --- py stmt 20018
+            b *= i;   // --- py stmt 20019
+        }
+    }
+    if (a === 1 || b === 1) {   // --- py stmt 20020
+        return simplify_square_root(max_variable);   // --- py stmt 20021
+    } else {   // --- py stmt 20022
+        return [`$\\sqrt{${y}}$`, `$${a}\\sqrt{${b}}$`];   // --- py stmt 20023
+    }
+}
+
+function subtraction(max_minuend = 99, max_diff = 99) {   // --- py stmt 21001
+  let a = Math.floor(Math.random() * (max_minuend + 1));   // --- py stmt 21002
+  let b = Math.floor(Math.random() * (a - Math.max(0, a - max_diff) + 1)) + Math.max(0, a - max_diff);   // --- py stmt 21003
+  let c = a - b;   // --- py stmt 21004
+
+  return [`$${a}-${b}=$`, `$${c}$`];   // --- py stmt 21005
+}

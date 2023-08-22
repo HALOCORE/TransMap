@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 3,
+    "content": "    var d = directions.replace(/^[L]+/, '').replace(/[R]+$/, '');\n    return d.length - (d.split('S').length - 1);",
+    "replacement": "    var d = directions.lstrip('L').rstrip('R');\n    return len(d) - d.count('S');"
+  }
+]

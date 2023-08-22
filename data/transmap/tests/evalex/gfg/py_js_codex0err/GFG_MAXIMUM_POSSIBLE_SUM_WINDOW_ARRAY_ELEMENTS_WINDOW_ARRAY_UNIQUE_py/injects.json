@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  let curr_sum = 0, curr_begin = 0;",
+    "replacement": "  let curr_sum = curr_begin = 0;"
+  }
+]

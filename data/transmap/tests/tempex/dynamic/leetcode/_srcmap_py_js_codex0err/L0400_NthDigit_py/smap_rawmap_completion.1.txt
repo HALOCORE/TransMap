@@ -1,0 +1,31 @@
+
+### Python
+### findNthDigit 
+from typing import *   # --- py stmt 1
+def f_gold(n: int) -> int:   # --- py stmt 2
+    bits, t = 1, 9   # --- py stmt 3
+    while n > bits * t:   # --- py stmt 4
+        n -= bits * t   # --- py stmt 5
+        bits += 1   # --- py stmt 6
+        t *= 10   # --- py stmt 7
+    start = 10 ** (bits - 1) + (n // bits) - 1   # --- py stmt 8
+    if n % bits == 0:   # --- py stmt 9
+        return start % 10   # --- py stmt 10
+    return int(str((start + 1))[(n % bits) - 1])   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 2
+    var bits = 1, t = 9;   // --- py stmt 3
+    while (n > bits * t) {   // --- py stmt 4
+        n -= bits * t;   // --- py stmt 5
+        bits += 1;   // --- py stmt 6
+        t *= 10;   // --- py stmt 7
+    }
+    var start = Math.pow(10, bits - 1) + (n / bits) - 1;   // --- py stmt 8
+    if (n % bits == 0) {   // --- py stmt 9
+        return start % 10;   // --- py stmt 10
+    }
+    return parseInt(String((start + 1)).charAt((n % bits) - 1));   // --- py stmt 11
+}
+

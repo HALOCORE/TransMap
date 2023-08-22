@@ -1,0 +1,35 @@
+
+### Python
+### longestOnes 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], k: int) -> int:   # --- py stmt 2
+    l = r = -1   # --- py stmt 3
+    while r < len(nums) - 1:   # --- py stmt 4
+        r += 1   # --- py stmt 5
+        if nums[r] == 0:   # --- py stmt 6
+            k -= 1   # --- py stmt 7
+        if k < 0:   # --- py stmt 8
+            l += 1   # --- py stmt 9
+            if nums[l] == 0:   # --- py stmt 10
+                k += 1   # --- py stmt 11
+    return r - l   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 2
+    let l = r = -1;   // --- py stmt 3
+    while (r < nums.length - 1) {   // --- py stmt 4
+        r += 1;   // --- py stmt 5
+        if (nums[r] == 0) {   // --- py stmt 6
+            k -= 1;   // --- py stmt 7
+        }
+        if (k < 0) {   // --- py stmt 8
+            l += 1;   // --- py stmt 9
+            if (nums[l] == 0) {   // --- py stmt 10
+                k += 1;   // --- py stmt 11
+            }
+        }
+    }
+    return r - l;   // --- py stmt 12
+}
+

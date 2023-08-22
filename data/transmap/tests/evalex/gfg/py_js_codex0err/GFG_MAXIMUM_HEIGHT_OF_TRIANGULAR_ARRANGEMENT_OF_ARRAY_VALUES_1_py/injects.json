@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return Math.floor((-1 + Math.sqrt(1 + (8 * n))) / 2);",
+    "replacement": "    return (-1 + Math.sqrt(1 + (8 * n))) / 2;"
+  }
+]

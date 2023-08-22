@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let res = [], _switch = true;",
+    "replacement": "    let res = [], switch = true;"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        res.push(_switch? Math.min(...lst) : Math.max(...lst));",
+    "replacement": "        res.push(Math.min(...lst) if switch else Math.max(...lst));"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        _switch = !_switch;",
+    "replacement": "        switch = !switch;"
+  }
+]

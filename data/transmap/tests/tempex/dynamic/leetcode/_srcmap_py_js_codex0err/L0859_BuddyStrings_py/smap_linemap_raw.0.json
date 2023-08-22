@@ -1,0 +1,254 @@
+{
+  "src_anno_stmts": [
+    [
+      "### buddyStrings",
+      null
+    ],
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(s: str, goal: str) -> bool:",
+      [
+        3
+      ]
+    ],
+    [
+      "    m, n = len(s), len(goal)",
+      [
+        4
+      ]
+    ],
+    [
+      "    if m != n:",
+      [
+        5
+      ]
+    ],
+    [
+      "        return False",
+      [
+        6
+      ]
+    ],
+    [
+      "    diff = sum(1 for i in range(n) if s[i] != goal[i])",
+      [
+        7
+      ]
+    ],
+    [
+      "    cnt1, cnt2 = Counter(s), Counter(goal)",
+      [
+        8
+      ]
+    ],
+    [
+      "    if cnt1 != cnt2:",
+      [
+        9
+      ]
+    ],
+    [
+      "        return False",
+      [
+        10
+      ]
+    ],
+    [
+      "    return diff == 2 or (diff == 0 and any(e > 1 for e in cnt1.values()))",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, goal) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var m = s.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = goal.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (m != n) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        return false;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var diff = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (s[i] != goal[i]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            diff++;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var cnt1 = {};",
+      [
+        8
+      ]
+    ],
+    [
+      "    var cnt2 = {};",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (cnt1[s[i]] == undefined) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            cnt1[s[i]] = 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            cnt1[s[i]]++;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (cnt2[goal[i]] == undefined) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            cnt2[goal[i]] = 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            cnt2[goal[i]]++;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (JSON.stringify(cnt1) != JSON.stringify(cnt2)) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        return false;",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return diff == 2 || (diff == 0 && Object.values(cnt1).some(function (e) { return e > 1; }));",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

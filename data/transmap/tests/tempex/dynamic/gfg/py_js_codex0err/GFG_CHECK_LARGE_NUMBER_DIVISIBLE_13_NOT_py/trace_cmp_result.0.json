@@ -1,0 +1,52 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "[20,2,20,16]",
+    "src_cov_lines": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "tar_cov_lines": [
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"ReferenceError: k is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",15,\"vzTUaItpCpLnjY0\"],\"length\":[\"N\",\"15\"],\"sum\":[\"N\",\"4651\"],\"p\":[\"N\",\"-1\"],\"i\":[\"N\",\"-2\"],\"group\":[\"N\",\"4170\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[16,4,16,10]",
+    "src_cov_lines": [
+      15
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"ReferenceError: k is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",15,\"vzTUaItpCpLnjY0\"],\"length\":[\"N\",\"15\"],\"sum\":[\"N\",\"0\"],\"p\":[\"N\",\"1\"],\"i\":[\"N\",\"13\"],\"group\":[\"N\",\"410\"]}",
+      ""
+    ]
+  }
+]

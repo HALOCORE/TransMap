@@ -1,0 +1,25 @@
+
+### Python
+### tribonacci 
+from typing import *   # --- py stmt 1
+def f_gold(n: int) -> int:   # --- py stmt 2
+    a, b, c = 0, 1, 1   # --- py stmt 3
+    for _ in range(n):   # --- py stmt 4
+        a, b, c = b, c, a + b + c   # --- py stmt 5
+    return a   # --- py stmt 6
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 2
+    var a, b, c;   // --- py stmt 3
+    a = 0;   // --- py stmt 3
+    b = 1;   // --- py stmt 3
+    c = 1;   // --- py stmt 3
+    for (var _ = 0; _ < n; _++) {   // --- py stmt 4
+        a = b;   // --- py stmt 5
+        b = c;   // --- py stmt 5
+        c = a + b + c;   // --- py stmt 5
+    }
+    return a;   // --- py stmt 6
+}
+

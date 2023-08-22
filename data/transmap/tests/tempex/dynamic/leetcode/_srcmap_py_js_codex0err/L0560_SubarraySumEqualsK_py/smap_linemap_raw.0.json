@@ -1,0 +1,122 @@
+{
+  "src_anno_stmts": [
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    counter = Counter({0: 1})",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = s = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for num in nums:",
+      [
+        6
+      ]
+    ],
+    [
+      "        s += num",
+      [
+        7
+      ]
+    ],
+    [
+      "        ans += counter[s - k]",
+      [
+        8
+      ]
+    ],
+    [
+      "        counter[s] += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let counter = { 0: 1 };",
+      [
+        4
+      ]
+    ],
+    [
+      "    let ans = s = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let num of nums) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        s += num;",
+      [
+        7
+      ]
+    ],
+    [
+      "        ans += s - k in counter ? counter[s - k] : 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "        counter[s] = s in counter ? counter[s] + 1 : 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,57 @@
+
+### Python
+### allCellsDistOrder 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(rows: int, cols: int, rCenter: int, cCenter: int   # --- py stmt 3
+) -> List[List[int]]:   # --- py stmt 4
+    q = deque([(rCenter, cCenter)])   # --- py stmt 5
+    vis = [[False] * cols for _ in range(rows)]   # --- py stmt 6
+    vis[rCenter][cCenter] = True   # --- py stmt 7
+    ans = []   # --- py stmt 8
+    while q:   # --- py stmt 9
+        for _ in range(len(q)):   # --- py stmt 10
+            i, j = q.popleft()   # --- py stmt 11
+            ans.append([i, j])   # --- py stmt 12
+            for a, b in [[1, 0], [-1, 0], [0, 1], [0, -1]]:   # --- py stmt 13
+                x, y = i + a, j + b   # --- py stmt 14
+                if 0 <= x < rows and 0 <= y < cols and not vis[x][y]:   # --- py stmt 15
+                    q.append((x, y))   # --- py stmt 16
+                    vis[x][y] = True   # --- py stmt 17
+    return ans   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(rows, cols, rCenter, cCenter) {   // --- py stmt 3
+    var q = new Array();   // --- py stmt 5
+    q.push([rCenter, cCenter]);   // --- py stmt 5
+    var vis = new Array(rows);   // --- py stmt 6
+    for (var i = 0; i < rows; i++) {   // --- py stmt 6
+        vis[i] = new Array(cols);   // --- py stmt 6
+        for (var j = 0; j < cols; j++) {   // --- py stmt 6
+            vis[i][j] = false;   // --- py stmt 6
+        }
+    }
+    vis[rCenter][cCenter] = true;   // --- py stmt 7
+    var ans = new Array();   // --- py stmt 8
+    while (q.length > 0) {   // --- py stmt 9
+        for (var i = 0; i < q.length; i++) {   // --- py stmt 10
+            var i = q.shift();   // --- py stmt 11
+            ans.push(i);   // --- py stmt 12
+            for (var k = 0; k < 4; k++) {   // --- py stmt 13
+                var a = [1, -1, 0, 0];   // --- py stmt 13
+                var b = [0, 0, 1, -1];   // --- py stmt 13
+                var x = i + a[k];   // --- py stmt 14
+                var y = j + b[k];   // --- py stmt 14
+                if (0 <= x && x < rows && 0 <= y && y < cols && !vis[x][y]) {   // --- py stmt 15
+                    q.push([x, y]);   // --- py stmt 16
+                    vis[x][y] = true;   // --- py stmt 17
+                }
+            }
+        }
+    }
+    return ans;   // --- py stmt 18
+}
+
+
+

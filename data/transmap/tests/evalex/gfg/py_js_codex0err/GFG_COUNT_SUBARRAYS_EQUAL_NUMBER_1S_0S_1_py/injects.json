@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    if (typeof(mp[Sum]) !== \"undefined\") count += mp[Sum];",
+    "replacement": "    if (Sum in mp) count += mp[Sum];"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    mp[Sum] = (mp[Sum] || 0) + 1;",
+    "replacement": "    mp[Sum] = mp.get(Sum, 0) + 1;"
+  }
+]

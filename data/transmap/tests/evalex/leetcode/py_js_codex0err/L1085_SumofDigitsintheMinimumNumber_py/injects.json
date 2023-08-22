@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    return (s % 2) ? 0 : 1;",
+    "replacement": "    return 0 if s % 2 else 1;"
+  }
+]

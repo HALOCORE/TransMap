@@ -1,0 +1,40 @@
+
+### Python
+### letterCasePermutation 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> List[str]:   # --- py stmt 2
+    def dfs(i, t):   # --- py stmt 3
+        if i == len(t):   # --- py stmt 4
+            ans.append(''.join(t))   # --- py stmt 5
+            return   # --- py stmt 6
+        dfs(i + 1, t)   # --- py stmt 7
+        if t[i].isalpha():   # --- py stmt 8
+            t[i] = t[i].upper() if t[i].islower() else t[i].lower()   # --- py stmt 9
+            dfs(i + 1, t)   # --- py stmt 10
+    ans = []   # --- py stmt 11
+    t = list(s)   # --- py stmt 12
+    dfs(0, t)   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    function dfs(i, t) {   // --- py stmt 3
+        if (i == t.length) {   // --- py stmt 4
+            ans.push(t.join(''));   // --- py stmt 5
+            return;   // --- py stmt 6
+        }
+        dfs(i + 1, t);   // --- py stmt 7
+        if (t[i].match(/[a-z]/i)) {   // --- py stmt 8
+            t[i] = t[i] === t[i].toLowerCase() ? t[i].toUpperCase() : t[i].toLowerCase();   // --- py stmt 9
+            dfs(i + 1, t);   // --- py stmt 10
+        }
+    }
+    var ans = [];   // --- py stmt 11
+    var t = s.split("");   // --- py stmt 12
+    dfs(0, t);   // --- py stmt 13
+    return ans;   // --- py stmt 14
+}
+
+
+

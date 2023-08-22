@@ -1,0 +1,240 @@
+{
+  "src_anno_stmts": [
+    [
+      "from queue import Queue ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(ip, op, n):",
+      [
+        2
+      ]
+    ],
+    [
+      "  Input = Queue()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n): Input.put(ip[i])",
+      [
+        4
+      ]
+    ],
+    [
+      "  output = Queue()",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(n): output.put(op[i])",
+      [
+        6
+      ]
+    ],
+    [
+      "  tempStack =[]",
+      [
+        7
+      ]
+    ],
+    [
+      "  while(not Input.empty()):",
+      [
+        8
+      ]
+    ],
+    [
+      "    ele = Input.queue[0]",
+      [
+        9
+      ]
+    ],
+    [
+      "    Input.get()",
+      [
+        10
+      ]
+    ],
+    [
+      "    if(ele == output.queue[0]):",
+      [
+        11
+      ]
+    ],
+    [
+      "      output.get()",
+      [
+        12
+      ]
+    ],
+    [
+      "      while(len(tempStack)!= 0):",
+      [
+        13
+      ]
+    ],
+    [
+      "        if(tempStack[- 1] == output.queue[0]):",
+      [
+        14
+      ]
+    ],
+    [
+      "          tempStack.pop()",
+      [
+        15
+      ]
+    ],
+    [
+      "          output.get()",
+      [
+        16
+      ]
+    ],
+    [
+      "        else: break",
+      [
+        17
+      ]
+    ],
+    [
+      "    else: tempStack.append(ele)",
+      [
+        18
+      ]
+    ],
+    [
+      "  return(Input.empty()and len(tempStack)== 0)",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(ip, op, n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  var Input = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) Input.push(ip[i]);",
+      [
+        4
+      ]
+    ],
+    [
+      "  var output = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) output.push(op[i]);",
+      [
+        6
+      ]
+    ],
+    [
+      "  var tempStack = [];",
+      [
+        7
+      ]
+    ],
+    [
+      "  while (Input.length !== 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    var ele = Input.queue[0];",
+      [
+        9
+      ]
+    ],
+    [
+      "    Input.shift();",
+      [
+        10
+      ]
+    ],
+    [
+      "    if (ele == output[0]) {",
+      [
+        11
+      ]
+    ],
+    [
+      "      output.shift();",
+      [
+        12
+      ]
+    ],
+    [
+      "      while (tempStack.length != 0) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        if (tempStack[tempStack.length - 1] == output[0]) {",
+      [
+        14
+      ]
+    ],
+    [
+      "          tempStack.pop();",
+      [
+        15
+      ]
+    ],
+    [
+      "          output.shift();",
+      [
+        16
+      ]
+    ],
+    [
+      "        } else break;",
+      [
+        17
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    } else tempStack.push(ele);",
+      [
+        18
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return Input.length === 0 && tempStack.length == 0;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

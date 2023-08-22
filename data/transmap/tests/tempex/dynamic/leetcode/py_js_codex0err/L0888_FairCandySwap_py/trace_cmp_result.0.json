@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,21]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"aliceSizes\":[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]],\"bobSizes\":[\"A\",2,[\"N\",\"2\"],[\"N\",\"2\"]],\"diff\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,21]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"aliceSizes\":[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]],\"bobSizes\":[\"A\",2,[\"N\",\"2\"],[\"N\",\"2\"]],\"diff\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,21]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"aliceSizes\":[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]],\"bobSizes\":[\"A\",2,[\"N\",\"2\"],[\"N\",\"2\"]],\"diff\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  }
+]

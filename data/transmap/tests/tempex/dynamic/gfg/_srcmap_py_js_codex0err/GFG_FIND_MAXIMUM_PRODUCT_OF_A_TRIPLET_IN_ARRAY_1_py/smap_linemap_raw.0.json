@@ -1,0 +1,58 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if n < 3: return - 1",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  return max(arr[0] * arr[1] * arr[n - 1], arr[n - 1] * arr[n - 2] * arr[n - 3])",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (n < 3) return -1;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  return Math.max(arr[0] * arr[1] * arr[n - 1], arr[n - 1] * arr[n - 2] * arr[n - 3]);",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,41 @@
+
+### Python
+### decrypt 
+from typing import *   # --- py stmt 1
+def f_gold(code: List[int], k: int) -> List[int]:   # --- py stmt 2
+    n = len(code)   # --- py stmt 3
+    res = [0] * n   # --- py stmt 4
+    if k == 0:   # --- py stmt 5
+        return res   # --- py stmt 6
+    for i in range(n):   # --- py stmt 7
+        if k > 0:   # --- py stmt 8
+            for j in range(i + 1, i + k + 1):   # --- py stmt 9
+                res[i] += code[j % n]   # --- py stmt 10
+        else:   # --- py stmt 11
+            for j in range(i + k, i):   # --- py stmt 12
+                res[i] += code[(j + n) % n]   # --- py stmt 13
+    return res   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(code, k) {   // --- py stmt 2
+    var n = code.length;   // --- py stmt 3
+    var res = [0] * n;   // --- py stmt 4
+    if (k == 0) {   // --- py stmt 5
+        return res;   // --- py stmt 6
+    }
+    for (var i = 0; i < n; i++) {   // --- py stmt 7
+        if (k > 0) {   // --- py stmt 8
+            for (var j = i + 1; j < i + k + 1; j++) {   // --- py stmt 9
+                res[i] += code[j % n];   // --- py stmt 10
+            }
+        }
+        else {   // --- py stmt 11
+            for (var j = i + k; j < i; j++) {   // --- py stmt 12
+                res[i] += code[(j + n) % n];   // --- py stmt 13
+            }
+        }
+    }
+    return res;   // --- py stmt 14
+}
+

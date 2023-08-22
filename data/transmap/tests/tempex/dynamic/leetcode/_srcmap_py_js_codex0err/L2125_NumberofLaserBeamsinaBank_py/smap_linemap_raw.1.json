@@ -1,0 +1,112 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numberOfBeams",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(bank: List[str]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    last = ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for b in bank:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (t := b.count('1')) > 0:",
+      [
+        5
+      ]
+    ],
+    [
+      "            ans += last * t",
+      [
+        6
+      ]
+    ],
+    [
+      "            last = t",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(bank) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let last = 0, ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let b of bank) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if ((t = b.split(\"1\").length - 1) > 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            ans += last * t;",
+      [
+        6
+      ]
+    ],
+    [
+      "            last = t;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

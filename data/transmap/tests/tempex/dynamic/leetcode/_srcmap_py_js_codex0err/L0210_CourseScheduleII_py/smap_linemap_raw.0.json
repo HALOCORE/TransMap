@@ -1,0 +1,324 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findOrder",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(numCourses: int, prerequisites: List[List[int]]) -> List[int]:",
+      [
+        4
+      ]
+    ],
+    [
+      "    edges = defaultdict(list)",
+      [
+        5
+      ]
+    ],
+    [
+      "    indegree = [0] * numCourses",
+      [
+        6
+      ]
+    ],
+    [
+      "    for a, b in prerequisites:",
+      [
+        7
+      ]
+    ],
+    [
+      "        edges[b].append(a)",
+      [
+        8
+      ]
+    ],
+    [
+      "        indegree[a] += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    q = deque()",
+      [
+        10
+      ]
+    ],
+    [
+      "    for i in range(numCourses):",
+      [
+        11
+      ]
+    ],
+    [
+      "        if indegree[i] == 0:",
+      [
+        12
+      ]
+    ],
+    [
+      "            q.append(i)",
+      [
+        13
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        14
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        15
+      ]
+    ],
+    [
+      "        b = q.popleft()",
+      [
+        16
+      ]
+    ],
+    [
+      "        ans.append(b)",
+      [
+        17
+      ]
+    ],
+    [
+      "        for a in edges[b]:",
+      [
+        18
+      ]
+    ],
+    [
+      "            indegree[a] -= 1",
+      [
+        19
+      ]
+    ],
+    [
+      "            if indegree[a] == 0:",
+      [
+        20
+      ]
+    ],
+    [
+      "                q.append(a)",
+      [
+        21
+      ]
+    ],
+    [
+      "    return ans if len(ans) == numCourses else []",
+      [
+        22
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold ( numCourses, prerequisites ) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var edges = new Map();",
+      [
+        5
+      ]
+    ],
+    [
+      "    var indegree = new Array(numCourses).fill(0);",
+      [
+        6
+      ]
+    ],
+    [
+      "    for ( var i = 0; i < prerequisites.length; i++ ) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        var a = prerequisites[i][0];",
+      [
+        7
+      ]
+    ],
+    [
+      "        var b = prerequisites[i][1];",
+      [
+        7
+      ]
+    ],
+    [
+      "        if ( edges.has(b) ) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            edges.get(b).push(a);",
+      [
+        8
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            edges.set(b, [a]);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        indegree[a] += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var q = [];",
+      [
+        10
+      ]
+    ],
+    [
+      "    for ( var i = 0; i < numCourses; i++ ) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        if ( indegree[i] == 0 ) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            q.push(i);",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = [];",
+      [
+        14
+      ]
+    ],
+    [
+      "    while ( q.length > 0 ) {",
+      [
+        15
+      ]
+    ],
+    [
+      "        var b = q.shift();",
+      [
+        16
+      ]
+    ],
+    [
+      "        ans.push(b);",
+      [
+        17
+      ]
+    ],
+    [
+      "        var a_list = edges.get(b);",
+      [
+        18
+      ]
+    ],
+    [
+      "        for ( var i = 0; i < a_list.length; i++ ) {",
+      [
+        18
+      ]
+    ],
+    [
+      "            indegree[a_list[i]] -= 1;",
+      [
+        19
+      ]
+    ],
+    [
+      "            if ( indegree[a_list[i]] == 0 ) {",
+      [
+        20
+      ]
+    ],
+    [
+      "                q.push(a_list[i]);",
+      [
+        21
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.length == numCourses ? ans : [];",
+      [
+        22
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

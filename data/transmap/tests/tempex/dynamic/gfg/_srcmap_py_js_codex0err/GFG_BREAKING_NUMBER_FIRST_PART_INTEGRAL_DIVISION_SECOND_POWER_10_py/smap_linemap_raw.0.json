@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(N):",
+      [
+        1
+      ]
+    ],
+    [
+      "  length = len(N)",
+      [
+        2
+      ]
+    ],
+    [
+      "  l = int((length)/ 2)",
+      [
+        3
+      ]
+    ],
+    [
+      "  count = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(l + 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "    s = N[0: 0 + i]",
+      [
+        6
+      ]
+    ],
+    [
+      "    l1 = len(s)",
+      [
+        7
+      ]
+    ],
+    [
+      "    t = N[i: l1 + i]",
+      [
+        8
+      ]
+    ],
+    [
+      "    try:",
+      [
+        9
+      ]
+    ],
+    [
+      "      if s[0] == '0' or t[0] == '0': continue",
+      [
+        10
+      ]
+    ],
+    [
+      "    except: continue",
+      [
+        11
+      ]
+    ],
+    [
+      "    if s == t: count += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "  return count",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(N) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var length = N.length;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var l = Math.floor((length) / 2);",
+      [
+        3
+      ]
+    ],
+    [
+      "  var count = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var i = 0; i < l + 1; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    var s = N.substring(0, 0 + i);",
+      [
+        6
+      ]
+    ],
+    [
+      "    var l1 = s.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    var t = N.substring(i, l1 + i);",
+      [
+        8
+      ]
+    ],
+    [
+      "    try {",
+      [
+        9
+      ]
+    ],
+    [
+      "      if (s[0] == '0' || t[0] == '0') continue;",
+      [
+        10
+      ]
+    ],
+    [
+      "    } catch (e) {",
+      [
+        11
+      ]
+    ],
+    [
+      "      continue;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (s == t) count += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return count;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

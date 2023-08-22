@@ -1,0 +1,63 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[10,4,10,16]",
+    "src_cov_lines": [
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      3,
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: Cannot use 'in' operator to search for '(' in ([{\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"()\"],\"q\":[\"A\",0],\"parentheses\":[\"SET\",[\"S\",2,\"{}\"],[\"S\",2,\"()\"],[\"S\",2,\"[]\"]],\"ch\":[\"S\",1,\")\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,8,9,24]",
+    "src_cov_lines": [
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: Cannot use 'in' operator to search for '(' in ([{\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"()\"],\"q\":[\"A\",1,[\"S\",1,\"(\"]],\"parentheses\":[\"SET\",[\"S\",2,\"()\"],[\"S\",2,\"[]\"],[\"S\",2,\"{}\"]],\"ch\":[\"S\",1,\")\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[7,12,7,24]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: Cannot use 'in' operator to search for '(' in ([{\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"()\"],\"q\":[\"A\",0],\"parentheses\":[\"SET\",[\"S\",2,\"()\"],[\"S\",2,\"{}\"],[\"S\",2,\"[]\"]],\"ch\":[\"S\",1,\"(\"]}",
+      ""
+    ]
+  }
+]

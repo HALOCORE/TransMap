@@ -1,0 +1,111 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[15,4,15,15]",
+    "break_idx": 3,
+    "expected_src_pk": "[13,4,13,14]",
+    "actural_src_pk": "[13,4,13,14]",
+    "src_cov_lines": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "tar_cov_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+    ],
+    "tar_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"1\"],\"word\":[\"S\",5,\"world\"],\"find\":[\"B\",\"T\"],\"letter\":[\"S\",1,\"d\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "res"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,4,25]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,6,20]",
+    "actural_src_pk": "[6,8,6,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"],\"word\":[\"S\",11,\"hello world\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"],\"word\":[\"S\",5,\"hello\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,4,25]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,6,20]",
+    "actural_src_pk": "[6,8,6,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"],\"word\":[\"S\",11,\"hello world\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"],\"word\":[\"S\",5,\"hello\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,4,25]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,6,20]",
+    "actural_src_pk": "[6,8,6,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"],\"word\":[\"S\",11,\"hello world\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"text\":[\"S\",11,\"hello world\"],\"brokenLetters\":[\"S\",2,\"ad\"],\"letters\":[\"SET\",[\"S\",1,\"a\"],[\"S\",1,\"d\"]],\"res\":[\"N\",\"0\"],\"word\":[\"S\",5,\"hello\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  }
+]

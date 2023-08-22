@@ -1,0 +1,76 @@
+{
+  "src_anno_stmts": [
+    [
+      "def encode(message):",
+      [
+        1
+      ]
+    ],
+    [
+      "    vowels = \"aeiouAEIOU\"",
+      [
+        2
+      ]
+    ],
+    [
+      "    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])",
+      [
+        3
+      ]
+    ],
+    [
+      "    message = message.swapcase()",
+      [
+        4
+      ]
+    ],
+    [
+      "    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function encode(message) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let vowels = \"aeiouAEIOU\";",
+      [
+        2
+      ]
+    ],
+    [
+      "    let vowels_replace = {};",
+      [
+        3
+      ]
+    ],
+    [
+      "    vowels.split(\"\").forEach((value) => vowels_replace[value] = String.fromCharCode(value.charCodeAt(0) + 2))",
+      [
+        3
+      ]
+    ],
+    [
+      "    message = message.split(\"\").map(i => i.toUpperCase() === i ? i.toLowerCase() : i.toUpperCase()).join(\"\");",
+      [
+        4
+      ]
+    ],
+    [
+      "    return [...message].map(i => typeof(vowels_replace[i]) !== 'undefined' ? vowels_replace[i] : i).join(\"\");",
+      [
+        5
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

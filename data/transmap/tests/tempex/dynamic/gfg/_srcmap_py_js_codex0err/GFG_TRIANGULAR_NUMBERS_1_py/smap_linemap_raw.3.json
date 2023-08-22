@@ -1,0 +1,148 @@
+{
+  "src_anno_stmts": [
+    [
+      "import math ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(num):",
+      [
+        2
+      ]
+    ],
+    [
+      "  if(num < 0): return False",
+      [
+        3
+      ]
+    ],
+    [
+      "  c =(- 2 * num)",
+      [
+        4
+      ]
+    ],
+    [
+      "  b, a = 1, 1",
+      [
+        5
+      ]
+    ],
+    [
+      "  d =(b * b)-(4 * a * c)",
+      [
+        6
+      ]
+    ],
+    [
+      "  if(d < 0): return False",
+      [
+        7
+      ]
+    ],
+    [
+      "  root1 =(- b + math.sqrt(d))/(2 * a)",
+      [
+        8
+      ]
+    ],
+    [
+      "  root2 =(- b - math.sqrt(d))/(2 * a)",
+      [
+        9
+      ]
+    ],
+    [
+      "  if(root1 > 0 and math.floor(root1)== root1): return True",
+      [
+        10
+      ]
+    ],
+    [
+      "  if(root2 > 0 and math.floor(root2)== root2): return True",
+      [
+        11
+      ]
+    ],
+    [
+      "  return False",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(num) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  if (num < 0) return false;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var c = (-2 * num);",
+      [
+        4
+      ]
+    ],
+    [
+      "  var b = 1, a = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "  var d = (b * b) - (4 * a * c);",
+      [
+        6
+      ]
+    ],
+    [
+      "  if (d < 0) return false;",
+      [
+        7
+      ]
+    ],
+    [
+      "  root1 = (-b + Math.sqrt(d)) / (2 * a);",
+      [
+        8
+      ]
+    ],
+    [
+      "  var root2 = (-b - Math.sqrt(d)) / (2 * a);",
+      [
+        9
+      ]
+    ],
+    [
+      "  if (root1 > 0 && Math.floor(root1) == root1) return true;",
+      [
+        10
+      ]
+    ],
+    [
+      "  if (root2 > 0 && Math.floor(root2) == root2) return true;",
+      [
+        11
+      ]
+    ],
+    [
+      "  return false;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

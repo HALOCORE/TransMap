@@ -1,0 +1,122 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(a, b, n, m):",
+      [
+        1
+      ]
+    ],
+    [
+      "  countA = dict()",
+      [
+        2
+      ]
+    ],
+    [
+      "  countB = dict()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n): countA[a[i]] = countA.get(a[i], 0)+ 1",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n): countB[b[i]] = countB.get(b[i], 0)+ 1",
+      [
+        5
+      ]
+    ],
+    [
+      "  res = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "  for x in countA:",
+      [
+        7
+      ]
+    ],
+    [
+      "    if x in countB.keys(): res += min(countA[x], countB[x])",
+      [
+        8
+      ]
+    ],
+    [
+      "  return res",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(a, b, n, m) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let countA = {};",
+      [
+        2
+      ]
+    ],
+    [
+      "  let countB = {};",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) countA[a[i]] = countA.get(a[i], 0) + 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) countB[b[i]] = (countB[b[i]] || 0) + 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "  let res = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "  for (let x of Object.keys(countA).map(Number)) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (x in countB) res += Math.min(countA[x], countB[x]);",
+      [
+        8
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return res;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

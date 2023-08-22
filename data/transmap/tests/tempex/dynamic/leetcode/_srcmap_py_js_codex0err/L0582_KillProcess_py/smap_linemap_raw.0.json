@@ -1,0 +1,198 @@
+{
+  "src_anno_stmts": [
+    [
+      "### killProcess",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(pid: List[int], ppid: List[int], kill: int) -> List[int]:",
+      [
+        3
+      ]
+    ],
+    [
+      "    def dfs(u):",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans.append(u)",
+      [
+        5
+      ]
+    ],
+    [
+      "        for v in g[u]:",
+      [
+        6
+      ]
+    ],
+    [
+      "            dfs(v)",
+      [
+        7
+      ]
+    ],
+    [
+      "    g = defaultdict(list)",
+      [
+        8
+      ]
+    ],
+    [
+      "    n = len(pid)",
+      [
+        9
+      ]
+    ],
+    [
+      "    for c, p in zip(pid, ppid):",
+      [
+        10
+      ]
+    ],
+    [
+      "        g[p].append(c)",
+      [
+        11
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        12
+      ]
+    ],
+    [
+      "    dfs(kill)",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(pid, ppid, kill) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    function dfs(u) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans.push(u);",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (let v of g[u]) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            dfs(v);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let g = {};",
+      [
+        8
+      ]
+    ],
+    [
+      "    let n = pid.length;",
+      [
+        9
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (g[ppid[i]] === undefined) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            g[ppid[i]] = [];",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        g[ppid[i]].push(pid[i]);",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ans = [];",
+      [
+        12
+      ]
+    ],
+    [
+      "    dfs(kill);",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    if (numbers.length === 0) {",
+    "replacement": "    if (!numbers) {"
+  }
+]

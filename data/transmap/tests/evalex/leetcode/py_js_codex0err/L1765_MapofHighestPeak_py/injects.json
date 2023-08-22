@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 24,
+    "line_end": 26,
+    "content": "        if (true) {\n            for (var [a, b] of [[0, -1], [0, 1], [1, 0], [-1, 0]]) {",
+    "replacement": "        for (var a = 0; a < 2; a++) {\n            for (var b = 0; b < 2; b++) {"
+  }
+]

@@ -1,0 +1,54 @@
+
+### Python
+### minKnightMoves 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(x: int, y: int) -> int:   # --- py stmt 3
+    q = deque([(0, 0)])   # --- py stmt 4
+    ans = 0   # --- py stmt 5
+    vis = {(0, 0)}   # --- py stmt 6
+    dirs = ((-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1))   # --- py stmt 7
+    while q:   # --- py stmt 8
+        for _ in range(len(q)):   # --- py stmt 9
+            i, j = q.popleft()   # --- py stmt 10
+            if (i, j) == (x, y):   # --- py stmt 11
+                return ans   # --- py stmt 12
+            for a, b in dirs:   # --- py stmt 13
+                c, d = i + a, j + b   # --- py stmt 14
+                if (c, d) not in vis:   # --- py stmt 15
+                    vis.add((c, d))   # --- py stmt 16
+                    q.append((c, d))   # --- py stmt 17
+        ans += 1   # --- py stmt 18
+    return -1   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(x, y) {   // --- py stmt 3
+    var q = new Array();   // --- py stmt 4
+    q.push([0, 0]);   // --- py stmt 4
+    var ans = 0;   // --- py stmt 5
+    var vis = new Set();   // --- py stmt 6
+    vis.add([0, 0].join(","));   // --- py stmt 6
+    var dirs = [[-2, 1], [-1, 2], [1, 2], [2, 1], [2, -1], [1, -2], [-1, -2], [-2, -1]];   // --- py stmt 7
+    while (q.length > 0) {   // --- py stmt 8
+        for (var _ = 0, length = q.length; _ < length; _++) {   // --- py stmt 9
+            var i = q[0][0];   // --- py stmt 10
+            var j = q[0][1];   // --- py stmt 10
+            q.shift();   // --- py stmt 10
+            if (i == x && j == y) {   // --- py stmt 11
+                return ans;   // --- py stmt 12
+            }
+            for (var [a, b] of dirs) {   // --- py stmt 13
+                var c = i + a;   // --- py stmt 14
+                var d = j + b;   // --- py stmt 14
+                if (!vis.has([c, d])) {   // --- py stmt 15
+                    vis.add([c, d].join(","));   // --- py stmt 16
+                    q.push([c, d]);   // --- py stmt 17
+                }
+            }
+        }
+        ans += 1;   // --- py stmt 18
+    }
+    return -1;   // --- py stmt 19
+}
+

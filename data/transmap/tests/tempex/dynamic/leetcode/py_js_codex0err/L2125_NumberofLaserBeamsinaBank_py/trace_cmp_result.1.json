@@ -1,0 +1,65 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[8,4,8,14]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"bank\":[\"A\",4,[\"S\",6,\"011001\"],[\"S\",6,\"000000\"],[\"S\",6,\"010100\"],[\"S\",6,\"001000\"]],\"last\":[\"N\",\"1\"],\"ans\":[\"N\",\"8\"],\"b\":[\"S\",6,\"001000\"],\"t\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,8,7,20]",
+    "src_cov_lines": [
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"bank\":[\"A\",4,[\"S\",6,\"011001\"],[\"S\",6,\"000000\"],[\"S\",6,\"010100\"],[\"S\",6,\"001000\"]],\"last\":[\"N\",\"3\"],\"ans\":[\"N\",\"0\"],\"b\":[\"S\",6,\"000000\"],\"t\":[\"N\",\"3\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,12,6,27]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: t is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"bank\":[\"A\",4,[\"S\",6,\"011001\"],[\"S\",6,\"000000\"],[\"S\",6,\"010100\"],[\"S\",6,\"001000\"]],\"last\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"b\":[\"S\",6,\"011001\"],\"t\":[\"N\",\"3\"]}",
+      ""
+    ]
+  }
+]

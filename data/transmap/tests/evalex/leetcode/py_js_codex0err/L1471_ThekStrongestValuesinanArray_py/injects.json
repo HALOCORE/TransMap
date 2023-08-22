@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    arr.sort((a, b) => (a - b));",
+    "replacement": "    arr.sort();"
+  },
+  {
+    "line_start": 4,
+    "line_end": 6,
+    "content": "        let diff1 = -Math.abs(x - m) + Math.abs(y - m);\n        if (diff1 === 0) return -x + y; else return diff1;",
+    "replacement": "        return -Math.abs(x - m) + -Math.abs(y - m) + -x + -y;"
+  }
+]

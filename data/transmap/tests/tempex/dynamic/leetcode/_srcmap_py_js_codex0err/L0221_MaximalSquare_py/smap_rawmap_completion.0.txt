@@ -1,0 +1,39 @@
+
+### Python
+### maximalSquare 
+from typing import *   # --- py stmt 1
+def f_gold(matrix: List[List[str]]) -> int:   # --- py stmt 2
+    m, n = len(matrix), len(matrix[0])   # --- py stmt 3
+    dp = [[0] * (n + 1) for _ in range(m + 1)]   # --- py stmt 4
+    mx = 0   # --- py stmt 5
+    for i in range(m):   # --- py stmt 6
+        for j in range(n):   # --- py stmt 7
+            if matrix[i][j] == '1':   # --- py stmt 8
+                dp[i + 1][j + 1] = min(dp[i][j + 1], dp[i + 1][j], dp[i][j]) + 1   # --- py stmt 9
+                mx = max(mx, dp[i + 1][j + 1])   # --- py stmt 10
+    return mx * mx   # --- py stmt 11
+
+### JavaScript
+"use strict";
+
+function f_gold(matrix) {   // --- py stmt 2
+    let m = matrix.length;   // --- py stmt 3
+    let n = matrix[0].length;   // --- py stmt 3
+    let dp = new Array(m + 1);   // --- py stmt 4
+    for (let i = 0; i < dp.length; i++) {   // --- py stmt 4
+        dp[i] = new Array(n + 1);   // --- py stmt 4
+    }
+    let mx = 0;   // --- py stmt 5
+    for (let i = 0; i < m; i++) {   // --- py stmt 6
+        for (let j = 0; j < n; j++) {   // --- py stmt 7
+            if (matrix[i][j] == '1') {   // --- py stmt 8
+                dp[i + 1][j + 1] = Math.min(dp[i][j + 1], dp[i + 1][j], dp[i][j]) + 1;   // --- py stmt 9
+                mx = Math.max(mx, dp[i + 1][j + 1]);   // --- py stmt 10
+            }
+        }
+    }
+    return mx * mx;   // --- py stmt 11
+}
+
+
+

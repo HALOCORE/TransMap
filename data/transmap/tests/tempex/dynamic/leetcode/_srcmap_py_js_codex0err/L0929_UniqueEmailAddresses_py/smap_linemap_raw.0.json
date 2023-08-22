@@ -1,0 +1,144 @@
+{
+  "src_anno_stmts": [
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(emails: List[str]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    s = set()",
+      [
+        3
+      ]
+    ],
+    [
+      "    for email in emails:",
+      [
+        4
+      ]
+    ],
+    [
+      "        local, domain = email.split('@')",
+      [
+        5
+      ]
+    ],
+    [
+      "        local = local.replace('.', '')",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (i := local.find('+')) != -1:",
+      [
+        7
+      ]
+    ],
+    [
+      "            local = local[:i]",
+      [
+        8
+      ]
+    ],
+    [
+      "        s.add(local + '@' + domain)",
+      [
+        9
+      ]
+    ],
+    [
+      "    return len(s)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(emails) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var s = new Set();",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var email of emails) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var local = email.split('@');",
+      [
+        5
+      ]
+    ],
+    [
+      "        var domain = local[1];",
+      [
+        5
+      ]
+    ],
+    [
+      "        local = local[0].replace('.', '');",
+      [
+        6
+      ]
+    ],
+    [
+      "        var i = local.indexOf('+');",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i != -1) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            local = local.substring(0, i);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        s.add(local + '@' + domain);",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return s.size;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

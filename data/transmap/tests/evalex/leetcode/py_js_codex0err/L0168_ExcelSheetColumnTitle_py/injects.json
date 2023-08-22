@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        res.push(String.fromCharCode(65 + columnNumber % 26));",
+    "replacement": "        res.push(String.fromCharCode(ord('A') + columnNumber % 26));"
+  }
+]

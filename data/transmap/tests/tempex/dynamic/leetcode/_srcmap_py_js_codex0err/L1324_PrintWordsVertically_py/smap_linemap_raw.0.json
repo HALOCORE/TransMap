@@ -1,0 +1,182 @@
+{
+  "src_anno_stmts": [
+    [
+      "### printVertically",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> List[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    words = s.split()",
+      [
+        3
+      ]
+    ],
+    [
+      "    m, n = len(words), max(len(word) for word in words)",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        5
+      ]
+    ],
+    [
+      "    for j in range(n):",
+      [
+        6
+      ]
+    ],
+    [
+      "        t = []",
+      [
+        7
+      ]
+    ],
+    [
+      "        for i in range(m):",
+      [
+        8
+      ]
+    ],
+    [
+      "            word = words[i]",
+      [
+        9
+      ]
+    ],
+    [
+      "            t.append(word[j] if j < len(word) else ' ')",
+      [
+        10
+      ]
+    ],
+    [
+      "        ans.append(''.join(t).rstrip())",
+      [
+        11
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let words = s.split();",
+      [
+        3
+      ]
+    ],
+    [
+      "    let m = words.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    let n = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < m; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        n = Math.max(n, words[i].length);",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ans = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let j = 0; j < n; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        let t = [];",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (let i = 0; i < m; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            let word = words[i];",
+      [
+        9
+      ]
+    ],
+    [
+      "            t.push(word[j] ? word[j] : ' ');",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans.push(t.join('').trimEnd());",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

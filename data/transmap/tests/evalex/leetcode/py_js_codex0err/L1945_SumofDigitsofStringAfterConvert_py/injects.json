@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    s = s.split(\"\").map(function (c) { return String(c.charCodeAt(0) - \"a\".charCodeAt(0) + 1); }).join(\"\");",
+    "replacement": "    s = s.split(\"\").map(function (c) { return String.fromCharCode(c.charCodeAt(0) - \"a\".charCodeAt(0) + 1); }).join(\"\");"
+  }
+]

@@ -1,0 +1,216 @@
+{
+  "src_anno_stmts": [
+    [
+      "### goodDaysToRobBank",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(security: List[int], time: int) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(security)",
+      [
+        3
+      ]
+    ],
+    [
+      "    if n <= time * 2:",
+      [
+        4
+      ]
+    ],
+    [
+      "        return []",
+      [
+        5
+      ]
+    ],
+    [
+      "    left, right = [0] * n, [0] * n",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(1, n):",
+      [
+        7
+      ]
+    ],
+    [
+      "        if security[i] <= security[i - 1]:",
+      [
+        8
+      ]
+    ],
+    [
+      "            left[i] = left[i - 1] + 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    for i in range(n - 2, -1, -1):",
+      [
+        10
+      ]
+    ],
+    [
+      "        if security[i] <= security[i + 1]:",
+      [
+        11
+      ]
+    ],
+    [
+      "            right[i] = right[i + 1] + 1",
+      [
+        12
+      ]
+    ],
+    [
+      "    return [i for i in range(n) if time <= min(left[i], right[i])]",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(security, time) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = security.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (n <= time * 2) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var left = [], right = [];",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 1; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (security[i] <= security[i - 1]) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            left[i] = left[i - 1] + 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = n - 2; i >= 0; i--) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (security[i] <= security[i + 1]) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            right[i] = right[i + 1] + 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var result = [];",
+      [
+        13
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        if (time <= Math.min(left[i], right[i])) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            result.push(i);",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return result;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxProduct",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    i = 0 if nums[0] > nums[1] else 1",
+      [
+        3
+      ]
+    ],
+    [
+      "    j = 1 - i",
+      [
+        4
+      ]
+    ],
+    [
+      "    for k in range(2, len(nums)):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if nums[k] > nums[i]:",
+      [
+        6
+      ]
+    ],
+    [
+      "            j = k",
+      [
+        7
+      ]
+    ],
+    [
+      "            i, j = j, i",
+      [
+        8
+      ]
+    ],
+    [
+      "        elif nums[k] > nums[j]:",
+      [
+        9
+      ]
+    ],
+    [
+      "            j = k",
+      [
+        10
+      ]
+    ],
+    [
+      "    return (nums[i] - 1) * (nums[j] - 1)",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var i = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (nums[0] > nums[1]) i = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    else i = 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var j = 1 - i;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var k = 2; k < nums.length; k++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (nums[k] > nums[i]) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            j = k;",
+      [
+        7
+      ]
+    ],
+    [
+      "            i = j;",
+      [
+        8
+      ]
+    ],
+    [
+      "            j = i;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (nums[k] > nums[j]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            j = k;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return (nums[i] - 1) * (nums[j] - 1);",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

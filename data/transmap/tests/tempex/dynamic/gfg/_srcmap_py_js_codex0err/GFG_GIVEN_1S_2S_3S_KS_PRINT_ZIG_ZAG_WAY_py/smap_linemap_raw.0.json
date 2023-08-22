@@ -1,0 +1,282 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(rows, columns, numbers):",
+      [
+        1
+      ]
+    ],
+    [
+      "  k = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr =[[0 for i in range(columns)] for j in range(rows)]",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(rows):",
+      [
+        4
+      ]
+    ],
+    [
+      "    if(i % 2 == 0):",
+      [
+        5
+      ]
+    ],
+    [
+      "      j = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "      while j < columns and numbers[k] > 0:",
+      [
+        7
+      ]
+    ],
+    [
+      "        arr[i][j] = k + 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        numbers[k] -= 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        if numbers[k] == 0: k += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        j += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    else:",
+      [
+        12
+      ]
+    ],
+    [
+      "      j = columns - 1",
+      [
+        13
+      ]
+    ],
+    [
+      "      while j >= 0 and numbers[k] > 0:",
+      [
+        14
+      ]
+    ],
+    [
+      "        arr[i][j] = k + 1",
+      [
+        15
+      ]
+    ],
+    [
+      "        numbers[k] -= 1",
+      [
+        16
+      ]
+    ],
+    [
+      "        if numbers[k] == 0: k += 1",
+      [
+        17
+      ]
+    ],
+    [
+      "        j -= 1",
+      [
+        18
+      ]
+    ],
+    [
+      "  for i in arr:",
+      [
+        19
+      ]
+    ],
+    [
+      "    for j in i: print(j, end = \" \")",
+      [
+        20
+      ]
+    ],
+    [
+      "    print()",
+      [
+        21
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(rows, columns, numbers) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var k = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var arr = [[0]];",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < rows; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (i % 2 == 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      var j = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "      while (j < columns && numbers[k] > 0) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        arr[i][j] = k + 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        numbers[k] -= 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (numbers[k] == 0) k += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        j += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    } else {",
+      [
+        12
+      ]
+    ],
+    [
+      "      var j = columns - 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "      while (j >= 0 && numbers[k] > 0) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        arr[i][j] = k + 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "        numbers[k] -= 1;",
+      [
+        16
+      ]
+    ],
+    [
+      "        if (numbers[k] == 0) k += 1;",
+      [
+        17
+      ]
+    ],
+    [
+      "        j -= 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let i of arr) {",
+      [
+        19
+      ]
+    ],
+    [
+      "    for (var j = 0; j < i.length; j++) console.log(i[j]);",
+      [
+        20
+      ]
+    ],
+    [
+      "    console.log();",
+      [
+        21
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

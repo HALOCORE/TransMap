@@ -1,0 +1,196 @@
+{
+  "src_anno_stmts": [
+    [
+      "### longestWPI",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(hours: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = s = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    seen = {}",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, h in enumerate(hours):",
+      [
+        5
+      ]
+    ],
+    [
+      "        s += 1 if h > 8 else -1",
+      [
+        6
+      ]
+    ],
+    [
+      "        if s > 0:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = i + 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        else:",
+      [
+        9
+      ]
+    ],
+    [
+      "            if s not in seen:",
+      [
+        10
+      ]
+    ],
+    [
+      "                seen[s] = i",
+      [
+        11
+      ]
+    ],
+    [
+      "            if s - 1 in seen:",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans = max(ans, i - seen[s - 1])",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(hours) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let ans = s = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let seen = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < hours.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        s += (hours[i] > 8) ? 1 : -1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (s > 0) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = i + 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (!(s in seen)) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                seen[s] = i;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (s - 1 in seen) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans = Math.max(ans, i - seen[s - 1]);",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

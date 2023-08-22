@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "ReferenceError:",
+      "i is not defined"
+    ],
+    "lineno": 5
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "i is not defined",
+      "error_type": "ReferenceError:",
+      "line_content": "for (i = 0; i < (n + 1); i++) lookup[0][i] = 0;",
+      "lineno": [
+        "/tmp/codesnart_runner/51d3edb4.js",
+        119
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/51d3edb4.js:119\n  for (i = 0; i < (n + 1); i++) lookup[0][i] = 0;\n         ^\n\nReferenceError: i is not defined\n    at f_gold (/tmp/codesnart_runner/51d3edb4.js:119:10)\n    at test (/tmp/codesnart_runner/51d3edb4.js:109:22)\n    at Object.<anonymous> (/tmp/codesnart_runner/51d3edb4.js:134:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"list\",10,[\"list\",2,[\"string\",11,\"fZOKCdZ La\"],[\"string\",3,\"fKA\"]],[\"list\",2,[\"string\",1,\"2\"],[\"string\",6,\"187012\"]]]]\n\n[\"MYLOGEX:1\",[\"num\",0]]\n",
+    "timespan": 0.03437870001653209
+  }
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 5,
+    "content": "    var s0n0 = 0;\n    var s0n1 = 0;\n    var s1n0 = 0;\n    var s1n1 = 0;",
+    "replacement": "    var s0n0 = s0n1 = s1n0 = s1n1 = 0;"
+  }
+]

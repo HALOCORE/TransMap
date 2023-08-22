@@ -1,0 +1,54 @@
+
+### Python
+### originalDigits 
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(s: str) -> str:   # --- py stmt 3
+    counter = Counter(s)   # --- py stmt 4
+    cnt = [0] * 10   # --- py stmt 5
+    cnt[0] = counter['z']   # --- py stmt 6
+    cnt[2] = counter['w']   # --- py stmt 7
+    cnt[4] = counter['u']   # --- py stmt 8
+    cnt[6] = counter['x']   # --- py stmt 9
+    cnt[8] = counter['g']   # --- py stmt 10
+    cnt[3] = counter['h'] - cnt[8]   # --- py stmt 11
+    cnt[5] = counter['f'] - cnt[4]   # --- py stmt 12
+    cnt[7] = counter['s'] - cnt[6]   # --- py stmt 13
+    cnt[1] = counter['o'] - cnt[0] - cnt[2] - cnt[4]   # --- py stmt 14
+    cnt[9] = counter['i'] - cnt[5] - cnt[6] - cnt[8]   # --- py stmt 15
+    return ''.join(cnt[i] * str(i) for i in range(10))   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 3
+    var counter = new Map();   // --- py stmt 4
+    for (var i = 0; i < s.length; i++) {   // --- py stmt 5
+        if (counter.has(s[i])) {   // --- py stmt 6
+            counter.set(s[i], counter.get(s[i]) + 1);   // --- py stmt 7
+        }
+        else {   // --- py stmt 8
+            counter.set(s[i], 1);   // --- py stmt 9
+        }
+    }
+    var cnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];   // --- py stmt 10
+    cnt[0] = counter.get('z') ?? 0;   // --- py stmt 11
+    cnt[2] = counter.get('w') ?? 0;   // --- py stmt 12
+    cnt[4] = counter.get('u') ?? 0;   // --- py stmt 13
+    cnt[6] = counter.get('x');   // --- py stmt 14
+    cnt[8] = counter.get('g') ?? 0;   // --- py stmt 15
+    cnt[3] = (counter.get('h') ?? 0) - cnt[8];   // --- py stmt 16
+    cnt[5] = (counter.get('f') ?? 0) - cnt[4];   // --- py stmt 17
+    cnt[7] = (counter.get('s') ?? 0) - cnt[6];   // --- py stmt 18
+    cnt[1] = (counter.get('o') ?? 0) - cnt[0] - cnt[2] - cnt[4];   // --- py stmt 19
+    cnt[9] = (counter.get('i') ?? 0) - cnt[5] - cnt[6] - cnt[8];   // --- py stmt 20
+    var result = "";   // --- py stmt 21
+    for (var i = 0; i < 10; i++) {   // --- py stmt 22
+        for (var j = 0; j < cnt[i]; j++) {   // --- py stmt 23
+            result += i;   // --- py stmt 24
+        }
+    }
+    return result;   // --- py stmt 25
+}
+
+
+

@@ -1,0 +1,129 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[19,4,19,58]",
+    "src_cov_lines": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      18,
+      19
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      15,
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":15,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",1]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",3]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",15,\"!this  1-s b8d!\"],\"check\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,2,27]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,8,4,22]",
+    "actural_src_pk": "[4,8,4,22]",
+    "src_cov_lines": [
+      19
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",12,\"cat and  dog\"],\"token\":[\"S\",12,\"cat and  dog\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",3,\"cat\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "token"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,2,27]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,8,4,22]",
+    "actural_src_pk": "[4,8,4,22]",
+    "src_cov_lines": [
+      19
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",12,\"cat and  dog\"],\"token\":[\"S\",12,\"cat and  dog\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",3,\"cat\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "token"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,2,27]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,8,4,22]",
+    "actural_src_pk": "[4,8,4,22]",
+    "src_cov_lines": [
+      19
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",12,\"cat and  dog\"],\"token\":[\"S\",12,\"cat and  dog\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",3,\"cat\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "token"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,2,27]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,8,4,22]",
+    "actural_src_pk": "[4,8,4,22]",
+    "src_cov_lines": [
+      19
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",12,\"cat and  dog\"],\"token\":[\"S\",12,\"cat and  dog\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",3,\"cat\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "token"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    return (b) ? [] : [a - 1, a, a + 1];",
+    "replacement": "    return [] if (b) else [a - 1, a, a + 1];"
+  }
+]

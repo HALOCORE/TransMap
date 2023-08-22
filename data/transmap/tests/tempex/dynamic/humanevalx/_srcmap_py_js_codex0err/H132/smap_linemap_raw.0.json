@@ -1,0 +1,230 @@
+{
+  "src_anno_stmts": [
+    [
+      "def is_nested(string):",
+      [
+        1
+      ]
+    ],
+    [
+      "    opening_bracket_index = []",
+      [
+        2
+      ]
+    ],
+    [
+      "    closing_bracket_index = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i in range(len(string)):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if string[i] == '[':",
+      [
+        5
+      ]
+    ],
+    [
+      "            opening_bracket_index.append(i)",
+      [
+        6
+      ]
+    ],
+    [
+      "        else:",
+      [
+        7
+      ]
+    ],
+    [
+      "            closing_bracket_index.append(i)",
+      [
+        8
+      ]
+    ],
+    [
+      "    closing_bracket_index.reverse()",
+      [
+        9
+      ]
+    ],
+    [
+      "    cnt = 0",
+      [
+        10
+      ]
+    ],
+    [
+      "    i = 0",
+      [
+        11
+      ]
+    ],
+    [
+      "    l = len(closing_bracket_index)",
+      [
+        12
+      ]
+    ],
+    [
+      "    for idx in opening_bracket_index:",
+      [
+        13
+      ]
+    ],
+    [
+      "        if i < l and idx < closing_bracket_index[i]:",
+      [
+        14
+      ]
+    ],
+    [
+      "            cnt += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "            i += 1",
+      [
+        16
+      ]
+    ],
+    [
+      "    return cnt >= 2",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function is_nested(string) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    var opening_bracket_index = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "    var closing_bracket_index = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < string.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (string[i] == '[') {",
+      [
+        5
+      ]
+    ],
+    [
+      "            opening_bracket_index.push(i);",
+      [
+        6
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            closing_bracket_index.push(i);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    closing_bracket_index.reverse();",
+      [
+        9
+      ]
+    ],
+    [
+      "    var cnt = 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "    var i = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "    var l = closing_bracket_index.length;",
+      [
+        12
+      ]
+    ],
+    [
+      "    for (var idx in opening_bracket_index) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        if (i < l && idx < closing_bracket_index[i]) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            cnt += 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "            i += 1;",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return cnt >= 2;",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,75 @@
+
+### Python
+### fourSum 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], target: int) -> List[List[int]]:   # --- py stmt 2
+    n, res = len(nums), []   # --- py stmt 3
+    if n < 4:   # --- py stmt 4
+        return []   # --- py stmt 5
+    nums.sort()   # --- py stmt 6
+    for i in range(n - 3):   # --- py stmt 7
+        if i > 0 and nums[i] == nums[i - 1]:   # --- py stmt 8
+            continue   # --- py stmt 9
+        for j in range(i + 1, n - 2):   # --- py stmt 10
+            if j > i + 1 and nums[j] == nums[j - 1]:   # --- py stmt 11
+                continue   # --- py stmt 12
+            k, l = j + 1, n - 1   # --- py stmt 13
+            while k < l:   # --- py stmt 14
+                if nums[i] + nums[j] + nums[k] + nums[l] == target:   # --- py stmt 15
+                    res.append([nums[i], nums[j], nums[k], nums[l]])   # --- py stmt 16
+                    k += 1   # --- py stmt 17
+                    l -= 1   # --- py stmt 18
+                    while k < n and nums[k] == nums[k - 1]:   # --- py stmt 19
+                        k += 1   # --- py stmt 20
+                    while l > j and nums[l] == nums[l + 1]:   # --- py stmt 21
+                        l -= 1   # --- py stmt 22
+                elif nums[i] + nums[j] + nums[k] + nums[l] < target:   # --- py stmt 23
+                    k += 1   # --- py stmt 24
+                else:   # --- py stmt 25
+                    l -= 1   # --- py stmt 26
+    return res   # --- py stmt 27
+
+### JavaScript
+"use strict";
+
+function f_gold(nums, target) {   // --- py stmt 2
+    var n = nums.length;   // --- py stmt 3
+    var res = [];   // --- py stmt 3
+    if (n < 4) {   // --- py stmt 4
+        return [];   // --- py stmt 5
+    }
+    nums.sort();   // --- py stmt 6
+    for (var i = 0; i < n - 3; i++) {   // --- py stmt 7
+        if (i > 0 && nums[i] == nums[i - 1]) {   // --- py stmt 8
+            continue;   // --- py stmt 9
+        }
+        for (var j = i + 1; j < n - 2; j++) {   // --- py stmt 10
+            if (j > i + 1 && nums[j] == nums[j - 1]) {   // --- py stmt 11
+                continue;   // --- py stmt 12
+            }
+            var k = j + 1;   // --- py stmt 13
+            var l = n - 1;   // --- py stmt 13
+            while (k < l) {   // --- py stmt 14
+                if (nums[i] + nums[j] + nums[k] + nums[l] == target) {   // --- py stmt 15
+                    res.push([nums[i], nums[j], nums[k], nums[l]]);   // --- py stmt 16
+                    k += 1;   // --- py stmt 17
+                    l -= 1;   // --- py stmt 18
+                    while (k < n && nums[k] == nums[k - 1]) {   // --- py stmt 19
+                        k += 1;   // --- py stmt 20
+                    }
+                    while (l > j && nums[l] == nums[l + 1]) {   // --- py stmt 21
+                        l -= 1;   // --- py stmt 22
+                    }
+                } else if (nums[i] + nums[j] + nums[k] + nums[l] < target) {   // --- py stmt 23
+                    k += 1;   // --- py stmt 24
+                } else {   // --- py stmt 25
+                    l -= 1;   // --- py stmt 26
+                }
+            }
+        }
+    }
+    return res;   // --- py stmt 27
+}
+
+
+

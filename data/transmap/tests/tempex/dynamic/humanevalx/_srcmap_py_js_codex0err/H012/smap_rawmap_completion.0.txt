@@ -1,0 +1,45 @@
+
+### Python
+from typing import List, Optional   # --- py stmt 1
+
+def longest(strings: List[str]) -> Optional[str]:   # --- py stmt 2
+    if not strings:   # --- py stmt 3
+        return None   # --- py stmt 4
+    maxlen = max(len(x) for x in strings)   # --- py stmt 5
+    for s in strings:   # --- py stmt 6
+        if len(s) == maxlen:   # --- py stmt 7
+            return s   # --- py stmt 8
+
+### JavaScript
+"use strict";
+
+function longest(strings) {   // --- py stmt 2
+    if (!strings) {   // --- py stmt 3
+        return null;   // --- py stmt 4
+    }
+
+    var maxlen = Math.max.apply(Math, strings.map(function (x) {   // --- py stmt 5
+        return x.length;
+    }));
+    for (var _iterator = strings, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {   // --- py stmt 6
+        var _ref;
+
+        if (_isArray) {
+            if (_i >= _iterator.length) break;
+            _ref = _iterator[_i++];
+        } else {
+            _i = _iterator.next();
+            if (_i.done) break;
+            _ref = _i.value;
+        }
+
+        var s = _ref;
+
+        if (s.length === maxlen) {   // --- py stmt 7
+            return s;   // --- py stmt 8
+        }
+    }
+}
+
+
+

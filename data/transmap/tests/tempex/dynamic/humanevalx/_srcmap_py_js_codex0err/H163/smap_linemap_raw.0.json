@@ -1,0 +1,66 @@
+{
+  "src_anno_stmts": [
+    [
+      "def generate_integers(a, b):",
+      [
+        1
+      ]
+    ],
+    [
+      "    lower = max(2, min(a, b))",
+      [
+        2
+      ]
+    ],
+    [
+      "    upper = min(8, max(a, b))",
+      [
+        3
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    return [i for i in range(lower, upper+1) if i % 2 == 0]",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function generate_integers(a, b) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let lower = Math.max(2, Math.min(a, b));",
+      [
+        2
+      ]
+    ],
+    [
+      "    let upper = Math.min(8, Math.max(a, b));",
+      [
+        3
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    return [...Array(upper - lower + 1).keys()].map(i => i + lower).filter(i => i % 2 == 0);",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

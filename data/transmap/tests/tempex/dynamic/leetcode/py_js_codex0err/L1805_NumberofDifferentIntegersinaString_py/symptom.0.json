@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "Error: Cannot find module",
+      "'re'"
+    ],
+    "lineno": -111
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "'re'",
+      "error_type": "Error: Cannot find module",
+      "line_content": "NOT_IMPLEMENTED_DONT_KNOW",
+      "lineno": [
+        "node:internal/modules/cjs/loader:936",
+        -1
+      ]
+    },
+    "is_success": false,
+    "stderr": "node:internal/modules/cjs/loader:936\n  throw err;\n  ^\n\nError: Cannot find module 're'\nRequire stack:\n- /tmp/codesnart_runner/d66ceff4.js\n    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n    at Module.require (node:internal/modules/cjs/loader:1005:19)\n    at require (node:internal/modules/cjs/helpers:102:18)\n    at Object.<anonymous> (/tmp/codesnart_runner/d66ceff4.js:111:12)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [ '/tmp/codesnart_runner/d66ceff4.js' ]\n}\n",
+    "stdout": "",
+    "timespan": 0.06643919995985925
+  }
+}

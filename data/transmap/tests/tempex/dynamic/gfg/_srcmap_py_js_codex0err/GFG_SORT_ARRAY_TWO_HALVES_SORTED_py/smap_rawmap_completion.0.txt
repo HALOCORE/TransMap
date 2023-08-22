@@ -1,0 +1,14 @@
+
+### Python
+def f_gold(A, n):   # --- py stmt 1
+  A.sort()   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function f_gold(A, n) {   // --- py stmt 1
+    A.sort();   // --- py stmt 2
+}
+
+
+

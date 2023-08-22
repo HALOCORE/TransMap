@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "  let d = (-10) ** 9;",
+    "replacement": "  let d = -10 ** 9;"
+  }
+]

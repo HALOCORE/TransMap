@@ -1,0 +1,50 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,4,6,5]",
+    "break_idx": 2,
+    "expected_src_pk": "[5,4,7,28]",
+    "actural_src_pk": "[5,4,7,28]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",22,\"is2 sentence4 This1 \"],\"words\":[\"A\",4,[\"S\",3,\"is2\"],[\"S\",9,\"sentence4\"],[\"S\",5,\"This1\"],[\"S\",2,\"a3\"]],\"arr\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",22,\"is2 sentence4 This1 \"],\"words\":[\"A\",4,[\"S\",3,\"is2\"],[\"S\",9,\"sentence4\"],[\"S\",5,\"This1\"],[\"S\",2,\"a3\"]],\"arr\":[\"A\",4,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "arr"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,4,6,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,4,7,28]",
+    "actural_src_pk": "[5,4,7,28]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",22,\"is2 sentence4 This1 \"],\"words\":[\"A\",4,[\"S\",3,\"is2\"],[\"S\",9,\"sentence4\"],[\"S\",5,\"This1\"],[\"S\",2,\"a3\"]],\"arr\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",22,\"is2 sentence4 This1 \"],\"words\":[\"A\",4,[\"S\",3,\"is2\"],[\"S\",9,\"sentence4\"],[\"S\",5,\"This1\"],[\"S\",2,\"a3\"]],\"arr\":[\"A\",4,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "arr"
+    ]
+  }
+]

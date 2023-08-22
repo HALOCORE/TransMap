@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[1,4,2,17]",
+    "src_cov_lines": [
+      13
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",32,\"One, two, three, fou\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[1,4,2,17]",
+    "src_cov_lines": [
+      13
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",32,\"One, two, three, fou\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[1,4,2,17]",
+    "src_cov_lines": [
+      13
+    ],
+    "tar_cov_lines": [
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":17,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",32,\"One, two, three, fou\"]}",
+      ""
+    ]
+  }
+]

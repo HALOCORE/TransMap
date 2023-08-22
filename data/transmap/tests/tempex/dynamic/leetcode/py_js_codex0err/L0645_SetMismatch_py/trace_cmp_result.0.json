@@ -1,0 +1,62 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,25]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"4\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,25]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"4\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,25]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"4\"]]}",
+      ""
+    ]
+  }
+]

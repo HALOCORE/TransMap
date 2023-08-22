@@ -1,0 +1,23 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  x = sorted(arr)   # --- py stmt 2
+  count = 1   # --- py stmt 3
+  for i in range(0, n - 1):   # --- py stmt 4
+    if(x[i] + 1 != x[i + 1]): count = count + 1   # --- py stmt 5
+  return count   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var x = arr.sort();   // --- py stmt 2
+  var count = 1;   // --- py stmt 3
+  for (var i = 0; i < n - 1; i++) {   // --- py stmt 4
+    if (x[i] + 1 != x[i + 1]) count = count + 1;   // --- py stmt 5
+  }
+  return count;   // --- py stmt 6
+}
+
+
+

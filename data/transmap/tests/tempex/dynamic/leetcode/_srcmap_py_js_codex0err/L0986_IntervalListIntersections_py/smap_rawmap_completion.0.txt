@@ -1,0 +1,44 @@
+
+### Python
+### intervalIntersection 
+from typing import *   # --- py stmt 1
+def f_gold(firstList: List[List[int]], secondList: List[List[int]]   # --- py stmt 2
+) -> List[List[int]]:
+    i = j = 0   # --- py stmt 3
+    ans = []   # --- py stmt 4
+    while i < len(firstList) and j < len(secondList):   # --- py stmt 5
+        s1, e1, s2, e2 = *firstList[i], *secondList[j]   # --- py stmt 6
+        l, r = max(s1, s2), min(e1, e2)   # --- py stmt 7
+        if l <= r:   # --- py stmt 8
+            ans.append([l, r])   # --- py stmt 9
+        if e1 < e2:   # --- py stmt 10
+            i += 1   # --- py stmt 11
+        else:   # --- py stmt 12
+            j += 1   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(firstList, secondList) {   // --- py stmt 2
+    var i = j = 0;   // --- py stmt 3
+    var ans = [];   // --- py stmt 4
+    while (i < firstList.length && j < secondList.length) {   // --- py stmt 5
+        var s1 = firstList[i][0];   // --- py stmt 6
+        var e1 = firstList[i][1];   // --- py stmt 6
+        var s2 = secondList[j][0];   // --- py stmt 6
+        var e2 = secondList[j][1];   // --- py stmt 6
+        var l = Math.max(s1, s2);   // --- py stmt 7
+        var r = Math.min(e1, e2);   // --- py stmt 7
+        if (l <= r) {   // --- py stmt 8
+            ans.push([l, r]);   // --- py stmt 9
+        }
+        if (e1 < e2) {   // --- py stmt 10
+            i += 1;   // --- py stmt 11
+        }
+        else {   // --- py stmt 12
+            j += 1;   // --- py stmt 13
+        }
+    }
+    return ans;   // --- py stmt 14
+}
+

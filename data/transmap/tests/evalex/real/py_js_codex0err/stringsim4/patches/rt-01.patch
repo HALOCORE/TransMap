@@ -1,0 +1,28 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -46,10 +46,10 @@ class ShingleBased {
+ 
+     get_profile(string) {
+         let shingles = {};
+-        let no_space_str = _SPACE_PATTERN.sub(" ", string);
++        let no_space_str = string.replaceAll(/\s+/g, " ");
+         for (let i = 0; i < no_space_str.length - this.k + 1; i++) {
+             let shingle = no_space_str.substring(i, i + this.k);
+             let old = shingles.get(shingle);
+             if (old) {
+                 shingles[shingle] = parseInt(old + 1);
+             } else {
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -165,10 +165,10 @@ class ShingleBased {   // --- py stmt 19
+ 
+     get_profile(string) {   // --- py stmt 24
+         let shingles = {};   // --- py stmt 25
+-        let no_space_str = _SPACE_PATTERN.sub(" ", string);   // --- py stmt 26
++        let no_space_str = string.replaceAll(/\s+/g, " ");   // --- py stmt 26
+         for (let i = 0; i < no_space_str.length - this.k + 1; i++) {   // --- py stmt 27
+             let shingle = no_space_str.substring(i, i + this.k);   // --- py stmt 28
+             let old = shingles.get(shingle);   // --- py stmt 29
+             if (old) {   // --- py stmt 30
+                 shingles[shingle] = parseInt(old + 1);   // --- py stmt 31
+             } else {   // --- py stmt 32

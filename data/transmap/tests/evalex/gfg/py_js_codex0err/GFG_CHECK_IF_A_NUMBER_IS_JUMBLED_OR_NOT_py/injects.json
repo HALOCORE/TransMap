@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    if (Math.floor(num / 10) == 0)",
+    "replacement": "    if (num / 10 == 0)"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        if (Math.floor(num / 10) == 0)",
+    "replacement": "        if (num / 10 == 0)"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        var digit2 = (Math.floor(num / 10)) % 10;",
+    "replacement": "        var digit2 = (num / 10) % 10;"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "        num = Math.floor(num / 10);",
+    "replacement": "        num = num / 10;"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return (no == 0)? 0 : parseInt(no % 10) + f_gold(parseInt(no / 10));",
+    "replacement": "    return 0 if no == 0 else int(no % 10) + f_gold(int(no / 10));"
+  }
+]

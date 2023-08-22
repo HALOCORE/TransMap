@@ -1,0 +1,16 @@
+
+### Python
+def f_gold(string):   # --- py stmt 1
+  string = string[:: - 1]   # --- py stmt 2
+  return string   # --- py stmt 3
+
+
+### JavaScript
+"use strict";
+function f_gold(string) {   // --- py stmt 1
+  string = string.split("").reverse().join("");   // --- py stmt 2
+  return string;   // --- py stmt 3
+}
+
+
+

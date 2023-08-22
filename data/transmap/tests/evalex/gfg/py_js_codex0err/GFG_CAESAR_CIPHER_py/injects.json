@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    if (/^[A-Z]$/.test(char)) {",
+    "replacement": "    if (char.toUpperCase() === char) {"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "      result += String.fromCharCode(((char.charCodeAt(0) + s - 65) % 26 + 26) % 26 + 65);",
+    "replacement": "      result += String.fromCharCode((char.charCodeAt(0) + s - 65) % 26 + 65);"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "      result += String.fromCharCode(((char.charCodeAt(0) + s - 97) % 26 + 26) % 26 + 97);",
+    "replacement": "      result += String.fromCharCode((char.charCodeAt(0) + s - 97) % 26 + 97);"
+  }
+]

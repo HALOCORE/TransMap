@@ -1,0 +1,80 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[11,4,11,25]",
+    "break_idx": 2,
+    "expected_src_pk": "[10,4,10,24]",
+    "actural_src_pk": "[10,4,10,24]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      7,
+      8,
+      9
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",1,[\"S\",4,\"Imaa\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",4,[\"S\",4,\"Imaa\"],[\"S\",9,\"peaksmaaa\"],[\"S\",9,\"oatGmaaaa\"],[\"S\",11,\"atinLmaaaaa\"]],\"i\":[\"N\",\"3\"],\"word\":[\"S\",11,\"atinLmaaaaa\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "ans"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 5,
+    "tar_pk": "[11,4,11,25]",
+    "expected_src_pk": "[10,4,10,24]",
+    "actural_src_pk": "[5,8,6,37]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      9
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",1,[\"S\",4,\"Imaa\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",1,[\"S\",4,\"Imaa\"]],\"i\":[\"N\",\"1\"],\"word\":[\"S\",5,\"speak\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 2,
+    "tar_pk": "[11,4,11,25]",
+    "expected_src_pk": "[10,4,10,24]",
+    "actural_src_pk": "[5,8,6,37]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      9
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",1,[\"S\",4,\"Imaa\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",18,\"I speak Goat Latin\"],\"ans\":[\"A\",1,[\"S\",4,\"Imaa\"]],\"i\":[\"N\",\"1\"],\"word\":[\"S\",5,\"speak\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

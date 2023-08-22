@@ -1,0 +1,58 @@
+
+### Python
+### loudAndRich 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(richer: List[List[int]], quiet: List[int]) -> List[int]:   # --- py stmt 3
+    n = len(quiet)   # --- py stmt 4
+    g = defaultdict(list)   # --- py stmt 5
+    for a, b in richer:   # --- py stmt 6
+        g[b].append(a)   # --- py stmt 7
+    ans = [-1] * n   # --- py stmt 8
+    def dfs(i):   # --- py stmt 9
+        if ans[i] != -1:   # --- py stmt 10
+            return   # --- py stmt 11
+        ans[i] = i   # --- py stmt 12
+        for j in g[i]:   # --- py stmt 13
+            dfs(j)   # --- py stmt 14
+            if quiet[ans[j]] < quiet[ans[i]]:   # --- py stmt 15
+                ans[i] = ans[j]   # --- py stmt 16
+    for i in range(n):   # --- py stmt 17
+        dfs(i)   # --- py stmt 18
+    return ans   # --- py stmt 19
+
+### JavaScript
+"use strict";
+
+function f_gold (richer, quiet) {   // --- py stmt 3
+    var n = quiet.length;   // --- py stmt 4
+    var g = {};   // --- py stmt 5
+    for (var i = 0; i < richer.length; i++) {   // --- py stmt 6
+        var a = richer[i][0];   // --- py stmt 6
+        var b = richer[i][1];   // --- py stmt 6
+        if (g[b] == undefined) {   // --- py stmt 7
+            g[b] = [];   // --- py stmt 7
+        }
+        g[b].push(a);   // --- py stmt 7
+    }
+    var ans = new Array(n).fill(-1);   // --- py stmt 8
+    function dfs (i) {   // --- py stmt 9
+        if (ans[i] != -1) {   // --- py stmt 10
+            return;   // --- py stmt 11
+        }
+        ans[i] = i;   // --- py stmt 12
+        for (var j = 0; j < g[i].length; j++) {   // --- py stmt 13
+            dfs(g[i][j]);   // --- py stmt 14
+            if (quiet[ans[g[i][j]]] < quiet[ans[i]]) {   // --- py stmt 15
+                ans[i] = ans[g[i][j]];   // --- py stmt 16
+            }
+        }
+    }
+    for (var i = 0; i < n; i++) {   // --- py stmt 17
+        dfs(i);   // --- py stmt 18
+    }
+    return ans;   // --- py stmt 19
+}
+
+
+

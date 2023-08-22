@@ -1,0 +1,15 @@
+
+### Python
+### rotateString 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, goal: str) -> bool:   # --- py stmt 2
+    return len(s) == len(goal) and goal in s + s   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(s, goal) {   // --- py stmt 2
+    return s.length == goal.length && goal in s + s;   // --- py stmt 3
+}
+
+
+

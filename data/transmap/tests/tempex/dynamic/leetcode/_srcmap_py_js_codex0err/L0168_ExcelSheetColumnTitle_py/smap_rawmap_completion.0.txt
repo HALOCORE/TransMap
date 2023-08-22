@@ -1,0 +1,24 @@
+
+### Python
+### convertToTitle 
+from typing import *   # --- py stmt 1
+def f_gold(columnNumber: int) -> str:   # --- py stmt 2
+    res = []   # --- py stmt 3
+    while columnNumber:   # --- py stmt 4
+        columnNumber -= 1   # --- py stmt 5
+        res.append(chr(ord('A') + columnNumber % 26))   # --- py stmt 6
+        columnNumber //= 26   # --- py stmt 7
+    return ''.join(res[::-1])   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(columnNumber) {   // --- py stmt 2
+    var res = [];   // --- py stmt 3
+    while (columnNumber) {   // --- py stmt 4
+        columnNumber -= 1;   // --- py stmt 5
+        res.push(String.fromCharCode(ord('A') + columnNumber % 26));   // --- py stmt 6
+        columnNumber = Math.floor(columnNumber / 26);   // --- py stmt 7
+    }
+    return res.reverse().join('');   // --- py stmt 8
+}
+

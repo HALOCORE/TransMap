@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "### getMoneyAmount",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(n: int) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    dp = [[0] * (n + 10) for _ in range(n + 10)]",
+      [
+        5
+      ]
+    ],
+    [
+      "    for l in range(2, n + 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        for i in range(1, n - l + 2):",
+      [
+        7
+      ]
+    ],
+    [
+      "            j = i + l - 1",
+      [
+        8
+      ]
+    ],
+    [
+      "            dp[i][j] = float('inf')",
+      [
+        9
+      ]
+    ],
+    [
+      "            for k in range(i, j + 1):",
+      [
+        10
+      ]
+    ],
+    [
+      "                t = max(dp[i][k - 1], dp[k + 1][j]) + k",
+      [
+        11
+      ]
+    ],
+    [
+      "                dp[i][j] = min(dp[i][j], t)",
+      [
+        12
+      ]
+    ],
+    [
+      "    return dp[1][n]",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var dp = [[0] * (n + 10)];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var _i = 0; _i < n + 10; _i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        dp[_i] = [0];",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var l = 2; l < n + 1; l++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var i = 1; i < n - l + 2; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            var j = i + l - 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "            dp[i][j] = Number.POSITIVE_INFINITY;",
+      [
+        9
+      ]
+    ],
+    [
+      "            for (var k = i; k < j + 1; k++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                var t = Math.max(dp[i][k - 1], dp[k + 1][j]) + k;",
+      [
+        11
+      ]
+    ],
+    [
+      "                dp[i][j] = Math.min(dp[i][j], t);",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dp[1][n];",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

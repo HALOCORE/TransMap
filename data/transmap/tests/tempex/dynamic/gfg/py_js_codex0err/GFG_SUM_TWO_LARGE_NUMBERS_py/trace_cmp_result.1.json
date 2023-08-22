@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,2,6,16]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      6
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":6,\"err_msg\":\"ReferenceError: str is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"rKZ\"],\"str2\":[\"S\",7,\"VkfzrPG\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",0,\"\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,2,6,16]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      6
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":6,\"err_msg\":\"ReferenceError: str is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"rKZ\"],\"str2\":[\"S\",7,\"VkfzrPG\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",0,\"\"]}",
+      ""
+    ]
+  }
+]

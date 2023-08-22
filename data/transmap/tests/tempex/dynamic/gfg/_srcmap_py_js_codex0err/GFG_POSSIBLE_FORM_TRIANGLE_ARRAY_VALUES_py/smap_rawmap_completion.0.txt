@@ -1,0 +1,21 @@
+
+### Python
+def f_gold(arr, N):   # --- py stmt 1
+  if N < 3: return False   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  for i in range(N - 2):   # --- py stmt 4
+    if arr[i] + arr[i + 1] > arr[i + 2]: return True   # --- py stmt 5
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, N) {   // --- py stmt 1
+  if (N < 3) return false;   // --- py stmt 2
+  arr.sort();   // --- py stmt 3
+  for (let i = 0; i < N - 2; i++) {   // --- py stmt 4
+    if (arr[i] + arr[i + 1] > arr[i + 2]) return true;   // --- py stmt 5
+  }
+}
+
+
+

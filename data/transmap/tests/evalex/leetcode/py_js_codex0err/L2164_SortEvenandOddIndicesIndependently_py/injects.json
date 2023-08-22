@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var a = nums.filter((_, i) => i % 2 == 0).sort(function (a, b) { return a - b; });",
+    "replacement": "    var a = nums.slice(0, nums.length).sort(function (a, b) { return a - b; });"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var b = nums.filter((_, i) => i % 2 == 1).sort(function (a, b) { return b - a; });",
+    "replacement": "    var b = nums.slice(1, nums.length).sort(function (a, b) { return b - a; });"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    for (let i = 0; i < a.length; i++) nums[i * 2] = a[i];",
+    "replacement": "    nums.splice(0, nums.length, ...a);"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    for (let i = 0; i < b.length; i++) nums[1 + i * 2] = b[i];",
+    "replacement": "    nums.splice(1, nums.length, ...b);"
+  }
+]

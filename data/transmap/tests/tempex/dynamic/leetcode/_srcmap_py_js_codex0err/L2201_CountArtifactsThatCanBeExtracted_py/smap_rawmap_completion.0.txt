@@ -1,0 +1,49 @@
+
+### Python
+### digArtifacts 
+from typing import *   # --- py stmt 1
+def f_gold(n: int, artifacts: List[List[int]], dig: List[List[int]]   # --- py stmt 2
+) -> int:   # --- py stmt 2
+    def check(artifact):   # --- py stmt 3
+        r1, c1, r2, c2 = artifact   # --- py stmt 4
+        for x in range(r1, r2 + 1):   # --- py stmt 5
+            for y in range(c1, c2 + 1):   # --- py stmt 6
+                if (x, y) not in s:   # --- py stmt 7
+                    return False   # --- py stmt 8
+        return True   # --- py stmt 9
+    s = {(i, j) for i, j in dig}   # --- py stmt 10
+    return sum(check(v) for v in artifacts)   # --- py stmt 11
+
+### JavaScript
+"use strict";
+
+function f_gold(n, artifacts, dig) {   // --- py stmt 2
+    function check(artifact) {   // --- py stmt 3
+        var r1 = artifact[0];   // --- py stmt 4
+        var c1 = artifact[1];   // --- py stmt 4
+        var r2 = artifact[2];   // --- py stmt 4
+        var c2 = artifact[3];   // --- py stmt 4
+        for (var x = r1; x <= r2; x++) {   // --- py stmt 5
+            for (var y = c1; y <= c2; y++) {   // --- py stmt 6
+                if (!s.has([x, y])) {   // --- py stmt 7
+                    return false;   // --- py stmt 8
+                }
+            }
+        }
+        return true;   // --- py stmt 9
+    }
+    var s = new Set();   // --- py stmt 10
+    for (var i = 0; i < dig.length; i++) {   // --- py stmt 10
+        s.add(dig[i].join(","));   // --- py stmt 10
+    }
+    var sum = 0;   // --- py stmt 11
+    for (var i = 0; i < artifacts.length; i++) {   // --- py stmt 11
+        if (check(artifacts[i])) {   // --- py stmt 11
+            sum++;   // --- py stmt 11
+        }
+    }
+    return sum;   // --- py stmt 11
+}
+
+
+

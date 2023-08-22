@@ -1,0 +1,200 @@
+{
+  "src_anno_stmts": [
+    [
+      "### merge",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(intervals: List[List[int]]) -> List[List[int]]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    intervals.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        4
+      ]
+    ],
+    [
+      "    st, ed = intervals[0]",
+      [
+        5
+      ]
+    ],
+    [
+      "    for s, e in intervals[1:]:",
+      [
+        6
+      ]
+    ],
+    [
+      "        if ed < s:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans.append([st, ed])",
+      [
+        8
+      ]
+    ],
+    [
+      "            st, ed = s, e",
+      [
+        9
+      ]
+    ],
+    [
+      "        else:",
+      [
+        10
+      ]
+    ],
+    [
+      "            ed = max(ed, e)",
+      [
+        11
+      ]
+    ],
+    [
+      "    ans.append([st, ed])",
+      [
+        12
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(intervals) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    intervals.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ans = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "    var st = intervals[0][0];",
+      [
+        5
+      ]
+    ],
+    [
+      "    var ed = intervals[0][1];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 1; i < intervals.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var s = intervals[i][0];",
+      [
+        6
+      ]
+    ],
+    [
+      "        var e = intervals[i][1];",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (ed < s) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans.push([st, ed]);",
+      [
+        8
+      ]
+    ],
+    [
+      "            st = s;",
+      [
+        9
+      ]
+    ],
+    [
+      "            ed = e;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        10
+      ]
+    ],
+    [
+      "            ed = Math.max(ed, e);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    ans.push([st, ed]);",
+      [
+        12
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

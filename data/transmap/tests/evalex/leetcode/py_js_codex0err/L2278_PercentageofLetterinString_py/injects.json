@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return Math.floor((s.split(letter).length - 1) * 100 / s.length);",
+    "replacement": "    return s.count(letter) * 100 // len(s);"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var res = (x < 0) ? -y : y;",
+    "replacement": "    var res = -y if (x < 0) else y;"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    return (res < -(Math.pow(2, 31)) || res > Math.pow(2, 31) - 1) ? 0 : res;",
+    "replacement": "    return 0 if (res < -(Math.pow(2, 31)) || res > Math.pow(2, 31) - 1) else res;"
+  }
+]

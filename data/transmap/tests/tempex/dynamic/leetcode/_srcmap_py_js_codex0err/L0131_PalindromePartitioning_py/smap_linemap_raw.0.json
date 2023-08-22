@@ -1,0 +1,282 @@
+{
+  "src_anno_stmts": [
+    [
+      "### partition",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> List[List[str]]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = len(s)",
+      [
+        4
+      ]
+    ],
+    [
+      "    dp = [[True] * n for _ in range(n)]",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(n - 1, -1, -1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j in range(i + 1, n):",
+      [
+        7
+      ]
+    ],
+    [
+      "            dp[i][j] = s[i] == s[j] and dp[i + 1][j - 1]",
+      [
+        8
+      ]
+    ],
+    [
+      "    def dfs(s, i, t):",
+      [
+        9
+      ]
+    ],
+    [
+      "        nonlocal n",
+      [
+        10
+      ]
+    ],
+    [
+      "        if i == n:",
+      [
+        11
+      ]
+    ],
+    [
+      "            ans.append(t.copy())",
+      [
+        12
+      ]
+    ],
+    [
+      "            return",
+      [
+        13
+      ]
+    ],
+    [
+      "        for j in range(i, n):",
+      [
+        14
+      ]
+    ],
+    [
+      "            if dp[i][j]:",
+      [
+        15
+      ]
+    ],
+    [
+      "                t.append(s[i : j + 1])",
+      [
+        16
+      ]
+    ],
+    [
+      "                dfs(s, j + 1, t)",
+      [
+        17
+      ]
+    ],
+    [
+      "                t.pop(-1)",
+      [
+        18
+      ]
+    ],
+    [
+      "    dfs(s, 0, [])",
+      [
+        19
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        20
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = s.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var dp = new Array(n);",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var _ = 0; _ < n; _++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        dp[_] = new Array(n);",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = n - 1; i >= 0; i--) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = i + 1; j < n; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            dp[i][j] = s[i] == s[j] && dp[i + 1][j - 1];",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    function dfs(s, i, t) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (i == n) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            ans.push(t.slice());",
+      [
+        12
+      ]
+    ],
+    [
+      "            return;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (var j = i; j < n; j++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (dp[i][j]) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                t.push(s.substring(i, j + 1));",
+      [
+        16
+      ]
+    ],
+    [
+      "                dfs(s, j + 1, t);",
+      [
+        17
+      ]
+    ],
+    [
+      "                t.pop();",
+      [
+        18
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    dfs(s, 0, []);",
+      [
+        19
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        20
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

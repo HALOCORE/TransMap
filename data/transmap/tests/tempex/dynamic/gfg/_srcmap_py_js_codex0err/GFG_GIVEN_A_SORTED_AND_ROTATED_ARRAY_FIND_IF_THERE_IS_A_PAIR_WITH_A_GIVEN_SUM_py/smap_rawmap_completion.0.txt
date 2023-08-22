@@ -1,0 +1,29 @@
+
+### Python
+def f_gold(arr, n, x):   # --- py stmt 1
+  for i in range(0, n - 1):   # --- py stmt 2
+    if(arr[i] > arr[i + 1]): break ;   # --- py stmt 3
+  l =(i + 1)% n   # --- py stmt 4
+  r = i   # --- py stmt 5
+  while(l != r):   # --- py stmt 6
+    if(arr[l] + arr[r] == x): return True ;   # --- py stmt 7
+    if(arr[l] + arr[r] < x): l =(l + 1)% n ;   # --- py stmt 8
+    else: r =(n + r - 1)% n ;   # --- py stmt 9
+  return False ;   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, x) {   // --- py stmt 1
+  for (let i = 0; i < n - 1; i++) {   // --- py stmt 2
+    if (arr[i] > arr[i + 1]) break;   // --- py stmt 3
+  }
+  let l = ((i === n - 1)? n - 1 : i + 1) % n;   // --- py stmt 4
+  let r = (i === n - 1)? n - 2 : i;   // --- py stmt 5
+  while (l != r) {   // --- py stmt 6
+    if (arr[l] + arr[r] == x) return true;   // --- py stmt 7
+    if (arr[l] + arr[r] < x) l = (l + 1) % n;   // --- py stmt 8
+    else r = (n + r - 1) % n;   // --- py stmt 9
+  }
+  return false;   // --- py stmt 10
+}
+

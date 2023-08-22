@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        var cnt = 0, cur = 0;",
+    "replacement": "        var cnt = cur = 0;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "            cur = (bd <= day) ? cur + 1 : 0;",
+    "replacement": "            cur = cur + 1 if (bd <= day) else 0;"
+  }
+]

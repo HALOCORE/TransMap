@@ -1,0 +1,4 @@
+{
+  "1": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 2 ---\n  for (var i = 0; i < n; i++) Input.push(ip[i]);\n  for (var i = 0; i < n; i++) Input.put(ip[i]);",
+  "8": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 10 ---\n      output.shift();\n      output.get();"
+}

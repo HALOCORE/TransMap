@@ -1,0 +1,45 @@
+
+### Python
+def f_gold(arr, dep, n):   # --- py stmt 1
+  arr.sort()   # --- py stmt 2
+  dep.sort()   # --- py stmt 3
+  plat_needed = 1   # --- py stmt 4
+  result = 1   # --- py stmt 5
+  i = 1   # --- py stmt 6
+  j = 0   # --- py stmt 7
+  while(i < n and j < n):   # --- py stmt 8
+    if(arr[i] < dep[j]):   # --- py stmt 9
+      plat_needed += 1   # --- py stmt 10
+      i += 1   # --- py stmt 11
+      if(plat_needed > result): result = plat_needed   # --- py stmt 12
+    else:   # --- py stmt 13
+      plat_needed -= 1   # --- py stmt 14
+      j += 1   # --- py stmt 15
+  return result   # --- py stmt 16
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, dep, n) {   // --- py stmt 1
+  arr.sort((a, b) => a-b);   // --- py stmt 2
+  dep.sort();   // --- py stmt 3
+  var plat_needed = 1;   // --- py stmt 4
+  var result = 1;   // --- py stmt 5
+  var i = 1;   // --- py stmt 6
+  var j = 0;   // --- py stmt 7
+  while(i < n && j < n) {   // --- py stmt 8
+    if(arr[i] < dep[j]) {   // --- py stmt 9
+      plat_needed += 1;   // --- py stmt 10
+      i += 1;   // --- py stmt 11
+      if(plat_needed > result) result = plat_needed;   // --- py stmt 12
+    }
+    else {   // --- py stmt 13
+      plat_needed -= 1;   // --- py stmt 14
+      j += 1;   // --- py stmt 15
+    }
+  }
+  return result;   // --- py stmt 16
+}
+
+
+

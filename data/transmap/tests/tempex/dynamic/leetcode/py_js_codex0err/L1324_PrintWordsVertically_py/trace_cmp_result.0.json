@@ -1,0 +1,74 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,25]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,55]",
+    "actural_src_pk": "[4,4,4,55]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",11,\"HOW ARE YOU\"],\"words\":[\"A\",1,[\"S\",11,\"HOW ARE YOU\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"HOW ARE YOU\"],\"words\":[\"A\",3,[\"S\",3,\"HOW\"],[\"S\",3,\"ARE\"],[\"S\",3,\"YOU\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "words"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,25]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,55]",
+    "actural_src_pk": "[4,4,4,55]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",11,\"HOW ARE YOU\"],\"words\":[\"A\",1,[\"S\",11,\"HOW ARE YOU\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"HOW ARE YOU\"],\"words\":[\"A\",3,[\"S\",3,\"HOW\"],[\"S\",3,\"ARE\"],[\"S\",3,\"YOU\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "words"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,25]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,55]",
+    "actural_src_pk": "[4,4,4,55]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",11,\"HOW ARE YOU\"],\"words\":[\"A\",1,[\"S\",11,\"HOW ARE YOU\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"HOW ARE YOU\"],\"words\":[\"A\",3,[\"S\",3,\"HOW\"],[\"S\",3,\"ARE\"],[\"S\",3,\"YOU\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "words"
+    ]
+  }
+]

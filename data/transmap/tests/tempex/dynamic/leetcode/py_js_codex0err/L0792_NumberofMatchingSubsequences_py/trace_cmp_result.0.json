@@ -1,0 +1,104 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 9,
+    "actural_src_pk": "[16,4,16,14]",
+    "src_cov_lines": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15
+    ],
+    "tar_cov_lines": [
+      9,
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'slice')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",10,\"dsahjpjauf\"],\"words\":[\"A\",4,[\"S\",7,\"ahjpjau\"],[\"S\",2,\"ja\"],[\"S\",10,\"ahbwzgqnuk\"],[\"S\",10,\"tnmlanowax\"]],\"buckets\":[\"DICT\",[[\"S\",1,\"a\"],[\"A\",0]],[[\"S\",1,\"j\"],[\"A\",0]],[[\"S\",1,\"t\"],[\"A\",1,[\"S\",10,\"tnmlanowax\"]]],[[\"S\",1,\"d\"],[\"A\",0]],[[\"S\",1,\"s\"],[\"A\",0]],[[\"S\",1,\"h\"],[\"A\",0]],[[\"S\",1,\"b\"],[\"A\",1,[\"S\",8,\"bwzgqnuk\"]]],[[\"S\",1,\"p\"],[\"A\",0]],[[\"S\",1,\"u\"],[\"A\",0]],[[\"S\",1,\"f\"],[\"A\",0]]],\"word\":[\"S\",10,\"tnmlanowax\"],\"res\":[\"N\",\"2\"],\"c\":[\"S\",1,\"f\"],\"old\":[\"A\",0],\"t\":[\"S\",1,\"u\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 19,
+    "actural_src_pk": "[10,8,10,26]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'slice')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",10,\"dsahjpjauf\"],\"words\":[\"A\",4,[\"S\",7,\"ahjpjau\"],[\"S\",2,\"ja\"],[\"S\",10,\"ahbwzgqnuk\"],[\"S\",10,\"tnmlanowax\"]],\"buckets\":[\"DICT\",[[\"S\",1,\"a\"],[\"A\",2,[\"S\",7,\"ahjpjau\"],[\"S\",10,\"ahbwzgqnuk\"]]],[[\"S\",1,\"j\"],[\"A\",1,[\"S\",2,\"ja\"]]],[[\"S\",1,\"t\"],[\"A\",1,[\"S\",10,\"tnmlanowax\"]]],[[\"S\",1,\"d\"],[\"A\",0]]],\"word\":[\"S\",10,\"tnmlanowax\"],\"res\":[\"N\",\"0\"],\"c\":[\"S\",1,\"d\"],\"old\":[\"A\",0]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 11,
+    "actural_src_pk": "[10,8,10,26]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'slice')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",10,\"dsahjpjauf\"],\"words\":[\"A\",4,[\"S\",7,\"ahjpjau\"],[\"S\",2,\"ja\"],[\"S\",10,\"ahbwzgqnuk\"],[\"S\",10,\"tnmlanowax\"]],\"buckets\":[\"DICT\",[[\"S\",1,\"a\"],[\"A\",2,[\"S\",7,\"ahjpjau\"],[\"S\",10,\"ahbwzgqnuk\"]]],[[\"S\",1,\"j\"],[\"A\",1,[\"S\",2,\"ja\"]]],[[\"S\",1,\"t\"],[\"A\",1,[\"S\",10,\"tnmlanowax\"]]],[[\"S\",1,\"d\"],[\"A\",0]]],\"word\":[\"S\",10,\"tnmlanowax\"],\"res\":[\"N\",\"0\"],\"c\":[\"S\",1,\"d\"],\"old\":[\"A\",0]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 11,
+    "actural_src_pk": "[10,8,10,26]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'slice')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",10,\"dsahjpjauf\"],\"words\":[\"A\",4,[\"S\",7,\"ahjpjau\"],[\"S\",2,\"ja\"],[\"S\",10,\"ahbwzgqnuk\"],[\"S\",10,\"tnmlanowax\"]],\"buckets\":[\"DICT\",[[\"S\",1,\"a\"],[\"A\",2,[\"S\",7,\"ahjpjau\"],[\"S\",10,\"ahbwzgqnuk\"]]],[[\"S\",1,\"j\"],[\"A\",1,[\"S\",2,\"ja\"]]],[[\"S\",1,\"t\"],[\"A\",1,[\"S\",10,\"tnmlanowax\"]]],[[\"S\",1,\"d\"],[\"A\",0]]],\"word\":[\"S\",10,\"tnmlanowax\"],\"res\":[\"N\",\"0\"],\"c\":[\"S\",1,\"d\"],\"old\":[\"A\",0]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 11,
+    "actural_src_pk": "[10,8,10,26]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'slice')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",10,\"dsahjpjauf\"],\"words\":[\"A\",4,[\"S\",7,\"ahjpjau\"],[\"S\",2,\"ja\"],[\"S\",10,\"ahbwzgqnuk\"],[\"S\",10,\"tnmlanowax\"]],\"buckets\":[\"DICT\",[[\"S\",1,\"a\"],[\"A\",2,[\"S\",7,\"ahjpjau\"],[\"S\",10,\"ahbwzgqnuk\"]]],[[\"S\",1,\"j\"],[\"A\",1,[\"S\",2,\"ja\"]]],[[\"S\",1,\"t\"],[\"A\",1,[\"S\",10,\"tnmlanowax\"]]],[[\"S\",1,\"d\"],[\"A\",0]]],\"word\":[\"S\",10,\"tnmlanowax\"],\"res\":[\"N\",\"0\"],\"c\":[\"S\",1,\"d\"],\"old\":[\"A\",0]}",
+      ""
+    ]
+  }
+]

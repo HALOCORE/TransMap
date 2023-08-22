@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 13,
+    "content": "    for (var [k, v] of Object.entries(d).sort((a, b) => (parseInt(a[0]) - parseInt(b[0])))) {\n        //\n        s += v;",
+    "replacement": "    for (var _b = 0, _c = Object.keys(d).sort(); _b < _c.length; _b++) {\n        var k = _c[_b];\n        s += d[k];"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "            ans = parseInt(k);",
+    "replacement": "            ans = k;"
+  }
+]

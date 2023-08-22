@@ -1,0 +1,34 @@
+
+### Python
+def f_gold(arr, n, x):   # --- py stmt 1
+  if n < 2: return False   # --- py stmt 2
+  s = set()   # --- py stmt 3
+  for i in range(0, n):   # --- py stmt 4
+    if arr[i] == 0:   # --- py stmt 5
+      if x == 0: return True   # --- py stmt 6
+      else: continue   # --- py stmt 7
+    if x % arr[i] == 0:   # --- py stmt 8
+      if x // arr[i] in s: return True   # --- py stmt 9
+      s.add(arr[i])   # --- py stmt 10
+  return False   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, x) {   // --- py stmt 1
+  if (n < 2) return false;   // --- py stmt 2
+  var s = new Set();   // --- py stmt 3
+  for (var i = 0; i < n; i++) {   // --- py stmt 4
+    if (arr[i] == 0) {   // --- py stmt 5
+      if (x == 0) return true;   // --- py stmt 6
+      else continue;   // --- py stmt 7
+    }
+    if (x % arr[i] == 0) {   // --- py stmt 8
+      if (x / arr[i] in s) return true;   // --- py stmt 9
+      s.add(arr[i]);   // --- py stmt 10
+    }
+  }
+  return false;   // --- py stmt 11
+}
+
+
+

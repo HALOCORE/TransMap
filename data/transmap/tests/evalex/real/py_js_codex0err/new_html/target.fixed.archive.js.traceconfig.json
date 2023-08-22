@@ -1,0 +1,11 @@
+{
+  "disable_src_lines": [167,627,630,706,741,968,211,682,683,691],
+  "trace_cmp": [
+    {"src_lines": ["359-365"], "vars_ignore": ["match"]},
+    {"src_lines": ["586-597"], "vars_ignore": ["m"]},
+    {"src_lines": ["760-762"], "vars_ignore": ["k"]},
+    {"src_lines": ["948-977"], "vars_ignore": ["m"]},
+    {"src_lines": ["909-939"], "vars_ignore": ["match", "m"]},
+    {"src_lines": ["986-1020"], "vars_ignore": ["match", "namematch"]}
+  ]
+}

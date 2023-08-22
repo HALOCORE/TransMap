@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    var result = Number(maxx.toString().split(\"\").reduce(function (a, b) { return parseInt(a) + parseInt(b); }));",
+    "replacement": "    var result = maxx.toString().split(\"\").reduce(function (a, b) { return parseInt(a) + parseInt(b); });"
+  }
+]

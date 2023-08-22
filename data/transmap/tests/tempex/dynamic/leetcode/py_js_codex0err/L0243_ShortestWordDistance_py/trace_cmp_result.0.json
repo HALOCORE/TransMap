@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: i2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"wordsDict\":[\"A\",5,[\"S\",8,\"practice\"],[\"S\",5,\"makes\"],[\"S\",7,\"perfect\"],[\"S\",6,\"coding\"],[\"S\",5,\"makes\"]],\"word1\":[\"S\",6,\"coding\"],\"word2\":[\"S\",8,\"practice\"],\"i1\":[\"N\",\"-1\"],\"i2\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: i2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"wordsDict\":[\"A\",5,[\"S\",8,\"practice\"],[\"S\",5,\"makes\"],[\"S\",7,\"perfect\"],[\"S\",6,\"coding\"],[\"S\",5,\"makes\"]],\"word1\":[\"S\",6,\"coding\"],\"word2\":[\"S\",8,\"practice\"],\"i1\":[\"N\",\"-1\"],\"i2\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: i2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"wordsDict\":[\"A\",5,[\"S\",8,\"practice\"],[\"S\",5,\"makes\"],[\"S\",7,\"perfect\"],[\"S\",6,\"coding\"],[\"S\",5,\"makes\"]],\"word1\":[\"S\",6,\"coding\"],\"word2\":[\"S\",8,\"practice\"],\"i1\":[\"N\",\"-1\"],\"i2\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,246 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numMatchingSubseq",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(s: str, words: List[str]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    buckets = defaultdict(list)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for word in words:",
+      [
+        5
+      ]
+    ],
+    [
+      "        buckets[word[0]].append(word)",
+      [
+        6
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "    for c in s:",
+      [
+        8
+      ]
+    ],
+    [
+      "        old = buckets[c][::1]",
+      [
+        9
+      ]
+    ],
+    [
+      "        buckets[c].clear()",
+      [
+        10
+      ]
+    ],
+    [
+      "        for t in old:",
+      [
+        11
+      ]
+    ],
+    [
+      "            if len(t) == 1:",
+      [
+        12
+      ]
+    ],
+    [
+      "                res += 1",
+      [
+        13
+      ]
+    ],
+    [
+      "            else:",
+      [
+        14
+      ]
+    ],
+    [
+      "                buckets[t[1]].append(t[1:])",
+      [
+        15
+      ]
+    ],
+    [
+      "    return res",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, words) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let buckets = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let word of words) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (buckets[word[0]] === undefined) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            buckets[word[0]] = [];",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        buckets[word[0]].push(word);",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let res = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let c of s) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        let old = buckets[c].slice();",
+      [
+        9
+      ]
+    ],
+    [
+      "        buckets[c] = [];",
+      [
+        10
+      ]
+    ],
+    [
+      "        for (let t of old) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (t.length == 1) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                res += 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        14
+      ]
+    ],
+    [
+      "                if (buckets[t[1]] === undefined) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                    buckets[t[1]] = [];",
+      [
+        15
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "                buckets[t[1]].push(t.slice(1));",
+      [
+        15
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

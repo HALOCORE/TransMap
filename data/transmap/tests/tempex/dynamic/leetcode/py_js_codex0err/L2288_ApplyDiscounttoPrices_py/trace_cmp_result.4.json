@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"TypeError: \\\" \\\".join is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",27,\"1 2 $3 4 $5 $6 7 8$ \"],\"discount\":[\"N\",\"100\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"TypeError: \\\" \\\".join is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",27,\"1 2 $3 4 $5 $6 7 8$ \"],\"discount\":[\"N\",\"100\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"TypeError: \\\" \\\".join is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",27,\"1 2 $3 4 $5 $6 7 8$ \"],\"discount\":[\"N\",\"100\"]}",
+      ""
+    ]
+  }
+]

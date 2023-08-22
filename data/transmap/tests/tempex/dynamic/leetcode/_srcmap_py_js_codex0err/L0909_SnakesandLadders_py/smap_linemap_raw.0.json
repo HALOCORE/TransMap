@@ -1,0 +1,352 @@
+{
+  "src_anno_stmts": [
+    [
+      "### snakesAndLadders",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(board: List[List[int]]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    def get(x):",
+      [
+        4
+      ]
+    ],
+    [
+      "        i, j = (x - 1) // n, (x - 1) % n",
+      [
+        5
+      ]
+    ],
+    [
+      "        if i & 1:",
+      [
+        6
+      ]
+    ],
+    [
+      "            j = n - 1 - j",
+      [
+        7
+      ]
+    ],
+    [
+      "        return n - 1 - i, j",
+      [
+        8
+      ]
+    ],
+    [
+      "    n = len(board)",
+      [
+        9
+      ]
+    ],
+    [
+      "    q = deque([1])",
+      [
+        10
+      ]
+    ],
+    [
+      "    vis = {1}",
+      [
+        11
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        12
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        13
+      ]
+    ],
+    [
+      "        for _ in range(len(q)):",
+      [
+        14
+      ]
+    ],
+    [
+      "            curr = q.popleft()",
+      [
+        15
+      ]
+    ],
+    [
+      "            if curr == n * n:",
+      [
+        16
+      ]
+    ],
+    [
+      "                return ans",
+      [
+        17
+      ]
+    ],
+    [
+      "            for next in range(curr + 1, min(curr + 7, n * n + 1)):",
+      [
+        18
+      ]
+    ],
+    [
+      "                i, j = get(next)",
+      [
+        19
+      ]
+    ],
+    [
+      "                if board[i][j] != -1:",
+      [
+        20
+      ]
+    ],
+    [
+      "                    next = board[i][j]",
+      [
+        21
+      ]
+    ],
+    [
+      "                if next not in vis:",
+      [
+        22
+      ]
+    ],
+    [
+      "                    q.append(next)",
+      [
+        23
+      ]
+    ],
+    [
+      "                    vis.add(next)",
+      [
+        24
+      ]
+    ],
+    [
+      "        ans += 1",
+      [
+        25
+      ]
+    ],
+    [
+      "    return -1",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold ( board ) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    function get ( x ) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        let i = Math.floor( ( x - 1 ) / n );",
+      [
+        5
+      ]
+    ],
+    [
+      "        let j = ( x - 1 ) % n;",
+      [
+        5
+      ]
+    ],
+    [
+      "        if ( i & 1 ) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            j = n - 1 - j;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return n - 1 - i, j;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let n = board.length;",
+      [
+        9
+      ]
+    ],
+    [
+      "    let q = [ 1 ];",
+      [
+        10
+      ]
+    ],
+    [
+      "    let vis = { 1: true };",
+      [
+        11
+      ]
+    ],
+    [
+      "    let ans = 0;",
+      [
+        12
+      ]
+    ],
+    [
+      "    while ( q.length > 0 ) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        for ( let _ = 0; _ < q.length; _++ ) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            let curr = q.shift();",
+      [
+        15
+      ]
+    ],
+    [
+      "            if ( curr == n * n ) {",
+      [
+        16
+      ]
+    ],
+    [
+      "                return ans;",
+      [
+        17
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            for ( let next = curr + 1; next < Math.min( curr + 7, n * n + 1 ); next++ ) {",
+      [
+        18
+      ]
+    ],
+    [
+      "                let [i, j] = get( next );",
+      [
+        19
+      ]
+    ],
+    [
+      "                if ( board[ i ] && board[ i ][ j ] != -1 ) {",
+      [
+        20
+      ]
+    ],
+    [
+      "                    next = board[ i ][ j ];",
+      [
+        21
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "                if ( !vis[ next ] ) {",
+      [
+        22
+      ]
+    ],
+    [
+      "                    q.push( next );",
+      [
+        23
+      ]
+    ],
+    [
+      "                    vis[ next ] = true;",
+      [
+        24
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans += 1;",
+      [
+        25
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return -1;",
+      [
+        26
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

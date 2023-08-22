@@ -1,0 +1,76 @@
+
+### Python
+### distinctSequences 
+import math   # --- py stmt 1
+from math import gcd   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(n: int) -> int:   # --- py stmt 4
+    if n == 1:   # --- py stmt 5
+        return 6   # --- py stmt 6
+    mod = 10**9 + 7   # --- py stmt 7
+    dp = [[[0] * 6 for _ in range(6)] for _ in range(n + 1)]   # --- py stmt 8
+    for i in range(6):   # --- py stmt 9
+        for j in range(6):   # --- py stmt 10
+            if gcd(i + 1, j + 1) == 1 and i != j:   # --- py stmt 11
+                dp[2][i][j] = 1   # --- py stmt 12
+    for k in range(3, n + 1):   # --- py stmt 13
+        for i in range(6):   # --- py stmt 14
+            for j in range(6):   # --- py stmt 15
+                if gcd(i + 1, j + 1) == 1 and i != j:   # --- py stmt 16
+                    for h in range(6):   # --- py stmt 17
+                        if gcd(h + 1, i + 1) == 1 and h != i and h != j:   # --- py stmt 18
+                            dp[k][i][j] += dp[k - 1][h][i]   # --- py stmt 19
+    ans = 0   # --- py stmt 20
+    for i in range(6):   # --- py stmt 21
+        for j in range(6):   # --- py stmt 22
+            ans += dp[-1][i][j]   # --- py stmt 23
+    return ans % mod   # --- py stmt 24
+
+### JavaScript
+"use strict";
+exports.__esModule = true;
+exports.f_gold = function (n) {   // --- py stmt 4
+    if (n == 1)   // --- py stmt 5
+        return 6;   // --- py stmt 6
+    var mod = Math.pow(10, 9) + 7;   // --- py stmt 7
+    var dp = Array(n + 1);   // --- py stmt 8
+    for (var i = 0; i < n + 1; i++) {   // --- py stmt 9
+        dp[i] = Array(6);   // --- py stmt 9
+        for (var j = 0; j < 6; j++) {   // --- py stmt 10
+            dp[i][j] = Array(6).fill(0);   // --- py stmt 10
+        }
+    }
+    for (var i = 0; i < 6; i++) {   // --- py stmt 11
+        for (var j = 0; j < 6; j++) {   // --- py stmt 11
+            if (gcd(i + 1, j + 1) == 1 && i != j)   // --- py stmt 12
+                dp[2][i][j] = 1;   // --- py stmt 12
+        }
+    }
+    for (var k = 3; k < n + 1; k++) {   // --- py stmt 13
+        for (var i = 0; i < 6; i++) {   // --- py stmt 14
+            for (var j = 0; j < 6; j++) {   // --- py stmt 15
+                if (gcd(i + 1, j + 1) == 1 && i != j) {   // --- py stmt 16
+                    for (var h = 0; h < 6; h++) {   // --- py stmt 17
+                        if (gcd(h + 1, i + 1) == 1 && h != i && h != j)   // --- py stmt 18
+                            dp[k][i][j] += dp[k - 1][h][i];   // --- py stmt 19
+                    }
+                }
+            }
+        }
+    }
+    var ans = 0;   // --- py stmt 20
+    for (var i = 0; i < 6; i++) {   // --- py stmt 21
+        for (var j = 0; j < 6; j++) {   // --- py stmt 22
+            ans += dp[n][i][j];   // --- py stmt 23
+        }
+    }
+    return ans % mod;   // --- py stmt 24
+};
+var gcd = function (a, b) {   // --- py stmt 2
+    if (a == 0)   // --- py stmt 2
+        return b;   // --- py stmt 2
+    return gcd(b % a, a);   // --- py stmt 2
+};
+
+
+

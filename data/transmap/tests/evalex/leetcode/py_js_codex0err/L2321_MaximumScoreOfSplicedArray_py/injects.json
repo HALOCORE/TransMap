@@ -1,0 +1,38 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        var d = nums1.map((a, i) => a - nums2[i]);",
+    "replacement": "        var d = [a - b for a, b in zip(nums1, nums2)];"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        var t = d[0], mx = d[0];",
+    "replacement": "        var t = mx = d[0];"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        for (var v of d.slice(1)) {",
+    "replacement": "        for (var v in d[1:]) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "            mx = Math.max(mx, t);",
+    "replacement": "            mx = max(mx, t);"
+  },
+  {
+    "line_start": 16,
+    "line_end": 22,
+    "content": "    var s1 = nums1.reduce(function(a, b) {\n        return a + b;\n    });\n    var s2 = nums2.reduce(function(a, b) {\n        return a + b;\n    });",
+    "replacement": "    var s1, s2 = sum(nums1), sum(nums2);"
+  },
+  {
+    "line_start": 22,
+    "line_end": 23,
+    "content": "    return Math.max(s2 + f(nums1, nums2), s1 + f(nums2, nums1));",
+    "replacement": "    return max(s2 + f(nums1, nums2), s1 + f(nums2, nums1));"
+  }
+]

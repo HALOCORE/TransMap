@@ -1,0 +1,158 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numKLenSubstrNoRepeats",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = j = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    mp = {}",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, c in enumerate(s):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if c in mp:",
+      [
+        6
+      ]
+    ],
+    [
+      "            j = max(j, mp[c] + 1)",
+      [
+        7
+      ]
+    ],
+    [
+      "        mp[c] = i",
+      [
+        8
+      ]
+    ],
+    [
+      "        if i - j + 1 >= k:",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = j = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var mp = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < s.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var c = s[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (c in mp) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            j = Math.max(j, mp[c] + 1);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        mp[c] = i;",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (i - j + 1 >= k) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

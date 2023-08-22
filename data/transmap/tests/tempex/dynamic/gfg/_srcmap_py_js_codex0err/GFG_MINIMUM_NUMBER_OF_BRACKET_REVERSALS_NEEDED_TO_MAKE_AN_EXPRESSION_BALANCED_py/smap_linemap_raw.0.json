@@ -1,0 +1,202 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(expr):",
+      [
+        1
+      ]
+    ],
+    [
+      "  lenn = len(expr)",
+      [
+        2
+      ]
+    ],
+    [
+      "  if(lenn % 2): return - 1",
+      [
+        3
+      ]
+    ],
+    [
+      "  s =[]",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(lenn):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(expr[i] == '' and len(s)):",
+      [
+        6
+      ]
+    ],
+    [
+      "      if(s[0] == ''): s.pop(0)",
+      [
+        7
+      ]
+    ],
+    [
+      "      else: s.insert(0, expr[i])",
+      [
+        8
+      ]
+    ],
+    [
+      "    else: s.insert(0, expr[i])",
+      [
+        9
+      ]
+    ],
+    [
+      "  red_len = len(s)",
+      [
+        10
+      ]
+    ],
+    [
+      "  n = 0",
+      [
+        11
+      ]
+    ],
+    [
+      "  while(len(s)and s[0] == ''):",
+      [
+        12
+      ]
+    ],
+    [
+      "    s.pop(0)",
+      [
+        13
+      ]
+    ],
+    [
+      "    n += 1",
+      [
+        14
+      ]
+    ],
+    [
+      "  return(red_len // 2 + n % 2)",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(expr) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var lenn = expr.length;",
+      [
+        2
+      ]
+    ],
+    [
+      "  if(lenn % 2) return - 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var s = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "  for(var i = 0;i < lenn;i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(expr[i] == '' && s.length) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      if(s[0] == '') s.pop(0);",
+      [
+        7
+      ]
+    ],
+    [
+      "      else s.insert(0, expr[i]);",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    else s.unshift(expr[i]);",
+      [
+        9
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var red_len = s.length;",
+      [
+        10
+      ]
+    ],
+    [
+      "  var n = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "  while(s.length && s[0] == '') {",
+      [
+        12
+      ]
+    ],
+    [
+      "    s.pop(0);",
+      [
+        13
+      ]
+    ],
+    [
+      "    n += 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return(red_len / 2 + n % 2);",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

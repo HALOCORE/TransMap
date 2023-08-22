@@ -1,0 +1,40 @@
+[ERR][EXCEPTION] L0885_SpiralMatrixIII_py | !eq case. Expected str equal, got 'def f_gold(rows: int, cols: int, rStart: int, cStart: int' and 'def f_gold(rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:'
+[ERR][EXCEPTION] L2285_MaximumTotalImportanceofRoads_py | line 4 (        degrees[roads[i][1]] += 1;   # --- py stmt 7) does not contain seperator    // --- py stmt // js stmt inserted into the map [DISO]
+# [ERR][CHK-WARN] L1914_CyclicallyRotatingaGrid_py | js NOT MONOTONOUS!
+# [ERR][CHK-WARN] L2279_MaximumBagsWithFullCapacityofRocks_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {4}']
+# [ERR][EXCEPTION] L1064_FixedPoint_py | line 3 (    while (left_index < right_index) {   # --- py stmt 5) does not contain seperator    // --- py stmt 
+[ERR][CHK] L0851_LoudandRich_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {20, 21}']
+[ERR][EXCEPTION] L0273_IntegertoEnglishWords_py | !eq case. Expected str equal, got '    var i = 1000000000;' and '    var i = 1000000000, j = 0;'
+# [ERR][EXCEPTION] L0168_ExcelSheetColumnTitle_py | line 1 (    var columnName = [];   # --- py stmt 4) does not contain seperator    // --- py stmt 
+[ERR][CHK] L0423_ReconstructOriginalDigitsfromEnglish_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {17, 18, 19, 20, 21, 22, 23, 24}']
+# [ERR][CHK-WARN] L2318_NumberofDistinctRollSequences_py | js NOT MONOTONOUS!
+[ERR][CHK] L0438_FindAllAnagramsinaString_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {17, 18, 19, 20, 21, 22}']
+[ERR][EXCEPTION] L0734_SentenceSimilarity_py | !eq case. Expected str equal, got '        var isSimilar = (similarPairsSet.has([sentence1[i], sentence2[i]].join(",")) || similarPairsSet.has([sentence2[i], sentence1[i]].join(",")) || sentence1[i] == sentence2[i]);' and '        var isSimilar = ('
+[ERR][CHK] L2301_MatchSubstringAfterReplacement_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {19, 20, 21}']
+[ERR][EXCEPTION] L1090_LargestValuesFromLabels_py | !eq case. Expected str equal, got '    var num = 0;' and '    var num = 0, answer = 0;'
+# [ERR][CHK-WARN] L1210_MinimumMovestoReachTargetwithRotations_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 17}']
+# [ERR][CHK-WARN] L2312_SellingPiecesofWood_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3, 4, 5, 6}']
+# [ERR][CHK-WARN] L1275_FindWinneronaTicTacToeGame_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 13}']
+[ERR][CHK-WARN] L0356_LineReflection_py | js NOT MONOTONOUS! // err
+[ERR][CHK] L2283_CheckifNumberHasEqualDigitCountandDigitValue_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {6, 7, 8, 9, 10, 11, 12}']
+[ERR][CHK] L0743_NetworkDelayTime_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {18, 19, 20, 21}']
+# [ERR][CHK-WARN] L2257_CountUnguardedCellsintheGrid_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 10}']
+[ERR][CHK] L1181_BeforeandAfterPuzzle_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27}']
+[ERR][CHK] L0076_MinimumWindowSubstring_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {27, 28}']
+[ERR][CHK] L0792_NumberofMatchingSubsequences_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {17, 18, 19, 20}']
+[ERR][CHK] L2244_MinimumRoundstoCompleteAllTasks_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {9, 10, 11, 12, 13, 14, 15, 16, 17, 18}']
+# [ERR][CHK-WARN] L2052_MinimumCosttoSeparateSentenceIntoRows_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 3, 4, 5, 7}']
+# [ERR][CHK-WARN] L0752_OpentheLock_py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 2, 33, 36, 39}']
+[ERR][CHK] L1189_MaximumNumberofBalloons_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {8, 9, 10, 11, 12, 13, 14, 15}']
+# [ERR][CHK-WARN] L0824_GoatLatin_py | js NOT MONOTONOUS!
+[ERR][CHK] L0210_CourseScheduleII_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {24, 21, 22, 23}']
+[ERR][CHK] L0409_LongestPalindrome_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {8, 9, 10, 11, 12, 13, 14}']
+# [ERR][CHK-WARN] L0008_StringtoInteger_atoi__py | py has UNMAPPED idxes! ['py_idxes not subset of js_idxes. segname: unknown diff: {1, 4, 12, 7}']
+[ERR][CHK] L0207_CourseSchedule_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {24, 25, 26, 23}']
+# [ERR][CHK-WARN] L2273_FindResultantArrayAfterRemovingAnagrams_py | js NOT MONOTONOUS!
+[ERR][EXCEPTION] L0329_LongestIncreasingPathinaMatrix_py | !eq case. Expected str equal, got '            var a = _a[_i][0],' and '            var a = _a[_i][0], b = _a[_i][1];'
+[ERR][CHK] L1943_DescribethePainting_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}']
+[ERR][CHK] L0487_MaxConsecutiveOnesII_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {27, 28, 29, 30}']
+# [ERR][CHK-WARN] L2316_CountUnreachablePairsofNodesinanUndirectedGraph_py | js NOT MONOTONOUS!
+[ERR][EXCEPTION] L1089_DuplicateZeros_py | !eq case. Expected str equal, got '    var index = -1;' and '    var index = -1, count = 0;'
+[ERR][CHK] L1394_FindLuckyIntegerinanArray_py | js has INVALID out-of-range idxes!['js_idxes not subset of py_idxes. segname: unknown diff: {10, 11, 12, 13}']

@@ -1,0 +1,14 @@
+
+### Python
+from typing import *   # --- py stmt 1
+def f_gold(address: str) -> str:   # --- py stmt 2
+    return address.replace('.', '[.]')   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(address) {   // --- py stmt 2
+    return address.replace('.', '[.]');   // --- py stmt 3
+}
+
+
+

@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[15,4,16,20]",
+    "src_cov_lines": [
+      14
+    ],
+    "tar_cov_lines": [
+      17,
+      18
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":18,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]],\"x\":[\"N\",\"2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[15,4,16,20]",
+    "src_cov_lines": [
+      14
+    ],
+    "tar_cov_lines": [
+      17,
+      18
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":18,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]],\"x\":[\"N\",\"2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[15,4,16,20]",
+    "src_cov_lines": [
+      14
+    ],
+    "tar_cov_lines": [
+      17,
+      18
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":18,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]],\"x\":[\"N\",\"2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[15,4,16,20]",
+    "src_cov_lines": [
+      14
+    ],
+    "tar_cov_lines": [
+      17,
+      18
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":18,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"mod\":[\"N\",\"0\"],\"matchsticks\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"2\"]],\"x\":[\"N\",\"2\"]}",
+      ""
+    ]
+  }
+]

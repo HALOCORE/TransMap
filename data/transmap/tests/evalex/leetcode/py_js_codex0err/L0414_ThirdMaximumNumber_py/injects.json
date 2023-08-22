@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var m1 = -Infinity, m2 = -Infinity, m3 = -Infinity;",
+    "replacement": "    var m1 = m2 = m3 = -Infinity;"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        if ([m1, m2, m3].includes(num)) continue;",
+    "replacement": "        if (num in [m1, m2, m3]) continue;"
+  }
+]

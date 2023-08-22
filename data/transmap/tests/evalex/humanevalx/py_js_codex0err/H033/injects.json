@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var aux = l.filter((value, index) => index % 3 === 0).sort((a, b) => a - b);",
+    "replacement": "    l = l.slice();"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    l = l.map((value, index) => index % 3 === 0 ? aux.shift() : value);",
+    "replacement": "    l.splice(0, l.length, ...l.slice(0, l.length).sort((a, b) => a - b));"
+  }
+]

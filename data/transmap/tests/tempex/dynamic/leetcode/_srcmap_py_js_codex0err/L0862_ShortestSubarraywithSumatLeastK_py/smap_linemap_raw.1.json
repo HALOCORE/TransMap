@@ -1,0 +1,188 @@
+{
+  "src_anno_stmts": [
+    [
+      "### shortestSubarray",
+      null
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "import math",
+      [
+        2
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        3
+      ]
+    ],
+    [
+      "from collections import deque",
+      [
+        4
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        5
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> int:",
+      [
+        6
+      ]
+    ],
+    [
+      "    s = [0] + list(accumulate(nums))",
+      [
+        7
+      ]
+    ],
+    [
+      "    ans = float('inf')",
+      [
+        8
+      ]
+    ],
+    [
+      "    q = deque([0])",
+      [
+        9
+      ]
+    ],
+    [
+      "    for i in range(1, len(s)):",
+      [
+        10
+      ]
+    ],
+    [
+      "        while q and s[i] - s[q[0]] >= k:",
+      [
+        11
+      ]
+    ],
+    [
+      "            ans = min(ans, i - q.popleft())",
+      [
+        12
+      ]
+    ],
+    [
+      "        while q and s[i] <= s[q[-1]]:",
+      [
+        13
+      ]
+    ],
+    [
+      "            q.pop()",
+      [
+        14
+      ]
+    ],
+    [
+      "        q.append(i)",
+      [
+        15
+      ]
+    ],
+    [
+      "    return -1 if ans == float('inf') else ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    var s = [0].concat(nums.map((sum => value => sum += value)(0)));",
+      [
+        7
+      ]
+    ],
+    [
+      "    var ans = float('inf');",
+      [
+        8
+      ]
+    ],
+    [
+      "    var q = [0];",
+      [
+        9
+      ]
+    ],
+    [
+      "    for (var i = 1; i < s.length; i++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        while (q.length && s[i] - s[q[0]] >= k) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            ans = Math.min(ans, i - q.shift());",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        while (q.length && s[i] <= s[q[q.length - 1]]) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            q.pop();",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        q.push(i);",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return (ans == Number.POSITIVE_INFINITY) ? -1 : ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  return sum(arr)-(((n - 1)* n)// 2)   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+    return sum(arr) - (((n - 1) * n) / 2);   // --- py stmt 2
+}
+
+
+

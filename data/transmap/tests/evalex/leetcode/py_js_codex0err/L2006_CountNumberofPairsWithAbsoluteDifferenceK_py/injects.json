@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        ans += (num - k in counter ? counter[num - k] : 0) + (num + k in counter ? counter[num + k] : 0);",
+    "replacement": "        ans += counter[num - k] + counter[num + k];"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        counter[num] = num in counter ? counter[num] + 1 : 1;",
+    "replacement": "        counter[num] += 1;"
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(tree, k):",
+      [
+        1
+      ]
+    ],
+    [
+      "  level = - 1",
+      [
+        2
+      ]
+    ],
+    [
+      "  sum = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  n = len(tree)",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(tree[i] == '('): level += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    elif(tree[i] == ')'): level -= 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    else:",
+      [
+        8
+      ]
+    ],
+    [
+      "      if(level == k): sum +=(ord(tree[i])- ord('0'))",
+      [
+        9
+      ]
+    ],
+    [
+      "  return sum",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(tree, k) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var level = - 1;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var sum = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var n = tree.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (tree[i] == '(') level += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    else if (tree[i] == ')') level -= 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    else {",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (level == k) sum += (tree[i].charCodeAt(0) - tree[i].charCodeAt(0));",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return sum;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

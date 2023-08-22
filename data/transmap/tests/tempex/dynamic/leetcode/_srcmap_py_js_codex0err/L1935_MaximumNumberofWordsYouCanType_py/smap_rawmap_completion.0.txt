@@ -1,0 +1,37 @@
+
+### Python
+### canBeTypedWords 
+from typing import *   # --- py stmt 1
+def f_gold(text: str, brokenLetters: str) -> int:   # --- py stmt 2
+    letters = set(brokenLetters)   # --- py stmt 3
+    res = 0   # --- py stmt 4
+    for word in text.split():   # --- py stmt 5
+        find = False   # --- py stmt 6
+        for letter in letters:   # --- py stmt 7
+            if letter in word:   # --- py stmt 8
+                find = True   # --- py stmt 9
+                break   # --- py stmt 10
+        if not find:   # --- py stmt 11
+            res += 1   # --- py stmt 12
+    return res   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(text, brokenLetters) {   // --- py stmt 2
+    var letters = new Set(brokenLetters);   // --- py stmt 3
+    var res = 0;   // --- py stmt 4
+    for (var word of text.split()) {   // --- py stmt 5
+        var find = false;   // --- py stmt 6
+        for (var letter of letters) {   // --- py stmt 7
+            if (word.includes(letter)) {   // --- py stmt 8
+                find = true;   // --- py stmt 9
+                break;   // --- py stmt 10
+            }
+        }
+        if (!find) {   // --- py stmt 11
+            res += 1;   // --- py stmt 12
+        }
+    }
+    return res;   // --- py stmt 13
+}
+

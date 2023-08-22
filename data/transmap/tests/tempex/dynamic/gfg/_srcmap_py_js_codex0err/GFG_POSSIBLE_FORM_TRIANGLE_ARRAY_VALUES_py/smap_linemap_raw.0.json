@@ -1,0 +1,74 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, N):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if N < 3: return False",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(N - 2):",
+      [
+        4
+      ]
+    ],
+    [
+      "    if arr[i] + arr[i + 1] > arr[i + 2]: return True",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, N) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (N < 3) return false;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 0; i < N - 2; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (arr[i] + arr[i + 1] > arr[i + 2]) return true;",
+      [
+        5
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

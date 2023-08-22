@@ -1,0 +1,46 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[3,4,3,16]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1,
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"l\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"20\"],[\"N\",\"4\"],[\"N\",\"10\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,2,20]",
+    "break_idx": 1,
+    "expected_src_pk": "[2,8,2,19]",
+    "actural_src_pk": "[2,8,2,19]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"l\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"10\"],[\"N\",\"2\"],[\"N\",\"4\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"l\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"4\"],[\"N\",\"10\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "l"
+    ]
+  }
+]

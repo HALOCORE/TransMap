@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def unique(l: list):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sorted(list(set(l)))",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function unique(l) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return l.filter((v, i, a) => a.indexOf(v) === i);",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

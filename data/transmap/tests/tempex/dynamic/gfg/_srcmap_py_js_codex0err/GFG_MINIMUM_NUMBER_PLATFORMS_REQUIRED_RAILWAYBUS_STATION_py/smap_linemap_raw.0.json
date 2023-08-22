@@ -1,0 +1,214 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, dep, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        2
+      ]
+    ],
+    [
+      "  dep.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  plat_needed = 1",
+      [
+        4
+      ]
+    ],
+    [
+      "  result = 1",
+      [
+        5
+      ]
+    ],
+    [
+      "  i = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "  j = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "  while(i < n and j < n):",
+      [
+        8
+      ]
+    ],
+    [
+      "    if(arr[i] < dep[j]):",
+      [
+        9
+      ]
+    ],
+    [
+      "      plat_needed += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "      i += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "      if(plat_needed > result): result = plat_needed",
+      [
+        12
+      ]
+    ],
+    [
+      "    else:",
+      [
+        13
+      ]
+    ],
+    [
+      "      plat_needed -= 1",
+      [
+        14
+      ]
+    ],
+    [
+      "      j += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "  return result",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, dep, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "  dep.sort((a, b) => a-b);",
+      [
+        3
+      ]
+    ],
+    [
+      "  var plat_needed = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "  var result = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "  var i = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "  var j = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "  while(i < n && j < n) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    if(arr[i] < dep[j]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "      plat_needed += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "      i += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "      if(plat_needed > result) result = plat_needed;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    else {",
+      [
+        13
+      ]
+    ],
+    [
+      "      plat_needed -= 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "      j += 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

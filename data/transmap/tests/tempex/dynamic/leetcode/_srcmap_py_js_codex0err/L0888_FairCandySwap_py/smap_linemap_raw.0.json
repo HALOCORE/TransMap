@@ -1,0 +1,112 @@
+{
+  "src_anno_stmts": [
+    [
+      "### fairCandySwap",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(aliceSizes: List[int], bobSizes: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    diff = (sum(aliceSizes) - sum(bobSizes)) >> 1",
+      [
+        3
+      ]
+    ],
+    [
+      "    s = set(bobSizes)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for a in aliceSizes:",
+      [
+        5
+      ]
+    ],
+    [
+      "        target = a - diff",
+      [
+        6
+      ]
+    ],
+    [
+      "        if target in s:",
+      [
+        7
+      ]
+    ],
+    [
+      "            return [a, target]",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(aliceSizes, bobSizes) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var diff = (sum(aliceSizes) - sum(bobSizes)) >> 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var s = new Set(bobSizes);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var a of aliceSizes) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var target = a - diff;",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (s.has(target)) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            return [a, target];",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

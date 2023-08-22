@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  arr.sort((a, b) => a-b);",
+    "replacement": "  arr.sort();"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  for (var i = 0; i < n - k + 1; i++) result = Math.min(result, arr[(i + k - 1 + arr.length)%arr.length] - arr[i]);",
+    "replacement": "  for (var i = 0; i < n - k + 1; i++) result = Math.min(result, arr[i + k - 1] - arr[i]);"
+  }
+]

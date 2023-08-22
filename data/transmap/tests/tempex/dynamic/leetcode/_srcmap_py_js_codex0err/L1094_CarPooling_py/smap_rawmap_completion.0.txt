@@ -1,0 +1,22 @@
+
+### Python
+from itertools import accumulate   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(trips: List[List[int]], capacity: int) -> bool:   # --- py stmt 3
+    delta = [0] * 1001   # --- py stmt 4
+    for num, start, end in trips:   # --- py stmt 5
+        delta[start] += num   # --- py stmt 6
+        delta[end] -= num   # --- py stmt 7
+    return all(s <= capacity for s in accumulate(delta))   # --- py stmt 8
+
+### JavaScript
+"use strict";
+const f_gold = (trips, capacity) => {   // --- py stmt 3
+    let delta = [0] * 1001;   // --- py stmt 4
+    for (let [num, start, end] of trips) {   // --- py stmt 5
+        delta[start] += num;   // --- py stmt 6
+        delta[end] -= num;   // --- py stmt 7
+    }
+    return delta.map((sum => value => sum += value)(0)).every(x => x <= capacity);   // --- py stmt 8
+}
+

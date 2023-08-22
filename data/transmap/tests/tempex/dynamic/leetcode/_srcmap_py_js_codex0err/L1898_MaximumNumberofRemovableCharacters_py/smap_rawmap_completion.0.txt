@@ -1,0 +1,53 @@
+
+### Python
+### maximumRemovals 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, p: str, removable: List[int]) -> int:   # --- py stmt 2
+    def check(k):   # --- py stmt 3
+        i = j = 0   # --- py stmt 4
+        ids = set(removable[:k])   # --- py stmt 5
+        while i < m and j < n:   # --- py stmt 6
+            if i not in ids and s[i] == p[j]:   # --- py stmt 7
+                j += 1   # --- py stmt 8
+            i += 1   # --- py stmt 9
+        return j == n   # --- py stmt 10
+    m, n = len(s), len(p)   # --- py stmt 11
+    left, right = 0, len(removable)   # --- py stmt 12
+    while left < right:   # --- py stmt 13
+        mid = (left + right + 1) >> 1   # --- py stmt 14
+        if check(mid):   # --- py stmt 15
+            left = mid   # --- py stmt 16
+        else:   # --- py stmt 17
+            right = mid - 1   # --- py stmt 18
+    return left   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(s, p, removable) {   // --- py stmt 2
+    function check(k) {   // --- py stmt 3
+        var i = j = 0;   // --- py stmt 4
+        var ids = new Set(removable.slice(0, k));   // --- py stmt 5
+        while (i < m && j < n) {   // --- py stmt 6
+            if (!ids.has(i) && s[i] == p[j]) {   // --- py stmt 7
+                j++;   // --- py stmt 8
+            }
+            i++;   // --- py stmt 9
+        }
+        return j == n;   // --- py stmt 10
+    }
+    var m = s.length, n = p.length;   // --- py stmt 11
+    var left = 0, right = removable.length;   // --- py stmt 12
+    while (left < right) {   // --- py stmt 13
+        var mid = (left + right + 1) >> 1;   // --- py stmt 14
+        if (check(mid)) {   // --- py stmt 15
+            left = mid;   // --- py stmt 16
+        }
+        else {   // --- py stmt 17
+            right = mid - 1;   // --- py stmt 18
+        }
+    }
+    return left;   // --- py stmt 19
+}
+
+
+

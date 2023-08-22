@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "                    (Math.floor((dp[i - 1][j] + dist[i - 1] - 1) / speed) + 1) * speed,",
+    "replacement": "                    ((dp[i - 1][j] + dist[i - 1] - 1) / speed + 1) * speed,"
+  }
+]

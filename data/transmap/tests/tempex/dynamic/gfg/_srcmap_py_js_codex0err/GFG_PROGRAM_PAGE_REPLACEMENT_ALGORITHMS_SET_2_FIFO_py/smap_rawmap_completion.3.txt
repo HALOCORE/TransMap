@@ -1,0 +1,53 @@
+
+### Python
+from queue import Queue ;   # --- py stmt 1
+def f_gold(pages, n, capacity):   # --- py stmt 2
+  s = set()   # --- py stmt 3
+  indexes = Queue()   # --- py stmt 4
+  page_faults = 0   # --- py stmt 5
+  for i in range(n):   # --- py stmt 6
+    if(len(s)< capacity):   # --- py stmt 7
+      if(pages[i] not in s):   # --- py stmt 8
+        s.add(pages[i])   # --- py stmt 9
+        page_faults += 1   # --- py stmt 10
+        indexes.put(pages[i])   # --- py stmt 11
+    else:   # --- py stmt 12
+      if(pages[i] not in s):   # --- py stmt 13
+        val = indexes.queue[0]   # --- py stmt 14
+        indexes.get()   # --- py stmt 15
+        s.remove(val)   # --- py stmt 16
+        s.add(pages[i])   # --- py stmt 17
+        indexes.put(pages[i])   # --- py stmt 18
+        page_faults += 1   # --- py stmt 19
+  return page_faults   # --- py stmt 20
+
+
+### JavaScript
+"use strict";
+function f_gold(pages, n, capacity) {   // --- py stmt 2
+  let s = new Set();   // --- py stmt 3
+  let indexes = [];   // --- py stmt 4
+  let page_faults = 0;   // --- py stmt 5
+  for (let i = 0; i < n; i++) {   // --- py stmt 6
+    if (s.size < capacity) {   // --- py stmt 7
+      if (!s.has(pages[i])) {   // --- py stmt 8
+        s.add(pages[i]);   // --- py stmt 9
+        page_faults += 1;   // --- py stmt 10
+        indexes.push(pages[i]);   // --- py stmt 11
+      }
+    } else {   // --- py stmt 12
+      if (!s.has(pages[i])) {   // --- py stmt 13
+        let val = indexes[0];   // --- py stmt 14
+        indexes.get();   // --- py stmt 15
+        s.delete(val);   // --- py stmt 16
+        s.add(pages[i]);   // --- py stmt 17
+        indexes.push(pages[i]);   // --- py stmt 18
+        page_faults += 1;   // --- py stmt 19
+      }
+    }
+  }
+  return page_faults;   // --- py stmt 20
+}
+
+
+

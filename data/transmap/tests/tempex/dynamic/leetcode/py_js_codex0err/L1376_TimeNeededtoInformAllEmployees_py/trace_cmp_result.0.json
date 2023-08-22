@@ -1,0 +1,80 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[13,4,15,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[13,4,14,22]",
+    "actural_src_pk": "[13,4,14,22]",
+    "src_cov_lines": [
+      12
+    ],
+    "tar_cov_lines": [
+      9,
+      10,
+      11
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"1\"],\"headID\":[\"N\",\"0\"],\"manager\":[\"A\",1,[\"N\",\"-1\"]],\"informTime\":[\"A\",1,[\"N\",\"0\"]],\"g\":[\"A\",1,[\"A\",0]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"1\"],\"headID\":[\"N\",\"0\"],\"manager\":[\"A\",1,[\"N\",\"-1\"]],\"dfs\":\"UNKNOWN\",\"g\":[\"DICT\"],\"informTime\":[\"A\",1,[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "g"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[13,4,15,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[13,4,14,22]",
+    "actural_src_pk": "[13,4,14,22]",
+    "src_cov_lines": [
+      12
+    ],
+    "tar_cov_lines": [
+      9,
+      10,
+      11
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"1\"],\"headID\":[\"N\",\"0\"],\"manager\":[\"A\",1,[\"N\",\"-1\"]],\"informTime\":[\"A\",1,[\"N\",\"0\"]],\"g\":[\"A\",1,[\"A\",0]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"1\"],\"headID\":[\"N\",\"0\"],\"manager\":[\"A\",1,[\"N\",\"-1\"]],\"dfs\":\"UNKNOWN\",\"g\":[\"DICT\"],\"informTime\":[\"A\",1,[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "g"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[13,4,15,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[13,4,14,22]",
+    "actural_src_pk": "[13,4,14,22]",
+    "src_cov_lines": [
+      12
+    ],
+    "tar_cov_lines": [
+      9,
+      10,
+      11
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"1\"],\"headID\":[\"N\",\"0\"],\"manager\":[\"A\",1,[\"N\",\"-1\"]],\"informTime\":[\"A\",1,[\"N\",\"0\"]],\"g\":[\"A\",1,[\"A\",0]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"1\"],\"headID\":[\"N\",\"0\"],\"manager\":[\"A\",1,[\"N\",\"-1\"]],\"dfs\":\"UNKNOWN\",\"g\":[\"DICT\"],\"informTime\":[\"A\",1,[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "g"
+    ]
+  }
+]

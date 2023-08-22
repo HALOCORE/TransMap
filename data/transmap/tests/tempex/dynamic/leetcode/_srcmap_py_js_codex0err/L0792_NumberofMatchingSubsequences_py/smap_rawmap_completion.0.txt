@@ -1,0 +1,51 @@
+
+### Python
+### numMatchingSubseq 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(s: str, words: List[str]) -> int:   # --- py stmt 3
+    buckets = defaultdict(list)   # --- py stmt 4
+    for word in words:   # --- py stmt 5
+        buckets[word[0]].append(word)   # --- py stmt 6
+    res = 0   # --- py stmt 7
+    for c in s:   # --- py stmt 8
+        old = buckets[c][::1]   # --- py stmt 9
+        buckets[c].clear()   # --- py stmt 10
+        for t in old:   # --- py stmt 11
+            if len(t) == 1:   # --- py stmt 12
+                res += 1   # --- py stmt 13
+            else:   # --- py stmt 14
+                buckets[t[1]].append(t[1:])   # --- py stmt 15
+    return res   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(s, words) {   // --- py stmt 3
+    let buckets = {};   // --- py stmt 4
+    for (let word of words) {   // --- py stmt 5
+        if (buckets[word[0]] === undefined) {   // --- py stmt 6
+            buckets[word[0]] = [];   // --- py stmt 6
+        }
+        buckets[word[0]].push(word);   // --- py stmt 6
+    }
+    let res = 0;   // --- py stmt 7
+    for (let c of s) {   // --- py stmt 8
+        let old = buckets[c].slice();   // --- py stmt 9
+        buckets[c] = [];   // --- py stmt 10
+        for (let t of old) {   // --- py stmt 11
+            if (t.length == 1) {   // --- py stmt 12
+                res += 1;   // --- py stmt 13
+            }
+            else {   // --- py stmt 14
+                if (buckets[t[1]] === undefined) {   // --- py stmt 15
+                    buckets[t[1]] = [];   // --- py stmt 15
+                }
+                buckets[t[1]].push(t.slice(1));   // --- py stmt 15
+            }
+        }
+    }
+    return res;   // --- py stmt 16
+}
+
+
+

@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "    var flag = Math.floor((Math.pow(2, 31) - 1) / 10);",
+    "replacement": "    var flag = (Math.pow(2, 31) - 1) / 10;"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "        if (!s[i].match(/\\d/)) break;",
+    "replacement": "        if (!s[i].isDigit()) break;"
+  },
+  {
+    "line_start": 18,
+    "line_end": 22,
+    "content": "        if (res > flag || (res == flag && c > 7)) {\n            if (sign < 0) return -(Math.pow(2, 31)); \n            else return Math.pow(2, 31) - 1;\n        }",
+    "replacement": "        if (res > flag || (res == flag && c > 7)) return Math.pow(2, 31) - 1;\n        if (sign < 0) return -(Math.pow(2, 31));"
+  }
+]

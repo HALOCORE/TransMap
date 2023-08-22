@@ -1,0 +1,52 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -68,7 +68,7 @@ function rgb_to_hls(r, g, b) {
+     } else {
+         h = 4.0 + gc - rc;
+     }
+-    h = (h / 6.0) % 1.0;
++    h = ((h / 6.0) % 1.0 + 1.0) % 1.0;
+     return [h, l, s];
+ }
+ 
+@@ -87,7 +87,7 @@ function hls_to_rgb(h, l, s) {
+ }
+ 
+ function _v(m1, m2, hue) {
+-    hue = hue % 1.0;
++    hue = (hue % 1.0 + 1.0) % 1.0;
+     if (hue < ONE_SIXTH) {
+         return m1 + (m2 - m1) * hue * 6.0;
+     }
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -207,7 +207,7 @@ function rgb_to_hls(r, g, b) {   // --- py stmt 1001
+     } else {
+         h = 4.0 + gc - rc;   // --- py stmt 1019
+     }
+-    h = (h / 6.0) % 1.0;   // --- py stmt 1020
++    h = ((h / 6.0) % 1.0 + 1.0) % 1.0;   // --- py stmt 1020
+     return [h, l, s];   // --- py stmt 1021
+ }
+ 
+@@ -226,7 +226,7 @@ function hls_to_rgb(h, l, s) {   // --- py stmt 1022
+ }
+ 
+ function _v(m1, m2, hue) {   // --- py stmt 1030
+-    hue = hue % 1.0;   // --- py stmt 1031
++    hue = (hue % 1.0 + 1.0) % 1.0;   // --- py stmt 1031
+     if (hue < ONE_SIXTH) {   // --- py stmt 1032
+         return m1 + (m2 - m1) * hue * 6.0;   // --- py stmt 1033
+     }
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,7 @@
+ {
+   "disable_src_lines": [],
+-  "trace_cmp": []
++  "trace_cmp": [
++      {"src_lines": ["102-103"], "vars_ignore": ["h"]},
++      {"src_lines": ["116-123"], "vars_ignore": ["hue"]}
++  ]
+ }
+\ No newline at end of file

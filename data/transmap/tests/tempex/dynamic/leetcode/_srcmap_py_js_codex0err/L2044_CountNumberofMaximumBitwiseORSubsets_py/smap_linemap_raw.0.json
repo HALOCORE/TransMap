@@ -1,0 +1,198 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countMaxOrSubsets",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    mx = ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for x in nums:",
+      [
+        4
+      ]
+    ],
+    [
+      "        mx |= x",
+      [
+        5
+      ]
+    ],
+    [
+      "    def dfs(i, t):",
+      [
+        6
+      ]
+    ],
+    [
+      "        nonlocal mx, ans",
+      [
+        7
+      ]
+    ],
+    [
+      "        if i == len(nums):",
+      [
+        8
+      ]
+    ],
+    [
+      "            if t == mx:",
+      [
+        9
+      ]
+    ],
+    [
+      "                ans += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "            return",
+      [
+        11
+      ]
+    ],
+    [
+      "        dfs(i + 1, t)",
+      [
+        12
+      ]
+    ],
+    [
+      "        dfs(i + 1, t | nums[i])",
+      [
+        13
+      ]
+    ],
+    [
+      "    dfs(0, 0)",
+      [
+        14
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var mx = ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var x of nums) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        mx |= x;",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    function dfs(i, t) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (i == nums.length) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (t == mx) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                ans++;",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            return;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        dfs(i + 1, t);",
+      [
+        12
+      ]
+    ],
+    [
+      "        dfs(i + 1, t | nums[i]);",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    dfs(0, 0);",
+      [
+        14
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

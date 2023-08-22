@@ -1,0 +1,80 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,4,8,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,7,14]",
+    "actural_src_pk": "[4,4,7,14]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1,
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",6,\"ahbgdc\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"m\":[\"N\",\"0\"],\"n\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",6,\"ahbgdc\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"m\":[\"N\",\"3\"],\"n\":[\"N\",\"6\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "m",
+      "n"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,4,8,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,7,14]",
+    "actural_src_pk": "[4,4,7,14]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1,
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",6,\"ahbgdc\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"m\":[\"N\",\"0\"],\"n\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",6,\"ahbgdc\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"m\":[\"N\",\"3\"],\"n\":[\"N\",\"6\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "m",
+      "n"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,4,8,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,7,14]",
+    "actural_src_pk": "[4,4,7,14]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1,
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",6,\"ahbgdc\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"m\":[\"N\",\"0\"],\"n\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"abc\"],\"t\":[\"S\",6,\"ahbgdc\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"m\":[\"N\",\"3\"],\"n\":[\"N\",\"6\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "m",
+      "n"
+    ]
+  }
+]

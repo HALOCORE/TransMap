@@ -1,0 +1,162 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  um = dict()",
+      [
+        2
+      ]
+    ],
+    [
+      "  curr_sum = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        4
+      ]
+    ],
+    [
+      "    curr_sum +=(- 1 if(arr[i] == 0)else arr[i])",
+      [
+        5
+      ]
+    ],
+    [
+      "    if um.get(curr_sum): um[curr_sum] += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    else: um[curr_sum] = 1",
+      [
+        7
+      ]
+    ],
+    [
+      "  count = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "  for itr in um:",
+      [
+        9
+      ]
+    ],
+    [
+      "    if um[itr] > 1: count +=((um[itr] * int(um[itr] - 1))/ 2)",
+      [
+        10
+      ]
+    ],
+    [
+      "  if um.get(0): count += um[0]",
+      [
+        11
+      ]
+    ],
+    [
+      "  return int(count)",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var um = {};",
+      [
+        2
+      ]
+    ],
+    [
+      "  var curr_sum = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    curr_sum += (arr[i] == 0)? -1 : arr[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (typeof(um[curr_sum]) !== \"undefined\") um[curr_sum] += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    else um[curr_sum] = 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var count = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "  for (var itr of Object.keys(um).map(Number)) {",
+      [
+        9
+      ]
+    ],
+    [
+      "    if (um[itr] > 1) count += ((um[itr] * parseInt(um[itr] - 1)) / 2);",
+      [
+        10
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  if (typeof(um[0]) !== \"undefined\") count += um[0];",
+      [
+        11
+      ]
+    ],
+    [
+      "  return int(count);",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

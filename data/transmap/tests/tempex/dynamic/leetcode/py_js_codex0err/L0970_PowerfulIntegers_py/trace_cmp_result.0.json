@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[3,4,3,13]",
+    "src_cov_lines": [
+      16
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",4],[\\\"num\\\",10],[\\\"num\\\",3],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9]]]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",3],[\\\"num\\\",4],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9],[\\\"num\\\",10]]]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"x\":[\"N\",\"3\"],\"y\":[\"N\",\"5\"],\"bound\":[\"N\",\"15\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,13]",
+    "src_cov_lines": [
+      16
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",4],[\\\"num\\\",10],[\\\"num\\\",3],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9]]]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",3],[\\\"num\\\",4],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9],[\\\"num\\\",10]]]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"x\":[\"N\",\"3\"],\"y\":[\"N\",\"5\"],\"bound\":[\"N\",\"15\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,13]",
+    "src_cov_lines": [
+      16
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",4],[\\\"num\\\",10],[\\\"num\\\",3],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9]]]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",3],[\\\"num\\\",4],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9],[\\\"num\\\",10]]]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"x\":[\"N\",\"3\"],\"y\":[\"N\",\"5\"],\"bound\":[\"N\",\"15\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,13]",
+    "src_cov_lines": [
+      16
+    ],
+    "tar_cov_lines": [
+      19
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":19,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",4],[\\\"num\\\",10],[\\\"num\\\",3],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9]]]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"list\\\",7,[[\\\"num\\\",2],[\\\"num\\\",3],[\\\"num\\\",4],[\\\"num\\\",5],[\\\"num\\\",7],[\\\"num\\\",9],[\\\"num\\\",10]]]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"x\":[\"N\",\"3\"],\"y\":[\"N\",\"5\"],\"bound\":[\"N\",\"15\"]}",
+      ""
+    ]
+  }
+]

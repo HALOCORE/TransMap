@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[7,4,7,11]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"ReferenceError: suffix is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"aacecaaa\"],\"base\":[\"N\",\"131\"],\"mod\":[\"N\",\"1000000007\"],\"n\":[\"N\",\"8\"],\"prefix\":[\"N\",\"0\"],\"suffix\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[7,4,7,11]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"ReferenceError: suffix is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"aacecaaa\"],\"base\":[\"N\",\"131\"],\"mod\":[\"N\",\"1000000007\"],\"n\":[\"N\",\"8\"],\"prefix\":[\"N\",\"0\"],\"suffix\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[7,4,7,11]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"ReferenceError: suffix is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"aacecaaa\"],\"base\":[\"N\",\"131\"],\"mod\":[\"N\",\"1000000007\"],\"n\":[\"N\",\"8\"],\"prefix\":[\"N\",\"0\"],\"suffix\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

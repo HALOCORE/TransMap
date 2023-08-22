@@ -1,0 +1,272 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findAnagrams",
+      null
+    ],
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(s: str, p: str) -> List[int]:",
+      [
+        3
+      ]
+    ],
+    [
+      "    counter = Counter(p)",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        5
+      ]
+    ],
+    [
+      "    left = right = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "    t = Counter()",
+      [
+        7
+      ]
+    ],
+    [
+      "    while right < len(s):",
+      [
+        8
+      ]
+    ],
+    [
+      "        t[s[right]] += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        while t[s[right]] > counter[s[right]]:",
+      [
+        10
+      ]
+    ],
+    [
+      "            t[s[left]] -= 1",
+      [
+        11
+      ]
+    ],
+    [
+      "            left += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "        if right - left + 1 == len(p):",
+      [
+        13
+      ]
+    ],
+    [
+      "            ans.append(left)",
+      [
+        14
+      ]
+    ],
+    [
+      "        right += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, p) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let counter = new Map();",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < p.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (counter.has(p[i])) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            counter.set(p[i], counter.get(p[i]) + 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        4
+      ]
+    ],
+    [
+      "            counter.set(p[i], 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ans = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    let left = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    let right = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    let t = new Map();",
+      [
+        7
+      ]
+    ],
+    [
+      "    while (right < s.length) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (t.has(s[right])) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            t.set(s[right], t.get(s[right]) + 1);",
+      [
+        9
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        9
+      ]
+    ],
+    [
+      "            t.set(s[right], 1);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        while ((t.has(s[right]) ? t.get(s[right]) : 0) > (counter.has(s[right]) ? counter.get(s[right]) : 0)) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            t.set(s[left], t.get(s[left]) - 1);",
+      [
+        11
+      ]
+    ],
+    [
+      "            left += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (right - left + 1 == p.length) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            ans.push(left);",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        right += 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

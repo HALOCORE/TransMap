@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "      console.log(arr[i][l]);",
+    "replacement": "      console.log(arr[i][l], end = \" \");"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "      console.log(arr[m - 1][i]);",
+    "replacement": "      console.log(arr[m - 1][i], end = \" \");"
+  },
+  {
+    "line_start": 21,
+    "line_end": 22,
+    "content": "        console.log(arr[i][n - 1]);",
+    "replacement": "        console.log(arr[i][n - 1], end = \" \");"
+  },
+  {
+    "line_start": 29,
+    "line_end": 30,
+    "content": "        console.log(arr[k][i]);",
+    "replacement": "        console.log(arr[k][i], end = \" \");"
+  }
+]

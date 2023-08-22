@@ -1,0 +1,26 @@
+
+### Python
+### maxSubarraySumCircular 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    s1 = s2 = f1 = f2 = nums[0]   # --- py stmt 3
+    for num in nums[1:]:   # --- py stmt 4
+        f1 = num + max(f1, 0)   # --- py stmt 5
+        f2 = num + min(f2, 0)   # --- py stmt 6
+        s1 = max(s1, f1)   # --- py stmt 7
+        s2 = min(s2, f2)   # --- py stmt 8
+    return s1 if s1 <= 0 else max(s1, sum(nums) - s2)   # --- py stmt 9
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var s1 = s2 = f1 = f2 = nums[0];   // --- py stmt 3
+    for (var num of nums.slice(1)) {   // --- py stmt 4
+        f1 = num + Math.max(f1, 0);   // --- py stmt 5
+        f2 = num + Math.min(f2, 0);   // --- py stmt 6
+        s1 = Math.max(s1, f1);   // --- py stmt 7
+        s2 = Math.min(s2, f2);   // --- py stmt 8
+    }
+    return s1 <= 0 ? s1 : Math.max(s1, nums.reduce((a, b) => a + b) - s2);   // --- py stmt 9
+}
+

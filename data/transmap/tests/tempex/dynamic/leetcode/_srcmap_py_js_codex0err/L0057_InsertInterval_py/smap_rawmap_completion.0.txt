@@ -1,0 +1,51 @@
+
+### Python
+### insert 
+from typing import *   # --- py stmt 1
+def f_gold(intervals: List[List[int]], newInterval: List[int]   # --- py stmt 2
+) -> List[List[int]]:   # --- py stmt 2
+    def merge(intervals):   # --- py stmt 3
+        intervals.sort()   # --- py stmt 4
+        ans = []   # --- py stmt 5
+        st, ed = intervals[0]   # --- py stmt 6
+        for s, e in intervals[1:]:   # --- py stmt 7
+            if ed < s:   # --- py stmt 8
+                ans.append([st, ed])   # --- py stmt 9
+                st, ed = s, e   # --- py stmt 10
+            else:   # --- py stmt 11
+                ed = max(ed, e)   # --- py stmt 12
+        ans.append([st, ed])   # --- py stmt 13
+        return ans   # --- py stmt 14
+    intervals.append(newInterval)   # --- py stmt 15
+    return merge(intervals)   # --- py stmt 16
+
+### JavaScript
+"use strict";
+
+function f_gold(intervals, newInterval) {   // --- py stmt 2
+    function merge(intervals) {   // --- py stmt 3
+        intervals.sort();   // --- py stmt 4
+        var ans = [];   // --- py stmt 5
+        var st = intervals[0][0];   // --- py stmt 6
+        var ed = intervals[0][1];   // --- py stmt 6
+        for (var i = 1; i < intervals.length; i++) {   // --- py stmt 7
+            var s = intervals[i][0];   // --- py stmt 7
+            var e = intervals[i][1];   // --- py stmt 7
+            if (ed < s) {   // --- py stmt 8
+                ans.push([st, ed]);   // --- py stmt 9
+                st = s;   // --- py stmt 10
+                ed = e;   // --- py stmt 10
+            }
+            else {   // --- py stmt 11
+                ed = Math.max(ed, e);   // --- py stmt 12
+            }
+        }
+        ans.push([st, ed]);   // --- py stmt 13
+        return ans;   // --- py stmt 14
+    }
+    intervals.push(newInterval);   // --- py stmt 15
+    return merge(intervals);   // --- py stmt 16
+}
+
+
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "    return odd_collatz.sort((a, b) => a-b);",
+    "replacement": "    return odd_collatz.sort();"
+  }
+]

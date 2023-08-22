@@ -1,0 +1,19 @@
+
+### Python
+### maxSubsequence 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], k: int) -> List[int]:   # --- py stmt 2
+    idx = list(range(len(nums)))   # --- py stmt 3
+    idx.sort(key=lambda i: nums[i])   # --- py stmt 4
+    return [nums[i] for i in sorted(idx[-k:])]   # --- py stmt 5
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 2
+    var idx = list(range(len(nums)));   // --- py stmt 3
+    idx.sort(function (i, j) { return nums[i] - nums[j]; });   // --- py stmt 4
+    return idx.slice(-k).sort((a, b) => (a - b)).map(i => nums[i]);   // --- py stmt 5
+}
+
+
+

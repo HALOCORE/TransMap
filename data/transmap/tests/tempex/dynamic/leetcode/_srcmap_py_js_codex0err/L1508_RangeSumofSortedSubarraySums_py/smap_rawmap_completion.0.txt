@@ -1,0 +1,33 @@
+
+### Python
+### rangeSum 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], n: int, left: int, right: int) -> int:   # --- py stmt 2
+    arr = []   # --- py stmt 3
+    for i in range(n):   # --- py stmt 4
+        s = 0   # --- py stmt 5
+        for j in range(i, n):   # --- py stmt 6
+            s += nums[j]   # --- py stmt 7
+            arr.append(s)   # --- py stmt 8
+    arr.sort()   # --- py stmt 9
+    MOD = 10**9 + 7   # --- py stmt 10
+    return sum(arr[left - 1 : right]) % MOD   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums, n, left, right) {   // --- py stmt 2
+    var arr = [];   // --- py stmt 3
+    for (var i = 0; i < n; i++) {   // --- py stmt 4
+        var s = 0;   // --- py stmt 5
+        for (var j = i; j < n; j++) {   // --- py stmt 6
+            s += nums[j];   // --- py stmt 7
+            arr.push(s);   // --- py stmt 8
+        }
+    }
+    arr.sort();   // --- py stmt 9
+    var MOD = Math.pow(10, 9) + 7;   // --- py stmt 10
+    return arr.slice(left - 1, right).reduce(function (a, b) { return a + b; }) % MOD;   // --- py stmt 11
+}
+
+
+

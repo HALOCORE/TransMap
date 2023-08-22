@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minCostClimbingStairs",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(cost: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    a = b = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i in range(1, len(cost)):",
+      [
+        4
+      ]
+    ],
+    [
+      "        a, b = b, min(a + cost[i - 1], b + cost[i])",
+      [
+        5
+      ]
+    ],
+    [
+      "    return b",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(cost) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var a = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var b = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 1; i < cost.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        a = b;",
+      [
+        5
+      ]
+    ],
+    [
+      "        b = Math.min(a + cost[i - 1], b + cost[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return b;",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

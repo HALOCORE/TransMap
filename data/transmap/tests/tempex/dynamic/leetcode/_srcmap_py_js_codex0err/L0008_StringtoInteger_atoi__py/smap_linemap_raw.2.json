@@ -1,0 +1,323 @@
+{
+  "src_anno_stmts": [
+    [
+      "### myAtoi",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    if not s:",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(s)",
+      [
+        5
+      ]
+    ],
+    [
+      "    if n == 0:",
+      [
+        6
+      ]
+    ],
+    [
+      "        return 0",
+      [
+        7
+      ]
+    ],
+    [
+      "    i = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "    while s[i] == ' ':",
+      [
+        9
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        # only contains blank space",
+      null
+    ],
+    [
+      "        if i == n:",
+      [
+        11
+      ]
+    ],
+    [
+      "            return 0",
+      [
+        12
+      ]
+    ],
+    [
+      "    sign = -1 if s[i] == '-' else 1",
+      [
+        13
+      ]
+    ],
+    [
+      "    if s[i] in ['-', '+']:",
+      [
+        14
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "    res, flag = 0, (2**31 - 1) // 10",
+      [
+        16
+      ]
+    ],
+    [
+      "    while i < n:",
+      [
+        17
+      ]
+    ],
+    [
+      "        # not a number, exit the loop",
+      null
+    ],
+    [
+      "        if not s[i].isdigit():",
+      [
+        18
+      ]
+    ],
+    [
+      "            break",
+      [
+        19
+      ]
+    ],
+    [
+      "        c = int(s[i])",
+      [
+        20
+      ]
+    ],
+    [
+      "        # if overflows",
+      null
+    ],
+    [
+      "        if res > flag or (res == flag and c > 7):",
+      [
+        21
+      ]
+    ],
+    [
+      "            return 2**31 - 1 if sign > 0 else -(2**31)",
+      [
+        22
+      ]
+    ],
+    [
+      "        res = res * 10 + c",
+      [
+        23
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        24
+      ]
+    ],
+    [
+      "    return sign * res",
+      [
+        25
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (!s) return 0;",
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      "    var n = s.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (n == 0) return 0;",
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      "    var i = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    while (s[i] == ' ') {",
+      [
+        9
+      ]
+    ],
+    [
+      "        i++;",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (i == n) return 0;",
+      [
+        11,
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var sign = -1;",
+      [
+        13
+      ]
+    ],
+    [
+      "    if (s[i] == '-') sign = -1;",
+      [
+        13
+      ]
+    ],
+    [
+      "    else sign = 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "    if (s[i] == '-' || s[i] == '+') i++;",
+      [
+        14,
+        15
+      ]
+    ],
+    [
+      "    var res = 0;",
+      [
+        16
+      ]
+    ],
+    [
+      "    var flag = Math.floor((Math.pow(2, 31) - 1) / 10);",
+      [
+        16
+      ]
+    ],
+    [
+      "    while (i < n) {",
+      [
+        17
+      ]
+    ],
+    [
+      "        if (!s[i].match(/\\d/)) break;",
+      [
+        18,
+        19
+      ]
+    ],
+    [
+      "        var c = parseInt(s[i]);",
+      [
+        20
+      ]
+    ],
+    [
+      "        if (res > flag || (res == flag && c > 7)) return Math.pow(2, 31) - 1;",
+      [
+        21,
+        22
+      ]
+    ],
+    [
+      "        if (sign < 0) return -(Math.pow(2, 31));",
+      [
+        21,
+        22
+      ]
+    ],
+    [
+      "        res = res * 10 + c;",
+      [
+        23
+      ]
+    ],
+    [
+      "        i++;",
+      [
+        24
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return sign * res;",
+      [
+        25
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    beans.sort((a, b) => a - b);",
+    "replacement": "    beans.sort();"
+  },
+  {
+    "line_start": 2,
+    "line_end": 4,
+    "content": "    var ans = beans.reduce((a, b) => a + b, 0);\n    var s = ans;",
+    "replacement": "    var ans = s = beans.reduce((a, b) => a + b, 0);"
+  }
+]

@@ -1,0 +1,220 @@
+{
+  "src_anno_stmts": [
+    [
+      "### sellingWood",
+      null
+    ],
+    [
+      "def cache(f): return f",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(m: int, n: int, prices: List[List[int]]) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    @cache",
+      [
+        5
+      ]
+    ],
+    [
+      "    def dfs(h, w):",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans = d[h].get(w, 0)",
+      [
+        7
+      ]
+    ],
+    [
+      "        for i in range(1, h // 2 + 1):",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans = max(ans, dfs(i, w) + dfs(h - i, w))",
+      [
+        9
+      ]
+    ],
+    [
+      "        for i in range(1, w // 2 + 1):",
+      [
+        10
+      ]
+    ],
+    [
+      "            ans = max(ans, dfs(h, i) + dfs(h, w - i))",
+      [
+        11
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        12
+      ]
+    ],
+    [
+      "    d = defaultdict(dict)",
+      [
+        13
+      ]
+    ],
+    [
+      "    for h, w, p in prices:",
+      [
+        14
+      ]
+    ],
+    [
+      "        d[h][w] = p",
+      [
+        15
+      ]
+    ],
+    [
+      "    return dfs(m, n)",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function cache(f) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return f;",
+      null
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "function f_gold(m, n, prices) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    function dfs(h, w) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        let ans = d[h].get(w, 0);",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (let i = 1; i <= h / 2; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans = Math.max(ans, dfs(i, w) + dfs(h - i, w));",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let i = 1; i <= w / 2; i++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            ans = Math.max(ans, dfs(h, i) + dfs(h, w - i));",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return ans;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let d = new Map();",
+      [
+        13
+      ]
+    ],
+    [
+      "    for (let [h, w, p] of prices) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        if (!(h in d)) d[h] = {};",
+      null
+    ],
+    [
+      "        d[h][w] = p;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dfs(m, n);",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findTheLongestSubstring",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    pos = [float('inf')] * 32",
+      [
+        5
+      ]
+    ],
+    [
+      "    pos[0] = -1",
+      [
+        6
+      ]
+    ],
+    [
+      "    vowels = 'aeiou'",
+      [
+        7
+      ]
+    ],
+    [
+      "    state = ans = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i, c in enumerate(s):",
+      [
+        9
+      ]
+    ],
+    [
+      "        for j, v in enumerate(vowels):",
+      [
+        10
+      ]
+    ],
+    [
+      "            if c == v:",
+      [
+        11
+      ]
+    ],
+    [
+      "                state ^= 1 << j",
+      [
+        12
+      ]
+    ],
+    [
+      "        ans = max(ans, i - pos[state])",
+      [
+        13
+      ]
+    ],
+    [
+      "        pos[state] = min(pos[state], i)",
+      [
+        14
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const findTheLongestSubstring = (s) => {",
+      [
+        4
+      ]
+    ],
+    [
+      "    let pos = new Array(32).fill(Infinity);",
+      [
+        5
+      ]
+    ],
+    [
+      "    pos[0] = -1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    let vowels = 'aeiou';",
+      [
+        7
+      ]
+    ],
+    [
+      "    let state = 0, ans = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (let i = 0; i < s.length; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        for (let j = 0; j < vowels.length; j++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (s[i] == vowels[j]) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                state ^= 1 << j;",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans = Math.max(ans, i - pos[state]);",
+      [
+        13
+      ]
+    ],
+    [
+      "        pos[state] = Math.min(pos[state], i);",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

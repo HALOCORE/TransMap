@@ -1,0 +1,30 @@
+
+### Python
+### maximumImportance 
+from typing import *   # --- py stmt 1
+def f_gold(n: int, roads: List[List[int]]) -> int:   # --- py stmt 2
+    deg = [0] * n   # --- py stmt 3
+    for a, b in roads:   # --- py stmt 4
+        deg[a] += 1   # --- py stmt 5
+        deg[b] += 1   # --- py stmt 6
+    deg.sort()   # --- py stmt 7
+    return sum(i * v for i, v in enumerate(deg, 1))   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(n, roads) {   // --- py stmt 2
+    var deg = Array(n).fill(0);   // --- py stmt 3
+    for (var i = 0; i < roads.length; i++) {   // --- py stmt 4
+        deg[roads[i][0]] += 1;   // --- py stmt 5
+        deg[roads[i][1]] += 1;   // --- py stmt 6
+    }
+    deg.sort((a, b) => a - b);   // --- py stmt 7
+    var sum = 0;   // --- py stmt 8
+    for (var i = 0; i < deg.length; i++) {   // --- py stmt 8
+        sum += i * deg[i];   // --- py stmt 8
+    }
+    return sum;   // --- py stmt 8
+}
+
+
+

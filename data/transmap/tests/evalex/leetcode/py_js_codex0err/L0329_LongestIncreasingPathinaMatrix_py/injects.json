@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 21,
+    "line_end": 26,
+    "content": "    return Math.max.apply(Math, Array.from(Array(m), function (_, i) {\n        return Array.from(Array(n), function (_, j) {\n            return dfs(i, j);\n        });\n    }).flat());",
+    "replacement": "    return Math.max.apply(Math, _toConsumableArray(Array.from(Array(m), function (_, i) {\n        return Array.from(Array(n), function (_, j) {\n            return dfs(i, j);\n        });\n    }).flat()));"
+  }
+]

@@ -1,0 +1,258 @@
+{
+  "src_anno_stmts": [
+    [
+      "def by_length(arr):",
+      [
+        1
+      ]
+    ],
+    [
+      "    dic = {",
+      [
+        2
+      ]
+    ],
+    [
+      "        1: \"One\",",
+      [
+        3
+      ]
+    ],
+    [
+      "        2: \"Two\",",
+      [
+        4
+      ]
+    ],
+    [
+      "        3: \"Three\",",
+      [
+        5
+      ]
+    ],
+    [
+      "        4: \"Four\",",
+      [
+        6
+      ]
+    ],
+    [
+      "        5: \"Five\",",
+      [
+        7
+      ]
+    ],
+    [
+      "        6: \"Six\",",
+      [
+        8
+      ]
+    ],
+    [
+      "        7: \"Seven\",",
+      [
+        9
+      ]
+    ],
+    [
+      "        8: \"Eight\",",
+      [
+        10
+      ]
+    ],
+    [
+      "        9: \"Nine\",",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    sorted_arr = sorted(arr, reverse=True)",
+      [
+        12
+      ]
+    ],
+    [
+      "    new_arr = []",
+      [
+        13
+      ]
+    ],
+    [
+      "    for var in sorted_arr:",
+      [
+        14
+      ]
+    ],
+    [
+      "        try:",
+      [
+        15
+      ]
+    ],
+    [
+      "            new_arr.append(dic[var])",
+      [
+        16
+      ]
+    ],
+    [
+      "        except:",
+      [
+        17
+      ]
+    ],
+    [
+      "            pass",
+      [
+        18
+      ]
+    ],
+    [
+      "    return new_arr",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function by_length(arr) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    var dic = {",
+      [
+        2
+      ]
+    ],
+    [
+      "        1: \"One\",",
+      [
+        3
+      ]
+    ],
+    [
+      "        2: \"Two\",",
+      [
+        4
+      ]
+    ],
+    [
+      "        3: \"Three\",",
+      [
+        5
+      ]
+    ],
+    [
+      "        4: \"Four\",",
+      [
+        6
+      ]
+    ],
+    [
+      "        5: \"Five\",",
+      [
+        7
+      ]
+    ],
+    [
+      "        6: \"Six\",",
+      [
+        8
+      ]
+    ],
+    [
+      "        7: \"Seven\",",
+      [
+        9
+      ]
+    ],
+    [
+      "        8: \"Eight\",",
+      [
+        10
+      ]
+    ],
+    [
+      "        9: \"Nine\",",
+      [
+        11
+      ]
+    ],
+    [
+      "    };",
+      null
+    ],
+    [
+      "    var sorted_arr = [...arr].sort(function (a, b) { return b - a; });",
+      [
+        12
+      ]
+    ],
+    [
+      "    var new_arr = [];",
+      [
+        13
+      ]
+    ],
+    [
+      "    for (var _i = 0, sorted_arr_1 = sorted_arr; _i < sorted_arr_1.length; _i++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        var var_1 = sorted_arr_1[_i];",
+      null
+    ],
+    [
+      "        try {",
+      [
+        15
+      ]
+    ],
+    [
+      "            new_arr.push(dic[var_1]);",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        catch (e) {",
+      [
+        17
+      ]
+    ],
+    [
+      "        }",
+      [
+        18
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return new_arr;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

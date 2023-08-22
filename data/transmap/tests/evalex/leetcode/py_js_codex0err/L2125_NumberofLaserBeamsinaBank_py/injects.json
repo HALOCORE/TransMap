@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let last = 0, ans = 0;",
+    "replacement": "    let last = ans = 0;"
+  },
+  {
+    "line_start": 3,
+    "line_end": 5,
+    "content": "        var t;\n        if ((t = b.split(\"1\").length - 1) > 0) {",
+    "replacement": "        if ((t = b.split(\"1\").length - 1) > 0) {"
+  }
+]

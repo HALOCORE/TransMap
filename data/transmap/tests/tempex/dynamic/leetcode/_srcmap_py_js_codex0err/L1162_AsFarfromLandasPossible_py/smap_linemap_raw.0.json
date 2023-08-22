@@ -1,0 +1,298 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxDistance",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(grid: List[List[int]]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = len(grid)",
+      [
+        4
+      ]
+    ],
+    [
+      "    q = deque([(i, j) for i in range(n) for j in range(n) if grid[i][j] == 1])",
+      [
+        5
+      ]
+    ],
+    [
+      "    ans = -1",
+      [
+        6
+      ]
+    ],
+    [
+      "    valid = False",
+      [
+        7
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        8
+      ]
+    ],
+    [
+      "        ans += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        for _ in range(len(q)):",
+      [
+        10
+      ]
+    ],
+    [
+      "            i, j = q.popleft()",
+      [
+        11
+      ]
+    ],
+    [
+      "            for a, b in [[0, 1], [0, -1], [1, 0], [-1, 0]]:",
+      [
+        12
+      ]
+    ],
+    [
+      "                x, y = i + a, b + j",
+      [
+        13
+      ]
+    ],
+    [
+      "                if 0 <= x < n and 0 <= y < n and grid[x][y] == 0:",
+      [
+        14
+      ]
+    ],
+    [
+      "                    valid = True",
+      [
+        15
+      ]
+    ],
+    [
+      "                    grid[x][y] = 1",
+      [
+        16
+      ]
+    ],
+    [
+      "                    q.append((x, y))",
+      [
+        17
+      ]
+    ],
+    [
+      "    return ans if valid else -1",
+      [
+        18
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (grid) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = grid.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var q = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            if (grid[i][j] == 1) {",
+      [
+        5
+      ]
+    ],
+    [
+      "                q.push([i, j]);",
+      [
+        5
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = -1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var valid = false;",
+      [
+        7
+      ]
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        ans += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        for (var _ = 0; _ < q.length; _++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            var i = q[0][0];",
+      [
+        11
+      ]
+    ],
+    [
+      "            var j = q[0][1];",
+      [
+        11
+      ]
+    ],
+    [
+      "            q.shift();",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (true) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                for (var [a, b] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                    var x = i + a;",
+      [
+        13
+      ]
+    ],
+    [
+      "                    var y = b + j;",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if (0 <= x && x < n && 0 <= y && y < n && grid[x][y] == 0) {",
+      [
+        14
+      ]
+    ],
+    [
+      "                        valid = true;",
+      [
+        15
+      ]
+    ],
+    [
+      "                        grid[x][y] = 1;",
+      [
+        16
+      ]
+    ],
+    [
+      "                        q.push([x, y]);",
+      [
+        17
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return valid ? ans : -1;",
+      [
+        18
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

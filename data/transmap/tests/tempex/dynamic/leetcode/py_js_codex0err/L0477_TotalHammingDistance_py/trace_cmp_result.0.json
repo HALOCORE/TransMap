@@ -1,0 +1,86 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[13,4,13,14]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: b is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"4\"],[\"N\",\"14\"],[\"N\",\"2\"]],\"ans\":[\"N\",\"6\"],\"i\":[\"N\",\"30\"],\"a\":[\"N\",\"0\"],\"b\":[\"N\",\"3\"],\"v\":[\"N\",\"2\"],\"t\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,8,11,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: b is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"4\"],[\"N\",\"14\"],[\"N\",\"2\"]],\"ans\":[\"N\",\"0\"],\"i\":[\"N\",\"0\"],\"a\":[\"N\",\"0\"],\"b\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,8,11,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: b is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"4\"],[\"N\",\"14\"],[\"N\",\"2\"]],\"ans\":[\"N\",\"0\"],\"i\":[\"N\",\"0\"],\"a\":[\"N\",\"0\"],\"b\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,8,11,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: b is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"4\"],[\"N\",\"14\"],[\"N\",\"2\"]],\"ans\":[\"N\",\"0\"],\"i\":[\"N\",\"0\"],\"a\":[\"N\",\"0\"],\"b\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

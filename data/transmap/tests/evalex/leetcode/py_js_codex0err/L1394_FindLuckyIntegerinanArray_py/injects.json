@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "        if (parseInt(num) == counter[num] && ans < parseInt(num)) {",
+    "replacement": "        if (num == counter[num] && ans < num) {"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "            ans = parseInt(num);",
+    "replacement": "            ans = num;"
+  }
+]

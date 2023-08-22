@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 0,
+    "line_end": 1,
+    "content": "function f_gold(points) {",
+    "replacement": "function isReflected(points) {"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        point_set.add(String([x, y]));",
+    "replacement": "        point_set.add([x, y]);"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "        if (!point_set.has(String([s - x, y]))) {",
+    "replacement": "        if (!point_set.has([s - x, y])) {"
+  }
+]

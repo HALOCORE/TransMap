@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        return [n - 1 - i, j];",
+    "replacement": "        return n - 1 - i, j;"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    let vis = { 1: true };",
+    "replacement": "    let vis = { 1 };"
+  },
+  {
+    "line_start": 21,
+    "line_end": 22,
+    "content": "                let [i, j] = get( next );",
+    "replacement": "                let i = get( next )[ 0 ];\n                let j = get( next )[ 1 ];"
+  },
+  {
+    "line_start": 22,
+    "line_end": 23,
+    "content": "                if ( board[ i ] && board[ i ][ j ] != -1 ) {",
+    "replacement": "                if ( board[ i ][ j ] != -1 ) {"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        [a, b, c] = [b, c, a + b + c];",
+    "replacement": "        a = b;\n        b = c;\n        c = a + b + c;"
+  }
+]

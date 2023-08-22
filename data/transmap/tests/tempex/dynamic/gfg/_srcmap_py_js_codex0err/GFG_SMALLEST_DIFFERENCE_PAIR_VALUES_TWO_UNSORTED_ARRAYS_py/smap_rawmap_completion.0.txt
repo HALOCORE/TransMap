@@ -1,0 +1,34 @@
+
+### Python
+import sys ;   # --- py stmt 1
+def f_gold(A, B, m, n):   # --- py stmt 2
+  A.sort()   # --- py stmt 3
+  B.sort()   # --- py stmt 4
+  a = 0   # --- py stmt 5
+  b = 0   # --- py stmt 6
+  result = sys.maxsize   # --- py stmt 7
+  while(a < m and b < n):   # --- py stmt 8
+    if(abs(A[a] - B[b])< result): result = abs(A[a] - B[b])   # --- py stmt 9
+    if(A[a] < B[b]): a += 1   # --- py stmt 10
+    else: b += 1   # --- py stmt 11
+  return result   # --- py stmt 12
+
+
+### JavaScript
+"use strict";
+function f_gold(A, B, m, n) {   // --- py stmt 2
+  A.sort();   // --- py stmt 3
+  B.sort((a, b) => a-b);   // --- py stmt 4
+  var a = 0;   // --- py stmt 5
+  var b = 0;   // --- py stmt 6
+  var result = Number.MAX_VALUE;   // --- py stmt 7
+  while (a < m && b < n) {   // --- py stmt 8
+    if (Math.abs(A[a] - B[b]) < result) result = Math.abs(A[a] - B[b]);   // --- py stmt 9
+    if (A[a] < B[b]) a++;   // --- py stmt 10
+    else b++;   // --- py stmt 11
+  }
+  return result;   // --- py stmt 12
+}
+
+
+

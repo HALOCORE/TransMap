@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 5,
+    "content": "    var groups = [];\n    for (let i=0;i<Math.floor((s.length+2)/3);i++) groups.push(s.substring(3 * i, Math.min(3 * i + 3, s.length)));",
+    "replacement": "    var groups = [s.substring(3 * i, Math.min(3 * i + 3, s.length)) for (i in range((s.length + 2) / 3))];"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    groups = groups.map(group => (group.length === 3 ? group.slice(1) + group[0] : group));",
+    "replacement": "    groups = [(group.substring(1) + group.substring(0)) if (group.length == 3) else group for (group in groups)];"
+  }
+]

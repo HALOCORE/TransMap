@@ -1,0 +1,185 @@
+{
+  "src_anno_stmts": [
+    [
+      "### areSentencesSimilar",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(sentence1: List[str], sentence2: List[str], similarPairs: List[List[str]]",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> bool:",
+      null
+    ],
+    [
+      "    if len(sentence1) != len(sentence2):",
+      [
+        3
+      ]
+    ],
+    [
+      "        return False",
+      [
+        4
+      ]
+    ],
+    [
+      "    pairs = {(word1, word2) for word1, word2 in similarPairs}",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(len(sentence1)):",
+      [
+        6
+      ]
+    ],
+    [
+      "        similar = (",
+      [
+        7
+      ]
+    ],
+    [
+      "            (sentence1[i], sentence2[i]) in pairs",
+      [
+        8
+      ]
+    ],
+    [
+      "            or (sentence2[i], sentence1[i]) in pairs",
+      [
+        9
+      ]
+    ],
+    [
+      "            or sentence1[i] == sentence2[i]",
+      [
+        10
+      ]
+    ],
+    [
+      "        )",
+      null
+    ],
+    [
+      "        if not similar:",
+      [
+        11
+      ]
+    ],
+    [
+      "            return False",
+      [
+        12
+      ]
+    ],
+    [
+      "    return True",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentence1, sentence2, similarPairs) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (sentence1.length != sentence2.length) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return false;",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var pairs = new Set();",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < similarPairs.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        pairs.add(similarPairs[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < sentence1.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var similar = (pairs.has([sentence1[i], sentence2[i]].join(\",\")) || pairs.has([sentence2[i], sentence1[i]].join(\",\")) || sentence1[i] == sentence2[i]);",
+      [
+        7,
+        8,
+        9,
+        10
+      ]
+    ],
+    [
+      "        if (!similar) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[6,2,7,35]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"TypeError: str2.split is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"A\",1,[\"S\",6,\"LISTEN\"]],\"str2\":[\"A\",1,[\"S\",6,\"SILENT\"]],\"n1\":[\"N\",\"1\"],\"n2\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,2,7,35]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"TypeError: str2.split is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"A\",1,[\"S\",6,\"LISTEN\"]],\"str2\":[\"A\",1,[\"S\",6,\"SILENT\"]],\"n1\":[\"N\",\"1\"],\"n2\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,2,7,35]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"TypeError: str2.split is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"A\",1,[\"S\",6,\"LISTEN\"]],\"str2\":[\"A\",1,[\"S\",6,\"SILENT\"]],\"n1\":[\"N\",\"1\"],\"n2\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

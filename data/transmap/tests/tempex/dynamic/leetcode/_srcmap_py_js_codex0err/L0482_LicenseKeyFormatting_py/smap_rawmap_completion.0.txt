@@ -1,0 +1,40 @@
+
+### Python
+### licenseKeyFormatting 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, k: int) -> str:   # --- py stmt 2
+    s = s.replace('-', '').upper()   # --- py stmt 3
+    res = []   # --- py stmt 4
+    cnt = (len(s) % k) or k   # --- py stmt 5
+    t = 0   # --- py stmt 6
+    for i, c in enumerate(s):   # --- py stmt 7
+        res.append(c)   # --- py stmt 8
+        t += 1   # --- py stmt 9
+        if t == cnt:   # --- py stmt 10
+            t = 0   # --- py stmt 11
+            cnt = k   # --- py stmt 12
+            if i != len(s) - 1:   # --- py stmt 13
+                res.append('-')   # --- py stmt 14
+    return ''.join(res)   # --- py stmt 15
+
+### JavaScript
+"use strict";
+function f_gold(s, k) {   // --- py stmt 2
+    s = s.replace('-', '').toUpperCase();   // --- py stmt 3
+    let res = [];   // --- py stmt 4
+    let cnt = (s.length % k) || k;   // --- py stmt 5
+    let t = 0;   // --- py stmt 6
+    for (let i = 0; i < s.length; i++) {   // --- py stmt 7
+        res.push(s[i]);   // --- py stmt 8
+        t += 1;   // --- py stmt 9
+        if (t == cnt) {   // --- py stmt 10
+            t = 0;   // --- py stmt 11
+            cnt = k;   // --- py stmt 12
+            if (i != s.length - 1) {   // --- py stmt 13
+                res.push('-');   // --- py stmt 14
+            }
+        }
+    }
+    return res.join('');   // --- py stmt 15
+}
+

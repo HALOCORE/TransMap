@@ -1,0 +1,152 @@
+{
+  "src_anno_stmts": [
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(text: str) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    counter = Counter(text)",
+      [
+        4
+      ]
+    ],
+    [
+      "    counter['l'] >>= 1",
+      [
+        5
+      ]
+    ],
+    [
+      "    counter['o'] >>= 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    return min(counter[c] for c in 'balon')",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(text) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let counter = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < text.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (counter[text[i]]) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            counter[text[i]]++;",
+      [
+        4
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        4
+      ]
+    ],
+    [
+      "            counter[text[i]] = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    counter['l'] >>= 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    counter['o'] >>= 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    let min = counter['b'];",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 0; i < 'balon'.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (('balon'[i] in counter ? counter['balon'[i]] : 0) < min) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            min = 'balon'[i] in counter ? counter['balon'[i]] : 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return min;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

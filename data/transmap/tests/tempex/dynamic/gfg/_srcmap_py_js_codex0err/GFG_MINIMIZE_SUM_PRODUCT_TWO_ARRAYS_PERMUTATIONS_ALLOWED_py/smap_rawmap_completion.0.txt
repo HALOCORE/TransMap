@@ -1,0 +1,22 @@
+
+### Python
+def f_gold(A, B, n):   # --- py stmt 1
+  sorted(A)   # --- py stmt 2
+  sorted(B)   # --- py stmt 3
+  result = 0   # --- py stmt 4
+  for i in range(n): result +=(A[i] * B[n - i - 1])   # --- py stmt 5
+  return result   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function f_gold(A, B, n) {   // --- py stmt 1
+  A.sort();   // --- py stmt 2
+  [...B];   // --- py stmt 3
+  let result = 0;   // --- py stmt 4
+  for (let i = 0; i < n; i++) result += (A[i] * B[n - i - 1]);   // --- py stmt 5
+  return result;   // --- py stmt 6
+}
+
+
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var c of \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\".split(\"\").reverse()) {",
+    "replacement": "    for (var c of ascii_uppercase.split(\"\").reverse()) {"
+  }
+]

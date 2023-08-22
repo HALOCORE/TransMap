@@ -1,0 +1,31 @@
+
+### Python
+def f_gold(arr, N, k):   # --- py stmt 1
+  maxSum = 0 ;   # --- py stmt 2
+  arr.sort();   # --- py stmt 3
+  i = N - 1 ;   # --- py stmt 4
+  while(i >= 0):   # --- py stmt 5
+    if(arr[i] - arr[i - 1] < k): maxSum += arr[i] ; maxSum += arr[i - 1] ; i -= 1 ;   # --- py stmt 6
+    i -= 1 ;   # --- py stmt 7
+  return maxSum ;   # --- py stmt 8
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, N, k) {   // --- py stmt 1
+  var maxSum = 0;   // --- py stmt 2
+  arr.sort((a, b) => a-b);   // --- py stmt 3
+  var i = N - 1;   // --- py stmt 4
+  while (i >= 0) {   // --- py stmt 5
+    if (arr[i] - arr[i - 1] < k) {   // --- py stmt 6
+      maxSum += arr[i];   // --- py stmt 6
+      maxSum += arr[(i - 1 + arr.length)%arr.length];   // --- py stmt 6
+      i -= 1;   // --- py stmt 6
+    }
+    i -= 1;   // --- py stmt 7
+  }
+  return maxSum;   // --- py stmt 8
+}
+
+
+

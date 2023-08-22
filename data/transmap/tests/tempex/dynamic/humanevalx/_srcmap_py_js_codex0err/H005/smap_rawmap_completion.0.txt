@@ -1,0 +1,42 @@
+
+### Python
+from typing import List   # --- py stmt 1
+
+
+def intersperse(numbers: List[int], delimeter: int) -> List[int]:   # --- py stmt 2
+    if not numbers:   # --- py stmt 3
+        return []   # --- py stmt 4
+
+    result = []   # --- py stmt 5
+
+    for n in numbers[:-1]:   # --- py stmt 6
+        result.append(n)   # --- py stmt 7
+        result.append(delimeter)   # --- py stmt 8
+
+    result.append(numbers[-1])   # --- py stmt 9
+
+    return result   # --- py stmt 10
+
+
+### JavaScript
+"use strict";
+
+function intersperse(numbers, delimeter) {   // --- py stmt 2
+    if (!numbers) {   // --- py stmt 3
+        return [];   // --- py stmt 4
+    }
+
+    var result = [];   // --- py stmt 5
+
+    for (var i = 0; i < numbers.length - 1; i++) {   // --- py stmt 6
+        result.push(numbers[i]);   // --- py stmt 7
+        result.push(delimeter);   // --- py stmt 8
+    }
+
+    result.push(numbers[numbers.length - 1]);   // --- py stmt 9
+
+    return result;   // --- py stmt 10
+}
+
+
+

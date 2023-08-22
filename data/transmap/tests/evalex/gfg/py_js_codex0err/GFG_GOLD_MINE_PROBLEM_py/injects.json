@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  let goldTable = Array(m).fill().map(_ => Array(n).fill(0))",
+    "replacement": "  let goldTable = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]];"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "      if (col == n - 1) var right = 0;",
+    "replacement": "      if (col == n - 1) right = 0;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "      if (row == 0 || col == n - 1) var right_up = 0;",
+    "replacement": "      if (row == 0 || col == n - 1) right_up = 0;"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "      if (row == m - 1 || col == n - 1) var right_down = 0;",
+    "replacement": "      if (row == m - 1 || col == n - 1) right_down = 0;"
+  }
+]

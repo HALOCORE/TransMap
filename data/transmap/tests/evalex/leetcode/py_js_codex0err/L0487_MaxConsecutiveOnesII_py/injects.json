@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 14,
+    "content": "            if (nums[i] == 0) {\n                prefix[i] = 0;\n            } \n            else prefix[i] = prefix[i - 1] + 1; ",
+    "replacement": "            prefix[i] = 0;\n            if (nums[i] == 0) {\n                prefix[i] = prefix[i - 1] + 1;\n            }"
+  },
+  {
+    "line_start": 22,
+    "line_end": 26,
+    "content": "            if (nums[i] == 0) {\n                suffix[i] = 0;\n            } \n            else suffix[i] = suffix[i + 1] + 1;",
+    "replacement": "            suffix[i] = 0;\n            if (nums[i] == 0) {\n                suffix[i] = suffix[i + 1] + 1;\n            }"
+  }
+]

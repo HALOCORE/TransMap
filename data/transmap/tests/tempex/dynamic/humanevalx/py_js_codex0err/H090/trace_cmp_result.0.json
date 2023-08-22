@@ -1,0 +1,26 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,42]",
+    "break_idx": 13,
+    "expected_src_pk": "[2,4,2,43]",
+    "actural_src_pk": "[2,4,2,43]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"lst\":[\"A\",4,[\"N\",\"-35\"],[\"N\",\"-45\"],[\"N\",\"12\"],[\"N\",\"34\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",4,[\"N\",\"-45\"],[\"N\",\"-35\"],[\"N\",\"12\"],[\"N\",\"34\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "lst"
+    ]
+  }
+]

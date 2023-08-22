@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (let arr of lst) {",
+    "replacement": "    for (var arr in lst) {"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        var n = arr.split('').filter(x => parseInt(x)%2==1).length;",
+    "replacement": "        var n = sum(int(d) % 2 == 1 for d in arr);"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        res.push(\"the number of odd elements \" + n.toString() + \"n the str\" + n.toString() + \"ng \" + n.toString() + \" of the \" + n.toString() + \"nput.\");",
+    "replacement": "        res.append(\"the number of odd elements \" + str(n) + \"n the str\" + str(n) + \"ng \" + str(n) + \" of the \" + str(n) + \"nput.\");"
+  }
+]

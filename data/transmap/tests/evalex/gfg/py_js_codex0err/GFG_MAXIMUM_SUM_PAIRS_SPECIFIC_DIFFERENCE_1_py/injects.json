@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  arr.sort((a, b) => a-b);",
+    "replacement": "  arr.sort();"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    if (arr[i] - arr[(i - 1 + arr.length)%arr.length] < k) {",
+    "replacement": "    if (arr[i] - arr[i - 1] < k) {"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "      maxSum += arr[(i - 1 + arr.length)%arr.length];",
+    "replacement": "      maxSum += arr[i - 1];"
+  }
+]

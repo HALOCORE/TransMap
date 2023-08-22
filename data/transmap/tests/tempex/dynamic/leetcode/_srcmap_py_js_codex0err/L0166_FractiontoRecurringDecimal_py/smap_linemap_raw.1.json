@@ -1,0 +1,346 @@
+{
+  "src_anno_stmts": [
+    [
+      "### fractionToDecimal",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(numerator: int, denominator: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    if numerator == 0:",
+      [
+        3
+      ]
+    ],
+    [
+      "        return '0'",
+      [
+        4
+      ]
+    ],
+    [
+      "    res = []",
+      [
+        5
+      ]
+    ],
+    [
+      "    neg = (numerator > 0) ^ (denominator > 0)",
+      [
+        6
+      ]
+    ],
+    [
+      "    if neg:",
+      [
+        7
+      ]
+    ],
+    [
+      "        res.append('-')",
+      [
+        8
+      ]
+    ],
+    [
+      "    num, d = abs(numerator), abs(denominator)",
+      [
+        9
+      ]
+    ],
+    [
+      "    res.append(str(num // d))",
+      [
+        10
+      ]
+    ],
+    [
+      "    num %= d",
+      [
+        11
+      ]
+    ],
+    [
+      "    if num == 0:",
+      [
+        12
+      ]
+    ],
+    [
+      "        return ''.join(res)",
+      [
+        13
+      ]
+    ],
+    [
+      "    res.append('.')",
+      [
+        14
+      ]
+    ],
+    [
+      "    mp = {}",
+      [
+        15
+      ]
+    ],
+    [
+      "    while num != 0:",
+      [
+        16
+      ]
+    ],
+    [
+      "        mp[num] = len(res)",
+      [
+        17
+      ]
+    ],
+    [
+      "        num *= 10",
+      [
+        18
+      ]
+    ],
+    [
+      "        res.append(str(num // d))",
+      [
+        19
+      ]
+    ],
+    [
+      "        num %= d",
+      [
+        20
+      ]
+    ],
+    [
+      "        if num in mp:",
+      [
+        21
+      ]
+    ],
+    [
+      "            idx = mp[num]",
+      [
+        22
+      ]
+    ],
+    [
+      "            res.insert(idx, '(')",
+      [
+        23
+      ]
+    ],
+    [
+      "            res.append(')')",
+      [
+        24
+      ]
+    ],
+    [
+      "            break",
+      [
+        25
+      ]
+    ],
+    [
+      "    return ''.join(res)",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(numerator, denominator) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (numerator == 0) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return '0';",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var res = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    var neg = (numerator > 0) ^ (denominator > 0);",
+      [
+        6
+      ]
+    ],
+    [
+      "    if (neg) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        res.push('-');",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var num = Math.abs(numerator);",
+      [
+        9
+      ]
+    ],
+    [
+      "    var d = Math.abs(denominator);",
+      [
+        9
+      ]
+    ],
+    [
+      "    res.push(String(Math.floor(num / d)));",
+      [
+        10
+      ]
+    ],
+    [
+      "    num %= d;",
+      [
+        11
+      ]
+    ],
+    [
+      "    if (num == 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        return res.join('');",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    res.push('.');",
+      [
+        14
+      ]
+    ],
+    [
+      "    var mp = {};",
+      [
+        15
+      ]
+    ],
+    [
+      "    while (num != 0) {",
+      [
+        16
+      ]
+    ],
+    [
+      "        mp[num] = res.length;",
+      [
+        17
+      ]
+    ],
+    [
+      "        num *= 10;",
+      [
+        18
+      ]
+    ],
+    [
+      "        res.push(String(num / d));",
+      [
+        19
+      ]
+    ],
+    [
+      "        num %= d;",
+      [
+        20
+      ]
+    ],
+    [
+      "        if (num in mp) {",
+      [
+        21
+      ]
+    ],
+    [
+      "            var idx = mp[num];",
+      [
+        22
+      ]
+    ],
+    [
+      "            res.splice(idx, 0, '(');",
+      [
+        23
+      ]
+    ],
+    [
+      "            res.push(')');",
+      [
+        24
+      ]
+    ],
+    [
+      "            break;",
+      [
+        25
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res.join('');",
+      [
+        26
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "src_anno_stmts": [
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(sentence: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, word in enumerate(sentence.split()):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if word.lower()[0] not in ['a', 'e', 'i', 'o', 'u']:",
+      [
+        5
+      ]
+    ],
+    [
+      "            word = word[1:] + word[0]",
+      [
+        6
+      ]
+    ],
+    [
+      "        word += 'ma'",
+      [
+        7
+      ]
+    ],
+    [
+      "        word += 'a' * (i + 1)",
+      [
+        8
+      ]
+    ],
+    [
+      "        ans.append(word)",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ' '.join(ans)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentence) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < sentence.split(/\\s+/).length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var word = sentence.split()[i];",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (word.toLowerCase()[0] != 'a' && word.toLowerCase()[0] != 'e' && word.toLowerCase()[0] != 'i' && word.toLowerCase()[0] != 'o' && word.toLowerCase()[0] != 'u') {",
+      [
+        5
+      ]
+    ],
+    [
+      "            word = word.substring(1) + word[0];",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        word += 'ma';",
+      [
+        7
+      ]
+    ],
+    [
+      "        word += 'a'.repeat(i + 1);",
+      [
+        8
+      ]
+    ],
+    [
+      "        ans.push(word);",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.join(' ');",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

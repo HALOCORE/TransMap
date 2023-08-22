@@ -1,0 +1,230 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countSquares",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(matrix: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    m, n = len(matrix), len(matrix[0])",
+      [
+        3
+      ]
+    ],
+    [
+      "    f = [[0] * n for _ in range(m)]",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i, row in enumerate(matrix):",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j, v in enumerate(row):",
+      [
+        7
+      ]
+    ],
+    [
+      "            if v == 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "                continue",
+      [
+        9
+      ]
+    ],
+    [
+      "            if i == 0 or j == 0:",
+      [
+        10
+      ]
+    ],
+    [
+      "                f[i][j] = 1",
+      [
+        11
+      ]
+    ],
+    [
+      "            else:",
+      [
+        12
+      ]
+    ],
+    [
+      "                f[i][j] = min(f[i - 1][j - 1], f[i - 1][j], f[i][j - 1]) + 1",
+      [
+        13
+      ]
+    ],
+    [
+      "            ans += f[i][j]",
+      [
+        14
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(matrix) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var m = matrix.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = matrix[0].length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var f = new Array(m);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        f[i] = new Array(n);",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (matrix[i][j] == 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                continue;",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (i == 0 || j == 0) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                f[i][j] = 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        12
+      ]
+    ],
+    [
+      "                f[i][j] = Math.min(f[i - 1][j - 1], f[i - 1][j], f[i][j - 1]) + 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            ans += f[i][j];",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

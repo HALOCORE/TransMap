@@ -1,0 +1,43 @@
+
+### Python
+### brightestPosition 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(lights: List[List[int]]) -> int:   # --- py stmt 3
+    d = defaultdict(int)   # --- py stmt 4
+    for p, r in lights:   # --- py stmt 5
+        d[p - r] += 1   # --- py stmt 6
+        d[p + r + 1] -= 1   # --- py stmt 7
+    s = mx = ans = 0   # --- py stmt 8
+    for k in sorted(d):   # --- py stmt 9
+        s += d[k]   # --- py stmt 10
+        if s > mx:   # --- py stmt 11
+            mx = s   # --- py stmt 12
+            ans = k   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(lights) {   // --- py stmt 3
+    var d = {};   // --- py stmt 4
+    for (var _i = 0, lights_1 = lights; _i < lights_1.length; _i++) {   // --- py stmt 5
+        var _a = lights_1[_i], p = _a[0], r = _a[1];   // --- py stmt 5
+        d[p - r] = (d[p - r] || 0) + 1;   // --- py stmt 6
+        d[p + r + 1] = (d[p + r + 1] || 0) - 1;   // --- py stmt 7
+    }
+    var s = 0;   // --- py stmt 8
+    var mx = 0;   // --- py stmt 8
+    var ans = 0;   // --- py stmt 8
+    for (var [k, v] of Object.entries(d).sort((a, b) => (parseInt(a[0]) - parseInt(b[0])))) {   // --- py stmt 9
+        //
+        s += v;   // --- py stmt 10
+        if (s > mx) {   // --- py stmt 11
+            mx = s;   // --- py stmt 12
+            ans = k;   // --- py stmt 13
+        }
+    }
+    return ans;   // --- py stmt 14
+}
+
+
+

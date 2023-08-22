@@ -1,0 +1,112 @@
+{
+  "src_anno_stmts": [
+    [
+      "### makeFancyString",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for c in s:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if len(ans) > 1 and ans[-1] == ans[-2] == c:",
+      [
+        5
+      ]
+    ],
+    [
+      "            continue",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans.append(c)",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ''.join(ans)",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var c of s) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (ans.length > 1 && ans[ans.length - 1] == ans[ans.length - 2] == c) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            continue;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans.push(c);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.join('');",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

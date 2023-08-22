@@ -1,0 +1,15 @@
+
+### Python
+### mostWordsFound 
+from typing import *   # --- py stmt 1
+def f_gold(sentences: List[str]) -> int:   # --- py stmt 2
+    return 1 + max(s.count(' ') for s in sentences)   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(sentences) {   // --- py stmt 2
+    return 1 + Math.max(...sentences.map(s => s.split(' ').length));   // --- py stmt 3
+}
+
+
+

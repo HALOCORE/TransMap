@@ -1,0 +1,39 @@
+
+### Python
+### minDeletion 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    n = len(nums)   # --- py stmt 3
+    i = ans = 0   # --- py stmt 4
+    while i < n - 1:   # --- py stmt 5
+        if nums[i] == nums[i + 1]:   # --- py stmt 6
+            ans += 1   # --- py stmt 7
+            i += 1   # --- py stmt 8
+        else:   # --- py stmt 9
+            i += 2   # --- py stmt 10
+    if (n - ans) % 2:   # --- py stmt 11
+        ans += 1   # --- py stmt 12
+    return ans   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    let n = nums.length;   // --- py stmt 3
+    let i = ans = 0;   // --- py stmt 4
+    while (i < n - 1) {   // --- py stmt 5
+        if (nums[i] == nums[i + 1]) {   // --- py stmt 6
+            ans += 1;   // --- py stmt 7
+            i += 1;   // --- py stmt 8
+        }
+        else {   // --- py stmt 9
+            i += 2;   // --- py stmt 10
+        }
+    }
+    if ((n - ans) % 2) {   // --- py stmt 11
+        ans += 1;   // --- py stmt 12
+    }
+    return ans;   // --- py stmt 13
+}
+
+
+

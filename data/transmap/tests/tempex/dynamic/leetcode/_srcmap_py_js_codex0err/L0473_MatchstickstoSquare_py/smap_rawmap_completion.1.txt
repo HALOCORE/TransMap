@@ -1,0 +1,54 @@
+
+### Python
+### makesquare 
+from typing import *   # --- py stmt 1
+def f_gold(matchsticks: List[int]) -> bool:   # --- py stmt 2
+    def dfs(u):   # --- py stmt 3
+        if u == len(matchsticks):   # --- py stmt 4
+            return True   # --- py stmt 5
+        for i in range(4):   # --- py stmt 6
+            if i > 0 and edges[i - 1] == edges[i]:   # --- py stmt 7
+                continue   # --- py stmt 8
+            edges[i] += matchsticks[u]   # --- py stmt 9
+            if edges[i] <= x and dfs(u + 1):   # --- py stmt 10
+                return True   # --- py stmt 11
+            edges[i] -= matchsticks[u]   # --- py stmt 12
+        return False   # --- py stmt 13
+    x, mod = divmod(sum(matchsticks), 4)   # --- py stmt 14
+    if mod or x < max(matchsticks):   # --- py stmt 15
+        return False   # --- py stmt 16
+    edges = [0] * 4   # --- py stmt 17
+    matchsticks.sort(reverse=True)   # --- py stmt 18
+    return dfs(0)   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(matchsticks) {   // --- py stmt 2
+    function dfs(u) {   // --- py stmt 3
+        if (u == matchsticks.length) {   // --- py stmt 4
+            return true;   // --- py stmt 5
+        }
+        for (let i = 0; i < 4; i++) {   // --- py stmt 6
+            if (i > 0 && edges[i - 1] == edges[i]) {   // --- py stmt 7
+                continue;   // --- py stmt 8
+            }
+            edges[i] += matchsticks[u];   // --- py stmt 9
+            if (edges[i] <= x && dfs(u + 1)) {   // --- py stmt 10
+                return true;   // --- py stmt 11
+            }
+            edges[i] -= matchsticks[u];   // --- py stmt 12
+        }
+        return false;   // --- py stmt 13
+    }
+    let x = matchsticks.reduce((a, b) => a + b) / 4;   // --- py stmt 14
+    let mod = sum(matchsticks) % 4;   // --- py stmt 14
+    if (mod || x < Math.max(matchsticks)) {   // --- py stmt 15
+        return false;   // --- py stmt 16
+    }
+    let edges = [0, 0, 0, 0];   // --- py stmt 17
+    matchsticks.sort((a, b) => b - a);   // --- py stmt 18
+    return dfs(0);   // --- py stmt 19
+}
+
+
+

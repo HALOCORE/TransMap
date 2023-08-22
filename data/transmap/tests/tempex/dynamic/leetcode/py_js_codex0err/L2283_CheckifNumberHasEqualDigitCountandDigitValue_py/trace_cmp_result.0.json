@@ -1,0 +1,77 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      6,
+      9,
+      10,
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",3,\"030\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      6,
+      9,
+      10,
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",3,\"030\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      6,
+      9,
+      10,
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",3,\"030\"]}",
+      ""
+    ]
+  }
+]

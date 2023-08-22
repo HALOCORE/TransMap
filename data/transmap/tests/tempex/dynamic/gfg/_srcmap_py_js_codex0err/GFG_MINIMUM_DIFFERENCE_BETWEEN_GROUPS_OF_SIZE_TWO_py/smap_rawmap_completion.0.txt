@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(a, n):   # --- py stmt 1
+  a.sort();   # --- py stmt 2
+  s =[] ;   # --- py stmt 3
+  i = 0 ;   # --- py stmt 4
+  j = n - 1 ;   # --- py stmt 5
+  while(i < j): s.append((a[i] + a[j])); i += 1 ; j -= 1 ;   # --- py stmt 6
+  mini = min(s);   # --- py stmt 7
+  maxi = max(s);   # --- py stmt 8
+  return abs(maxi - mini);   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(a, n) {   // --- py stmt 1
+  a.sort();   // --- py stmt 2
+  var s = [];   // --- py stmt 3
+  var i = 0;   // --- py stmt 4
+  var j = n - 1;   // --- py stmt 5
+  while (i < j) {   // --- py stmt 6
+    s.push((a[i] + a[j]));   // --- py stmt 6
+    i += 1;   // --- py stmt 6
+    j -= 1;   // --- py stmt 6
+  }
+  var mini = Math.min.apply(null, s);   // --- py stmt 7
+  var maxi = Math.max.apply(null, s);   // --- py stmt 8
+  return Math.abs(maxi - mini);   // --- py stmt 9
+}
+
+
+

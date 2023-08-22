@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  var c = (-2 * num);",
+    "replacement": "  c = (-2 * num);"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  var b = 1, a = 1;",
+    "replacement": "  b, a = 1, 1;"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  var d = (b * b) - (4 * a * c);",
+    "replacement": "  d = (b * b) - (4 * a * c);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "  var root1 = (-b + Math.sqrt(d)) / (2 * a);",
+    "replacement": "  root1 = (-b + Math.sqrt(d)) / (2 * a);"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "  var root2 = (-b - Math.sqrt(d)) / (2 * a);",
+    "replacement": "  root2 = (-b - Math.sqrt(d)) / (2 * a);"
+  }
+]

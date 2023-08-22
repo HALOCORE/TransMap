@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### convertToTitle",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(columnNumber: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    while columnNumber:",
+      [
+        4
+      ]
+    ],
+    [
+      "        columnNumber -= 1",
+      [
+        5
+      ]
+    ],
+    [
+      "        res.append(chr(ord('A') + columnNumber % 26))",
+      [
+        6
+      ]
+    ],
+    [
+      "        columnNumber //= 26",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ''.join(res[::-1])",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(columnNumber) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    while (columnNumber) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        columnNumber -= 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        res.push(String.fromCharCode(ord('A') + columnNumber % 26));",
+      [
+        6
+      ]
+    ],
+    [
+      "        columnNumber = Math.floor(columnNumber / 26);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res.reverse().join('');",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

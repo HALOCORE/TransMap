@@ -1,0 +1,219 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countSubarrays",
+      null
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    s = list(accumulate(nums, initial=0))",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(1, len(nums) + 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        if nums[i - 1] >= k:",
+      [
+        7
+      ]
+    ],
+    [
+      "            continue",
+      [
+        8
+      ]
+    ],
+    [
+      "        left, right = 1, i",
+      [
+        9
+      ]
+    ],
+    [
+      "        while left < right:",
+      [
+        10
+      ]
+    ],
+    [
+      "            mid = (left + right + 1) >> 1",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (s[i] - s[i - mid]) * mid < k:",
+      [
+        12
+      ]
+    ],
+    [
+      "                left = mid",
+      [
+        13
+      ]
+    ],
+    [
+      "            else:",
+      [
+        14
+      ]
+    ],
+    [
+      "                right = mid - 1",
+      [
+        15
+      ]
+    ],
+    [
+      "        ans += left",
+      [
+        16
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let s = [0].concat(nums.map((sum => v => sum += v)(0)));",
+      [
+        4
+      ]
+    ],
+    [
+      "    let ans = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let i = 1; i < nums.length + 1; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (nums[i - 1] >= k) continue;",
+      [
+        7,
+        8
+      ]
+    ],
+    [
+      "        let left = 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        let right = i;",
+      [
+        9
+      ]
+    ],
+    [
+      "        while (left < right) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            let mid = Math.floor((left + right + 1) / 2);",
+      [
+        11
+      ]
+    ],
+    [
+      "            if ((s - s[i - mid]) * mid < k) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                left = mid;",
+      [
+        13
+      ]
+    ],
+    [
+      "            } else {",
+      [
+        14
+      ]
+    ],
+    [
+      "                right = mid - 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans += left;",
+      [
+        16
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

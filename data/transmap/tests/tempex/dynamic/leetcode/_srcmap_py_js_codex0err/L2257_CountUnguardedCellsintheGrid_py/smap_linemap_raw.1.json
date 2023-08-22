@@ -1,0 +1,334 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countUnguarded",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(m: int, n: int, guards: List[List[int]], walls: List[List[int]]",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> int:",
+      null
+    ],
+    [
+      "    g = [[None] * n for _ in range(m)]",
+      [
+        3
+      ]
+    ],
+    [
+      "    for r, c in guards:",
+      [
+        4
+      ]
+    ],
+    [
+      "        g[r][c] = 'g'",
+      [
+        5
+      ]
+    ],
+    [
+      "    for r, c in walls:",
+      [
+        6
+      ]
+    ],
+    [
+      "        g[r][c] = 'w'",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i, j in guards:",
+      [
+        8
+      ]
+    ],
+    [
+      "        for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:",
+      [
+        9
+      ]
+    ],
+    [
+      "            x, y = i, j",
+      [
+        10
+      ]
+    ],
+    [
+      "            while (",
+      [
+        11
+      ]
+    ],
+    [
+      "                0 <= x + a < m",
+      null
+    ],
+    [
+      "                and 0 <= y + b < n",
+      null
+    ],
+    [
+      "                and g[x + a][y + b] != 'w'",
+      null
+    ],
+    [
+      "                and g[x + a][y + b] != 'g'",
+      null
+    ],
+    [
+      "            ):",
+      null
+    ],
+    [
+      "                x, y = x + a, y + b",
+      [
+        12
+      ]
+    ],
+    [
+      "                g[x][y] = 'v'",
+      [
+        13
+      ]
+    ],
+    [
+      "    return sum(not v for row in g for v in row)",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(m, n, guards, walls) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var g = new Array(m);",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var _ = 0; _ < m; _++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        g[_] = new Array(n);",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var _ = 0; _ < guards.length; _++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var r = guards[_][0];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var c = guards[_][1];",
+      [
+        4
+      ]
+    ],
+    [
+      "        g[r][c] = 'g';",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var _ = 0; _ < walls.length; _++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var r = walls[_][0];",
+      [
+        6
+      ]
+    ],
+    [
+      "        var c = walls[_][1];",
+      [
+        6
+      ]
+    ],
+    [
+      "        g[r][c] = 'w';",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var _ = 0; _ < guards.length; _++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        var i = guards[_][0];",
+      [
+        8
+      ]
+    ],
+    [
+      "        var j = guards[_][1];",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (var _k = 0; _k < 4; _k++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            var a = [0, 0, 1, -1][_k];",
+      [
+        9
+      ]
+    ],
+    [
+      "            var b = [-1, 1, 0, 0][_k];",
+      [
+        9
+      ]
+    ],
+    [
+      "            var x = i;",
+      [
+        10
+      ]
+    ],
+    [
+      "            var y = j;",
+      [
+        10
+      ]
+    ],
+    [
+      "            while (0 <= x + a && x + a < m && 0 <= y + b && y + b < n && g[x + a][y + b] != 'w' && g[x + a][y + b] != 'g') {",
+      [
+        11
+      ]
+    ],
+    [
+      "                x = x + a;",
+      [
+        12
+      ]
+    ],
+    [
+      "                y = y + b;",
+      [
+        12
+      ]
+    ],
+    [
+      "                g[x][y] = 'v';",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var sum = 0;",
+      [
+        14
+      ]
+    ],
+    [
+      "    for (var _ = 0; _ < g.length; _++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        for (var _ = 0; _ < g[_].length; _++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            var v = g[_][_];",
+      [
+        14
+      ]
+    ],
+    [
+      "            sum = sum + (!v);",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return sum;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

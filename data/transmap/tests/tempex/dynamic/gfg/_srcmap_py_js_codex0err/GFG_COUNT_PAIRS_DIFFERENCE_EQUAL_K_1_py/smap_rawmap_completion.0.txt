@@ -1,0 +1,40 @@
+
+### Python
+def f_gold(arr, n, k):   # --- py stmt 1
+  count = 0   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  l = 0   # --- py stmt 4
+  r = 0   # --- py stmt 5
+  while r < n:   # --- py stmt 6
+    if arr[r] - arr[l] == k:   # --- py stmt 7
+      count += 1   # --- py stmt 8
+      l += 1   # --- py stmt 9
+      r += 1   # --- py stmt 10
+    elif arr[r] - arr[l] > k: l += 1   # --- py stmt 11
+    else: r += 1   # --- py stmt 12
+  return count   # --- py stmt 13
+
+
+### JavaScript
+"use strict";
+const f_gold = (arr, n, k) => {   // --- py stmt 1
+  let count = 0;   // --- py stmt 2
+  arr.sort();   // --- py stmt 3
+  let l = 0;   // --- py stmt 4
+  let r = 0;   // --- py stmt 5
+  while (r < n) {   // --- py stmt 6
+    if (arr[r] - arr[l] == k) {   // --- py stmt 7
+      count += 1;   // --- py stmt 8
+      l += 1;   // --- py stmt 9
+      r += 1;   // --- py stmt 10
+    } else if (arr[r] - arr[l] > k) {   // --- py stmt 11
+      l += 1;   // --- py stmt 11
+    } else {   // --- py stmt 12
+      r += 1;   // --- py stmt 12
+    }
+  }
+  return count;   // --- py stmt 13
+};
+
+
+

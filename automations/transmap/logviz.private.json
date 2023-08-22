@@ -1,0 +1,4 @@
+{
+  "WEBDIS_API_ENDPOINT": "http://127.0.0.1:8109/webdisp/",
+  "LOGVIZ_API_ENDPOINT": "http://127.0.0.1:8109/logvizft/api/"
+}

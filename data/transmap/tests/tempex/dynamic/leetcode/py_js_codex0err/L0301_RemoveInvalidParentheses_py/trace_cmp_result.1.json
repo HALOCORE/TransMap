@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[30,4,30,15]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      39
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":39,\"err_msg\":\"ReferenceError: tdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"s\":[\"S\",7,\"()())()\"],\"tdel\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[30,4,30,15]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      39
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":39,\"err_msg\":\"ReferenceError: tdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"s\":[\"S\",7,\"()())()\"],\"tdel\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[30,4,30,15]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      39
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":39,\"err_msg\":\"ReferenceError: tdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"s\":[\"S\",7,\"()())()\"],\"tdel\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[30,4,30,15]",
+    "src_cov_lines": [
+      29
+    ],
+    "tar_cov_lines": [
+      39
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":39,\"err_msg\":\"ReferenceError: tdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"s\":[\"S\",7,\"()())()\"],\"tdel\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

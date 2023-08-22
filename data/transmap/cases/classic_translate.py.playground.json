@@ -1,0 +1,7 @@
+[
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/_playground/source.py",
+    "TARGET_TEMPLATE": "../tests/evalex/real/py_js_codex0err/_playground/target_tmpl.js",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/_playground/target.rawchatgpt.js"
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "src_anno_stmts": [
+    [
+      "### areAlmostEqual",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s1: str, s2: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    cnt, n = 0, len(s1)",
+      [
+        3
+      ]
+    ],
+    [
+      "    c1 = c2 = None",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if s1[i] != s2[i]:",
+      [
+        6
+      ]
+    ],
+    [
+      "            cnt += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (cnt == 2 and (s1[i] != c2 or s2[i] != c1)) or cnt > 2:",
+      [
+        8
+      ]
+    ],
+    [
+      "                return False",
+      [
+        9
+      ]
+    ],
+    [
+      "            c1, c2 = s1[i], s2[i]",
+      [
+        10
+      ]
+    ],
+    [
+      "    return cnt == 0 or cnt == 2",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s1, s2) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var cnt = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = s1.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var c1 = c2 = null;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (s1[i] != s2[i]) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            cnt += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "            if ((cnt == 2 && (s1[i] != c2 || s2[i] != c1)) || cnt > 2) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            c1 = s1[i];",
+      [
+        10
+      ]
+    ],
+    [
+      "            c2 = s2[i];",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return cnt == 0 || cnt == 2;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

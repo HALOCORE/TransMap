@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,4,3,21]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"string\\\",6,\\\"abcefd\\\"]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"string\\\",7,\\\"dcbaefd\\\"]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"word\":[\"S\",6,\"xyxzxe\"],\"ch\":[\"S\",1,\"z\"]}",
+      ""
+    ]
+  }
+]

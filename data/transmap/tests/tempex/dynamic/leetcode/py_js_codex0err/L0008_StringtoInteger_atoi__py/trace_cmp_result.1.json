@@ -1,0 +1,65 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 9,
+    "actural_src_pk": "[28,4,28,21]",
+    "src_cov_lines": [
+      18,
+      20,
+      22,
+      24,
+      26,
+      27
+    ],
+    "tar_cov_lines": [
+      15,
+      16
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":16,\"err_msg\":\"TypeError: s[i].isDigit is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"42\"],\"n\":[\"N\",\"2\"],\"i\":[\"N\",\"2\"],\"sign\":[\"N\",\"1\"],\"res\":[\"N\",\"42\"],\"flag\":[\"N\",\"214748364\"],\"c\":[\"N\",\"2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[22,8,22,21]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      16
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":16,\"err_msg\":\"TypeError: s[i].isDigit is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"42\"],\"n\":[\"N\",\"2\"],\"i\":[\"N\",\"0\"],\"sign\":[\"N\",\"1\"],\"res\":[\"N\",\"0\"],\"flag\":[\"N\",\"214748364\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[22,8,22,21]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      16
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":16,\"err_msg\":\"TypeError: s[i].isDigit is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"42\"],\"n\":[\"N\",\"2\"],\"i\":[\"N\",\"0\"],\"sign\":[\"N\",\"1\"],\"res\":[\"N\",\"0\"],\"flag\":[\"N\",\"214748364\"]}",
+      ""
+    ]
+  }
+]

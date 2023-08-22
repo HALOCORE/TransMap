@@ -1,0 +1,138 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, N, K):",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        2
+      ]
+    ],
+    [
+      "  dp =[0] * N",
+      [
+        3
+      ]
+    ],
+    [
+      "  dp[0] = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(1, N):",
+      [
+        5
+      ]
+    ],
+    [
+      "    dp[i] = dp[i - 1]",
+      [
+        6
+      ]
+    ],
+    [
+      "    if(arr[i] - arr[i - 1] < K):",
+      [
+        7
+      ]
+    ],
+    [
+      "      if(i >= 2): dp[i] = max(dp[i], dp[i - 2] + arr[i] + arr[i - 1]);",
+      [
+        8
+      ]
+    ],
+    [
+      "      else: dp[i] = max(dp[i], arr[i] + arr[i - 1]);",
+      [
+        9
+      ]
+    ],
+    [
+      "  return dp[N - 1]",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, N, K) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "  var dp = new Array(N);",
+      [
+        3
+      ]
+    ],
+    [
+      "  dp[0] = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var i = 1; i < N; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    dp[i] = dp[i - 1];",
+      [
+        6
+      ]
+    ],
+    [
+      "    if (arr[i] - arr[i - 1] < K) {",
+      [
+        7
+      ]
+    ],
+    [
+      "      if (i >= 2) dp[i] = Math.max(dp[i], dp[i - 2] + arr[i] + arr[i - 1]);",
+      [
+        8
+      ]
+    ],
+    [
+      "      else dp[i] = Math.max(dp[i], arr[i] + arr[i - 1]);",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return dp[N - 1];",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

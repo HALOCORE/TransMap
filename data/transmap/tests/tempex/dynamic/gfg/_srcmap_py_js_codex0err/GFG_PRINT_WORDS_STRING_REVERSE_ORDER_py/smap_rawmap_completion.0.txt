@@ -1,0 +1,49 @@
+
+### Python
+def f_gold(str):   # --- py stmt 1
+  i = len(str)- 1   # --- py stmt 2
+  start = end = i + 1   # --- py stmt 3
+  result = ''   # --- py stmt 4
+  while i >= 0:   # --- py stmt 5
+    if str[i] == ' ':   # --- py stmt 6
+      start = i + 1   # --- py stmt 7
+      while start != end:   # --- py stmt 8
+        result += str[start]   # --- py stmt 9
+        start += 1   # --- py stmt 10
+      result += ' '   # --- py stmt 11
+      end = i   # --- py stmt 12
+    i -= 1   # --- py stmt 13
+  start = 0   # --- py stmt 14
+  while start != end:   # --- py stmt 15
+    result += str[start]   # --- py stmt 16
+    start += 1   # --- py stmt 17
+  return result   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(str) {   // --- py stmt 1
+  var i = str.length - 1;   // --- py stmt 2
+  var start = end = i + 1;   // --- py stmt 3
+  var result = "";   // --- py stmt 4
+  while (i >= 0) {   // --- py stmt 5
+    if (str[i] == " ") {   // --- py stmt 6
+      start = i + 1;   // --- py stmt 7
+      while (start != end) {   // --- py stmt 8
+        result += str[start];   // --- py stmt 9
+        start += 1;   // --- py stmt 10
+      }
+      result += " ";   // --- py stmt 11
+      end = i;   // --- py stmt 12
+    }
+    i -= 1;   // --- py stmt 13
+  }
+  start = 0;   // --- py stmt 14
+  while (start != end) {   // --- py stmt 15
+    result += str[start];   // --- py stmt 16
+    start += 1;   // --- py stmt 17
+  }
+  return result;   // --- py stmt 18
+}
+
+
+

@@ -1,0 +1,214 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(A, N, M):",
+      [
+        1
+      ]
+    ],
+    [
+      "  ans = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  h =[0] * M",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(0, N):",
+      [
+        4
+      ]
+    ],
+    [
+      "    A[i] = A[i] % M",
+      [
+        5
+      ]
+    ],
+    [
+      "    h[A[i]] = h[A[i]] + 1",
+      [
+        6
+      ]
+    ],
+    [
+      "  for i in range(0, M):",
+      [
+        7
+      ]
+    ],
+    [
+      "    for j in range(i, M):",
+      [
+        8
+      ]
+    ],
+    [
+      "      rem =(M -(i + j)% M)% M",
+      [
+        9
+      ]
+    ],
+    [
+      "      if(rem < j): continue",
+      [
+        10
+      ]
+    ],
+    [
+      "      if(i == j and rem == j): ans = ans + h[i] *(h[i] - 1)*(h[i] - 2)/ 6",
+      [
+        11
+      ]
+    ],
+    [
+      "      elif(i == j): ans = ans +(h[i] *(h[i] - 1)* h[rem] / 2)",
+      [
+        12
+      ]
+    ],
+    [
+      "      elif(i == rem): ans = ans + h[i] *(h[i] - 1)* h[j] / 2",
+      [
+        13
+      ]
+    ],
+    [
+      "      elif(rem == j): ans = ans + h[j] *(h[j] - 1)* h[i] / 2",
+      [
+        14
+      ]
+    ],
+    [
+      "      else: ans = ans + h[i] * h[j] * h[rem]",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(A, N, M) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var ans = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var h = Array(M).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < N; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    A[i] = A[i] % M;",
+      [
+        5
+      ]
+    ],
+    [
+      "    h[A[i]] = h[A[i]] + 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (var i = 0; i < M; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (var j = i; j < M; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "      var rem = (M - (i + j) % M) % M;",
+      [
+        9
+      ]
+    ],
+    [
+      "      if (rem < j) continue;",
+      [
+        10
+      ]
+    ],
+    [
+      "      if (i == j && rem == j) ans = ans + h[i] * (h[i] - 1) * (h[i] - 2) / 6;",
+      [
+        11
+      ]
+    ],
+    [
+      "      else if (i == j) ans = ans + (h[i] * (h[i] - 1) * h[rem] / 2);",
+      [
+        12
+      ]
+    ],
+    [
+      "      else if (i == rem) ans = ans + h[i] * (h[i] - 1) * h[j] / 2;",
+      [
+        13
+      ]
+    ],
+    [
+      "      else if (rem == j) ans = ans + h[j] * (h[j] - 1) * h[i] / 2;",
+      [
+        14
+      ]
+    ],
+    [
+      "      else ans = ans + h[i] * h[j] * h[rem];",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

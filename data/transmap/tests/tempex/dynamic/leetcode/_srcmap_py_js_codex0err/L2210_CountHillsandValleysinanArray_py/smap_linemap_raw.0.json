@@ -1,0 +1,168 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countHillValley",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = j = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i in range(1, len(nums) - 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if nums[i] == nums[i + 1]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            continue",
+      [
+        6
+      ]
+    ],
+    [
+      "        if nums[i] > nums[j] and nums[i] > nums[i + 1]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        if nums[i] < nums[j] and nums[i] < nums[i + 1]:",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        j = i",
+      [
+        11
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = j = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 1; i < nums.length - 1; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (nums[i] == nums[i + 1]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            continue;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (nums[i] > nums[j] && nums[i] > nums[i + 1]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (nums[i] < nums[j] && nums[i] < nums[i + 1]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        j = i;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,152 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -255,7 +255,7 @@ class OverlapCoefficient {
+ ///// Segment END
+ 
+ ///// Segment BEGIN QGram DONE
+-class QGram {
++class QGram extends classMultiExtend(ShingleBased, StringDistance) {
+     constructor(k = 3) {
+         super();
+         this.k = k;
+@@ -220,9 +220,9 @@ class OptimalStringAlignment extends StringDistance {
+ ///// Segment END
+ 
+ ///// Segment BEGIN OverlapCoef DONE
+-class OverlapCoefficient {
++class OverlapCoefficient extends classMultiExtend(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity) {
+     constructor(k = 3) {
+-        this.k = k;
++        super(); this.k = k;
+     }
+     distance(s0, s1) {
+         return 1.0 - this.similarity(s0, s1);
+@@ -240,14 +240,14 @@ class OverlapCoefficient {
+         let union = new Set();
+         let profile0 = this.get_profile(s0);
+         let profile1 = this.get_profile(s1);
+-        for (let k of profile0.keys()) {
++        for (let k of Object.keys(profile0)) {
+             union.add(k);
+         }
+-        for (let k of profile1.keys()) {
++        for (let k of Object.keys(profile1)) {
+             union.add(k);
+         }
+-        let inter = Math.floor(profile0.size + profile1.size - union.size);
+-        return inter / Math.min(profile0.size, profile1.size);
++        let inter = Math.floor(Object.keys(profile0).length + Object.keys(profile1).length - union.size);
++        return inter / Math.min(Object.keys(profile0).length, Object.keys(profile1).length);
+     }
+ }
+ 
+@@ -272,24 +272,24 @@ class QGram {
+         }
+         let profile0 = this.get_profile(s0);
+         let profile1 = this.get_profile(s1);
+-        return this.distance_profile(profile0, profile1);
++        return this.constructor.distance_profile(profile0, profile1);
+     }
+     static distance_profile(profile0, profile1) {
+         let union = new Set();
+-        for (let k of profile0.keys()) {
++        for (let k of Object.keys(profile0)) {
+             union.add(k);
+         }
+-        for (let k of profile1.keys()) {
++        for (let k of Object.keys(profile1)) {
+             union.add(k);
+         }
+         let agg = 0;
+         for (let k of union) {
+             let v0 = 0, v1 = 0;
+-            if (profile0.get(k) !== null) {
+-                v0 = parseInt(profile0.get(k));
++            if (profile0[k] !== null) {
++                v0 = parseInt(profile0[k]);
+             }
+             if (profile1.get(k) !== null) {
+                 v1 = parseInt(profile1.get(k));
+             }
+             agg += Math.abs(v0 - v1);
+         }
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -399,21 +399,21 @@ class OverlapCoefficient {   // --- py stmt 102
+         let union = new Set();   // --- py stmt 114
+         let profile0 = this.get_profile(s0);   // --- py stmt 115
+         let profile1 = this.get_profile(s1);   // --- py stmt 115
+-        for (let k of profile0.keys()) {   // --- py stmt 116
++        for (let k of Object.keys(profile0)) {   // --- py stmt 116
+             union.add(k);   // --- py stmt 117
+         }
+-        for (let k of profile1.keys()) {   // --- py stmt 118
++        for (let k of Object.keys(profile1)) {   // --- py stmt 118
+             union.add(k);   // --- py stmt 119
+         }
+-        let inter = Math.floor(profile0.size + profile1.size - union.size);   // --- py stmt 120
+-        return inter / Math.min(profile0.size, profile1.size);   // --- py stmt 121
++        let inter = Math.floor(Object.keys(profile0).length + Object.keys(profile1).length - union.size);   // --- py stmt 120
++        return inter / Math.min(Object.keys(profile0).length, Object.keys(profile1).length);   // --- py stmt 121
+     }
+ }
+ 
+ 
+ 
+ 
+-class QGram {   // --- py stmt 122
++class QGram extends classMultiExtend(ShingleBased, StringDistance) {   // --- py stmt 122
+     constructor(k = 3) {   // --- py stmt 123
+         super();   // --- py stmt 124
+         this.k = k;   // --- py stmt 124
+@@ -379,9 +379,9 @@ class OptimalStringAlignment extends StringDistance {   // --- py stmt 75
+ 
+ 
+ 
+-class OverlapCoefficient {   // --- py stmt 102
++class OverlapCoefficient extends classMultiExtend(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity) {   // --- py stmt 102
+     constructor(k = 3) {   // --- py stmt 103
+-        this.k = k;   // --- py stmt 104
++        super(); this.k = k;   // --- py stmt 104
+     }
+     distance(s0, s1) {   // --- py stmt 105
+         return 1.0 - this.similarity(s0, s1);   // --- py stmt 106
+@@ -430,24 +430,24 @@ class QGram {   // --- py stmt 122
+         }
+         let profile0 = this.get_profile(s0);   // --- py stmt 132
+         let profile1 = this.get_profile(s1);   // --- py stmt 133
+-        return this.distance_profile(profile0, profile1);   // --- py stmt 134
++        return this.constructor.distance_profile(profile0, profile1);   // --- py stmt 134
+     }
+     static distance_profile(profile0, profile1) {   // --- py stmt 135, py stmt 136
+         let union = new Set();   // --- py stmt 137
+-        for (let k of profile0.keys()) {   // --- py stmt 138
++        for (let k of Object.keys(profile0)) {   // --- py stmt 138
+             union.add(k);   // --- py stmt 139
+         }
+-        for (let k of profile1.keys()) {   // --- py stmt 140
++        for (let k of Object.keys(profile1)) {   // --- py stmt 140
+             union.add(k);   // --- py stmt 141
+         }
+         let agg = 0;   // --- py stmt 142
+         for (let k of union) {   // --- py stmt 143
+             let v0 = 0, v1 = 0;   // --- py stmt 144
+-            if (profile0.get(k) !== null) {   // --- py stmt 145
+-                v0 = parseInt(profile0.get(k));   // --- py stmt 146
++            if (profile0[k] !== null) {   // --- py stmt 145
++                v0 = parseInt(profile0[k]);   // --- py stmt 146
+             }
+             if (profile1.get(k) !== null) {   // --- py stmt 147
+                 v1 = parseInt(profile1.get(k));   // --- py stmt 148
+             }
+             agg += Math.abs(v0 - v1);   // --- py stmt 149
+         }
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,4 @@
+ {
+-  "disable_src_lines": [],
++  "disable_src_lines": [4],
+   "trace_cmp": []
+ }
+\ No newline at end of file

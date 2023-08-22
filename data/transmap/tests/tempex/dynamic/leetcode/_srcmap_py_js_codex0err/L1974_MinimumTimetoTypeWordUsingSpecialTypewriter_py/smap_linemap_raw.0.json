@@ -1,0 +1,132 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minTimeToType",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(word: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = prev = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for c in word:",
+      [
+        4
+      ]
+    ],
+    [
+      "        curr = ord(c) - ord('a')",
+      [
+        5
+      ]
+    ],
+    [
+      "        t = abs(prev - curr)",
+      [
+        6
+      ]
+    ],
+    [
+      "        t = min(t, 26 - t)",
+      [
+        7
+      ]
+    ],
+    [
+      "        ans += t + 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        prev = curr",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(word) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = prev = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var c of word) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var curr = c.charCodeAt(0) - 'a'.charCodeAt(0);",
+      [
+        5
+      ]
+    ],
+    [
+      "        var t = Math.abs(prev - curr);",
+      [
+        6
+      ]
+    ],
+    [
+      "        t = Math.min(t, 26 - t);",
+      [
+        7
+      ]
+    ],
+    [
+      "        ans += t + 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        prev = curr;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

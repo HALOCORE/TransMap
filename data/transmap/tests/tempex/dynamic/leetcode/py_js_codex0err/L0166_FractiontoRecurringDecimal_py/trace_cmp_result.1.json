@@ -1,0 +1,74 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,8,5]",
+    "break_idx": 3,
+    "expected_src_pk": "[7,4,8,23]",
+    "actural_src_pk": "[7,4,8,23]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"numerator\":[\"N\",\"1\"],\"denominator\":[\"N\",\"2\"],\"res\":[\"A\",0],\"neg\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"numerator\":[\"N\",\"1\"],\"denominator\":[\"N\",\"2\"],\"res\":[\"A\",0],\"neg\":[\"B\",\"F\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "neg"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,8,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[7,4,8,23]",
+    "actural_src_pk": "[7,4,8,23]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"numerator\":[\"N\",\"1\"],\"denominator\":[\"N\",\"2\"],\"res\":[\"A\",0],\"neg\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"numerator\":[\"N\",\"1\"],\"denominator\":[\"N\",\"2\"],\"res\":[\"A\",0],\"neg\":[\"B\",\"F\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "neg"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,8,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[7,4,8,23]",
+    "actural_src_pk": "[7,4,8,23]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"numerator\":[\"N\",\"1\"],\"denominator\":[\"N\",\"2\"],\"res\":[\"A\",0],\"neg\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"numerator\":[\"N\",\"1\"],\"denominator\":[\"N\",\"2\"],\"res\":[\"A\",0],\"neg\":[\"B\",\"F\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "neg"
+    ]
+  }
+]

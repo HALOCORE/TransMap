@@ -1,0 +1,46 @@
+
+### Python
+### clumsy 
+from typing import *   # --- py stmt 1
+def f_gold(N: int) -> int:   # --- py stmt 2
+    op = 0   # --- py stmt 3
+    s = [N]   # --- py stmt 4
+    for i in range(N - 1, 0, -1):   # --- py stmt 5
+        if op == 0:   # --- py stmt 6
+            s.append(s.pop() * i)   # --- py stmt 7
+        elif op == 1:   # --- py stmt 8
+            s.append(int(s.pop() / i))   # --- py stmt 9
+        elif op == 2:   # --- py stmt 10
+            s.append(i)   # --- py stmt 11
+        else:   # --- py stmt 12
+            s.append(-i)   # --- py stmt 13
+        op = (op + 1) % 4   # --- py stmt 14
+    return sum(s)   # --- py stmt 15
+
+### JavaScript
+"use strict";
+function f_gold(N) {   // --- py stmt 2
+    var op = 0;   // --- py stmt 3
+    var s = [N];   // --- py stmt 4
+    for (var i = N - 1; i > 0; i--) {   // --- py stmt 5
+        if (op == 0) {   // --- py stmt 6
+            s.push(s.pop() * i);   // --- py stmt 7
+        }
+        else if (op == 1) {   // --- py stmt 8
+            s.push(Math.floor(s.pop() / i));   // --- py stmt 9
+        }
+        else if (op == 2) {   // --- py stmt 10
+            s.push(i);   // --- py stmt 11
+        }
+        else {   // --- py stmt 12
+            s.push(-i);   // --- py stmt 13
+        }
+        op = (op + 1) % 4;   // --- py stmt 14
+    }
+    return s.reduce(function (a, b) {   // --- py stmt 15
+        return a + b;
+    });
+}
+
+
+

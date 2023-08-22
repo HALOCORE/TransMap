@@ -1,0 +1,23 @@
+
+### Python
+import math ;   # --- py stmt 1
+def f_gold(coin, n, k):   # --- py stmt 2
+  coin.sort()   # --- py stmt 3
+  coins_needed = math.ceil(1.0 * n //(k + 1));   # --- py stmt 4
+  ans = 0   # --- py stmt 5
+  for i in range(coins_needed - 1 + 1): ans += coin[i]   # --- py stmt 6
+  return ans   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(coin, n, k) {   // --- py stmt 2
+  coin.sort((a, b) => a-b);   // --- py stmt 3
+  var coins_needed = Math.ceil(1.0 * n / (k + 1));   // --- py stmt 4
+  var ans = 0;   // --- py stmt 5
+  for (var i = 0; i < coins_needed; i++) ans += coin[i];   // --- py stmt 6
+  return ans;   // --- py stmt 7
+}
+
+
+

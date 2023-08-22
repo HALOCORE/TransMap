@@ -1,0 +1,35 @@
+
+### Python
+### sumOddLengthSubarrays 
+from typing import *   # --- py stmt 1
+def f_gold(arr: List[int]) -> int:   # --- py stmt 2
+    n = len(arr)   # --- py stmt 3
+    presum = [0] * (n + 1)   # --- py stmt 4
+    for i in range(n):   # --- py stmt 5
+        presum[i + 1] = presum[i] + arr[i]   # --- py stmt 6
+    res = 0   # --- py stmt 7
+    for i in range(n):   # --- py stmt 8
+        for j in range(0, n, 2):   # --- py stmt 9
+            if i + j < n:   # --- py stmt 10
+                res += presum[i + j + 1] - presum[i]   # --- py stmt 11
+    return res   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(arr) {   // --- py stmt 2
+    let n = arr.length;   // --- py stmt 3
+    let presum = new Array(n + 1);   // --- py stmt 4
+    for (let i = 0; i < n; i++) {   // --- py stmt 5
+        presum[i + 1] = presum[i] + arr[i];   // --- py stmt 6
+    }
+    let res = 0;   // --- py stmt 7
+    for (let i = 0; i < n; i++) {   // --- py stmt 8
+        for (let j = 0; j < n; j += 2) {   // --- py stmt 9
+            if (i + j < n) {   // --- py stmt 10
+                res += presum[i + j + 1] - presum[i];   // --- py stmt 11
+            }
+        }
+    }
+    return res;   // --- py stmt 12
+}
+

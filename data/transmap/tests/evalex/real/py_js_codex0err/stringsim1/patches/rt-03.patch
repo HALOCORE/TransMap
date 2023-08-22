@@ -1,0 +1,60 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -151,7 +151,7 @@ class Cosine {
+ ///// Segment END
+ 
+ ///// Segment BEGIN Jaccard DONE
+-class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {
++class Jaccard extends classMultiExtend(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity) {
+     constructor(k) {
+         super(k);
+     }
+@@ -87,9 +87,9 @@ class NormalizedStringSimilarity extends StringSimilarity {
+ 
+ ///// Segment BEGIN Cosine DONE
+ 
+-class Cosine {
++class Cosine extends classMultiExtend(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity) {
+     constructor(k) {
+-        this.k = k;
++        super(); this.k = k;
+     }
+ 
+     distance(s0, s1) {
+@@ -111,5 +111,5 @@ class Cosine {
+         }
+         let profile0 = this.get_profile(s0);
+         let profile1 = this.get_profile(s1);
+-        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));
++        return this.constructor._dot_product(profile0, profile1) / (this.constructor._norm(profile0) * this.constructor._norm(profile1));
+     }
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -319,7 +319,7 @@ class Cosine {   // --- py stmt 35
+ 
+ 
+ 
+-class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {   // --- py stmt 74
++class Jaccard extends classMultiExtend(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity) {   // --- py stmt 74
+     constructor(k) {   // --- py stmt 75
+         super(k);   // --- py stmt 76
+     }
+@@ -256,9 +256,9 @@ class NormalizedStringSimilarity extends StringSimilarity {   // --- py stmt 31
+ 
+ 
+ 
+-class Cosine {   // --- py stmt 35
++class Cosine extends classMultiExtend(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity) {   // --- py stmt 35
+     constructor(k) {   // --- py stmt 36
+-        this.k = k;   // --- py stmt 37
++        super(); this.k = k;   // --- py stmt 37
+     }   // --- py stmt 37
+ 
+     distance(s0, s1) {   // --- py stmt 38
+@@ -280,5 +280,5 @@ class Cosine {   // --- py stmt 35
+         }   // --- py stmt 48
+         let profile0 = this.get_profile(s0);   // --- py stmt 49
+         let profile1 = this.get_profile(s1);   // --- py stmt 50
+-        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));   // --- py stmt 51
++        return this.constructor._dot_product(profile0, profile1) / (this.constructor._norm(profile0) * this.constructor._norm(profile1));   // --- py stmt 51
+     }   // --- py stmt 51

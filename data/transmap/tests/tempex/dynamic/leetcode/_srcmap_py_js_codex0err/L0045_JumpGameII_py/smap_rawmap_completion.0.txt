@@ -1,0 +1,27 @@
+
+### Python
+### jump 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    end = mx = steps = 0   # --- py stmt 3
+    for i, num in enumerate(nums[:-1]):   # --- py stmt 4
+        mx = max(mx, i + num)   # --- py stmt 5
+        if i == end:   # --- py stmt 6
+            end = mx   # --- py stmt 7
+            steps += 1   # --- py stmt 8
+    return steps   # --- py stmt 9
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    let end = mx = steps = 0;   // --- py stmt 3
+    for (let i = 0; i < nums.length - 1; i++) {   // --- py stmt 4
+        mx = Math.max(mx, i + nums[i]);   // --- py stmt 5
+        if (i == end) {   // --- py stmt 6
+            end = mx;   // --- py stmt 7
+            steps += 1;   // --- py stmt 8
+        }
+    }
+    return steps;   // --- py stmt 9
+}
+

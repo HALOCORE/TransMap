@@ -1,0 +1,296 @@
+### Python
+
+def bcd_to_decimal(max_number=10000):   # --- py stmt 1
+    n = random.randint(1000, max_number)   # --- py stmt 2
+    binstring = ''   # --- py stmt 3
+    while True:   # --- py stmt 4
+        q, r = divmod(n, 10)   # --- py stmt 5
+        nibble = bin(r).replace('0b', "")   # --- py stmt 6
+        while len(nibble) < 4:   # --- py stmt 7
+            nibble = '0' + nibble   # --- py stmt 8
+        binstring = nibble + binstring   # --- py stmt 9
+        if q == 0:   # --- py stmt 10
+            break   # --- py stmt 11
+        else:   # --- py stmt 12
+            n = q   # --- py stmt 13
+
+    problem = f"Integer of Binary Coded Decimal ${n} =$ "   # --- py stmt 14
+    solution = f'${int(binstring, 2)}$'   # --- py stmt 15
+    return problem, solution   # --- py stmt 16
+
+def binary_2s_complement(maxDigits=10):   # --- py stmt 1001
+    digits = random.randint(1, maxDigits)   # --- py stmt 1002
+    question = ''.join([str(random.randint(0, 1)) for i in range(digits)]).lstrip('0')   # --- py stmt 1003
+
+    answer = []   # --- py stmt 1004
+    for i in question:   # --- py stmt 1005
+        answer.append(str(int(not bool(int(i)))))   # --- py stmt 1006
+
+    carry = True   # --- py stmt 1007
+    j = len(answer) - 1   # --- py stmt 1008
+    while j >= 0:   # --- py stmt 1009
+        if answer[j] == '0':   # --- py stmt 1010
+            answer[j] = '1'   # --- py stmt 1011
+            carry = False   # --- py stmt 1012
+            break   # --- py stmt 1013
+        answer[j] = '0'   # --- py stmt 1014
+        j -= 1   # --- py stmt 1015
+
+    if j == 0 and carry is True:   # --- py stmt 1016
+        answer.insert(0, '1')   # --- py stmt 1017
+
+    problem = f"2's complement of ${question} = $"   # --- py stmt 1018
+    solution = ''.join(answer).lstrip('0')   # --- py stmt 1019
+    return problem, f'${solution}$'   # --- py stmt 1020
+
+def binary_complement_1s(maxDigits=10):   # --- py stmt 2001
+    question = ''.join([str(random.randint(0, 1)) for _ in range(random.randint(1, maxDigits))])   # --- py stmt 2002
+    answer = ''.join(["0" if digit == "1" else "1" for digit in question])   # --- py stmt 2003
+
+    problem = f'${question} = $'   # --- py stmt 2004
+    return problem, f'${answer}$'   # --- py stmt 2005
+
+def binary_to_decimal(max_dig=10):   # --- py stmt 3001
+    problem = ''.join([str(random.randint(0, 1)) for _ in range(random.randint(1, max_dig))])   # --- py stmt 3002
+    solution = f'${int(problem, 2)}$'   # --- py stmt 3003
+    return f'${problem}$', solution   # --- py stmt 3004
+
+def binary_to_hex(max_dig=10):   # --- py stmt 4001
+    problem = ''.join([str(random.randint(0, 1)) for _ in range(random.randint(1, max_dig))])   # --- py stmt 4002
+    solution = f'${hex(int(problem, 2))}$'   # --- py stmt 4003
+    return f'${problem}$', solution   # --- py stmt 4004
+
+def decimal_to_bcd(max_number=10000):   # --- py stmt 5001
+    n = random.randint(1000, max_number)   # --- py stmt 5002
+    x = n   # --- py stmt 5003
+    # binstring = ''   # --- py stmt 5004
+    bcdstring = ''   # --- py stmt 5005
+    while x > 0:   # --- py stmt 5006
+        nibble = x % 16   # --- py stmt 5007
+        bcdstring = str(nibble) + bcdstring   # --- py stmt 5008
+        x >>= 4   # --- py stmt 5009
+
+    problem = f"BCD of Decimal Number ${n} = $"   # --- py stmt 5010
+    return problem, f'${bcdstring}$'   # --- py stmt 5011
+
+def decimal_to_binary(max_dec=99):   # --- py stmt 6001
+    a = random.randint(1, max_dec)   # --- py stmt 6002
+    b = bin(a).replace("0b", "")   # --- py stmt 6003
+
+    problem = f'Binary of ${a} = $'   # --- py stmt 6004
+    solution = f'${b}$'   # --- py stmt 6005
+    return problem, solution   # --- py stmt 6006
+
+def decimal_to_hexadeci(max_dec=1000):   # --- py stmt 7001
+    a = random.randint(0, max_dec)   # --- py stmt 7002
+    b = hex(a)   # --- py stmt 7003
+
+    problem = f"Hexadecimal of ${a} = $"   # --- py stmt 7004
+    solution = f"${b}$"   # --- py stmt 7005
+    return problem, solution   # --- py stmt 7006
+
+def decimal_to_octal(max_decimal=4096):   # --- py stmt 8001
+    x = random.randint(0, max_decimal)   # --- py stmt 8002
+
+    problem = f"The decimal number ${x}$ in octal is: "   # --- py stmt 8003
+    solution = f'${oct(x)}$'   # --- py stmt 8004
+
+    return problem, solution   # --- py stmt 8005
+
+def fibonacci_series(min_no=1):   # --- py stmt 9001
+    n = random.randint(min_no, 20)   # --- py stmt 9002
+
+    def createFibList(n):   # --- py stmt 9003
+        list = []   # --- py stmt 9004
+        for i in range(n):   # --- py stmt 9005
+            if i < 2:   # --- py stmt 9006
+                list.append(i)   # --- py stmt 9007
+            else:   # --- py stmt 9008
+                val = list[i - 1] + list[i - 2]   # --- py stmt 9009
+                list.append(val)   # --- py stmt 9010
+        return list   # --- py stmt 9011
+
+    fibList = createFibList(n)   # --- py stmt 9012
+
+    problem = f"The Fibonacci Series of the first ${n}$ numbers is ?"   # --- py stmt 9013
+    solution = ', '.join(map(str, fibList))   # --- py stmt 9014
+    return problem, f'${solution}$'   # --- py stmt 9015
+
+def modulo_division(max_res=99, max_modulo=99):   # --- py stmt 10001
+    a = random.randint(0, max_modulo)   # --- py stmt 10002
+    b = random.randint(0, min(max_res, max_modulo))   # --- py stmt 10003
+    c = a % b if b != 0 else 0   # --- py stmt 10004
+
+    problem = f'${a}$ % ${b}$ = $'   # --- py stmt 10005
+    solution = f'${c}$'   # --- py stmt 10006
+    return problem, solution   # --- py stmt 10007
+
+def nth_fibonacci_number(max_n=100):   # --- py stmt 11001
+    gratio = (1 + math.sqrt(5)) / 2   # --- py stmt 11002
+    n = random.randint(1, max_n)   # --- py stmt 11003
+
+    problem = f"What is the {n}th Fibonacci number?"   # --- py stmt 11004
+    solution = int(
+        (math.pow(gratio, n) - math.pow(-gratio, -n)) / (math.sqrt(5)))   # --- py stmt 11005
+
+    return problem, f'${solution}$'   # --- py stmt 11006
+
+### JavaScript
+
+function bcd_to_decimal(max_number = 10000) {   // --- py stmt 1
+    let n = Math.floor(Math.random() * (max_number - 1000 + 1) + 1000);   // --- py stmt 2
+    let binstring = '';   // --- py stmt 3
+    while (true) {   // --- py stmt 4
+        let [q, r] = [Math.floor(n / 10), n % 10];   // --- py stmt 5
+        let nibble = r.toString(2).replace('0b', "");   // --- py stmt 6
+        while (nibble.length < 4) {   // --- py stmt 7
+            nibble = '0' + nibble;   // --- py stmt 8
+        }
+        binstring = nibble + binstring;   // --- py stmt 9
+        if (q === 0) {   // --- py stmt 10
+            break;   // --- py stmt 11
+        } else {   // --- py stmt 12
+            n = q;   // --- py stmt 13
+        }
+    }
+
+    let problem = `Integer of Binary Coded Decimal $${n} =$ `;   // --- py stmt 14
+    let solution = `$${parseInt(binstring, 2)}$`;   // --- py stmt 15
+    return [problem, solution];   // --- py stmt 16
+}
+
+function binary_2s_complement(maxDigits = 10) {   // --- py stmt 1001
+    let digits = Math.floor(Math.random() * maxDigits) + 1;   // --- py stmt 1002
+    let question = Array.from({length: digits}, () => Math.floor(Math.random() * 2)).join('').replace(/^0+/, '');   // --- py stmt 1003
+
+    let answer = [];   // --- py stmt 1004
+    for (let i of question) {   // --- py stmt 1005
+        answer.push(Number(!Boolean(Number(i))).toString());   // --- py stmt 1006
+    }
+
+    let carry = true;   // --- py stmt 1007
+    let j = answer.length - 1;   // --- py stmt 1008
+    while (j >= 0) {   // --- py stmt 1009
+        if (answer[j] === '0') {   // --- py stmt 1010
+            answer[j] = '1';   // --- py stmt 1011
+            carry = false;   // --- py stmt 1012
+            break;   // --- py stmt 1013
+        }
+        answer[j] = '0';   // --- py stmt 1014
+        j -= 1;   // --- py stmt 1015
+    }
+
+    if (j === 0 && carry === true) {   // --- py stmt 1016
+        answer.unshift('1');   // --- py stmt 1017
+    }
+
+    let problem = `2's complement of $${question} = $`;   // --- py stmt 1018
+    let solution = answer.join('').replace(/^0+/, '');   // --- py stmt 1019
+    return [problem, `$${solution}$`];   // --- py stmt 1020
+}
+
+function binary_complement_1s(maxDigits = 10) {   // --- py stmt 2001
+    let question = [...Array(Math.floor(Math.random() * maxDigits) + 1)].map(() => Math.floor(Math.random() * 2)).join("");   // --- py stmt 2002
+    let answer = question.split("").map(digit => digit === "1" ? "0" : "1").join("");   // --- py stmt 2003
+
+    let problem = `$${question} = $`;   // --- py stmt 2004
+    return [problem, `$${answer}$`];   // --- py stmt 2005
+}
+
+function binary_to_decimal(max_dig = 10) {   // --- py stmt 3001
+    let problem = [...Array(Math.floor(Math.random() * max_dig) + 1)].map(() => Math.floor(Math.random() * 2)).join('');   // --- py stmt 3002
+    let solution = `$${parseInt(problem, 2)}$`;   // --- py stmt 3003
+    return [`$${problem}$`, solution];   // --- py stmt 3004
+}
+
+function binary_to_hex(max_dig = 10) {   // --- py stmt 4001
+    let problem = [...Array(Math.floor(Math.random() * max_dig) + 1)].map(() => Math.floor(Math.random() * 2)).join('');   // --- py stmt 4002
+    let solution = `$0x${parseInt(problem, 2).toString(16)}$`;   // --- py stmt 4003
+    return [`$${problem}$`, solution];   // --- py stmt 4004
+}
+
+function decimal_to_bcd(max_number = 10000) {   // --- py stmt 5001
+    let n = Math.floor(Math.random() * (max_number - 1000 + 1) + 1000);   // --- py stmt 5002
+    let x = n;   // --- py stmt 5003
+    let bcdstring = '';   // --- py stmt 5005
+    while (x > 0) {   // --- py stmt 5006
+        let nibble = x % 16;   // --- py stmt 5007
+        bcdstring = nibble.toString() + bcdstring;   // --- py stmt 5008
+        x >>= 4;   // --- py stmt 5009
+    }
+    let problem = `BCD of Decimal Number $${n} = $`;   // --- py stmt 5010
+    return [problem, `$${bcdstring}$`];   // --- py stmt 5011
+}
+
+function decimal_to_binary(max_dec = 99) {   // --- py stmt 6001
+    const a = Math.floor(Math.random() * max_dec) + 1;   // --- py stmt 6002
+    const b = a.toString(2);   // --- py stmt 6003
+
+    const problem = `Binary of $${a} = $`;   // --- py stmt 6004
+    const solution = `$${b}$`;   // --- py stmt 6005
+    return [problem, solution];   // --- py stmt 6006
+}
+
+function decimal_to_hexadeci(max_dec = 1000) {   // --- py stmt 7001
+    const a = Math.floor(Math.random() * (max_dec + 1));   // --- py stmt 7002
+    const b = a.toString(16);   // --- py stmt 7003
+
+    const problem = `Hexadecimal of $${a} = $`;   // --- py stmt 7004
+    const solution = `$${b}$`;   // --- py stmt 7005
+
+    return [problem, solution];   // --- py stmt 7006
+}
+
+function decimal_to_octal(max_decimal = 4096) {   // --- py stmt 8001
+    const x = Math.floor(Math.random() * (max_decimal + 1));   // --- py stmt 8002
+
+    const problem = `The decimal number $${x}$ in octal is: `;   // --- py stmt 8003
+    const solution = `$0o${x.toString(8)}$`;   // --- py stmt 8004
+
+    return [problem, solution];   // --- py stmt 8005
+}
+
+function fibonacci_series(min_no = 1) {   // --- py stmt 9001
+    const n = Math.floor(Math.random() * (20 - min_no + 1) + min_no);   // --- py stmt 9002
+
+    function createFibList(n) {   // --- py stmt 9003
+        const list = [];   // --- py stmt 9004
+        for (let i = 0; i < n; i++) {   // --- py stmt 9005
+            if (i < 2) {   // --- py stmt 9006
+                list.push(i);   // --- py stmt 9007
+            } else {   // --- py stmt 9008
+                const val = list[i - 1] + list[i - 2];   // --- py stmt 9009
+                list.push(val);   // --- py stmt 9010
+            }
+        }
+        return list;   // --- py stmt 9011
+    }
+
+    const fibList = createFibList(n);   // --- py stmt 9012
+
+    const problem = `The Fibonacci Series of the first $${n}$ numbers is ?`;   // --- py stmt 9013
+    const solution = fibList.join(", ");   // --- py stmt 9014
+    return [problem, `$${solution}$`];   // --- py stmt 9015
+}
+
+function modulo_division(max_res = 99, max_modulo = 99) {   // --- py stmt 10001
+    const a = Math.floor(Math.random() * (max_modulo + 1));   // --- py stmt 10002
+    const b = Math.floor(Math.random() * (Math.min(max_res, max_modulo) + 1));   // --- py stmt 10003
+    const c = b !== 0 ? a % b : 0;   // --- py stmt 10004
+
+    const problem = `$${a}$ % $${b}$ = $`;   // --- py stmt 10005
+    const solution = `$${c}$`;   // --- py stmt 10006
+    return [problem, solution];   // --- py stmt 10007
+}
+
+function nth_fibonacci_number(max_n = 100) {   // --- py stmt 11001
+    const gratio = (1 + Math.sqrt(5)) / 2;   // --- py stmt 11002
+    const n = Math.floor(Math.random() * max_n) + 1;   // --- py stmt 11003
+
+    const problem = `What is the ${n}th Fibonacci number?`;   // --- py stmt 11004
+    const solution = Math.round(
+        (Math.pow(gratio, n) - Math.pow(-gratio, -n)) / (Math.sqrt(5))
+    );   // --- py stmt 11005
+
+    return [problem, `$${solution}$`];   // --- py stmt 11006
+}

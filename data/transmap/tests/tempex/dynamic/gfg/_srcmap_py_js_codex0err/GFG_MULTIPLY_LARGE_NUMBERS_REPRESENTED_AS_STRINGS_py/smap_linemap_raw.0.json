@@ -1,0 +1,346 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(num1, num2):",
+      [
+        1
+      ]
+    ],
+    [
+      "  len1 = len(num1)",
+      [
+        2
+      ]
+    ],
+    [
+      "  len2 = len(num2)",
+      [
+        3
+      ]
+    ],
+    [
+      "  if len1 == 0 or len2 == 0: return \"0\"",
+      [
+        4
+      ]
+    ],
+    [
+      "  result =[0] *(len1 + len2)",
+      [
+        5
+      ]
+    ],
+    [
+      "  i_n1 = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "  i_n2 = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "  for i in range(len1 - 1, - 1, - 1):",
+      [
+        8
+      ]
+    ],
+    [
+      "    carry = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "    n1 = ord(num1[i])- 48",
+      [
+        10
+      ]
+    ],
+    [
+      "    i_n2 = 0",
+      [
+        11
+      ]
+    ],
+    [
+      "    for j in range(len2 - 1, - 1, - 1):",
+      [
+        12
+      ]
+    ],
+    [
+      "      n2 = ord(num2[j])- 48",
+      [
+        13
+      ]
+    ],
+    [
+      "      summ = n1 * n2 + result[i_n1 + i_n2] + carry",
+      [
+        14
+      ]
+    ],
+    [
+      "      carry = summ // 10",
+      [
+        15
+      ]
+    ],
+    [
+      "      result[i_n1 + i_n2] = summ % 10",
+      [
+        16
+      ]
+    ],
+    [
+      "      i_n2 += 1",
+      [
+        17
+      ]
+    ],
+    [
+      "    if(carry > 0): result[i_n1 + i_n2] += carry",
+      [
+        18
+      ]
+    ],
+    [
+      "    i_n1 += 1",
+      [
+        19
+      ]
+    ],
+    [
+      "  i = len(result)- 1",
+      [
+        20
+      ]
+    ],
+    [
+      "  while(i >= 0 and result[i] == 0): i -= 1",
+      [
+        21
+      ]
+    ],
+    [
+      "  if(i == - 1): return \"0\"",
+      [
+        22
+      ]
+    ],
+    [
+      "  s = \"\"",
+      [
+        23
+      ]
+    ],
+    [
+      "  while(i >= 0):",
+      [
+        24
+      ]
+    ],
+    [
+      "    s += chr(result[i] + 48)",
+      [
+        25
+      ]
+    ],
+    [
+      "    i -= 1",
+      [
+        26
+      ]
+    ],
+    [
+      "  return s",
+      [
+        27
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(num1, num2) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var len1 = num1.length;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var len2 = num2.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "  if (len1 == 0 || len2 == 0) return \"0\";",
+      [
+        4
+      ]
+    ],
+    [
+      "  var result = new Array(len1 + len2);",
+      [
+        5
+      ]
+    ],
+    [
+      "  var i_n1 = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "  var i_n2 = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "  for (var i = len1 - 1; i >= 0; i--) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    var carry = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "    var n1 = num1.charCodeAt(i) - 48;",
+      [
+        10
+      ]
+    ],
+    [
+      "    i_n2 = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "    for (var j = len2 - 1; j >= 0; j--) {",
+      [
+        12
+      ]
+    ],
+    [
+      "      var n2 = num2.charCodeAt(j) - 48;",
+      [
+        13
+      ]
+    ],
+    [
+      "      var summ = n1 * n2 + result[i_n1 + i_n2] + carry;",
+      [
+        14
+      ]
+    ],
+    [
+      "      carry = Math.floor(summ / 10);",
+      [
+        15
+      ]
+    ],
+    [
+      "      result[i_n1 + i_n2] = summ % 10;",
+      [
+        16
+      ]
+    ],
+    [
+      "      i_n2++;",
+      [
+        17
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (carry > 0) result[i_n1 + i_n2] += carry;",
+      [
+        18
+      ]
+    ],
+    [
+      "    i_n1++;",
+      [
+        19
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  i = result.length - 1;",
+      [
+        20
+      ]
+    ],
+    [
+      "  while (i >= 0 && result[i] == 0) i--;",
+      [
+        21
+      ]
+    ],
+    [
+      "  if (i == -1) return \"0\";",
+      [
+        22
+      ]
+    ],
+    [
+      "  var s = \"\";",
+      [
+        23
+      ]
+    ],
+    [
+      "  while (i >= 0) {",
+      [
+        24
+      ]
+    ],
+    [
+      "    s += String.fromCharCode(result[i] + 48);",
+      [
+        25
+      ]
+    ],
+    [
+      "    i--;",
+      [
+        26
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return s;",
+      [
+        27
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

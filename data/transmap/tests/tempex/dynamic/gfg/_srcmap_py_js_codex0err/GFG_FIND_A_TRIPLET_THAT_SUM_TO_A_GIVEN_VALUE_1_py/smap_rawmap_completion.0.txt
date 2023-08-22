@@ -1,0 +1,38 @@
+
+### Python
+def f_gold(A, arr_size, sum):   # --- py stmt 1
+  A.sort()   # --- py stmt 2
+  for i in range(0, arr_size - 2):   # --- py stmt 3
+    l = i + 1   # --- py stmt 4
+    r = arr_size - 1   # --- py stmt 5
+    while(l < r):   # --- py stmt 6
+      if(A[i] + A[l] + A[r] == sum): print("Triplet is", A[i], ', ', A[l], ', ', A[r]); return True   # --- py stmt 7
+      elif(A[i] + A[l] + A[r] < sum): l += 1   # --- py stmt 8
+      else: r -= 1   # --- py stmt 9
+  return False   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(A, arr_size, sum) {   // --- py stmt 1
+  A.sort();   // --- py stmt 2
+  for (let i = 0; i < arr_size - 2; i++) {   // --- py stmt 3
+    let l = i + 1;   // --- py stmt 4
+    let r = arr_size - 1;   // --- py stmt 5
+    while (l < r) {   // --- py stmt 6
+      if (A[i] + A[l] + A[r] == sum) {   // --- py stmt 7
+        console.log("Triplet is", A[i], ', ', A[l], ', ', A[r]);   // --- py stmt 7
+        return true;   // --- py stmt 7
+      }
+      else if (A[i] + A[l] + A[r] < sum) {   // --- py stmt 8
+        l += 1;   // --- py stmt 8
+      }
+      else {   // --- py stmt 9
+        r -= 1;   // --- py stmt 9
+      }
+    }
+  }
+  return false;   // --- py stmt 10
+}
+
+
+

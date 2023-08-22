@@ -1,0 +1,9 @@
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,4 @@
+ {
+-  "disable_src_lines": [],
++  "disable_src_lines": ["148-148"],
+   "trace_cmp": []
+ }
+\ No newline at end of file

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 23,
+    "line_end": 24,
+    "content": "    return (nums[left] == target) ? left : -1;",
+    "replacement": "    return left if nums[left] == target else -1;"
+  }
+]

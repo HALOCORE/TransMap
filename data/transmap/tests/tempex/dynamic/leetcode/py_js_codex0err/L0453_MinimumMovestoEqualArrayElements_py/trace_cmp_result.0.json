@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,4,3,44]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+
+### Python
+### productExceptSelf 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> List[int]:   # --- py stmt 2
+    n = len(nums)   # --- py stmt 3
+    ans = [1] * n   # --- py stmt 4
+    left = right = 1   # --- py stmt 5
+    for i in range(n):   # --- py stmt 6
+        ans[i] = left   # --- py stmt 7
+        left *= nums[i]   # --- py stmt 8
+    for i in range(n - 1, -1, -1):   # --- py stmt 9
+        ans[i] *= right   # --- py stmt 10
+        right *= nums[i]   # --- py stmt 11
+    return ans   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    let n = nums.length;   // --- py stmt 3
+    let ans = Array(n).fill(1);   // --- py stmt 4
+    let left = right = 1;   // --- py stmt 5
+    for (let i = 0; i < n; i++) {   // --- py stmt 6
+        ans[i] = left;   // --- py stmt 7
+        left *= nums[i];   // --- py stmt 8
+    }
+    for (let i = n - 1; i >= 0; i--) {   // --- py stmt 9
+        ans[i] *= right;   // --- py stmt 10
+        right *= nums[i];   // --- py stmt 11
+    }
+    return ans;   // --- py stmt 12
+}
+
+
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return (a == b) ? -1 : Math.max(a.length, b.length);",
+    "replacement": "    return -1 if (a == b) else Math.max(a.length, b.length);"
+  }
+]

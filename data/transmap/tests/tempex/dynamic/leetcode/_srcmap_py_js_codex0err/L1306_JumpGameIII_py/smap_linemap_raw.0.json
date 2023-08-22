@@ -1,0 +1,186 @@
+{
+  "src_anno_stmts": [
+    [
+      "### canReach",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int], start: int) -> bool:",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = len(arr)",
+      [
+        4
+      ]
+    ],
+    [
+      "    q = deque([start])",
+      [
+        5
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        6
+      ]
+    ],
+    [
+      "        i = q.popleft()",
+      [
+        7
+      ]
+    ],
+    [
+      "        if arr[i] == 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "            return True",
+      [
+        9
+      ]
+    ],
+    [
+      "        for j in [i + arr[i], i - arr[i]]:",
+      [
+        10
+      ]
+    ],
+    [
+      "            if 0 <= j < n and arr[j] >= 0:",
+      [
+        11
+      ]
+    ],
+    [
+      "                q.append(j)",
+      [
+        12
+      ]
+    ],
+    [
+      "        arr[i] = -1",
+      [
+        13
+      ]
+    ],
+    [
+      "    return False",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, start) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = arr.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var q = [start];",
+      [
+        5
+      ]
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var i = q.shift();",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (arr[i] == 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (var j = 0; j < 2; j++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (0 <= j && j < n && arr[j] >= 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                q.push(j);",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        arr[i] = -1;",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

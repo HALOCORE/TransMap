@@ -1,0 +1,76 @@
+[
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 4,
+    "tar_pk": "[12,4,12,14]",
+    "expected_src_pk": "[13,4,13,13]",
+    "actural_src_pk": "[5,4,5,25]",
+    "src_cov_lines": [
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "tar_cov_lines": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "tar_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"5\"],\"t\":[\"A\",5,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"S\",1,\"a\"],\"b\":[\"S\",2,\"aa\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 6,
+    "tar_pk": "[9,8,9,17]",
+    "expected_src_pk": "[11,8,11,16]",
+    "actural_src_pk": "[5,4,5,25]",
+    "src_cov_lines": [
+      9,
+      10
+    ],
+    "tar_cov_lines": [
+      6
+    ],
+    "tar_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"3\"],\"t\":[\"A\",3,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"S\",1,\"a\"],\"b\":[\"S\",2,\"aa\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 4,
+    "tar_pk": "[9,8,9,17]",
+    "expected_src_pk": "[11,8,11,16]",
+    "actural_src_pk": "[10,12,10,22]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      6
+    ],
+    "tar_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"3\"],\"t\":[\"A\",3,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"3\"],\"t\":[\"A\",3,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

@@ -1,0 +1,160 @@
+{
+  "src_anno_stmts": [
+    [
+      "### characterReplacement",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    counter = [0] * 26",
+      [
+        3
+      ]
+    ],
+    [
+      "    i = j = maxCnt = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    while i < len(s):",
+      [
+        5
+      ]
+    ],
+    [
+      "        counter[ord(s[i]) - ord('A')] += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        maxCnt = max(maxCnt, counter[ord(s[i]) - ord('A')])",
+      [
+        7
+      ]
+    ],
+    [
+      "        if i - j + 1 > maxCnt + k:",
+      [
+        8
+      ]
+    ],
+    [
+      "            counter[ord(s[j]) - ord('A')] -= 1",
+      [
+        9
+      ]
+    ],
+    [
+      "            j += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    return i - j",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var counter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];",
+      [
+        3
+      ]
+    ],
+    [
+      "    var i = j = maxCnt = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    while (i < s.length) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        counter[s.charCodeAt(i) - 65] += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        maxCnt = Math.max(maxCnt, counter[s.charCodeAt(i) - 65]);",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i - j + 1 > maxCnt + k) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            counter[s.charCodeAt(j) - 65] -= 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "            j += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        i += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return i - j;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

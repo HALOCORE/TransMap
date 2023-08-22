@@ -1,0 +1,112 @@
+{
+  "src_anno_stmts": [
+    [
+      "### getMaximumConsecutive",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(coins: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = 1",
+      [
+        3
+      ]
+    ],
+    [
+      "    for coin in sorted(coins):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if coin > res:",
+      [
+        5
+      ]
+    ],
+    [
+      "            break",
+      [
+        6
+      ]
+    ],
+    [
+      "        res += coin",
+      [
+        7
+      ]
+    ],
+    [
+      "    return res",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(coins) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var coin of coins.sort()) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (coin > res) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            break;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        res += coin;",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

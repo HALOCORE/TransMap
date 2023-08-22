@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        let ans = h in d ? (d[h][w] ?? 0) : 0;",
+    "replacement": "        let ans = d[h].get(w, 0);"
+  },
+  {
+    "line_start": 17,
+    "line_end": 19,
+    "content": "    for (let [h, w, p] of prices) {\n        if (!(h in d)) d[h] = {};",
+    "replacement": "    for (let h, w, p of prices) {"
+  }
+]

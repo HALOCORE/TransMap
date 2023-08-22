@@ -1,0 +1,274 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(str, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  dp =[[0 for x in range(n)] for y in range(n)]",
+      [
+        2
+      ]
+    ],
+    [
+      "  P =[[False for x in range(n)] for y in range(n)]",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n): P[i][i] = True",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n - 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(str[i] == str[i + 1]):",
+      [
+        6
+      ]
+    ],
+    [
+      "      P[i][i + 1] = True",
+      [
+        7
+      ]
+    ],
+    [
+      "      dp[i][i + 1] = 1",
+      [
+        8
+      ]
+    ],
+    [
+      "  for gap in range(2, n):",
+      [
+        9
+      ]
+    ],
+    [
+      "    for i in range(n - gap):",
+      [
+        10
+      ]
+    ],
+    [
+      "      j = gap + i ;",
+      [
+        11
+      ]
+    ],
+    [
+      "      if(str[i] == str[j] and P[i + 1][j - 1]): P[i][j] = True",
+      [
+        12
+      ]
+    ],
+    [
+      "      if(P[i][j] == True): dp[i][j] =(dp[i][j - 1] + dp[i + 1][j] + 1 - dp[i + 1][j - 1])",
+      [
+        13
+      ]
+    ],
+    [
+      "      else: dp[i][j] =(dp[i][j - 1] + dp[i + 1][j] - dp[i + 1][j - 1])",
+      [
+        14
+      ]
+    ],
+    [
+      "  return dp[0][n - 1]",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(str, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let dp = new Array(n);",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    dp[i] = new Array(n).fill(0);",
+      [
+        2
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  let P = new Array(n);",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    P[i] = new Array(n);",
+      [
+        3
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    P[i][i] = true;",
+      [
+        4
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let i = 0; i < n - 1; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (str[i] == str[i + 1]) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      P[i][i + 1] = true;",
+      [
+        7
+      ]
+    ],
+    [
+      "      dp[i][i + 1] = 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let gap = 2; gap < n; gap++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n - gap; i++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "      let j = gap + i;",
+      [
+        11
+      ]
+    ],
+    [
+      "      if (str[i] == str[j] && P[i + 1][j - 1]) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        P[i][j] = true;",
+      [
+        12
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "      if (P[i][j] == true) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        dp[i][j] = dp[i][j - 1] + dp[i + 1][j] + 1 - dp[i + 1][j - 1];",
+      [
+        13
+      ]
+    ],
+    [
+      "      } else {",
+      [
+        14
+      ]
+    ],
+    [
+      "        dp[i][j] = dp[i][j - 1] + dp[i + 1][j] - dp[i + 1][j - 1];",
+      [
+        14
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return dp[0][n - 1];",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

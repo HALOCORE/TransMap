@@ -1,0 +1,23 @@
+
+### Python
+def f_gold(a, n):   # --- py stmt 1
+  i, total = 0, 1   # --- py stmt 2
+  for i in range(2, n + 2):   # --- py stmt 3
+    total += i   # --- py stmt 4
+    total -= a[i - 2]   # --- py stmt 5
+  return total   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function f_gold(a, n) {   // --- py stmt 1
+  var i = 0, total = 1;   // --- py stmt 2
+  for (i = 0; i < n + 2; i++) {   // --- py stmt 3
+    total += i;   // --- py stmt 4
+    total -= a[i - 2];   // --- py stmt 5
+  }
+  return total;   // --- py stmt 6
+}
+
+
+

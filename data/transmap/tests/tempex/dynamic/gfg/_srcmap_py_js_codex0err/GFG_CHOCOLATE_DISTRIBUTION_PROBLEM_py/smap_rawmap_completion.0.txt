@@ -1,0 +1,46 @@
+
+### Python
+import sys ;   # --- py stmt 1
+def f_gold(arr, n, m):   # --- py stmt 2
+  if(m == 0 or n == 0): return 0   # --- py stmt 3
+  arr.sort()   # --- py stmt 4
+  if(n < m): return - 1   # --- py stmt 5
+  min_diff = sys.maxsize   # --- py stmt 6
+  first = 0   # --- py stmt 7
+  last = 0   # --- py stmt 8
+  i = 0   # --- py stmt 9
+  while(i + m - 1 < n):   # --- py stmt 10
+    diff = arr[i + m - 1] - arr[i]   # --- py stmt 11
+    if(diff < min_diff):   # --- py stmt 12
+      min_diff = diff   # --- py stmt 13
+      first = i   # --- py stmt 14
+      last = i + m - 1   # --- py stmt 15
+    i += 1   # --- py stmt 16
+  return(arr[last] - arr[first])   # --- py stmt 17
+
+
+### JavaScript
+"use strict";
+
+function f_gold(arr, n, m) {   // --- py stmt 2
+  if (m == 0 || n == 0) return 0;   // --- py stmt 3
+  arr.sort();   // --- py stmt 4
+  if (n < m) return -1;   // --- py stmt 5
+  var min_diff = Number.MAX_VALUE;   // --- py stmt 6
+  var first = 0;   // --- py stmt 7
+  var last = 0;   // --- py stmt 8
+  var i = 0;   // --- py stmt 9
+  while (i + m - 1 < n) {   // --- py stmt 10
+    var diff = arr[i + m - 1] - arr[i];   // --- py stmt 11
+    if (diff < min_diff) {   // --- py stmt 12
+      min_diff = diff;   // --- py stmt 13
+      first = i;   // --- py stmt 14
+      last = i + m - 1;   // --- py stmt 15
+    }
+    i += 1;   // --- py stmt 16
+  }
+  return arr[last] - arr[first];   // --- py stmt 17
+}
+
+
+

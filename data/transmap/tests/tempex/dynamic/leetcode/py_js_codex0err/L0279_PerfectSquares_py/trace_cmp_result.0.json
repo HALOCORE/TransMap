@@ -1,0 +1,74 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,4,11,22]",
+    "actural_src_pk": "[6,4,11,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"12\"],\"dp\":[\"A\",13,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"12\"],\"dp\":[\"A\",13,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,4,11,22]",
+    "actural_src_pk": "[6,4,11,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"12\"],\"dp\":[\"A\",13,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"12\"],\"dp\":[\"A\",13,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,4,11,22]",
+    "actural_src_pk": "[6,4,11,22]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"12\"],\"dp\":[\"A\",13,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"12\"],\"dp\":[\"A\",13,[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"],[\"N\",\"0\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp"
+    ]
+  }
+]

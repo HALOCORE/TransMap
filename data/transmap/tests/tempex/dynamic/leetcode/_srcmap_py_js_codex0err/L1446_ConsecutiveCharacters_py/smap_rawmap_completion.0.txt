@@ -1,0 +1,30 @@
+
+### Python
+### maxPower 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    ans = t = 0   # --- py stmt 3
+    for i, c in enumerate(s):   # --- py stmt 4
+        if i == 0 or c == s[i - 1]:   # --- py stmt 5
+            t += 1   # --- py stmt 6
+        else:   # --- py stmt 7
+            t = 1   # --- py stmt 8
+        ans = max(ans, t)   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var ans = t = 0;   // --- py stmt 3
+    for (var i = 0; i < s.length; i++) {   // --- py stmt 4
+        if (i == 0 || s[i] == s[i - 1]) {   // --- py stmt 5
+            t += 1;   // --- py stmt 6
+        }
+        else {   // --- py stmt 7
+            t = 1;   // --- py stmt 8
+        }
+        ans = Math.max(ans, t);   // --- py stmt 9
+    }
+    return ans;   // --- py stmt 10
+}
+

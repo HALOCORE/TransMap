@@ -1,0 +1,152 @@
+{
+  "src_anno_stmts": [
+    [
+      "### bestTeamScore",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(scores: List[int], ages: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    nums = list(zip(ages, scores))",
+      [
+        3
+      ]
+    ],
+    [
+      "    nums.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(nums)",
+      [
+        5
+      ]
+    ],
+    [
+      "    dp = [num[1] for num in nums]",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        7
+      ]
+    ],
+    [
+      "        for j in range(i):",
+      [
+        8
+      ]
+    ],
+    [
+      "            if nums[i][1] >= nums[j][1]:",
+      [
+        9
+      ]
+    ],
+    [
+      "                dp[i] = max(dp[i], dp[j] + nums[i][1])",
+      [
+        10
+      ]
+    ],
+    [
+      "    return max(dp)",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(scores, ages) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var nums = Array.from(zip(ages, scores));",
+      [
+        3
+      ]
+    ],
+    [
+      "    nums.sort((a, b) => a[0] !== b[0] ? a[0] - b[0] : a[1] - b[1]);",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = nums.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var dp = nums.map(function (num) { return num[1]; });",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (var j = 0; j < i; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (nums[i][1] >= nums[j][1]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                dp[i] = Math.max(dp[i], dp[j] + nums[i][1]);",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.max.apply(Math, dp);",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

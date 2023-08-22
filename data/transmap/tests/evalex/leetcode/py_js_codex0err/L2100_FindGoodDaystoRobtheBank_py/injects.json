@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    var left = Array(n).fill(0), right = Array(n).fill(0);",
+    "replacement": "    var left = [], right = [];"
+  },
+  {
+    "line_start": 17,
+    "line_end": 24,
+    "content": "    var result = [];\n    for (var i = 0; i < n; i++) {\n        if (time <= Math.min(left[i], right[i])) {\n            result.push(i);\n        }\n    }\n    return result;",
+    "replacement": "    return [i for (i = 0; i < n; i++) if (time <= Math.min(left[i], right[i]))];"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[8,2,8,21]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"ReferenceError: n2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"rKZ\"],\"str2\":[\"S\",7,\"VkfzrPG\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",0,\"\"],\"n1\":[\"N\",\"3\"],\"n2\":[\"N\",\"7\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[8,2,8,21]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"ReferenceError: n2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"rKZ\"],\"str2\":[\"S\",7,\"VkfzrPG\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",0,\"\"],\"n1\":[\"N\",\"3\"],\"n2\":[\"N\",\"7\"]}",
+      ""
+    ]
+  }
+]

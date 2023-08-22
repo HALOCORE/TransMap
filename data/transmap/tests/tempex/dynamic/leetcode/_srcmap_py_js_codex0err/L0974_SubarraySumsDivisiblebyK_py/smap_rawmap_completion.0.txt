@@ -1,0 +1,28 @@
+
+### Python
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(nums: List[int], k: int) -> int:   # --- py stmt 3
+    ans = s = 0   # --- py stmt 4
+    counter = Counter({0: 1})   # --- py stmt 5
+    for num in nums:   # --- py stmt 6
+        s += num   # --- py stmt 7
+        ans += counter[s % k]   # --- py stmt 8
+        counter[s % k] += 1   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 3
+    var ans = s = 0;   // --- py stmt 4
+    var counter = { 0: 1 };   // --- py stmt 5
+    for (var i = 0; i < nums.length; i++) {   // --- py stmt 6
+        s += nums[i];   // --- py stmt 7
+        ans += s % k in counter ? counter[s % k] : 0;   // --- py stmt 8
+        counter[s % k] = s % k in counter ? counter[s % k] + 1 : 1;   // --- py stmt 9
+    }
+    return ans;   // --- py stmt 10
+}
+
+
+

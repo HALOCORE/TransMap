@@ -1,0 +1,200 @@
+{
+  "src_anno_stmts": [
+    [
+      "### decrypt",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(code: List[int], k: int) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(code)",
+      [
+        3
+      ]
+    ],
+    [
+      "    res = [0] * n",
+      [
+        4
+      ]
+    ],
+    [
+      "    if k == 0:",
+      [
+        5
+      ]
+    ],
+    [
+      "        return res",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        7
+      ]
+    ],
+    [
+      "        if k > 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "            for j in range(i + 1, i + k + 1):",
+      [
+        9
+      ]
+    ],
+    [
+      "                res[i] += code[j % n]",
+      [
+        10
+      ]
+    ],
+    [
+      "        else:",
+      [
+        11
+      ]
+    ],
+    [
+      "            for j in range(i + k, i):",
+      [
+        12
+      ]
+    ],
+    [
+      "                res[i] += code[(j + n) % n]",
+      [
+        13
+      ]
+    ],
+    [
+      "    return res",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(code, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = code.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var res = [0] * n;",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (k == 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        return res;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (k > 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            for (var j = i + 1; j < i + k + 1; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                res[i] += code[j % n];",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        11
+      ]
+    ],
+    [
+      "            for (var j = i + k; j < i; j++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                res[i] += code[(j + n) % n];",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

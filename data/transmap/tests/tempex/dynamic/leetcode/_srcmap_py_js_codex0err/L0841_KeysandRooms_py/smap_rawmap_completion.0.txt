@@ -1,0 +1,34 @@
+
+### Python
+### canVisitAllRooms 
+from typing import *   # --- py stmt 1
+def f_gold(rooms: List[List[int]]) -> bool:   # --- py stmt 2
+    def dfs(u):   # --- py stmt 3
+        if u in vis:   # --- py stmt 4
+            return   # --- py stmt 5
+        vis.add(u)   # --- py stmt 6
+        for v in rooms[u]:   # --- py stmt 7
+            dfs(v)   # --- py stmt 8
+    vis = set()   # --- py stmt 9
+    dfs(0)   # --- py stmt 10
+    return len(vis) == len(rooms)   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(rooms) {   // --- py stmt 2
+    function dfs(u) {   // --- py stmt 3
+        if (u in vis) {   // --- py stmt 4
+            return;   // --- py stmt 5
+        }
+        vis.add(u);   // --- py stmt 6
+        for (let v of rooms[u]) {   // --- py stmt 7
+            dfs(v);   // --- py stmt 8
+        }
+    }
+    let vis = new Set();   // --- py stmt 9
+    dfs(0);   // --- py stmt 10
+    return vis.size == rooms.length;   // --- py stmt 11
+}
+
+
+

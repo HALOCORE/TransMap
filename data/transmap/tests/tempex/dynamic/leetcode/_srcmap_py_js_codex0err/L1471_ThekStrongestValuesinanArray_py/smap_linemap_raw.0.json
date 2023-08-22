@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### getStrongest",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int], k: int) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    arr.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "    m = arr[(len(arr) - 1) >> 1]",
+      [
+        4
+      ]
+    ],
+    [
+      "    arr.sort(key=lambda x: (-abs(x - m), -x))",
+      [
+        5
+      ]
+    ],
+    [
+      "    return arr[:k]",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "    var m = arr[(arr.length - 1) >> 1];",
+      [
+        4
+      ]
+    ],
+    [
+      "    arr.sort(function (x, y) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        let diff1 = -Math.abs(x - m) + Math.abs(y - m);",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (diff1 === 0) return -x + y; else return diff1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "    return arr.slice(0, k);",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minimumAverageDifference",
+      null
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "import math",
+      [
+        2
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        3
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        4
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        5
+      ]
+    ],
+    [
+      "    s = list(accumulate(nums))",
+      [
+        6
+      ]
+    ],
+    [
+      "    ans, n = 0, len(nums)",
+      [
+        7
+      ]
+    ],
+    [
+      "    mi = float('inf')",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        9
+      ]
+    ],
+    [
+      "        a = s[i] // (i + 1)",
+      [
+        10
+      ]
+    ],
+    [
+      "        b = 0 if i == n - 1 else (s[-1] - s[i]) // (n - i - 1)",
+      [
+        11
+      ]
+    ],
+    [
+      "        t = abs(a - b)",
+      [
+        12
+      ]
+    ],
+    [
+      "        if mi > t:",
+      [
+        13
+      ]
+    ],
+    [
+      "            ans = i",
+      [
+        14
+      ]
+    ],
+    [
+      "            mi = t",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    let s = nums.map((sum => value => sum += value)(0));",
+      [
+        6
+      ]
+    ],
+    [
+      "    let ans = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    let n = nums.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    let mi = Number.MAX_VALUE;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        let a = s[i] / (i + 1);",
+      [
+        10
+      ]
+    ],
+    [
+      "        let b = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "        if (i != n - 1) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            b = Math.floor((s[s.length - 1] - s[i]) / (n - i - 1));",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        let t = Math.abs(a - b);",
+      [
+        12
+      ]
+    ],
+    [
+      "        if (mi > t) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            ans = i;",
+      [
+        14
+      ]
+    ],
+    [
+      "            mi = t;",
+      [
+        15
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

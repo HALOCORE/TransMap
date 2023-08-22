@@ -1,0 +1,55 @@
+
+### Python
+### findAnagrams 
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(s: str, p: str) -> List[int]:   # --- py stmt 3
+    counter = Counter(p)   # --- py stmt 4
+    ans = []   # --- py stmt 5
+    left = right = 0   # --- py stmt 6
+    t = Counter()   # --- py stmt 7
+    while right < len(s):   # --- py stmt 8
+        t[s[right]] += 1   # --- py stmt 9
+        while t[s[right]] > counter[s[right]]:   # --- py stmt 10
+            t[s[left]] -= 1   # --- py stmt 11
+            left += 1   # --- py stmt 12
+        if right - left + 1 == len(p):   # --- py stmt 13
+            ans.append(left)   # --- py stmt 14
+        right += 1   # --- py stmt 15
+    return ans   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(s, p) {   // --- py stmt 3
+    let counter = new Map();   // --- py stmt 4
+    for (let i = 0; i < p.length; i++) {   // --- py stmt 4
+        if (counter.has(p[i])) {   // --- py stmt 4
+            counter.set(p[i], counter.get(p[i]) + 1);   // --- py stmt 4
+        } else {   // --- py stmt 4
+            counter.set(p[i], 1);   // --- py stmt 4
+        }
+    }
+    let ans = [];   // --- py stmt 5
+    let left = 0;   // --- py stmt 6
+    let right = 0;   // --- py stmt 6
+    let t = new Map();   // --- py stmt 7
+    while (right < s.length) {   // --- py stmt 8
+        if (t.has(s[right])) {   // --- py stmt 9
+            t.set(s[right], t.get(s[right]) + 1);   // --- py stmt 9
+        } else {   // --- py stmt 9
+            t.set(s[right], 1);   // --- py stmt 9
+        }
+        while ((t.has(s[right]) ? t.get(s[right]) : 0) > (counter.has(s[right]) ? counter.get(s[right]) : 0)) {   // --- py stmt 10
+            t.set(s[left], t.get(s[left]) - 1);   // --- py stmt 11
+            left += 1;   // --- py stmt 12
+        }
+        if (right - left + 1 == p.length) {   // --- py stmt 13
+            ans.push(left);   // --- py stmt 14
+        }
+        right += 1;   // --- py stmt 15
+    }
+    return ans;   // --- py stmt 16
+}
+
+
+

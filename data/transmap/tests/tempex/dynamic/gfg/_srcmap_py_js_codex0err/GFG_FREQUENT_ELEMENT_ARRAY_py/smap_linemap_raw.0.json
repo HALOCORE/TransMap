@@ -1,0 +1,218 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        2
+      ]
+    ],
+    [
+      "  max_count = 1 ;",
+      [
+        3
+      ]
+    ],
+    [
+      "  res = arr[0] ;",
+      [
+        4
+      ]
+    ],
+    [
+      "  curr_count = 1",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(1, n):",
+      [
+        6
+      ]
+    ],
+    [
+      "    if(arr[i] == arr[i - 1]): curr_count += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    else:",
+      [
+        8
+      ]
+    ],
+    [
+      "      if(curr_count > max_count):",
+      [
+        9
+      ]
+    ],
+    [
+      "        max_count = curr_count",
+      [
+        10
+      ]
+    ],
+    [
+      "        res = arr[i - 1]",
+      [
+        11
+      ]
+    ],
+    [
+      "      curr_count = 1",
+      [
+        12
+      ]
+    ],
+    [
+      "  if(curr_count > max_count):",
+      [
+        13
+      ]
+    ],
+    [
+      "    max_count = curr_count",
+      [
+        14
+      ]
+    ],
+    [
+      "    res = arr[n - 1]",
+      [
+        15
+      ]
+    ],
+    [
+      "  return res",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "  var max_count = 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var res = arr[0];",
+      [
+        4
+      ]
+    ],
+    [
+      "  var curr_count = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (var i = 1; i < n; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    if (arr[i] == arr[i - 1]) curr_count += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    else {",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (curr_count > max_count) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        max_count = curr_count;",
+      [
+        10
+      ]
+    ],
+    [
+      "        res = arr[i - 1];",
+      [
+        11
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "      curr_count = 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  if (curr_count > max_count) {",
+      [
+        13
+      ]
+    ],
+    [
+      "    max_count = curr_count;",
+      [
+        14
+      ]
+    ],
+    [
+      "    res = arr[n - 1];",
+      [
+        15
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return res;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+
+### Python
+import math ;   # --- py stmt 1
+def f_gold(n):   # --- py stmt 2
+  if(n < 0): return 0 ;   # --- py stmt 3
+  if(n <= 1): return 1 ;   # --- py stmt 4
+  x =((n * math.log10(n / math.e)+ math.log10(2 * math.pi * n)/ 2.0));   # --- py stmt 5
+  return math.floor(x)+ 1 ;   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 2
+  if (n < 0) return 0;   // --- py stmt 3
+  if (n <= 1) return 1;   // --- py stmt 4
+  var x = (n * Math.log10(n / Math.e) + Math.log10(2 * Math.PI * n) / 2.0);   // --- py stmt 5
+  return Math.floor(x) + 1;   // --- py stmt 6
+}
+
+
+

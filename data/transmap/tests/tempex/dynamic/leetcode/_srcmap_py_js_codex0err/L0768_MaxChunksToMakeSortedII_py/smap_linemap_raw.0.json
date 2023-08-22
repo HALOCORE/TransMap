@@ -1,0 +1,168 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxChunksToSorted",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    stk = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for v in arr:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if not stk or v >= stk[-1]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            stk.append(v)",
+      [
+        6
+      ]
+    ],
+    [
+      "        else:",
+      [
+        7
+      ]
+    ],
+    [
+      "            mx = stk.pop()",
+      [
+        8
+      ]
+    ],
+    [
+      "            while stk and stk[-1] > v:",
+      [
+        9
+      ]
+    ],
+    [
+      "                stk.pop()",
+      [
+        10
+      ]
+    ],
+    [
+      "            stk.append(mx)",
+      [
+        11
+      ]
+    ],
+    [
+      "    return len(stk)",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let stk = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let v of arr) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (!stk || v >= stk[stk.length - 1]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            stk.push(v);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            let mx = stk.pop();",
+      [
+        8
+      ]
+    ],
+    [
+      "            while (stk && stk[stk.length - 1] > v) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                stk.pop();",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            stk.push(mx);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return stk.length;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

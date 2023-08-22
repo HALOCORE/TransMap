@@ -1,0 +1,17 @@
+
+### Python
+def sort_third(l: list):   # --- py stmt 1
+    l = list(l)   # --- py stmt 2
+    l[::3] = sorted(l[::3])   # --- py stmt 3
+    return l   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function sort_third(l) {   // --- py stmt 1
+    l = l.slice();   // --- py stmt 2
+    l = l.map((value, index) => index % 3 === 0 ? aux.shift() : value);   // --- py stmt 3
+    return l;   // --- py stmt 4
+}
+
+
+

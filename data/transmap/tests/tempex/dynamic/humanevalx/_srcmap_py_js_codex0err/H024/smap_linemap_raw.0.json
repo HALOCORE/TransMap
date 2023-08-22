@@ -1,0 +1,66 @@
+{
+  "src_anno_stmts": [
+    [
+      "def largest_divisor(n: int) -> int:",
+      [
+        1
+      ]
+    ],
+    [
+      "    for i in reversed(range(n)):",
+      [
+        2
+      ]
+    ],
+    [
+      "        if n % i == 0:",
+      [
+        3
+      ]
+    ],
+    [
+      "            return i",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function largest_divisor(n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    for (var i = n; i >= 0; i--) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        if (n % i === 0) {",
+      [
+        3
+      ]
+    ],
+    [
+      "            return i;",
+      [
+        4
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

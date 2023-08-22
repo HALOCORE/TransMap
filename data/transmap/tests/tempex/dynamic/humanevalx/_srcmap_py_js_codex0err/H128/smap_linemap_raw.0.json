@@ -1,0 +1,86 @@
+{
+  "src_anno_stmts": [
+    [
+      "def prod_signs(arr):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if not arr: return None",
+      [
+        2
+      ]
+    ],
+    [
+      "    prod = 0 if 0 in arr else (-1) ** len(list(filter(lambda x: x < 0, arr)))",
+      [
+        3
+      ]
+    ],
+    [
+      "    return prod * sum([abs(i) for i in arr])",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function prod_signs(arr) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (!arr) return null;",
+      [
+        2
+      ]
+    ],
+    [
+      "    let prod = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (arr.includes(0)) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        prod = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    } else {",
+      [
+        3
+      ]
+    ],
+    [
+      "        prod = (-1) ** arr.filter(x => x < 0).length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return prod * arr.reduce((acc, curr) => acc + Math.abs(curr), 0);",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

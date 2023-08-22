@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    for (var i = N - 1; i > 0; i--) {",
+    "replacement": "    for (var i = N - 1; i >= 0; i--) {"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "            s.push(Math.trunc(s.pop() / i));",
+    "replacement": "            s.push(Math.floor(s.pop() / i));"
+  },
+  {
+    "line_start": 18,
+    "line_end": 21,
+    "content": "    return s.reduce(function (a, b) {\n        return a + b;\n    });",
+    "replacement": "    return s.reduce(function (a, b) { return a + b; });"
+  }
+]

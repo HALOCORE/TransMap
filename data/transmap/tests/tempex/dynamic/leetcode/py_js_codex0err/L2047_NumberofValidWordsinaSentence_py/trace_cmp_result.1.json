@@ -1,0 +1,101 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "NOT_EXIST",
+    "src_cov_lines": "NOT_EXIST",
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      15,
+      17
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: token[(i - 1)].islower is not a function\"}",
+      ""
+    ],
+    "src_data": "NOT_EXIST"
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 35,
+    "actural_src_pk": "NOT_EXIST",
+    "src_cov_lines": "NOT_EXIST",
+    "tar_cov_lines": [
+      3,
+      4,
+      5,
+      8,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: token[(i - 1)].islower is not a function\"}",
+      ""
+    ],
+    "src_data": "NOT_EXIST"
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 112,
+    "actural_src_pk": "[6,12,7,28]",
+    "src_cov_lines": [
+      8,
+      9,
+      17
+    ],
+    "tar_cov_lines": [
+      8,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: token[(i - 1)].islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",12,\"stone-game10\"],\"hyphen\":[\"B\",\"T\"],\"i\":[\"N\",\"6\"],\"c\":[\"S\",1,\"g\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 78,
+    "actural_src_pk": "[17,16,17,29]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: token[(i - 1)].islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",12,\"stone-game10\"],\"hyphen\":[\"B\",\"F\"],\"i\":[\"N\",\"5\"],\"c\":[\"S\",1,\"-\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[17,16,17,29]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: token[(i - 1)].islower is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"token\":[\"S\",12,\"stone-game10\"],\"hyphen\":[\"B\",\"F\"],\"i\":[\"N\",\"5\"],\"c\":[\"S\",1,\"-\"]}",
+      ""
+    ]
+  }
+]

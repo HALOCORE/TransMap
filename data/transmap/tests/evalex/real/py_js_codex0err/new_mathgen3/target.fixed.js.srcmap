@@ -1,0 +1,841 @@
+### Python
+
+def angle_btw_vectors(max_elt_amt=20):   # --- py stmt 1
+    s = 0   # --- py stmt 2
+    v1 = [round(random.uniform(0, 1000), 2) for i in range(random.randint(2, max_elt_amt))]   # --- py stmt 3
+    v2 = [round(random.uniform(0, 1000), 2) for i in v1]   # --- py stmt 4
+    for i in range(len(v1)):   # --- py stmt 5
+        s += v1[i] * v2[i]   # --- py stmt 6
+
+    mags = math.sqrt(sum([i**2 for i in v1])) * math.sqrt(sum([i**2 for i in v2]))   # --- py stmt 7
+    solution = ''   # --- py stmt 8
+    ans = 0   # --- py stmt 9
+    try:   # --- py stmt 10
+        ans = round(math.acos(s / mags), 2)   # --- py stmt 11
+        solution = f"${ans}$ radians"   # --- py stmt 12
+    except ValueError:   # --- py stmt 13
+        print('angleBtwVectorsFunc has some issues with math module, line 16')   # --- py stmt 14
+        solution = 'NaN'   # --- py stmt 15
+        ans = 'NaN'   # --- py stmt 16
+    problem = f"angle between the vectors ${v1}$ and ${v2}$ is:"   # --- py stmt 17
+    return problem, solution   # --- py stmt 18
+
+def angle_regular_polygon(min_val=3, max_val=20):   # --- py stmt 1001
+    sideNum = random.randint(min_val, max_val)   # --- py stmt 1002
+    problem = f"Find the angle of a regular polygon with ${sideNum}$ sides"   # --- py stmt 1003
+
+    exteriorAngle = round((360 / sideNum), 2)   # --- py stmt 1004
+    solution = f'${180 - exteriorAngle}$'   # --- py stmt 1005
+
+    return problem, solution   # --- py stmt 1006
+
+def arc_length(max_radius=49, max_angle=359):   # --- py stmt 2001
+    radius = random.randint(1, max_radius)   # --- py stmt 2002
+    angle = random.randint(1, max_angle)   # --- py stmt 2003
+    angle_arc_length = float((angle / 360) * 2 * math.pi * radius)   # --- py stmt 2004
+    formatted_float = "{:.5f}".format(angle_arc_length)   # --- py stmt 2005
+
+    problem = f"Given radius, ${radius}$ and angle, ${angle}$. Find the arc length of the angle."   # --- py stmt 2006
+    solution = f"Arc length of the angle $= {formatted_float}$"   # --- py stmt 2007
+    return problem, solution   # --- py stmt 2008
+
+def area_of_circle(max_radius=100):   # --- py stmt 3001
+    r = random.randint(0, max_radius)   # --- py stmt 3002
+    area = round(pi * r * r, 2)   # --- py stmt 3003
+
+    problem = f'Area of circle with radius ${r}=$'   # --- py stmt 3004
+    return problem, f'${area}$'   # --- py stmt 3005
+
+def area_of_circle_given_center_and_point(max_coordinate=10, max_radius=10):   # --- py stmt 4001
+    r = random.randint(0, max_radius)   # --- py stmt 4002
+    center_x = random.randint(-max_coordinate, max_coordinate)   # --- py stmt 4003
+    center_y = random.randint(-max_coordinate, max_coordinate)   # --- py stmt 4004
+
+    angle = random.choice([0, pi // 6, pi // 2, pi, pi + pi // 6, 3 * pi // 2])   # --- py stmt 4005
+
+    point_x = center_x + round(r * cos(angle), 2)   # --- py stmt 4006
+    point_y = center_y + round(r * sin(angle), 2)   # --- py stmt 4007
+
+    area = round(pi * r * r, 2)   # --- py stmt 4008
+
+    problem = f"Area of circle with center $({center_x},{center_y})$ and passing through $({point_x}, {point_y})$ is"   # --- py stmt 4009
+    return problem, f'${area}$'   # --- py stmt 4010
+
+def area_of_triangle(max_a=20, max_b=20):   # --- py stmt 5001
+    a = random.randint(1, max_a)   # --- py stmt 5002
+    b = random.randint(1, max_b)   # --- py stmt 5003
+    c = random.randint(abs(b - a) + 1, abs(a + b) - 1)   # --- py stmt 5004
+
+    s = (a + b + c) / 2   # --- py stmt 5005
+    area = (s * (s - a) * (s - b) * (s - c))**0.5   # --- py stmt 5006
+
+    problem = f"Area of triangle with side lengths: ${a}, {b}, {c} = $"   # --- py stmt 5007
+    solution = f'${round(area, 2)}$'   # --- py stmt 5008
+    return problem, solution   # --- py stmt 5009
+
+def circumference(max_radius=100):   # --- py stmt 6001
+    r = random.randint(0, max_radius)   # --- py stmt 6002
+    circumference = round(2 * math.pi * r, 2)   # --- py stmt 6003
+
+    problem = f"Circumference of circle with radius ${r} = $"   # --- py stmt 6004
+    return problem, f'${circumference}$'   # --- py stmt 6005
+
+def complementary_and_supplementary_angle(max_supp=180, max_comp=90):   # --- py stmt 7001
+    angleType = random.choice(["supplementary", "complementary"])   # --- py stmt 7002
+
+    if angleType == "supplementary":   # --- py stmt 7003
+        angle = random.randint(1, max_supp)   # --- py stmt 7004
+        angleAns = 180 - angle   # --- py stmt 7005
+    else:   # --- py stmt 7006
+        angle = random.randint(1, max_comp)   # --- py stmt 7007
+        angleAns = 90 - angle   # --- py stmt 7008
+
+    problem = f"The {angleType} angle of ${angle} =$"   # --- py stmt 7009
+    solution = f'${angleAns}$'   # --- py stmt 7010
+    return problem, solution   # --- py stmt 7011
+
+def curved_surface_area_cylinder(max_radius=49, max_height=99):   # --- py stmt 8001
+    r = random.randint(1, max_radius)   # --- py stmt 8002
+    h = random.randint(1, max_height)   # --- py stmt 8003
+    csa = float(2 * math.pi * r * h)   # --- py stmt 8004
+    formatted_float = round(csa, 2)  # "{:.5f}".format(csa)   # --- py stmt 8005
+
+    problem = f"What is the curved surface area of a cylinder of radius, ${r}$ and height, ${h}$?"   # --- py stmt 8006
+    solution = f"${formatted_float}$"   # --- py stmt 8007
+    return problem, solution   # --- py stmt 8008
+
+def degree_to_rad(max_deg=360):   # --- py stmt 9001
+    a = random.randint(0, max_deg)   # --- py stmt 9002
+    b = (math.pi * a) / 180   # --- py stmt 9003
+    b = round(b, 2)   # --- py stmt 9004
+
+    problem = f"Angle ${a}$ degrees in radians is: "   # --- py stmt 9005
+    solution = f'${b}$'   # --- py stmt 9006
+    return problem, solution   # --- py stmt 9007
+
+def equation_of_line_from_two_points(max_coordinate=20, min_coordinate=-20):   # --- py stmt 10001
+    x1 = random.randint(min_coordinate, max_coordinate)   # --- py stmt 10002
+    x2 = random.randint(min_coordinate, max_coordinate)   # --- py stmt 10003
+
+    y1 = random.randint(min_coordinate, max_coordinate)   # --- py stmt 10004
+    y2 = random.randint(min_coordinate, max_coordinate)   # --- py stmt 10005
+
+    coeff_y = (x2 - x1)   # --- py stmt 10006
+    coeff_x = (y2 - y1)   # --- py stmt 10007
+    constant = y2 * coeff_y - x2 * coeff_x   # --- py stmt 10008
+
+    gcd = math.gcd(abs(coeff_x), abs(coeff_y))   # --- py stmt 10009
+
+    if gcd != 1:   # --- py stmt 10010
+        if coeff_y > 0:   # --- py stmt 10011
+            coeff_y //= gcd   # --- py stmt 10012
+        if coeff_x > 0:   # --- py stmt 10013
+            coeff_x //= gcd   # --- py stmt 10014
+        if constant > 0:   # --- py stmt 10015
+            constant //= gcd   # --- py stmt 10016
+        if coeff_y < 0:   # --- py stmt 10017
+            coeff_y = -(-coeff_y // gcd)   # --- py stmt 10018
+        if coeff_x < 0:   # --- py stmt 10019
+            coeff_x = -(-coeff_x // gcd)   # --- py stmt 10020
+        if constant < 0:   # --- py stmt 10021
+            constant = -(-constant // gcd)   # --- py stmt 10022
+    if coeff_y < 0:   # --- py stmt 10023
+        coeff_y = -(coeff_y)   # --- py stmt 10024
+        coeff_x = -(coeff_x)   # --- py stmt 10025
+        constant = -(constant)   # --- py stmt 10026
+    if coeff_x in [1, -1]:   # --- py stmt 10027
+        if coeff_x == 1:   # --- py stmt 10028
+            coeff_x = ''   # --- py stmt 10029
+        else:   # --- py stmt 10030
+            coeff_x = '-'   # --- py stmt 10031
+    if coeff_y in [1, -1]:   # --- py stmt 10032
+        if coeff_y == 1:   # --- py stmt 10033
+            coeff_y = ''   # --- py stmt 10034
+        else:   # --- py stmt 10035
+            coeff_y = '-'   # --- py stmt 10036
+
+    problem = f"What is the equation of the line between points $({x1},{y1})$ and $({x2},{y2})$ in slope-intercept form?"   # --- py stmt 10037
+    if coeff_x == 0:   # --- py stmt 10038
+        solution = str(coeff_y) + "y = " + str(constant)   # --- py stmt 10039
+    elif coeff_y == 0:   # --- py stmt 10040
+        solution = str(coeff_x) + "x = " + str(-constant)   # --- py stmt 10041
+    else:   # --- py stmt 10042
+        if constant > 0:   # --- py stmt 10043
+            solution = str(coeff_y) + "y = " + str(coeff_x) + \
+                "x + " + str(constant)   # --- py stmt 10044
+        else:   # --- py stmt 10045
+            solution = str(coeff_y) + "y = " + \
+                str(coeff_x) + "x " + str(constant)   # --- py stmt 10046
+    return problem, f'${solution}$'   # --- py stmt 10047
+
+def fourth_angle_of_quadrilateral(max_angle=180):   # --- py stmt 11001
+    angle1 = random.randint(1, max_angle)   # --- py stmt 11002
+    angle2 = random.randint(1, 240 - angle1)   # --- py stmt 11003
+    angle3 = random.randint(1, 340 - (angle1 + angle2))   # --- py stmt 11004
+
+    sum_ = angle1 + angle2 + angle3   # --- py stmt 11005
+    angle4 = 360 - sum_   # --- py stmt 11006
+
+    problem = f"Fourth angle of quadrilateral with angles ${angle1} , {angle2}, {angle3} =$"   # --- py stmt 11007
+    solution = f'${angle4}$'   # --- py stmt 11008
+    return problem, solution   # --- py stmt 11009
+
+def pythagorean_theorem(max_length=20):   # --- py stmt 12001
+    a = random.randint(1, max_length)   # --- py stmt 12002
+    b = random.randint(1, max_length)   # --- py stmt 12003
+    c = round((a ** 2 + b ** 2) ** 0.5, 2)   # --- py stmt 12004
+
+    problem = f"What is the hypotenuse of a right triangle given the other two sides have lengths ${a}$ and ${b}$?"   # --- py stmt 12005
+    solution = f"${c}$"   # --- py stmt 12006
+    return problem, solution   # --- py stmt 12007
+
+def radian_to_deg(max_rad=6.28):   # --- py stmt 13001
+    a = random.randint(0, int(max_rad * 100)) / 100   # --- py stmt 13002
+    b = round((180 * a) / math.pi, 2)   # --- py stmt 13003
+
+    problem = f"Angle ${a}$ radians in degrees is: "   # --- py stmt 13004
+    solution = f'${b}$'   # --- py stmt 13005
+    return problem, solution   # --- py stmt 13006
+
+def sector_area(max_radius=49, max_angle=359):   # --- py stmt 14001
+    r = random.randint(1, max_radius)   # --- py stmt 14002
+    a = random.randint(1, max_angle)   # --- py stmt 14003
+    secArea = float((a / 360) * math.pi * r * r)   # --- py stmt 14004
+    formatted_float = round(secArea, 2)   # --- py stmt 14005
+
+    problem = f"What is the area of a sector with radius ${r}$ and angle ${a}$ degrees?"   # --- py stmt 14006
+    solution = f"${formatted_float}$"   # --- py stmt 14007
+    return problem, solution   # --- py stmt 14008
+
+def sum_of_polygon_angles(max_sides=12):   # --- py stmt 15001
+    side_count = random.randint(3, max_sides)   # --- py stmt 15002
+    sum = (side_count - 2) * 180   # --- py stmt 15003
+
+    problem = f"What is the sum of interior angles of a polygon with ${side_count}$ sides?"   # --- py stmt 15004
+    return problem, f'${sum}$'   # --- py stmt 15005
+
+def surface_area_cone(max_radius=20, max_height=50, unit='m'):   # --- py stmt 16001
+    a = random.randint(1, max_height)   # --- py stmt 16002
+    b = random.randint(1, max_radius)   # --- py stmt 16003
+
+    slopingHeight = math.sqrt(a**2 + b**2)   # --- py stmt 16004
+    ans = int(math.pi * b * slopingHeight + math.pi * b * b)   # --- py stmt 16005
+
+    problem = f"Surface area of cone with height $= {a}{unit}$ and radius $= {b}{unit}$ is"   # --- py stmt 16006
+    solution = f"${ans} {unit}^2$"   # --- py stmt 16007
+    return problem, solution   # --- py stmt 16008
+
+def surface_area_cube(max_side=20, unit='m'):   # --- py stmt 17001
+    a = random.randint(1, max_side)   # --- py stmt 17002
+    ans = 6 * (a ** 2)   # --- py stmt 17003
+
+    problem = f"Surface area of cube with side $= {a}{unit}$ is"   # --- py stmt 17004
+    solution = f"${ans} {unit}^2$"   # --- py stmt 17005
+    return problem, solution   # --- py stmt 17006
+
+def surface_area_cuboid(max_side=20, unit='m'):   # --- py stmt 18001
+    a = random.randint(1, max_side)   # --- py stmt 18002
+    b = random.randint(1, max_side)   # --- py stmt 18003
+    c = random.randint(1, max_side)   # --- py stmt 18004
+    ans = 2 * (a * b + b * c + c * a)   # --- py stmt 18005
+
+    problem = f"Surface area of cuboid with sides of lengths: ${a}{unit}, {b}{unit}, {c}{unit}$ is"   # --- py stmt 18006
+    solution = f"${ans} {unit}^2$"   # --- py stmt 18007
+    return problem, solution   # --- py stmt 18008
+
+def surface_area_cylinder(max_radius=20, max_height=50, unit='m'):   # --- py stmt 19001
+    a = random.randint(1, max_height)   # --- py stmt 19002
+    b = random.randint(1, max_radius)   # --- py stmt 19003
+    ans = int(2 * math.pi * a * b + 2 * math.pi * b * b)   # --- py stmt 19004
+
+    problem = f"Surface area of cylinder with height $= {a}{unit}$ and radius $= {b}{unit}$ is"   # --- py stmt 19005
+    solution = f"${ans} {unit}^2$"   # --- py stmt 19006
+    return problem, solution   # --- py stmt 19007
+
+def surface_area_pyramid(unit='m'):   # --- py stmt 20001
+    _PYTHAGOREAN = [(3, 4, 5),(6, 8, 10),(9, 12, 15),(12, 16, 20),(15, 20, 25),(5, 12, 13),(10, 24, 26),(7, 24, 25)]   # --- py stmt 20002
+
+    height, half_width, triangle_height_1 = random.sample(random.choice(_PYTHAGOREAN), 3)   # --- py stmt 20003
+
+    triangle_1 = half_width * triangle_height_1   # --- py stmt 20004
+
+    second_triplet = random.choice([i for i in _PYTHAGOREAN if height in i])   # --- py stmt 20005
+    half_length, triangle_height_2 = random.sample(tuple(i for i in second_triplet if i != height), 2)   # --- py stmt 20006
+
+    triangle_2 = half_length * triangle_height_2   # --- py stmt 20007
+
+    base = 4 * half_width * half_length   # --- py stmt 20008
+
+    ans = base + 2 * triangle_1 + 2 * triangle_2   # --- py stmt 20009
+
+    problem = f"Surface area of pyramid with base length $= {2*half_length}{unit}$, base width $= {2*half_width}{unit}$, and height $= {height}{unit}$ is"   # --- py stmt 20010
+    solution = f"${ans} {unit}^2$"   # --- py stmt 20011
+    return problem, solution   # --- py stmt 20012
+
+def surface_area_sphere(max_side=20, unit='m'):   # --- py stmt 21001
+    r = random.randint(1, max_side)   # --- py stmt 21002
+    ans = round(4 * math.pi * r * r, 2)   # --- py stmt 21003
+
+    problem = f"Surface area of a sphere with radius $= {r}{unit}$ is"   # --- py stmt 21004
+    solution = f"${ans} {unit}^2$"   # --- py stmt 21005
+    return problem, solution   # --- py stmt 21006
+
+def third_angle_of_triangle(max_angle=89):   # --- py stmt 22001
+    angle1 = random.randint(1, max_angle)   # --- py stmt 22002
+    angle2 = random.randint(1, max_angle)   # --- py stmt 22003
+    angle3 = 180 - (angle1 + angle2)   # --- py stmt 22004
+
+    problem = f"Third angle of triangle with angles ${angle1}$ and ${angle2} = $"   # --- py stmt 22005
+    return problem, f'${angle3}$'   # --- py stmt 22006
+
+def valid_triangle(max_side_length=50):   # --- py stmt 23001
+    sideA = random.randint(1, max_side_length)   # --- py stmt 23002
+    sideB = random.randint(1, max_side_length)   # --- py stmt 23003
+    sideC = random.randint(1, max_side_length)   # --- py stmt 23004
+
+    sideSums = [sideA + sideB, sideB + sideC, sideC + sideA]   # --- py stmt 23005
+    sides = [sideC, sideA, sideB]   # --- py stmt 23006
+
+    exists = True & (sides[0] < sideSums[0]) & (sides[1] < sideSums[1]) & (   # --- py stmt 23007
+        sides[2] < sideSums[2])
+
+    problem = f"Does triangle with sides ${sideA}, {sideB}$ and ${sideC}$ exist?"   # --- py stmt 23008
+    solution = "Yes" if exists else "No"   # --- py stmt 23009
+    return problem, f'${solution}$'   # --- py stmt 23010
+
+def volume_cone(max_radius=20, max_height=50, unit='m'):   # --- py stmt 24001
+    a = random.randint(1, max_height)   # --- py stmt 24002
+    b = random.randint(1, max_radius)   # --- py stmt 24003
+    ans = int(math.pi * b * b * a * (1 / 3))   # --- py stmt 24004
+
+    problem = f"Volume of cone with height $= {a}{unit}$ and radius $= {b}{unit}$ is"   # --- py stmt 24005
+    solution = f"${ans} {unit}^3$"   # --- py stmt 24006
+    return problem, solution   # --- py stmt 24007
+
+def volume_cube(max_side=20, unit='m'):   # --- py stmt 25001
+    a = random.randint(1, max_side)   # --- py stmt 25002
+    ans = a**3   # --- py stmt 25003
+
+    problem = f"Volume of cube with a side length of ${a}{unit}$ is"   # --- py stmt 25004
+    solution = f"${ans} {unit}^3$"   # --- py stmt 25005
+    return problem, solution   # --- py stmt 25006
+
+def volume_cuboid(max_side=20, unit='m'):   # --- py stmt 26001
+    a = random.randint(1, max_side)   # --- py stmt 26002
+    b = random.randint(1, max_side)   # --- py stmt 26003
+    c = random.randint(1, max_side)   # --- py stmt 26004
+    ans = a * b * c   # --- py stmt 26005
+
+    problem = f"Volume of cuboid with sides = ${a}{unit}, {b}{unit}, {c}{unit}$ is"   # --- py stmt 26006
+    solution = f"${ans} {unit}^3$"   # --- py stmt 26007
+    return problem, solution   # --- py stmt 26008
+
+def volume_cylinder(max_radius=20, max_height=50, unit='m'):   # --- py stmt 27001
+    a = random.randint(1, max_height)   # --- py stmt 27002
+    b = random.randint(1, max_radius)   # --- py stmt 27003
+    ans = int(math.pi * b * b * a)   # --- py stmt 27004
+
+    problem = f"Volume of cylinder with height $= {a}{unit}$ and radius $= {b}{unit}$ is"   # --- py stmt 27005
+    solution = f"${ans} {unit}^3$"   # --- py stmt 27006
+    return problem, solution   # --- py stmt 27007
+
+def volume_cone_frustum(max_r1=20, max_r2=20, max_height=50, unit='m'):   # --- py stmt 28001
+    h = random.randint(1, max_height)   # --- py stmt 28002
+    r1 = random.randint(1, max_r1)   # --- py stmt 28003
+    r2 = random.randint(1, max_r2)   # --- py stmt 28004
+    ans = round(((math.pi * h) * (r1 ** 2 + r2 ** 2 + r1 * r2)) / 3, 2)   # --- py stmt 28005
+
+    problem = f"Volume of frustum with height $= {h}{unit}$ and $r1 = {r1}{unit}$ is and $r2 = {r2}{unit}$ is "   # --- py stmt 28006
+    solution = f"${ans} {unit}^3$"   # --- py stmt 28007
+    return problem, solution   # --- py stmt 28008
+
+def volume_hemisphere(max_radius=100):   # --- py stmt 29001
+    r = random.randint(1, max_radius)   # --- py stmt 29002
+    ans = round((2 * math.pi / 3) * r**3, 2)   # --- py stmt 29003
+
+    problem = f"Volume of hemisphere with radius ${r} m =$ "   # --- py stmt 29004
+    solution = f"${ans} m^3$"   # --- py stmt 29005
+    return problem, solution   # --- py stmt 29006
+
+def volume_pyramid(max_length=20, max_width=20, max_height=50, unit='m'):   # --- py stmt 30001
+    length = random.randint(1, max_length)   # --- py stmt 30002
+    width = random.randint(1, max_width)   # --- py stmt 30003
+    height = random.randint(1, max_height)   # --- py stmt 30004
+
+    ans = round((length * width * height) / 3, 2)   # --- py stmt 30005
+
+    problem = f"Volume of pyramid with base length $= {length} {unit}$, base width $= {width} {unit}$ and height $= {height} {unit}$ is"   # --- py stmt 30006
+    solution = f"${ans} {unit}^3$"   # --- py stmt 30007
+    return problem, solution   # --- py stmt 30008
+
+def volume_sphere(max_radius=100):   # --- py stmt 31001
+    r = random.randint(1, max_radius)   # --- py stmt 31002
+    ans = round((4 * math.pi / 3) * r**3, 2)   # --- py stmt 31003
+
+    problem = f"Volume of sphere with radius ${r} m = $"   # --- py stmt 31004
+    solution = f"${ans} m^3$"   # --- py stmt 31005
+    return problem, solution   # --- py stmt 31006
+
+def perimeter_of_polygons(max_sides=12, max_length=120):   # --- py stmt 32001
+    size_of_sides = random.randint(3, max_sides)   # --- py stmt 32002
+    sides = [random.randint(1, max_length) for _ in range(size_of_sides)]   # --- py stmt 32003
+
+    problem = f"The perimeter of a ${size_of_sides}$ sided polygon with lengths of ${', '.join(map(str, sides))}$cm is: "   # --- py stmt 32004
+    solution = sum(sides)   # --- py stmt 32005
+
+    return problem, f'${solution}$'   # --- py stmt 32006
+
+### JavaScript
+
+function angle_btw_vectors(max_elt_amt = 20) {   // --- py stmt 1
+    let s = 0;   // --- py stmt 2
+    let v1 = Array.from({length: Math.floor(Math.random() * (max_elt_amt - 2 + 1) + 2)}, () => parseFloat((Math.random() * 1000).toFixed(2)));   // --- py stmt 3
+    let v2 = v1.map(i => parseFloat((Math.random() * 1000).toFixed(2)));   // --- py stmt 4
+    for (let i = 0; i < v1.length; i++) {   // --- py stmt 5
+        s += v1[i] * v2[i];   // --- py stmt 6
+    }
+
+    let mags = Math.sqrt(v1.reduce((acc, i) => acc + i**2, 0)) * Math.sqrt(v2.reduce((acc, i) => acc + i**2, 0));   // --- py stmt 7
+    let solution = '';   // --- py stmt 8
+    let ans = 0;   // --- py stmt 9
+    try {   // --- py stmt 10
+        ans = parseFloat((Math.acos(s / mags)).toFixed(2));   // --- py stmt 11
+        solution = `$${ans}$ radians`;   // --- py stmt 12
+    } catch (e) {   // --- py stmt 13
+        console.log('angleBtwVectorsFunc has some issues with math module, line 16');   // --- py stmt 14
+        solution = 'NaN';   // --- py stmt 15
+        ans = 'NaN';   // --- py stmt 16
+    }
+    let problem = `angle between the vectors $${v1}$ and $${v2}$ is:`;   // --- py stmt 17
+    return [problem, solution];   // --- py stmt 18
+}
+
+function angle_regular_polygon(min_val=3, max_val=20) {   // --- py stmt 1001
+    let sideNum = Math.floor(Math.random() * (max_val - min_val + 1) + min_val);   // --- py stmt 1002
+    let problem = `Find the angle of a regular polygon with ${sideNum} sides`;   // --- py stmt 1003
+
+    let exteriorAngle = parseFloat((360 / sideNum).toFixed(2));   // --- py stmt 1004
+    let solution = `${(180 - exteriorAngle).toFixed(2)}`;   // --- py stmt 1005
+
+    return [problem, solution];   // --- py stmt 1006
+}
+
+function arc_length(max_radius = 49, max_angle = 359) {   // --- py stmt 2001
+    const radius = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 2002
+    const angle = Math.floor(Math.random() * max_angle) + 1;   // --- py stmt 2003
+    const angle_arc_length = parseFloat((angle / 360) * 2 * Math.PI * radius);   // --- py stmt 2004
+    const formatted_float = angle_arc_length.toFixed(5);   // --- py stmt 2005
+
+    const problem = `Given radius, ${radius} and angle, ${angle}. Find the arc length of the angle.`;   // --- py stmt 2006
+    const solution = `Arc length of the angle = ${formatted_float}`;   // --- py stmt 2007
+    return [problem, solution];   // --- py stmt 2008
+}
+
+function area_of_circle(max_radius = 100) {   // --- py stmt 3001
+    const r = Math.floor(Math.random() * (max_radius + 1));   // --- py stmt 3002
+    const area = +(Math.PI * r * r).toFixed(2);   // --- py stmt 3003
+
+    const problem = `Area of circle with radius ${r} = $`;   // --- py stmt 3004
+    return [problem, `${area}$`];   // --- py stmt 3005
+}
+
+function area_of_circle_given_center_and_point(max_coordinate = 10, max_radius = 10) {   // --- py stmt 4001
+    const r = Math.floor(Math.random() * (max_radius + 1));   // --- py stmt 4002
+    const center_x = Math.floor(Math.random() * (max_coordinate + 1)) - max_coordinate;   // --- py stmt 4003
+    const center_y = Math.floor(Math.random() * (max_coordinate + 1)) - max_coordinate;   // --- py stmt 4004
+
+    const angle = [0, Math.PI / 6, Math.PI / 2, Math.PI, Math.PI + Math.PI / 6, 3 * Math.PI / 2][Math.floor(Math.random() * 6)];   // --- py stmt 4005
+
+    const point_x = center_x + Math.round(r * Math.cos(angle), 2);   // --- py stmt 4006
+    const point_y = center_y + Math.round(r * Math.sin(angle), 2);   // --- py stmt 4007
+
+    const area = Math.round(Math.PI * r * r, 2);   // --- py stmt 4008
+
+    const problem = `Area of circle with center (${center_x},${center_y}) and passing through (${point_x}, ${point_y}) is`;   // --- py stmt 4009
+    return [problem, `$${area}$`];   // --- py stmt 4010
+}
+
+function area_of_triangle(max_a = 20, max_b = 20) {   // --- py stmt 5001
+    const a = Math.floor(Math.random() * max_a) + 1;   // --- py stmt 5002
+    const b = Math.floor(Math.random() * max_b) + 1;   // --- py stmt 5003
+    const c = Math.floor(Math.random() * (Math.abs(b - a) + 1)) + Math.min(a, b);   // --- py stmt 5004
+
+    const s = (a + b + c) / 2;   // --- py stmt 5005
+    const area = Math.pow(s * (s - a) * (s - b) * (s - c), 0.5);   // --- py stmt 5006
+
+    const problem = `Area of triangle with side lengths: ${a}, ${b}, ${c} = $`;   // --- py stmt 5007
+    const solution = `$${area.toFixed(2)}$`;   // --- py stmt 5008
+    return [problem, solution];   // --- py stmt 5009
+}
+
+function circumference(max_radius = 100) {   // --- py stmt 6001
+    const r = Math.floor(Math.random() * (max_radius + 1));   // --- py stmt 6002
+    const circumference = parseFloat((2 * Math.PI * r).toFixed(2));   // --- py stmt 6003
+
+    const problem = `Circumference of circle with radius ${r} = $`;   // --- py stmt 6004
+    return [problem, `$${circumference}$`];   // --- py stmt 6005
+}
+
+function complementary_and_supplementary_angle(max_supp = 180, max_comp = 90) {   // --- py stmt 7001
+    let angleType = Math.random() < 0.5 ? "supplementary" : "complementary";   // --- py stmt 7002
+    let angle, angleAns;   // --- py stmt 7003
+
+    if (angleType === "supplementary") {   // --- py stmt 7003
+        angle = Math.floor(Math.random() * (max_supp - 1 + 1)) + 1;   // --- py stmt 7004
+        angleAns = 180 - angle;   // --- py stmt 7005
+    } else {   // --- py stmt 7006
+        angle = Math.floor(Math.random() * (max_comp - 1 + 1)) + 1;   // --- py stmt 7007
+        angleAns = 90 - angle;   // --- py stmt 7008
+    }
+
+    let problem = `The ${angleType} angle of ${angle} = `;   // --- py stmt 7009
+    let solution = `${angleAns}`;   // --- py stmt 7010
+    return [problem, solution];   // --- py stmt 7011
+}
+
+function curved_surface_area_cylinder(max_radius = 49, max_height = 99) {   // --- py stmt 8001
+    const r = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 8002
+    const h = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 8003
+    const csa = parseFloat(2 * Math.PI * r * h);   // --- py stmt 8004
+    const formatted_float = Math.round(csa * 100) / 100; // parseFloat(csa.toFixed(2))   // --- py stmt 8005
+
+    const problem = `What is the curved surface area of a cylinder of radius, ${r} and height, ${h}?`;   // --- py stmt 8006
+    const solution = `$${formatted_float}$`;   // --- py stmt 8007
+    return [problem, solution];   // --- py stmt 8008
+}
+
+function degree_to_rad(max_deg = 360) {   // --- py stmt 9001
+    const a = Math.floor(Math.random() * (max_deg + 1));   // --- py stmt 9002
+    const b = (Math.PI * a) / 180;   // --- py stmt 9003
+    const roundedB = b.toFixed(2);   // --- py stmt 9004
+
+    const problem = `Angle ${a} degrees in radians is: `;   // --- py stmt 9005
+    const solution = `$${roundedB}$`;   // --- py stmt 9006
+    return [problem, solution];   // --- py stmt 9007
+}
+
+function equation_of_line_from_two_points(max_coordinate = 20, min_coordinate = -20) {   // --- py stmt 10001
+    let x1 = Math.floor(Math.random() * (max_coordinate - min_coordinate + 1) + min_coordinate);   // --- py stmt 10002
+    let x2 = Math.floor(Math.random() * (max_coordinate - min_coordinate + 1) + min_coordinate);   // --- py stmt 10003
+    let y1 = Math.floor(Math.random() * (max_coordinate - min_coordinate + 1) + min_coordinate);   // --- py stmt 10004
+    let y2 = Math.floor(Math.random() * (max_coordinate - min_coordinate + 1) + min_coordinate);   // --- py stmt 10005
+
+    let coeff_y = (x2 - x1);   // --- py stmt 10006
+    let coeff_x = (y2 - y1);   // --- py stmt 10007
+    let constant = y2 * coeff_y - x2 * coeff_x;   // --- py stmt 10008
+
+    let gcd = Math.abs(gcd_two_numbers(coeff_x, coeff_y));   // --- py stmt 10009
+
+    if (gcd != 1) {   // --- py stmt 10010
+        if (coeff_y > 0) {   // --- py stmt 10011
+            coeff_y = Math.floor(coeff_y / gcd);   // --- py stmt 10012
+        }
+        if (coeff_x > 0) {   // --- py stmt 10013
+            coeff_x = Math.floor(coeff_x / gcd);   // --- py stmt 10014
+        }
+        if (constant > 0) {   // --- py stmt 10015
+            constant = Math.floor(constant / gcd);   // --- py stmt 10016
+        }
+        if (coeff_y < 0) {   // --- py stmt 10017
+            coeff_y = -Math.floor(-coeff_y / gcd);   // --- py stmt 10018
+        }
+        if (coeff_x < 0) {   // --- py stmt 10019
+            coeff_x = -Math.floor(-coeff_x / gcd);   // --- py stmt 10020
+        }
+        if (constant < 0) {   // --- py stmt 10021
+            constant = -Math.floor(-constant / gcd);   // --- py stmt 10022
+        }
+    }
+    if (coeff_y < 0) {   // --- py stmt 10023
+        coeff_y = -(coeff_y);   // --- py stmt 10024
+        coeff_x = -(coeff_x);   // --- py stmt 10025
+        constant = -(constant);   // --- py stmt 10026
+    }
+    if (coeff_x == 1 || coeff_x == -1) {   // --- py stmt 10027
+        if (coeff_x == 1) {   // --- py stmt 10028
+            coeff_x = '';   // --- py stmt 10029
+        } else {   // --- py stmt 10030
+            coeff_x = '-';   // --- py stmt 10031
+        }
+    }
+    if (coeff_y == 1 || coeff_y == -1) {   // --- py stmt 10032
+        if (coeff_y == 1) {   // --- py stmt 10033
+            coeff_y = '';   // --- py stmt 10034
+        } else {   // --- py stmt 10035
+            coeff_y = '-';   // --- py stmt 10036
+        }
+    }
+
+    let problem = `What is the equation of the line between points (${x1},${y1}) and (${x2},${y2}) in slope-intercept form?`;   // --- py stmt 10037
+    let solution = '';   // --- py stmt 10037
+    if (coeff_x == 0) {   // --- py stmt 10038
+        solution = `${coeff_y}y = ${constant}`;   // --- py stmt 10039
+    } else if (coeff_y == 0) {   // --- py stmt 10040
+        solution = `${coeff_x}x = ${-constant}`;   // --- py stmt 10041
+    } else {   // --- py stmt 10042
+        if (constant > 0) {   // --- py stmt 10043
+            solution = `${coeff_y}y = ${coeff_x}x + ${constant}`;   // --- py stmt 10044
+        } else {   // --- py stmt 10045
+            solution = `${coeff_y}y = ${coeff_x}x ${constant}`;   // --- py stmt 10046
+        }
+    }
+    return [problem, `$${solution}$`];   // --- py stmt 10047
+}
+
+function gcd_two_numbers(x, y) {   // --- py stmt 10047
+    x = Math.abs(x);   // --- py stmt 10047
+    y = Math.abs(y);   // --- py stmt 10047
+    while (y) {   // --- py stmt 10047
+        let t = y;   // --- py stmt 10047
+        y = x % y;   // --- py stmt 10047
+        x = t;   // --- py stmt 10047
+    }
+    return x;   // --- py stmt 10047
+}
+
+function fourth_angle_of_quadrilateral(max_angle = 180) {   // --- py stmt 11001
+    const angle1 = Math.floor(Math.random() * max_angle) + 1;   // --- py stmt 11002
+    const angle2 = Math.floor(Math.random() * (240 - angle1)) + 1;   // --- py stmt 11003
+    const angle3 = Math.floor(Math.random() * (340 - (angle1 + angle2))) + 1;   // --- py stmt 11004
+
+    const sum_ = angle1 + angle2 + angle3;   // --- py stmt 11005
+    const angle4 = 360 - sum_;   // --- py stmt 11006
+
+    const problem = `Fourth angle of quadrilateral with angles ${angle1}, ${angle2}, ${angle3} = $`;   // --- py stmt 11007
+    const solution = `$${angle4}$`;   // --- py stmt 11008
+    return [problem, solution];   // --- py stmt 11009
+}
+
+function pythagorean_theorem(max_length = 20) {   // --- py stmt 12001
+    const a = Math.floor(Math.random() * max_length) + 1;   // --- py stmt 12002
+    const b = Math.floor(Math.random() * max_length) + 1;   // --- py stmt 12003
+    const c = Math.round(Math.sqrt(a ** 2 + b ** 2), 2);   // --- py stmt 12004
+
+    const problem = `What is the hypotenuse of a right triangle given the other two sides have lengths ${a} and ${b}?`;   // --- py stmt 12005
+    const solution = `${c}`;   // --- py stmt 12006
+    return [problem, solution];   // --- py stmt 12007
+}
+
+function radian_to_deg(max_rad = 6.28) {   // --- py stmt 13001
+    const a = Math.floor(Math.random() * (max_rad * 100)) / 100;   // --- py stmt 13002
+    const b = Math.round((180 * a) / Math.PI, 2);   // --- py stmt 13003
+
+    const problem = `Angle ${a} radians in degrees is: `;   // --- py stmt 13004
+    const solution = `${b}`;   // --- py stmt 13005
+    return [problem, solution];   // --- py stmt 13006
+}
+
+function sector_area(max_radius = 49, max_angle = 359) {   // --- py stmt 14001
+    const r = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 14002
+    const a = Math.floor(Math.random() * max_angle) + 1;   // --- py stmt 14003
+    const secArea = parseFloat((a / 360) * Math.PI * r * r);   // --- py stmt 14004
+    const formatted_float = secArea.toFixed(2);   // --- py stmt 14005
+
+    const problem = `What is the area of a sector with radius ${r} and angle ${a} degrees?`;   // --- py stmt 14006
+    const solution = `$${formatted_float}$`;   // --- py stmt 14007
+    return [problem, solution];   // --- py stmt 14008
+}
+
+function sum_of_polygon_angles(max_sides=12) {   // --- py stmt 15001
+    const side_count = Math.floor(Math.random() * (max_sides - 3 + 1) + 3);   // --- py stmt 15002
+    const sum = (side_count - 2) * 180;   // --- py stmt 15003
+
+    const problem = `What is the sum of interior angles of a polygon with ${side_count} sides?`;   // --- py stmt 15004
+    return [problem, `$${sum}$`];   // --- py stmt 15005
+}
+
+function surface_area_cone(max_radius=20, max_height=50, unit='m') {   // --- py stmt 16001
+    const a = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 16002
+    const b = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 16003
+
+    const slopingHeight = Math.sqrt(a**2 + b**2);   // --- py stmt 16004
+    const ans = parseInt(Math.PI * b * slopingHeight + Math.PI * b * b);   // --- py stmt 16005
+
+    const problem = `Surface area of cone with height $= ${a}${unit}$ and radius $= ${b}${unit}$ is`;   // --- py stmt 16006
+    const solution = `$${ans} {unit}^2$`;   // --- py stmt 16007
+    return [problem, solution];   // --- py stmt 16008
+}
+
+function surface_area_cube(max_side = 20, unit = 'm') {   // --- py stmt 17001
+    const a = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 17002
+    const ans = 6 * (a ** 2);   // --- py stmt 17003
+
+    const problem = `Surface area of cube with side ${a}${unit} is`;   // --- py stmt 17004
+    const solution = `${ans} ${unit}^2`;   // --- py stmt 17005
+    return [problem, solution];   // --- py stmt 17006
+}
+
+function surface_area_cuboid(max_side = 20, unit = 'm') {   // --- py stmt 18001
+    const a = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 18002
+    const b = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 18003
+    const c = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 18004
+    const ans = 2 * (a * b + b * c + c * a);   // --- py stmt 18005
+
+    const problem = `Surface area of cuboid with sides of lengths: ${a}${unit}, ${b}${unit}, ${c}${unit} is`;   // --- py stmt 18006
+    const solution = `${ans} ${unit}^2`;   // --- py stmt 18007
+    return [problem, solution];   // --- py stmt 18008
+}
+
+function surface_area_cylinder(max_radius = 20, max_height = 50, unit = 'm') {   // --- py stmt 19001
+    const a = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 19002
+    const b = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 19003
+    const ans = Math.floor(2 * Math.PI * a * b + 2 * Math.PI * b * b);   // --- py stmt 19004
+
+    const problem = `Surface area of cylinder with height $= ${a}${unit}$ and radius $= ${b}${unit}$ is`;   // --- py stmt 19005
+    const solution = `$${ans} {unit}^2$`;   // --- py stmt 19006
+    return [problem, solution];   // --- py stmt 19007
+}
+
+function surface_area_pyramid(unit = 'm') {   // --- py stmt 20001
+    const _PYTHAGOREAN = [   // --- py stmt 20002
+        [3, 4, 5],
+        [6, 8, 10],
+        [9, 12, 15],
+        [12, 16, 20],
+        [15, 20, 25],
+        [5, 12, 13],
+        [10, 24, 26],
+        [7, 24, 25]
+    ];
+
+    const [height, half_width, triangle_height_1] = _PYTHAGOREAN[Math.floor(Math.random() * _PYTHAGOREAN.length)];   // --- py stmt 20003
+
+    const triangle_1 = half_width * triangle_height_1;   // --- py stmt 20004
+
+    const second_triplet = _PYTHAGOREAN.find(i => i.includes(height));   // --- py stmt 20005
+    const [half_length, triangle_height_2] = second_triplet.filter(i => i !== height);   // --- py stmt 20006
+
+    const triangle_2 = half_length * triangle_height_2;   // --- py stmt 20007
+
+    const base = 4 * half_width * half_length;   // --- py stmt 20008
+
+    const ans = base + 2 * triangle_1 + 2 * triangle_2;   // --- py stmt 20009
+
+    const problem = `Surface area of pyramid with base length $= ${2 * half_length}${unit}$, base width $= ${2 * half_width}${unit}$, and height $= ${height}${unit}$ is`;   // --- py stmt 20010
+    const solution = `$${ans} {unit}^2$`;   // --- py stmt 20011
+    return [problem, solution];   // --- py stmt 20012
+}
+
+function surface_area_sphere(max_side = 20, unit = 'm') {   // --- py stmt 21001
+    const r = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 21002
+    const ans = parseFloat((4 * Math.PI * r * r).toFixed(2));   // --- py stmt 21003
+
+    const problem = `Surface area of a sphere with radius = ${r}${unit} is`;   // --- py stmt 21004
+    const solution = `${ans} ${unit}^2`;   // --- py stmt 21005
+    return [problem, solution];   // --- py stmt 21006
+}
+
+function third_angle_of_triangle(max_angle = 89) {   // --- py stmt 22001
+    const angle1 = Math.floor(Math.random() * (max_angle)) + 1;   // --- py stmt 22002
+    const angle2 = Math.floor(Math.random() * (max_angle)) + 1;   // --- py stmt 22003
+    const angle3 = 180 - (angle1 + angle2);   // --- py stmt 22004
+
+    const problem = `Third angle of triangle with angles ${angle1} and ${angle2} = `;   // --- py stmt 22005
+    return [problem, `${angle3}`];   // --- py stmt 22006
+}
+
+function valid_triangle(max_side_length = 50) {   // --- py stmt 23001
+    const sideA = Math.floor(Math.random() * max_side_length) + 1;   // --- py stmt 23002
+    const sideB = Math.floor(Math.random() * max_side_length) + 1;   // --- py stmt 23003
+    const sideC = Math.floor(Math.random() * max_side_length) + 1;   // --- py stmt 23004
+
+    const sideSums = [sideA + sideB, sideB + sideC, sideC + sideA];   // --- py stmt 23005
+    const sides = [sideC, sideA, sideB];   // --- py stmt 23006
+
+    const exists = true & (sides[0] < sideSums[0]) & (sides[1] < sideSums[1]) & (sides[2] < sideSums[2]);   // --- py stmt 23007
+
+    const problem = `Does triangle with sides ${sideA}, ${sideB} and ${sideC} exist?`;   // --- py stmt 23008
+    const solution = exists ? "Yes" : "No";   // --- py stmt 23009
+    return [problem, `$${solution}$`];   // --- py stmt 23010
+}
+
+function volume_cone(max_radius = 20, max_height = 50, unit = 'm') {   // --- py stmt 24001
+    const a = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 24002
+    const b = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 24003
+    const ans = Math.floor(Math.PI * b * b * a * (1 / 3));   // --- py stmt 24004
+
+    const problem = `Volume of cone with height $= ${a}${unit}$ and radius $= ${b}${unit}$ is`;   // --- py stmt 24005
+    const solution = `$${ans} {unit}^3$`;   // --- py stmt 24006
+    return [problem, solution];   // --- py stmt 24007
+}
+
+function volume_cube(max_side=20, unit='m') {   // --- py stmt 25001
+    const a = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 25002
+    const ans = a ** 3;   // --- py stmt 25003
+
+    const problem = `Volume of cube with a side length of ${a}${unit} is`;   // --- py stmt 25004
+    const solution = `${ans} ${unit}^3`;   // --- py stmt 25005
+    return [problem, solution];   // --- py stmt 25006
+}
+
+function volume_cuboid(max_side=20, unit='m') {   // --- py stmt 26001
+    const a = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 26002
+    const b = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 26003
+    const c = Math.floor(Math.random() * max_side) + 1;   // --- py stmt 26004
+    const ans = a * b * c;   // --- py stmt 26005
+
+    const problem = `Volume of cuboid with sides = ${a}${unit}, ${b}${unit}, ${c}${unit} is`;   // --- py stmt 26006
+    const solution = `${ans} ${unit}^3`;   // --- py stmt 26007
+    return [problem, solution];   // --- py stmt 26008
+}
+
+function volume_cylinder(max_radius=20, max_height=50, unit='m') {   // --- py stmt 27001
+    const a = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 27002
+    const b = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 27003
+    const ans = Math.floor(Math.PI * b * b * a);   // --- py stmt 27004
+
+    const problem = `Volume of cylinder with height ${a}${unit} and radius ${b}${unit} is`;   // --- py stmt 27005
+    const solution = `$${ans} ${unit}^3$`;   // --- py stmt 27006
+    return [problem, solution];   // --- py stmt 27007
+}
+
+function volume_cone_frustum(max_r1 = 20, max_r2 = 20, max_height = 50, unit = 'm') {   // --- py stmt 28001
+    const h = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 28002
+    const r1 = Math.floor(Math.random() * max_r1) + 1;   // --- py stmt 28003
+    const r2 = Math.floor(Math.random() * max_r2) + 1;   // --- py stmt 28004
+    const ans = parseFloat((((Math.PI * h) * (r1 ** 2 + r2 ** 2 + r1 * r2)) / 3).toFixed(2));   // --- py stmt 28005
+
+    const problem = `Volume of frustum with height $= ${h}${unit}$ and $r1 = ${r1}${unit}$ is and $r2 = ${r2}${unit}$ is `;   // --- py stmt 28006
+    const solution = `$${ans} {unit}^3$`;   // --- py stmt 28007
+    return [problem, solution];   // --- py stmt 28008
+}
+
+function volume_hemisphere(max_radius = 100) {   // --- py stmt 29001
+    const r = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 29002
+    const ans = parseFloat((2 * Math.PI / 3) * Math.pow(r, 3)).toFixed(2);   // --- py stmt 29003
+
+    const problem = `Volume of hemisphere with radius ${r} m = $`;   // --- py stmt 29004
+    const solution = `${ans} m^3`;   // --- py stmt 29005
+    return [problem, solution];   // --- py stmt 29006
+}
+
+function volume_pyramid(max_length=20, max_width=20, max_height=50, unit='m') {   // --- py stmt 30001
+    const length = Math.floor(Math.random() * max_length) + 1;   // --- py stmt 30002
+    const width = Math.floor(Math.random() * max_width) + 1;   // --- py stmt 30003
+    const height = Math.floor(Math.random() * max_height) + 1;   // --- py stmt 30004
+
+    const ans = parseFloat(((length * width * height) / 3).toFixed(2));   // --- py stmt 30005
+
+    const problem = `Volume of pyramid with base length $= ${length} ${unit}$, base width $= ${width} ${unit}$ and height $= ${height} ${unit}$ is`;   // --- py stmt 30006
+    const solution = `$${ans} {unit}^3$`;   // --- py stmt 30007
+    return [problem, solution];   // --- py stmt 30008
+}
+
+function volume_sphere(max_radius = 100) {   // --- py stmt 31001
+    const r = Math.floor(Math.random() * max_radius) + 1;   // --- py stmt 31002
+    const ans = parseFloat((4 * Math.PI / 3) * Math.pow(r, 3)).toFixed(2);   // --- py stmt 31003
+
+    const problem = `Volume of sphere with radius ${r} m = $`;   // --- py stmt 31004
+    const solution = `${ans} m^3`;   // --- py stmt 31005
+    return [problem, solution];   // --- py stmt 31006
+}
+
+function perimeter_of_polygons(max_sides = 12, max_length = 120) {   // --- py stmt 32001
+    const size_of_sides = Math.floor(Math.random() * (max_sides - 3 + 1) + 3);   // --- py stmt 32002
+    const sides = Array.from({length: size_of_sides}, () => Math.floor(Math.random() * max_length) + 1);   // --- py stmt 32003
+
+    const problem = `The perimeter of a ${size_of_sides} sided polygon with lengths of ${sides.join(', ')}cm is: `;   // --- py stmt 32004
+    const solution = sides.reduce((acc, curr) => acc + curr, 0);   // --- py stmt 32005
+
+    return [problem, `$${solution}$`];   // --- py stmt 32006
+}

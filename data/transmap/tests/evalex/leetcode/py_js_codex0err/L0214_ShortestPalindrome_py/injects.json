@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    var prefix = 0, suffix = 0;",
+    "replacement": "    var prefix = suffix = 0;"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "    return (idx == n) ? s : Array.from(s.slice(idx)).reverse().join(\"\") + s;",
+    "replacement": "    return s if idx == n else s.substring(idx, n) + s;"
+  }
+]

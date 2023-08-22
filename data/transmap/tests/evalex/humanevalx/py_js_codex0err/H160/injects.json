@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 23,
+    "content": "    return eval(function(expr){\n        const regex = /([0-9]+\\/[0-9]+)/;\n        let list = expr.replace('//', '/').split(regex);\n        expr = '';\n        let start = true;\n        for(let i in list){\n            let index = Number(i);\n            expr += list[index];\n            if(index !== list.length - 1){\n                if(start)\n                    expr += 'parseInt(';\n                else\n                    expr += ')';\n                start = !start;\n            }\n        }\n        return expr;\n    }(expression));",
+    "replacement": "    return eval(expression);"
+  }
+]

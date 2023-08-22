@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isSelfCrossing",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(distance: List[int]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    d = distance",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i in range(3, len(d)):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if d[i] >= d[i - 2] and d[i - 1] <= d[i - 3]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            return True",
+      [
+        6
+      ]
+    ],
+    [
+      "        if i >= 4 and d[i - 1] == d[i - 3] and d[i] + d[i - 4] >= d[i - 2]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            return True",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (",
+      [
+        9
+      ]
+    ],
+    [
+      "            i >= 5",
+      null
+    ],
+    [
+      "            and d[i - 2] >= d[i - 4]",
+      null
+    ],
+    [
+      "            and d[i - 1] <= d[i - 3]",
+      null
+    ],
+    [
+      "            and d[i] >= d[i - 2] - d[i - 4]",
+      null
+    ],
+    [
+      "            and d[i - 1] + d[i - 5] >= d[i - 3]",
+      null
+    ],
+    [
+      "        ):",
+      null
+    ],
+    [
+      "            return True",
+      [
+        10
+      ]
+    ],
+    [
+      "    return False",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function isSelfCrossing(distance) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let d = distance;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let i = 3; i < d.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (d[i] >= d[i - 2] && d[i - 1] <= d[i - 3]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (i >= 4 && d[i - 1] == d[i - 3] && d[i] + d[i - 4] >= d[i - 2]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (i >= 5 && d[i - 2] >= d[i - 4] && d[i - 1] <= d[i - 3] && d[i] >= d[i - 2] - d[i - 4] && d[i - 1] + d[i - 5] >= d[i - 3]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

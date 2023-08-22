@@ -1,0 +1,76 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[8,2,8,16]",
+    "break_idx": 18,
+    "expected_src_pk": "[7,2,7,11]",
+    "actural_src_pk": "[7,2,7,11]",
+    "src_cov_lines": [
+      4,
+      5
+    ],
+    "tar_cov_lines": [
+      4,
+      5
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",2,\"11\"],\"n\":[\"N\",\"2\"],\"auxArr\":[\"A\",2,[\"N\",\"NaN\"],[\"N\",\"NaN\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"11\"],\"n\":[\"N\",\"2\"],\"auxArr\":[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "auxArr"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,6,45]",
+    "break_idx": 19,
+    "expected_src_pk": "[5,4,6,35]",
+    "actural_src_pk": "[5,4,6,35]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",2,\"11\"],\"n\":[\"N\",\"2\"],\"auxArr\":[\"A\",2,[\"N\",\"NaN\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"11\"],\"n\":[\"N\",\"2\"],\"auxArr\":[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "auxArr"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,6,45]",
+    "break_idx": 14,
+    "expected_src_pk": "[5,4,6,35]",
+    "actural_src_pk": "[5,4,6,35]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",2,\"11\"],\"n\":[\"N\",\"2\"],\"auxArr\":[\"A\",2,[\"N\",\"NaN\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",2,\"11\"],\"n\":[\"N\",\"2\"],\"auxArr\":[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "auxArr"
+    ]
+  }
+]

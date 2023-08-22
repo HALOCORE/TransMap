@@ -1,0 +1,33 @@
+
+### Python
+def f_gold(a, b):   # --- py stmt 1
+  m = len(a)   # --- py stmt 2
+  n = len(b)   # --- py stmt 3
+  lookup =[[0] *(n + 1)for i in range(m + 1)]   # --- py stmt 4
+  for i in range(n + 1): lookup[0][i] = 0   # --- py stmt 5
+  for i in range(m + 1): lookup[i][0] = 1   # --- py stmt 6
+  for i in range(1, m + 1):   # --- py stmt 7
+    for j in range(1, n + 1):   # --- py stmt 8
+      if a[i - 1] == b[j - 1]: lookup[i][j] = lookup[i - 1][j - 1] + lookup[i - 1][j]   # --- py stmt 9
+      else: lookup[i][j] = lookup[i - 1][j]   # --- py stmt 10
+  return lookup[m][n]   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(a, b) {   // --- py stmt 1
+  var m = a.length;   // --- py stmt 2
+  var n = b.length;   // --- py stmt 3
+  var lookup = Array(m+1).fill().map(_ => Array(n+1).fill(0));   // --- py stmt 4
+  for (let i = 0; i < (n + 1); i++) lookup[0][i] = 0;   // --- py stmt 5
+  for (let i = 0; i < (m + 1); i++) lookup[i][0] = 1;   // --- py stmt 6
+  for (i = 1; i < (m + 1); i++) {   // --- py stmt 7
+    for (let j = 1; j < (n + 1); j++) {   // --- py stmt 8
+      if (a[i - 1] == b[j - 1]) lookup[i][j] = lookup[i - 1][j - 1] + lookup[i - 1][j];   // --- py stmt 9
+      else lookup[i][j] = lookup[i - 1][j];   // --- py stmt 10
+    }
+  }
+  return lookup[m][n];   // --- py stmt 11
+}
+
+
+

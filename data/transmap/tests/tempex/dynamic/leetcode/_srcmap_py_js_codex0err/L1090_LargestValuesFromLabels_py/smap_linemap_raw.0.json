@@ -1,0 +1,205 @@
+{
+  "src_anno_stmts": [
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(values: List[int], labels: List[int], numWanted: int, useLimit: int",
+      [
+        3
+      ]
+    ],
+    [
+      ") -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    arr = list(zip(values, labels))",
+      [
+        5
+      ]
+    ],
+    [
+      "    arr.sort(reverse=True)",
+      [
+        6
+      ]
+    ],
+    [
+      "    cnt = Counter()",
+      [
+        7
+      ]
+    ],
+    [
+      "    ans = num = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "    for v, l in arr:",
+      [
+        9
+      ]
+    ],
+    [
+      "        if cnt[l] < useLimit:",
+      [
+        10
+      ]
+    ],
+    [
+      "            cnt[l] += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "            num += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "            ans += v",
+      [
+        13
+      ]
+    ],
+    [
+      "        if num == numWanted:",
+      [
+        14
+      ]
+    ],
+    [
+      "            break",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(values, labels, numWanted, useLimit) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var arr = Array.from(values, (x, i) => [x, labels[i]]);",
+      [
+        5
+      ]
+    ],
+    [
+      "    arr.sort(function (a, b) { return b[0] - a[0]; });",
+      [
+        6
+      ]
+    ],
+    [
+      "    var cnt = {};",
+      [
+        7
+      ]
+    ],
+    [
+      "    var ans = num = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var i = 0; i < arr.length; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        var v = arr[i][0];",
+      [
+        9
+      ]
+    ],
+    [
+      "        var l = arr[i][1];",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (cnt[l] == null || cnt[l] < useLimit) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (cnt[l] == null) cnt[l] = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "            cnt[l] += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "            num += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "            ans += v;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (num == numWanted) break;",
+      [
+        14,
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

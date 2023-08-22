@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    console.log(i + 1, \"         \", processSize[i]);",
+    "replacement": "    console.log(i + 1, \"         \", processSize[i], end = \"         \");"
+  }
+]

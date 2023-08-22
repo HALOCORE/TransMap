@@ -1,0 +1,62 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(s):",
+      [
+        1
+      ]
+    ],
+    [
+      "  for i in range(len(s)):",
+      [
+        2
+      ]
+    ],
+    [
+      "    if s[i].isdigit()!= True: return False",
+      [
+        3
+      ]
+    ],
+    [
+      "  return True",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  for (var i = 0; i < s.length; i++) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (s[i].isdigit() != true) return false;",
+      [
+        3
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return true;",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

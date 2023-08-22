@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### firstMissingPositive",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums):",
+      [
+        2
+      ]
+    ],
+    [
+      "    \"\"\"",
+      [
+        3
+      ]
+    ],
+    [
+      "    :type nums: List[int]",
+      [
+        4
+      ]
+    ],
+    [
+      "    :rtype: int",
+      [
+        5
+      ]
+    ],
+    [
+      "    \"\"\"",
+      [
+        6
+      ]
+    ],
+    [
+      "    i = 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    while i in nums:",
+      [
+        8
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    return i",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var i = 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    while (i in nums) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        i += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return i;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

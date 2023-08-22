@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var f = 0, total_waiting_time = 0;",
+    "replacement": "    var f = total_waiting_time = 0;"
+  }
+]

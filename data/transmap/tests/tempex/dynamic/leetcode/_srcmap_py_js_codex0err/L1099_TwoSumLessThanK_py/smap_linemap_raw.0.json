@@ -1,0 +1,182 @@
+{
+  "src_anno_stmts": [
+    [
+      "### twoSumLessThanK",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    nums.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "    low, high = 0, len(nums) - 1",
+      [
+        4
+      ]
+    ],
+    [
+      "    res = -1",
+      [
+        5
+      ]
+    ],
+    [
+      "    while low < high:",
+      [
+        6
+      ]
+    ],
+    [
+      "        val = nums[low] + nums[high]",
+      [
+        7
+      ]
+    ],
+    [
+      "        if val < k:",
+      [
+        8
+      ]
+    ],
+    [
+      "            res = max(res, val)",
+      [
+        9
+      ]
+    ],
+    [
+      "            low += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        else:",
+      [
+        11
+      ]
+    ],
+    [
+      "            high -= 1",
+      [
+        12
+      ]
+    ],
+    [
+      "    return res",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    nums.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "    var low = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var high = nums.length - 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var res = -1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    while (low < high) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var val = nums[low] + nums[high];",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (val < k) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            res = Math.max(res, val);",
+      [
+        9
+      ]
+    ],
+    [
+      "            low += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        11
+      ]
+    ],
+    [
+      "            high -= 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

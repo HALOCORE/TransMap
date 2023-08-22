@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "            ans.push(t.join(''));",
+    "replacement": "            ans.push(t.join(\"\"));"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        if (t[i].match(/[a-z]/i)) {",
+    "replacement": "        if (t[i].isalpha()) {"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "            t[i] = t[i] === t[i].toLowerCase() ? t[i].toUpperCase() : t[i].toLowerCase();",
+    "replacement": "            t[i] = t[i].isupper() ? t[i].lower() : t[i].upper();"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    var t = s.split('');",
+    "replacement": "    var t = s.split(\"\");"
+  }
+]

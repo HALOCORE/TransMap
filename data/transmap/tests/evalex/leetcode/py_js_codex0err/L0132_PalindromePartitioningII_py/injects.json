@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        dp1[i] = new Array(n).fill(false);",
+    "replacement": "        dp1[i] = new Array(n);"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    let dp2 = new Array(n).fill(0);",
+    "replacement": "    let dp2 = new Array(n);"
+  }
+]

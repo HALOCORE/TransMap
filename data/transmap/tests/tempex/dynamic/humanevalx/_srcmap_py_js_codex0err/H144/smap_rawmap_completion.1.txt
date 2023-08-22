@@ -1,0 +1,27 @@
+
+### Python
+def simplify(x, n):   # --- py stmt 1
+    a, b = x.split("/")   # --- py stmt 2
+    c, d = n.split("/")   # --- py stmt 3
+    numerator = int(a) * int(c)   # --- py stmt 4
+    denom = int(b) * int(d)   # --- py stmt 5
+    if (numerator/denom == int(numerator/denom)):   # --- py stmt 6
+        return True   # --- py stmt 7
+    return False   # --- py stmt 8
+
+
+### JavaScript
+"use strict";
+function simplify(x, n) {   // --- py stmt 1
+    let [a, b] = x.split("/");   // --- py stmt 2
+    let c, d = n.split("/");   // --- py stmt 3
+    let numerator = parseInt(a) * parseInt(c);   // --- py stmt 4
+    let denom = parseInt(b) * parseInt(d);   // --- py stmt 5
+    if (numerator/denom == parseInt(numerator/denom)) {   // --- py stmt 6
+        return true;   // --- py stmt 7
+    }
+    return false;   // --- py stmt 8
+}
+
+
+

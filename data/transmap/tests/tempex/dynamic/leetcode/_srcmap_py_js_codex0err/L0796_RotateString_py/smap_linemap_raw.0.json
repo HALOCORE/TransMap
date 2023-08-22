@@ -1,0 +1,44 @@
+{
+  "src_anno_stmts": [
+    [
+      "### rotateString",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, goal: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return len(s) == len(goal) and goal in s + s",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, goal) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return s.length == goal.length && goal in s + s;",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

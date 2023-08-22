@@ -1,0 +1,75 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,4,6,20]",
+    "src_cov_lines": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",9]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"string\\\",3,\\\"777\\\"]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",7,\"2300019\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,5,9]",
+    "break_idx": 2,
+    "expected_src_pk": "[5,8,6,20]",
+    "actural_src_pk": "[5,8,6,20]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"num\":[\"S\",10,\"6777133339\"],\"i\":[\"N\",\"9\"],\"t\":[\"N\",\"27\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",10,\"6777133339\"],\"i\":[\"N\",\"9\"],\"t\":[\"S\",3,\"999\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "t"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,5,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,8,6,20]",
+    "actural_src_pk": "[5,8,6,20]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"num\":[\"S\",10,\"6777133339\"],\"i\":[\"N\",\"9\"],\"t\":[\"N\",\"27\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"S\",10,\"6777133339\"],\"i\":[\"N\",\"9\"],\"t\":[\"S\",3,\"999\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "t"
+    ]
+  }
+]

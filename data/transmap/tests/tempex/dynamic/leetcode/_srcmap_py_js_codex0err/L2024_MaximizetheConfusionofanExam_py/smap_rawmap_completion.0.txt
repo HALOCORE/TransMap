@@ -1,0 +1,42 @@
+
+### Python
+### maxConsecutiveAnswers 
+from typing import *   # --- py stmt 1
+def f_gold(answerKey: str, k: int) -> int:   # --- py stmt 2
+    def get(c, k):   # --- py stmt 3
+        l = r = -1   # --- py stmt 4
+        while r < len(answerKey) - 1:   # --- py stmt 5
+            r += 1   # --- py stmt 6
+            if answerKey[r] == c:   # --- py stmt 7
+                k -= 1   # --- py stmt 8
+            if k < 0:   # --- py stmt 9
+                l += 1   # --- py stmt 10
+                if answerKey[l] == c:   # --- py stmt 11
+                    k += 1   # --- py stmt 12
+        return r - l   # --- py stmt 13
+    return max(get('T', k), get('F', k))   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(answerKey, k) {   // --- py stmt 2
+    function get(c, k) {   // --- py stmt 3
+        var l = r = -1;   // --- py stmt 4
+        while (r < answerKey.length - 1) {   // --- py stmt 5
+            r += 1;   // --- py stmt 6
+            if (answerKey[r] == c) {   // --- py stmt 7
+                k -= 1;   // --- py stmt 8
+            }
+            if (k < 0) {   // --- py stmt 9
+                l += 1;   // --- py stmt 10
+                if (answerKey[l] == c) {   // --- py stmt 11
+                    k += 1;   // --- py stmt 12
+                }
+            }
+        }
+        return r - l;   // --- py stmt 13
+    }
+    return Math.max(get('T', k), get('F', k));   // --- py stmt 14
+}
+
+
+

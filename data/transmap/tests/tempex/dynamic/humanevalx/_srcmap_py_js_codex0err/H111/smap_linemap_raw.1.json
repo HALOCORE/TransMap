@@ -1,0 +1,190 @@
+{
+  "src_anno_stmts": [
+    [
+      "def histogram(test):",
+      [
+        1
+      ]
+    ],
+    [
+      "    dict1={}",
+      [
+        2
+      ]
+    ],
+    [
+      "    list1=test.split(\" \")",
+      [
+        3
+      ]
+    ],
+    [
+      "    t=0",
+      [
+        4
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    for i in list1:",
+      [
+        5
+      ]
+    ],
+    [
+      "        if(list1.count(i)>t) and i!='':",
+      [
+        6
+      ]
+    ],
+    [
+      "            t=list1.count(i)",
+      [
+        7
+      ]
+    ],
+    [
+      "    if t>0:",
+      [
+        8
+      ]
+    ],
+    [
+      "        for i in list1:",
+      [
+        9
+      ]
+    ],
+    [
+      "            if(list1.count(i)==t):",
+      [
+        10
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "                dict1[i]=t",
+      [
+        11
+      ]
+    ],
+    [
+      "    return dict1",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function histogram(test) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let dict1 = {};",
+      [
+        2
+      ]
+    ],
+    [
+      "    let list1 = test.split(\" \");",
+      [
+        3
+      ]
+    ],
+    [
+      "    let t = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    for (let i of list1) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (list1.filter(x => x == i).length > t && i != '') {",
+      [
+        6
+      ]
+    ],
+    [
+      "            t = list1.count(i);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (t > 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let i of list1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (list1.filter(x => x == i).length == t) {",
+      [
+        10
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "                dict1[i] = t;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dict1;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,4,3,20]",
+    "src_cov_lines": [
+      1,
+      2,
+      3
+    ],
+    "tar_cov_lines": [
+      1,
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"7\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,4,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[2,8,3,20]",
+    "actural_src_pk": "[2,8,3,20]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"3\"],\"i\":[\"N\",\"3\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"3\"],\"i\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,8,4,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[2,8,3,20]",
+    "actural_src_pk": "[2,8,3,20]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"3\"],\"i\":[\"N\",\"3\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"3\"],\"i\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i"
+    ]
+  }
+]

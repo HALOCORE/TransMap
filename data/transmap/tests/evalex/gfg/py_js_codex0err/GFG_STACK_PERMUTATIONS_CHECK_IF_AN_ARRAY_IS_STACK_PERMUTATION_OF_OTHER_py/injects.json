@@ -1,0 +1,74 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  var Input = [];",
+    "replacement": "  var Input = new Queue();"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  for (var i = 0; i < n; i++) Input.push(ip[i]);",
+    "replacement": "  for (var i = 0; i < n; i++) Input.put(ip[i]);"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  var output = [];",
+    "replacement": "  var output = new Queue();"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  for (var i = 0; i < n; i++) output.push(op[i]);",
+    "replacement": "  for (var i = 0; i < n; i++) output.put(op[i]);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "  while (Input.length !== 0) {",
+    "replacement": "  while (!Input.empty()) {"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    var ele = Input[0];",
+    "replacement": "    var ele = Input.queue[0];"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    Input.shift();",
+    "replacement": "    Input.get();"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    if (ele == output[0]) {",
+    "replacement": "    if (ele == output.queue[0]) {"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "      output.shift();",
+    "replacement": "      output.get();"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "        if (tempStack[tempStack.length - 1] == output[0]) {",
+    "replacement": "        if (tempStack[tempStack.length - 1] == output.queue[0]) {"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "          output.shift();",
+    "replacement": "          output.get();"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "  return Input.length === 0 && tempStack.length == 0;",
+    "replacement": "  return Input.empty() && tempStack.length == 0;"
+  }
+]

@@ -1,0 +1,324 @@
+{
+  "src_anno_stmts": [
+    [
+      "### canFinish",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(numCourses: int, prerequisites: List[List[int]]) -> bool:",
+      [
+        4
+      ]
+    ],
+    [
+      "    edges = defaultdict(list)",
+      [
+        5
+      ]
+    ],
+    [
+      "    indegree = [0] * numCourses",
+      [
+        6
+      ]
+    ],
+    [
+      "    for a, b in prerequisites:",
+      [
+        7
+      ]
+    ],
+    [
+      "        edges[b].append(a)",
+      [
+        8
+      ]
+    ],
+    [
+      "        indegree[a] += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    q = deque()",
+      [
+        10
+      ]
+    ],
+    [
+      "    for i in range(numCourses):",
+      [
+        11
+      ]
+    ],
+    [
+      "        if indegree[i] == 0:",
+      [
+        12
+      ]
+    ],
+    [
+      "            q.append(i)",
+      [
+        13
+      ]
+    ],
+    [
+      "    n = 0",
+      [
+        14
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        15
+      ]
+    ],
+    [
+      "        b = q.popleft()",
+      [
+        16
+      ]
+    ],
+    [
+      "        n += 1",
+      [
+        17
+      ]
+    ],
+    [
+      "        for a in edges[b]:",
+      [
+        18
+      ]
+    ],
+    [
+      "            indegree[a] -= 1",
+      [
+        19
+      ]
+    ],
+    [
+      "            if indegree[a] == 0:",
+      [
+        20
+      ]
+    ],
+    [
+      "                q.append(a)",
+      [
+        21
+      ]
+    ],
+    [
+      "    return n == numCourses",
+      [
+        22
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(numCourses, prerequisites) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    let edges = new Map();",
+      [
+        5
+      ]
+    ],
+    [
+      "    let indegree = new Array(numCourses).fill(0);",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (let i = 0; i < prerequisites.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        let a = prerequisites[i][0];",
+      [
+        7
+      ]
+    ],
+    [
+      "        let b = prerequisites[i][1];",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (edges.has(b)) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            edges.get(b).push(a);",
+      [
+        8
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            edges.set(b, [a]);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        indegree[a] += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let q = [];",
+      [
+        10
+      ]
+    ],
+    [
+      "    for (let i = 0; i < numCourses; i++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        if (indegree[i] == 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            q.push(i);",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let n = 0;",
+      [
+        14
+      ]
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        15
+      ]
+    ],
+    [
+      "        let b = q.shift();",
+      [
+        16
+      ]
+    ],
+    [
+      "        n += 1;",
+      [
+        17
+      ]
+    ],
+    [
+      "        for (let i = 0; i < edges.get(b).length; i++) {",
+      [
+        18
+      ]
+    ],
+    [
+      "            let a = edges.get(b)[i];",
+      [
+        18
+      ]
+    ],
+    [
+      "            indegree[a] -= 1;",
+      [
+        19
+      ]
+    ],
+    [
+      "            if (indegree[a] == 0) {",
+      [
+        20
+      ]
+    ],
+    [
+      "                q.push(a);",
+      [
+        21
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return n == numCourses;",
+      [
+        22
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

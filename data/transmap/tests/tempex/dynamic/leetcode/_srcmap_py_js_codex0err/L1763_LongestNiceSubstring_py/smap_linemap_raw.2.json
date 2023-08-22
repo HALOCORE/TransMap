@@ -1,0 +1,202 @@
+{
+  "src_anno_stmts": [
+    [
+      "### longestNiceSubstring",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(s)",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = ''",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "        lower = upper = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j in range(i, n):",
+      [
+        7
+      ]
+    ],
+    [
+      "            if s[j].islower():",
+      [
+        8
+      ]
+    ],
+    [
+      "                lower |= 1 << (ord(s[j]) - ord('a'))",
+      [
+        9
+      ]
+    ],
+    [
+      "            else:",
+      [
+        10
+      ]
+    ],
+    [
+      "                upper |= 1 << (ord(s[j]) - ord('A'))",
+      [
+        11
+      ]
+    ],
+    [
+      "            if lower == upper and j - i + 1 > len(ans):",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans = s[i : j + 1]",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = s.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ans = '';",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var lower = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "        var upper = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = i; j < n; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (s[j].toLowerCase() === s[j]) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                lower |= 1 << (s.charCodeAt(j) - 'a'.charCodeAt(0));",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        10
+      ]
+    ],
+    [
+      "                upper |= 1 << (ord(s[j]) - ord('A'));",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (lower == upper && j - i + 1 > ans.length) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                ans = s.substring(i, j + 1);",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[12,4,13,23]",
+    "src_cov_lines": [
+      11
+    ],
+    "tar_cov_lines": [
+      13,
+      14
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":14,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"find\":\"UNKNOWN\",\"n\":[\"N\",\"5\"],\"cnt\":[\"N\",\"1\"],\"mod\":[\"N\",\"0\"],\"arr\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[12,4,13,23]",
+    "src_cov_lines": [
+      11
+    ],
+    "tar_cov_lines": [
+      13,
+      14
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":14,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"find\":\"UNKNOWN\",\"n\":[\"N\",\"5\"],\"cnt\":[\"N\",\"1\"],\"mod\":[\"N\",\"0\"],\"arr\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[12,4,13,23]",
+    "src_cov_lines": [
+      11
+    ],
+    "tar_cov_lines": [
+      13,
+      14
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":14,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"find\":\"UNKNOWN\",\"n\":[\"N\",\"5\"],\"cnt\":[\"N\",\"1\"],\"mod\":[\"N\",\"0\"],\"arr\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[12,4,13,23]",
+    "src_cov_lines": [
+      11
+    ],
+    "tar_cov_lines": [
+      13,
+      14
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":14,\"err_msg\":\"ReferenceError: sum is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"find\":\"UNKNOWN\",\"n\":[\"N\",\"5\"],\"cnt\":[\"N\",\"1\"],\"mod\":[\"N\",\"0\"],\"arr\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"],[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "src_anno_stmts": [
+    [
+      "def simplify(x, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "    a, b = x.split(\"/\")",
+      [
+        2
+      ]
+    ],
+    [
+      "    c, d = n.split(\"/\")",
+      [
+        3
+      ]
+    ],
+    [
+      "    numerator = int(a) * int(c)",
+      [
+        4
+      ]
+    ],
+    [
+      "    denom = int(b) * int(d)",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (numerator/denom == int(numerator/denom)):",
+      [
+        6
+      ]
+    ],
+    [
+      "        return True",
+      [
+        7
+      ]
+    ],
+    [
+      "    return False",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function simplify(x, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let [a, b] = x.split(\"/\");",
+      [
+        2
+      ]
+    ],
+    [
+      "    let c, d = n.split(\"/\");",
+      [
+        3
+      ]
+    ],
+    [
+      "    let numerator = parseInt(a) * parseInt(c);",
+      [
+        4
+      ]
+    ],
+    [
+      "    let denom = parseInt(b) * parseInt(d);",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (numerator/denom == parseInt(numerator/denom)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        return true;",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

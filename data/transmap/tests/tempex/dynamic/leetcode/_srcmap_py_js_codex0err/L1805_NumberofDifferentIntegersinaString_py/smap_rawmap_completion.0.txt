@@ -1,0 +1,20 @@
+
+### Python
+import re   # --- py stmt 1
+### numDifferentIntegers 
+import re   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(word: str) -> int:   # --- py stmt 3
+    nums = re.split(r'[a-z]+', word)   # --- py stmt 4
+    return len({int(num) for num in nums if num != ''})   # --- py stmt 5
+
+### JavaScript
+"use strict";
+const re = require('re');   // --- py stmt 1
+const f_gold = (word) => {   // --- py stmt 3
+    let nums = word.split(/[a-z]+/);   // --- py stmt 4
+    return new Set(nums.filter(num => num != '').map(num => parseInt(num))).size;   // --- py stmt 5
+}
+
+
+

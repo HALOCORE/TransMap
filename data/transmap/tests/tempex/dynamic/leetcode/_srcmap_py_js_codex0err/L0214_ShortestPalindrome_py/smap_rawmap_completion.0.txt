@@ -1,0 +1,42 @@
+
+### Python
+### shortestPalindrome 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> str:   # --- py stmt 2
+    base = 131   # --- py stmt 3
+    mod = 10**9 + 7   # --- py stmt 4
+    n = len(s)   # --- py stmt 5
+    prefix = suffix = 0   # --- py stmt 6
+    mul = 1   # --- py stmt 7
+    idx = 0   # --- py stmt 8
+    for i, c in enumerate(s):   # --- py stmt 9
+        prefix = (prefix * base + (ord(c) - ord('a') + 1)) % mod   # --- py stmt 10
+        suffix = (suffix + (ord(c) - ord('a') + 1) * mul) % mod   # --- py stmt 11
+        mul = (mul * base) % mod   # --- py stmt 12
+        if prefix == suffix:   # --- py stmt 13
+            idx = i + 1   # --- py stmt 14
+    return s if idx == n else s[idx:][::-1] + s   # --- py stmt 15
+
+### JavaScript
+"use strict";
+
+function f_gold(s) {   // --- py stmt 2
+    var base = 131;   // --- py stmt 3
+    var mod = 1000000000 + 7;   // --- py stmt 4
+    var n = s.length;   // --- py stmt 5
+    var prefix = suffix = 0;   // --- py stmt 6
+    var mul = 1;   // --- py stmt 7
+    var idx = 0;   // --- py stmt 8
+    for (var i = 0; i < s.length; i++) {   // --- py stmt 9
+        prefix = (prefix * base + (s.charCodeAt(i) - 'a'.charCodeAt(0) + 1)) % mod;   // --- py stmt 10
+        suffix = (suffix + (s.charCodeAt(i) - 'a'.charCodeAt(0) + 1) * mul) % mod;   // --- py stmt 11
+        mul = (mul * base) % mod;   // --- py stmt 12
+        if (prefix == suffix) {   // --- py stmt 13
+            idx = i + 1;   // --- py stmt 14
+        }
+    }
+    return (idx == n) ? s : Array.from(s.slice(idx)).reverse().join("") + s;   // --- py stmt 15
+}
+
+
+

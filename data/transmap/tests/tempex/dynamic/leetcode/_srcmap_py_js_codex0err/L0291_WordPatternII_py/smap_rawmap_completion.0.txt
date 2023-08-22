@@ -1,0 +1,66 @@
+
+### Python
+### wordPatternMatch 
+from typing import *   # --- py stmt 1
+def f_gold(pattern: str, s: str) -> bool:   # --- py stmt 2
+    def dfs(i, j):   # --- py stmt 3
+        if i == m and j == n:   # --- py stmt 4
+            return True   # --- py stmt 5
+        if i == m or j == n or n - j < m - i:   # --- py stmt 6
+            return False   # --- py stmt 7
+        for k in range(j, n):   # --- py stmt 8
+            t = s[j : k + 1]   # --- py stmt 9
+            if d.get(pattern[i]) == t:   # --- py stmt 10
+                if dfs(i + 1, k + 1):   # --- py stmt 11
+                    return True   # --- py stmt 12
+            if pattern[i] not in d and t not in vis:   # --- py stmt 13
+                d[pattern[i]] = t   # --- py stmt 14
+                vis.add(t)   # --- py stmt 15
+                if dfs(i + 1, k + 1):   # --- py stmt 16
+                    return True   # --- py stmt 17
+                d.pop(pattern[i])   # --- py stmt 18
+                vis.remove(t)   # --- py stmt 19
+        return False   # --- py stmt 20
+    m, n = len(pattern), len(s)   # --- py stmt 21
+    d = {}   # --- py stmt 22
+    vis = set()   # --- py stmt 23
+    return dfs(0, 0)   # --- py stmt 24
+
+### JavaScript
+"use strict";
+function f_gold (pattern, s) {   // --- py stmt 2
+    function dfs (i, j) {   // --- py stmt 3
+        if (i == m && j == n) {   // --- py stmt 4
+            return true;   // --- py stmt 5
+        }
+        if (i == m || j == n || n - j < m - i) {   // --- py stmt 6
+            return false;   // --- py stmt 7
+        }
+        for (let k = j; k < n; k++) {   // --- py stmt 8
+            let t = s.substring(j, k + 1);   // --- py stmt 9
+            if (d.get(pattern[i]) == t) {   // --- py stmt 10
+                if (dfs(i + 1, k + 1)) {   // --- py stmt 11
+                    return true;   // --- py stmt 12
+                }
+            }
+            if (!d.hasOwnProperty(pattern[i]) && !vis.has(t)) {   // --- py stmt 13
+                d[pattern[i]] = t;   // --- py stmt 14
+                vis.add(t);   // --- py stmt 15
+                if (dfs(i + 1, k + 1)) {   // --- py stmt 16
+                    return true;   // --- py stmt 17
+                }
+                delete d[pattern[i]];   // --- py stmt 18
+                vis.delete(t);   // --- py stmt 19
+            }
+        }
+        return false;   // --- py stmt 20
+    }
+    let m = pattern.length;   // --- py stmt 21
+    let n = s.length;   // --- py stmt 21
+    let d = {};   // --- py stmt 22
+    let vis = new Set();   // --- py stmt 23
+    return dfs(0, 0);   // --- py stmt 24
+}
+
+
+

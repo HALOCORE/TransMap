@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,4,3,48]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: Cannot use 'in' operator to search for 'cdeab' in abcdeabcde\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",5,\"abcde\"],\"goal\":[\"S\",5,\"abced\"]}",
+      ""
+    ]
+  }
+]

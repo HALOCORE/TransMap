@@ -1,0 +1,21 @@
+
+### Python
+### removeAnagrams 
+from typing import *   # --- py stmt 1
+def f_gold(words: List[str]) -> List[str]:   # --- py stmt 2
+    return [   # --- py stmt 3
+        w   # --- py stmt 4
+        for i, w in enumerate(words)   # --- py stmt 5
+        if i == 0 or sorted(w) != sorted(words[i - 1])   # --- py stmt 6
+    ]
+
+### JavaScript
+"use strict";
+const removeAnagrams = (words) => {   // --- py stmt 2
+    return words.filter((w, i) => {   // --- py stmt 3
+        return i === 0 || w.split('').sort().join('') !== words[i - 1].split('').sort().join('');   // --- py stmt 4, py stmt 5, py stmt 6
+    });
+};
+
+
+

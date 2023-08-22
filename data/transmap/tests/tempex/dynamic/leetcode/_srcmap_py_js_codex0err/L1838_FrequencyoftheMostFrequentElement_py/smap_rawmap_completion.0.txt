@@ -1,0 +1,39 @@
+
+### Python
+### maxFrequency 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], k: int) -> int:   # --- py stmt 2
+    nums.sort()   # --- py stmt 3
+    ans = 1   # --- py stmt 4
+    window = 0   # --- py stmt 5
+    l, r, n = 0, 1, len(nums)   # --- py stmt 6
+    while r < n:   # --- py stmt 7
+        window += (nums[r] - nums[r - 1]) * (r - l)   # --- py stmt 8
+        r += 1   # --- py stmt 9
+        while window > k:   # --- py stmt 10
+            window -= nums[r - 1] - nums[l]   # --- py stmt 11
+            l += 1   # --- py stmt 12
+        ans = max(ans, r - l)   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 2
+    nums.sort();   // --- py stmt 3
+    var ans = 1;   // --- py stmt 4
+    var window = 0;   // --- py stmt 5
+    var l = 0;   // --- py stmt 6
+    var r = 1;   // --- py stmt 6
+    var n = nums.length;   // --- py stmt 6
+    while (r < n) {   // --- py stmt 7
+        window += (nums[r] - nums[r - 1]) * (r - l);   // --- py stmt 8
+        r += 1;   // --- py stmt 9
+        while (window > k) {   // --- py stmt 10
+            window -= nums[r - 1] - nums[l];   // --- py stmt 11
+            l += 1;   // --- py stmt 12
+        }
+        ans = Math.max(ans, r - l);   // --- py stmt 13
+    }
+    return ans;   // --- py stmt 14
+}
+

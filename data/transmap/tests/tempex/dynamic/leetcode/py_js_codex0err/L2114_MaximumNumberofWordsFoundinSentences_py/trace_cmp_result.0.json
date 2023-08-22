@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,4,3,51]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:1 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",7]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",6]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentences\":[\"A\",3,[\"S\",11,\"please wait\"],[\"S\",17,\"continue to fight\"],[\"S\",15,\"continue to win\"]]}",
+      ""
+    ]
+  }
+]

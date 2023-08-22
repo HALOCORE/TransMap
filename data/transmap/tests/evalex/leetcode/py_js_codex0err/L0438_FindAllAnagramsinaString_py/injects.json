@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "        while ((t.has(s[right]) ? t.get(s[right]) : 0) > (counter.has(s[right]) ? counter.get(s[right]) : 0)) {",
+    "replacement": "        while (t.get(s[right]) > counter.get(s[right])) {"
+  },
+  {
+    "line_start": 20,
+    "line_end": 21,
+    "content": "            t.set(s[left], (t.has(s[left]) ? t.get(s[left]) : 0) - 1);",
+    "replacement": "            t.set(s[left], t.get(s[left]) - 1);"
+  }
+]

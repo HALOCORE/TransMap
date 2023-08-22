@@ -1,0 +1,17 @@
+
+### Python
+### countCollisions 
+from typing import *   # --- py stmt 1
+def f_gold(directions: str) -> int:   # --- py stmt 2
+    d = directions.lstrip('L').rstrip('R')   # --- py stmt 3
+    return len(d) - d.count('S')   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function f_gold(directions) {   // --- py stmt 2
+    var d = directions.lstrip('L').rstrip('R');   // --- py stmt 3
+    return len(d) - d.count('S');   // --- py stmt 4
+}
+
+
+

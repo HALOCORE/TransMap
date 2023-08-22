@@ -1,0 +1,114 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[19,4,21,5]",
+    "break_idx": 3,
+    "expected_src_pk": "[16,4,17,16]",
+    "actural_src_pk": "[16,4,17,16]",
+    "src_cov_lines": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "tar_cov_lines": [
+      3,
+      4,
+      5,
+      10,
+      13,
+      14,
+      15,
+      17
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"T\"],\"ans\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"T\"],\"ans\":[\"N\",\"5\"],\"c\":[\"S\",1,\"0\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "ans"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,12,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,11,23]",
+    "actural_src_pk": "[6,8,11,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"F\"],\"ans\":[\"N\",\"0\"],\"c\":[\"S\",1,\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"F\"],\"ans\":[\"N\",\"0\"],\"c\":[\"S\",1,\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "c"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,12,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,11,23]",
+    "actural_src_pk": "[6,8,11,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"F\"],\"ans\":[\"N\",\"0\"],\"c\":[\"S\",1,\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"F\"],\"ans\":[\"N\",\"0\"],\"c\":[\"S\",1,\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "c"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,12,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[6,8,11,23]",
+    "actural_src_pk": "[6,8,11,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"F\"],\"ans\":[\"N\",\"0\"],\"c\":[\"S\",1,\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",4,\"1101\"],\"carry\":[\"B\",\"F\"],\"ans\":[\"N\",\"0\"],\"c\":[\"S\",1,\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "c"
+    ]
+  }
+]

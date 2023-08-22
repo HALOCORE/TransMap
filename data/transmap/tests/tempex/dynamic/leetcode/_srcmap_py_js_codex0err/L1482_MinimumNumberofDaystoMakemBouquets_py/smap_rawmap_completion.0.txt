@@ -1,0 +1,52 @@
+
+### Python
+### minDays 
+from typing import *   # --- py stmt 1
+def f_gold(bloomDay: List[int], m: int, k: int) -> int:   # --- py stmt 2
+    if m * k > len(bloomDay):   # --- py stmt 3
+        return -1   # --- py stmt 4
+    def check(day: int) -> bool:   # --- py stmt 5
+        cnt = cur = 0   # --- py stmt 6
+        for bd in bloomDay:   # --- py stmt 7
+            cur = cur + 1 if bd <= day else 0   # --- py stmt 8
+            if cur == k:   # --- py stmt 9
+                cnt += 1   # --- py stmt 10
+                cur = 0   # --- py stmt 11
+        return cnt >= m   # --- py stmt 12
+    left, right = min(bloomDay), max(bloomDay)   # --- py stmt 13
+    while left < right:   # --- py stmt 14
+        mid = (left + right) >> 1   # --- py stmt 15
+        if check(mid):   # --- py stmt 16
+            right = mid   # --- py stmt 17
+        else:   # --- py stmt 18
+            left = mid + 1   # --- py stmt 19
+    return left   # --- py stmt 20
+
+### JavaScript
+"use strict";
+
+function f_gold(bloomDay, m, k) {   // --- py stmt 2
+    if (m * k > bloomDay.length) return -1;   // --- py stmt 3, py stmt 4
+    function check(day) {   // --- py stmt 5
+        var cnt = cur = 0;   // --- py stmt 6
+        for (var bd of bloomDay) {   // --- py stmt 7
+            cur = (bd <= day) ? cur + 1 : 0;   // --- py stmt 8
+            if (cur == k) {   // --- py stmt 9
+                cnt += 1;   // --- py stmt 10
+                cur = 0;   // --- py stmt 11
+            }
+        }
+        return cnt >= m;   // --- py stmt 12
+    }
+    var left = Math.min(...bloomDay);   // --- py stmt 13
+    var right = Math.max(...bloomDay);   // --- py stmt 13
+    while (left < right) {   // --- py stmt 14
+        var mid = (left + right) >> 1;   // --- py stmt 15
+        if (check(mid)) right = mid;   // --- py stmt 16, py stmt 17
+        else left = mid + 1;   // --- py stmt 18, py stmt 19
+    }
+    return left;   // --- py stmt 20
+}
+
+
+

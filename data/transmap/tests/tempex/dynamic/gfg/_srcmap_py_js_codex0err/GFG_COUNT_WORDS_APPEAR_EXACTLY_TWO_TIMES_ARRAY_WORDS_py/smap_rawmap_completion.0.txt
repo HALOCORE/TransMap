@@ -1,0 +1,25 @@
+
+### Python
+def f_gold(stri, n):   # --- py stmt 1
+  m = dict()   # --- py stmt 2
+  for i in range(n): m[stri[i]] = m.get(stri[i], 0)+ 1   # --- py stmt 3
+  res = 0   # --- py stmt 4
+  for i in m.values():   # --- py stmt 5
+    if i == 2: res += 1   # --- py stmt 6
+  return res   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(stri, n) {   // --- py stmt 1
+  var m = {};   // --- py stmt 2
+  for (var i = 0; i < n; i++) m[stri[i]] = m.get(stri[i], 0) + 1;   // --- py stmt 3
+  var res = 0;   // --- py stmt 4
+  for (var i of Object.values(m)) {   // --- py stmt 5
+    if (i == 2) res += 1;   // --- py stmt 6
+  }
+  return res;   // --- py stmt 7
+}
+
+
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  var x = arr.sort((a, b) => a-b);",
+    "replacement": "  var x = arr.sort();"
+  }
+]

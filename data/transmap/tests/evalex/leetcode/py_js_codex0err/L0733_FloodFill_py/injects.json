@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 8,
+    "content": "        for (let [x, y] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) {\n            dfs(i + x, j + y, oc, nc);",
+    "replacement": "        for (let x = 0; x < 2; x++) {\n            for (let y = 0; y < 2; y++) {\n                dfs(i + x, j + y, oc, nc);\n            }"
+  }
+]

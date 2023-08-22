@@ -1,0 +1,140 @@
+{
+  "src_anno_stmts": [
+    [
+      "### discountPrices",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(sentence: str, discount: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for w in sentence.split():",
+      [
+        4
+      ]
+    ],
+    [
+      "        if w[0] == '$' and w[1:].isdigit():",
+      [
+        5
+      ]
+    ],
+    [
+      "            t = int(w[1:]) * (1 - discount / 100)",
+      [
+        6
+      ]
+    ],
+    [
+      "            ans.append('$' + '{:.2f}'.format(t))",
+      [
+        7
+      ]
+    ],
+    [
+      "        else:",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans.append(w)",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ' '.join(ans)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentence, discount) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var w of sentence.split(/\\s+/)) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (w[0] == '$' && /^\\d+$/.test(w.slice(1))) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            var t = parseInt(w.substring(1)) * (1 - discount / 100);",
+      [
+        6
+      ]
+    ],
+    [
+      "            ans.push('$' + '{:.2f}'.format(t));",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans.push(w);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.join(' ');",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

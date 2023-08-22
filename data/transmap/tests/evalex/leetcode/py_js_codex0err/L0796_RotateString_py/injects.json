@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return s.length == goal.length && (s + s).indexOf(goal) >= 0;",
+    "replacement": "    return s.length == goal.length && goal in s + s;"
+  }
+]

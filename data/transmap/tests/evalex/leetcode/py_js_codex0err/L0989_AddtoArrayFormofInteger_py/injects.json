@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    while (i >= 0 || k.length > 0 || carry) {",
+    "replacement": "    while (i >= 0 || k || carry) {"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        carry += (i < 0 ? 0 : num[i]) + (k % 10);",
+    "replacement": "        carry += (0 if i < 0 else num[i]) + (k % 10);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 8,
+    "content": "        var v;\n        [carry, v] = [Math.floor(carry / 10), carry % 10];",
+    "replacement": "        carry = Math.floor(carry / 10);\n        var v = carry % 10;"
+  }
+]

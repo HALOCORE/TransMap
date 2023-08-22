@@ -1,0 +1,64 @@
+
+### Python
+### threeEqualParts 
+from typing import *   # --- py stmt 1
+def f_gold(arr: List[int]) -> List[int]:   # --- py stmt 2
+    def find(cnt):   # --- py stmt 3
+        s = 0   # --- py stmt 4
+        for i, v in enumerate(arr):   # --- py stmt 5
+            s += v   # --- py stmt 6
+            if s == cnt:   # --- py stmt 7
+                return i   # --- py stmt 8
+        return -1   # --- py stmt 9
+    n = len(arr)   # --- py stmt 10
+    cnt, mod = divmod(sum(arr), 3)   # --- py stmt 11
+    if mod:   # --- py stmt 12
+        return [-1, -1]   # --- py stmt 13
+    if cnt == 0:   # --- py stmt 14
+        return [0, n - 1]   # --- py stmt 15
+    i = find(1)   # --- py stmt 16
+    j = find(cnt + 1)   # --- py stmt 17
+    k = find(cnt * 2 + 1)   # --- py stmt 18
+    while k < n and arr[i] == arr[j] == arr[k]:   # --- py stmt 19
+        i, j, k = i + 1, j + 1, k + 1   # --- py stmt 20
+    if k == n:   # --- py stmt 21
+        return [i - 1, j]   # --- py stmt 22
+    return [-1, -1]   # --- py stmt 23
+
+### JavaScript
+"use strict";
+
+function f_gold(arr) {   // --- py stmt 2
+    function find(cnt) {   // --- py stmt 3
+        var s = 0;   // --- py stmt 4
+        for (var i = 0; i < arr.length; i++) {   // --- py stmt 5
+            s += arr[i];   // --- py stmt 6
+            if (s == cnt) {   // --- py stmt 7
+                return i;   // --- py stmt 8
+            }
+        }
+        return -1;   // --- py stmt 9
+    }
+    var n = arr.length;   // --- py stmt 10
+    var cnt = arr.reduce((a, b) => a + b) / 3;   // --- py stmt 11
+    var mod = arr.reduce((a, b) => a + b) % 3;   // --- py stmt 11
+    if (mod) {   // --- py stmt 12
+        return [-1, -1];   // --- py stmt 13
+    }
+    if (cnt == 0) {   // --- py stmt 14
+        return [0, n - 1];   // --- py stmt 15
+    }
+    var i = find(1);   // --- py stmt 16
+    var j = find(cnt + 1);   // --- py stmt 17
+    var k = find(cnt * 2 + 1);   // --- py stmt 18
+    while (k < n && arr[i] == arr[j] == arr[k]) {   // --- py stmt 19
+        i, j, k = i + 1, j + 1, k + 1;   // --- py stmt 20
+    }
+    if (k == n) {   // --- py stmt 21
+        return [i - 1, j];   // --- py stmt 22
+    }
+    return [-1, -1];   // --- py stmt 23
+}
+
+
+

@@ -1,0 +1,29 @@
+
+### Python
+def f_gold(a, b, n, m):   # --- py stmt 1
+  countA = dict()   # --- py stmt 2
+  countB = dict()   # --- py stmt 3
+  for i in range(n): countA[a[i]] = countA.get(a[i], 0)+ 1   # --- py stmt 4
+  for i in range(n): countB[b[i]] = countB.get(b[i], 0)+ 1   # --- py stmt 5
+  res = 0   # --- py stmt 6
+  for x in countA:   # --- py stmt 7
+    if x in countB.keys(): res += min(countA[x], countB[x])   # --- py stmt 8
+  return res   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(a, b, n, m) {   // --- py stmt 1
+  let countA = {};   // --- py stmt 2
+  let countB = {};   // --- py stmt 3
+  for (let i = 0; i < n; i++) countA[a[i]] = (countA[a[i]] || 0) + 1;   // --- py stmt 4
+  for (let i = 0; i < n; i++) countB[b[i]] = (countB[b[i]] || 0) + 1;   // --- py stmt 5
+  let res = 0;   // --- py stmt 6
+  for (let x in countA) {   // --- py stmt 7
+    if (x in countB) res += Math.min(countA[x], countB[x]);   // --- py stmt 8
+  }
+  return res;   // --- py stmt 9
+}
+
+
+

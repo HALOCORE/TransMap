@@ -1,0 +1,170 @@
+{
+  "src_anno_stmts": [
+    [
+      "### decode",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(encoded: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(encoded) + 1",
+      [
+        3
+      ]
+    ],
+    [
+      "    a = b = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(0, n - 1, 2):",
+      [
+        5
+      ]
+    ],
+    [
+      "        a ^= encoded[i]",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(n + 1):",
+      [
+        7
+      ]
+    ],
+    [
+      "        b ^= i",
+      [
+        8
+      ]
+    ],
+    [
+      "    ans = [a ^ b]",
+      [
+        9
+      ]
+    ],
+    [
+      "    for e in encoded[::-1]:",
+      [
+        10
+      ]
+    ],
+    [
+      "        ans.append(ans[-1] ^ e)",
+      [
+        11
+      ]
+    ],
+    [
+      "    return ans[::-1]",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(encoded) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = encoded.length + 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var b = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var a = b;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n - 1; i += 2) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        a ^= encoded[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = n + 1; i >= 0; i--) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        b ^= i;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = [a ^ b];",
+      [
+        9
+      ]
+    ],
+    [
+      "    for (var e of encoded.reverse()) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        ans.push(ans[ans.length - 1] ^ e);",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.reverse();",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

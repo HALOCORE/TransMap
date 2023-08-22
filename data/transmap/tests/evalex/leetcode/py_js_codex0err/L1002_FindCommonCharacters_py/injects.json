@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var word of words) {",
+    "replacement": "    for (var word in words) {"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        for (var c of word) {",
+    "replacement": "        for (var c in word) {"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "            t[c.charCodeAt(0) - 'a'.charCodeAt(0)] += 1;",
+    "replacement": "            t[ord(c) - ord('a')] += 1;"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "            res = res.concat(new Array(freq[i]).fill(String.fromCharCode(i + \"a\".charCodeAt(0))));",
+    "replacement": "            res.extend([chr(i + ord(\"a\"))] * freq[i]);"
+  }
+]

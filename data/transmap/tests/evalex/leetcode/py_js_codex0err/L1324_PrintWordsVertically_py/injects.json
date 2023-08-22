@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let words = s.split(/\\s+/);",
+    "replacement": "    let words = s.split();"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "        ans.push(t.join('').trimEnd());",
+    "replacement": "        ans.push(t.join('').trim());"
+  }
+]

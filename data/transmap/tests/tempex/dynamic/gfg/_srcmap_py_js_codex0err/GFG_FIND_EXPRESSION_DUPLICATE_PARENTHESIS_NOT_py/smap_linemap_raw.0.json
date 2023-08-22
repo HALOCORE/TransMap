@@ -1,0 +1,162 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(string):",
+      [
+        1
+      ]
+    ],
+    [
+      "  Stack =[]",
+      [
+        2
+      ]
+    ],
+    [
+      "  for ch in string:",
+      [
+        3
+      ]
+    ],
+    [
+      "    if ch == ')':",
+      [
+        4
+      ]
+    ],
+    [
+      "      top = Stack.pop()",
+      [
+        5
+      ]
+    ],
+    [
+      "      elementsInside = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "      while top != '(':",
+      [
+        7
+      ]
+    ],
+    [
+      "        elementsInside += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        top = Stack.pop()",
+      [
+        9
+      ]
+    ],
+    [
+      "      if elementsInside < 1: return True",
+      [
+        10
+      ]
+    ],
+    [
+      "    else: Stack.append(ch)",
+      [
+        11
+      ]
+    ],
+    [
+      "  return False",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(string) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var Stack = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (var ch in string) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (ch == ')') {",
+      [
+        4
+      ]
+    ],
+    [
+      "      var top = Stack.pop();",
+      [
+        5
+      ]
+    ],
+    [
+      "      var elementsInside = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "      while (top != '(') {",
+      [
+        7
+      ]
+    ],
+    [
+      "        elementsInside += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        top = Stack.pop();",
+      [
+        9
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "      if (elementsInside < 1) return true;",
+      [
+        10
+      ]
+    ],
+    [
+      "    } else Stack.push(ch);",
+      [
+        11
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return false;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

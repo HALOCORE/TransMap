@@ -1,0 +1,80 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[11,4,11,25]",
+    "break_idx": 2,
+    "expected_src_pk": "[10,4,10,24]",
+    "actural_src_pk": "[10,4,10,24]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      8
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",42,\"there are $1 $2 and \"],\"discount\":[\"N\",\"50\"],\"ans\":[\"A\",1,[\"S\",42,\"there are $1 $2 and \"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",42,\"there are $1 $2 and \"],\"discount\":[\"N\",\"50\"],\"ans\":[\"A\",10,[\"S\",5,\"there\"],[\"S\",3,\"are\"],[\"S\",5,\"$0.50\"],[\"S\",5,\"$1.00\"],[\"S\",3,\"and\"],[\"S\",2,\"5$\"],[\"S\",7,\"candies\"],[\"S\",2,\"in\"],[\"S\",3,\"the\"],[\"S\",4,\"shop\"]],\"w\":[\"S\",4,\"shop\"],\"t\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "ans"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,9,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,8,9,25]",
+    "actural_src_pk": "[5,8,9,25]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",42,\"there are $1 $2 and \"],\"discount\":[\"N\",\"50\"],\"ans\":[\"A\",0],\"w\":[\"S\",42,\"there are $1 $2 and \"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",42,\"there are $1 $2 and \"],\"discount\":[\"N\",\"50\"],\"ans\":[\"A\",0],\"w\":[\"S\",5,\"there\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "w"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,9,9]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,8,9,25]",
+    "actural_src_pk": "[5,8,9,25]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",42,\"there are $1 $2 and \"],\"discount\":[\"N\",\"50\"],\"ans\":[\"A\",0],\"w\":[\"S\",42,\"there are $1 $2 and \"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",42,\"there are $1 $2 and \"],\"discount\":[\"N\",\"50\"],\"ans\":[\"A\",0],\"w\":[\"S\",5,\"there\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "w"
+    ]
+  }
+]

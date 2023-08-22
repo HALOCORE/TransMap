@@ -1,0 +1,50 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,5,13]",
+    "break_idx": 5,
+    "expected_src_pk": "[10,4,10,12]",
+    "actural_src_pk": "[10,4,10,12]",
+    "src_cov_lines": [
+      8,
+      9
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"-1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"-1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 6,
+    "tar_pk": "[3,8,3,15]",
+    "expected_src_pk": "[9,8,9,14]",
+    "actural_src_pk": "[10,4,10,12]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"-1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"3\"],[\"N\",\"4\"],[\"N\",\"-1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

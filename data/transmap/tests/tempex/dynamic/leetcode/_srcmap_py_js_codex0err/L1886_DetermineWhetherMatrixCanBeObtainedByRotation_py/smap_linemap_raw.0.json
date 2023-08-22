@@ -1,0 +1,220 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findRotation",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(mat: List[List[int]], target: List[List[int]]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def rotate(matrix):",
+      [
+        3
+      ]
+    ],
+    [
+      "        n = len(matrix)",
+      [
+        4
+      ]
+    ],
+    [
+      "        for i in range(n // 2):",
+      [
+        5
+      ]
+    ],
+    [
+      "            for j in range(i, n - 1 - i):",
+      [
+        6
+      ]
+    ],
+    [
+      "                t = matrix[i][j]",
+      [
+        7
+      ]
+    ],
+    [
+      "                matrix[i][j] = matrix[n - j - 1][i]",
+      [
+        8
+      ]
+    ],
+    [
+      "                matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1]",
+      [
+        9
+      ]
+    ],
+    [
+      "                matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1]",
+      [
+        10
+      ]
+    ],
+    [
+      "                matrix[j][n - i - 1] = t",
+      [
+        11
+      ]
+    ],
+    [
+      "    for _ in range(4):",
+      [
+        12
+      ]
+    ],
+    [
+      "        if mat == target:",
+      [
+        13
+      ]
+    ],
+    [
+      "            return True",
+      [
+        14
+      ]
+    ],
+    [
+      "        rotate(mat)",
+      [
+        15
+      ]
+    ],
+    [
+      "    return False",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat, target) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function rotate(matrix) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var n = matrix.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (var i = 0; i < n / 2; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            for (var j = i; j < n - 1 - i; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "                var t = matrix[i][j];",
+      [
+        7
+      ]
+    ],
+    [
+      "                matrix[i][j] = matrix[n - j - 1][i];",
+      [
+        8
+      ]
+    ],
+    [
+      "                matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];",
+      [
+        9
+      ]
+    ],
+    [
+      "                matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];",
+      [
+        10
+      ]
+    ],
+    [
+      "                matrix[j][n - i - 1] = t;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var _ = 0; _ < 4; _++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        if (JSON.stringify(mat) == JSON.stringify(target)) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        rotate(mat);",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,16]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"s\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,16]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"s\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,16]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"s\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

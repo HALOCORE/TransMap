@@ -1,0 +1,91 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[24,4,24,16]",
+    "break_idx": 3,
+    "expected_src_pk": "[16,4,16,15]",
+    "actural_src_pk": "[16,4,16,15]",
+    "src_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      16
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11,
+      12,
+      14,
+      17,
+      24
+    ],
+    "tar_data": [
+      "{\"date\":[\"S\",0,\"\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"date\":[\"S\",10,\"06-06-2005\"],\"month\":[\"N\",\"6\"],\"day\":[\"N\",\"6\"],\"year\":[\"N\",\"2005\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "date"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 41,
+    "tar_pk": "[5,8,5,32]",
+    "expected_src_pk": "[4,8,4,58]",
+    "actural_src_pk": "[14,8,14,20]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"date\":[\"S\",0,\"\"],\"month\":[\"S\",0,\"\"],\"day\":\"UNKNOWN\",\"year\":\"UNKNOWN\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"date\":[\"S\",0,\"\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 13,
+    "tar_pk": "[5,8,5,32]",
+    "expected_src_pk": "[4,8,4,58]",
+    "actural_src_pk": "[14,8,14,20]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"date\":[\"S\",0,\"\"],\"month\":[\"S\",0,\"\"],\"day\":\"UNKNOWN\",\"year\":\"UNKNOWN\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"date\":[\"S\",0,\"\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

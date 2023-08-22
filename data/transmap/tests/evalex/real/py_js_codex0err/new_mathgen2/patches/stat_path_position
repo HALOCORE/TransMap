@@ -1,0 +1,17 @@
+Semantic mistakes: 16
+--------------------------------------------
+Runtime error:  3
+python line number when found (correction at the same line):
+163
+python line number when found (correction at a different line):
+py: 37; js: 19, corr: 20
+py: 37; js: add a new function
+--------------------------------------------
+Hidden mistakes: 13
+--------------------------------------------
+TP: 13
+python line number when found (correction at the same line):
+39, 59, 88, 89, 91, 92, 114, 115, 139, 154, 155, 165, 166
+--------------------------------------------
+FP: 3
+--------------------------------------------

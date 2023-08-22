@@ -1,0 +1,52 @@
+{
+  "src_anno_stmts": [
+    [
+      "import math ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(side):",
+      [
+        2
+      ]
+    ],
+    [
+      "  volume =(side ** 3 /(6 * math.sqrt(2)))",
+      [
+        3
+      ]
+    ],
+    [
+      "  return round(volume, 2)",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(side) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  var volume = (side ** 3 / (6 * Math.sqrt(2)));",
+      [
+        3
+      ]
+    ],
+    [
+      "  return round(volume, 2);",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,83 @@
+
+### Python
+### minimumMoves 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(grid: List[List[int]]) -> int:   # --- py stmt 3
+    def check(a, b):   # --- py stmt 4
+        if (a, b) not in vis:   # --- py stmt 5
+            vis.add((a, b))   # --- py stmt 6
+            q.append((a, b))   # --- py stmt 7
+    n = len(grid)   # --- py stmt 8
+    target = (n * n - 2, n * n - 1)   # --- py stmt 9
+    q = deque([(0, 1)])   # --- py stmt 10
+    vis = {(0, 1)}   # --- py stmt 11
+    ans = 0   # --- py stmt 12
+    while q:   # --- py stmt 13
+        for _ in range(len(q)):   # --- py stmt 14
+            a, b = q.popleft()   # --- py stmt 15
+            if (a, b) == target:   # --- py stmt 16
+                return ans   # --- py stmt 17
+            i1, j1 = a // n, a % n   # --- py stmt 18
+            i2, j2 = b // n, b % n   # --- py stmt 19
+            if (   # --- py stmt 20
+                j1 + 1 < n
+                and j2 + 1 < n
+                and grid[i1][j1 + 1] == 0
+                and grid[i2][j2 + 1] == 0
+            ):
+                check(i1 * n + j1 + 1, i2 * n + j2 + 1)   # --- py stmt 21
+                if j1 == j2:   # --- py stmt 22
+                    check(a, i1 * n + j2 + 1)   # --- py stmt 23
+            if (   # --- py stmt 24
+                i1 + 1 < n
+                and i2 + 1 < n
+                and grid[i1 + 1][j1] == 0
+                and grid[i2 + 1][j2] == 0
+            ):
+                check((i1 + 1) * n + j1, (i2 + 1) * n + j2)   # --- py stmt 25
+                if i1 == i2:   # --- py stmt 26
+                    check(a, (i2 + 1) * n + j1)   # --- py stmt 27
+        ans += 1   # --- py stmt 28
+    return -1   # --- py stmt 29
+
+### JavaScript
+"use strict";
+
+function f_gold(grid) {   // --- py stmt 3
+    function check(a, b) {   // --- py stmt 4
+        if (!vis.has(a + "," + b)) {   // --- py stmt 5
+            vis.add(a + "," + b);   // --- py stmt 6
+            q.push([a, b]);   // --- py stmt 7
+        }
+    }
+    var n = grid.length;   // --- py stmt 8
+    var target = [n * n - 2, n * n - 1];   // --- py stmt 9
+    var q = [[0, 1]];   // --- py stmt 10
+    var vis = new Set([0 + "," + 1]);   // --- py stmt 11
+    var ans = 0;   // --- py stmt 12
+    while (q.length > 0) {   // --- py stmt 13
+        for (var _ = 0, ql = q.length; _ < ql; _++) {   // --- py stmt 14
+            var a = q.shift();   // --- py stmt 15
+            var b = q.shift();   // --- py stmt 15
+            if (a == target[0] && b == target[1]) return ans;   // --- py stmt 16, py stmt 17
+            var i1 = Math.floor(a / n);   // --- py stmt 18
+            var j1 = a % n;   // --- py stmt 18
+            var i2 = Math.floor(b / n);   // --- py stmt 19
+            var j2 = b % n;   // --- py stmt 19
+            if (j1 + 1 < n && j2 + 1 < n && grid[i1][j1 + 1] == 0 && grid[i2][j2 + 1] == 0) {   // --- py stmt 20
+                check(i1 * n + j1 + 1, i2 * n + j2 + 1);   // --- py stmt 21
+                if (j1 == j2) check(a, i1 * n + j2 + 1);   // --- py stmt 22, py stmt 23
+            }
+            if (i1 + 1 < n && i2 + 1 < n && grid[i1 + 1][j1] == 0 && grid[i2 + 1][j2] == 0) {   // --- py stmt 24
+                check((i1 + 1) * n + j1, (i2 + 1) * n + j2);   // --- py stmt 25
+                if (i1 == i2) check(a, (i2 + 1) * n + j1);   // --- py stmt 26, py stmt 27
+            }
+        }
+        ans++;   // --- py stmt 28
+    }
+    return -1;   // --- py stmt 29
+}
+
+
+

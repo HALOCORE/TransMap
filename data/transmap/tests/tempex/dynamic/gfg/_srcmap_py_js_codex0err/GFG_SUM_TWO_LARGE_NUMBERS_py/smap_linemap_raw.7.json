@@ -1,0 +1,286 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(str1, str2):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if(len(str1)> len(str2)):",
+      [
+        2
+      ]
+    ],
+    [
+      "    t = str1",
+      [
+        3
+      ]
+    ],
+    [
+      "    str1 = str2",
+      [
+        4
+      ]
+    ],
+    [
+      "    str2 = t",
+      [
+        5
+      ]
+    ],
+    [
+      "  str = \"\"",
+      [
+        6
+      ]
+    ],
+    [
+      "  n1 = len(str1)",
+      [
+        7
+      ]
+    ],
+    [
+      "  n2 = len(str2)",
+      [
+        8
+      ]
+    ],
+    [
+      "  str1 = str1[:: - 1]",
+      [
+        9
+      ]
+    ],
+    [
+      "  str2 = str2[:: - 1]",
+      [
+        10
+      ]
+    ],
+    [
+      "  carry = 0",
+      [
+        11
+      ]
+    ],
+    [
+      "  for i in range(n1):",
+      [
+        12
+      ]
+    ],
+    [
+      "    sum =((ord(str1[i])- 48)+((ord(str2[i])- 48)+ carry))",
+      [
+        13
+      ]
+    ],
+    [
+      "    str += chr(sum % 10 + 48)",
+      [
+        14
+      ]
+    ],
+    [
+      "    carry = int(sum / 10)",
+      [
+        15
+      ]
+    ],
+    [
+      "  for i in range(n1, n2):",
+      [
+        16
+      ]
+    ],
+    [
+      "    sum =((ord(str2[i])- 48)+ carry)",
+      [
+        17
+      ]
+    ],
+    [
+      "    str += chr(sum % 10 + 48)",
+      [
+        18
+      ]
+    ],
+    [
+      "    carry =(int)(sum / 10)",
+      [
+        19
+      ]
+    ],
+    [
+      "  if(carry): str += chr(carry + 48)",
+      [
+        20
+      ]
+    ],
+    [
+      "  str = str[:: - 1]",
+      [
+        21
+      ]
+    ],
+    [
+      "  return str",
+      [
+        22
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(str1, str2) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (str1.length > str2.length) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let t = str1;",
+      [
+        3
+      ]
+    ],
+    [
+      "    str1 = str2;",
+      [
+        4
+      ]
+    ],
+    [
+      "    str2 = t;",
+      [
+        5
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var str = \"\";",
+      [
+        6
+      ]
+    ],
+    [
+      "  var n1 = str1.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "  var n2 = str2.length;",
+      [
+        8
+      ]
+    ],
+    [
+      "  str1 = str1.split(\"\").reverse().join(\"\");",
+      [
+        9
+      ]
+    ],
+    [
+      "  str2 = str2.split(\"\").reverse().join(\"\");",
+      [
+        10
+      ]
+    ],
+    [
+      "  var carry = 0, sum;",
+      [
+        11
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n1; i++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "    sum = (str1.charCodeAt(i) - 48) + (str2.charCodeAt(i) - 48) + carry;",
+      [
+        13
+      ]
+    ],
+    [
+      "    str += String.fromCharCode((sum % 10 + 10) % 10 + 48);",
+      [
+        14
+      ]
+    ],
+    [
+      "    carry = parseInt(sum / 10);",
+      [
+        15
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (i = n1; i < n2; i++) {",
+      [
+        16
+      ]
+    ],
+    [
+      "    sum = (str2.charCodeAt(i) - 48) + carry;",
+      [
+        17
+      ]
+    ],
+    [
+      "    str += String.fromCharCode((sum % 10 + 10) % 10 + 48);",
+      [
+        18
+      ]
+    ],
+    [
+      "    carry = parseInt(sum / 10);",
+      [
+        19
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  if (carry) str += String.fromCharCode(carry + 48);",
+      [
+        20
+      ]
+    ],
+    [
+      "  str = str.split(\"\").reverse().join(\"\");",
+      [
+        21
+      ]
+    ],
+    [
+      "  return str;",
+      [
+        22
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

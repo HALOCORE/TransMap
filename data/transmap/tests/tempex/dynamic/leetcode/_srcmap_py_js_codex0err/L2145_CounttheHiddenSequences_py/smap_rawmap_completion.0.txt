@@ -1,0 +1,26 @@
+
+### Python
+### numberOfArrays 
+from typing import *   # --- py stmt 1
+def f_gold(differences: List[int], lower: int, upper: int) -> int:   # --- py stmt 2
+    num = mi = mx = 0   # --- py stmt 3
+    for d in differences:   # --- py stmt 4
+        num += d   # --- py stmt 5
+        mi = min(mi, num)   # --- py stmt 6
+        mx = max(mx, num)   # --- py stmt 7
+    return max(0, upper - lower - (mx - mi) + 1)   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(differences, lower, upper) {   // --- py stmt 2
+    var num = mi = mx = 0;   // --- py stmt 3
+    for (var d of differences) {   // --- py stmt 4
+        num += d;   // --- py stmt 5
+        mi = Math.min(mi, num);   // --- py stmt 6
+        mx = Math.max(mx, num);   // --- py stmt 7
+    }
+    return Math.max(0, upper - lower - (mx - mi) + 1);   // --- py stmt 8
+}
+
+
+

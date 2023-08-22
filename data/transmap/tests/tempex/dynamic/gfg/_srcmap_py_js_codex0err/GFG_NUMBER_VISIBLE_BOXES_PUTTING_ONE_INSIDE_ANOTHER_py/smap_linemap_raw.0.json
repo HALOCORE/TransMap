@@ -1,0 +1,128 @@
+{
+  "src_anno_stmts": [
+    [
+      "import collections ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr, n):",
+      [
+        2
+      ]
+    ],
+    [
+      "  q = collections.deque([])",
+      [
+        3
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "  q.append(arr[0])",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(1, n):",
+      [
+        6
+      ]
+    ],
+    [
+      "    now = q[0]",
+      [
+        7
+      ]
+    ],
+    [
+      "    if(arr[i] >= 2 * now): q.popleft()",
+      [
+        8
+      ]
+    ],
+    [
+      "    q.append(arr[i])",
+      [
+        9
+      ]
+    ],
+    [
+      "  return len(q)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  var q = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "  q.push(arr[0]);",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (var i = 1; i < n; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    var now = q[0];",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (arr[i] >= 2 * now) q.shift();",
+      [
+        8
+      ]
+    ],
+    [
+      "    q.push(arr[i]);",
+      [
+        9
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return q.length;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

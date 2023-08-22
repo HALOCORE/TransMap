@@ -1,0 +1,67 @@
+
+### Python
+### fractionToDecimal 
+from typing import *   # --- py stmt 1
+def f_gold(numerator: int, denominator: int) -> str:   # --- py stmt 2
+    if numerator == 0:   # --- py stmt 3
+        return '0'   # --- py stmt 4
+    res = []   # --- py stmt 5
+    neg = (numerator > 0) ^ (denominator > 0)   # --- py stmt 6
+    if neg:   # --- py stmt 7
+        res.append('-')   # --- py stmt 8
+    num, d = abs(numerator), abs(denominator)   # --- py stmt 9
+    res.append(str(num // d))   # --- py stmt 10
+    num %= d   # --- py stmt 11
+    if num == 0:   # --- py stmt 12
+        return ''.join(res)   # --- py stmt 13
+    res.append('.')   # --- py stmt 14
+    mp = {}   # --- py stmt 15
+    while num != 0:   # --- py stmt 16
+        mp[num] = len(res)   # --- py stmt 17
+        num *= 10   # --- py stmt 18
+        res.append(str(num // d))   # --- py stmt 19
+        num %= d   # --- py stmt 20
+        if num in mp:   # --- py stmt 21
+            idx = mp[num]   # --- py stmt 22
+            res.insert(idx, '(')   # --- py stmt 23
+            res.append(')')   # --- py stmt 24
+            break   # --- py stmt 25
+    return ''.join(res)   # --- py stmt 26
+
+### JavaScript
+"use strict";
+function f_gold(numerator, denominator) {   // --- py stmt 2
+    if (numerator == 0) {   // --- py stmt 3
+        return '0';   // --- py stmt 4
+    }
+    var res = [];   // --- py stmt 5
+    var neg = (numerator > 0) ^ (denominator > 0);   // --- py stmt 6
+    if (neg) {   // --- py stmt 7
+        res.push('-');   // --- py stmt 8
+    }
+    var num = Math.abs(numerator);   // --- py stmt 9
+    var d = Math.abs(denominator);   // --- py stmt 9
+    res.push(String(Math.floor(num / d)));   // --- py stmt 10
+    num %= d;   // --- py stmt 11
+    if (num == 0) {   // --- py stmt 12
+        return res.join('');   // --- py stmt 13
+    }
+    res.push('.');   // --- py stmt 14
+    var mp = {};   // --- py stmt 15
+    while (num != 0) {   // --- py stmt 16
+        mp[num] = res.length;   // --- py stmt 17
+        num *= 10;   // --- py stmt 18
+        res.push(String(num / d));   // --- py stmt 19
+        num %= d;   // --- py stmt 20
+        if (num in mp) {   // --- py stmt 21
+            var idx = mp[num];   // --- py stmt 22
+            res.splice(idx, 0, '(');   // --- py stmt 23
+            res.push(')');   // --- py stmt 24
+            break;   // --- py stmt 25
+        }
+    }
+    return res.join('');   // --- py stmt 26
+}
+
+
+

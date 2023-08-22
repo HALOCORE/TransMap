@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 9,
+    "actural_src_pk": "[2,4,2,14]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: Reduce of empty array with no initial value\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",9,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "[2,4,2,14]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: Reduce of empty array with no initial value\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",9,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "[2,4,2,14]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":13,\"err_msg\":\"TypeError: Reduce of empty array with no initial value\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",9,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  }
+]

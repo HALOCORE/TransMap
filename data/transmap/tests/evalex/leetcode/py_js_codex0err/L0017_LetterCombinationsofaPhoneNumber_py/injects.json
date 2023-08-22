@@ -1,0 +1,44 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 10,
+    "content": "    var strs = [];\n    for (var d of digits) {\n        strs.push(chars[parseInt(d) - 2]);\n    }",
+    "replacement": "    var strs = [chars[parseInt(d) - 2] for (d in digits)];"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    for (var s of strs) {",
+    "replacement": "    for (var s in strs) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "        if (res.length === 0) {",
+    "replacement": "        if (!res) {"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "            res = Array.from(s);",
+    "replacement": "            res = list(s);"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "            for (var item of res) {",
+    "replacement": "            for (var item in res) {"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "                for (var letter of s) {",
+    "replacement": "                for (var letter in s) {"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "                    cache.push(item + letter);",
+    "replacement": "                    cache.append(item + letter);"
+  }
+]

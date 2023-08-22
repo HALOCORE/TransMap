@@ -1,0 +1,36 @@
+
+### Python
+### minimumDeletions 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    mi = mx = 0   # --- py stmt 3
+    for i, num in enumerate(nums):   # --- py stmt 4
+        if num < nums[mi]:   # --- py stmt 5
+            mi = i   # --- py stmt 6
+        if num > nums[mx]:   # --- py stmt 7
+            mx = i   # --- py stmt 8
+    if mi > mx:   # --- py stmt 9
+        mi, mx = mx, mi   # --- py stmt 10
+    return min(mx + 1, len(nums) - mi, mi + 1 + len(nums) - mx)   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var mx = 0, mi = 0;   // --- py stmt 3
+    for (var i = 0; i < nums.length; i++) {   // --- py stmt 4
+        if (nums[i] < nums[mi]) {   // --- py stmt 5
+            mi = i;   // --- py stmt 6
+        }
+        if (nums[i] > nums[mx]) {   // --- py stmt 7
+            mx = i;   // --- py stmt 8
+        }
+    }
+    if (mi > mx) {   // --- py stmt 9
+        mi = mx;   // --- py stmt 10
+        mx = mi;   // --- py stmt 10
+    }
+    return Math.min(mx + 1, nums.length - mi, mi + 1 + nums.length - mx);   // --- py stmt 11
+}
+
+
+

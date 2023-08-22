@@ -1,0 +1,73 @@
+
+### Python
+def f_gold(m, n, arr):   # --- py stmt 1
+  k = 0 ;   # --- py stmt 2
+  l = 0   # --- py stmt 3
+  cnt = 0   # --- py stmt 4
+  total = m * n   # --- py stmt 5
+  while(k < m and l < n):   # --- py stmt 6
+    if(cnt == total): break   # --- py stmt 7
+    for i in range(k, m):   # --- py stmt 8
+      print(arr[i][l], end = " ")   # --- py stmt 9
+      cnt += 1   # --- py stmt 10
+    l += 1   # --- py stmt 11
+    if(cnt == total): break   # --- py stmt 12
+    for i in range(l, n):   # --- py stmt 13
+      print(arr[m - 1][i], end = " ")   # --- py stmt 14
+      cnt += 1   # --- py stmt 15
+    m -= 1   # --- py stmt 16
+    if(cnt == total): break   # --- py stmt 17
+    if(k < m):   # --- py stmt 18
+      for i in range(m - 1, k - 1, - 1):   # --- py stmt 19
+        print(arr[i][n - 1], end = " ")   # --- py stmt 20
+        cnt += 1   # --- py stmt 21
+      n -= 1   # --- py stmt 22
+    if(cnt == total): break   # --- py stmt 23
+    if(l < n):   # --- py stmt 24
+      for i in range(n - 1, l - 1, - 1):   # --- py stmt 25
+        print(arr[k][i], end = " ")   # --- py stmt 26
+        cnt += 1   # --- py stmt 27
+      k += 1   # --- py stmt 28
+
+
+### JavaScript
+"use strict";
+function f_gold(m, n, arr) {   // --- py stmt 1
+  var k = 0;   // --- py stmt 2
+  var l = 0;   // --- py stmt 3
+  var cnt = 0;   // --- py stmt 4
+  var total = m * n;   // --- py stmt 5
+  while (k < m && l < n) {   // --- py stmt 6
+    if (cnt == total) break;   // --- py stmt 7
+    for (var i = k; i < m; i++) {   // --- py stmt 8
+      console.log(arr[i][l], end = " ");   // --- py stmt 9
+      cnt += 1;   // --- py stmt 10
+    }
+    l += 1;   // --- py stmt 11
+    if (cnt == total) break;   // --- py stmt 12
+    for (var i = l; i < n; i++) {   // --- py stmt 13
+      console.log(arr[m - 1][i]);   // --- py stmt 14
+      cnt += 1;   // --- py stmt 15
+    }
+    m -= 1;   // --- py stmt 16
+    if (cnt == total) break;   // --- py stmt 17
+    if (k < m) {   // --- py stmt 18
+      for (var i = m - 1; i > k - 1; i--) {   // --- py stmt 19
+        console.log(arr[i][n - 1]);   // --- py stmt 20
+        cnt += 1;   // --- py stmt 21
+      }
+      n -= 1;   // --- py stmt 22
+    }
+    if (cnt == total) break;   // --- py stmt 23
+    if (l < n) {   // --- py stmt 24
+      for (var i = n - 1; i > l - 1; i--) {   // --- py stmt 25
+        console.log(arr[k][i]);   // --- py stmt 26
+        cnt += 1;   // --- py stmt 27
+      }
+      k += 1;   // --- py stmt 28
+    }
+  }
+}
+
+
+

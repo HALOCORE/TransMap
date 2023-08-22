@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 20,
+    "line_end": 21,
+    "content": "        sum += Math.floor(value / 3) + ((value % 3 == 0) ? 0 : 1);",
+    "replacement": "        sum += Math.floor(value / 3) + (0 if value % 3 == 0 else 1);"
+  }
+]

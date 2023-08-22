@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[7,4,7,15]",
+    "break_idx": 2,
+    "expected_src_pk": "[7,4,7,14]",
+    "actural_src_pk": "[7,4,7,14]",
+    "src_cov_lines": [
+      4,
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"rowIndex\":[\"N\",\"3\"],\"row\":[\"A\",4,[\"N\",\"NaN\"],[\"N\",\"NaN\"],[\"N\",\"3\"],[\"N\",\"1\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"rowIndex\":[\"N\",\"3\"],\"row\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"3\"],[\"N\",\"3\"],[\"N\",\"1\"]],\"i\":[\"N\",\"3\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "row"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,5,9]",
+    "break_idx": 2,
+    "expected_src_pk": "[5,8,6,32]",
+    "actural_src_pk": "[5,8,6,32]",
+    "src_cov_lines": [
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"rowIndex\":[\"N\",\"3\"],\"row\":[\"A\",4,[\"N\",\"NaN\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"3\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"rowIndex\":[\"N\",\"3\"],\"row\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"3\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "row"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 2,
+    "tar_pk": "[4,12,4,33]",
+    "expected_src_pk": "[6,12,6,32]",
+    "actural_src_pk": "[5,8,6,32]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"rowIndex\":[\"N\",\"3\"],\"row\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"2\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"rowIndex\":[\"N\",\"3\"],\"row\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"i\":[\"N\",\"3\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

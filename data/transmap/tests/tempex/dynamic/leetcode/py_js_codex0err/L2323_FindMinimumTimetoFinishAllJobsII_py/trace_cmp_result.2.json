@@ -1,0 +1,16 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "NOT_EXIST",
+    "src_cov_lines": "NOT_EXIST",
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:1 MISMATCH_IDX:3 OBSERVED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",3.8333333333333335]] EXPECTED:[\\\"MYLOGEX:1\\\",[\\\"num\\\",3]]\"}",
+      ""
+    ],
+    "src_data": "NOT_EXIST"
+  }
+]

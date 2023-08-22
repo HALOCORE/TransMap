@@ -1,0 +1,206 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(number):",
+      [
+        1
+      ]
+    ],
+    [
+      "  n = len(number)",
+      [
+        2
+      ]
+    ],
+    [
+      "  d =[0 for i in range(9)]",
+      [
+        3
+      ]
+    ],
+    [
+      "  d[0] = 1",
+      [
+        4
+      ]
+    ],
+    [
+      "  result = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "  mod_sum = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "  continuous_zero = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        8
+      ]
+    ],
+    [
+      "    if(ord(number[i])- ord('0')== 0): continuous_zero += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    else: continuous_zero = 0",
+      [
+        10
+      ]
+    ],
+    [
+      "    mod_sum += ord(number[i])- ord('0')",
+      [
+        11
+      ]
+    ],
+    [
+      "    mod_sum %= 9",
+      [
+        12
+      ]
+    ],
+    [
+      "    result += d[mod_sum]",
+      [
+        13
+      ]
+    ],
+    [
+      "    d[mod_sum] += 1",
+      [
+        14
+      ]
+    ],
+    [
+      "    result -= continuous_zero",
+      [
+        15
+      ]
+    ],
+    [
+      "  return result",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(number) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var n = number.length;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var d = Array(9).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "  d[0] = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "  var result = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "  var mod_sum = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "  var continuous_zero = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    if (number.join('').charCodeAt(i) - '0'.charCodeAt(0) == 0) continuous_zero += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    else continuous_zero = 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "    mod_sum += number.charCodeAt(i) - '0'.charCodeAt(0);",
+      [
+        11
+      ]
+    ],
+    [
+      "    mod_sum = (mod_sum % 9 + 9) % 9;",
+      [
+        12
+      ]
+    ],
+    [
+      "    result += d[mod_sum];",
+      [
+        13
+      ]
+    ],
+    [
+      "    d[mod_sum] += 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "    result -= continuous_zero;",
+      [
+        15
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

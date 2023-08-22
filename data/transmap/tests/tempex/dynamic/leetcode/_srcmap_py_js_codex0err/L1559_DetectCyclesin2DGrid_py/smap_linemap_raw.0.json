@@ -1,0 +1,252 @@
+{
+  "src_anno_stmts": [
+    [
+      "### containsCycle",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(grid: List[List[str]]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def find(x):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if p[x] != x:",
+      [
+        4
+      ]
+    ],
+    [
+      "            p[x] = find(p[x])",
+      [
+        5
+      ]
+    ],
+    [
+      "        return p[x]",
+      [
+        6
+      ]
+    ],
+    [
+      "    m, n = len(grid), len(grid[0])",
+      [
+        7
+      ]
+    ],
+    [
+      "    p = list(range(m * n))",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        9
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        10
+      ]
+    ],
+    [
+      "            for a, b in [[0, 1], [1, 0]]:",
+      [
+        11
+      ]
+    ],
+    [
+      "                x, y = i + a, j + b",
+      [
+        12
+      ]
+    ],
+    [
+      "                if x < m and y < n and grid[x][y] == grid[i][j]:",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if find(x * n + y) == find(i * n + j):",
+      [
+        14
+      ]
+    ],
+    [
+      "                        return True",
+      [
+        15
+      ]
+    ],
+    [
+      "                    p[find(x * n + y)] = find(i * n + j)",
+      [
+        16
+      ]
+    ],
+    [
+      "    return False",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(grid) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function find(x) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (p[x] != x) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            p[x] = find(p[x]);",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return p[x];",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var m = grid.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    var n = grid[0].length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    var p = Array.from(Array(m * n).keys());",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            for (var a = 0, b = 1; a < 1; a++, b++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                var x = i + a;",
+      [
+        12
+      ]
+    ],
+    [
+      "                var y = j + b;",
+      [
+        12
+      ]
+    ],
+    [
+      "                if (x < m && y < n && grid[x][y] == grid[i][j]) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if (find(x * n + y) == find(i * n + j)) {",
+      [
+        14
+      ]
+    ],
+    [
+      "                        return true;",
+      [
+        15
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                    p[find(x * n + y)] = find(i * n + j);",
+      [
+        16
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

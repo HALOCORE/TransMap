@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,4,1,77]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: Reduce of empty array with no initial value\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",2,[\"N\",\"5\"],[\"N\",\"4\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,4,1,77]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: Reduce of empty array with no initial value\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",2,[\"N\",\"5\"],[\"N\",\"4\"]]}",
+      ""
+    ]
+  }
+]

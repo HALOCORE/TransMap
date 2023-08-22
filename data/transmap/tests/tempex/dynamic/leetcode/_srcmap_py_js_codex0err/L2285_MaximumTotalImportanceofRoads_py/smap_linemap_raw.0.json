@@ -1,0 +1,130 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximumImportance",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int, roads: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    deg = [0] * n",
+      [
+        3
+      ]
+    ],
+    [
+      "    for a, b in roads:",
+      [
+        4
+      ]
+    ],
+    [
+      "        deg[a] += 1",
+      [
+        5
+      ]
+    ],
+    [
+      "        deg[b] += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    deg.sort()",
+      [
+        7
+      ]
+    ],
+    [
+      "    return sum(i * v for i, v in enumerate(deg, 1))",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n, roads) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var deg = Array(n).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < roads.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        deg[roads[i][0]] += 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        deg[roads[i][1]] += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    deg.sort();",
+      [
+        7
+      ]
+    ],
+    [
+      "    var sum = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var i = 0; i < deg.length; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        sum += (i + 1) * deg[i];",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return sum;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

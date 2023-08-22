@@ -1,0 +1,48 @@
+
+### Python
+### sellingWood 
+def cache(f): return f   # --- py stmt 1
+from collections import defaultdict   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(m: int, n: int, prices: List[List[int]]) -> int:   # --- py stmt 4
+    @cache   # --- py stmt 5
+    def dfs(h, w):   # --- py stmt 6
+        ans = d[h].get(w, 0)   # --- py stmt 7
+        for i in range(1, h // 2 + 1):   # --- py stmt 8
+            ans = max(ans, dfs(i, w) + dfs(h - i, w))   # --- py stmt 9
+        for i in range(1, w // 2 + 1):   # --- py stmt 10
+            ans = max(ans, dfs(h, i) + dfs(h, w - i))   # --- py stmt 11
+        return ans   # --- py stmt 12
+    d = defaultdict(dict)   # --- py stmt 13
+    for h, w, p in prices:   # --- py stmt 14
+        d[h][w] = p   # --- py stmt 15
+    return dfs(m, n)   # --- py stmt 16
+
+### JavaScript
+"use strict";
+
+function cache(f) {   // --- py stmt 1
+    return f;
+}
+
+function f_gold(m, n, prices) {   // --- py stmt 4
+    function dfs(h, w) {   // --- py stmt 6
+        let ans = d[h].get(w, 0);   // --- py stmt 7
+        for (let i = 1; i <= h / 2; i++) {   // --- py stmt 8
+            ans = Math.max(ans, dfs(i, w) + dfs(h - i, w));   // --- py stmt 9
+        }
+        for (let i = 1; i <= w / 2; i++) {   // --- py stmt 10
+            ans = Math.max(ans, dfs(h, i) + dfs(h, w - i));   // --- py stmt 11
+        }
+        return ans;   // --- py stmt 12
+    }
+    let d = new Map();   // --- py stmt 13
+    for (let [h, w, p] of prices) {   // --- py stmt 14
+        if (!(h in d)) d[h] = {};
+        d[h][w] = p;   // --- py stmt 15
+    }
+    return dfs(m, n);   // --- py stmt 16
+}
+
+
+

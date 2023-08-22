@@ -1,0 +1,48 @@
+
+### Python
+### sortJumbled 
+from typing import *   # --- py stmt 1
+def f_gold(mapping: List[int], nums: List[int]) -> List[int]:   # --- py stmt 2
+    m = []   # --- py stmt 3
+    for i, v in enumerate(nums):   # --- py stmt 4
+        a, b, t = v, 0, 1   # --- py stmt 5
+        while 1:   # --- py stmt 6
+            a, x = divmod(a, 10)   # --- py stmt 7
+            x = mapping[x]   # --- py stmt 8
+            b = x * t + b   # --- py stmt 9
+            t *= 10   # --- py stmt 10
+            if a == 0:   # --- py stmt 11
+                break   # --- py stmt 12
+        m.append((b, i, v))   # --- py stmt 13
+    m.sort()   # --- py stmt 14
+    for i, v in enumerate(m):   # --- py stmt 15
+        nums[i] = v[2]   # --- py stmt 16
+    return nums   # --- py stmt 17
+
+### JavaScript
+"use strict";
+function f_gold(mapping, nums) {   // --- py stmt 2
+    var m = [];   // --- py stmt 3
+    for (var i = 0; i < nums.length; i++) {   // --- py stmt 4
+        var a = nums[i];   // --- py stmt 5
+        var b = 0;   // --- py stmt 5
+        var t = 1;   // --- py stmt 5
+        while (1) {   // --- py stmt 6
+            var x = a % 10;   // --- py stmt 7
+            a = Math.floor(a / 10);   // --- py stmt 7
+            x = mapping[x];   // --- py stmt 8
+            b = x * t + b;   // --- py stmt 9
+            t *= 10;   // --- py stmt 10
+            if (a == 0) {   // --- py stmt 11
+                break;   // --- py stmt 12
+            }
+        }
+        m.push([b, i, nums[i]]);   // --- py stmt 13
+    }
+    m.sort();   // --- py stmt 14
+    for (var i = 0; i < m.length; i++) {   // --- py stmt 15
+        nums[i] = m[i][2];   // --- py stmt 16
+    }
+    return nums;   // --- py stmt 17
+}
+

@@ -1,0 +1,170 @@
+{
+  "src_anno_stmts": [
+    [
+      "def move_one_ball(arr):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if len(arr)==0:",
+      [
+        2
+      ]
+    ],
+    [
+      "      return True",
+      [
+        3
+      ]
+    ],
+    [
+      "    sorted_array=sorted(arr)",
+      [
+        4
+      ]
+    ],
+    [
+      "    my_arr=[]",
+      [
+        5
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    min_value=min(arr)",
+      [
+        6
+      ]
+    ],
+    [
+      "    min_index=arr.index(min_value)",
+      [
+        7
+      ]
+    ],
+    [
+      "    my_arr=arr[min_index:]+arr[0:min_index]",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i in range(len(arr)):",
+      [
+        9
+      ]
+    ],
+    [
+      "      if my_arr[i]!=sorted_array[i]:",
+      [
+        10
+      ]
+    ],
+    [
+      "        return False",
+      [
+        11
+      ]
+    ],
+    [
+      "    return True",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function move_one_ball(arr) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (arr.length == 0) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return true;",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var sorted_array = arr.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "    var my_arr = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    var min_value = Math.min.apply(Math, arr);",
+      [
+        6
+      ]
+    ],
+    [
+      "    var min_index = arr.indexOf(min_value);",
+      [
+        7
+      ]
+    ],
+    [
+      "    my_arr = arr.slice(min_index).concat(arr.slice(0, min_index));",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var i = 0; i < arr.length; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (my_arr[i] != sorted_array[i]) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

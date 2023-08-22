@@ -1,0 +1,57 @@
+
+### Python
+### beforeAndAfterPuzzles 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(phrases: List[str]) -> List[str]:   # --- py stmt 3
+    same_first_word = defaultdict(set)   # --- py stmt 4
+    for i, phrase in enumerate(phrases):   # --- py stmt 5
+        same_first_word[phrase.split()[0]].add(i)   # --- py stmt 6
+    res = set()   # --- py stmt 7
+    for i, phrase in enumerate(phrases):   # --- py stmt 8
+        words = phrase.split()   # --- py stmt 9
+        last_word = words[-1]   # --- py stmt 10
+        if last_word in same_first_word:   # --- py stmt 11
+            for j in same_first_word[last_word]:   # --- py stmt 12
+                if i != j:   # --- py stmt 13
+                    res.add(' '.join(words[:-1] + phrases[j].split()))   # --- py stmt 14
+    return sorted(list(res))   # --- py stmt 15
+
+### JavaScript
+"use strict";
+function f_gold(phrases) {   // --- py stmt 3
+    var same_first_word = new Map();   // --- py stmt 4
+    for (var i = 0; i < phrases.length; i++) {   // --- py stmt 5
+        var phrase = phrases[i];   // --- py stmt 5
+        var words = phrase.split(" ");   // --- py stmt 9
+        var first_word = words[0];   // --- py stmt 6
+        if (same_first_word.has(first_word)) {   // --- py stmt 6
+            var set = same_first_word.get(first_word);   // --- py stmt 6
+            set.add(i);   // --- py stmt 6
+        }
+        else {   // --- py stmt 6
+            var set = new Set();   // --- py stmt 6
+            set.add(i);   // --- py stmt 6
+            same_first_word.set(first_word, set);   // --- py stmt 6
+        }
+    }
+    var res = new Set();   // --- py stmt 7
+    for (var i = 0; i < phrases.length; i++) {   // --- py stmt 8
+        var phrase = phrases[i];   // --- py stmt 8
+        var words = phrase.split(" ");   // --- py stmt 9
+        var last_word = words[words.length - 1];   // --- py stmt 10
+        if (same_first_word.has(last_word)) {   // --- py stmt 11
+            var set = same_first_word.get(last_word);   // --- py stmt 12
+            for (var j of set) {   // --- py stmt 12
+                if (i != j) {   // --- py stmt 13
+                    var new_phrase = words.slice(0, words.length - 1).concat(phrases[j].split(" ")).join(" ");   // --- py stmt 14
+                    res.add(new_phrase);   // --- py stmt 14
+                }
+            }
+        }
+    }
+    return Array.from(res).sort();   // --- py stmt 15
+}
+
+
+

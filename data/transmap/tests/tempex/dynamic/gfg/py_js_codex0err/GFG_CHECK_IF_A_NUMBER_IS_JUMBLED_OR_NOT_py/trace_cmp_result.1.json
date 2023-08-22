@@ -1,0 +1,76 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[1,2,1,33]",
+    "src_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:2 MISMATCH_IDX:2 OBSERVED:[\\\"MYLOGEX:2\\\",[\\\"bool\\\",false]] EXPECTED:[\\\"MYLOGEX:2\\\",[\\\"bool\\\",true]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"77\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 8,
+    "tar_pk": "[6,8,6,30]",
+    "expected_src_pk": "[4,4,4,21]",
+    "actural_src_pk": "[1,2,1,33]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"num\":[\"N\",\"6\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"77\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 4,
+    "tar_pk": "[6,8,6,30]",
+    "expected_src_pk": "[4,4,4,21]",
+    "actural_src_pk": "[1,2,1,33]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"num\":[\"N\",\"6\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"77\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

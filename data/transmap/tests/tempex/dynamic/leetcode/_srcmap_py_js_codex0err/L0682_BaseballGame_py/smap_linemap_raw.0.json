@@ -1,0 +1,184 @@
+{
+  "src_anno_stmts": [
+    [
+      "### calPoints",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(ops: List[str]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    stk = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for op in ops:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if op == '+':",
+      [
+        5
+      ]
+    ],
+    [
+      "            stk.append(stk[-1] + stk[-2])",
+      [
+        6
+      ]
+    ],
+    [
+      "        elif op == 'D':",
+      [
+        7
+      ]
+    ],
+    [
+      "            stk.append(stk[-1] << 1)",
+      [
+        8
+      ]
+    ],
+    [
+      "        elif op == 'C':",
+      [
+        9
+      ]
+    ],
+    [
+      "            stk.pop()",
+      [
+        10
+      ]
+    ],
+    [
+      "        else:",
+      [
+        11
+      ]
+    ],
+    [
+      "            stk.append(int(op))",
+      [
+        12
+      ]
+    ],
+    [
+      "    return sum(stk)",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(ops) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let stk = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let op of ops) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (op == '+') {",
+      [
+        5
+      ]
+    ],
+    [
+      "            stk.push(stk[stk.length - 1] + stk[stk.length - 2]);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (op == 'D') {",
+      [
+        7
+      ]
+    ],
+    [
+      "            stk.push(stk[stk.length - 1] << 1);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (op == 'C') {",
+      [
+        9
+      ]
+    ],
+    [
+      "            stk.pop();",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        11
+      ]
+    ],
+    [
+      "            stk.push(parseInt(op));",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return stk.reduce((a, b) => a + b);",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

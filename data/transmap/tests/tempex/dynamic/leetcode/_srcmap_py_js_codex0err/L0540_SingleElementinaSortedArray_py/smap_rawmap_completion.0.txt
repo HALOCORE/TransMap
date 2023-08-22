@@ -1,0 +1,33 @@
+
+### Python
+### singleNonDuplicate 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    left, right = 0, len(nums) - 1   # --- py stmt 3
+    while left < right:   # --- py stmt 4
+        mid = (left + right) >> 1   # --- py stmt 5
+        # Equals to: if (mid % 2 == 0 and nums[mid] != nums[mid + 1]) or (mid % 2 == 1 and nums[mid] != nums[mid - 1]):
+        if nums[mid] != nums[mid ^ 1]:   # --- py stmt 6
+            right = mid   # --- py stmt 7
+        else:   # --- py stmt 8
+            left = mid + 1   # --- py stmt 9
+    return nums[left]   # --- py stmt 10
+
+### JavaScript
+"use strict";
+const singleNonDuplicate = (nums) => {   // --- py stmt 2
+    let left = 0;   // --- py stmt 3
+    let right = nums.length - 1;   // --- py stmt 3
+    while (left < right) {   // --- py stmt 4
+        let mid = (left + right) >> 1;   // --- py stmt 5
+        if (nums[mid] != nums[mid ^ 1]) {   // --- py stmt 6
+            right = mid;   // --- py stmt 7
+        } else {   // --- py stmt 8
+            left = mid + 1;   // --- py stmt 9
+        }
+    }
+    return nums[left];   // --- py stmt 10
+};
+
+
+

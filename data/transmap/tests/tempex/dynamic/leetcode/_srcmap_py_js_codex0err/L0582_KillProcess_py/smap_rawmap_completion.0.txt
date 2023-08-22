@@ -1,0 +1,43 @@
+
+### Python
+### killProcess 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(pid: List[int], ppid: List[int], kill: int) -> List[int]:   # --- py stmt 3
+    def dfs(u):   # --- py stmt 4
+        ans.append(u)   # --- py stmt 5
+        for v in g[u]:   # --- py stmt 6
+            dfs(v)   # --- py stmt 7
+    g = defaultdict(list)   # --- py stmt 8
+    n = len(pid)   # --- py stmt 9
+    for c, p in zip(pid, ppid):   # --- py stmt 10
+        g[p].append(c)   # --- py stmt 11
+    ans = []   # --- py stmt 12
+    dfs(kill)   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+
+function f_gold(pid, ppid, kill) {   // --- py stmt 3
+    function dfs(u) {   // --- py stmt 4
+        ans.push(u);   // --- py stmt 5
+        for (let v of g[u]) {   // --- py stmt 6
+            dfs(v);   // --- py stmt 7
+        }
+    }
+    let g = {};   // --- py stmt 8
+    let n = pid.length;   // --- py stmt 9
+    for (let i = 0; i < n; i++) {   // --- py stmt 10
+        if (g[ppid[i]] === undefined) {   // --- py stmt 11
+            g[ppid[i]] = [];   // --- py stmt 11
+        }
+        g[ppid[i]].push(pid[i]);   // --- py stmt 11
+    }
+    let ans = [];   // --- py stmt 12
+    dfs(kill);   // --- py stmt 13
+    return ans;   // --- py stmt 14
+}
+
+
+

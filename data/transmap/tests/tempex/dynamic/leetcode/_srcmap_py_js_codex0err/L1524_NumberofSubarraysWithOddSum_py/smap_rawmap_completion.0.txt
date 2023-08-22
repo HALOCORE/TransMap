@@ -1,0 +1,37 @@
+
+### Python
+### numOfSubarrays 
+from typing import *   # --- py stmt 1
+def f_gold(arr: List[int]) -> int:   # --- py stmt 2
+    MOD = int(1e9) + 7   # --- py stmt 3
+    counter = [0] * 2   # --- py stmt 4
+    s = ans = 0   # --- py stmt 5
+    for v in arr:   # --- py stmt 6
+        s += v   # --- py stmt 7
+        counter[s % 2] += 1   # --- py stmt 8
+        if s % 2 == 1:   # --- py stmt 9
+            ans += 1 + counter[0]   # --- py stmt 10
+        else:   # --- py stmt 11
+            ans += counter[1]   # --- py stmt 12
+    return ans % MOD   # --- py stmt 13
+
+### JavaScript
+"use strict";
+const f_gold = (arr) => {   // --- py stmt 2
+    const MOD = Math.pow(10, 9) + 7;   // --- py stmt 3
+    let counter = [0, 0];   // --- py stmt 4
+    let s = ans = 0;   // --- py stmt 5
+    for (let v of arr) {   // --- py stmt 6
+        s += v;   // --- py stmt 7
+        counter[s % 2] += 1;   // --- py stmt 8
+        if (s % 2 == 1) {   // --- py stmt 9
+            ans += 1 + counter[0];   // --- py stmt 10
+        } else {   // --- py stmt 11
+            ans += counter[1];   // --- py stmt 12
+        }
+    }
+    return ans % MOD;   // --- py stmt 13
+}
+
+
+

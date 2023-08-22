@@ -1,0 +1,51 @@
+
+### Python
+### findErrorNums 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> List[int]:   # --- py stmt 2
+    eor, n = 0, len(nums)   # --- py stmt 3
+    for i in range(1, n + 1):   # --- py stmt 4
+        eor ^= i ^ nums[i - 1]   # --- py stmt 5
+    diff = eor & (~eor + 1)   # --- py stmt 6
+    a = 0   # --- py stmt 7
+    for i in range(1, n + 1):   # --- py stmt 8
+        if (nums[i - 1] & diff) == 0:   # --- py stmt 9
+            a ^= nums[i - 1]   # --- py stmt 10
+        if (i & diff) == 0:   # --- py stmt 11
+            a ^= i   # --- py stmt 12
+    b = eor ^ a   # --- py stmt 13
+    for num in nums:   # --- py stmt 14
+        if a == num:   # --- py stmt 15
+            return [a, b]   # --- py stmt 16
+    return [b, a]   # --- py stmt 17
+
+### JavaScript
+"use strict";
+
+const findErrorNums = (nums) => {   // --- py stmt 2
+    let eor = 0;   // --- py stmt 3
+    let n = nums.length;   // --- py stmt 3
+    for (let i = 1; i < n + 1; i++) {   // --- py stmt 4
+        eor ^= i ^ nums[i - 1];   // --- py stmt 5
+    }
+    let diff = eor & (~eor + 1);   // --- py stmt 6
+    let a = 0;   // --- py stmt 7
+    for (let i = 1; i < n + 1; i++) {   // --- py stmt 8
+        if ((nums[i - 1] & diff) == 0) {   // --- py stmt 9
+            a ^= nums[i - 1];   // --- py stmt 10
+        }
+        if ((i & diff) == 0) {   // --- py stmt 11
+            a ^= i;   // --- py stmt 12
+        }
+    }
+    let b = eor ^ a;   // --- py stmt 13
+    for (let num of nums) {   // --- py stmt 14
+        if (a == num) {   // --- py stmt 15
+            return [a, b];   // --- py stmt 16
+        }
+    }
+    return [b, a];   // --- py stmt 17
+}
+
+
+

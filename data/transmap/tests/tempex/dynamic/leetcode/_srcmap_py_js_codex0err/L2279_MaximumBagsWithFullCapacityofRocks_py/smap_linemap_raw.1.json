@@ -1,0 +1,156 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximumBags",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(capacity: List[int], rocks: List[int], additionalRocks: int",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> int:",
+      null
+    ],
+    [
+      "    d = [a - b for a, b in zip(capacity, rocks)]",
+      [
+        3
+      ]
+    ],
+    [
+      "    d.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for v in d:",
+      [
+        6
+      ]
+    ],
+    [
+      "        if v <= additionalRocks:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "            additionalRocks -= v",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(capacity, rocks, additionalRocks) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var d = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let i = 0; i < capacity.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        d.push(capacity[i] - rocks[i]);",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    d.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var v of d) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (v <= additionalRocks) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "            additionalRocks -= v;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,47 @@
+
+### Python
+### minimumCost 
+def cache(f): return f   # --- py stmt 1
+from itertools import accumulate   # --- py stmt 2
+import math   # --- py stmt 3
+from math import inf   # --- py stmt 4
+from typing import *   # --- py stmt 5
+def f_gold(sentence: str, k: int) -> int:   # --- py stmt 6
+    @cache   # --- py stmt 7
+    def dfs(i):   # --- py stmt 8
+        if s[-1] - s[i] + n - i - 1 <= k:   # --- py stmt 9
+            return 0   # --- py stmt 10
+        ans, j = inf, i + 1   # --- py stmt 11
+        while j < n and (t := s[j] - s[i] + j - i - 1) <= k:   # --- py stmt 12
+            ans = min(ans, (k - t) ** 2 + dfs(j))   # --- py stmt 13
+            j += 1   # --- py stmt 14
+        return ans   # --- py stmt 15
+    t = [len(w) for w in sentence.split()]   # --- py stmt 16
+    n = len(t)   # --- py stmt 17
+    s = list(accumulate(t, initial=0))   # --- py stmt 18
+    return dfs(0)   # --- py stmt 19
+
+### JavaScript
+"use strict";
+
+function f_gold(sentence, k) {   // --- py stmt 6
+    function dfs(i) {   // --- py stmt 8
+        if (s[s.length - 1] - s[i] + n - i - 1 <= k) {   // --- py stmt 9
+            return 0;   // --- py stmt 10
+        }
+        var ans = Number.POSITIVE_INFINITY;   // --- py stmt 11
+        var j = i + 1;   // --- py stmt 11
+        while (j < n && (t = s[j] - s[i] + j - i - 1) <= k) {   // --- py stmt 12
+            ans = Math.min(ans, Math.pow(k - t, 2) + dfs(j));   // --- py stmt 13
+            j += 1;   // --- py stmt 14
+        }
+        return ans;   // --- py stmt 15
+    }
+    var t = sentence.split(" ").map(function (w) { return w.length; });   // --- py stmt 16
+    var n = t.length;   // --- py stmt 17
+    var s = [0].concat(t).reduce(function (a, b) { return a + b; });   // --- py stmt 18
+    return dfs(0);   // --- py stmt 19
+}
+
+
+

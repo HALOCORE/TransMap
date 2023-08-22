@@ -1,0 +1,42 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 13,
+    "actural_src_pk": "[1,4,1,24]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",18,\"You arE Very Smart\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 13,
+    "actural_src_pk": "[1,4,1,24]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",18,\"You arE Very Smart\"]}",
+      ""
+    ]
+  }
+]

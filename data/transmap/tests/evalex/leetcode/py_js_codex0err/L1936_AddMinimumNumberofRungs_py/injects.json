@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var prev = 0, res = 0;",
+    "replacement": "    var prev = res = 0;"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var rung of rungs) {",
+    "replacement": "    for (var rung in rungs) {"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        res += Math.floor((rung - prev - 1) / dist);",
+    "replacement": "        res += (rung - prev - 1) / dist;"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 2,
+    "tar_pk": "[10,4,10,32]",
+    "expected_src_pk": "[9,4,9,24]",
+    "actural_src_pk": "[14,4,14,15]",
+    "src_cov_lines": [
+      10,
+      11,
+      13
+    ],
+    "tar_cov_lines": [
+      1,
+      2,
+      8,
+      11,
+      12,
+      13,
+      15
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",4,\"abca\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"1\"],\"j\":[\"N\",\"1\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 3,
+    "tar_pk": "[12,8,14,9]",
+    "expected_src_pk": "[11,8,12,53]",
+    "actural_src_pk": "[14,4,14,15]",
+    "src_cov_lines": [
+      11,
+      13
+    ],
+    "tar_cov_lines": [
+      12,
+      15
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"1\"],\"j\":[\"N\",\"1\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[12,8,14,9]",
+    "expected_src_pk": "[11,8,12,53]",
+    "actural_src_pk": "[14,4,14,15]",
+    "src_cov_lines": [
+      11,
+      13
+    ],
+    "tar_cov_lines": [
+      12,
+      15
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"1\"],\"j\":[\"N\",\"1\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[12,8,14,9]",
+    "expected_src_pk": "[11,8,12,53]",
+    "actural_src_pk": "[14,4,14,15]",
+    "src_cov_lines": [
+      11,
+      13
+    ],
+    "tar_cov_lines": [
+      12,
+      15
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"1\"],\"j\":[\"N\",\"1\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

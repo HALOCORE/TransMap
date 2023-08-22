@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 7,
+    "actural_src_pk": "[11,2,14,25]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"ReferenceError: carry is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"ZKr\"],\"str2\":[\"S\",7,\"GPrzfkV\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",0,\"\"],\"n1\":[\"N\",\"3\"],\"n2\":[\"N\",\"7\"],\"carry\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[11,2,14,25]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      11
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":11,\"err_msg\":\"ReferenceError: carry is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str1\":[\"S\",3,\"ZKr\"],\"str2\":[\"S\",7,\"GPrzfkV\"],\"t\":[\"S\",7,\"VkfzrPG\"],\"str\":[\"S\",0,\"\"],\"n1\":[\"N\",\"3\"],\"n2\":[\"N\",\"7\"],\"carry\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

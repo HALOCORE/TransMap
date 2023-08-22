@@ -1,0 +1,34 @@
+
+### Python
+### repeatedStringMatch 
+import math   # --- py stmt 1
+from math import ceil   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(a: str, b: str) -> int:   # --- py stmt 4
+    m, n = len(a), len(b)   # --- py stmt 5
+    ans = ceil(n / m)   # --- py stmt 6
+    t = [a] * ans   # --- py stmt 7
+    for _ in range(3):   # --- py stmt 8
+        if b in ''.join(t):   # --- py stmt 9
+            return ans   # --- py stmt 10
+        ans += 1   # --- py stmt 11
+        t.append(a)   # --- py stmt 12
+    return -1   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(a, b) {   // --- py stmt 4
+    var m = a.length;   // --- py stmt 5
+    var n = b.length;   // --- py stmt 5
+    var ans = Math.ceil(n / m);   // --- py stmt 6
+    var t = new Array(ans).fill(a);   // --- py stmt 7
+    for (var _ = 0; _ < 3; _++) {   // --- py stmt 8
+        if (b.indexOf(t.join("")) != -1) {   // --- py stmt 9
+            return ans;   // --- py stmt 10
+        }
+        ans += 1;   // --- py stmt 11
+        t.push(a);   // --- py stmt 12
+    }
+    return -1;   // --- py stmt 13
+}
+

@@ -1,0 +1,51 @@
+
+### Python
+def f_gold(str):   # --- py stmt 1
+  n = len(str)   # --- py stmt 2
+  dp =[[0 for i in range(n + 1)] for j in range(n + 1)]   # --- py stmt 3
+  for i in range(1, n + 1):   # --- py stmt 4
+    for j in range(1, n + 1):   # --- py stmt 5
+      if(str[i - 1] == str[j - 1] and i != j): dp[i][j] = 1 + dp[i - 1][j - 1]   # --- py stmt 6
+      else: dp[i][j] = max(dp[i][j - 1], dp[i - 1][j])   # --- py stmt 7
+  res = ''   # --- py stmt 8
+  i = n   # --- py stmt 9
+  j = n   # --- py stmt 10
+  while(i > 0 and j > 0):   # --- py stmt 11
+    if(dp[i][j] == dp[i - 1][j - 1] + 1):   # --- py stmt 12
+      res += str[i - 1]   # --- py stmt 13
+      i -= 1   # --- py stmt 14
+      j -= 1   # --- py stmt 15
+    elif(dp[i][j] == dp[i - 1][j]): i -= 1   # --- py stmt 16
+    else: j -= 1   # --- py stmt 17
+  res = ''.join(reversed(res))   # --- py stmt 18
+  return res   # --- py stmt 19
+
+
+### JavaScript
+"use strict";
+function f_gold(str) {   // --- py stmt 1
+  var n = str.length;   // --- py stmt 2
+  var dp = [[0], [0]];   // --- py stmt 3
+  for (var i = 1; i <= n; i++) {   // --- py stmt 4
+    for (var j = 1; j <= n; j++) {   // --- py stmt 5
+      if (str[i - 1] == str[j - 1] && i != j) dp[i][j] = 1 + dp[i - 1][j - 1];   // --- py stmt 6
+      else dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j]);   // --- py stmt 7
+    }
+  }
+  var res = "";   // --- py stmt 8
+  var i = n;   // --- py stmt 9
+  var j = n;   // --- py stmt 10
+  while (i > 0 && j > 0) {   // --- py stmt 11
+    if (dp[i][j] == dp[i - 1][j - 1] + 1) {   // --- py stmt 12
+      res += str[i - 1];   // --- py stmt 13
+      i -= 1;   // --- py stmt 14
+      j -= 1;   // --- py stmt 15
+    } else if (dp[i][j] == dp[i - 1][j]) i -= 1;   // --- py stmt 16
+    else j -= 1;   // --- py stmt 17
+  }
+  res = res.split("").reverse().join("");   // --- py stmt 18
+  return res;   // --- py stmt 19
+}
+
+
+

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var i = 0; i < sentence.split(/\\s+/).length; i++) {",
+    "replacement": "    for (var i = 0; i < sentence.split().length; i++) {"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        var word = sentence.split(/\\s+/)[i];",
+    "replacement": "        var word = sentence.split()[i];"
+  }
+]

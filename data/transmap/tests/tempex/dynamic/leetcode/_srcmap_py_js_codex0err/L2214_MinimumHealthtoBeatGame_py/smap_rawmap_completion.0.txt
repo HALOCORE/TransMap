@@ -1,0 +1,15 @@
+
+### Python
+### minimumHealth 
+from typing import *   # --- py stmt 1
+def f_gold(damage: List[int], armor: int) -> int:   # --- py stmt 2
+    return sum(damage) - min(max(damage), armor) + 1   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(damage, armor) {   // --- py stmt 2
+    return sum(damage) - min(max(damage), armor) + 1;   // --- py stmt 3
+}
+
+
+

@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,6,41]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: total_waiting_time is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"customers\":[\"A\",3,[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]],[\"A\",2,[\"N\",\"2\"],[\"N\",\"5\"]],[\"A\",2,[\"N\",\"4\"],[\"N\",\"3\"]]],\"f\":[\"N\",\"0\"],\"total_waiting_time\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,6,41]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: total_waiting_time is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"customers\":[\"A\",3,[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]],[\"A\",2,[\"N\",\"2\"],[\"N\",\"5\"]],[\"A\",2,[\"N\",\"4\"],[\"N\",\"3\"]]],\"f\":[\"N\",\"0\"],\"total_waiting_time\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

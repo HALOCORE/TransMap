@@ -1,0 +1,196 @@
+{
+  "src_anno_stmts": [
+    [
+      "### validPalindrome",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(i, j):",
+      [
+        3
+      ]
+    ],
+    [
+      "        while i < j:",
+      [
+        4
+      ]
+    ],
+    [
+      "            if s[i] != s[j]:",
+      [
+        5
+      ]
+    ],
+    [
+      "                return False",
+      [
+        6
+      ]
+    ],
+    [
+      "            i, j = i + 1, j - 1",
+      [
+        7
+      ]
+    ],
+    [
+      "        return True",
+      [
+        8
+      ]
+    ],
+    [
+      "    i, j = 0, len(s) - 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    while i < j:",
+      [
+        10
+      ]
+    ],
+    [
+      "        if s[i] != s[j]:",
+      [
+        11
+      ]
+    ],
+    [
+      "            return check(i, j - 1) or check(i + 1, j)",
+      [
+        12
+      ]
+    ],
+    [
+      "        i, j = i + 1, j - 1",
+      [
+        13
+      ]
+    ],
+    [
+      "    return True",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(i, j) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        while (i < j) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            if (s[i] != s[j]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        6
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            [i, j] = [i + 1, j - 1];",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return true;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var i, j = 0, len = s.length - 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    while (i < j) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (s[i] != s[j]) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            return check(i, j - 1) || check(i + 1, j);",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        [i, j] = [i + 1, j - 1];",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

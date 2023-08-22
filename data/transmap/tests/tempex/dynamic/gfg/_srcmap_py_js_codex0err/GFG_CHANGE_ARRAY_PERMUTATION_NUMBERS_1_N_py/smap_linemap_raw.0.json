@@ -1,0 +1,166 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(a, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  count = dict()",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        3
+      ]
+    ],
+    [
+      "    if count.get(a[i]): count[a[i]] += 1",
+      [
+        4
+      ]
+    ],
+    [
+      "    else: count[a[i]] = 1 ;",
+      [
+        5
+      ]
+    ],
+    [
+      "  next_missing = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        7
+      ]
+    ],
+    [
+      "    if count[a[i]] != 1 or a[i] > n or a[i] < 1:",
+      [
+        8
+      ]
+    ],
+    [
+      "      count[a[i]] -= 1",
+      [
+        9
+      ]
+    ],
+    [
+      "      while count.get(next_missing): next_missing += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "      a[i] = next_missing",
+      [
+        11
+      ]
+    ],
+    [
+      "      count[next_missing] = 1",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(a, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let count = {};",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (count.get(a[i])) count[a[i]] += 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    else count[a[i]] = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  let next_missing = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (count[a[i]] != 1 || a[i] > n || a[i] < 1) {",
+      [
+        8
+      ]
+    ],
+    [
+      "      count[a[i]] -= 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "      while (typeof(count[next_missing]) !== 'undefined') next_missing += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "      a[i] = next_missing;",
+      [
+        11
+      ]
+    ],
+    [
+      "      count[next_missing] = 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximumProfit",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(present: List[int], future: List[int], budget: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    arr = [(a, b - a) for a, b in zip(present, future) if b > a]",
+      [
+        3
+      ]
+    ],
+    [
+      "    dp = [0] * (budget + 1)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for v, w in arr:",
+      [
+        5
+      ]
+    ],
+    [
+      "        for j in range(budget, v - 1, -1):",
+      [
+        6
+      ]
+    ],
+    [
+      "            dp[j] = max(dp[j], dp[j - v] + w)",
+      [
+        7
+      ]
+    ],
+    [
+      "    return dp[-1]",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(present, future, budget) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var arr = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let i = 0; i < present.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (future[i] > present[i]) {",
+      [
+        3
+      ]
+    ],
+    [
+      "            arr.push([present[i], future[i] - present[i]]);",
+      [
+        3
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var dp = Array(budget + 1).fill(0);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var [v, w] of arr) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var j = budget; j > v - 1; j--) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            dp[j] = Math.max(dp[j], dp[j - v] + w);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dp[-1];",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[64,4,64,31]",
+    "break_idx": 7,
+    "expected_src_pk": "[58,4,58,31]",
+    "actural_src_pk": "[58,4,58,31]",
+    "src_cov_lines": [
+      41,
+      43,
+      44,
+      45,
+      46,
+      47,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57
+    ],
+    "tar_cov_lines": [
+      40,
+      41,
+      43,
+      44,
+      46,
+      47,
+      49,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      61,
+      62
+    ],
+    "tar_data": [
+      "{\"num\":[\"N\",\"0\"],\"lt20\":[\"A\",20,[\"S\",0,\"\"],[\"S\",3,\"One\"],[\"S\",3,\"Two\"],[\"S\",5,\"Three\"],[\"S\",4,\"Four\"],[\"S\",4,\"Five\"],[\"S\",3,\"Six\"],[\"S\",5,\"Seven\"],[\"S\",5,\"Eight\"],[\"S\",4,\"Nine\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Eleven\"],[\"S\",6,\"Twelve\"],[\"S\",8,\"Thirteen\"],[\"S\",8,\"Fourteen\"],[\"S\",7,\"Fifteen\"],[\"S\",7,\"Sixteen\"],[\"S\",9,\"Seventeen\"],[\"S\",8,\"Eighteen\"],[\"S\",8,\"Nineteen\"]],\"tens\":[\"A\",10,[\"S\",0,\"\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Twenty\"],[\"S\",6,\"Thirty\"],[\"S\",5,\"Forty\"],[\"S\",5,\"Fifty\"],[\"S\",5,\"Sixty\"],[\"S\",7,\"Seventy\"],[\"S\",6,\"Eighty\"],[\"S\",6,\"Ninety\"]],\"thousands\":[\"A\",4,[\"S\",7,\"Billion\"],[\"S\",7,\"Million\"],[\"S\",8,\"Thousand\"],[\"S\",0,\"\"]],\"res\":[\"A\",12,[\"S\",0,\"\"],[\"S\",7,\"Billion\"],[\"S\",1,\" \"],[\"S\",0,\"\"],[\"S\",7,\"Million\"],[\"S\",1,\" \"],[\"S\",0,\"\"],[\"S\",8,\"Thousand\"],[\"S\",1,\" \"],[\"S\",25,\"One Hundred Twenty T\"],[\"S\",0,\"\"],[\"S\",1,\" \"]],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"0\"],\"lt20\":[\"A\",20,[\"S\",0,\"\"],[\"S\",3,\"One\"],[\"S\",3,\"Two\"],[\"S\",5,\"Three\"],[\"S\",4,\"Four\"],[\"S\",4,\"Five\"],[\"S\",3,\"Six\"],[\"S\",5,\"Seven\"],[\"S\",5,\"Eight\"],[\"S\",4,\"Nine\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Eleven\"],[\"S\",6,\"Twelve\"],[\"S\",8,\"Thirteen\"],[\"S\",8,\"Fourteen\"],[\"S\",7,\"Fifteen\"],[\"S\",7,\"Sixteen\"],[\"S\",9,\"Seventeen\"],[\"S\",8,\"Eighteen\"],[\"S\",8,\"Nineteen\"]],\"tens\":[\"A\",10,[\"S\",0,\"\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Twenty\"],[\"S\",6,\"Thirty\"],[\"S\",5,\"Forty\"],[\"S\",5,\"Fifty\"],[\"S\",5,\"Sixty\"],[\"S\",7,\"Seventy\"],[\"S\",6,\"Eighty\"],[\"S\",6,\"Ninety\"]],\"thousands\":[\"A\",4,[\"S\",7,\"Billion\"],[\"S\",7,\"Million\"],[\"S\",8,\"Thousand\"],[\"S\",0,\"\"]],\"transfer\":\"UNKNOWN\",\"res\":[\"A\",3,[\"S\",25,\"One Hundred Twenty T\"],[\"S\",0,\"\"],[\"S\",1,\" \"]],\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"4\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "res"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 2,
+    "tar_pk": "[40,8,42,9]",
+    "expected_src_pk": "[41,8,42,21]",
+    "actural_src_pk": "[56,8,56,14]",
+    "src_cov_lines": [
+      51
+    ],
+    "tar_cov_lines": [
+      55,
+      56
+    ],
+    "tar_data": [
+      "{\"num\":[\"N\",\"0\"],\"lt20\":[\"A\",20,[\"S\",0,\"\"],[\"S\",3,\"One\"],[\"S\",3,\"Two\"],[\"S\",5,\"Three\"],[\"S\",4,\"Four\"],[\"S\",4,\"Five\"],[\"S\",3,\"Six\"],[\"S\",5,\"Seven\"],[\"S\",5,\"Eight\"],[\"S\",4,\"Nine\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Eleven\"],[\"S\",6,\"Twelve\"],[\"S\",8,\"Thirteen\"],[\"S\",8,\"Fourteen\"],[\"S\",7,\"Fifteen\"],[\"S\",7,\"Sixteen\"],[\"S\",9,\"Seventeen\"],[\"S\",8,\"Eighteen\"],[\"S\",8,\"Nineteen\"]],\"tens\":[\"A\",10,[\"S\",0,\"\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Twenty\"],[\"S\",6,\"Thirty\"],[\"S\",5,\"Forty\"],[\"S\",5,\"Fifty\"],[\"S\",5,\"Sixty\"],[\"S\",7,\"Seventy\"],[\"S\",6,\"Eighty\"],[\"S\",6,\"Ninety\"]],\"thousands\":[\"A\",4,[\"S\",7,\"Billion\"],[\"S\",7,\"Million\"],[\"S\",8,\"Thousand\"],[\"S\",0,\"\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"123\"],\"lt20\":[\"A\",20,[\"S\",0,\"\"],[\"S\",3,\"One\"],[\"S\",3,\"Two\"],[\"S\",5,\"Three\"],[\"S\",4,\"Four\"],[\"S\",4,\"Five\"],[\"S\",3,\"Six\"],[\"S\",5,\"Seven\"],[\"S\",5,\"Eight\"],[\"S\",4,\"Nine\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Eleven\"],[\"S\",6,\"Twelve\"],[\"S\",8,\"Thirteen\"],[\"S\",8,\"Fourteen\"],[\"S\",7,\"Fifteen\"],[\"S\",7,\"Sixteen\"],[\"S\",9,\"Seventeen\"],[\"S\",8,\"Eighteen\"],[\"S\",8,\"Nineteen\"]],\"tens\":[\"A\",10,[\"S\",0,\"\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Twenty\"],[\"S\",6,\"Thirty\"],[\"S\",5,\"Forty\"],[\"S\",5,\"Fifty\"],[\"S\",5,\"Sixty\"],[\"S\",7,\"Seventy\"],[\"S\",6,\"Eighty\"],[\"S\",6,\"Ninety\"]],\"thousands\":[\"A\",4,[\"S\",7,\"Billion\"],[\"S\",7,\"Million\"],[\"S\",8,\"Thousand\"],[\"S\",0,\"\"]],\"transfer\":\"UNKNOWN\",\"res\":[\"A\",0],\"i\":[\"N\",\"1000000000\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[56,12,56,52]",
+    "expected_src_pk": "[52,12,52,42]",
+    "actural_src_pk": "[56,8,56,14]",
+    "src_cov_lines": [
+      51
+    ],
+    "tar_cov_lines": [
+      55
+    ],
+    "tar_data": [
+      "{\"num\":[\"N\",\"123\"],\"lt20\":[\"A\",20,[\"S\",0,\"\"],[\"S\",3,\"One\"],[\"S\",3,\"Two\"],[\"S\",5,\"Three\"],[\"S\",4,\"Four\"],[\"S\",4,\"Five\"],[\"S\",3,\"Six\"],[\"S\",5,\"Seven\"],[\"S\",5,\"Eight\"],[\"S\",4,\"Nine\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Eleven\"],[\"S\",6,\"Twelve\"],[\"S\",8,\"Thirteen\"],[\"S\",8,\"Fourteen\"],[\"S\",7,\"Fifteen\"],[\"S\",7,\"Sixteen\"],[\"S\",9,\"Seventeen\"],[\"S\",8,\"Eighteen\"],[\"S\",8,\"Nineteen\"]],\"tens\":[\"A\",10,[\"S\",0,\"\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Twenty\"],[\"S\",6,\"Thirty\"],[\"S\",5,\"Forty\"],[\"S\",5,\"Fifty\"],[\"S\",5,\"Sixty\"],[\"S\",7,\"Seventy\"],[\"S\",6,\"Eighty\"],[\"S\",6,\"Ninety\"]],\"thousands\":[\"A\",4,[\"S\",7,\"Billion\"],[\"S\",7,\"Million\"],[\"S\",8,\"Thousand\"],[\"S\",0,\"\"]],\"res\":[\"A\",0],\"i\":[\"N\",\"1000000000\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"123\"],\"lt20\":[\"A\",20,[\"S\",0,\"\"],[\"S\",3,\"One\"],[\"S\",3,\"Two\"],[\"S\",5,\"Three\"],[\"S\",4,\"Four\"],[\"S\",4,\"Five\"],[\"S\",3,\"Six\"],[\"S\",5,\"Seven\"],[\"S\",5,\"Eight\"],[\"S\",4,\"Nine\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Eleven\"],[\"S\",6,\"Twelve\"],[\"S\",8,\"Thirteen\"],[\"S\",8,\"Fourteen\"],[\"S\",7,\"Fifteen\"],[\"S\",7,\"Sixteen\"],[\"S\",9,\"Seventeen\"],[\"S\",8,\"Eighteen\"],[\"S\",8,\"Nineteen\"]],\"tens\":[\"A\",10,[\"S\",0,\"\"],[\"S\",3,\"Ten\"],[\"S\",6,\"Twenty\"],[\"S\",6,\"Thirty\"],[\"S\",5,\"Forty\"],[\"S\",5,\"Fifty\"],[\"S\",5,\"Sixty\"],[\"S\",7,\"Seventy\"],[\"S\",6,\"Eighty\"],[\"S\",6,\"Ninety\"]],\"thousands\":[\"A\",4,[\"S\",7,\"Billion\"],[\"S\",7,\"Million\"],[\"S\",8,\"Thousand\"],[\"S\",0,\"\"]],\"transfer\":\"UNKNOWN\",\"res\":[\"A\",0],\"i\":[\"N\",\"1000000000\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

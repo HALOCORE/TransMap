@@ -1,0 +1,28 @@
+
+### Python
+def f_gold(str):   # --- py stmt 1
+  n = len(str)   # --- py stmt 2
+  dp =[[0] *(n + 1)] *(n + 1)   # --- py stmt 3
+  for i in range(1, n + 1):   # --- py stmt 4
+    for j in range(1, n + 1):   # --- py stmt 5
+      if(str[i - 1] == str[j - 1] and i != j): dp[i][j] = 1 + dp[i - 1][j - 1]   # --- py stmt 6
+      else: dp[i][j] = max(dp[i][j - 1], dp[i - 1][j])   # --- py stmt 7
+  return dp[n][n]   # --- py stmt 8
+
+
+### JavaScript
+"use strict";
+function f_gold(str) {   // --- py stmt 1
+  var n = str.length;   // --- py stmt 2
+  var dp = [[0] * (n + 1)] * (n + 1);   // --- py stmt 3
+  for (var i = 1; i < n + 1; i++) {   // --- py stmt 4
+    for (var j = 1; j < n + 1; j++) {   // --- py stmt 5
+      if (str[i - 1] == str[j - 1] && i != j) dp[i][j] = 1 + dp[i - 1][j - 1];   // --- py stmt 6
+      else dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j]);   // --- py stmt 7
+    }
+  }
+  return dp[n][n];   // --- py stmt 8
+}
+
+
+

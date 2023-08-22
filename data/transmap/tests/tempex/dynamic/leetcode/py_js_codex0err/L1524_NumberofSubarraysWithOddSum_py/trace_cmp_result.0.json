@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[6,4,12,29]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"3\"],[\"N\",\"5\"]],\"MOD\":[\"N\",\"1000000007\"],\"counter\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"s\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,12,29]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"3\"],[\"N\",\"5\"]],\"MOD\":[\"N\",\"1000000007\"],\"counter\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"s\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,12,29]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"3\"],[\"N\",\"5\"]],\"MOD\":[\"N\",\"1000000007\"],\"counter\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"s\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,186 @@
+{
+  "src_anno_stmts": [
+    [
+      "### judgeSquareSum",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import sqrt",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(c: int) -> bool:",
+      [
+        4
+      ]
+    ],
+    [
+      "    a, b = 0, int(sqrt(c))",
+      [
+        5
+      ]
+    ],
+    [
+      "    while a <= b:",
+      [
+        6
+      ]
+    ],
+    [
+      "        s = a**2 + b**2",
+      [
+        7
+      ]
+    ],
+    [
+      "        if s == c:",
+      [
+        8
+      ]
+    ],
+    [
+      "            return True",
+      [
+        9
+      ]
+    ],
+    [
+      "        if s < c:",
+      [
+        10
+      ]
+    ],
+    [
+      "            a += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        else:",
+      [
+        12
+      ]
+    ],
+    [
+      "            b -= 1",
+      [
+        13
+      ]
+    ],
+    [
+      "    return False",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(c) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var a = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var b = Math.sqrt(c);",
+      [
+        5
+      ]
+    ],
+    [
+      "    while (a <= b) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var s = a * a + b * b;",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (s == c) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (s < c) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            a += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        12
+      ]
+    ],
+    [
+      "            b -= 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

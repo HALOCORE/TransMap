@@ -1,0 +1,102 @@
+{
+  "src_anno_stmts": [
+    [
+      "def rounded_avg(n, m):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if m < n:",
+      [
+        2
+      ]
+    ],
+    [
+      "        return -1",
+      [
+        3
+      ]
+    ],
+    [
+      "    summation = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(n, m+1):",
+      [
+        5
+      ]
+    ],
+    [
+      "        summation += i",
+      [
+        6
+      ]
+    ],
+    [
+      "    return bin(round(summation/(m - n + 1)))",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function rounded_avg(n, m) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (m < n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return -1;",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let summation = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = n; i <= m; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        summation += i;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return summation / (m - n + 1);",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

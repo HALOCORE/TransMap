@@ -1,0 +1,8 @@
+{
+  "disable_src_lines": [],
+  "trace_cmp": [
+      {"src_lines": ["102-103"], "vars_ignore": ["h"]},
+      {"src_lines": ["116-123"], "vars_ignore": ["hue"]},
+      {"src_lines": ["151-151"], "vars_ignore": ["h"]}
+  ]
+}

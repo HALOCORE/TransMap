@@ -1,0 +1,22 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -151,7 +151,7 @@ class Cosine {
+ ///// Segment END
+ 
+ ///// Segment BEGIN Jaccard DONE
+-class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {
++class Jaccard extends classMultiExtend(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity) {
+     constructor(k) {
+         super(k);
+     }
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -319,7 +319,7 @@ class Cosine {   // --- py stmt 35
+ 
+ 
+ 
+-class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {   // --- py stmt 74
++class Jaccard extends classMultiExtend(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity) {   // --- py stmt 74
+     constructor(k) {   // --- py stmt 75
+         super(k);   // --- py stmt 76
+     }

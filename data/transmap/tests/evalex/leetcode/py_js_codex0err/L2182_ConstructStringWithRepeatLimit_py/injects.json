@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "            for (let _ = 0, _b = Math.min(repeatLimit, cnt[i]); _ < _b; _++) {",
+    "replacement": "            for (let _ = 0; _ < Math.min(repeatLimit, cnt[i]); _++) {"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "                ans.push(String.fromCharCode(97 + i));",
+    "replacement": "                ans.push(String.fromCharCode(ord('a') + i));"
+  },
+  {
+    "line_start": 23,
+    "line_end": 24,
+    "content": "            ans.push(String.fromCharCode(j + 'a'.charCodeAt(0)));",
+    "replacement": "            ans.push(String.fromCharCode(ord('a') + j));"
+  }
+]

@@ -1,0 +1,35 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  res = 0   # --- py stmt 2
+  m = dict()   # --- py stmt 3
+  for i in range(n):   # --- py stmt 4
+    Sum = 0   # --- py stmt 5
+    for j in range(i, n):   # --- py stmt 6
+      Sum += arr[j]   # --- py stmt 7
+      m[Sum] = m.get(Sum, 0)+ 1   # --- py stmt 8
+  for x in m:   # --- py stmt 9
+    if m[x] == 1: res += x   # --- py stmt 10
+  return res   # --- py stmt 11
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var res = 0;   // --- py stmt 2
+  var m = {};   // --- py stmt 3
+  for (var i = 0; i < n; i++) {   // --- py stmt 4
+    var Sum = 0;   // --- py stmt 5
+    for (var j = i; j < n; j++) {   // --- py stmt 6
+      Sum += arr[j];   // --- py stmt 7
+      m[Sum] = m.get(Sum, 0) + 1;   // --- py stmt 8
+    }
+  }
+  for (var x of Object.keys(m).map(Number)) {   // --- py stmt 9
+    if (m[x] == 1) res += x;   // --- py stmt 10
+  }
+  return res;   // --- py stmt 11
+}
+
+
+

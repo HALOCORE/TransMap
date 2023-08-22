@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 3,
+    "content": "  let mem = Array(d+1).fill().map(_ => Array(s+1).fill(0));\n  mem[0][0] = 1;",
+    "replacement": "  let mem = [[0], [0]];"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  for (let i = 1; i <= d; i++) {",
+    "replacement": "  for (let i = 0; i <= d; i++) {"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    for (let j = 1; j <= s; j++) {",
+    "replacement": "    for (let j = 0; j <= s; j++) {"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        ",
+    "replacement": "      if (i == 0 && j == 0) {\n        mem[i][j] = 1;\n      } else {"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "      ",
+    "replacement": "        }"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,11,5]",
+    "break_idx": 3,
+    "expected_src_pk": "[8,4,12,19]",
+    "actural_src_pk": "[8,4,12,19]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"2\"],\"t\":[\"A\",1,[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"2\"],\"t\":[\"A\",2,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "t"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,11,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[8,4,12,19]",
+    "actural_src_pk": "[8,4,12,19]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"2\"],\"t\":[\"A\",1,[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"2\"],\"t\":[\"A\",2,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "t"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,4,11,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[8,4,12,19]",
+    "actural_src_pk": "[8,4,12,19]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"2\"],\"t\":[\"A\",1,[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"a\":[\"S\",4,\"abcd\"],\"b\":[\"S\",8,\"cdabcdab\"],\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"8\"],\"ans\":[\"N\",\"2\"],\"t\":[\"A\",2,[\"S\",4,\"abcd\"],[\"S\",4,\"abcd\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "t"
+    ]
+  }
+]

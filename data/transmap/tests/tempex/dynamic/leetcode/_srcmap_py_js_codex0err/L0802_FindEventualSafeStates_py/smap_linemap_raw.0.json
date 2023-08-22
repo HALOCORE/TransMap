@@ -1,0 +1,226 @@
+{
+  "src_anno_stmts": [
+    [
+      "### eventualSafeNodes",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(graph: List[List[int]]) -> List[int]:",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(graph)",
+      [
+        5
+      ]
+    ],
+    [
+      "    outDegree = [len(vs) for vs in graph]",
+      [
+        6
+      ]
+    ],
+    [
+      "    revGraph = defaultdict(list)",
+      [
+        7
+      ]
+    ],
+    [
+      "    for u, vs in enumerate(graph):",
+      [
+        8
+      ]
+    ],
+    [
+      "        for v in vs:",
+      [
+        9
+      ]
+    ],
+    [
+      "            revGraph[v].append(u)",
+      [
+        10
+      ]
+    ],
+    [
+      "    q = deque([i for i, d in enumerate(outDegree) if d == 0])",
+      [
+        11
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        12
+      ]
+    ],
+    [
+      "        for u in revGraph[q.popleft()]:",
+      [
+        13
+      ]
+    ],
+    [
+      "            outDegree[u] -= 1",
+      [
+        14
+      ]
+    ],
+    [
+      "            if outDegree[u] == 0:",
+      [
+        15
+      ]
+    ],
+    [
+      "                q.append(u)",
+      [
+        16
+      ]
+    ],
+    [
+      "    return [i for i, d in enumerate(outDegree) if d == 0]",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(graph) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    let n = graph.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    let outDegree = graph.map(vs => vs.length);",
+      [
+        6
+      ]
+    ],
+    [
+      "    let revGraph = {};",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let u = 0; u < graph.length; u++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let v of graph[u]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (!revGraph[v]) revGraph[v] = [];",
+      [
+        10
+      ]
+    ],
+    [
+      "            revGraph[v].push(u);",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let q = [...Array(n).keys()].filter(i => outDegree[i] == 0);",
+      [
+        11
+      ]
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        for (let u of revGraph[q.shift()]) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            outDegree[u] -= 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (outDegree[u] == 0) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                q.push(u);",
+      [
+        16
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return [...Array(n).keys()].filter(i => outDegree[i] == 0);",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

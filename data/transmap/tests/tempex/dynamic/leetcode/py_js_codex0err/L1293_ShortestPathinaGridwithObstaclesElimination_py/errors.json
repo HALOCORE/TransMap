@@ -1,0 +1,6 @@
+{
+  "0": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 8 ---\n  vis.add([0, 0, k].join(\",\"));\n  vis.add([0, 0, k]);",
+  "3": "FAILED:Error: WARN no trace difference and target PASS.",
+  "5": "FAILED:Error: WARN no trace difference and target PASS.",
+  "6": "FAILED:Error: WARN no trace difference and target PASS."
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    mx = (mx >= str.substring(i))? mx : str.substring(i);",
+    "replacement": "    mx = Math.max(mx, str.substring(i));"
+  }
+]

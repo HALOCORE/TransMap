@@ -1,0 +1,132 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, N, k):",
+      [
+        1
+      ]
+    ],
+    [
+      "  maxSum = 0 ;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  i = N - 1 ;",
+      [
+        4
+      ]
+    ],
+    [
+      "  while(i >= 0):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if(arr[i] - arr[i - 1] < k): maxSum += arr[i] ; maxSum += arr[i - 1] ; i -= 1 ;",
+      [
+        6
+      ]
+    ],
+    [
+      "    i -= 1 ;",
+      [
+        7
+      ]
+    ],
+    [
+      "  return maxSum ;",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, N, k) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var maxSum = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort((a, b) => a-b);",
+      [
+        3
+      ]
+    ],
+    [
+      "  var i = N - 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "  while (i >= 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (arr[i] - arr[(i - 1 + arr.length)%arr.length] < k) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      maxSum += arr[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "      maxSum += arr[i - 1];",
+      [
+        6
+      ]
+    ],
+    [
+      "      i -= 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    i -= 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return maxSum;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

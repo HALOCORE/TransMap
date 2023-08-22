@@ -1,0 +1,488 @@
+### Python
+class StringDistance:   # --- py stmt 1
+
+    def distance(self, s0, s1):   # --- py stmt 2
+        raise NotImplementedError()   # --- py stmt 3
+
+class NormalizedStringDistance(StringDistance):   # --- py stmt 4
+
+    def distance(self, s0, s1):   # --- py stmt 5
+        raise NotImplementedError()   # --- py stmt 6
+
+class MetricStringDistance(StringDistance):   # --- py stmt 7
+
+    def distance(self, s0, s1):   # --- py stmt 8
+        raise NotImplementedError()   # --- py stmt 9
+
+class Levenshtein(MetricStringDistance):   # --- py stmt 10
+
+    def distance(self, s0, s1):   # --- py stmt 11
+        if s0 is None:   # --- py stmt 12
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 13
+        if s1 is None:   # --- py stmt 14
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 15
+        if s0 == s1:   # --- py stmt 16
+            return 0.0   # --- py stmt 17
+        if len(s0) == 0:   # --- py stmt 18
+            return len(s1)   # --- py stmt 19
+        if len(s1) == 0:   # --- py stmt 20
+            return len(s0)   # --- py stmt 21
+
+        v0 = [0] * (len(s1) + 1)   # --- py stmt 22
+        v1 = [0] * (len(s1) + 1)   # --- py stmt 23
+
+        for i in range(len(v0)):   # --- py stmt 24
+            v0[i] = i   # --- py stmt 25
+
+        for i in range(len(s0)):   # --- py stmt 26
+            v1[0] = i + 1   # --- py stmt 27
+            for j in range(len(s1)):   # --- py stmt 28
+                cost = 1   # --- py stmt 29
+                if s0[i] == s1[j]:   # --- py stmt 30
+                    cost = 0   # --- py stmt 31
+                v1[j + 1] = min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost)   # --- py stmt 32
+            v0, v1 = v1, v0   # --- py stmt 33
+
+        return v0[len(s1)]   # --- py stmt 34
+
+class LongestCommonSubsequence(StringDistance):   # --- py stmt 35
+    def distance(self, s0, s1):   # --- py stmt 36
+        if s0 is None:   # --- py stmt 37
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 38
+        if s1 is None:   # --- py stmt 39
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 40
+        if s0 == s1:   # --- py stmt 41
+            return 0.0   # --- py stmt 42
+        return len(s0) + len(s1) - 2 * self.length(s0, s1)   # --- py stmt 43
+
+    @staticmethod   # --- py stmt 44
+    def length(s0, s1):   # --- py stmt 45
+        if s0 is None:   # --- py stmt 46
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 47
+        if s1 is None:   # --- py stmt 48
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 49
+        s0_len, s1_len = len(s0), len(s1)   # --- py stmt 50
+        x, y = s0[:], s1[:]   # --- py stmt 51
+        matrix = [[0] * (s1_len + 1) for _ in range(s0_len + 1)]   # --- py stmt 52
+        for i in range(1, s0_len + 1):   # --- py stmt 53
+            for j in range(1, s1_len + 1):   # --- py stmt 54
+                if x[i - 1] == y[j - 1]:   # --- py stmt 55
+                    matrix[i][j] = matrix[i - 1][j - 1] + 1   # --- py stmt 56
+                else:   # --- py stmt 57
+                    matrix[i][j] = max(matrix[i][j - 1], matrix[i - 1][j])   # --- py stmt 58
+        return matrix[s0_len][s1_len]   # --- py stmt 59
+
+
+class MetricLCS(MetricStringDistance, NormalizedStringDistance):   # --- py stmt 60
+
+    def __init__(self):   # --- py stmt 61
+        self.lcs = LongestCommonSubsequence()   # --- py stmt 62
+
+    def distance(self, s0, s1):   # --- py stmt 63
+        if s0 is None:   # --- py stmt 64
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 65
+        if s1 is None:   # --- py stmt 66
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 67
+        if s0 == s1:   # --- py stmt 68
+            return 0.0   # --- py stmt 69
+        max_len = int(max(len(s0), len(s1)))   # --- py stmt 70
+        if max_len == 0:   # --- py stmt 71
+            return 0.0   # --- py stmt 72
+        return 1.0 - (1.0 * self.lcs.length(s0, s1)) / max_len   # --- py stmt 73
+
+class NGram(NormalizedStringDistance):   # --- py stmt 74
+
+    def __init__(self, n=2):   # --- py stmt 75
+        self.n = n   # --- py stmt 76
+
+    def distance(self, s0, s1):   # --- py stmt 77
+        if s0 is None:   # --- py stmt 78
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 79
+        if s1 is None:   # --- py stmt 80
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 81
+        if s0 == s1:   # --- py stmt 82
+            return 0.0   # --- py stmt 83
+
+        special = '\n'   # --- py stmt 84
+        sl = len(s0)   # --- py stmt 85
+        tl = len(s1)   # --- py stmt 86
+
+        if sl == 0 or tl == 0:   # --- py stmt 87
+            return 1.0   # --- py stmt 88
+
+        cost = 0   # --- py stmt 89
+        if sl < self.n or tl < self.n:   # --- py stmt 90
+            for i in range(min(sl, tl)):   # --- py stmt 91
+                if s0[i] == s1[i]:   # --- py stmt 92
+                    cost += 1   # --- py stmt 93
+            return 1.0 - cost / max(sl, tl)   # --- py stmt 94
+
+        sa = [''] * (sl + self.n - 1)   # --- py stmt 95
+
+        for i in range(len(sa)):   # --- py stmt 96
+            if i < self.n - 1:   # --- py stmt 97
+                sa[i] = special   # --- py stmt 98
+            else:   # --- py stmt 99
+                sa[i] = s0[i - self.n + 1]   # --- py stmt 100
+
+        p = [0.0] * (sl + 1)   # --- py stmt 101
+        d = [0.0] * (sl + 1)   # --- py stmt 102
+        t_j = [''] * self.n   # --- py stmt 103
+        for i in range(sl + 1):   # --- py stmt 104
+            p[i] = 1.0 * i   # --- py stmt 105
+
+        for j in range(1, tl + 1):   # --- py stmt 106
+            if j < self.n:   # --- py stmt 107
+                for ti in range(self.n - j):   # --- py stmt 108
+                    t_j[ti] = special   # --- py stmt 109
+                for ti in range(self.n - j, self.n):   # --- py stmt 110
+                    t_j[ti] = s1[ti - (self.n - j)]   # --- py stmt 111
+            else:   # --- py stmt 112
+                t_j = s1[j - self.n:j]   # --- py stmt 113
+
+            d[0] = 1.0 * j   # --- py stmt 114
+            for i in range(sl + 1):   # --- py stmt 115
+                cost = 0   # --- py stmt 116
+                tn = self.n   # --- py stmt 117
+                for ni in range(self.n):   # --- py stmt 118
+                    if sa[i - 1 + ni] != t_j[ni]:   # --- py stmt 119
+                        cost += 1   # --- py stmt 120
+                    elif sa[i - 1 + ni] == special:   # --- py stmt 121
+                        tn -= 1   # --- py stmt 122
+                ec = cost / tn   # --- py stmt 123
+                d[i] = min(d[i - 1] + 1, p[i] + 1, p[i - 1] + ec)   # --- py stmt 124
+            p, d = d, p   # --- py stmt 125
+
+        return p[sl] / max(tl, sl)   # --- py stmt 126
+
+
+
+class Damerau(MetricStringDistance):   # --- py stmt 127
+
+    def distance(self, s0, s1):   # --- py stmt 128
+        if s0 is None:   # --- py stmt 129
+            raise TypeError("Argument s0 is NoneType.")   # --- py stmt 130
+        if s1 is None:   # --- py stmt 131
+            raise TypeError("Argument s1 is NoneType.")   # --- py stmt 132
+        if s0 == s1:   # --- py stmt 133
+            return 0.0   # --- py stmt 134
+        inf = int(len(s0) + len(s1))   # --- py stmt 135
+        da = dict()   # --- py stmt 136
+        for i in range(len(s0)):   # --- py stmt 137
+            da[s0[i]] = str(0)   # --- py stmt 138
+        for i in range(len(s1)):   # --- py stmt 139
+            da[s1[i]] = str(0)   # --- py stmt 140
+        h = [[0] * (len(s1) + 2) for _ in range(len(s0) + 2)]   # --- py stmt 141
+        for i in range(len(s0) + 1):   # --- py stmt 142
+            h[i + 1][0] = inf   # --- py stmt 143
+            h[i + 1][1] = i   # --- py stmt 144
+        for j in range(len(s1) + 1):   # --- py stmt 145
+            h[0][j + 1] = inf   # --- py stmt 146
+            h[1][j + 1] = j   # --- py stmt 147
+        for i in range(1, len(s0) + 1):   # --- py stmt 148
+            db = 0   # --- py stmt 149
+            for j in range(1, len(s1) + 1):   # --- py stmt 150
+                i1 = int(da[s1[j - 1]])   # --- py stmt 151
+                j1 = db   # --- py stmt 152
+
+                cost = 1   # --- py stmt 153
+                if s0[i - 1] == s1[j - 1]:   # --- py stmt 154
+                    cost = 0   # --- py stmt 155
+                    db = j   # --- py stmt 156
+                h[i + 1][j + 1] = min(h[i][j] + cost,   # --- py stmt 157
+                                      h[i + 1][j] + 1,   # --- py stmt 158
+                                      h[i][j + 1] + 1,   # --- py stmt 159
+                                      h[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1))   # --- py stmt 160
+            da[s0[i - 1]] = str(i)   # --- py stmt 161
+
+        return h[len(s0) + 1][len(s1) + 1]   # --- py stmt 162
+
+
+
+
+
+### JavaScript
+"use strict";
+
+class StringDistance {   // --- py stmt 1
+    distance(s0, s1) {   // --- py stmt 2
+        throw new Error("Not implemented");   // --- py stmt 3
+    }
+}
+
+class NormalizedStringDistance extends StringDistance {   // --- py stmt 4
+    distance(s0, s1) {   // --- py stmt 5
+        throw new Error("Not implemented");   // --- py stmt 6
+    }
+}
+
+class MetricStringDistance extends StringDistance {   // --- py stmt 7
+    distance(s0, s1) {   // --- py stmt 8
+        throw new Error("Not implemented");   // --- py stmt 9
+    }
+}
+
+
+
+class Levenshtein extends MetricStringDistance {   // --- py stmt 10
+
+    distance(s0, s1) {   // --- py stmt 11
+        if (s0 === null) {   // --- py stmt 12
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 13
+        }
+        if (s1 === null) {   // --- py stmt 14
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 15
+        }
+        if (s0 === s1) {   // --- py stmt 16
+            return 0.0;   // --- py stmt 17
+        }
+        if (s0.length === 0) {   // --- py stmt 18
+            return s1.length;   // --- py stmt 19
+        }
+        if (s1.length === 0) {   // --- py stmt 20
+            return s0.length;   // --- py stmt 21
+        }
+
+        let v0 = new Array(s1.length + 1).fill(0);   // --- py stmt 22
+        let v1 = new Array(s1.length + 1).fill(0);   // --- py stmt 23
+
+        for (let i = 0; i < v0.length; i++) {   // --- py stmt 24
+            v0[i] = i;   // --- py stmt 25
+        }
+
+        for (let i = 0; i < s0.length; i++) {   // --- py stmt 26
+            v1[0] = i + 1;   // --- py stmt 27
+            for (let j = 0; j < s1.length; j++) {   // --- py stmt 28
+                let cost = 1;   // --- py stmt 29
+                if (s0[i] === s1[j]) {   // --- py stmt 30
+                    cost = 0;   // --- py stmt 31
+                }
+                v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);   // --- py stmt 32
+            }
+            [v0, v1] = [v1, v0];   // --- py stmt 33
+            //v1 = new Array(s1.length + 1);   // --- py stmt 33
+        }
+
+        return v0[s1.length];   // --- py stmt 34
+    }
+}
+
+
+
+
+class LongestCommonSubsequence extends StringDistance {   // --- py stmt 35
+    distance(s0, s1) {   // --- py stmt 36
+        if (s0 === null) {   // --- py stmt 37
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 38
+        }
+        if (s1 === null) {   // --- py stmt 39
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 40
+        }
+        if (s0 === s1) {   // --- py stmt 41
+            return 0.0;   // --- py stmt 42
+        }
+        return s0.length + s1.length - 2 * this.constructor.length(s0, s1);   // --- py stmt 43
+    }
+    static length(s0, s1) {   // --- py stmt 45
+        if (s0 === null) {   // --- py stmt 46
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 47
+        }
+        if (s1 === null) {   // --- py stmt 48
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 49
+        }
+        let s0_len = s0.length;   // --- py stmt 50
+        let s1_len = s1.length;   // --- py stmt 50
+        let x = s0.slice(0);   // --- py stmt 51
+        let y = s1.slice(0);   // --- py stmt 51
+        let matrix = Array.from({ length: s0_len + 1 }, () => Array(s1_len + 1).fill(0));   // --- py stmt 52
+        for (let i = 1; i < s0_len + 1; i++) {   // --- py stmt 53
+            for (let j = 1; j < s1_len + 1; j++) {   // --- py stmt 54
+                if (x[i - 1] === y[j - 1]) {   // --- py stmt 55
+                    matrix[i][j] = matrix[i - 1][j - 1] + 1;   // --- py stmt 56
+                }
+                else {   // --- py stmt 57
+                    matrix[i][j] = Math.max(matrix[i][j - 1], matrix[i - 1][j]);   // --- py stmt 58
+                }
+            }
+        }
+        return matrix[s0_len][s1_len];   // --- py stmt 59
+    }
+}
+
+
+
+
+class MetricLCS {   // --- py stmt 60
+    constructor() {   // --- py stmt 61
+        this.lcs = new LongestCommonSubsequence();   // --- py stmt 62
+    }
+    distance(s0, s1) {   // --- py stmt 63
+        if (s0 === null) {   // --- py stmt 64
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 65
+        }
+        if (s1 === null) {   // --- py stmt 66
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 67
+        }
+        if (s0 === s1) {   // --- py stmt 68
+            return 0.0;   // --- py stmt 69
+        }
+        let max_len = Math.max(s0.length, s1.length);   // --- py stmt 70
+        if (max_len === 0) {   // --- py stmt 71
+            return 0.0;   // --- py stmt 72
+        }
+        return 1.0 - (1.0 * this.lcs.constructor.length(s0, s1)) / max_len;   // --- py stmt 73
+    }
+}
+
+
+
+
+
+class NGram {   // --- py stmt 74
+    constructor(n = 2) {   // --- py stmt 75
+        this.n = n;   // --- py stmt 76
+    }
+
+    distance(s0, s1) {   // --- py stmt 77
+        if (s0 === null) {   // --- py stmt 78
+            throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 79
+        }
+        if (s1 === null) {   // --- py stmt 80
+            throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 81
+        }
+        if (s0 === s1) {   // --- py stmt 82
+            return 0.0;   // --- py stmt 83
+        }
+
+        const special = '\n';   // --- py stmt 84
+        const sl = s0.length;   // --- py stmt 85
+        const tl = s1.length;   // --- py stmt 86
+
+        if (sl === 0 || tl === 0) {   // --- py stmt 87
+            return 1.0;   // --- py stmt 88
+        }
+
+        let cost = 0;   // --- py stmt 89
+        if (sl < this.n || tl < this.n) {   // --- py stmt 90
+            for (let i = 0; i < Math.min(sl, tl); i++) {   // --- py stmt 91
+                if (s0[i] === s1[i]) {   // --- py stmt 92
+                    cost += 1;   // --- py stmt 93
+                }
+            }
+            return 1.0 - cost / Math.max(sl, tl);   // --- py stmt 94
+        }
+
+        const sa = new Array(sl + this.n - 1).fill('');   // --- py stmt 95
+
+        for (let i = 0; i < sa.length; i++) {   // --- py stmt 96
+            if (i < this.n - 1) {   // --- py stmt 97
+                sa[i] = special;   // --- py stmt 98
+            } else {   // --- py stmt 99
+                sa[i] = s0[i - this.n + 1];   // --- py stmt 100
+            }
+        }
+
+        let p = new Array(sl + 1).fill(0);   // --- py stmt 101
+        let d = new Array(sl + 1).fill(0);   // --- py stmt 102
+        let t_j = new Array(this.n).fill('');   // --- py stmt 103
+        for (let i = 0; i < sl + 1; i++) {   // --- py stmt 104
+            p[i] = 1.0 * i;   // --- py stmt 105
+        }
+
+        for (let j = 1; j < tl + 1; j++) {   // --- py stmt 106
+            if (j < this.n) {   // --- py stmt 107
+                for (let ti = 0; ti < this.n - j; ti++) {   // --- py stmt 108
+                    t_j[ti] = special;   // --- py stmt 109
+                }
+                for (let ti = this.n - j; ti < this.n; ti++) {   // --- py stmt 110
+                    t_j[ti] = s1[ti - (this.n - j)];   // --- py stmt 111
+                }
+            } else {   // --- py stmt 112
+                t_j = s1.slice(j - this.n, j);   // --- py stmt 113
+            }
+
+            d[0] = 1.0 * j;   // --- py stmt 114
+            for (let i = 0; i < sl + 1; i++) {   // --- py stmt 115
+                let cost = 0;   // --- py stmt 116
+                let tn = this.n;   // --- py stmt 117
+                for (let ni = 0; ni < this.n; ni++) {   // --- py stmt 118
+                    if (sa[i - 1 + ni] !== t_j[ni]) {   // --- py stmt 119
+                        cost += 1;   // --- py stmt 120
+                    } else if (sa[i - 1 + ni] === special) {   // --- py stmt 121
+                        tn -= 1;   // --- py stmt 122
+                    }
+                }
+                const ec = cost / tn;   // --- py stmt 123
+                d[i] = Math.min(d.at(i - 1) + 1, p[i] + 1, p.at(i - 1) + ec);   // --- py stmt 124
+            }
+            [p, d] = [d, p];   // --- py stmt 125
+        }
+
+        return p[sl] / Math.max(tl, sl);   // --- py stmt 126
+    }
+}
+
+
+
+
+
+class Damerau {   // --- py stmt 127
+    constructor() {   // --- py stmt 127
+        this.distance = function (s0, s1) {   // --- py stmt 128
+            if (s0 === null) {   // --- py stmt 129
+                throw new TypeError("Argument s0 is NoneType.");   // --- py stmt 130
+            }
+            if (s1 === null) {   // --- py stmt 131
+                throw new TypeError("Argument s1 is NoneType.");   // --- py stmt 132
+            }
+            if (s0 === s1) {   // --- py stmt 133
+                return 0.0;   // --- py stmt 134
+            }
+            var inf = parseInt(s0.length + s1.length);   // --- py stmt 135
+            var da = {};   // --- py stmt 136
+            for (var i = 0; i < s0.length; i++) {   // --- py stmt 137
+                da[s0[i]] = "0";   // --- py stmt 138
+            }
+            for (var i = 0; i < s1.length; i++) {   // --- py stmt 139
+                da[s1[i]] = "0";   // --- py stmt 140
+            }
+            var h = [];   // --- py stmt 141
+            for (var i = 0; i < s0.length + 2; i++) {   // --- py stmt 142
+                h.push([]);   // --- py stmt 142
+                for (var j = 0; j < s1.length + 2; j++) {   // --- py stmt 142
+                    h[i].push(0);   // --- py stmt 142
+                }
+            }
+            for (var i = 0; i < s0.length + 1; i++) {   // --- py stmt 143
+                h[i + 1][0] = inf;   // --- py stmt 143
+                h[i + 1][1] = i;   // --- py stmt 144
+            }
+            for (var j = 0; j < s1.length + 1; j++) {   // --- py stmt 145
+                h[0][j + 1] = inf;   // --- py stmt 146
+                h[1][j + 1] = j;   // --- py stmt 147
+            }
+            for (var i = 1; i < s0.length + 1; i++) {   // --- py stmt 148
+                var db = 0;   // --- py stmt 149
+                for (var j = 1; j < s1.length + 1; j++) {   // --- py stmt 150
+                    var i1 = parseInt(da[s1[j - 1]]);   // --- py stmt 151
+                    var j1 = db;   // --- py stmt 152
+
+                    var cost = 1;   // --- py stmt 153
+                    if (s0[i - 1] === s1[j - 1]) {   // --- py stmt 154
+                        cost = 0;   // --- py stmt 155
+                        db = j;   // --- py stmt 156
+                    }
+                    h[i + 1][j + 1] = Math.min(h[i][j] + cost,   // --- py stmt 157
+                        h[i + 1][j] + 1,   // --- py stmt 158
+                        h[i][j + 1] + 1,   // --- py stmt 159
+                        h[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1));   // --- py stmt 160
+                }
+                da[s0[i - 1]] = i.toString();   // --- py stmt 161
+            }
+
+            return h[s0.length + 1][s1.length + 1];   // --- py stmt 162
+        }
+    }
+}
+
+

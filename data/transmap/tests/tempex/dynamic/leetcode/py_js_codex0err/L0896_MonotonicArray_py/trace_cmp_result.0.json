@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,24]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: isDecr is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"3\"]],\"isIncr\":[\"B\",\"F\"],\"isDecr\":[\"B\",\"F\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,24]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: isDecr is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"3\"]],\"isIncr\":[\"B\",\"F\"],\"isDecr\":[\"B\",\"F\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,24]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: isDecr is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"2\"],[\"N\",\"3\"]],\"isIncr\":[\"B\",\"F\"],\"isDecr\":[\"B\",\"F\"]}",
+      ""
+    ]
+  }
+]

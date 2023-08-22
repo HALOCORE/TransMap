@@ -1,0 +1,110 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(N, insrt, remov, cpy):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if N == 0: return 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  if N == 1: return insrt",
+      [
+        3
+      ]
+    ],
+    [
+      "  dp =[0] *(N + 1)",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(1, N + 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if i % 2 == 0: dp[i] = min(dp[i - 1] + insrt, dp[i // 2] + cpy)",
+      [
+        6
+      ]
+    ],
+    [
+      "    else: dp[i] = min(dp[i - 1] + insrt, dp[(i + 1)// 2] + cpy + remov)",
+      [
+        7
+      ]
+    ],
+    [
+      "  return dp[N]",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(N, insrt, remov, cpy) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (N == 0) return 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  if (N == 1) return insrt;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var dp = new Array(N + 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var i = 1; i <= N; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (i % 2 == 0) dp[i] = Math.min(dp[i - 1] + insrt, dp[i / 2] + cpy);",
+      [
+        6
+      ]
+    ],
+    [
+      "    else dp[i] = Math.min(dp[i - 1] + insrt, dp[(i + 1) / 2] + cpy + remov);",
+      [
+        7
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return dp[N];",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

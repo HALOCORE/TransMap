@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "  evenArr.sort((a, b) => a-b);",
+    "replacement": "  evenArr = evenArr.sort();"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "  oddArr.sort((a, b) => a-b);",
+    "replacement": "  oddArr = oddArr.sort();"
+  }
+]

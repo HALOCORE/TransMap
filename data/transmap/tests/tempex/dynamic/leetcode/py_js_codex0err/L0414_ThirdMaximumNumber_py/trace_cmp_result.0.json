@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,14,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: m3 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"1\"]],\"m1\":[\"N\",\"-inf\"],\"m2\":[\"N\",\"-inf\"],\"m3\":[\"N\",\"-inf\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,14,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: m3 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"1\"]],\"m1\":[\"N\",\"-inf\"],\"m2\":[\"N\",\"-inf\"],\"m3\":[\"N\",\"-inf\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,14,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: m3 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"1\"]],\"m1\":[\"N\",\"-inf\"],\"m2\":[\"N\",\"-inf\"],\"m3\":[\"N\",\"-inf\"]}",
+      ""
+    ]
+  }
+]

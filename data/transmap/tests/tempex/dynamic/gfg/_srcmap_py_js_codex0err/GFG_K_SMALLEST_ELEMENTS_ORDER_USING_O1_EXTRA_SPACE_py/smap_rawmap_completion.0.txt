@@ -1,0 +1,44 @@
+
+### Python
+def f_gold(arr, n, k):   # --- py stmt 1
+  for i in range(k, n):   # --- py stmt 2
+    max_var = arr[k - 1]   # --- py stmt 3
+    pos = k - 1   # --- py stmt 4
+    for j in range(k - 2, - 1, - 1):   # --- py stmt 5
+      if(arr[j] > max_var):   # --- py stmt 6
+        max_var = arr[j]   # --- py stmt 7
+        pos = j   # --- py stmt 8
+    if(max_var > arr[i]):   # --- py stmt 9
+      j = pos   # --- py stmt 10
+      while(j < k - 1):   # --- py stmt 11
+        arr[j] = arr[j + 1]   # --- py stmt 12
+        j += 1   # --- py stmt 13
+      arr[k - 1] = arr[i]   # --- py stmt 14
+  for i in range(0, k): print(arr[i], end = " ")   # --- py stmt 15
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, k) {   // --- py stmt 1
+  for (let i = k; i < n; i++) {   // --- py stmt 2
+    let max_var = arr[k - 1];   // --- py stmt 3
+    let pos = k - 1;   // --- py stmt 4
+    for (let j = k - 2; j >= 0; j--) {   // --- py stmt 5
+      if (arr[j] > max_var) {   // --- py stmt 6
+        max_var = arr[j];   // --- py stmt 7
+        pos = j;   // --- py stmt 8
+      }
+    }
+    if (max_var > arr[i]) {   // --- py stmt 9
+      let j = pos;   // --- py stmt 10
+      while (j < k - 1) {   // --- py stmt 11
+        arr[j] = arr[j + 1];   // --- py stmt 12
+        j++;   // --- py stmt 13
+      }
+      arr[k - 1] = arr[i];   // --- py stmt 14
+    }
+  }
+  for (let i = 0; i < k; i++) console.log(arr[i], end = " ");   // --- py stmt 15
+}
+
+
+

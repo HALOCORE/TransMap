@@ -1,0 +1,16 @@
+Semantic mistakes: 12
+--------------------------------------------
+Runtime error:  2
+python line number when found (correction at the same line):
+314, 325
+--------------------------------------------
+Hidden mistakes: 10
+--------------------------------------------
+TP: 10
+python line number when found (correction at the same line):
+108, 207, 220, 240, 247, 289, 291, 292, 335
+python line number when found (correction at a different line):
+py: 274; js: 306, corr: 302
+--------------------------------------------
+FP: 0
+--------------------------------------------

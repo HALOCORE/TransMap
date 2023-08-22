@@ -1,0 +1,376 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minJumps",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    idx = defaultdict(list)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i, v in enumerate(arr):",
+      [
+        6
+      ]
+    ],
+    [
+      "        idx[v].append(i)",
+      [
+        7
+      ]
+    ],
+    [
+      "    q = deque([(0, 0)])",
+      [
+        8
+      ]
+    ],
+    [
+      "    vis = {0}",
+      [
+        9
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        10
+      ]
+    ],
+    [
+      "        i, step = q.popleft()",
+      [
+        11
+      ]
+    ],
+    [
+      "        if i == len(arr) - 1:",
+      [
+        12
+      ]
+    ],
+    [
+      "            return step",
+      [
+        13
+      ]
+    ],
+    [
+      "        v = arr[i]",
+      [
+        14
+      ]
+    ],
+    [
+      "        step += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "        for j in idx[v]:",
+      [
+        16
+      ]
+    ],
+    [
+      "            if j not in vis:",
+      [
+        17
+      ]
+    ],
+    [
+      "                vis.add(j)",
+      [
+        18
+      ]
+    ],
+    [
+      "                q.append((j, step))",
+      [
+        19
+      ]
+    ],
+    [
+      "        del idx[v]",
+      [
+        20
+      ]
+    ],
+    [
+      "        if i + 1 < len(arr) and (i + 1) not in vis:",
+      [
+        21
+      ]
+    ],
+    [
+      "            vis.add(i + 1)",
+      [
+        22
+      ]
+    ],
+    [
+      "            q.append((i + 1, step))",
+      [
+        23
+      ]
+    ],
+    [
+      "        if i - 1 >= 0 and (i - 1) not in vis:",
+      [
+        24
+      ]
+    ],
+    [
+      "            vis.add(i - 1)",
+      [
+        25
+      ]
+    ],
+    [
+      "            q.append((i - 1, step))",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    let idx = new Map();",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let i = 0; i < arr.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (idx.has(arr[i])) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            idx.get(arr[i]).push(i);",
+      [
+        7
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            idx.set(arr[i], [i]);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let q = [[0, 0]];",
+      [
+        8
+      ]
+    ],
+    [
+      "    let vis = new Set();",
+      [
+        9
+      ]
+    ],
+    [
+      "    vis.add(0);",
+      [
+        9
+      ]
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        let i = q[0][0];",
+      [
+        11
+      ]
+    ],
+    [
+      "        let step = q[0][1];",
+      [
+        11
+      ]
+    ],
+    [
+      "        q.shift();",
+      [
+        11
+      ]
+    ],
+    [
+      "        if (i == arr.length - 1) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            return step;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        let v = arr[i];",
+      [
+        14
+      ]
+    ],
+    [
+      "        step += 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "        for (let j = 0; j < idx.get(v).length; j++) {",
+      [
+        16
+      ]
+    ],
+    [
+      "            if (!vis.has(idx.get(v)[j])) {",
+      [
+        17
+      ]
+    ],
+    [
+      "                vis.add(idx.get(v)[j]);",
+      [
+        18
+      ]
+    ],
+    [
+      "                q.push([idx.get(v)[j], step]);",
+      [
+        19
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        idx.delete(v);",
+      [
+        20
+      ]
+    ],
+    [
+      "        if (i + 1 < arr.length && !vis.has(i + 1)) {",
+      [
+        21
+      ]
+    ],
+    [
+      "            vis.add(i + 1);",
+      [
+        22
+      ]
+    ],
+    [
+      "            q.push([i + 1, step]);",
+      [
+        23
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (i - 1 >= 0 && !vis.has(i - 1)) {",
+      [
+        24
+      ]
+    ],
+    [
+      "            vis.add(i - 1);",
+      [
+        25
+      ]
+    ],
+    [
+      "            q.push([i - 1, step]);",
+      [
+        26
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  mp = dict()   # --- py stmt 2
+  Sum = 0   # --- py stmt 3
+  count = 0   # --- py stmt 4
+  for i in range(n):   # --- py stmt 5
+    if(arr[i] == 0): arr[i] = - 1   # --- py stmt 6
+    Sum += arr[i]   # --- py stmt 7
+    if(Sum == 0): count += 1   # --- py stmt 8
+    if(Sum in mp.keys()): count += mp[Sum]   # --- py stmt 9
+    mp[Sum] = mp.get(Sum, 0)+ 1   # --- py stmt 10
+  return count   # --- py stmt 11
+
+
+### JavaScript
+"use strict";
+const f_gold = (arr, n) => {   // --- py stmt 1
+  let mp = {};   // --- py stmt 2
+  let Sum = 0;   // --- py stmt 3
+  let count = 0;   // --- py stmt 4
+  for (let i = 0; i < n; i++) {   // --- py stmt 5
+    if (arr[i] == 0) arr[i] = -1;   // --- py stmt 6
+    Sum += arr[i];   // --- py stmt 7
+    if (Sum == 0) count += 1;   // --- py stmt 8
+    if (Sum in mp) count += mp[Sum];   // --- py stmt 9
+    mp[Sum] = (mp[Sum] || 0) + 1;   // --- py stmt 10
+  }
+  return count;   // --- py stmt 11
+};
+
+

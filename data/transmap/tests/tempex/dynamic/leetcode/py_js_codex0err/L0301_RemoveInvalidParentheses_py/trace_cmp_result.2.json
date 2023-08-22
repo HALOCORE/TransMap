@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[31,4,31,32]",
+    "src_cov_lines": [
+      30
+    ],
+    "tar_cov_lines": [
+      40
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":40,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"tdel\":[\"N\",\"1\"],\"ans\":[\"SET\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[31,4,31,32]",
+    "src_cov_lines": [
+      30
+    ],
+    "tar_cov_lines": [
+      40
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":40,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"tdel\":[\"N\",\"1\"],\"ans\":[\"SET\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[31,4,31,32]",
+    "src_cov_lines": [
+      30
+    ],
+    "tar_cov_lines": [
+      40
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":40,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"tdel\":[\"N\",\"1\"],\"ans\":[\"SET\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[31,4,31,32]",
+    "src_cov_lines": [
+      30
+    ],
+    "tar_cov_lines": [
+      40
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":40,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"1\"],\"c\":[\"S\",1,\")\"],\"tdel\":[\"N\",\"1\"],\"ans\":[\"SET\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  }
+]

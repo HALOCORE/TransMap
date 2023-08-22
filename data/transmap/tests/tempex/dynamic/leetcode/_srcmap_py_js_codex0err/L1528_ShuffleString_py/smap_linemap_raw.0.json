@@ -1,0 +1,84 @@
+{
+  "src_anno_stmts": [
+    [
+      "### restoreString",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, indices: List[int]) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = [0] * len(s)",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, c in enumerate(s):",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans[indices[i]] = c",
+      [
+        5
+      ]
+    ],
+    [
+      "    return ''.join(ans)",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, indices) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [0].fill(len(s));",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < s.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans[indices[i]] = s[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.join('');",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

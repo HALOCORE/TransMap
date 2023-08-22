@@ -1,0 +1,192 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numOfMinutes",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        3
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        4
+      ]
+    ],
+    [
+      "def f_gold(n: int, headID: int, manager: List[int], informTime: List[int]",
+      [
+        5
+      ]
+    ],
+    [
+      ") -> int:",
+      [
+        6
+      ]
+    ],
+    [
+      "    def dfs(i):",
+      [
+        7
+      ]
+    ],
+    [
+      "        ans = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "        for j in g[i]:",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans = max(ans, informTime[i] + dfs(j))",
+      [
+        10
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        11
+      ]
+    ],
+    [
+      "    g = defaultdict(list)",
+      [
+        12
+      ]
+    ],
+    [
+      "    for i, m in enumerate(manager):",
+      [
+        13
+      ]
+    ],
+    [
+      "        g[m].append(i)",
+      [
+        14
+      ]
+    ],
+    [
+      "    return dfs(headID)",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n, headID, manager, informTime) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    function dfs(i) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        var ans = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (var j = 0; j < g[i].length; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans = Math.max(ans, informTime[i] + dfs(g[i][j]));",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return ans;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var g = [];",
+      [
+        12
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        g.push([]);",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        g[manager[i]].push(i);",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dfs(headID);",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

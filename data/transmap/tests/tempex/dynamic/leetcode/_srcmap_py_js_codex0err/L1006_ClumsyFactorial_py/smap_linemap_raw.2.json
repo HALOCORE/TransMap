@@ -1,0 +1,208 @@
+{
+  "src_anno_stmts": [
+    [
+      "### clumsy",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(N: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    op = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    s = [N]",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(N - 1, 0, -1):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if op == 0:",
+      [
+        6
+      ]
+    ],
+    [
+      "            s.append(s.pop() * i)",
+      [
+        7
+      ]
+    ],
+    [
+      "        elif op == 1:",
+      [
+        8
+      ]
+    ],
+    [
+      "            s.append(int(s.pop() / i))",
+      [
+        9
+      ]
+    ],
+    [
+      "        elif op == 2:",
+      [
+        10
+      ]
+    ],
+    [
+      "            s.append(i)",
+      [
+        11
+      ]
+    ],
+    [
+      "        else:",
+      [
+        12
+      ]
+    ],
+    [
+      "            s.append(-i)",
+      [
+        13
+      ]
+    ],
+    [
+      "        op = (op + 1) % 4",
+      [
+        14
+      ]
+    ],
+    [
+      "    return sum(s)",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(N) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var op = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var s = [N];",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = N - 1; i > 0; i--) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (op == 0) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            s.push(s.pop() * i);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (op == 1) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            s.push(Math.trunc(s.pop() / i));",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (op == 2) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            s.push(i);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        12
+      ]
+    ],
+    [
+      "            s.push(-i);",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        op = (op + 1) % 4;",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return s.reduce(function (a, b) { return a + b; });",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

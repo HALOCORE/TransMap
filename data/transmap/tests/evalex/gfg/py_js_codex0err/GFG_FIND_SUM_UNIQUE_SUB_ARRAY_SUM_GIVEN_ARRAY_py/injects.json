@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "      m[Sum] = (m[Sum] || 0) + 1;",
+    "replacement": "      m[Sum] = m.get(Sum, 0) + 1;"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "  for (var x of Object.keys(m).map(Number)) {",
+    "replacement": "  for (var x in m) {"
+  }
+]

@@ -1,0 +1,39 @@
+
+### Python
+### maxValueOfCoins 
+from itertools import accumulate   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(piles: List[List[int]], k: int) -> int:   # --- py stmt 3
+    presum = [list(accumulate(p, initial=0)) for p in piles]   # --- py stmt 4
+    dp = [0] * (k + 1)   # --- py stmt 5
+    for s in presum:   # --- py stmt 6
+        for j in range(k, -1, -1):   # --- py stmt 7
+            for idx, v in enumerate(s):   # --- py stmt 8
+                if j >= idx:   # --- py stmt 9
+                    dp[j] = max(dp[j], dp[j - idx] + v)   # --- py stmt 10
+    return dp[-1]   # --- py stmt 11
+
+### JavaScript
+"use strict";
+
+function f_gold(piles, k) {   // --- py stmt 3
+    var presum = piles.map(function (p) {   // --- py stmt 4
+        return [0].concat(p.map(   // --- py stmt 4
+            (sum => value =>   // --- py stmt 4
+                sum += value)(0)));   // --- py stmt 4
+    });
+    var dp = new Array(k + 1).fill(0);   // --- py stmt 5
+    for (var s of presum) {   // --- py stmt 6
+        for (var j = k; j >= 0; j--) {   // --- py stmt 7
+            for (var idx = 0; idx < presum[s].length; idx++) {   // --- py stmt 8
+                if (j >= idx) {   // --- py stmt 9
+                    dp[j] = Math.max(dp[j], dp[j - idx] + s[idx]);   // --- py stmt 10
+                }
+            }
+        }
+    }
+    return dp[k];   // --- py stmt 11
+}
+
+
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    return (a < 0x80000000) ? a : ~(a ^ 0xFFFFFFFF);",
+    "replacement": "    return a if (a < 0x80000000) else ~(a ^ 0xFFFFFFFF);"
+  }
+]

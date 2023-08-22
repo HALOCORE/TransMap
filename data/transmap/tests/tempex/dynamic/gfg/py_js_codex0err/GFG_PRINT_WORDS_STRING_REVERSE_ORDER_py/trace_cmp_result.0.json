@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,2,3,13]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: end is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",7,\"m Dm YZ\"],\"i\":[\"N\",\"6\"],\"start\":[\"N\",\"7\"],\"end\":[\"N\",\"7\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,2,3,13]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: end is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",7,\"m Dm YZ\"],\"i\":[\"N\",\"6\"],\"start\":[\"N\",\"7\"],\"end\":[\"N\",\"7\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,2,3,13]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: end is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",7,\"m Dm YZ\"],\"i\":[\"N\",\"6\"],\"start\":[\"N\",\"7\"],\"end\":[\"N\",\"7\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[3,2,3,13]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: end is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",7,\"m Dm YZ\"],\"i\":[\"N\",\"6\"],\"start\":[\"N\",\"7\"],\"end\":[\"N\",\"7\"]}",
+      ""
+    ]
+  }
+]

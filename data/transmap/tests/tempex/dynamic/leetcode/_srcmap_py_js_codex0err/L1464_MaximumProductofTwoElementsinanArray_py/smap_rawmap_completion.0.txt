@@ -1,0 +1,35 @@
+
+### Python
+### maxProduct 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    i = 0 if nums[0] > nums[1] else 1   # --- py stmt 3
+    j = 1 - i   # --- py stmt 4
+    for k in range(2, len(nums)):   # --- py stmt 5
+        if nums[k] > nums[i]:   # --- py stmt 6
+            j = k   # --- py stmt 7
+            i, j = j, i   # --- py stmt 8
+        elif nums[k] > nums[j]:   # --- py stmt 9
+            j = k   # --- py stmt 10
+    return (nums[i] - 1) * (nums[j] - 1)   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var i = 0;   // --- py stmt 3
+    if (nums[0] > nums[1]) i = 0;   // --- py stmt 3
+    else i = 1;   // --- py stmt 3
+    var j = 1 - i;   // --- py stmt 4
+    for (var k = 2; k < nums.length; k++) {   // --- py stmt 5
+        if (nums[k] > nums[i]) {   // --- py stmt 6
+            j = k;   // --- py stmt 7
+            i = j;   // --- py stmt 8
+            j = i;   // --- py stmt 8
+        }
+        else if (nums[k] > nums[j]) {   // --- py stmt 9
+            j = k;   // --- py stmt 10
+        }
+    }
+    return (nums[i] - 1) * (nums[j] - 1);   // --- py stmt 11
+}
+

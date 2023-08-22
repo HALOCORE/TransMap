@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 9,
+    "content": "    var need = new Map();\n    for (var _c of t) need.set(_c, 1 + (need.has(_c) ? need.get(_c) : 0));",
+    "replacement": "    var need = new Map();"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[8,4,8,14]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: temp is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"(()\"],\"Longest\":[\"N\",\"0\"],\"temp\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[8,4,8,14]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: temp is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"(()\"],\"Longest\":[\"N\",\"0\"],\"temp\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[8,4,8,14]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: temp is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"(()\"],\"Longest\":[\"N\",\"0\"],\"temp\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[8,4,8,14]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: temp is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"(()\"],\"Longest\":[\"N\",\"0\"],\"temp\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

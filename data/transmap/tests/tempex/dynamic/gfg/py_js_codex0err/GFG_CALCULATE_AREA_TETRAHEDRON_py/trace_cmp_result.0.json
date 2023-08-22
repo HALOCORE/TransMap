@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[2,2,2,41]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: round is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"side\":[\"N\",\"56\"]}",
+      ""
+    ]
+  }
+]

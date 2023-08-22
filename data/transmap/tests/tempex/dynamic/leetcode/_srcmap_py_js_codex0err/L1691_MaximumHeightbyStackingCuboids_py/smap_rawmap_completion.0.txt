@@ -1,0 +1,39 @@
+
+### Python
+### maxHeight 
+from typing import *   # --- py stmt 1
+def f_gold(cuboids: List[List[int]]) -> int:   # --- py stmt 2
+    for c in cuboids:   # --- py stmt 3
+        c.sort()   # --- py stmt 4
+    cuboids.sort()   # --- py stmt 5
+    n = len(cuboids)   # --- py stmt 6
+    dp = [0] * n   # --- py stmt 7
+    for i in range(n):   # --- py stmt 8
+        for j in range(i):   # --- py stmt 9
+            if cuboids[j][1] <= cuboids[i][1] and cuboids[j][2] <= cuboids[i][2]:   # --- py stmt 10
+                dp[i] = max(dp[i], dp[j])   # --- py stmt 11
+        dp[i] += cuboids[i][2]   # --- py stmt 12
+    return max(dp)   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(cuboids) {   // --- py stmt 2
+    for (let c of cuboids) {   // --- py stmt 3
+        c.sort();   // --- py stmt 4
+    }
+    cuboids.sort((ar, br) => {for (let i = 0; i < ar.length; i++) {if (ar[i] !== br[i]) return ar[i] - br[i]; return 0;}});   // --- py stmt 5
+    let n = cuboids.length;   // --- py stmt 6
+    let dp = new Array(n).fill(0);   // --- py stmt 7
+    for (let i = 0; i < n; i++) {   // --- py stmt 8
+        for (let j = 0; j < i; j++) {   // --- py stmt 9
+            if (cuboids[j][1] <= cuboids[i][1] && cuboids[j][2] <= cuboids[i][2]) {   // --- py stmt 10
+                dp[i] = Math.max(dp[i], dp[j]);   // --- py stmt 11
+            }
+        }
+        dp[i] += cuboids[i][2];   // --- py stmt 12
+    }
+    return Math.max(...dp);   // --- py stmt 13
+}
+
+
+

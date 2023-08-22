@@ -1,0 +1,438 @@
+{
+  "src_anno_stmts": [
+    [
+      "### removeInvalidParentheses",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> List[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def dfs(i, t, lcnt, rcnt, ldel, rdel):",
+      [
+        3
+      ]
+    ],
+    [
+      "        nonlocal tdel, ans",
+      [
+        4
+      ]
+    ],
+    [
+      "        if ldel * rdel < 0 or lcnt < rcnt or ldel + rdel > len(s) - i:",
+      [
+        5
+      ]
+    ],
+    [
+      "            return",
+      [
+        6
+      ]
+    ],
+    [
+      "        if ldel == 0 and rdel == 0:",
+      [
+        7
+      ]
+    ],
+    [
+      "            if len(s) - len(t) == tdel:",
+      [
+        8
+      ]
+    ],
+    [
+      "                ans.add(t)",
+      [
+        9
+      ]
+    ],
+    [
+      "        if i == len(s):",
+      [
+        10
+      ]
+    ],
+    [
+      "            return",
+      [
+        11
+      ]
+    ],
+    [
+      "        if s[i] == '(':",
+      [
+        12
+      ]
+    ],
+    [
+      "            dfs(i + 1, t, lcnt, rcnt, ldel - 1, rdel)",
+      [
+        13
+      ]
+    ],
+    [
+      "            dfs(i + 1, t + '(', lcnt + 1, rcnt, ldel, rdel)",
+      [
+        14
+      ]
+    ],
+    [
+      "        elif s[i] == ')':",
+      [
+        15
+      ]
+    ],
+    [
+      "            dfs(i + 1, t, lcnt, rcnt, ldel, rdel - 1)",
+      [
+        16
+      ]
+    ],
+    [
+      "            dfs(i + 1, t + ')', lcnt, rcnt + 1, ldel, rdel)",
+      [
+        17
+      ]
+    ],
+    [
+      "        else:",
+      [
+        18
+      ]
+    ],
+    [
+      "            dfs(i + 1, t + s[i], lcnt, rcnt, ldel, rdel)",
+      [
+        19
+      ]
+    ],
+    [
+      "    ldel = rdel = 0",
+      [
+        20
+      ]
+    ],
+    [
+      "    for c in s:",
+      [
+        21
+      ]
+    ],
+    [
+      "        if c == '(':",
+      [
+        22
+      ]
+    ],
+    [
+      "            ldel += 1",
+      [
+        23
+      ]
+    ],
+    [
+      "        elif c == ')':",
+      [
+        24
+      ]
+    ],
+    [
+      "            if ldel == 0:",
+      [
+        25
+      ]
+    ],
+    [
+      "                rdel += 1",
+      [
+        26
+      ]
+    ],
+    [
+      "            else:",
+      [
+        27
+      ]
+    ],
+    [
+      "                ldel -= 1",
+      [
+        28
+      ]
+    ],
+    [
+      "    tdel = ldel + rdel",
+      [
+        29
+      ]
+    ],
+    [
+      "    ans = set()",
+      [
+        30
+      ]
+    ],
+    [
+      "    dfs(0, '', 0, 0, ldel, rdel)",
+      [
+        31
+      ]
+    ],
+    [
+      "    return list(ans)",
+      [
+        32
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs(i, t, lcnt, rcnt, ldel, rdel) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (ldel * rdel < 0 || lcnt < rcnt || ldel + rdel > s.length - i) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            return;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (ldel == 0 && rdel == 0) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (s.length - t.length == tdel) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                ans.add(t);",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (i == s.length) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            return;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (s[i] == '(') {",
+      [
+        12
+      ]
+    ],
+    [
+      "            dfs(i + 1, t, lcnt, rcnt, ldel - 1, rdel);",
+      [
+        13
+      ]
+    ],
+    [
+      "            dfs(i + 1, t + '(', lcnt + 1, rcnt, ldel, rdel);",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (s[i] == ')') {",
+      [
+        15
+      ]
+    ],
+    [
+      "            dfs(i + 1, t, lcnt, rcnt, ldel, rdel - 1);",
+      [
+        16
+      ]
+    ],
+    [
+      "            dfs(i + 1, t + ')', lcnt, rcnt + 1, ldel, rdel);",
+      [
+        17
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        18
+      ]
+    ],
+    [
+      "            dfs(i + 1, t + s[i], lcnt, rcnt, ldel, rdel);",
+      [
+        19
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ldel = 0, rdel = 0;",
+      [
+        20
+      ]
+    ],
+    [
+      "    for (let c of s) {",
+      [
+        21
+      ]
+    ],
+    [
+      "        if (c == '(') {",
+      [
+        22
+      ]
+    ],
+    [
+      "            ldel += 1;",
+      [
+        23
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (c == ')') {",
+      [
+        24
+      ]
+    ],
+    [
+      "            if (ldel == 0) {",
+      [
+        25
+      ]
+    ],
+    [
+      "                rdel += 1;",
+      [
+        26
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        27
+      ]
+    ],
+    [
+      "                ldel -= 1;",
+      [
+        28
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    tdel = ldel + rdel;",
+      [
+        29
+      ]
+    ],
+    [
+      "    let ans = new Set();",
+      [
+        30
+      ]
+    ],
+    [
+      "    dfs(0, '', 0, 0, ldel, rdel);",
+      [
+        31
+      ]
+    ],
+    [
+      "    return Array.from(ans);",
+      [
+        32
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

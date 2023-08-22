@@ -1,0 +1,18 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  if n < 3: return - 1   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  return max(arr[0] * arr[1] * arr[n - 1], arr[n - 1] * arr[n - 2] * arr[n - 3])   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  if (n < 3) return -1;   // --- py stmt 2
+  arr.sort();   // --- py stmt 3
+  return Math.max(arr[0] * arr[1] * arr[n - 1], arr[n - 1] * arr[n - 2] * arr[n - 3]);   // --- py stmt 4
+}
+
+
+

@@ -1,0 +1,6 @@
+{
+  "0": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 5 ---\n    vis.add([0, 0].join(\",\"));\n    vis.add([0, 0]);",
+  "2": "FAILED:TypeError: Cannot read properties of null (reading 'length')",
+  "5": "FAILED:Error: WARN no trace difference and target PASS.",
+  "6": "FAILED:Error: WARN no trace difference and target PASS."
+}

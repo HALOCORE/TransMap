@@ -1,0 +1,62 @@
+{
+  "src_anno_stmts": [
+    [
+      "def double_the_difference(lst):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function doubleTheDifference(lst) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return lst.filter(function(i) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return i > 0 && i % 2 !== 0 && i.toString().indexOf(\".\") === -1;",
+      null
+    ],
+    [
+      "    }).map(function(i) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return i ** 2;",
+      null
+    ],
+    [
+      "    }).reduce(function(a, b) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return a + b;",
+      null
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

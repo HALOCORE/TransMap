@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "        j = ((j + A[j] + 1) % n + n) % n;",
+    "replacement": "        j = (j + A[j] + 1) % n;"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "          j = ((j + A[j] + 1) % n + n) % n;",
+    "replacement": "          j = (j + A[j] + 1) % n;"
+  }
+]

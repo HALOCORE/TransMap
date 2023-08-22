@@ -1,0 +1,230 @@
+{
+  "src_anno_stmts": [
+    [
+      "### spiralMatrixIII",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(rows: int, cols: int, rStart: int, cStart: int",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> List[List[int]]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = [[rStart, cStart]]",
+      [
+        3
+      ]
+    ],
+    [
+      "    if rows * cols == 1:",
+      [
+        4
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        5
+      ]
+    ],
+    [
+      "    k = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    while True:",
+      [
+        7
+      ]
+    ],
+    [
+      "        for dr, dc, dk in [[0, 1, k], [1, 0, k], [0, -1, k + 1], [-1, 0, k + 1]]:",
+      [
+        8
+      ]
+    ],
+    [
+      "            for _ in range(dk):",
+      [
+        9
+      ]
+    ],
+    [
+      "                rStart += dr",
+      [
+        10
+      ]
+    ],
+    [
+      "                cStart += dc",
+      [
+        11
+      ]
+    ],
+    [
+      "                if 0 <= rStart < rows and 0 <= cStart < cols:",
+      [
+        12
+      ]
+    ],
+    [
+      "                    ans.append([rStart, cStart])",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if len(ans) == rows * cols:",
+      [
+        14
+      ]
+    ],
+    [
+      "                        return ans",
+      [
+        15
+      ]
+    ],
+    [
+      "        k += 2",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(rows, cols, rStart, cStart) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [[rStart, cStart]];",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (rows * cols == 1) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return ans;",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var k = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    while (true) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (var [dr, dc, dk] of [[0, 1, k], [1, 0, k], [0, -1, k + 1], [-1, 0, k + 1]]) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            for (var _ = 0; _ < dk; _++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                rStart += dr;",
+      [
+        10
+      ]
+    ],
+    [
+      "                cStart += dc;",
+      [
+        11
+      ]
+    ],
+    [
+      "                if (0 <= rStart < rows && 0 <= cStart < cols) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                    ans.push([rStart, cStart]);",
+      [
+        13
+      ]
+    ],
+    [
+      "                    if (ans.length == rows * cols) {",
+      [
+        14
+      ]
+    ],
+    [
+      "                        return ans;",
+      [
+        15
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        k += 2;",
+      [
+        16
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

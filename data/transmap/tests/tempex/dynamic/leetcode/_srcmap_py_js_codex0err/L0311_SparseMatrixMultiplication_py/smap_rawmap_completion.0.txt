@@ -1,0 +1,57 @@
+
+### Python
+### multiply 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(mat1: List[List[int]], mat2: List[List[int]]) -> List[List[int]]:   # --- py stmt 3
+    r1, c1, c2 = len(mat1), len(mat1[0]), len(mat2[0])   # --- py stmt 4
+    res = [[0] * c2 for _ in range(r1)]   # --- py stmt 5
+    mp = defaultdict(list)   # --- py stmt 6
+    for i in range(r1):   # --- py stmt 7
+        for j in range(c1):   # --- py stmt 8
+            if mat1[i][j] != 0:   # --- py stmt 9
+                mp[i].append(j)   # --- py stmt 10
+    for i in range(r1):   # --- py stmt 11
+        for j in range(c2):   # --- py stmt 12
+            for k in mp[i]:   # --- py stmt 13
+                res[i][j] += mat1[i][k] * mat2[k][j]   # --- py stmt 14
+    return res   # --- py stmt 15
+
+### JavaScript
+"use strict";
+
+function f_gold(mat1, mat2) {   // --- py stmt 3
+    var r1 = mat1.length;   // --- py stmt 4
+    var c1 = mat1[0].length;   // --- py stmt 4
+    var c2 = mat2[0].length;   // --- py stmt 4
+    var res = new Array(r1);   // --- py stmt 5
+    for (var i = 0; i < r1; i++) {   // --- py stmt 7
+        res[i] = new Array(c2);   // --- py stmt 5
+        for (var j = 0; j < c2; j++) {   // --- py stmt 5
+            res[i][j] = 0;   // --- py stmt 5
+        }
+    }
+    var mp = new Map();   // --- py stmt 6
+    for (var i = 0; i < r1; i++) {   // --- py stmt 7
+        for (var j = 0; j < c1; j++) {   // --- py stmt 8
+            if (mat1[i][j] != 0) {   // --- py stmt 9
+                if (mp.has(i)) {   // --- py stmt 10
+                    mp.get(i).push(j);   // --- py stmt 10
+                } else {
+                    mp.set(i, [j]);   // --- py stmt 10
+                }
+            }
+        }
+    }
+    for (var i = 0; i < r1; i++) {   // --- py stmt 11
+        for (var j = 0; j < c2; j++) {   // --- py stmt 12
+            for (var k = 0; k < mp.get(i).length; k++) {   // --- py stmt 13
+                res[i][j] += mat1[i][mp.get(i)[k]] * mat2[mp.get(i)[k]][j];   // --- py stmt 14
+            }
+        }
+    }
+    return res;   // --- py stmt 15
+}
+
+
+

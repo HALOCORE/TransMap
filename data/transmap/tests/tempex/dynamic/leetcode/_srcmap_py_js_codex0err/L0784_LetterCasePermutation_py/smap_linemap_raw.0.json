@@ -1,0 +1,188 @@
+{
+  "src_anno_stmts": [
+    [
+      "### letterCasePermutation",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> List[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def dfs(i, t):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if i == len(t):",
+      [
+        4
+      ]
+    ],
+    [
+      "            ans.append(''.join(t))",
+      [
+        5
+      ]
+    ],
+    [
+      "            return",
+      [
+        6
+      ]
+    ],
+    [
+      "        dfs(i + 1, t)",
+      [
+        7
+      ]
+    ],
+    [
+      "        if t[i].isalpha():",
+      [
+        8
+      ]
+    ],
+    [
+      "            t[i] = t[i].upper() if t[i].islower() else t[i].lower()",
+      [
+        9
+      ]
+    ],
+    [
+      "            dfs(i + 1, t)",
+      [
+        10
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        11
+      ]
+    ],
+    [
+      "    t = list(s)",
+      [
+        12
+      ]
+    ],
+    [
+      "    dfs(0, t)",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs(i, t) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (i == t.length) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            ans.push(t.join(\"\"));",
+      [
+        5
+      ]
+    ],
+    [
+      "            return;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        dfs(i + 1, t);",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (t[i].match(/[a-z]/i)) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            t[i] = t[i] === t[i].toLowerCase() ? t[i].toUpperCase() : t[i].toLowerCase();",
+      [
+        9
+      ]
+    ],
+    [
+      "            dfs(i + 1, t);",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = [];",
+      [
+        11
+      ]
+    ],
+    [
+      "    var t = s.split('');",
+      [
+        12
+      ]
+    ],
+    [
+      "    dfs(0, t);",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minDays",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(bloomDay: List[int], m: int, k: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    if m * k > len(bloomDay):",
+      [
+        3
+      ]
+    ],
+    [
+      "        return -1",
+      [
+        4
+      ]
+    ],
+    [
+      "    def check(day: int) -> bool:",
+      [
+        5
+      ]
+    ],
+    [
+      "        cnt = cur = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "        for bd in bloomDay:",
+      [
+        7
+      ]
+    ],
+    [
+      "            cur = cur + 1 if bd <= day else 0",
+      [
+        8
+      ]
+    ],
+    [
+      "            if cur == k:",
+      [
+        9
+      ]
+    ],
+    [
+      "                cnt += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "                cur = 0",
+      [
+        11
+      ]
+    ],
+    [
+      "        return cnt >= m",
+      [
+        12
+      ]
+    ],
+    [
+      "    left, right = min(bloomDay), max(bloomDay)",
+      [
+        13
+      ]
+    ],
+    [
+      "    while left < right:",
+      [
+        14
+      ]
+    ],
+    [
+      "        mid = (left + right) >> 1",
+      [
+        15
+      ]
+    ],
+    [
+      "        if check(mid):",
+      [
+        16
+      ]
+    ],
+    [
+      "            right = mid",
+      [
+        17
+      ]
+    ],
+    [
+      "        else:",
+      [
+        18
+      ]
+    ],
+    [
+      "            left = mid + 1",
+      [
+        19
+      ]
+    ],
+    [
+      "    return left",
+      [
+        20
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(bloomDay, m, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (m * k > bloomDay.length) return -1;",
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      "    function check(day) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var cnt = cur = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var bd of bloomDay) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            cur = (bd <= day) ? cur + 1 : 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (cur == k) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                cnt += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "                cur = 0;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return cnt >= m;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var left = Math.min(...bloomDay);",
+      [
+        13
+      ]
+    ],
+    [
+      "    var right = Math.max(...bloomDay);",
+      [
+        13
+      ]
+    ],
+    [
+      "    while (left < right) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        var mid = (left + right) >> 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "        if (check(mid)) right = mid;",
+      [
+        16,
+        17
+      ]
+    ],
+    [
+      "        else left = mid + 1;",
+      [
+        18,
+        19
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return left;",
+      [
+        20
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

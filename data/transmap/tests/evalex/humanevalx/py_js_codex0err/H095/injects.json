@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "                if (/^[A-Z]+$/.test(key)) {",
+    "replacement": "                if (key.isupper()) {"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "                } else if (/^[a-z]+$/.test(key)) {",
+    "replacement": "                } else if (key.islower()) {"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "            } else if ((state === \"upper\" && !/^[A-Z]+$/.test(key)) || (state === \"lower\" && !/^[a-z]+$/.test(key))) {",
+    "replacement": "            } else if ((state === \"upper\" && !key.isupper()) || (state === \"lower\" && !key.islower())) {"
+  }
+]

@@ -1,0 +1,31 @@
+
+### Python
+### decodeCiphertext 
+from typing import *   # --- py stmt 1
+def f_gold(encodedText: str, rows: int) -> str:   # --- py stmt 2
+    ans = []   # --- py stmt 3
+    cols = len(encodedText) // rows   # --- py stmt 4
+    for j in range(cols):   # --- py stmt 5
+        x, y = 0, j   # --- py stmt 6
+        while x < rows and y < cols:   # --- py stmt 7
+            ans.append(encodedText[x * cols + y])   # --- py stmt 8
+            x, y = x + 1, y + 1   # --- py stmt 9
+    return ''.join(ans).rstrip()   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(encodedText, rows) {   // --- py stmt 2
+    var ans = [];   // --- py stmt 3
+    var cols = Math.floor(encodedText.length / rows);   // --- py stmt 4
+    for (var j = 0; j < cols; j++) {   // --- py stmt 5
+        var x = 0;   // --- py stmt 6
+        var y = j;   // --- py stmt 6
+        while (x < rows && y < cols) {   // --- py stmt 7
+            ans.push(encodedText[x * cols + y]);   // --- py stmt 8
+            x = x + 1;   // --- py stmt 9
+            y = y + 1;   // --- py stmt 9
+        }
+    }
+    return ans.join('').rstrip();   // --- py stmt 10
+}
+

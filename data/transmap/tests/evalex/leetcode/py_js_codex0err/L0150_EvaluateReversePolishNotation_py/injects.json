@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var t of tokens) {",
+    "replacement": "    for (var t in tokens) {"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        if (t.length > 1 || /^\\d+$/.test(t)) {",
+    "replacement": "        if (t.length > 1 || t.isdigit()) {"
+  }
+]

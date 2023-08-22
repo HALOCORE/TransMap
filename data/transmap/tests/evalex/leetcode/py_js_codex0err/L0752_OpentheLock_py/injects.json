@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "            s[i] = (c == '0') ? '9' : String(parseInt(c) - 1);",
+    "replacement": "            s[i] = '9' if c == '0' else String(parseInt(c) - 1);"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "            s[i] = (c == '9') ? '0' : String(parseInt(c) + 1);",
+    "replacement": "            s[i] = '0' if c == '9' else String(parseInt(c) + 1);"
+  }
+]

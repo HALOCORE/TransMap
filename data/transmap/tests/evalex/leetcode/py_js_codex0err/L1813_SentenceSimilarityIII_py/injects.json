@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 12,
+    "content": "        [sentence1, sentence2] = [sentence2, sentence1];\n        //",
+    "replacement": "        sentence1 = sentence2;\n        sentence2 = sentence1;"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    var words1 = sentence1.split(/\\s+/);",
+    "replacement": "    var words1 = sentence1.split();"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "    var words2 = sentence2.split(/\\s+/);",
+    "replacement": "    var words2 = sentence2.split();"
+  }
+]

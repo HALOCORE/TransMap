@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[6,2,6,25]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: d is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"],\"b\":[\"N\",\"1\"],\"a\":[\"N\",\"1\"],\"d\":[\"N\",\"9\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,2,6,25]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: d is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"],\"b\":[\"N\",\"1\"],\"a\":[\"N\",\"1\"],\"d\":[\"N\",\"9\"]}",
+      ""
+    ]
+  }
+]

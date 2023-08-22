@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "        for (var _ = 0, length = q.length; _ < length; _++) {",
+    "replacement": "        for (var _ = 0; _ < q.length; _++) {"
+  },
+  {
+    "line_start": 19,
+    "line_end": 21,
+    "content": "            if (true) {\n                for (var [a, b] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) {",
+    "replacement": "            for (var a = 0; a < 2; a++) {\n                for (var b = 0; b < 2; b++) {"
+  },
+  {
+    "line_start": 23,
+    "line_end": 24,
+    "content": "                    if (0 <= x && x < n && 0 <= y && y < n && grid[x][y] == 0) {",
+    "replacement": "                    if (0 <= x < n && 0 <= y < n && grid[x][y] == 0) {"
+  }
+]

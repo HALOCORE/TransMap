@@ -1,0 +1,132 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(f, d, s):",
+      [
+        1
+      ]
+    ],
+    [
+      "  mem =[[0 for i in range(s + 1)] for j in range(d + 1)]",
+      [
+        2
+      ]
+    ],
+    [
+      "  mem[0][0] = 1",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(1, d + 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "    for j in range(1, s + 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "      mem[i][j] = mem[i][j - 1] + mem[i - 1][j - 1]",
+      [
+        6
+      ]
+    ],
+    [
+      "      if j - f - 1 >= 0: mem[i][j] -= mem[i - 1][j - f - 1]",
+      [
+        7
+      ]
+    ],
+    [
+      "  return mem[d][s]",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(f, d, s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let mem = Array(d+1).fill().map(_ => Array(s+1).fill(0));",
+      [
+        2
+      ]
+    ],
+    [
+      "  mem[0][0] = 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 1; i <= d; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let j = 0; j <= s; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "        mem[i][j] = mem[i][j - 1] + mem[i - 1][j - 1];",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (j - f - 1 >= 0) {",
+      [
+        7
+      ]
+    ],
+    [
+      "          mem[i][j] -= mem[i - 1][j - f - 1];",
+      [
+        7
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return mem[d][s];",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

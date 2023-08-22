@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <link rel="stylesheet" href="../_common/toastify-js/toastify.css" />
+  <link rel="stylesheet" href="./logviz_utils/logviz_proto_dashboard.css" />
+  <link rel="stylesheet" href="./index_evalex_proto.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransMap Proto Lib</title>
+</head>
+
+<body>
+  <div id="explain-zone"></div>
+  <button id="toggle-monitor" onclick="toggle_display_none('main-zone')">Show / Hide the Monitor</button>
+  <div id="main-zone" style="display: none;"></div>
+
+  <script type="text/javascript">
+    // detect if debug=true is in URL params
+    var urlParams = new URLSearchParams(window.location.search);
+    window._DEBUG_FLAG = urlParams.get('debug') == 'true' || urlParams.get('debug') == 'enabled' || urlParams.get('debug') == 'True';
+  </script>
+  <script type="text/javascript" src="../_common/common.js"></script>
+  <script type="text/javascript" src="../_common/jssha/sha256.js"></script>
+  <script type="text/javascript" src="../_common/incremental-dom/incremental-dom.js"></script>
+  <script type="text/javascript" src="../_common/incremental-dom/jsonml2idom.js"></script>
+  <script type="text/javascript" src="../_common/toastify-js/toastify.js"></script>
+  <script type="text/javascript" src="../_common/vscode-diff/merged.js"></script>
+  <script type="text/javascript" src="../_common/tree-sitter/tree-sitter.js"></script>
+  <script type="text/javascript" src="../_common/tree-sitter/my-tree-sitter.js"></script>
+  <script type="text/javascript" src="../_common/showdown/showdown.min.js"></script>
+
+  <script type="text/javascript" src="../_api/api_humanevalx.js"></script>
+  <script type="text/javascript" src="../_api/api_file.js"></script>
+  <script type="text/javascript" src="../_api/api_neoresolve.js"></script>
+  <script type="text/javascript" src="../_api/api_test.js"></script>
+  <script type="text/javascript" src="../_api/api_dynamic.js"></script>
+  <script type="text/javascript" src="../_api/api_codex.js"></script>
+  <script type="text/javascript" src="../_api/xapi_logviz.private.js"></script>
+  <script type="text/javascript" src="../_api/xapi_logviz.js"></script>
+
+  <script type="text/javascript" src="./logviz_utils/logviz_dbgbus_connector.js"></script>
+  <script type="text/javascript" src="./logviz_utils/logviz_lib_formatdata.js"></script>
+  <script type="text/javascript" src="./logviz_utils/logviz_proto_dashboard.js"></script>
+
+  <script type="text/javascript" src="./index_evalex_common.js"></script>
+  <script type="text/javascript" src="./index_evalex_debug.js"></script>
+  <script type="text/javascript" src="./index_evalex_dataset.js"></script>
+  <script type="text/javascript" src="./index_evalex_compat.js"></script>
+  <script type="text/javascript" src="./index_evalex__selfexp.js"></script>
+  <script type="text/javascript" src="./index_evalex__faultloc_assert.js"></script>
+  <script type="text/javascript" src="./index_evalex__faultloc_trace.js"></script>
+  <script type="text/javascript" src="./index_evalex__faultloc_trace_expr.js"></script>
+  <script type="text/javascript" src="./index_evalex_logviz_ui_dynamic.js"></script>
+  <script type="text/javascript" src="./index_evalex_logviz_ui_dynamic_user.js"></script>
+  <script type="text/javascript" src="./index_evalex_logviz_ui_compat.js"></script>
+  <script type="text/javascript" src="./index_evalex_logviz_ui.js"></script>
+  <script type="text/javascript" src="./index_evalex_logviz_bus.js"></script>
+
+  <script type="text/javascript" src="./index_evalex_proto.js"></script>
+  <script type="text/javascript" src="./index_evalex_userstudy.js"></script>
+</body>
+
+</html>

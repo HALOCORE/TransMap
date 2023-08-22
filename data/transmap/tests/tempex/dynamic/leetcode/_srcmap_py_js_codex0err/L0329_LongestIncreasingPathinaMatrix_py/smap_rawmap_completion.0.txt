@@ -1,0 +1,49 @@
+
+### Python
+### longestIncreasingPath 
+def cache(f): return f   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(matrix: List[List[int]]) -> int:   # --- py stmt 3
+    @cache   # --- py stmt 4
+    def dfs(i, j):   # --- py stmt 5
+        ans = 1   # --- py stmt 6
+        for a, b in [[-1, 0], [1, 0], [0, 1], [0, -1]]:   # --- py stmt 7
+            x, y = i + a, j + b   # --- py stmt 8
+            if 0 <= x < m and 0 <= y < n and matrix[x][y] > matrix[i][j]:   # --- py stmt 9
+                ans = max(ans, dfs(x, y) + 1)   # --- py stmt 10
+        return ans   # --- py stmt 11
+    m, n = len(matrix), len(matrix[0])   # --- py stmt 12
+    return max(dfs(i, j) for i in range(m) for j in range(n))   # --- py stmt 13
+
+### JavaScript
+"use strict";
+
+function cache(f) {   // --- py stmt 1
+    return f;   // --- py stmt 1
+}
+
+function f_gold(matrix) {   // --- py stmt 3
+    var dfs = cache(function (i, j) {   // --- py stmt 4, py stmt 5
+        var ans = 1;   // --- py stmt 6
+        for (var _i = 0, _a = [[-1, 0], [1, 0], [0, 1], [0, -1]]; _i < _a.length; _i++) {   // --- py stmt 7
+            var a = _a[_i][0],
+                b = _a[_i][1];
+            var x = i + a,
+                y = j + b;   // --- py stmt 8
+            if (0 <= x && x < m && 0 <= y && y < n && matrix[x][y] > matrix[i][j]) {   // --- py stmt 9
+                ans = Math.max(ans, dfs(x, y) + 1);   // --- py stmt 10
+            }
+        }
+        return ans;   // --- py stmt 11
+    });
+    var m = matrix.length,
+        n = matrix[0].length;   // --- py stmt 12
+    return Math.max.apply(Math, _toConsumableArray(Array.from(Array(m), function (_, i) {   // --- py stmt 13
+        return Array.from(Array(n), function (_, j) {   // --- py stmt 13
+            return dfs(i, j);   // --- py stmt 13
+        });
+    }).flat()));   // --- py stmt 13
+}
+
+
+

@@ -1,0 +1,88 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[9,2,9,18]",
+    "src_cov_lines": [
+      4,
+      5,
+      8
+    ],
+    "tar_cov_lines": [
+      4,
+      5,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: s.insert is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"expr\":[\"S\",2,\"}{\"],\"lenn\":[\"N\",\"2\"],\"s\":[\"A\",2,[\"S\",1,\"{\"],[\"S\",1,\"}\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,4,8,30]",
+    "src_cov_lines": [
+      5,
+      8
+    ],
+    "tar_cov_lines": [
+      5,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: s.insert is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"expr\":[\"S\",2,\"}{\"],\"lenn\":[\"N\",\"2\"],\"s\":[\"A\",1,[\"S\",1,\"}\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,8,30]",
+    "src_cov_lines": [
+      5,
+      8
+    ],
+    "tar_cov_lines": [
+      5,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: s.insert is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"expr\":[\"S\",2,\"}{\"],\"lenn\":[\"N\",\"2\"],\"s\":[\"A\",1,[\"S\",1,\"}\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,8,30]",
+    "src_cov_lines": [
+      5,
+      8
+    ],
+    "tar_cov_lines": [
+      5,
+      9
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":9,\"err_msg\":\"TypeError: s.insert is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"expr\":[\"S\",2,\"}{\"],\"lenn\":[\"N\",\"2\"],\"s\":[\"A\",1,[\"S\",1,\"}\"]],\"i\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

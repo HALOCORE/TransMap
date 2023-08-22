@@ -1,0 +1,150 @@
+{
+  "src_anno_stmts": [
+    [
+      "def sum_squares(lst):",
+      [
+        1
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    result =[]",
+      [
+        2
+      ]
+    ],
+    [
+      "    for i in range(len(lst)):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if i %3 == 0:",
+      [
+        4
+      ]
+    ],
+    [
+      "            result.append(lst[i]**2)",
+      [
+        5
+      ]
+    ],
+    [
+      "        elif i % 4 == 0 and i%3 != 0:",
+      [
+        6
+      ]
+    ],
+    [
+      "            result.append(lst[i]**3)",
+      [
+        7
+      ]
+    ],
+    [
+      "        else:",
+      [
+        8
+      ]
+    ],
+    [
+      "            result.append(lst[i])",
+      [
+        9
+      ]
+    ],
+    [
+      "    return sum(result)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function sum_squares(lst) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    var result = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "    for (var i = 0; i < lst.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (i % 3 == 0) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            result.push(Math.pow(lst[i], 2));",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (i % 4 == 0 && i % 3 != 0) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            result.push(Math.pow(lst[i], 3));",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            result.push(lst[i]);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return result.reduce(function (a, b) { return a + b; });",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

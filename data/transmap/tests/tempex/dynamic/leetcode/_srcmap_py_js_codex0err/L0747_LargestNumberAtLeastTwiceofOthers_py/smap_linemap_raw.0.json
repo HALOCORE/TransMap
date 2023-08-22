@@ -1,0 +1,158 @@
+{
+  "src_anno_stmts": [
+    [
+      "### dominantIndex",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    mx = mid = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    ans = -1",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, v in enumerate(nums):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if v > mx:",
+      [
+        6
+      ]
+    ],
+    [
+      "            mid, mx = mx, v",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = i",
+      [
+        8
+      ]
+    ],
+    [
+      "        elif v > mid:",
+      [
+        9
+      ]
+    ],
+    [
+      "            mid = v",
+      [
+        10
+      ]
+    ],
+    [
+      "    return ans if mx >= 2 * mid else -1",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var mx = mid = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var ans = -1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < nums.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (nums[i] > mx) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            mid = mx;",
+      [
+        7
+      ]
+    ],
+    [
+      "            mx = nums[i];",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = i;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (nums[i] > mid) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            mid = nums[i];",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans >= 0 && mx >= 2 * mid ? ans : -1;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

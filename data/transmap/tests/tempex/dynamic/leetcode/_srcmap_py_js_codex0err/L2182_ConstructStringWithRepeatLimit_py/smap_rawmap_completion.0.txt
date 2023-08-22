@@ -1,0 +1,58 @@
+
+### Python
+### repeatLimitedString 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, repeatLimit: int) -> str:   # --- py stmt 2
+    cnt = [0] * 26   # --- py stmt 3
+    for c in s:   # --- py stmt 4
+        cnt[ord(c) - ord('a')] += 1   # --- py stmt 5
+    ans = []   # --- py stmt 6
+    for i in range(25, -1, -1):   # --- py stmt 7
+        j = i - 1   # --- py stmt 8
+        while 1:   # --- py stmt 9
+            for _ in range(min(repeatLimit, cnt[i])):   # --- py stmt 10
+                cnt[i] -= 1   # --- py stmt 11
+                ans.append(chr(ord('a') + i))   # --- py stmt 12
+            if cnt[i] == 0:   # --- py stmt 13
+                break   # --- py stmt 14
+            while j >= 0 and cnt[j] == 0:   # --- py stmt 15
+                j -= 1   # --- py stmt 16
+            if j < 0:   # --- py stmt 17
+                break   # --- py stmt 18
+            cnt[j] -= 1   # --- py stmt 19
+            ans.append(chr(ord('a') + j))   # --- py stmt 20
+    return ''.join(ans)   # --- py stmt 21
+
+### JavaScript
+"use strict";
+function f_gold(s, repeatLimit) {   // --- py stmt 2
+    let cnt = Array(26).fill(0);   // --- py stmt 3
+    for (let c of s) {   // --- py stmt 4
+        cnt[c.charCodeAt(0) - 'a'.charCodeAt(0)] += 1;   // --- py stmt 5
+    }
+    let ans = [];   // --- py stmt 6
+    for (let i = 25; i >= 0; i--) {   // --- py stmt 7
+        let j = i - 1;   // --- py stmt 8
+        while (1) {   // --- py stmt 9
+            for (let _ = 0; _ < Math.min(repeatLimit, cnt[i]); _++) {   // --- py stmt 10
+                cnt[i] -= 1;   // --- py stmt 11
+                ans.push(String.fromCharCode(97 + i));   // --- py stmt 12
+            }
+            if (cnt[i] == 0) {   // --- py stmt 13
+                break;   // --- py stmt 14
+            }
+            while (j >= 0 && cnt[j] == 0) {   // --- py stmt 15
+                j -= 1;   // --- py stmt 16
+            }
+            if (j < 0) {   // --- py stmt 17
+                break;   // --- py stmt 18
+            }
+            cnt[j] -= 1;   // --- py stmt 19
+            ans.push(String.fromCharCode(j + 'a'.charCodeAt(0)));   // --- py stmt 20
+        }
+    }
+    return ans.join('');   // --- py stmt 21
+}
+
+
+

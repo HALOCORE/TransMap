@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(arr, n, k):   # --- py stmt 1
+  count_map = { } ;   # --- py stmt 2
+  for i in range(0, n):   # --- py stmt 3
+    if(arr[i] in count_map.keys()): count_map[arr[i]] += 1   # --- py stmt 4
+    else: count_map[arr[i]] = 1   # --- py stmt 5
+    i += 1   # --- py stmt 6
+  for i in range(0, n):   # --- py stmt 7
+    if(count_map[arr[i]] == k): return arr[i]   # --- py stmt 8
+    i += 1   # --- py stmt 9
+  return - 1   # --- py stmt 10
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, k) {   // --- py stmt 1
+  var count_map = {};   // --- py stmt 2
+  for (var i = 0; i < n; i++) {   // --- py stmt 3
+    if (arr[i] in count_map) count_map[arr[i]] += 1;   // --- py stmt 4
+    else count_map[arr[i]] = 1;   // --- py stmt 5
+    i += 1;   // --- py stmt 6
+  }
+  for (var i = 0; i < n; i++) {   // --- py stmt 7
+    if (count_map[arr[i]] == k) return arr[i];   // --- py stmt 8
+    i;   // --- py stmt 9
+  }
+  return -1;   // --- py stmt 10
+}
+
+
+

@@ -1,0 +1,30 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 9,
+    "actural_src_pk": "NOT_EXIST",
+    "src_cov_lines": "NOT_EXIST",
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": "NOT_EXIST"
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 17,
+    "actural_src_pk": "NOT_EXIST",
+    "src_cov_lines": "NOT_EXIST",
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":5,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": "NOT_EXIST"
+  }
+]

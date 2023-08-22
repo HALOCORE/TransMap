@@ -1,0 +1,23 @@
+
+### Python
+### sumBase 
+from typing import *   # --- py stmt 1
+def f_gold(n: int, k: int) -> int:   # --- py stmt 2
+    res = 0   # --- py stmt 3
+    while n != 0:   # --- py stmt 4
+        n, t = divmod(n, k)   # --- py stmt 5
+        res += t   # --- py stmt 6
+    return res   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(n, k) {   // --- py stmt 2
+    var res = 0;   // --- py stmt 3
+    while (n != 0) {   // --- py stmt 4
+        var t;   // --- py stmt 5
+        [n, t] = [Math.floor(n / k), n % k];   // --- py stmt 5
+        res += n % k;   // --- py stmt 6
+    }
+    return res;   // --- py stmt 7
+}
+

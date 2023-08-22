@@ -1,0 +1,38 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    curr_sum += (arr[i] == 0)? -1 : arr[i];",
+    "replacement": "    curr_sum += (-1 if (arr[i] == 0) else arr[i]);"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    if (typeof(um[curr_sum]) !== \"undefined\") um[curr_sum] += 1;",
+    "replacement": "    if (um.get(curr_sum)) um[curr_sum] += 1;"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "  for (var itr of Object.keys(um).map(Number)) {",
+    "replacement": "  for (var itr in um) {"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "    if (um[itr] > 1) count += ((um[itr] * parseInt(um[itr] - 1)) / 2);",
+    "replacement": "    if (um[itr] > 1) count += ((um[itr] * int(um[itr] - 1)) / 2);"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "  if (typeof(um[0]) !== \"undefined\") count += um[0];",
+    "replacement": "  if (um.get(0)) count += um[0];"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "  return parseInt(count);",
+    "replacement": "  return int(count);"
+  }
+]

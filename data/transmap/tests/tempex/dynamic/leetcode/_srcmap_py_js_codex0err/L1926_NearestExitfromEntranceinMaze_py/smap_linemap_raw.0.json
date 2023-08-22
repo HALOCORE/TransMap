@@ -1,0 +1,290 @@
+{
+  "src_anno_stmts": [
+    [
+      "### nearestExit",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(maze: List[List[str]], entrance: List[int]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    m, n = len(maze), len(maze[0])",
+      [
+        4
+      ]
+    ],
+    [
+      "    i, j = entrance",
+      [
+        5
+      ]
+    ],
+    [
+      "    q = deque([(i, j)])",
+      [
+        6
+      ]
+    ],
+    [
+      "    maze[i][j] = '+'",
+      [
+        7
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        9
+      ]
+    ],
+    [
+      "        ans += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        for _ in range(len(q)):",
+      [
+        11
+      ]
+    ],
+    [
+      "            i, j = q.popleft()",
+      [
+        12
+      ]
+    ],
+    [
+      "            for a, b in [[0, -1], [0, 1], [-1, 0], [1, 0]]:",
+      [
+        13
+      ]
+    ],
+    [
+      "                x, y = i + a, j + b",
+      [
+        14
+      ]
+    ],
+    [
+      "                if 0 <= x < m and 0 <= y < n and maze[x][y] == '.':",
+      [
+        15
+      ]
+    ],
+    [
+      "                    if x == 0 or x == m - 1 or y == 0 or y == n - 1:",
+      [
+        16
+      ]
+    ],
+    [
+      "                        return ans",
+      [
+        17
+      ]
+    ],
+    [
+      "                    q.append((x, y))",
+      [
+        18
+      ]
+    ],
+    [
+      "                    maze[x][y] = '+'",
+      [
+        19
+      ]
+    ],
+    [
+      "    return -1",
+      [
+        20
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold ( maze, entrance ) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var m = maze.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = maze[0].length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var i = entrance[0];",
+      [
+        5
+      ]
+    ],
+    [
+      "    var j = entrance[1];",
+      [
+        5
+      ]
+    ],
+    [
+      "    var q = [ [ i, j ] ];",
+      [
+        6
+      ]
+    ],
+    [
+      "    maze[i][j] = '+';",
+      [
+        7
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    while ( q.length > 0 ) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        ans += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        for ( var _ = 0; _ < q.length; _++ ) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            [i, j] = q.shift();",
+      [
+        12
+      ]
+    ],
+    [
+      "            for ( var a = 0; a < 2; a++ ) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                for ( var b = 0; b < 2; b++ ) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                    var x = i + a;",
+      [
+        14
+      ]
+    ],
+    [
+      "                    var y = j + b;",
+      [
+        14
+      ]
+    ],
+    [
+      "                    if ( x >= 0 && x < m && y >= 0 && y < n && maze[x][y] == '.' ) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                        if ( x == 0 || x == m - 1 || y == 0 || y == n - 1 ) {",
+      [
+        16
+      ]
+    ],
+    [
+      "                            return ans;",
+      [
+        17
+      ]
+    ],
+    [
+      "                        }",
+      null
+    ],
+    [
+      "                        q.push( [ x, y ] );",
+      [
+        18
+      ]
+    ],
+    [
+      "                        maze[x][y] = '+';",
+      [
+        19
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return -1;",
+      [
+        20
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

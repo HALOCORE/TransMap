@@ -1,0 +1,22 @@
+
+### Python
+### maxSubArray 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    res = f = nums[0]   # --- py stmt 3
+    for num in nums[1:]:   # --- py stmt 4
+        f = num + max(f, 0)   # --- py stmt 5
+        res = max(res, f)   # --- py stmt 6
+    return res   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var res = f = nums[0];   // --- py stmt 3
+    for (var num of nums.slice(1)) {   // --- py stmt 4
+        f = num + Math.max(f, 0);   // --- py stmt 5
+        res = Math.max(res, f);   // --- py stmt 6
+    }
+    return res;   // --- py stmt 7
+}
+

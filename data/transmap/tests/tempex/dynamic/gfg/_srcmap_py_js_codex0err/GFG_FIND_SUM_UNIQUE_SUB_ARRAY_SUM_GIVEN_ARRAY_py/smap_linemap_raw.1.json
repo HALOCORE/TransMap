@@ -1,0 +1,154 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  res = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  m = dict()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        4
+      ]
+    ],
+    [
+      "    Sum = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for j in range(i, n):",
+      [
+        6
+      ]
+    ],
+    [
+      "      Sum += arr[j]",
+      [
+        7
+      ]
+    ],
+    [
+      "      m[Sum] = m.get(Sum, 0)+ 1",
+      [
+        8
+      ]
+    ],
+    [
+      "  for x in m:",
+      [
+        9
+      ]
+    ],
+    [
+      "    if m[x] == 1: res += x",
+      [
+        10
+      ]
+    ],
+    [
+      "  return res",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var res = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var m = {};",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var Sum = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var j = i; j < n; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      Sum += arr[j];",
+      [
+        7
+      ]
+    ],
+    [
+      "      m[Sum] = (m[Sum] || 0) + 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (var x in m) {",
+      [
+        9
+      ]
+    ],
+    [
+      "    if (m[x] == 1) res += x;",
+      [
+        10
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return res;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findBlackPixel",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(picture: List[List[str]], target: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    m, n = len(picture), len(picture[0])",
+      [
+        4
+      ]
+    ],
+    [
+      "    rows = [0] * m",
+      [
+        5
+      ]
+    ],
+    [
+      "    cols = defaultdict(list)",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        7
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        8
+      ]
+    ],
+    [
+      "            if picture[i][j] == 'B':",
+      [
+        9
+      ]
+    ],
+    [
+      "                rows[i] += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "                cols[j].append(i)",
+      [
+        11
+      ]
+    ],
+    [
+      "    t = [[False] * m for _ in range(m)]",
+      [
+        12
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        13
+      ]
+    ],
+    [
+      "        for k in range(i, m):",
+      [
+        14
+      ]
+    ],
+    [
+      "            if i == k:",
+      [
+        15
+      ]
+    ],
+    [
+      "                t[i][k] = True",
+      [
+        16
+      ]
+    ],
+    [
+      "            else:",
+      [
+        17
+      ]
+    ],
+    [
+      "                t[i][k] = all([picture[i][j] == picture[k][j] for j in range(n)])",
+      [
+        18
+      ]
+    ],
+    [
+      "            t[k][i] = t[i][k]",
+      [
+        19
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        20
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        21
+      ]
+    ],
+    [
+      "        if rows[i] == target:",
+      [
+        22
+      ]
+    ],
+    [
+      "            for j in range(n):",
+      [
+        23
+      ]
+    ],
+    [
+      "                if len(cols[j]) == target and all([t[i][k] for k in cols[j]]):",
+      [
+        24
+      ]
+    ],
+    [
+      "                    res += 1",
+      [
+        25
+      ]
+    ],
+    [
+      "    return res",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (picture, target) {",
+      [
+        3
+      ]
+    ],
+    [
+      "  var m = picture.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "  var n = picture[0].length;",
+      [
+        4
+      ]
+    ],
+    [
+      "  var rows = Array(m).fill(0);",
+      [
+        5
+      ]
+    ],
+    [
+      "  var cols = new Map();",
+      [
+        6
+      ]
+    ],
+    [
+      "  for (var i = 0; i < m; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (var j = 0; j < n; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (picture[i][j] == 'B') {",
+      [
+        9
+      ]
+    ],
+    [
+      "        rows[i] += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (cols.has(j)) {",
+      [
+        11
+      ]
+    ],
+    [
+      "          cols.get(j).push(i);",
+      [
+        11
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        11
+      ]
+    ],
+    [
+      "          cols.set(j, [i]);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var t = Array(m).fill(0).map(() => Array(m).fill(false));",
+      [
+        12
+      ]
+    ],
+    [
+      "  for (var i = 0; i < m; i++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "    for (var k = i; k < m; k++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "      if (i == k) {",
+      [
+        15
+      ]
+    ],
+    [
+      "        t[i][k] = true;",
+      [
+        16
+      ]
+    ],
+    [
+      "      } else {",
+      [
+        17
+      ]
+    ],
+    [
+      "        t[i][k] = true;",
+      [
+        18
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        18
+      ]
+    ],
+    [
+      "          if (picture[i][j] != picture[k][j]) {",
+      [
+        18
+      ]
+    ],
+    [
+      "            t[i][k] = false;",
+      [
+        18
+      ]
+    ],
+    [
+      "            break;",
+      [
+        18
+      ]
+    ],
+    [
+      "          }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "      t[k][i] = t[i][k];",
+      [
+        19
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var res = 0;",
+      [
+        20
+      ]
+    ],
+    [
+      "  for (var i = 0; i < m; i++) {",
+      [
+        21
+      ]
+    ],
+    [
+      "    if (rows[i] == target) {",
+      [
+        22
+      ]
+    ],
+    [
+      "      for (var j = 0; j < n; j++) {",
+      [
+        23
+      ]
+    ],
+    [
+      "        if (cols.get(j).length == target && cols.get(j).every(k => t[i][k])) {",
+      [
+        24
+      ]
+    ],
+    [
+      "          res += 1;",
+      [
+        25
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return res;",
+      [
+        26
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

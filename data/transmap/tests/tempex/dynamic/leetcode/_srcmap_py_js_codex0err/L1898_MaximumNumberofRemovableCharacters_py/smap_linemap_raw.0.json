@@ -1,0 +1,260 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximumRemovals",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, p: str, removable: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(k):",
+      [
+        3
+      ]
+    ],
+    [
+      "        i = j = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "        ids = set(removable[:k])",
+      [
+        5
+      ]
+    ],
+    [
+      "        while i < m and j < n:",
+      [
+        6
+      ]
+    ],
+    [
+      "            if i not in ids and s[i] == p[j]:",
+      [
+        7
+      ]
+    ],
+    [
+      "                j += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "            i += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        return j == n",
+      [
+        10
+      ]
+    ],
+    [
+      "    m, n = len(s), len(p)",
+      [
+        11
+      ]
+    ],
+    [
+      "    left, right = 0, len(removable)",
+      [
+        12
+      ]
+    ],
+    [
+      "    while left < right:",
+      [
+        13
+      ]
+    ],
+    [
+      "        mid = (left + right + 1) >> 1",
+      [
+        14
+      ]
+    ],
+    [
+      "        if check(mid):",
+      [
+        15
+      ]
+    ],
+    [
+      "            left = mid",
+      [
+        16
+      ]
+    ],
+    [
+      "        else:",
+      [
+        17
+      ]
+    ],
+    [
+      "            right = mid - 1",
+      [
+        18
+      ]
+    ],
+    [
+      "    return left",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, p, removable) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var i = j = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "        var ids = new Set(removable.slice(0, k));",
+      [
+        5
+      ]
+    ],
+    [
+      "        while (i < m && j < n) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (!ids.has(i) && s[i] == p[j]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                j++;",
+      [
+        8
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            i++;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return j == n;",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var m = s.length, n = p.length;",
+      [
+        11
+      ]
+    ],
+    [
+      "    var left = 0, right = removable.length;",
+      [
+        12
+      ]
+    ],
+    [
+      "    while (left < right) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        var mid = (left + right + 1) >> 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "        if (check(mid)) {",
+      [
+        15
+      ]
+    ],
+    [
+      "            left = mid;",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        17
+      ]
+    ],
+    [
+      "            right = mid - 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return left;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

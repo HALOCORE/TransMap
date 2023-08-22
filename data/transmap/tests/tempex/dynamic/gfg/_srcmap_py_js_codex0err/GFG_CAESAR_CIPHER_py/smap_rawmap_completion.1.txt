@@ -1,0 +1,28 @@
+
+### Python
+def f_gold(text, s):   # --- py stmt 1
+  result = ""   # --- py stmt 2
+  for i in range(len(text)):   # --- py stmt 3
+    char = text[i]   # --- py stmt 4
+    if(char.isupper()): result += chr((ord(char)+ s - 65)% 26 + 65)   # --- py stmt 5
+    else: result += chr((ord(char)+ s - 97)% 26 + 97)   # --- py stmt 6
+  return result   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(text, s) {   // --- py stmt 1
+  var result = "";   // --- py stmt 2
+  for (var i = 0; i < text.length; i++) {   // --- py stmt 3
+    var char = text[i];   // --- py stmt 4
+    if (/^[A-Z]$/.test(char)) {   // --- py stmt 5
+      result += String.fromCharCode((char.charCodeAt(0) + s - 65) % 26 + 65);   // --- py stmt 5
+    } else {   // --- py stmt 6
+      result += String.fromCharCode(((char.charCodeAt(0) + s - 97) % 26 + 26) % 26 + 97);   // --- py stmt 6
+    }
+  }
+  return result;   // --- py stmt 7
+}
+
+
+

@@ -1,0 +1,32 @@
+
+### Python
+### maximumProfit 
+from typing import *   # --- py stmt 1
+def f_gold(present: List[int], future: List[int], budget: int) -> int:   # --- py stmt 2
+    arr = [(a, b - a) for a, b in zip(present, future) if b > a]   # --- py stmt 3
+    dp = [0] * (budget + 1)   # --- py stmt 4
+    for v, w in arr:   # --- py stmt 5
+        for j in range(budget, v - 1, -1):   # --- py stmt 6
+            dp[j] = max(dp[j], dp[j - v] + w)   # --- py stmt 7
+    return dp[-1]   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(present, future, budget) {   // --- py stmt 2
+    var arr = [];   // --- py stmt 3
+    for (let i = 0; i < present.length; i++) {   // --- py stmt 3
+        if (future[i] > present[i]) {   // --- py stmt 3
+            arr.push([present[i], future[i] - present[i]]);   // --- py stmt 3
+        }
+    }
+    var dp = [0] * (budget + 1);   // --- py stmt 4
+    for (var [v, w] of arr) {   // --- py stmt 5
+        for (var j = budget; j > v - 1; j--) {   // --- py stmt 6
+            dp[j] = Math.max(dp[j], dp[j - v] + w);   // --- py stmt 7
+        }
+    }
+    return dp.at(-1);   // --- py stmt 8
+}
+
+
+

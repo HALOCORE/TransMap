@@ -1,0 +1,55 @@
+
+### Python
+### uniquePathsWithObstacles 
+from typing import *   # --- py stmt 1
+def f_gold(obstacleGrid: List[List[int]]) -> int:   # --- py stmt 2
+    m, n = len(obstacleGrid), len(obstacleGrid[0])   # --- py stmt 3
+    dp = [[0] * n for _ in range(m)]   # --- py stmt 4
+    for i in range(m):   # --- py stmt 5
+        if obstacleGrid[i][0] == 1:   # --- py stmt 6
+            break   # --- py stmt 7
+        dp[i][0] = 1   # --- py stmt 8
+    for j in range(n):   # --- py stmt 9
+        if obstacleGrid[0][j] == 1:   # --- py stmt 10
+            break   # --- py stmt 11
+        dp[0][j] = 1   # --- py stmt 12
+    for i in range(1, m):   # --- py stmt 13
+        for j in range(1, n):   # --- py stmt 14
+            if obstacleGrid[i][j] == 0:   # --- py stmt 15
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]   # --- py stmt 16
+    return dp[-1][-1]   # --- py stmt 17
+
+### JavaScript
+"use strict";
+function f_gold(obstacleGrid) {   // --- py stmt 2
+    var m, n;   // --- py stmt 3
+    m = obstacleGrid.length;   // --- py stmt 3
+    n = obstacleGrid[0].length;   // --- py stmt 3
+    var dp = new Array(m);   // --- py stmt 4
+    for (var _i = 0; _i < m; _i++) {   // --- py stmt 4
+        dp[_i] = new Array(n);   // --- py stmt 4
+    }
+    for (var i = 0; i < m; i++) {   // --- py stmt 5
+        if (obstacleGrid[i][0] == 1) {   // --- py stmt 6
+            break;   // --- py stmt 7
+        }
+        dp[i][0] = 1;   // --- py stmt 8
+    }
+    for (var j = 0; j < n; j++) {   // --- py stmt 9
+        if (obstacleGrid[0][j] == 1) {   // --- py stmt 10
+            break;   // --- py stmt 11
+        }
+        dp[0][j] = 1;   // --- py stmt 12
+    }
+    for (var i = 1; i < m; i++) {   // --- py stmt 13
+        for (var j = 1; j < n; j++) {   // --- py stmt 14
+            if (obstacleGrid[i][j] == 0) {   // --- py stmt 15
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];   // --- py stmt 16
+            }
+        }
+    }
+    return dp[m - 1][n - 1];   // --- py stmt 17
+}
+
+
+

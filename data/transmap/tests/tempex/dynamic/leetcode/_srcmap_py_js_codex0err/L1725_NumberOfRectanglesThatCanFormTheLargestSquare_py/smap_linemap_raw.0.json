@@ -1,0 +1,158 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countGoodRectangles",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(rectangles: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = mx = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for l, w in rectangles:",
+      [
+        4
+      ]
+    ],
+    [
+      "        t = min(l, w)",
+      [
+        5
+      ]
+    ],
+    [
+      "        if mx < t:",
+      [
+        6
+      ]
+    ],
+    [
+      "            mx, ans = t, 1",
+      [
+        7
+      ]
+    ],
+    [
+      "        elif mx == t:",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(rectangles) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = mx = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < rectangles.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var l = rectangles[i][0];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var w = rectangles[i][1];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var t = Math.min(l, w);",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (mx < t) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            mx = t;",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (mx == t) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

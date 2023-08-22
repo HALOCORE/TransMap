@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    dp[i] = new Array(n).fill(0);",
+    "replacement": "    dp[i] = new Array(n);"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    P[i] = new Array(n).fill(0);",
+    "replacement": "    P[i] = new Array(n);"
+  }
+]

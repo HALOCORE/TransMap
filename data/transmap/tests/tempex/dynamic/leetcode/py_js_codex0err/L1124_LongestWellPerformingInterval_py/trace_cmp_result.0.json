@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,13]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"hours\":[\"A\",7,[\"N\",\"9\"],[\"N\",\"9\"],[\"N\",\"6\"],[\"N\",\"0\"],[\"N\",\"6\"],[\"N\",\"6\"],[\"N\",\"9\"]],\"ans\":[\"N\",\"0\"],\"s\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,13]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"hours\":[\"A\",7,[\"N\",\"9\"],[\"N\",\"9\"],[\"N\",\"6\"],[\"N\",\"0\"],[\"N\",\"6\"],[\"N\",\"6\"],[\"N\",\"9\"]],\"ans\":[\"N\",\"0\"],\"s\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,13]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"hours\":[\"A\",7,[\"N\",\"9\"],[\"N\",\"9\"],[\"N\",\"6\"],[\"N\",\"0\"],[\"N\",\"6\"],[\"N\",\"6\"],[\"N\",\"9\"]],\"ans\":[\"N\",\"0\"],\"s\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,13]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"hours\":[\"A\",7,[\"N\",\"9\"],[\"N\",\"9\"],[\"N\",\"6\"],[\"N\",\"0\"],[\"N\",\"6\"],[\"N\",\"6\"],[\"N\",\"9\"]],\"ans\":[\"N\",\"0\"],\"s\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

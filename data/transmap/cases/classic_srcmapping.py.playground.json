@@ -1,0 +1,8 @@
+[
+  {
+    "SOURCE": "../tests/evalex/real/py_js_codex0err/_playground/source.py",
+    "TARGET": "../tests/evalex/real/py_js_codex0err/_playground/target.rawchatgpt.js",
+    "SOURCEMAP_PIECES": "../tests/evalex/real/py_js_codex0err/_playground/target.rawchatgpt.js.srcmappieces",
+    "SOURCEMAP": "../tests/evalex/real/py_js_codex0err/_playground/target.rawchatgpt.js.srcmap"
+  }
+]

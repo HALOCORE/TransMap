@@ -1,0 +1,44 @@
+{
+  "src_anno_stmts": [
+    [
+      "from typing import List, Any",
+      [
+        1
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "def filter_integers(values: List[Any]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return [x for x in values if isinstance(x, int)]",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function filterIntegers(values) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return values.filter(x => typeof x === \"number\");",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

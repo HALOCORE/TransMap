@@ -1,0 +1,15 @@
+
+### Python
+### percentageLetter 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, letter: str) -> int:   # --- py stmt 2
+    return s.count(letter) * 100 // len(s)   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(s, letter) {   // --- py stmt 2
+    return s.count(letter) * 100 // len(s);   // --- py stmt 3
+}
+
+
+

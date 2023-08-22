@@ -1,0 +1,46 @@
+
+### Python
+### maxProfit 
+from typing import *   # --- py stmt 1
+def f_gold(k: int, prices: List[int]) -> int:   # --- py stmt 2
+    n = len(prices)   # --- py stmt 3
+    if n < 2:   # --- py stmt 4
+        return 0   # --- py stmt 5
+    dp = [[[0] * 2 for _ in range(k + 1)] for _ in range(n)]   # --- py stmt 6
+    for i in range(1, k + 1):   # --- py stmt 7
+        dp[0][i][1] = -prices[0]   # --- py stmt 8
+    for i in range(1, n):   # --- py stmt 9
+        for j in range(1, k + 1):   # --- py stmt 10
+            dp[i][j][0] = max(dp[i - 1][j][1] + prices[i], dp[i - 1][j][0])   # --- py stmt 11
+            dp[i][j][1] = max(dp[i - 1][j - 1][0] - prices[i], dp[i - 1][j][1])   # --- py stmt 12
+    return dp[-1][k][0]   # --- py stmt 13
+
+### JavaScript
+"use strict";
+
+function f_gold (k, prices) {   // --- py stmt 2
+    var n = prices.length;   // --- py stmt 3
+    if (n < 2) {   // --- py stmt 4
+        return 0;   // --- py stmt 5
+    }
+    var dp = new Array(n);   // --- py stmt 6
+    for (var i = 0; i < n; i++) {   // --- py stmt 6
+        dp[i] = new Array(k + 1);   // --- py stmt 6
+        for (var j = 0; j < k + 1; j++) {   // --- py stmt 6
+            dp[i][j] = new Array(2);   // --- py stmt 6
+        }
+    }
+    for (var i = 1; i < k + 1; i++) {   // --- py stmt 7
+        dp[0][i][1] = -prices[0];   // --- py stmt 8
+    }
+    for (var i = 1; i < n; i++) {   // --- py stmt 9
+        for (var j = 1; j < k + 1; j++) {   // --- py stmt 10
+            dp[i][j][0] = Math.max(dp[i - 1][j][1] + prices[i], dp[i - 1][j][0]);   // --- py stmt 11
+            dp[i][j][1] = Math.max(dp[i - 1][j - 1][0] - prices[i], dp[i - 1][j][1]);   // --- py stmt 12
+        }
+    }
+    return dp[n - 1][k][0];   // --- py stmt 13
+}
+
+
+

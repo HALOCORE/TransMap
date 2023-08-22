@@ -1,0 +1,272 @@
+### Python
+
+def combinations(max_lengthgth=20):   # --- py stmt 1
+    a = random.randint(10, max_lengthgth)   # --- py stmt 2
+    b = random.randint(0, 9)   # --- py stmt 3
+
+    solution = int(math.factorial(a) / (math.factorial(b) * math.factorial(a - b)))   # --- py stmt 4
+
+    problem = f"Find the number of combinations from ${a}$ objects picked ${b}$ at a time."   # --- py stmt 5
+    return problem, f'${solution}$'   # --- py stmt 6
+
+def conditional_probability():   # --- py stmt 1001
+    P_disease = round(2. * random.random(), 2)   # --- py stmt 1002
+    true_positive = round(random.random() + float(random.randint(90, 99)), 2)   # --- py stmt 1003
+    true_negative = round(random.random() + float(random.randint(90, 99)), 2)   # --- py stmt 1004
+
+    def BayesFormula(P_disease, true_positive, true_negative):   # --- py stmt 1005
+        P_notDisease = 100. - P_disease   # --- py stmt 1006
+        false_positive = 100. - true_negative   # --- py stmt 1007
+        P_plus = (P_disease) * (true_positive) + (P_notDisease) * (false_positive)   # --- py stmt 1008
+        P_disease_plus = ((true_positive) * (100 * P_disease)) / P_plus   # --- py stmt 1009
+
+        return P_disease_plus   # --- py stmt 1010
+
+    answer = round(BayesFormula(P_disease, true_positive, true_negative), 2)   # --- py stmt 1011
+
+    problem = "Someone tested positive for a nasty disease which only ${0:.2f}$% of the population have. Test sensitivity (true positive) is equal to $SN={1:.2f}$% whereas test specificity (true negative) $SP={2:.2f}$%. What is the probability that this guy really has that disease?".format(P_disease, true_positive, true_negative)   # --- py stmt 1012
+    solution = f'${answer}$%'   # --- py stmt 1013
+    return problem, solution   # --- py stmt 1014
+
+def confidence_interval():   # --- py stmt 2001
+    n = random.randint(20, 40)   # --- py stmt 2002
+    j = random.randint(0, 3)   # --- py stmt 2003
+
+    lst = random.sample(range(200, 300), n)   # --- py stmt 2004
+    lst_per = [80, 90, 95, 99]   # --- py stmt 2005
+    lst_t = [1.282, 1.645, 1.960, 2.576]   # --- py stmt 2006
+
+    mean = 0   # --- py stmt 2007
+    sd = 0   # --- py stmt 2008
+
+    for i in lst:   # --- py stmt 2009
+        count = i + mean   # --- py stmt 2010
+        mean = count   # --- py stmt 2011
+
+    mean = mean / n   # --- py stmt 2012
+
+    for i in lst:   # --- py stmt 2013
+        x = (i - mean)**2 + sd   # --- py stmt 2014
+        sd = x   # --- py stmt 2015
+
+    sd = sd / n   # --- py stmt 2016
+    standard_error = lst_t[j] * math.sqrt(sd / n)   # --- py stmt 2017
+    upper = round(mean + standard_error, 2)   # --- py stmt 2018
+    lower = round(mean - standard_error, 2)   # --- py stmt 2019
+
+    problem = 'The confidence interval for sample ${}$ with ${}$% confidence is'.format([x for x in lst], lst_per[j])   # --- py stmt 2020
+    solution = f'$({upper}, {lower})$'   # --- py stmt 2021
+    return problem, solution   # --- py stmt 2022
+
+def data_summary(number_values=15, min_val=5, max_val=50):   # --- py stmt 3001
+    random_list = []   # --- py stmt 3003
+
+    for i in range(number_values):   # --- py stmt 3005
+        n = random.randint(min_val, max_val)   # --- py stmt 3006
+        random_list.append(n)   # --- py stmt 3007
+
+    a = sum(random_list)   # --- py stmt 3008
+    mean = round(a / number_values, 2)   # --- py stmt 3009
+
+    _var = 0   # --- py stmt 3010
+    for i in range(number_values):   # --- py stmt 3011
+        _var += (random_list[i] - mean)**2   # --- py stmt 3012
+
+    standardDeviation = round(_var / number_values, 2)   # --- py stmt 3013
+    variance = round((_var / number_values) ** 0.5, 2)   # --- py stmt 3014
+
+    problem = f"Find the mean,standard deviation and variance for the data ${', '.join(map(str, random_list))}$"   # --- py stmt 3015
+    solution = f"The Mean is ${mean}$, Standard Deviation is ${standardDeviation}$, Variance is ${variance}$"   # --- py stmt 3016
+    return problem, solution   # --- py stmt 3017
+
+def dice_sum_probability(max_dice=3):   # --- py stmt 4001
+    a = random.randint(1, max_dice)   # --- py stmt 4002
+    b = random.randint(a, 6 * a)   # --- py stmt 4003
+
+    count = 0   # --- py stmt 4004
+    for i in [1, 2, 3, 4, 5, 6]:   # --- py stmt 4005
+        if a == 1:   # --- py stmt 4006
+            if i == b:   # --- py stmt 4007
+                count = count + 1   # --- py stmt 4008
+        elif a == 2:   # --- py stmt 4009
+            for j in [1, 2, 3, 4, 5, 6]:   # --- py stmt 4010
+                if i + j == b:   # --- py stmt 4011
+                    count = count + 1   # --- py stmt 4012
+        elif a == 3:   # --- py stmt 4013
+            for j in [1, 2, 3, 4, 5, 6]:   # --- py stmt 4014
+                for k in [1, 2, 3, 4, 5, 6]:   # --- py stmt 4015
+                    if i + j + k == b:   # --- py stmt 4016
+                        count = count + 1   # --- py stmt 4017
+
+    problem = f"If ${a}$ dice are rolled at the same time, the probability of getting a sum of ${b} =$"   # --- py stmt 4018
+    solution = rf"\frac{{{count}}}{{{6**a}}}"   # --- py stmt 4019
+    return problem, solution   # --- py stmt 4020
+
+def mean_median(max_length=10):   # --- py stmt 5001
+    randomlist = random.sample(range(1, 99), max_length)   # --- py stmt 5002
+    total = 0   # --- py stmt 5003
+    for n in randomlist:   # --- py stmt 5004
+        total = total + n   # --- py stmt 5005
+    mean = total / 10   # --- py stmt 5006
+    randomlist.sort()   # --- py stmt 5007
+    median = (randomlist[4] + randomlist[5]) / 2   # --- py stmt 5008
+
+    problem = f"Given the series of numbers ${randomlist}$. Find the arithmatic mean and median of the series"   # --- py stmt 5009
+    solution = f"Arithmetic mean of the series is ${mean}$ and arithmetic median of this series is ${median}$"   # --- py stmt 5010
+    return problem, solution   # --- py stmt 5011
+
+def permutation(max_lengthgth=20):   # --- py stmt 6001
+    a = random.randint(10, max_lengthgth)   # --- py stmt 6002
+    b = random.randint(0, 9)   # --- py stmt 6003
+    solution = int(math.factorial(a) / (math.factorial(a - b)))   # --- py stmt 6004
+
+    problem = f"Number of Permutations from ${a}$ objects picked ${b}$ at a time is: "   # --- py stmt 6005
+    return problem, f"${solution}$"   # --- py stmt 6006
+
+### JavaScript
+
+function combinations(max_lengthgth = 20) {   // --- py stmt 1
+    const a = Math.floor(Math.random() * (max_lengthgth - 10 + 1) + 10);   // --- py stmt 2
+    const b = Math.floor(Math.random() * 10);   // --- py stmt 3
+
+    const solution = Math.floor(   // --- py stmt 4
+        math.factorial(a) / (math.factorial(b) * math.factorial(a - b))
+    );
+
+    const problem = `Find the number of combinations from ${a} objects picked ${b} at a time.`;   // --- py stmt 5
+    return [problem, `$${solution}$`];   // --- py stmt 6
+}
+
+function conditional_probability() {   // --- py stmt 1001
+    const P_disease = Math.round(2. * Math.random() * 100) / 100;   // --- py stmt 1002
+    const true_positive = Math.round(Math.random() * 100 + parseFloat(Math.floor(Math.random() * (99 - 90 + 1) + 90)) * 100) / 100;   // --- py stmt 1003
+    const true_negative = Math.round(Math.random() * 100 + parseFloat(Math.floor(Math.random() * (99 - 90 + 1) + 90)) * 100) / 100;   // --- py stmt 1004
+
+    function BayesFormula(P_disease, true_positive, true_negative) {   // --- py stmt 1005
+        const P_notDisease = 100. - P_disease;   // --- py stmt 1006
+        const false_positive = 100. - true_negative;   // --- py stmt 1007
+        const P_plus = (P_disease) * (true_positive) + (P_notDisease) * (false_positive);   // --- py stmt 1008
+        const P_disease_plus = ((true_positive) * (100 * P_disease)) / P_plus;   // --- py stmt 1009
+
+        return P_disease_plus;   // --- py stmt 1010
+    }
+
+    const answer = Math.round(BayesFormula(P_disease, true_positive, true_negative) * 100) / 100;   // --- py stmt 1011
+
+    const problem = `Someone tested positive for a nasty disease which only ${P_disease.toFixed(2)}% of the population have. Test sensitivity (true positive) is equal to $SN=${true_positive.toFixed(2)}$% whereas test specificity (true negative) $SP=${true_negative.toFixed(2)}$%. What is the probability that this guy really has that disease?`;   // --- py stmt 1012
+    const solution = `$${answer.toFixed(2)}$%`;   // --- py stmt 1013
+    return [problem, solution];   // --- py stmt 1014
+}
+
+function confidence_interval() {   // --- py stmt 2001
+    const n = Math.floor(Math.random() * (40 - 20 + 1) + 20);   // --- py stmt 2002
+    const j = Math.floor(Math.random() * 4);   // --- py stmt 2003
+
+    const lst = Array.from({length: n}, () => Math.floor(Math.random() * (300 - 200 + 1) + 200));   // --- py stmt 2004
+    const lst_per = [80, 90, 95, 99];   // --- py stmt 2005
+    const lst_t = [1.282, 1.645, 1.960, 2.576];   // --- py stmt 2006
+
+    let mean = 0;   // --- py stmt 2007
+    let sd = 0;   // --- py stmt 2008
+
+    for (let i of lst) {   // --- py stmt 2009
+        let count = i + mean;   // --- py stmt 2010
+        mean = count;   // --- py stmt 2011
+    }
+
+    mean = mean / n;   // --- py stmt 2012
+
+    for (let i of lst) {   // --- py stmt 2013
+        let x = (i - mean)**2 + sd;   // --- py stmt 2014
+        sd = x;   // --- py stmt 2015
+    }
+
+    sd = sd / n;   // --- py stmt 2016
+    const standard_error = lst_t[j] * Math.sqrt(sd / n);   // --- py stmt 2017
+    const upper = Math.round(mean + standard_error, 2);   // --- py stmt 2018
+    const lower = Math.round(mean - standard_error, 2);   // --- py stmt 2019
+
+    const problem = `The confidence interval for sample ${lst} with ${lst_per[j]}% confidence is`;   // --- py stmt 2020
+    const solution = `(${upper}, ${lower})`;   // --- py stmt 2021
+    return [problem, solution];   // --- py stmt 2022
+}
+
+function data_summary(number_values = 15, min_val = 5, max_val = 50) {   // --- py stmt 3001
+    let random_list = [];   // --- py stmt 3003
+
+    for (let i = 0; i < number_values; i++) {   // --- py stmt 3005
+        let n = Math.floor(Math.random() * (max_val - min_val + 1) + min_val);   // --- py stmt 3006
+        random_list.push(n);   // --- py stmt 3007
+    }
+
+    let a = random_list.reduce((acc, val) => acc + val, 0);   // --- py stmt 3008
+    let mean = parseFloat((a / number_values).toFixed(2));   // --- py stmt 3009
+
+    let _var = 0;   // --- py stmt 3010
+    for (let i = 0; i < number_values; i++) {   // --- py stmt 3011
+        _var += Math.pow((random_list[i] - mean), 2);   // --- py stmt 3012
+    }
+
+    let standardDeviation = parseFloat((_var / number_values).toFixed(2));   // --- py stmt 3013
+    let variance = parseFloat(Math.sqrt(_var / number_values).toFixed(2));   // --- py stmt 3014
+
+    let problem = `Find the mean, standard deviation and variance for the data ${random_list.join(", ")}`;   // --- py stmt 3015
+    let solution = `The Mean is ${mean}, Standard Deviation is ${standardDeviation}, Variance is ${variance}`;   // --- py stmt 3016
+    return [problem, solution];   // --- py stmt 3017
+}
+
+function dice_sum_probability(max_dice = 3) {   // --- py stmt 4001
+    let a = Math.floor(Math.random() * max_dice) + 1;   // --- py stmt 4002
+    let b = Math.floor(Math.random() * (6 * a - a + 1)) + a;   // --- py stmt 4003
+
+    let count = 0;   // --- py stmt 4004
+    for (let i = 1; i <= 6; i++) {   // --- py stmt 4005
+        if (a === 1) {   // --- py stmt 4006
+            if (i === b) {   // --- py stmt 4007
+                count++;   // --- py stmt 4008
+            }
+        } else if (a === 2) {   // --- py stmt 4009
+            for (let j = 1; j <= 6; j++) {   // --- py stmt 4010
+                if (i + j === b) {   // --- py stmt 4011
+                    count++;   // --- py stmt 4012
+                }
+            }
+        } else if (a === 3) {   // --- py stmt 4013
+            for (let j = 1; j <= 6; j++) {   // --- py stmt 4014
+                for (let k = 1; k <= 6; k++) {   // --- py stmt 4015
+                    if (i + j + k === b) {   // --- py stmt 4016
+                        count++;   // --- py stmt 4017
+                    }
+                }
+            }
+        }
+    }
+
+    let problem = `If ${a} dice are rolled at the same time, the probability of getting a sum of ${b} =`;   // --- py stmt 4018
+    let solution = `\\frac{${count}}{${6 ** a}}`;   // --- py stmt 4019
+    return [problem, solution];   // --- py stmt 4020
+}
+
+function meanMedian(max_length = 10) {   // --- py stmt 5001
+    const randomlist = Array.from({length: max_length}, () => Math.floor(Math.random() * 99) + 1);   // --- py stmt 5002
+    let total = 0;   // --- py stmt 5003
+    for (let n of randomlist) {   // --- py stmt 5004
+        total += n;   // --- py stmt 5005
+    }
+    const mean = total / 10;   // --- py stmt 5006
+    randomlist.sort((a, b) => a - b);   // --- py stmt 5007
+    const median = (randomlist[4] + randomlist[5]) / 2;   // --- py stmt 5008
+
+    const problem = `Given the series of numbers ${randomlist}. Find the arithmatic mean and median of the series`;   // --- py stmt 5009
+    const solution = `Arithmetic mean of the series is ${mean} and arithmetic median of this series is ${median}`;   // --- py stmt 5010
+    return [problem, solution];   // --- py stmt 5011
+}
+
+function permutation(max_lengthgth = 20) {   // --- py stmt 6001
+  const a = Math.floor(Math.random() * (max_lengthgth - 10 + 1) + 10);   // --- py stmt 6002
+  const b = Math.floor(Math.random() * 10);   // --- py stmt 6003
+  const solution = parseInt(math.factorial(a) / (math.factorial(a - b)));   // --- py stmt 6004
+
+  const problem = `Number of Permutations from ${a} objects picked ${b} at a time is: `;   // --- py stmt 6005
+  return [problem, `${solution}`];   // --- py stmt 6006
+}

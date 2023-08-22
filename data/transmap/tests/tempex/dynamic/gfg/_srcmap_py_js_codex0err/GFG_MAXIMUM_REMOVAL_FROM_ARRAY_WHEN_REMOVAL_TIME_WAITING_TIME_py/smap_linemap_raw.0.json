@@ -1,0 +1,126 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  count = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  cummulative_sum = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if arr[i] >= cummulative_sum:",
+      [
+        6
+      ]
+    ],
+    [
+      "      count += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "      cummulative_sum += arr[i]",
+      [
+        8
+      ]
+    ],
+    [
+      "  return count",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let count = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  let cummulative_sum = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (arr[i] >= cummulative_sum) {",
+      [
+        6
+      ]
+    ],
+    [
+      "      count += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "      cummulative_sum += arr[i];",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return count;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

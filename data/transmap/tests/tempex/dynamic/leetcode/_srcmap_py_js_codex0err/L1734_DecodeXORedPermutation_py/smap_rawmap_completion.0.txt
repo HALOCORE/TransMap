@@ -1,0 +1,36 @@
+
+### Python
+### decode 
+from typing import *   # --- py stmt 1
+def f_gold(encoded: List[int]) -> List[int]:   # --- py stmt 2
+    n = len(encoded) + 1   # --- py stmt 3
+    a = b = 0   # --- py stmt 4
+    for i in range(0, n - 1, 2):   # --- py stmt 5
+        a ^= encoded[i]   # --- py stmt 6
+    for i in range(n + 1):   # --- py stmt 7
+        b ^= i   # --- py stmt 8
+    ans = [a ^ b]   # --- py stmt 9
+    for e in encoded[::-1]:   # --- py stmt 10
+        ans.append(ans[-1] ^ e)   # --- py stmt 11
+    return ans[::-1]   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(encoded) {   // --- py stmt 2
+    var n = encoded.length + 1;   // --- py stmt 3
+    var a = b = 0;   // --- py stmt 4
+    for (var i = 0; i < n - 1; i += 2) {   // --- py stmt 5
+        a ^= encoded[i];   // --- py stmt 6
+    }
+    for (var i = 0; i < n + 1; i++) {   // --- py stmt 7
+        b ^= i;   // --- py stmt 8
+    }
+    var ans = [a ^ b];   // --- py stmt 9
+    for (var e of encoded.reverse()) {   // --- py stmt 10
+        ans.push(ans[ans.length - 1] ^ e);   // --- py stmt 11
+    }
+    return ans.reverse();   // --- py stmt 12
+}
+
+
+

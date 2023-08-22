@@ -1,0 +1,109 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[13,4,13,18]",
+    "break_idx": 2,
+    "expected_src_pk": "[9,4,9,17]",
+    "actural_src_pk": "[9,4,9,17]",
+    "src_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",1,[\"S\",6,\"little\"]],\"word\":[\"S\",4,\"lamb\"],\"n_consonants\":[\"N\",\"3\"],\"i\":[\"N\",\"3\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "result"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,3,29]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,8,3,24]",
+    "actural_src_pk": "[3,8,3,24]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0],\"word\":[\"S\",22,\"Mary had a little la\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0],\"word\":[\"S\",4,\"Mary\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,3,29]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,8,3,24]",
+    "actural_src_pk": "[3,8,3,24]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0],\"word\":[\"S\",22,\"Mary had a little la\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0],\"word\":[\"S\",4,\"Mary\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,3,29]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,8,3,24]",
+    "actural_src_pk": "[3,8,3,24]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0],\"word\":[\"S\",22,\"Mary had a little la\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",22,\"Mary had a little la\"],\"n\":[\"N\",\"4\"],\"result\":[\"A\",0],\"word\":[\"S\",4,\"Mary\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  }
+]

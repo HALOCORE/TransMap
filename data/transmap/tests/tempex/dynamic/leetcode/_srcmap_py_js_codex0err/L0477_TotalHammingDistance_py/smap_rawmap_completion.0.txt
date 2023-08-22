@@ -1,0 +1,37 @@
+
+### Python
+### totalHammingDistance 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    ans = 0   # --- py stmt 3
+    for i in range(31):   # --- py stmt 4
+        a = b = 0   # --- py stmt 5
+        for v in nums:   # --- py stmt 6
+            t = (v >> i) & 1   # --- py stmt 7
+            if t:   # --- py stmt 8
+                a += 1   # --- py stmt 9
+            else:   # --- py stmt 10
+                b += 1   # --- py stmt 11
+        ans += a * b   # --- py stmt 12
+    return ans   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var ans = 0;   // --- py stmt 3
+    for (var i = 0; i < 31; i++) {   // --- py stmt 4
+        var a = b = 0;   // --- py stmt 5
+        for (var v of nums) {   // --- py stmt 6
+            var t = (v >> i) & 1;   // --- py stmt 7
+            if (t) {   // --- py stmt 8
+                a += 1;   // --- py stmt 9
+            }
+            else {   // --- py stmt 10
+                b += 1;   // --- py stmt 11
+            }
+        }
+        ans += a * b;   // --- py stmt 12
+    }
+    return ans;   // --- py stmt 13
+}
+

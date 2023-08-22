@@ -1,0 +1,94 @@
+{
+  "src_anno_stmts": [
+    [
+      "def any_int(x, y, z):",
+      [
+        1
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "    if isinstance(x,int) and isinstance(y,int) and isinstance(z,int):",
+      [
+        2
+      ]
+    ],
+    [
+      "        if (x+y==z) or (x+z==y) or (y+z==x):",
+      [
+        3
+      ]
+    ],
+    [
+      "            return True",
+      [
+        4
+      ]
+    ],
+    [
+      "        return False",
+      [
+        5
+      ]
+    ],
+    [
+      "    return False",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function any_int(x, y, z) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (typeof x === \"number\" && typeof y === \"number\" && typeof z === \"number\") {",
+      [
+        2
+      ]
+    ],
+    [
+      "        if (x + y === z || x + z === y || y + z === x) {",
+      [
+        3
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        4
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return false;",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

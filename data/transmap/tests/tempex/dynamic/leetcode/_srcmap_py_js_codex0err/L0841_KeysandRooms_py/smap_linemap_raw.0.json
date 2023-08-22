@@ -1,0 +1,152 @@
+{
+  "src_anno_stmts": [
+    [
+      "### canVisitAllRooms",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(rooms: List[List[int]]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def dfs(u):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if u in vis:",
+      [
+        4
+      ]
+    ],
+    [
+      "            return",
+      [
+        5
+      ]
+    ],
+    [
+      "        vis.add(u)",
+      [
+        6
+      ]
+    ],
+    [
+      "        for v in rooms[u]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            dfs(v)",
+      [
+        8
+      ]
+    ],
+    [
+      "    vis = set()",
+      [
+        9
+      ]
+    ],
+    [
+      "    dfs(0)",
+      [
+        10
+      ]
+    ],
+    [
+      "    return len(vis) == len(rooms)",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(rooms) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs(u) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (u in vis) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            return;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        vis.add(u);",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (let v of rooms[u]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            dfs(v);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let vis = new Set();",
+      [
+        9
+      ]
+    ],
+    [
+      "    dfs(0);",
+      [
+        10
+      ]
+    ],
+    [
+      "    return vis.size == rooms.length;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

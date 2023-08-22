@@ -1,0 +1,57 @@
+
+### Python
+### partition 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> List[List[str]]:   # --- py stmt 2
+    ans = []   # --- py stmt 3
+    n = len(s)   # --- py stmt 4
+    dp = [[True] * n for _ in range(n)]   # --- py stmt 5
+    for i in range(n - 1, -1, -1):   # --- py stmt 6
+        for j in range(i + 1, n):   # --- py stmt 7
+            dp[i][j] = s[i] == s[j] and dp[i + 1][j - 1]   # --- py stmt 8
+    def dfs(s, i, t):   # --- py stmt 9
+        nonlocal n   # --- py stmt 10
+        if i == n:   # --- py stmt 11
+            ans.append(t.copy())   # --- py stmt 12
+            return   # --- py stmt 13
+        for j in range(i, n):   # --- py stmt 14
+            if dp[i][j]:   # --- py stmt 15
+                t.append(s[i : j + 1])   # --- py stmt 16
+                dfs(s, j + 1, t)   # --- py stmt 17
+                t.pop(-1)   # --- py stmt 18
+    dfs(s, 0, [])   # --- py stmt 19
+    return ans   # --- py stmt 20
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var ans = [];   // --- py stmt 3
+    var n = s.length;   // --- py stmt 4
+    var dp = new Array(n);   // --- py stmt 5
+    for (var _ = 0; _ < n; _++) {   // --- py stmt 5
+        dp[_] = new Array(n);   // --- py stmt 5
+    }
+    for (var i = n - 1; i >= 0; i--) {   // --- py stmt 6
+        for (var j = i + 1; j < n; j++) {   // --- py stmt 7
+            dp[i][j] = s[i] == s[j] && dp[i + 1][j - 1];   // --- py stmt 8
+        }
+    }
+    function dfs(s, i, t) {   // --- py stmt 9
+        if (i == n) {   // --- py stmt 11
+            ans.push(t.slice());   // --- py stmt 12
+            return;   // --- py stmt 13
+        }
+        for (var j = i; j < n; j++) {   // --- py stmt 14
+            if (dp[i][j]) {   // --- py stmt 15
+                t.push(s.substring(i, j + 1));   // --- py stmt 16
+                dfs(s, j + 1, t);   // --- py stmt 17
+                t.pop();   // --- py stmt 18
+            }
+        }
+    }
+    dfs(s, 0, []);   // --- py stmt 19
+    return ans;   // --- py stmt 20
+}
+
+
+

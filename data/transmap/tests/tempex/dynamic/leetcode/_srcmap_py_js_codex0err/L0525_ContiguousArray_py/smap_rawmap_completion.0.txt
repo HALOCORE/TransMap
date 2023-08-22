@@ -1,0 +1,32 @@
+
+### Python
+### findMaxLength 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    s = ans = 0   # --- py stmt 3
+    mp = {0: -1}   # --- py stmt 4
+    for i, v in enumerate(nums):   # --- py stmt 5
+        s += 1 if v == 1 else -1   # --- py stmt 6
+        if s in mp:   # --- py stmt 7
+            ans = max(ans, i - mp[s])   # --- py stmt 8
+        else:   # --- py stmt 9
+            mp[s] = i   # --- py stmt 10
+    return ans   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    let s = ans = 0;   // --- py stmt 3
+    let mp = {0: -1};   // --- py stmt 4
+    for (let i = 0; i < nums.length; i++) {   // --- py stmt 5
+        s += nums[i] == 1 ? 1 : -1;   // --- py stmt 6
+        if (s in mp) {   // --- py stmt 7
+            ans = Math.max(ans, i - mp[s]);   // --- py stmt 8
+        }
+        else {   // --- py stmt 9
+            mp[s] = i;   // --- py stmt 10
+        }
+    }
+    return ans;   // --- py stmt 11
+}
+

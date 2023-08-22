@@ -1,0 +1,50 @@
+
+### Python
+def is_nested(string):   # --- py stmt 1
+    opening_bracket_index = []   # --- py stmt 2
+    closing_bracket_index = []   # --- py stmt 3
+    for i in range(len(string)):   # --- py stmt 4
+        if string[i] == '[':   # --- py stmt 5
+            opening_bracket_index.append(i)   # --- py stmt 6
+        else:   # --- py stmt 7
+            closing_bracket_index.append(i)   # --- py stmt 8
+    closing_bracket_index.reverse()   # --- py stmt 9
+    cnt = 0   # --- py stmt 10
+    i = 0   # --- py stmt 11
+    l = len(closing_bracket_index)   # --- py stmt 12
+    for idx in opening_bracket_index:   # --- py stmt 13
+        if i < l and idx < closing_bracket_index[i]:   # --- py stmt 14
+            cnt += 1   # --- py stmt 15
+            i += 1   # --- py stmt 16
+    return cnt >= 2   # --- py stmt 17
+
+    
+
+
+### JavaScript
+"use strict";
+function is_nested(string) {   // --- py stmt 1
+    var opening_bracket_index = [];   // --- py stmt 2
+    var closing_bracket_index = [];   // --- py stmt 3
+    for (var i = 0; i < string.length; i++) {   // --- py stmt 4
+        if (string[i] == '[') {   // --- py stmt 5
+            opening_bracket_index.push(i);   // --- py stmt 6
+        } else {   // --- py stmt 7
+            closing_bracket_index.push(i);   // --- py stmt 8
+        }
+    }
+    closing_bracket_index.reverse();   // --- py stmt 9
+    var cnt = 0;   // --- py stmt 10
+    var i = 0;   // --- py stmt 11
+    var l = closing_bracket_index.length;   // --- py stmt 12
+    for (var idx in opening_bracket_index) {   // --- py stmt 13
+        if (i < l && idx < closing_bracket_index[i]) {   // --- py stmt 14
+            cnt += 1;   // --- py stmt 15
+            i += 1;   // --- py stmt 16
+        }
+    }
+    return cnt >= 2;   // --- py stmt 17
+}
+
+
+

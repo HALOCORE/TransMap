@@ -1,0 +1,41 @@
+
+### Python
+def f_gold(mat, r, c):   # --- py stmt 1
+  result = 0   # --- py stmt 2
+  for i in range(r):   # --- py stmt 3
+    j = 0   # --- py stmt 4
+    for j in range(c - 1):   # --- py stmt 5
+      if mat[i][j + 1] <= mat[i][j]: break   # --- py stmt 6
+    if j == c - 2: result += 1   # --- py stmt 7
+  for i in range(0, r):   # --- py stmt 8
+    j = 0   # --- py stmt 9
+    for j in range(c - 1, 0, - 1):   # --- py stmt 10
+      if mat[i][j - 1] <= mat[i][j]: break   # --- py stmt 11
+    if c > 1 and j == 1: result += 1   # --- py stmt 12
+  return result   # --- py stmt 13
+
+
+### JavaScript
+"use strict";
+
+function f_gold(mat, r, c) {   // --- py stmt 1
+  var result = 0;   // --- py stmt 2
+  for (var i = 0; i < r; i++) {   // --- py stmt 3
+    var j = 0;   // --- py stmt 4
+    for (j = 0; j < c - 1; j++) {   // --- py stmt 5
+      if (mat[i][j + 1] <= mat[i][j]) break;   // --- py stmt 6
+    }
+    if (j == c - 2) result += 1;   // --- py stmt 7
+  }
+  for (var i = 0; i < r; i++) {   // --- py stmt 8
+    var j = 0;   // --- py stmt 9
+    for (j = c - 1; j > 0; j--) {   // --- py stmt 10
+      if (mat[i][j - 1] <= mat[i][j]) break;   // --- py stmt 11
+    }
+    if (c > 1 && (j == 1 || j == 0)) result += 1;   // --- py stmt 12
+  }
+  return result;   // --- py stmt 13
+}
+
+
+

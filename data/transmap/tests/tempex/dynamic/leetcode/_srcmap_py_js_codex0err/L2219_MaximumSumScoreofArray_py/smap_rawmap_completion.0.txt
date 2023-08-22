@@ -1,0 +1,18 @@
+
+### Python
+### maximumSumScore 
+from itertools import accumulate   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(nums: List[int]) -> int:   # --- py stmt 3
+    s = [0] + list(accumulate(nums))   # --- py stmt 4
+    return max(max(s[i + 1], s[-1] - s[i]) for i in range(len(nums)))   # --- py stmt 5
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 3
+    var s = [0].concat(nums.reduce(function (acc, val) { return acc.concat(acc[acc.length - 1] + val); }, []));   // --- py stmt 4
+    return Math.max.apply(Math, s.slice(1).map(function (val, i) { return Math.max(val, s[s.length - 1] - s[i]); }));   // --- py stmt 5
+}
+
+
+

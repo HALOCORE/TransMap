@@ -1,0 +1,26 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,2,37]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,4,32]",
+    "actural_src_pk": "[4,4,4,32]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",15,\"the sky is blue\"],\"words\":[\"A\",1,[\"S\",15,\"the sky is blue\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",15,\"the sky is blue\"],\"words\":[\"A\",4,[\"S\",3,\"the\"],[\"S\",3,\"sky\"],[\"S\",2,\"is\"],[\"S\",4,\"blue\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "words"
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[1,2,2,42]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      1,
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: s[i].isdigit is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",9,\"033675175\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[1,2,2,42]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: s[i].isdigit is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",9,\"033675175\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[1,2,2,42]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"TypeError: s[i].isdigit is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",9,\"033675175\"]}",
+      ""
+    ]
+  }
+]

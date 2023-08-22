@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    res.push(String(Math.floor(num / d)));",
+    "replacement": "    res.push(String(num / d));"
+  },
+  {
+    "line_start": 21,
+    "line_end": 22,
+    "content": "        res.push(String(Math.floor(num / d)));",
+    "replacement": "        res.push(String(num / d));"
+  }
+]

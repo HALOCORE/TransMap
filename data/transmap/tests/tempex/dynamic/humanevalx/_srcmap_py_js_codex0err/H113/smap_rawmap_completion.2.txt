@@ -1,0 +1,20 @@
+
+### Python
+def odd_count(lst):   # --- py stmt 1
+    res = []   # --- py stmt 2
+    for arr in lst:   # --- py stmt 3
+        n = sum(int(d)%2==1 for d in arr)   # --- py stmt 4
+        res.append("the number of odd elements " + str(n) + "n the str"+ str(n) +"ng "+ str(n) +" of the "+ str(n) +"nput.")   # --- py stmt 5
+    return res   # --- py stmt 6
+
+### JavaScript
+"use strict";
+function odd_count(lst) {   // --- py stmt 1
+    var res = [];   // --- py stmt 2
+    for (let arr of lst) {   // --- py stmt 3
+        var n = arr.split('').filter(x => parseInt(x)%2==1).length;   // --- py stmt 4
+        res.append("the number of odd elements " + str(n) + "n the str" + str(n) + "ng " + str(n) + " of the " + str(n) + "nput.");   // --- py stmt 5
+    }
+    return res;   // --- py stmt 6
+}
+

@@ -1,0 +1,98 @@
+{
+  "src_anno_stmts": [
+    [
+      "def encode_shift(s: str):",
+      [
+        1
+      ]
+    ],
+    [
+      "    \"\"\"",
+      null
+    ],
+    [
+      "    returns encoded string by shifting every character by 5 in the alphabet.",
+      null
+    ],
+    [
+      "    \"\"\"",
+      null
+    ],
+    [
+      "    return \"\".join([chr(((ord(ch) + 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+      [
+        2
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "def decode_shift(s: str):",
+      [
+        3
+      ]
+    ],
+    [
+      "    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function encode_shift(s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return s.split(\"\").map(function (ch) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return String.fromCharCode(((ch.charCodeAt(0) + 5 - \"a\".charCodeAt(0) + 26) % 26) + \"a\".charCodeAt(0));",
+      null
+    ],
+    [
+      "    }).join(\"\");",
+      null
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "function decode_shift(s) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    return s.split(\"\").map(function (ch) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return String.fromCharCode(((ch.charCodeAt(0) - 5 - \"a\".charCodeAt(0)) % 26) + \"a\".charCodeAt(0));",
+      null
+    ],
+    [
+      "    }).join(\"\");",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

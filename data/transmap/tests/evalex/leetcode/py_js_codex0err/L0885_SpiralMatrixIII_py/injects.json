@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        for (var [dr, dc, dk] of [[0, 1, k], [1, 0, k], [0, -1, k + 1], [-1, 0, k + 1]]) {",
+    "replacement": "        for (var dr, dc, dk of [[0, 1, k], [1, 0, k], [0, -1, k + 1], [-1, 0, k + 1]]) {"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "                if (0 <= rStart && rStart < rows && 0 <= cStart && cStart < cols) {",
+    "replacement": "                if (0 <= rStart < rows && 0 <= cStart < cols) {"
+  }
+]

@@ -1,0 +1,50 @@
+
+### Python
+### containsCycle 
+from typing import *   # --- py stmt 1
+def f_gold(grid: List[List[str]]) -> bool:   # --- py stmt 2
+    def find(x):   # --- py stmt 3
+        if p[x] != x:   # --- py stmt 4
+            p[x] = find(p[x])   # --- py stmt 5
+        return p[x]   # --- py stmt 6
+    m, n = len(grid), len(grid[0])   # --- py stmt 7
+    p = list(range(m * n))   # --- py stmt 8
+    for i in range(m):   # --- py stmt 9
+        for j in range(n):   # --- py stmt 10
+            for a, b in [[0, 1], [1, 0]]:   # --- py stmt 11
+                x, y = i + a, j + b   # --- py stmt 12
+                if x < m and y < n and grid[x][y] == grid[i][j]:   # --- py stmt 13
+                    if find(x * n + y) == find(i * n + j):   # --- py stmt 14
+                        return True   # --- py stmt 15
+                    p[find(x * n + y)] = find(i * n + j)   # --- py stmt 16
+    return False   # --- py stmt 17
+
+### JavaScript
+"use strict";
+function f_gold(grid) {   // --- py stmt 2
+    function find(x) {   // --- py stmt 3
+        if (p[x] != x) {   // --- py stmt 4
+            p[x] = find(p[x]);   // --- py stmt 5
+        }
+        return p[x];   // --- py stmt 6
+    }
+    var m = grid.length;   // --- py stmt 7
+    var n = grid[0].length;   // --- py stmt 7
+    var p = Array.from(Array(m * n).keys());   // --- py stmt 8
+    for (var i = 0; i < m; i++) {   // --- py stmt 9
+        for (var j = 0; j < n; j++) {   // --- py stmt 10
+            for (var a = 0, b = 1; a < 1; a++, b++) {   // --- py stmt 11
+                var x = i + a;   // --- py stmt 12
+                var y = j + b;   // --- py stmt 12
+                if (x < m && y < n && grid[x][y] == grid[i][j]) {   // --- py stmt 13
+                    if (find(x * n + y) == find(i * n + j)) {   // --- py stmt 14
+                        return true;   // --- py stmt 15
+                    }
+                    p[find(x * n + y)] = find(i * n + j);   // --- py stmt 16
+                }
+            }
+        }
+    }
+    return false;   // --- py stmt 17
+}
+

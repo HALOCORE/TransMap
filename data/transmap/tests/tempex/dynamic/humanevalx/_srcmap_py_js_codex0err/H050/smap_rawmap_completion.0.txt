@@ -1,0 +1,28 @@
+
+### Python
+def encode_shift(s: str):   # --- py stmt 1
+    """
+    returns encoded string by shifting every character by 5 in the alphabet.
+    """
+    return "".join([chr(((ord(ch) + 5 - ord("a")) % 26) + ord("a")) for ch in s])   # --- py stmt 2
+
+def decode_shift(s: str):   # --- py stmt 3
+    return "".join([chr(((ord(ch) - 5 - ord("a")) % 26) + ord("a")) for ch in s])   # --- py stmt 4
+
+### JavaScript
+"use strict";
+
+function encode_shift(s) {   // --- py stmt 1
+    return s.split("").map(function (ch) {   // --- py stmt 2
+        return String.fromCharCode(((ch.charCodeAt(0) + 5 - "a".charCodeAt(0)) % 26) + "a".charCodeAt(0));
+    }).join("");
+}
+
+function decode_shift(s) {   // --- py stmt 3
+    return s.split("").map(function (ch) {   // --- py stmt 4
+        return String.fromCharCode(((ch.charCodeAt(0) - 5 - "a".charCodeAt(0) + 26) % 26) + "a".charCodeAt(0));
+    }).join("");
+}
+
+
+

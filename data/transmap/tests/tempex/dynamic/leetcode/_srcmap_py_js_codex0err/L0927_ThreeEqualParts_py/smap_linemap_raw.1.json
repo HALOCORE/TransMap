@@ -1,0 +1,330 @@
+{
+  "src_anno_stmts": [
+    [
+      "### threeEqualParts",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def find(cnt):",
+      [
+        3
+      ]
+    ],
+    [
+      "        s = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "        for i, v in enumerate(arr):",
+      [
+        5
+      ]
+    ],
+    [
+      "            s += v",
+      [
+        6
+      ]
+    ],
+    [
+      "            if s == cnt:",
+      [
+        7
+      ]
+    ],
+    [
+      "                return i",
+      [
+        8
+      ]
+    ],
+    [
+      "        return -1",
+      [
+        9
+      ]
+    ],
+    [
+      "    n = len(arr)",
+      [
+        10
+      ]
+    ],
+    [
+      "    cnt, mod = divmod(sum(arr), 3)",
+      [
+        11
+      ]
+    ],
+    [
+      "    if mod:",
+      [
+        12
+      ]
+    ],
+    [
+      "        return [-1, -1]",
+      [
+        13
+      ]
+    ],
+    [
+      "    if cnt == 0:",
+      [
+        14
+      ]
+    ],
+    [
+      "        return [0, n - 1]",
+      [
+        15
+      ]
+    ],
+    [
+      "    i = find(1)",
+      [
+        16
+      ]
+    ],
+    [
+      "    j = find(cnt + 1)",
+      [
+        17
+      ]
+    ],
+    [
+      "    k = find(cnt * 2 + 1)",
+      [
+        18
+      ]
+    ],
+    [
+      "    while k < n and arr[i] == arr[j] == arr[k]:",
+      [
+        19
+      ]
+    ],
+    [
+      "        i, j, k = i + 1, j + 1, k + 1",
+      [
+        20
+      ]
+    ],
+    [
+      "    if k == n:",
+      [
+        21
+      ]
+    ],
+    [
+      "        return [i - 1, j]",
+      [
+        22
+      ]
+    ],
+    [
+      "    return [-1, -1]",
+      [
+        23
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function find(cnt) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var s = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (var i = 0; i < arr.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            s += arr[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (s == cnt) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                return i;",
+      [
+        8
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return -1;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var n = arr.length;",
+      [
+        10
+      ]
+    ],
+    [
+      "    var cnt = arr.reduce((a, b) => a + b) / 3;",
+      [
+        11
+      ]
+    ],
+    [
+      "    var mod = sum(arr) % 3;",
+      [
+        11
+      ]
+    ],
+    [
+      "    if (mod) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        return [-1, -1];",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (cnt == 0) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        return [0, n - 1];",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var i = find(1);",
+      [
+        16
+      ]
+    ],
+    [
+      "    var j = find(cnt + 1);",
+      [
+        17
+      ]
+    ],
+    [
+      "    var k = find(cnt * 2 + 1);",
+      [
+        18
+      ]
+    ],
+    [
+      "    while (k < n && arr[i] == arr[j] == arr[k]) {",
+      [
+        19
+      ]
+    ],
+    [
+      "        i = i + 1;",
+      [
+        20
+      ]
+    ],
+    [
+      "        j = j + 1;",
+      [
+        20
+      ]
+    ],
+    [
+      "        k = k + 1;",
+      [
+        20
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (k == n) {",
+      [
+        21
+      ]
+    ],
+    [
+      "        return [i - 1, j];",
+      [
+        22
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return [-1, -1];",
+      [
+        23
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

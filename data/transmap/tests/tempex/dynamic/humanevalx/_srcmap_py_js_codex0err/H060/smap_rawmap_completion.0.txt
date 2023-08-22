@@ -1,0 +1,14 @@
+
+### Python
+def sum_to_n(n: int):   # --- py stmt 1
+    return sum(range(n + 1))   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function sum_to_n(n) {   // --- py stmt 1
+    return sum(range(n + 1));   // --- py stmt 2
+}
+
+
+

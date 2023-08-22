@@ -1,0 +1,116 @@
+
+### Python
+### findLadders 
+from collections import deque   # --- py stmt 1
+from collections import defaultdict   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(beginWord: str, endWord: str, wordList: List[str]   # --- py stmt 4
+) -> List[List[str]]:   # --- py stmt 5
+    def dfs(path, cur):   # --- py stmt 6
+        if cur == beginWord:   # --- py stmt 7
+            ans.append(path[::-1])   # --- py stmt 8
+            return   # --- py stmt 9
+        for precursor in prev[cur]:   # --- py stmt 10
+            path.append(precursor)   # --- py stmt 11
+            dfs(path, precursor)   # --- py stmt 12
+            path.pop()   # --- py stmt 13
+    ans = []   # --- py stmt 14
+    words = set(wordList)   # --- py stmt 15
+    if endWord not in words:   # --- py stmt 16
+        return ans   # --- py stmt 17
+    words.discard(beginWord)   # --- py stmt 18
+    dist = {beginWord: 0}   # --- py stmt 19
+    prev = defaultdict(set)   # --- py stmt 20
+    q = deque([beginWord])   # --- py stmt 21
+    found = False   # --- py stmt 22
+    step = 0   # --- py stmt 23
+    while q and not found:   # --- py stmt 24
+        step += 1   # --- py stmt 25
+        for i in range(len(q), 0, -1):   # --- py stmt 26
+            p = q.popleft()   # --- py stmt 27
+            s = list(p)   # --- py stmt 28
+            for i in range(len(s)):   # --- py stmt 29
+                ch = s[i]   # --- py stmt 30
+                for j in range(26):   # --- py stmt 31
+                    s[i] = chr(ord('a') + j)   # --- py stmt 32
+                    t = ''.join(s)   # --- py stmt 33
+                    if dist.get(t, 0) == step:   # --- py stmt 34
+                        prev[t].add(p)   # --- py stmt 35
+                    if t not in words:   # --- py stmt 36
+                        continue   # --- py stmt 37
+                    prev[t].add(p)   # --- py stmt 38
+                    words.discard(t)   # --- py stmt 39
+                    q.append(t)   # --- py stmt 40
+                    dist[t] = step   # --- py stmt 41
+                    if endWord == t:   # --- py stmt 42
+                        found = True   # --- py stmt 43
+                s[i] = ch   # --- py stmt 44
+    if found:   # --- py stmt 45
+        path = [endWord]   # --- py stmt 46
+        dfs(path, endWord)   # --- py stmt 47
+    return ans   # --- py stmt 48
+
+### JavaScript
+"use strict";
+
+function f_gold (beginWord, endWord, wordList) {   // --- py stmt 4
+    function dfs (path, cur) {   // --- py stmt 6
+        if (cur == beginWord) {   // --- py stmt 7
+            ans.push(path.slice().reverse());   // --- py stmt 8
+            return;   // --- py stmt 9
+        }
+        for (let precursor of prev[cur]) {   // --- py stmt 10
+            path.push(precursor);   // --- py stmt 11
+            dfs(path, precursor);   // --- py stmt 12
+            path.pop();   // --- py stmt 13
+        }
+    }
+    let ans = [];   // --- py stmt 14
+    let words = new Set(wordList);   // --- py stmt 15
+    if (!words.has(endWord)) {   // --- py stmt 16
+        return ans;   // --- py stmt 17
+    }
+    words.delete(beginWord);   // --- py stmt 18
+    let dist = {};   // --- py stmt 19
+    dist[beginWord] = 0;   // --- py stmt 19
+    let prev = {};   // --- py stmt 20
+    let q = [beginWord];   // --- py stmt 21
+    let found = false;   // --- py stmt 22
+    let step = 0;   // --- py stmt 23
+    while (q.length > 0 && !found) {   // --- py stmt 24
+        step += 1;   // --- py stmt 25
+        for (let i = q.length - 1; i >= 0; i--) {   // --- py stmt 26
+            let p = q.shift();   // --- py stmt 27
+            let s = p.split('');   // --- py stmt 28
+            for (let i = 0; i < s.length; i++) {   // --- py stmt 29
+                let ch = s[i];   // --- py stmt 30
+                for (let j = 0; j < 26; j++) {   // --- py stmt 31
+                    s[i] = String.fromCharCode(97 + j);   // --- py stmt 32
+                    let t = s.join('');   // --- py stmt 33
+                    if (dist[t] == step) {   // --- py stmt 34
+                        prev[t].add(p);   // --- py stmt 35
+                    }
+                    if (!words.has(t)) {   // --- py stmt 36
+                        continue;   // --- py stmt 37
+                    }
+                    prev[t].add(p);   // --- py stmt 38
+                    words.delete(t);   // --- py stmt 39
+                    q.push(t);   // --- py stmt 40
+                    dist[t] = step;   // --- py stmt 41
+                    if (endWord == t) {   // --- py stmt 42
+                        found = true;   // --- py stmt 43
+                    }
+                }
+                s[i] = ch;   // --- py stmt 44
+            }
+        }
+    }
+    if (found) {   // --- py stmt 45
+        let path = [endWord];   // --- py stmt 46
+        dfs(path, endWord);   // --- py stmt 47
+    }
+    return ans;   // --- py stmt 48
+}
+
+
+

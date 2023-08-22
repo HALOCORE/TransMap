@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  for (let i = 0; i < n; i++) countA[a[i]] = (countA[a[i]] || 0) + 1;",
+    "replacement": "  for (let i = 0; i < n; i++) countA[a[i]] = countA.get(a[i], 0) + 1;"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  for (let i = 0; i < n; i++) countB[b[i]] = (countB[b[i]] || 0) + 1;",
+    "replacement": "  for (let i = 0; i < n; i++) countB[b[i]] = countB.get(b[i], 0) + 1;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "  for (let x of Object.keys(countA).map(Number)) {",
+    "replacement": "  for (let x in countA) {"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    if (x in countB) res += Math.min(countA[x], countB[x]);",
+    "replacement": "    if (x in countB.keys()) res += Math.min(countA[x], countB[x]);"
+  }
+]

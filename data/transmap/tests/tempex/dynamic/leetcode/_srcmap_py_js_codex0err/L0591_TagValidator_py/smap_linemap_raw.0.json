@@ -1,0 +1,454 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isValid",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(code: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(tag):",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 1 <= len(tag) <= 9 and all(c.isupper() for c in tag)",
+      [
+        4
+      ]
+    ],
+    [
+      "    stk = []",
+      [
+        5
+      ]
+    ],
+    [
+      "    i, n = 0, len(code)",
+      [
+        6
+      ]
+    ],
+    [
+      "    while i < n:",
+      [
+        7
+      ]
+    ],
+    [
+      "        if i and not stk:",
+      [
+        8
+      ]
+    ],
+    [
+      "            return False",
+      [
+        9
+      ]
+    ],
+    [
+      "        if code[i : i + 9] == '<![CDATA[':",
+      [
+        10
+      ]
+    ],
+    [
+      "            i = code.find(']]>', i + 9)",
+      [
+        11
+      ]
+    ],
+    [
+      "            if i < 0:",
+      [
+        12
+      ]
+    ],
+    [
+      "                return False",
+      [
+        13
+      ]
+    ],
+    [
+      "            i += 2",
+      [
+        14
+      ]
+    ],
+    [
+      "        elif code[i : i + 2] == '</':",
+      [
+        15
+      ]
+    ],
+    [
+      "            j = i + 2",
+      [
+        16
+      ]
+    ],
+    [
+      "            i = code.find('>', j)",
+      [
+        17
+      ]
+    ],
+    [
+      "            if i < 0:",
+      [
+        18
+      ]
+    ],
+    [
+      "                return False",
+      [
+        19
+      ]
+    ],
+    [
+      "            t = code[j:i]",
+      [
+        20
+      ]
+    ],
+    [
+      "            if not check(t) or not stk or stk.pop() != t:",
+      [
+        21
+      ]
+    ],
+    [
+      "                return False",
+      [
+        22
+      ]
+    ],
+    [
+      "        elif code[i] == '<':",
+      [
+        23
+      ]
+    ],
+    [
+      "            j = i + 1",
+      [
+        24
+      ]
+    ],
+    [
+      "            i = code.find('>', j)",
+      [
+        25
+      ]
+    ],
+    [
+      "            if i < 0:",
+      [
+        26
+      ]
+    ],
+    [
+      "                return False",
+      [
+        27
+      ]
+    ],
+    [
+      "            t = code[j:i]",
+      [
+        28
+      ]
+    ],
+    [
+      "            if not check(t):",
+      [
+        29
+      ]
+    ],
+    [
+      "                return False",
+      [
+        30
+      ]
+    ],
+    [
+      "            stk.append(t)",
+      [
+        31
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        32
+      ]
+    ],
+    [
+      "    return not stk",
+      [
+        33
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(code) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(tag) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 1 <= tag.length <= 9 && tag.split(\"\").every(function (c) { return c.isupper(); });",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var stk = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    var i = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var n = code.length;",
+      [
+        6
+      ]
+    ],
+    [
+      "    while (i < n) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i && !stk.length) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (code.substring(i, i + 9) == '<![CDATA[') {",
+      [
+        10
+      ]
+    ],
+    [
+      "            i = code.indexOf(']]>', i + 9);",
+      [
+        11
+      ]
+    ],
+    [
+      "            if (i < 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            i += 2;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (code.substring(i, i + 2) == '</') {",
+      [
+        15
+      ]
+    ],
+    [
+      "            var j = i + 2;",
+      [
+        16
+      ]
+    ],
+    [
+      "            i = code.indexOf('>', j);",
+      [
+        17
+      ]
+    ],
+    [
+      "            if (i < 0) {",
+      [
+        18
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        19
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            var t = code.substring(j, i);",
+      [
+        20
+      ]
+    ],
+    [
+      "            if (!check(t) || !stk.length || stk.pop() != t) {",
+      [
+        21
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        22
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (code[i] == '<') {",
+      [
+        23
+      ]
+    ],
+    [
+      "            var j = i + 1;",
+      [
+        24
+      ]
+    ],
+    [
+      "            i = code.indexOf('>', j);",
+      [
+        25
+      ]
+    ],
+    [
+      "            if (i < 0) {",
+      [
+        26
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        27
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            var t = code.substring(j, i);",
+      [
+        28
+      ]
+    ],
+    [
+      "            if (!check(t)) {",
+      [
+        29
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        30
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            stk.push(t);",
+      [
+        31
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        i += 1;",
+      [
+        32
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return !stk.length;",
+      [
+        33
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

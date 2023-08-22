@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "ReferenceError:",
+      "reverse is not defined"
+    ],
+    "lineno": 24
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "reverse is not defined",
+      "error_type": "ReferenceError:",
+      "line_content": "matchsticks.sort(reverse = true);",
+      "lineno": [
+        "/tmp/codesnart_runner/6b6316ab.js",
+        137
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/6b6316ab.js:137\n    matchsticks.sort(reverse = true);\n                             ^\n\nReferenceError: reverse is not defined\n    at f_gold (/tmp/codesnart_runner/6b6316ab.js:137:30)\n    at test (/tmp/codesnart_runner/6b6316ab.js:108:22)\n    at Object.<anonymous> (/tmp/codesnart_runner/6b6316ab.js:145:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n",
+    "timespan": 0.03485180001007393
+  }
+}

@@ -1,0 +1,22 @@
+
+### Python
+### minOperations 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    mx = ans = 0   # --- py stmt 3
+    for v in nums:   # --- py stmt 4
+        ans += max(0, mx + 1 - v)   # --- py stmt 5
+        mx = max(mx + 1, v)   # --- py stmt 6
+    return ans   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var mx = ans = 0;   // --- py stmt 3
+    for (var v of nums) {   // --- py stmt 4
+        ans += Math.max(0, mx + 1 - v);   // --- py stmt 5
+        mx = Math.max(mx + 1, v);   // --- py stmt 6
+    }
+    return ans;   // --- py stmt 7
+}
+

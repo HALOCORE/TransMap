@@ -1,0 +1,102 @@
+{
+  "src_anno_stmts": [
+    [
+      "### stoneGameVIII",
+      null
+    ],
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(stones: List[int]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    pre_sum = list(accumulate(stones))",
+      [
+        4
+      ]
+    ],
+    [
+      "    f = pre_sum[len(stones) - 1]",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(len(stones) - 2, 0, -1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        f = max(f, pre_sum[i] - f)",
+      [
+        7
+      ]
+    ],
+    [
+      "    return f",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(stones) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var pre_sum = stones.map((sum => value => sum += value)(0));",
+      [
+        4
+      ]
+    ],
+    [
+      "    var f = pre_sum[stones.length - 1];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = stones.length - 2; i >= 0; i--) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        f = Math.max(f, pre_sum[i] - f);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return f;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

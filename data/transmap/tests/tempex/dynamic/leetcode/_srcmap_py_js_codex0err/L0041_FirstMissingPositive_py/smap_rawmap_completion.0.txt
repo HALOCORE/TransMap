@@ -1,0 +1,26 @@
+
+### Python
+### firstMissingPositive 
+from typing import *   # --- py stmt 1
+def f_gold(nums):   # --- py stmt 2
+    """   # --- py stmt 3
+    :type nums: List[int]   # --- py stmt 4
+    :rtype: int   # --- py stmt 5
+    """   # --- py stmt 6
+    i = 1   # --- py stmt 7
+    while i in nums:   # --- py stmt 8
+        i += 1   # --- py stmt 9
+    return i   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var i = 1;   // --- py stmt 7
+    while (i in nums) {   // --- py stmt 8
+        i += 1;   // --- py stmt 9
+    }
+    return i;   // --- py stmt 10
+}
+
+
+

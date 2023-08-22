@@ -1,0 +1,28 @@
+
+### Python
+### findLongestChain 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(pairs: List[List[int]]) -> int:   # --- py stmt 4
+    ans, cur = 0, float('-inf')   # --- py stmt 5
+    for a, b in sorted(pairs, key=lambda x: x[1]):   # --- py stmt 6
+        if cur < a:   # --- py stmt 7
+            cur = b   # --- py stmt 8
+            ans += 1   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(pairs) {   // --- py stmt 4
+    var ans = 0;   // --- py stmt 5
+    var cur = -Infinity;   // --- py stmt 5
+    for (var i = 0; i < pairs.length; i++) {   // --- py stmt 6
+        if (cur < pairs[i][0]) {   // --- py stmt 7
+            cur = pairs[i][1];   // --- py stmt 8
+            ans += 1;   // --- py stmt 9
+        }
+    }
+    return ans;   // --- py stmt 10
+}
+

@@ -1,0 +1,17 @@
+
+### Python
+import math ;   # --- py stmt 1
+def f_gold(side):   # --- py stmt 2
+  volume =(side ** 3 /(6 * math.sqrt(2)))   # --- py stmt 3
+  return round(volume, 2)   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+function f_gold(side) {   // --- py stmt 2
+  var volume = (side ** 3 / (6 * Math.sqrt(2)));   // --- py stmt 3
+  return round(volume, 2);   // --- py stmt 4
+}
+
+
+

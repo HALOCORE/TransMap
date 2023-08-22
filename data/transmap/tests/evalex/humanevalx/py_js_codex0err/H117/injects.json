@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (let word of s.split(' ')) {",
+    "replacement": "    for (let word of s.split()) {"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "            if (![\"a\",\"e\",\"i\",\"o\",\"u\"].includes(word[i].toLowerCase())) {",
+    "replacement": "            if (word[i].toLowerCase() not in [\"a\",\"e\",\"i\",\"o\",\"u\"]) {"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[3,2,3,10]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      1,
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:2 MISMATCH_IDX:4 OBSERVED:[\\\"MYLOGEX:2\\\",[\\\"string\\\",1,\\\"9\\\"]] EXPECTED:[\\\"MYLOGEX:2\\\",[\\\"num\\\",0]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",8,\"96544000\"],\"i\":[\"N\",\"7\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[2,4,2,39]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:2 MISMATCH_IDX:4 OBSERVED:[\\\"MYLOGEX:2\\\",[\\\"string\\\",1,\\\"9\\\"]] EXPECTED:[\\\"MYLOGEX:2\\\",[\\\"num\\\",0]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",8,\"96544000\"],\"i\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[2,4,2,39]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"Error: MyLogError MISMATCH CALL_ID:2 MISMATCH_IDX:4 OBSERVED:[\\\"MYLOGEX:2\\\",[\\\"string\\\",1,\\\"9\\\"]] EXPECTED:[\\\"MYLOGEX:2\\\",[\\\"num\\\",0]]\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",8,\"96544000\"],\"i\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

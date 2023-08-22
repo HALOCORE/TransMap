@@ -1,0 +1,284 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximumBobPoints",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(numArrows: int, aliceArrows: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(aliceArrows)",
+      [
+        3
+      ]
+    ],
+    [
+      "    state = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    mx = -1",
+      [
+        5
+      ]
+    ],
+    [
+      "    for mask in range(1 << n):",
+      [
+        6
+      ]
+    ],
+    [
+      "        cnt = points = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "        for i, alice in enumerate(aliceArrows):",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (mask >> i) & 1:",
+      [
+        9
+      ]
+    ],
+    [
+      "                cnt += alice + 1",
+      [
+        10
+      ]
+    ],
+    [
+      "                points += i",
+      [
+        11
+      ]
+    ],
+    [
+      "        if cnt <= numArrows and mx < points:",
+      [
+        12
+      ]
+    ],
+    [
+      "            state = mask",
+      [
+        13
+      ]
+    ],
+    [
+      "            mx = points",
+      [
+        14
+      ]
+    ],
+    [
+      "    ans = [0] * n",
+      [
+        15
+      ]
+    ],
+    [
+      "    for i, alice in enumerate(aliceArrows):",
+      [
+        16
+      ]
+    ],
+    [
+      "        if (state >> i) & 1:",
+      [
+        17
+      ]
+    ],
+    [
+      "            ans[i] = alice + 1",
+      [
+        18
+      ]
+    ],
+    [
+      "            numArrows -= ans[i]",
+      [
+        19
+      ]
+    ],
+    [
+      "    ans[0] = numArrows",
+      [
+        20
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        21
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(numArrows, aliceArrows) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let n = aliceArrows.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let state = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    let mx = -1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var mask = 0; mask < (1 << n); mask++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        let cnt = points = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (let i = 0; i < aliceArrows.length; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            if ((mask >> i) & 1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                cnt += aliceArrows[i] + 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "                points += i;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (cnt <= numArrows && mx < points) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            state = mask;",
+      [
+        13
+      ]
+    ],
+    [
+      "            mx = points;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = Array(aliceArrows.length).fill(0);",
+      [
+        15
+      ]
+    ],
+    [
+      "    for (let i = 0; i < aliceArrows.length; i++) {",
+      [
+        16
+      ]
+    ],
+    [
+      "        if ((state >> i) & 1) {",
+      [
+        17
+      ]
+    ],
+    [
+      "            ans[i] = aliceArrows[i] + 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "            numArrows -= ans[i];",
+      [
+        19
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    ans[0] = numArrows;",
+      [
+        20
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        21
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

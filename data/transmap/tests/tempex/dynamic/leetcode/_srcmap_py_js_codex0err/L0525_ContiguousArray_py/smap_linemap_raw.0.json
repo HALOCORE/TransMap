@@ -1,0 +1,152 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findMaxLength",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    s = ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    mp = {0: -1}",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i, v in enumerate(nums):",
+      [
+        5
+      ]
+    ],
+    [
+      "        s += 1 if v == 1 else -1",
+      [
+        6
+      ]
+    ],
+    [
+      "        if s in mp:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = max(ans, i - mp[s])",
+      [
+        8
+      ]
+    ],
+    [
+      "        else:",
+      [
+        9
+      ]
+    ],
+    [
+      "            mp[s] = i",
+      [
+        10
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let s = ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let mp = {0: -1};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < nums.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        s += nums[i] == 1 ? 1 : -1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (s in mp) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = Math.max(ans, i - mp[s]);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        9
+      ]
+    ],
+    [
+      "            mp[s] = i;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

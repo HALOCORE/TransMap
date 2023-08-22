@@ -1,0 +1,14 @@
+
+### Python
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    return sum(nums) - min(nums) * len(nums)   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    return sum(nums) - min(nums) * len(nums);   // --- py stmt 3
+}
+
+
+

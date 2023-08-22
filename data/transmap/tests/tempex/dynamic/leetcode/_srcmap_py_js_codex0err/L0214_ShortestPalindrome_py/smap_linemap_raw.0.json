@@ -1,0 +1,196 @@
+{
+  "src_anno_stmts": [
+    [
+      "### shortestPalindrome",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    base = 131",
+      [
+        3
+      ]
+    ],
+    [
+      "    mod = 10**9 + 7",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(s)",
+      [
+        5
+      ]
+    ],
+    [
+      "    prefix = suffix = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "    mul = 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    idx = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i, c in enumerate(s):",
+      [
+        9
+      ]
+    ],
+    [
+      "        prefix = (prefix * base + (ord(c) - ord('a') + 1)) % mod",
+      [
+        10
+      ]
+    ],
+    [
+      "        suffix = (suffix + (ord(c) - ord('a') + 1) * mul) % mod",
+      [
+        11
+      ]
+    ],
+    [
+      "        mul = (mul * base) % mod",
+      [
+        12
+      ]
+    ],
+    [
+      "        if prefix == suffix:",
+      [
+        13
+      ]
+    ],
+    [
+      "            idx = i + 1",
+      [
+        14
+      ]
+    ],
+    [
+      "    return s if idx == n else s[idx:][::-1] + s",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var base = 131;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var mod = 1000000000 + 7;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = s.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var prefix = suffix = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var mul = 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    var idx = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var i = 0; i < s.length; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        prefix = (prefix * base + (s.charCodeAt(i) - 'a'.charCodeAt(0) + 1)) % mod;",
+      [
+        10
+      ]
+    ],
+    [
+      "        suffix = (suffix + (s.charCodeAt(i) - 'a'.charCodeAt(0) + 1) * mul) % mod;",
+      [
+        11
+      ]
+    ],
+    [
+      "        mul = (mul * base) % mod;",
+      [
+        12
+      ]
+    ],
+    [
+      "        if (prefix == suffix) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            idx = i + 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return (idx == n) ? s : Array.from(s.slice(idx)).reverse().join(\"\") + s;",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

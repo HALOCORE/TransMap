@@ -1,0 +1,16 @@
+{
+  "result_symptom": {
+    "category": [
+      "SUCCESS",
+      null
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error": null,
+    "is_success": true,
+    "stderr": "",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n\n[\"MYLOGEX:1\",[\"list\",4,[[\"string\",4,\"a1b2\"],[\"string\",4,\"a1B2\"],[\"string\",4,\"A1B2\"],[\"string\",4,\"A1b2\"]]]]\n\n[\"MYLOGAP:0\",[\"num\",1]]\n\n[\"MYLOGEX:1\",[\"list\",2,[[\"string\",3,\"3z4\"],[\"string\",3,\"3Z4\"]]]]\n",
+    "timespan": 0.03446729900315404
+  }
+}

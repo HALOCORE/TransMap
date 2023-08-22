@@ -1,0 +1,56 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -37,7 +59,7 @@ function heappushpop(heap, item) {
+ 
+ function heapify(x) {
+     let n = x.length;
+-    for (let i = Math.floor(n / 2); i >= 0; i--) {
++    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+         _siftup(x, i);
+     }
+ }
+@@ -200,8 +234,8 @@ function* merge(...iterables) {
+ function nsmallest(n, iterable) {
+     if (n === 1) {
+         const it = iterable[Symbol.iterator]();
+-        const sentinel = {};
+-        const result = Math.min(...it, sentinel);
++        const sentinel = Infinity;
++        const result = Math.min(...it);
+         return (result === sentinel) ? [] : [result];
+     }
+ 
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -257,7 +257,7 @@ function heappushpop(heap, item) {   // --- py stmt 18
+ 
+ function heapify(x) {   // --- py stmt 23
+     let n = x.length;   // --- py stmt 24
+-    for (let i = Math.floor(n / 2); i >= 0; i--) {   // --- py stmt 25
++    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {   // --- py stmt 25
+         _siftup(x, i);   // --- py stmt 26
+     }
+ }
+@@ -412,8 +424,8 @@ function* merge(...iterables) {   // --- py stmt 3001
+ function nsmallest(n, iterable) {   // --- py stmt 4001
+     if (n === 1) {   // --- py stmt 4002
+         const it = iterable[Symbol.iterator]();   // --- py stmt 4003
+-        const sentinel = {};   // --- py stmt 4004
+-        const result = Math.min(...it, sentinel);   // --- py stmt 4005
++        const sentinel = Infinity;   // --- py stmt 4004
++        const result = Math.min(...it);   // --- py stmt 4005
+         return (result === sentinel) ? [] : [result];   // --- py stmt 4006
+     }
+ 
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,6 @@
+ {
+-  "disable_src_lines": [],
+-  "trace_cmp": []
++  "disable_src_lines": ["148-148"],
++  "trace_cmp": [
++      {"src_lines": ["165-193"], "vars_ignore": ["it", "sentinel"]}
++  ]
+ }
+\ No newline at end of file

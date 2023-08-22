@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  for (let i = 0; i < n; i++) mat[i].sort((a, b) => a-b);",
+    "replacement": "  for (let i = 0; i < n; i++) mat[i].sort();"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "          console.log(\"(\", mat[i][left], \", \", mat[j][right], \"), \");",
+    "replacement": "          console.log(\"(\", mat[i][left], \", \", mat[j][right], \"), \", end = \" \");"
+  }
+]

@@ -1,0 +1,44 @@
+
+### Python
+def skjkasdkd(lst):   # --- py stmt 1
+    def isPrime(n):   # --- py stmt 2
+        for i in range(2,int(n**0.5)+1):   # --- py stmt 3
+            if n%i==0:   # --- py stmt 4
+                return False   # --- py stmt 5
+        return True   # --- py stmt 6
+    maxx = 0   # --- py stmt 7
+    i = 0   # --- py stmt 8
+    while i < len(lst):   # --- py stmt 9
+        if(lst[i] > maxx and isPrime(lst[i])):   # --- py stmt 10
+            maxx = lst[i]   # --- py stmt 11
+        i+=1   # --- py stmt 12
+    result = sum(int(digit) for digit in str(maxx))   # --- py stmt 13
+    return result   # --- py stmt 14
+
+
+
+### JavaScript
+"use strict";
+function skjkasdkd(lst) {   // --- py stmt 1
+    function isPrime(n) {   // --- py stmt 2
+        for (var i = 2; i <= Math.sqrt(n); i++) {   // --- py stmt 3
+            if (n % i == 0) {   // --- py stmt 4
+                return false;   // --- py stmt 5
+            }
+        }
+        return true;   // --- py stmt 6
+    }
+    var maxx = 0;   // --- py stmt 7
+    var i = 0;   // --- py stmt 8
+    while (i < lst.length) {   // --- py stmt 9
+        if (lst[i] > maxx && isPrime(lst[i])) {   // --- py stmt 10
+            maxx = lst[i];   // --- py stmt 11
+        }
+        i++;   // --- py stmt 12
+    }
+    var result = maxx.toString().split("").reduce(function (a, b) { return parseInt(a) + parseInt(b); });   // --- py stmt 13
+    return result;   // --- py stmt 14
+}
+
+
+

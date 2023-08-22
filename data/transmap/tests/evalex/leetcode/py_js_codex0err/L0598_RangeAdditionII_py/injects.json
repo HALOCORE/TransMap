@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    for (let [a, b] of ops) {",
+    "replacement": "    for (let a, b of ops) {"
+  }
+]

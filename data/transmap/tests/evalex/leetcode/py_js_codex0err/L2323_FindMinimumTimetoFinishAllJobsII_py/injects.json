@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    jobs.sort((a, b) => a - b);",
+    "replacement": "    jobs.sort();"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    workers.sort((a, b) => a - b);",
+    "replacement": "    workers.sort();"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    return Math.max(...(jobs.map((a, i) => Math.floor((a + workers[i] - 1) / workers[i]))));",
+    "replacement": "    return Math.max(...(jobs.map((a, i) => (a + workers[i] - 1) / workers[i])));"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    let ans = Array(n).fill(Math.floor(s / n));",
+    "replacement": "    let ans = Array(n).fill(s / n);"
+  }
+]

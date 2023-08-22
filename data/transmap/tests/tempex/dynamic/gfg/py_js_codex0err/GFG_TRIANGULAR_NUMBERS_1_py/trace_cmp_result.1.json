@@ -1,0 +1,44 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,2,5,24]",
+    "src_cov_lines": [
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: b is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"],\"b\":[\"N\",\"1\"],\"a\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,2,5,24]",
+    "src_cov_lines": [
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: b is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"],\"b\":[\"N\",\"1\"],\"a\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

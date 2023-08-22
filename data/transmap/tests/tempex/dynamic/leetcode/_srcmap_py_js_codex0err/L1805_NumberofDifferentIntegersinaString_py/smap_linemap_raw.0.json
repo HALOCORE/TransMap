@@ -1,0 +1,74 @@
+{
+  "src_anno_stmts": [
+    [
+      "import re",
+      [
+        1
+      ]
+    ],
+    [
+      "### numDifferentIntegers",
+      null
+    ],
+    [
+      "import re",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(word: str) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    nums = re.split(r'[a-z]+', word)",
+      [
+        4
+      ]
+    ],
+    [
+      "    return len({int(num) for num in nums if num != ''})",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const re = require('re');",
+      [
+        1
+      ]
+    ],
+    [
+      "const f_gold = (word) => {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let nums = word.split(/[a-z]+/);",
+      [
+        4
+      ]
+    ],
+    [
+      "    return new Set(nums.filter(num => num != '').map(num => parseInt(num))).size;",
+      [
+        5
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

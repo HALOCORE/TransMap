@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "TypeError:",
+      "\"{} \".format is not a function"
+    ],
+    "lineno": 11
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "\"{} \".format is not a function",
+      "error_type": "TypeError:",
+      "line_content": "if (i + j == column - 1) console.log(\"{} \".format(mat[i][j] * mat[i][j]), end = \"\");",
+      "lineno": [
+        "/tmp/codesnart_runner/09828d50.js",
+        125
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/09828d50.js:125\n      if (i + j == column - 1) console.log(\"{} \".format(mat[i][j] * mat[i][j]), end = \"\");\n                                                 ^\n\nTypeError: \"{} \".format is not a function\n    at f_gold (/tmp/codesnart_runner/09828d50.js:125:50)\n    at test (/tmp/codesnart_runner/09828d50.js:108:9)\n    at Object.<anonymous> (/tmp/codesnart_runner/09828d50.js:134:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",15,\"Diagonal one : \"]]]]\nDiagonal one : \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",2,\"4 \"]]]]\n4 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"121 \"]]]]\n121 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",2,\"9 \"]]]]\n9 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"225 \"]]]]\n225 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"225 \"]]]]\n225 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"144 \"]]]]\n144 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"100 \"]]]]\n100 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"256 \"]]]]\n256 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1156 \"]]]]\n1156 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1225 \"]]]]\n1225 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1936 \"]]]]\n1936 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1296 \"]]]]\n1296 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1444 \"]]]]\n1444 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1681 \"]]]]\n1681 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"2916 \"]]]]\n2916 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",4,\"729 \"]]]]\n729 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"2704 \"]]]]\n2704 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"1156 \"]]]]\n1156 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"4624 \"]]]]\n4624 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",5,\"5329 \"]]]]\n5329 \n\n[\"MYLOGEX:-1\",[\"list\",1,[[\"string\",18,\" \\n\\nDiagonal two : \"]]]]\n \n\nDiagonal two : \n",
+    "timespan": 0.06811900698812678
+  }
+}

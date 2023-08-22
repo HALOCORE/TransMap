@@ -1,0 +1,61 @@
+
+### Python
+### gameOfLife 
+from typing import *   # --- py stmt 1
+def f_gold(board: List[List[int]]) -> None:   # --- py stmt 2
+    """
+    Do not return anything, modify board in-place instead.
+    """
+    m, n = len(board), len(board[0])   # --- py stmt 3
+    dirs = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [-1, 1], [1, -1], [1, 1]]   # --- py stmt 4
+    for i in range(m):   # --- py stmt 5
+        for j in range(n):   # --- py stmt 6
+            cnt = sum(   # --- py stmt 7
+                1
+                for a, b in dirs
+                if 0 <= i + a < m
+                and 0 <= j + b < n
+                and board[i + a][j + b] in (1, 2)
+            )
+            if board[i][j] == 1 and (cnt < 2 or cnt > 3):   # --- py stmt 8
+                board[i][j] = 2   # --- py stmt 9
+            elif board[i][j] == 0 and (cnt == 3):   # --- py stmt 10
+                board[i][j] = 3   # --- py stmt 11
+    for i in range(m):   # --- py stmt 12
+        for j in range(n):   # --- py stmt 13
+            board[i][j] %= 2   # --- py stmt 14
+
+### JavaScript
+"use strict";
+
+function f_gold(board) {   // --- py stmt 2
+    var m = board.length;   // --- py stmt 3
+    var n = board[0].length;   // --- py stmt 3
+    var dirs = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [-1, 1], [1, -1], [1, 1]];   // --- py stmt 4
+    for (var i = 0; i < m; i++) {   // --- py stmt 5
+        for (var j = 0; j < n; j++) {   // --- py stmt 6
+            var cnt = 0;   // --- py stmt 7
+            for (var a = 0; a < dirs.length; a++) {   // --- py stmt 7
+                for (var b = 0; b < dirs[a].length; b++) {   // --- py stmt 7
+                    if (0 <= i + a < m && 0 <= j + b < n && board[i + a][j + b] in (1, 2)) {   // --- py stmt 7
+                        cnt++;   // --- py stmt 7
+                    }
+                }
+            }
+            if (board[i][j] == 1 && (cnt < 2 || cnt > 3)) {   // --- py stmt 8
+                board[i][j] = 2;   // --- py stmt 9
+            }
+            else if (board[i][j] == 0 && (cnt == 3)) {   // --- py stmt 10
+                board[i][j] = 3;   // --- py stmt 11
+            }
+        }
+    }
+    for (var i = 0; i < m; i++) {   // --- py stmt 12
+        for (var j = 0; j < n; j++) {   // --- py stmt 13
+            board[i][j] %= 2;   // --- py stmt 14
+        }
+    }
+}
+
+
+

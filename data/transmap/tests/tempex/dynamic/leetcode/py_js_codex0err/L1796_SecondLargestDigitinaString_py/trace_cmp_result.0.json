@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,42]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: second_largest_digit is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"dfa12321afd\"],\"largest_digit\":[\"N\",\"-1\"],\"second_largest_digit\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,42]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: second_largest_digit is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"dfa12321afd\"],\"largest_digit\":[\"N\",\"-1\"],\"second_largest_digit\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,42]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: second_largest_digit is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"dfa12321afd\"],\"largest_digit\":[\"N\",\"-1\"],\"second_largest_digit\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,10,42]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: second_largest_digit is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",11,\"dfa12321afd\"],\"largest_digit\":[\"N\",\"-1\"],\"second_largest_digit\":[\"N\",\"-1\"]}",
+      ""
+    ]
+  }
+]

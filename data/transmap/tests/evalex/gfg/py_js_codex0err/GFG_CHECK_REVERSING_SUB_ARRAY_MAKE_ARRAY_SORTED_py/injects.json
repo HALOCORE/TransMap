@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  var temp = Array(n).fill(0);",
+    "replacement": "  var temp = Array(n);"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  temp.sort((a, b) => a-b);",
+    "replacement": "  temp.sort();"
+  }
+]

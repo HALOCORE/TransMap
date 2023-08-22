@@ -1,0 +1,124 @@
+{
+  "src_anno_stmts": [
+    [
+      "### getMaximumGenerated",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    if n == 0:",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    nums = [0] * (n + 1)",
+      [
+        5
+      ]
+    ],
+    [
+      "    nums[1] = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(2, n + 1):",
+      [
+        7
+      ]
+    ],
+    [
+      "        nums[i] = nums[i >> 1] if i % 2 == 0 else nums[i >> 1] + nums[(i >> 1) + 1]",
+      [
+        8
+      ]
+    ],
+    [
+      "    return max(nums)",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (n == 0) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var nums = new Array(n + 1);",
+      [
+        5
+      ]
+    ],
+    [
+      "    nums[1] = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 2; i <= n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        nums[i] = (i % 2 == 0) ? nums[i >> 1] : nums[i >> 1] + nums[(i >> 1) + 1];",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.max(...nums);",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

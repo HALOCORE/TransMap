@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    if (i < Math.floor(n / 2)) {",
+    "replacement": "    if (i < n / 2) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    else if (i > Math.floor(n / 2)) {",
+    "replacement": "    else if (i > n / 2) {"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "  return (diag1_left == diag2_right && diag2_right == diag2_left && diag1_right == diag2_left && diag2_right == mat[Math.floor(n / 2)][Math.floor(n / 2)]);",
+    "replacement": "  return (diag1_left == diag2_right && diag2_right == diag2_left && diag1_right == diag2_left && diag2_right == mat[n / 2][n / 2]);"
+  }
+]

@@ -1,0 +1,24 @@
+
+### Python
+### minimumRemoval 
+from typing import *   # --- py stmt 1
+def f_gold(beans: List[int]) -> int:   # --- py stmt 2
+    beans.sort()   # --- py stmt 3
+    ans = s = sum(beans)   # --- py stmt 4
+    n = len(beans)   # --- py stmt 5
+    for i, v in enumerate(beans):   # --- py stmt 6
+        ans = min(ans, s - v * (n - i))   # --- py stmt 7
+    return ans   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(beans) {   // --- py stmt 2
+    beans.sort((a, b) => a - b);   // --- py stmt 3
+    var ans = s = beans.reduce((a, b) => a + b, 0);   // --- py stmt 4
+    var n = beans.length;   // --- py stmt 5
+    for (var i = 0; i < beans.length; i++) {   // --- py stmt 6
+        ans = Math.min(ans, s - beans[i] * (n - i));   // --- py stmt 7
+    }
+    return ans;   // --- py stmt 8
+}
+

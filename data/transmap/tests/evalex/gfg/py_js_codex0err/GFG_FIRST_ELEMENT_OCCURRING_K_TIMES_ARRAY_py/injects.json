@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    i;",
+    "replacement": "    i += 1;"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    i;",
+    "replacement": "    i += 1;"
+  }
+]

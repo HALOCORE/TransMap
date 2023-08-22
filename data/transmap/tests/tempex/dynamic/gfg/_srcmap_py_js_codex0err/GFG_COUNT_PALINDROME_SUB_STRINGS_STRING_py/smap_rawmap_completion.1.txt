@@ -1,0 +1,56 @@
+
+### Python
+def f_gold(str, n):   # --- py stmt 1
+  dp =[[0 for x in range(n)] for y in range(n)]   # --- py stmt 2
+  P =[[False for x in range(n)] for y in range(n)]   # --- py stmt 3
+  for i in range(n): P[i][i] = True   # --- py stmt 4
+  for i in range(n - 1):   # --- py stmt 5
+    if(str[i] == str[i + 1]):   # --- py stmt 6
+      P[i][i + 1] = True   # --- py stmt 7
+      dp[i][i + 1] = 1   # --- py stmt 8
+  for gap in range(2, n):   # --- py stmt 9
+    for i in range(n - gap):   # --- py stmt 10
+      j = gap + i ;   # --- py stmt 11
+      if(str[i] == str[j] and P[i + 1][j - 1]): P[i][j] = True   # --- py stmt 12
+      if(P[i][j] == True): dp[i][j] =(dp[i][j - 1] + dp[i + 1][j] + 1 - dp[i + 1][j - 1])   # --- py stmt 13
+      else: dp[i][j] =(dp[i][j - 1] + dp[i + 1][j] - dp[i + 1][j - 1])   # --- py stmt 14
+  return dp[0][n - 1]   # --- py stmt 15
+
+
+### JavaScript
+"use strict";
+function f_gold(str, n) {   // --- py stmt 1
+  let dp = new Array(n);   // --- py stmt 2
+  for (let i = 0; i < n; i++) {   // --- py stmt 2
+    dp[i] = new Array(n).fill(0);   // --- py stmt 2
+  }
+  let P = new Array(n);   // --- py stmt 3
+  for (let i = 0; i < n; i++) {   // --- py stmt 3
+    P[i] = new Array(n);   // --- py stmt 3
+  }
+  for (let i = 0; i < n; i++) {   // --- py stmt 4
+    P[i][i] = true;   // --- py stmt 4
+  }
+  for (let i = 0; i < n - 1; i++) {   // --- py stmt 5
+    if (str[i] == str[i + 1]) {   // --- py stmt 6
+      P[i][i + 1] = true;   // --- py stmt 7
+      dp[i][i + 1] = 1;   // --- py stmt 8
+    }
+  }
+  for (let gap = 2; gap < n; gap++) {   // --- py stmt 9
+    for (let i = 0; i < n - gap; i++) {   // --- py stmt 10
+      let j = gap + i;   // --- py stmt 11
+      if (str[i] == str[j] && P[i + 1][j - 1]) {   // --- py stmt 12
+        P[i][j] = true;   // --- py stmt 12
+      }
+      if (P[i][j] == true) {   // --- py stmt 13
+        dp[i][j] = dp[i][j - 1] + dp[i + 1][j] + 1 - dp[i + 1][j - 1];   // --- py stmt 13
+      } else {   // --- py stmt 14
+        dp[i][j] = dp[i][j - 1] + dp[i + 1][j] - dp[i + 1][j - 1];   // --- py stmt 14
+      }
+    }
+  }
+  return dp[0][n - 1];   // --- py stmt 15
+}
+
+

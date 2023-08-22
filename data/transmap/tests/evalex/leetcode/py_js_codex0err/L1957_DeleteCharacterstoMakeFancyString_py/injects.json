@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        if (ans.length > 1 && ans[ans.length - 1] == ans[ans.length - 2] && ans[ans.length - 2] == c) {",
+    "replacement": "        if (ans.length > 1 && ans[ans.length - 1] == ans[ans.length - 2] == c) {"
+  }
+]

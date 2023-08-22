@@ -1,0 +1,46 @@
+{
+  "src_anno_stmts": [
+    [
+      "def next_smallest(lst):",
+      [
+        1
+      ]
+    ],
+    [
+      "    lst = sorted(set(lst))",
+      [
+        2
+      ]
+    ],
+    [
+      "    return None if len(lst) < 2 else lst[1]",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function next_smallest(lst) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    lst = Array.from(new Set(lst)).sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "    return lst.length < 2 ? null : lst[1];",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,66 @@
+
+### Python
+### solve 
+from typing import *   # --- py stmt 1
+def f_gold(board: List[List[str]]) -> None:   # --- py stmt 2
+    """   # --- py stmt 3
+    Do not return anything, modify board in-place instead.   # --- py stmt 4
+    """   # --- py stmt 5
+    def dfs(i, j):   # --- py stmt 6
+        board[i][j] = '.'   # --- py stmt 7
+        for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:   # --- py stmt 8
+            x, y = i + a, j + b   # --- py stmt 9
+            if 0 <= x < m and 0 <= y < n and board[x][y] == 'O':   # --- py stmt 10
+                dfs(x, y)   # --- py stmt 11
+    m, n = len(board), len(board[0])   # --- py stmt 12
+    for i in range(m):   # --- py stmt 13
+        for j in range(n):   # --- py stmt 14
+            if board[i][j] == 'O' and (   # --- py stmt 15
+                i == 0 or i == m - 1 or j == 0 or j == n - 1
+            ):
+                dfs(i, j)   # --- py stmt 16
+    for i in range(m):   # --- py stmt 17
+        for j in range(n):   # --- py stmt 18
+            if board[i][j] == 'O':   # --- py stmt 19
+                board[i][j] = 'X'   # --- py stmt 20
+            elif board[i][j] == '.':   # --- py stmt 21
+                board[i][j] = 'O'   # --- py stmt 22
+
+### JavaScript
+"use strict";
+
+function f_gold(board) {   // --- py stmt 2
+    function dfs(i, j) {   // --- py stmt 6
+        board[i][j] = '.';   // --- py stmt 7
+        for (let a = 0; a < 2; a++) {   // --- py stmt 8
+            for (let b = 0; b < 2; b++) {   // --- py stmt 8
+                let x = i + a;   // --- py stmt 9
+                let y = j + b;   // --- py stmt 9
+                if (0 <= x < m && 0 <= y < n && board[x][y] == 'O') {   // --- py stmt 10
+                    dfs(x, y);   // --- py stmt 11
+                }
+            }
+        }
+    }
+    let m = board.length;   // --- py stmt 12
+    let n = board[0].length;   // --- py stmt 12
+    for (let i = 0; i < m; i++) {   // --- py stmt 13
+        for (let j = 0; j < n; j++) {   // --- py stmt 14
+            if (board[i][j] == 'O' && (i == 0 || i == m - 1 || j == 0 || j == n - 1)) {   // --- py stmt 15
+                dfs(i, j);   // --- py stmt 16
+            }
+        }
+    }
+    for (let i = 0; i < m; i++) {   // --- py stmt 17
+        for (let j = 0; j < n; j++) {   // --- py stmt 18
+            if (board[i][j] == 'O') {   // --- py stmt 19
+                board[i][j] = 'X';   // --- py stmt 20
+            } else if (board[i][j] == '.') {   // --- py stmt 21
+                board[i][j] = 'O';   // --- py stmt 22
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var w of sentence.split(/\\s+/)) {",
+    "replacement": "    for (var w of sentence.split()) {"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        if (w[0] == '$' && /^\\d+$/.test(w.slice(1))) {",
+    "replacement": "        if (w[0] == '$' && w[1:].isdigit()) {"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "            var t = parseInt(w.substring(1)) * (1 - discount / 100);",
+    "replacement": "            var t = parseInt(w[1:]) * (1 - discount / 100);"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "            ans.push('$' + t.toFixed(2));",
+    "replacement": "            ans.push('$' + '{:.2f}'.format(t));"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    return ans.join(' ');",
+    "replacement": "    return ' '.join(ans);"
+  }
+]

@@ -1,0 +1,292 @@
+{
+  "src_anno_stmts": [
+    [
+      "### restoreIpAddresses",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> List[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(s):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if not (0 <= int(s) <= 255):",
+      [
+        4
+      ]
+    ],
+    [
+      "            return False",
+      [
+        5
+      ]
+    ],
+    [
+      "        if s[0] == '0' and len(s) > 1:",
+      [
+        6
+      ]
+    ],
+    [
+      "            return False",
+      [
+        7
+      ]
+    ],
+    [
+      "        return True",
+      [
+        8
+      ]
+    ],
+    [
+      "    def dfs(s, t):",
+      [
+        9
+      ]
+    ],
+    [
+      "        if len(t) == 4:",
+      [
+        10
+      ]
+    ],
+    [
+      "            if not s:",
+      [
+        11
+      ]
+    ],
+    [
+      "                ans.append('.'.join(t))",
+      [
+        12
+      ]
+    ],
+    [
+      "            return",
+      [
+        13
+      ]
+    ],
+    [
+      "        for i in range(1, min(4, len(s) + 1)):",
+      [
+        14
+      ]
+    ],
+    [
+      "            if check(s[:i]):",
+      [
+        15
+      ]
+    ],
+    [
+      "                t.append(s[:i])",
+      [
+        16
+      ]
+    ],
+    [
+      "                dfs(s[i:], t)",
+      [
+        17
+      ]
+    ],
+    [
+      "                t.pop()",
+      [
+        18
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        19
+      ]
+    ],
+    [
+      "    dfs(s, [])",
+      [
+        20
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        21
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(s) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (!(0 <= parseInt(s) <= 255)) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (s[0] == '0' && s.length > 1) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return true;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    function dfs(s, t) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (t.length == 4) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (!s) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                ans.push(t.join('.'));",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            return;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let i = 1; i < Math.min(4, s.length + 1); i++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (check(s.substring(0, i))) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                t.push(s.substring(0, i));",
+      [
+        16
+      ]
+    ],
+    [
+      "                dfs(s.substring(i), t);",
+      [
+        17
+      ]
+    ],
+    [
+      "                t.pop();",
+      [
+        18
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ans = [];",
+      [
+        19
+      ]
+    ],
+    [
+      "    dfs(s, []);",
+      [
+        20
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        21
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

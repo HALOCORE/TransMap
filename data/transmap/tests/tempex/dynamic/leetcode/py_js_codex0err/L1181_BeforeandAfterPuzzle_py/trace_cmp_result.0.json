@@ -1,0 +1,141 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[31,4,31,62]",
+    "break_idx": 14,
+    "expected_src_pk": "[15,4,15,28]",
+    "actural_src_pk": "[15,4,15,28]",
+    "src_cov_lines": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "tar_cov_lines": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "tar_data": [
+      "{\"phrases\":[\"A\",3,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"same_first_word\":[\"DICT\",[[\"SET\",[\"N\",\"0\"],[\"N\",\"2\"]],[\"S\",1,\"a\"]],[[\"SET\",[\"N\",\"1\"]],[\"S\",1,\"b\"]]],\"res\":[\"SET\",[\"S\",2,\" a\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"phrases\":[\"A\",3,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"same_first_word\":[\"DICT\",[[\"S\",1,\"a\"],[\"SET\",[\"N\",\"0\"],[\"N\",\"2\"]]],[[\"S\",1,\"b\"],[\"SET\",[\"N\",\"1\"]]]],\"i\":[\"N\",\"2\"],\"phrase\":[\"S\",1,\"a\"],\"res\":[\"SET\",[\"S\",1,\"a\"]],\"words\":[\"A\",1,[\"S\",1,\"a\"]],\"last_word\":[\"S\",1,\"a\"],\"j\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "res"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 0,
+    "tar_pk": "[4,8,4,38]",
+    "expected_src_pk": "[9,8,9,30]",
+    "actural_src_pk": "[8,4,14,70]",
+    "src_cov_lines": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\",[[\"S\",7,\"writing\"],[\"SET\",[\"N\",\"0\"]]],[[\"S\",4,\"code\"],[\"SET\",[\"N\",\"1\"]]]],\"i\":[\"N\",\"1\"],\"phrase\":[\"S\",10,\"code rocks\"],\"res\":[\"SET\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 2,
+    "tar_pk": "[4,8,4,38]",
+    "expected_src_pk": "[9,8,9,30]",
+    "actural_src_pk": "[6,8,6,49]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[4,8,4,38]",
+    "expected_src_pk": "[9,8,9,30]",
+    "actural_src_pk": "[6,8,6,49]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[4,8,4,38]",
+    "expected_src_pk": "[9,8,9,30]",
+    "actural_src_pk": "[6,8,6,49]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"phrases\":[\"A\",2,[\"S\",12,\"writing code\"],[\"S\",10,\"code rocks\"]],\"same_first_word\":[\"DICT\"],\"i\":[\"N\",\"0\"],\"phrase\":[\"S\",12,\"writing code\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    if (typeof(count[a[i]]) !== 'undefined') count[a[i]] += 1;",
+    "replacement": "    if (count.get(a[i])) count[a[i]] += 1;"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "      while (typeof(count[next_missing]) !== 'undefined') next_missing += 1;",
+    "replacement": "      while (count.get(next_missing)) next_missing += 1;"
+  }
+]

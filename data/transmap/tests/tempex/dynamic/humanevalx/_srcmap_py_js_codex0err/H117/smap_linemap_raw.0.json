@@ -1,0 +1,146 @@
+{
+  "src_anno_stmts": [
+    [
+      "def select_words(s, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "    result = []",
+      [
+        2
+      ]
+    ],
+    [
+      "    for word in s.split():",
+      [
+        3
+      ]
+    ],
+    [
+      "        n_consonants = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "        for i in range(0, len(word)):",
+      [
+        5
+      ]
+    ],
+    [
+      "            if word[i].lower() not in [\"a\",\"e\",\"i\",\"o\",\"u\"]:",
+      [
+        6
+      ]
+    ],
+    [
+      "                n_consonants += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "        if n_consonants == n:",
+      [
+        8
+      ]
+    ],
+    [
+      "            result.append(word)",
+      [
+        9
+      ]
+    ],
+    [
+      "    return result",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function select_words(s, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    let result = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "    for (let word of s.split()) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        let n_consonants = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "        for (let i = 0; i < word.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            if (![\"a\",\"e\",\"i\",\"o\",\"u\"].includes(word[i].toLowerCase())) {",
+      [
+        6
+      ]
+    ],
+    [
+      "                n_consonants += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (n_consonants == n) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            result.push(word);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return result;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

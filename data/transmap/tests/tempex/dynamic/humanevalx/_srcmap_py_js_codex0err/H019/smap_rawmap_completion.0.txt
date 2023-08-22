@@ -1,0 +1,46 @@
+
+### Python
+from typing import List   # --- py stmt 1
+
+
+def sort_numbers(numbers: str) -> str:   # --- py stmt 2
+    value_map = {   # --- py stmt 3
+        'zero': 0,   # --- py stmt 4
+        'one': 1,   # --- py stmt 5
+        'two': 2,   # --- py stmt 6
+        'three': 3,   # --- py stmt 7
+        'four': 4,   # --- py stmt 8
+        'five': 5,   # --- py stmt 9
+        'six': 6,   # --- py stmt 10
+        'seven': 7,   # --- py stmt 11
+        'eight': 8,   # --- py stmt 12
+        'nine': 9   # --- py stmt 13
+    }
+    return ' '.join(sorted([x for x in numbers.split(' ') if x], key=lambda x: value_map[x]))   # --- py stmt 14
+
+
+### JavaScript
+"use strict";
+
+function sortNumbers(numbers) {   // --- py stmt 2
+    var valueMap = {   // --- py stmt 3
+        'zero': 0,   // --- py stmt 4
+        'one': 1,   // --- py stmt 5
+        'two': 2,   // --- py stmt 6
+        'three': 3,   // --- py stmt 7
+        'four': 4,   // --- py stmt 8
+        'five': 5,   // --- py stmt 9
+        'six': 6,   // --- py stmt 10
+        'seven': 7,   // --- py stmt 11
+        'eight': 8,   // --- py stmt 12
+        'nine': 9   // --- py stmt 13
+    };
+    return numbers.split(' ').filter(function (x) {   // --- py stmt 14
+        return x;
+    }).sort(function (x) {   // --- py stmt 14
+        return valueMap[x];
+    }).join(' ');   // --- py stmt 14
+}
+
+
+

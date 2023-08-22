@@ -1,0 +1,182 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(mat, r, c):",
+      [
+        1
+      ]
+    ],
+    [
+      "  result = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(r):",
+      [
+        3
+      ]
+    ],
+    [
+      "    j = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    for j in range(c - 1):",
+      [
+        5
+      ]
+    ],
+    [
+      "      if mat[i][j + 1] <= mat[i][j]: break",
+      [
+        6
+      ]
+    ],
+    [
+      "    if j == c - 2: result += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "  for i in range(0, r):",
+      [
+        8
+      ]
+    ],
+    [
+      "    j = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "    for j in range(c - 1, 0, - 1):",
+      [
+        10
+      ]
+    ],
+    [
+      "      if mat[i][j - 1] <= mat[i][j]: break",
+      [
+        11
+      ]
+    ],
+    [
+      "    if c > 1 and j == 1: result += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "  return result",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat, r, c) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var result = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (var i = 0; i < r; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var j = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (j = 0; j < c - 1; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      if (mat[i][j + 1] <= mat[i][j]) break;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (j == c - 2 || j == c-1) result += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (var i = 0; i < r; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    var j = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "    for (j = c - 1; j > 0; j--) {",
+      [
+        10
+      ]
+    ],
+    [
+      "      if (mat[i][j - 1] <= mat[i][j]) break;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (c > 1 && j == 1) result += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

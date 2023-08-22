@@ -1,0 +1,43 @@
+
+### Python
+def f_gold(arr, n, k):   # --- py stmt 1
+  if(n == 1): return 0   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  ans = arr[n - 1] - arr[0]   # --- py stmt 4
+  small = arr[0] + k   # --- py stmt 5
+  big = arr[n - 1] - k   # --- py stmt 6
+  if(small > big): small, big = big, small   # --- py stmt 7
+  for i in range(1, n - 1):   # --- py stmt 8
+    subtract = arr[i] - k   # --- py stmt 9
+    add = arr[i] + k   # --- py stmt 10
+    if(subtract >= small or add <= big): continue   # --- py stmt 11
+    if(big - subtract <= add - small): small = subtract   # --- py stmt 12
+    else: big = add   # --- py stmt 13
+  return min(ans, big - small)   # --- py stmt 14
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, k) {   // --- py stmt 1
+  if(n == 1) return 0;   // --- py stmt 2
+  arr.sort((a, b) => a-b);   // --- py stmt 3
+  var ans = arr[n - 1] - arr[0];   // --- py stmt 4
+  var small = arr[0] + k;   // --- py stmt 5
+  var big = arr[(n - 1 + arr.length)%arr.length] - k;   // --- py stmt 6
+  if(small > big) {   // --- py stmt 7
+    let temp = small;   // --- py stmt 7
+    small = big;   // --- py stmt 7
+    big = temp;   // --- py stmt 7
+  }
+  for(var i = 1; i < n - 1; i++) {   // --- py stmt 8
+    var subtract = arr[i] - k;   // --- py stmt 9
+    var add = arr[i] + k;   // --- py stmt 10
+    if(subtract >= small || add <= big) continue;   // --- py stmt 11
+    if(big - subtract <= add - small) small = subtract;   // --- py stmt 12
+    else big = add;   // --- py stmt 13
+  }
+  return Math.min(ans, big - small);   // --- py stmt 14
+}
+
+
+

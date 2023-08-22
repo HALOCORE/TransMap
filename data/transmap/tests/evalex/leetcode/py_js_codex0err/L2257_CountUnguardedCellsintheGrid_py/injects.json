@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 18,
+    "line_end": 21,
+    "content": "        for (var _k = 0; _k < 4; _k++) {\n            var a = [0, 0, 1, -1][_k];\n            var b = [-1, 1, 0, 0][_k];",
+    "replacement": "        for (var _ = 0; _ < 4; _++) {\n            var a = [0, 0, 1, -1][_];\n            var b = [-1, 1, 0, 0][_];"
+  },
+  {
+    "line_start": 31,
+    "line_end": 34,
+    "content": "    for (var _i = 0; _i < g.length; _i++) {\n        for (var _j = 0; _j < g[0].length; _j++) {\n            var v = g[_i][_j];",
+    "replacement": "    for (var _ = 0; _ < g.length; _++) {\n        for (var _ = 0; _ < g[_].length; _++) {\n            var v = g[_][_];"
+  }
+]

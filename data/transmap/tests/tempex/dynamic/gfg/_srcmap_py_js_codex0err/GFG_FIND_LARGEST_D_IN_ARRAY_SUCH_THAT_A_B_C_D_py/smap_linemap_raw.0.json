@@ -1,0 +1,198 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(S, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  found = False",
+      [
+        2
+      ]
+    ],
+    [
+      "  S.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n - 1, - 1, - 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "    for j in range(0, n):",
+      [
+        5
+      ]
+    ],
+    [
+      "      if(i == j): continue",
+      [
+        6
+      ]
+    ],
+    [
+      "      for k in range(j + 1, n):",
+      [
+        7
+      ]
+    ],
+    [
+      "        if(i == k): continue",
+      [
+        8
+      ]
+    ],
+    [
+      "        for l in range(k + 1, n):",
+      [
+        9
+      ]
+    ],
+    [
+      "          if(i == l): continue",
+      [
+        10
+      ]
+    ],
+    [
+      "          if(S[i] == S[j] + S[k] + S[l]):",
+      [
+        11
+      ]
+    ],
+    [
+      "            found = True",
+      [
+        12
+      ]
+    ],
+    [
+      "            return S[i]",
+      [
+        13
+      ]
+    ],
+    [
+      "  if(found == False): return - 1",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(S, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var found = false;",
+      [
+        2
+      ]
+    ],
+    [
+      "  S.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = n - 1; i >= 0; i--) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var j = 0; j < n; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      if (i == j) continue;",
+      [
+        6
+      ]
+    ],
+    [
+      "      for (var k = j + 1; k < n; k++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i == k) continue;",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (var l = k + 1; l < n; l++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "          if (i == l) continue;",
+      [
+        10
+      ]
+    ],
+    [
+      "          if (S[i] == S[j] + S[k] + S[l]) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            found = true;",
+      [
+        12
+      ]
+    ],
+    [
+      "            return S[i];",
+      [
+        13
+      ]
+    ],
+    [
+      "          }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  if (found == false) return -1;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

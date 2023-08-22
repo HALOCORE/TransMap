@@ -1,0 +1,13 @@
+{
+  "result_symptom": {
+    "category": [
+      "UNEXPECTED",
+      "is_success_invalid_value",
+      "failed to run code:   File \"/opt/test-server/server_testing.py\", line 69, in starun\n    error, stdo, stde = code_runner.run_standalone_code(code, lang)\n  File \"/opt/test-server/code_runner.py\", line 318, in run_standalone_code\n    stdo, stde = _run_code(code, lang)\n  File \"/opt/test-server/code_runner.py\", line 289, in _run_code\n    _command_execute(runner_command + tofile_suffix)\n  File \"/opt/test-server/code_runner.py\", line 233, in _command_execute\n    raise e\n  File \"/opt/test-server/code_runner.py\", line 230, in _command_execute\n    proc.wait(timeout)\n  File \"/usr/lib/python3.10/subprocess.py\", line 1209, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.10/subprocess.py\", line 1951, in _wait\n    raise TimeoutExpired(self.args, timeout)\n\n  <class 'subprocess.TimeoutExpired'> Command 'node /tmp/codesnart_runner/68bf38c9.js >/tmp/codesnart_runner/68bf38c9.js.stdout 2>/tmp/codesnart_runner/68bf38c9.js.stderr' timed out after 10 seconds"
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error_msg": "failed to run code:   File \"/opt/test-server/server_testing.py\", line 69, in starun\n    error, stdo, stde = code_runner.run_standalone_code(code, lang)\n  File \"/opt/test-server/code_runner.py\", line 318, in run_standalone_code\n    stdo, stde = _run_code(code, lang)\n  File \"/opt/test-server/code_runner.py\", line 289, in _run_code\n    _command_execute(runner_command + tofile_suffix)\n  File \"/opt/test-server/code_runner.py\", line 233, in _command_execute\n    raise e\n  File \"/opt/test-server/code_runner.py\", line 230, in _command_execute\n    proc.wait(timeout)\n  File \"/usr/lib/python3.10/subprocess.py\", line 1209, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.10/subprocess.py\", line 1951, in _wait\n    raise TimeoutExpired(self.args, timeout)\n\n  <class 'subprocess.TimeoutExpired'> Command 'node /tmp/codesnart_runner/68bf38c9.js >/tmp/codesnart_runner/68bf38c9.js.stdout 2>/tmp/codesnart_runner/68bf38c9.js.stderr' timed out after 10 seconds"
+  }
+}

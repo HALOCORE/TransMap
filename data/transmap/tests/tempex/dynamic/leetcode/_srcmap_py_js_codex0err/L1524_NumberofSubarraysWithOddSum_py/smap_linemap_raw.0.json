@@ -1,0 +1,172 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numOfSubarrays",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    MOD = int(1e9) + 7",
+      [
+        3
+      ]
+    ],
+    [
+      "    counter = [0] * 2",
+      [
+        4
+      ]
+    ],
+    [
+      "    s = ans = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for v in arr:",
+      [
+        6
+      ]
+    ],
+    [
+      "        s += v",
+      [
+        7
+      ]
+    ],
+    [
+      "        counter[s % 2] += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        if s % 2 == 1:",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans += 1 + counter[0]",
+      [
+        10
+      ]
+    ],
+    [
+      "        else:",
+      [
+        11
+      ]
+    ],
+    [
+      "            ans += counter[1]",
+      [
+        12
+      ]
+    ],
+    [
+      "    return ans % MOD",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const f_gold = (arr) => {",
+      [
+        2
+      ]
+    ],
+    [
+      "    const MOD = Math.pow(10, 9) + 7;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let counter = [0, 0];",
+      [
+        4
+      ]
+    ],
+    [
+      "    let s = ans = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let v of arr) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        s += v;",
+      [
+        7
+      ]
+    ],
+    [
+      "        counter[s % 2] += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (s % 2 == 1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            ans += 1 + counter[0];",
+      [
+        10
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        11
+      ]
+    ],
+    [
+      "            ans += counter[1];",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans % MOD;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

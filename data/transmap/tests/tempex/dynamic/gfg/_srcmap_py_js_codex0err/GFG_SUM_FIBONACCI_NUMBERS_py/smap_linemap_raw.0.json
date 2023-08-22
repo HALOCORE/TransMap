@@ -1,0 +1,122 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if(n <= 0): return 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  fibo =[0] *(n + 1)",
+      [
+        3
+      ]
+    ],
+    [
+      "  fibo[1] = 1",
+      [
+        4
+      ]
+    ],
+    [
+      "  sm = fibo[0] + fibo[1]",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(2, n + 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "    fibo[i] = fibo[i - 1] + fibo[i - 2]",
+      [
+        7
+      ]
+    ],
+    [
+      "    sm = sm + fibo[i]",
+      [
+        8
+      ]
+    ],
+    [
+      "  return sm",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (n <= 0) return 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var fibo = new Array(n + 1);",
+      [
+        3
+      ]
+    ],
+    [
+      "  fibo[1] = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "  var sm = fibo[0] + fibo[1];",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (var i = 2; i < n + 1; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "    fibo[i] = fibo[i - 1] + fibo[i - 2];",
+      [
+        7
+      ]
+    ],
+    [
+      "    sm = sm + fibo[i];",
+      [
+        8
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return sm;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

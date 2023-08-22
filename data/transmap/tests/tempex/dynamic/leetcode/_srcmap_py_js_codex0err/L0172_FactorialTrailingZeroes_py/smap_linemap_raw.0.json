@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### trailingZeroes",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    while n:",
+      [
+        4
+      ]
+    ],
+    [
+      "        n //= 5",
+      [
+        5
+      ]
+    ],
+    [
+      "        ans += n",
+      [
+        6
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    while (n) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        n /= 5;",
+      [
+        5
+      ]
+    ],
+    [
+      "        ans += n;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+
+### Python
+def f_gold(n):   # --- py stmt 1
+  a =(n // 10)* 10   # --- py stmt 2
+  b = a + 10   # --- py stmt 3
+  return(b if n - a > b - n else a)   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 1
+  var a = (n / 10) * 10;   // --- py stmt 2
+  var b = a + 10;   // --- py stmt 3
+  return (n - a > b - n)? b : a;   // --- py stmt 4
+}
+
+
+

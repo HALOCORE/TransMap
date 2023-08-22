@@ -1,0 +1,75 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[14,4,14,14]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      14
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"TypeError: t[i].isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",4,\"a1b2\"],\"dfs\":\"UNKNOWN\",\"ans\":[\"A\",4,[\"S\",4,\"a1b2\"],[\"S\",4,\"a1B2\"],[\"S\",4,\"A1B2\"],[\"S\",4,\"A1b2\"]],\"t\":[\"A\",4,[\"S\",1,\"A\"],[\"S\",1,\"1\"],[\"S\",1,\"b\"],[\"S\",1,\"2\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 12,
+    "actural_src_pk": "[4,8,6,18]",
+    "src_cov_lines": [
+      8,
+      9,
+      10
+    ],
+    "tar_cov_lines": [
+      7,
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"TypeError: t[i].isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"i\":[\"N\",\"3\"],\"t\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"1\"],[\"S\",1,\"B\"],[\"S\",1,\"2\"]],\"ans\":[\"A\",1,[\"S\",4,\"a1b2\"]],\"dfs\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 8,
+    "actural_src_pk": "[10,12,10,25]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"TypeError: t[i].isupper is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"i\":[\"N\",\"2\"],\"t\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"1\"],[\"S\",1,\"B\"],[\"S\",1,\"2\"]],\"ans\":[\"A\",1,[\"S\",4,\"a1b2\"]],\"dfs\":\"UNKNOWN\"}",
+      ""
+    ]
+  }
+]

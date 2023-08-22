@@ -1,0 +1,368 @@
+{
+  "src_anno_stmts": [
+    [
+      "### shortestPath",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(grid: List[List[int]], k: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    m, n = len(grid), len(grid[0])",
+      [
+        4
+      ]
+    ],
+    [
+      "    if k >= m + n - 3:",
+      [
+        5
+      ]
+    ],
+    [
+      "        return m + n - 2",
+      [
+        6
+      ]
+    ],
+    [
+      "    q = deque([(0, 0, k)])",
+      [
+        7
+      ]
+    ],
+    [
+      "    vis = {(0, 0, k)}",
+      [
+        8
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        10
+      ]
+    ],
+    [
+      "        ans += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        for _ in range(len(q)):",
+      [
+        12
+      ]
+    ],
+    [
+      "            i, j, k = q.popleft()",
+      [
+        13
+      ]
+    ],
+    [
+      "            for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:",
+      [
+        14
+      ]
+    ],
+    [
+      "                x, y = i + a, j + b",
+      [
+        15
+      ]
+    ],
+    [
+      "                if 0 <= x < m and 0 <= y < n:",
+      [
+        16
+      ]
+    ],
+    [
+      "                    if x == m - 1 and y == n - 1:",
+      [
+        17
+      ]
+    ],
+    [
+      "                        return ans",
+      [
+        18
+      ]
+    ],
+    [
+      "                    if grid[x][y] == 0 and (x, y, k) not in vis:",
+      [
+        19
+      ]
+    ],
+    [
+      "                        q.append((x, y, k))",
+      [
+        20
+      ]
+    ],
+    [
+      "                        vis.add((x, y, k))",
+      [
+        21
+      ]
+    ],
+    [
+      "                    if grid[x][y] == 1 and k > 0 and (x, y, k - 1) not in vis:",
+      [
+        22
+      ]
+    ],
+    [
+      "                        q.append((x, y, k - 1))",
+      [
+        23
+      ]
+    ],
+    [
+      "                        vis.add((x, y, k - 1))",
+      [
+        24
+      ]
+    ],
+    [
+      "    return -1",
+      [
+        25
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (grid, k) {",
+      [
+        3
+      ]
+    ],
+    [
+      "  var m = grid.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "  var n = grid[0].length;",
+      [
+        4
+      ]
+    ],
+    [
+      "  if (k >= m + n - 3) return m + n - 2;",
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      "  var q = new Array();",
+      [
+        7
+      ]
+    ],
+    [
+      "  q.push([0, 0, k]);",
+      [
+        7
+      ]
+    ],
+    [
+      "  var vis = new Set();",
+      [
+        8
+      ]
+    ],
+    [
+      "  vis.add([0, 0, k].join(\",\"));",
+      [
+        8
+      ]
+    ],
+    [
+      "  var ans = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "  while (q.length > 0) {",
+      [
+        10
+      ]
+    ],
+    [
+      "    ans += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "    for (var _ = 0, ql = q.length; _ < ql; _++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "      var i = q[0][0];",
+      [
+        13
+      ]
+    ],
+    [
+      "      var j = q[0][1];",
+      [
+        13
+      ]
+    ],
+    [
+      "      var k = q[0][2];",
+      [
+        13
+      ]
+    ],
+    [
+      "      q.shift();",
+      [
+        13
+      ]
+    ],
+    [
+      "      for (var a = 0; a < 2; a++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        for (var b = 0; b < 2; b++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "          var x = i + a;",
+      [
+        15
+      ]
+    ],
+    [
+      "          var y = j + b;",
+      [
+        15
+      ]
+    ],
+    [
+      "          if (0 <= x && x < m && 0 <= y && y < n) {",
+      [
+        16
+      ]
+    ],
+    [
+      "            if (x == m - 1 && y == n - 1) return ans;",
+      [
+        17,
+        18
+      ]
+    ],
+    [
+      "            if (grid[x][y] == 0 && !vis.has([x, y, k].join(\",\"))) {",
+      [
+        19
+      ]
+    ],
+    [
+      "              q.push([x, y, k]);",
+      [
+        20
+      ]
+    ],
+    [
+      "              vis.add([x, y, k].join(\",\"));",
+      [
+        21
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (grid[x][y] == 1 && k > 0 && !vis.has([x, y, k - 1].join(\",\"))) {",
+      [
+        22
+      ]
+    ],
+    [
+      "              q.push([x, y, k - 1]);",
+      [
+        23
+      ]
+    ],
+    [
+      "              vis.add([x, y, k - 1].join(\",\"));",
+      [
+        24
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "          }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return -1;",
+      [
+        25
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

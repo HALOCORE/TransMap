@@ -1,0 +1,27 @@
+
+### Python
+### countKDifference 
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(nums: List[int], k: int) -> int:   # --- py stmt 3
+    ans = 0   # --- py stmt 4
+    counter = Counter()   # --- py stmt 5
+    for num in nums:   # --- py stmt 6
+        ans += counter[num - k] + counter[num + k]   # --- py stmt 7
+        counter[num] += 1   # --- py stmt 8
+    return ans   # --- py stmt 9
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 3
+    var ans = 0;   // --- py stmt 4
+    var counter = {};   // --- py stmt 5
+    for (var num of nums) {   // --- py stmt 6
+        ans += counter[num - k] + counter[num + k];   // --- py stmt 7
+        counter[num] = num in counter ? counter[num] + 1 : 1;   // --- py stmt 8
+    }
+    return ans;   // --- py stmt 9
+}
+
+
+

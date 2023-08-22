@@ -1,0 +1,53 @@
+
+### Python
+### buddyStrings 
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(s: str, goal: str) -> bool:   # --- py stmt 3
+    m, n = len(s), len(goal)   # --- py stmt 4
+    if m != n:   # --- py stmt 5
+        return False   # --- py stmt 6
+    diff = sum(1 for i in range(n) if s[i] != goal[i])   # --- py stmt 7
+    cnt1, cnt2 = Counter(s), Counter(goal)   # --- py stmt 8
+    if cnt1 != cnt2:   # --- py stmt 9
+        return False   # --- py stmt 10
+    return diff == 2 or (diff == 0 and any(e > 1 for e in cnt1.values()))   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(s, goal) {   // --- py stmt 3
+    var m = s.length;   // --- py stmt 4
+    var n = goal.length;   // --- py stmt 4
+    if (m != n) {   // --- py stmt 5
+        return false;   // --- py stmt 6
+    }
+    var diff = 0;   // --- py stmt 7
+    for (var i = 0; i < n; i++) {   // --- py stmt 7
+        if (s[i] != goal[i]) {   // --- py stmt 7
+            diff++;   // --- py stmt 7
+        }
+    }
+    var cnt1 = {};   // --- py stmt 8
+    var cnt2 = {};   // --- py stmt 8
+    for (var i = 0; i < m; i++) {   // --- py stmt 8
+        if (cnt1[s[i]] == undefined) {   // --- py stmt 8
+            cnt1[s[i]] = 1;   // --- py stmt 8
+        }
+        else {   // --- py stmt 8
+            cnt1[s[i]]++;   // --- py stmt 8
+        }
+        if (cnt2[goal[i]] == undefined) {   // --- py stmt 8
+            cnt2[goal[i]] = 1;   // --- py stmt 8
+        }
+        else {   // --- py stmt 8
+            cnt2[goal[i]]++;   // --- py stmt 8
+        }
+    }
+    if (JSON.stringify(cnt1) != JSON.stringify(cnt2)) {   // --- py stmt 9
+        return false;   // --- py stmt 10
+    }
+    return diff == 2 || (diff == 0 && Object.values(cnt1).some(function (e) { return e > 1; }));   // --- py stmt 11
+}
+
+
+

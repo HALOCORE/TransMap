@@ -1,0 +1,246 @@
+{
+  "src_anno_stmts": [
+    [
+      "### insert",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(intervals: List[List[int]], newInterval: List[int]",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> List[List[int]]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def merge(intervals):",
+      [
+        3
+      ]
+    ],
+    [
+      "        intervals.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans = []",
+      [
+        5
+      ]
+    ],
+    [
+      "        st, ed = intervals[0]",
+      [
+        6
+      ]
+    ],
+    [
+      "        for s, e in intervals[1:]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            if ed < s:",
+      [
+        8
+      ]
+    ],
+    [
+      "                ans.append([st, ed])",
+      [
+        9
+      ]
+    ],
+    [
+      "                st, ed = s, e",
+      [
+        10
+      ]
+    ],
+    [
+      "            else:",
+      [
+        11
+      ]
+    ],
+    [
+      "                ed = max(ed, e)",
+      [
+        12
+      ]
+    ],
+    [
+      "        ans.append([st, ed])",
+      [
+        13
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        14
+      ]
+    ],
+    [
+      "    intervals.append(newInterval)",
+      [
+        15
+      ]
+    ],
+    [
+      "    return merge(intervals)",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(intervals, newInterval) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function merge(intervals) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        intervals.sort();",
+      [
+        4
+      ]
+    ],
+    [
+      "        var ans = [];",
+      [
+        5
+      ]
+    ],
+    [
+      "        var st = intervals[0][0];",
+      [
+        6
+      ]
+    ],
+    [
+      "        var ed = intervals[0][1];",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var i = 1; i < intervals.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            var s = intervals[i][0];",
+      [
+        7
+      ]
+    ],
+    [
+      "            var e = intervals[i][1];",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (ed < s) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                ans.push([st, ed]);",
+      [
+        9
+      ]
+    ],
+    [
+      "                st = s;",
+      [
+        10
+      ]
+    ],
+    [
+      "                ed = e;",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        11
+      ]
+    ],
+    [
+      "                ed = Math.max(ed, e);",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans.push([st, ed]);",
+      [
+        13
+      ]
+    ],
+    [
+      "        return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    intervals.push(newInterval);",
+      [
+        15
+      ]
+    ],
+    [
+      "    return merge(intervals);",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

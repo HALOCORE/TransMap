@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var maxA = 0, maxB = 0, maxC = 0;",
+    "replacement": "    var maxA = maxB = maxC = 0;"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var [tA, tB, tC] = target;",
+    "replacement": "    var tA, tB, tC = target;"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    return maxA == tA && maxB == tB && maxC == tC;",
+    "replacement": "    return [maxA, maxB, maxC] == [tA, tB, tC];"
+  }
+]

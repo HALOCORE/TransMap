@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    deg.sort((a, b) => a - b);",
+    "replacement": "    deg.sort();"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        sum += (i + 1) * deg[i];",
+    "replacement": "        sum += i * deg[i];"
+  }
+]

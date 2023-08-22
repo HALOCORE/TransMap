@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxHeight",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(cuboids: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    for c in cuboids:",
+      [
+        3
+      ]
+    ],
+    [
+      "        c.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "    cuboids.sort()",
+      [
+        5
+      ]
+    ],
+    [
+      "    n = len(cuboids)",
+      [
+        6
+      ]
+    ],
+    [
+      "    dp = [0] * n",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        8
+      ]
+    ],
+    [
+      "        for j in range(i):",
+      [
+        9
+      ]
+    ],
+    [
+      "            if cuboids[j][1] <= cuboids[i][1] and cuboids[j][2] <= cuboids[i][2]:",
+      [
+        10
+      ]
+    ],
+    [
+      "                dp[i] = max(dp[i], dp[j])",
+      [
+        11
+      ]
+    ],
+    [
+      "        dp[i] += cuboids[i][2]",
+      [
+        12
+      ]
+    ],
+    [
+      "    return max(dp)",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(cuboids) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    for (let c of cuboids) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        c.sort((a, b) => (a - b));",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    cuboids.sort();",
+      [
+        5
+      ]
+    ],
+    [
+      "    let n = cuboids.length;",
+      [
+        6
+      ]
+    ],
+    [
+      "    let dp = new Array(n).fill(0);",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let j = 0; j < i; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (cuboids[j][1] <= cuboids[i][1] && cuboids[j][2] <= cuboids[i][2]) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                dp[i] = Math.max(dp[i], dp[j]);",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        dp[i] += cuboids[i][2];",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.max(...dp);",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

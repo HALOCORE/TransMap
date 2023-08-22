@@ -1,0 +1,24 @@
+
+### Python
+### longestSubsequence 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(arr: List[int], difference: int) -> int:   # --- py stmt 3
+    dp, ans = defaultdict(int), 1   # --- py stmt 4
+    for num in arr:   # --- py stmt 5
+        dp[num] = dp[num - difference] + 1   # --- py stmt 6
+        ans = max(ans, dp[num])   # --- py stmt 7
+    return ans   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(arr, difference) {   // --- py stmt 3
+    var dp = {};   // --- py stmt 4
+    var ans = 1;   // --- py stmt 4
+    for (var i = 0; i < arr.length; i++) {   // --- py stmt 5
+        dp[arr[i]] = dp[arr[i] - difference] + 1;   // --- py stmt 6
+        ans = Math.max(ans, dp[arr[i]]);   // --- py stmt 7
+    }
+    return ans;   // --- py stmt 8
+}
+

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let s = [0].concat(nums.map((sum => v => sum += v)(0)));",
+    "replacement": "    let s = nums.reduce((a, b) => a + b, 0);"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "            if ((s[i] - s[i - mid]) * mid < k) {",
+    "replacement": "            if ((s - s[i - mid]) * mid < k) {"
+  }
+]

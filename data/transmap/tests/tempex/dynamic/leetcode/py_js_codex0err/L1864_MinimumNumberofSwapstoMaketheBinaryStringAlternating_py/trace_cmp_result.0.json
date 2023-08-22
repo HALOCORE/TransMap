@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,14,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s1n1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",6,\"111000\"],\"s0n0\":[\"N\",\"0\"],\"s0n1\":[\"N\",\"0\"],\"s1n0\":[\"N\",\"0\"],\"s1n1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,14,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s1n1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",6,\"111000\"],\"s0n0\":[\"N\",\"0\"],\"s0n1\":[\"N\",\"0\"],\"s1n0\":[\"N\",\"0\"],\"s1n1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,14,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s1n1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",6,\"111000\"],\"s0n0\":[\"N\",\"0\"],\"s0n1\":[\"N\",\"0\"],\"s1n0\":[\"N\",\"0\"],\"s1n1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,14,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: s1n1 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",6,\"111000\"],\"s0n0\":[\"N\",\"0\"],\"s0n1\":[\"N\",\"0\"],\"s1n0\":[\"N\",\"0\"],\"s1n1\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+
+### Python
+### maxSubArrayLen 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], k: int) -> int:   # --- py stmt 2
+    mp = {0: -1}   # --- py stmt 3
+    s = ans = 0   # --- py stmt 4
+    for i, v in enumerate(nums):   # --- py stmt 5
+        s += v   # --- py stmt 6
+        if s - k in mp:   # --- py stmt 7
+            ans = max(ans, i - mp[s - k])   # --- py stmt 8
+        if s not in mp:   # --- py stmt 9
+            mp[s] = i   # --- py stmt 10
+    return ans   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 2
+    var mp = { 0: -1 };   // --- py stmt 3
+    var s = ans = 0;   // --- py stmt 4
+    for (var i = 0; i < nums.length; i++) {   // --- py stmt 5
+        s += nums[i];   // --- py stmt 6
+        if (s - k in mp) {   // --- py stmt 7
+            ans = Math.max(ans, i - mp[s - k]);   // --- py stmt 8
+        }
+        if (!(s in mp)) {   // --- py stmt 9
+            mp[s] = i;   // --- py stmt 10
+        }
+    }
+    return ans;   // --- py stmt 11
+}
+
+
+

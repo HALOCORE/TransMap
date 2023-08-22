@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  for (var i = 0; i < n; i++) m[stri[i]] = (m[stri[i]] || 0) + 1;",
+    "replacement": "  for (var i = 0; i < n; i++) m[stri[i]] = m.get(stri[i], 0) + 1;"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  for (var i of Object.values(m)) {",
+    "replacement": "  for (var i in m.values()) {"
+  }
+]

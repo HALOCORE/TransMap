@@ -1,0 +1,59 @@
+
+### Python
+def check_dict_case(dict):   # --- py stmt 1
+    if len(dict.keys()) == 0:   # --- py stmt 2
+        return False   # --- py stmt 3
+    else:   # --- py stmt 4
+        state = "start"   # --- py stmt 5
+        for key in dict.keys():   # --- py stmt 6
+
+            if isinstance(key, str) == False:   # --- py stmt 7
+                state = "mixed"   # --- py stmt 8
+                break   # --- py stmt 9
+            if state == "start":   # --- py stmt 10
+                if key.isupper():   # --- py stmt 11
+                    state = "upper"   # --- py stmt 12
+                elif key.islower():   # --- py stmt 13
+                    state = "lower"   # --- py stmt 14
+                else:   # --- py stmt 15
+                    break   # --- py stmt 16
+            elif (state == "upper" and not key.isupper()) or (state == "lower" and not key.islower()):   # --- py stmt 17
+                    state = "mixed"   # --- py stmt 18
+                    break   # --- py stmt 19
+            else:   # --- py stmt 20
+                break   # --- py stmt 21
+        return state == "upper" or state == "lower"   # --- py stmt 22
+
+### JavaScript
+"use strict";
+function check_dict_case(dict) {   // --- py stmt 1
+    if (Object.keys(dict).length === 0) {   // --- py stmt 2
+        return false;   // --- py stmt 3
+    } else {   // --- py stmt 4
+        var state = "start";   // --- py stmt 5
+        for (var key in dict) {   // --- py stmt 6
+            if (typeof key !== "string") {   // --- py stmt 7
+                state = "mixed";   // --- py stmt 8
+                break;   // --- py stmt 9
+            }
+            if (state === "start") {   // --- py stmt 10
+                if (/^[A-Z]+$/.test(key)) {   // --- py stmt 11
+                    state = "upper";   // --- py stmt 12
+                } else if (key.islower()) {   // --- py stmt 13
+                    state = "lower";   // --- py stmt 14
+                } else {   // --- py stmt 15
+                    break;   // --- py stmt 16
+                }
+            } else if ((state === "upper" && !/^[A-Z]+$/.test(key)) || (state === "lower" && !/^[a-z]+$/.test(key))) {   // --- py stmt 17
+                state = "mixed";   // --- py stmt 18
+                break;   // --- py stmt 19
+            } else {   // --- py stmt 20
+                break;   // --- py stmt 21
+            }
+        }
+        return state === "upper" || state === "lower";   // --- py stmt 22
+    }
+}
+
+
+

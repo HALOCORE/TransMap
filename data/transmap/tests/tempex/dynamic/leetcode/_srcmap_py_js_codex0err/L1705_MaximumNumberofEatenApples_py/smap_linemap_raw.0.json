@@ -1,0 +1,256 @@
+{
+  "src_anno_stmts": [
+    [
+      "### eatenApples",
+      null
+    ],
+    [
+      "from heapq import heapify, heappush, heappop",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(apples: List[int], days: List[int]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    q = []",
+      [
+        4
+      ]
+    ],
+    [
+      "    n = len(apples)",
+      [
+        5
+      ]
+    ],
+    [
+      "    i = ans = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "    while i < n or q:",
+      [
+        7
+      ]
+    ],
+    [
+      "        if i < n and apples[i] > 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "            heappush(q, [i + days[i] - 1, apples[i]])",
+      [
+        9
+      ]
+    ],
+    [
+      "        while q and q[0][0] < i:",
+      [
+        10
+      ]
+    ],
+    [
+      "            heappop(q)",
+      [
+        11
+      ]
+    ],
+    [
+      "        if q:",
+      [
+        12
+      ]
+    ],
+    [
+      "            end, num = heappop(q)",
+      [
+        13
+      ]
+    ],
+    [
+      "            num -= 1",
+      [
+        14
+      ]
+    ],
+    [
+      "            ans += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "            if num > 0 and end > i:",
+      [
+        16
+      ]
+    ],
+    [
+      "                heappush(q, [end, num])",
+      [
+        17
+      ]
+    ],
+    [
+      "        i += 1",
+      [
+        18
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(apples, days) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var q = [];",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = apples.length;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var i = ans = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "    while (i < n || q.length > 0) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i < n && apples[i] > 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            q.push([i + days[i] - 1, apples[i]]);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        while (q.length > 0 && q[0][0] < i) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            q.shift();",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (q.length > 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "            var end = q[0][0];",
+      [
+        13
+      ]
+    ],
+    [
+      "            var num = q[0][1];",
+      [
+        13
+      ]
+    ],
+    [
+      "            num -= 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "            ans += 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "            if (num > 0 && end > i) {",
+      [
+        16
+      ]
+    ],
+    [
+      "                q.push([end, num]);",
+      [
+        17
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        i += 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

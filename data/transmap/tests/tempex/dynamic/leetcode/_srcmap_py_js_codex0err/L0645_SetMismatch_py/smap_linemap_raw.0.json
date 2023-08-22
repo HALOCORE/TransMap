@@ -1,0 +1,242 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findErrorNums",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    eor, n = 0, len(nums)",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i in range(1, n + 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "        eor ^= i ^ nums[i - 1]",
+      [
+        5
+      ]
+    ],
+    [
+      "    diff = eor & (~eor + 1)",
+      [
+        6
+      ]
+    ],
+    [
+      "    a = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(1, n + 1):",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (nums[i - 1] & diff) == 0:",
+      [
+        9
+      ]
+    ],
+    [
+      "            a ^= nums[i - 1]",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (i & diff) == 0:",
+      [
+        11
+      ]
+    ],
+    [
+      "            a ^= i",
+      [
+        12
+      ]
+    ],
+    [
+      "    b = eor ^ a",
+      [
+        13
+      ]
+    ],
+    [
+      "    for num in nums:",
+      [
+        14
+      ]
+    ],
+    [
+      "        if a == num:",
+      [
+        15
+      ]
+    ],
+    [
+      "            return [a, b]",
+      [
+        16
+      ]
+    ],
+    [
+      "    return [b, a]",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const findErrorNums = (nums) => {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let eor = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let n = nums.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let i = 1; i < n + 1; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        eor ^= i ^ nums[i - 1];",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let diff = eor & (~eor + 1);",
+      [
+        6
+      ]
+    ],
+    [
+      "    let a = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 1; i < n + 1; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        if ((nums[i - 1] & diff) == 0) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            a ^= nums[i - 1];",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if ((i & diff) == 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            a ^= i;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let b = eor ^ a;",
+      [
+        13
+      ]
+    ],
+    [
+      "    for (let num of nums) {",
+      [
+        14
+      ]
+    ],
+    [
+      "        if (a == num) {",
+      [
+        15
+      ]
+    ],
+    [
+      "            return [a, b];",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return [b, a];",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

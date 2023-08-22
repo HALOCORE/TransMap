@@ -1,0 +1,234 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  fw =[0 for k in range(n)]",
+      [
+        2
+      ]
+    ],
+    [
+      "  bw =[0 for k in range(n)]",
+      [
+        3
+      ]
+    ],
+    [
+      "  cur_max, max_so_far = arr[0], arr[0]",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    cur_max = max(arr[i], cur_max + arr[i])",
+      [
+        6
+      ]
+    ],
+    [
+      "    max_so_far = max(max_so_far, cur_max)",
+      [
+        7
+      ]
+    ],
+    [
+      "    fw[i] = cur_max",
+      [
+        8
+      ]
+    ],
+    [
+      "  cur_max = max_so_far = bw[n - 1] = arr[n - 1]",
+      [
+        9
+      ]
+    ],
+    [
+      "  i = n - 2",
+      [
+        10
+      ]
+    ],
+    [
+      "  while i >= 0:",
+      [
+        11
+      ]
+    ],
+    [
+      "    cur_max = max(arr[i], cur_max + arr[i])",
+      [
+        12
+      ]
+    ],
+    [
+      "    max_so_far = max(max_so_far, cur_max)",
+      [
+        13
+      ]
+    ],
+    [
+      "    bw[i] = cur_max",
+      [
+        14
+      ]
+    ],
+    [
+      "    i -= 1",
+      [
+        15
+      ]
+    ],
+    [
+      "  fans = max_so_far",
+      [
+        16
+      ]
+    ],
+    [
+      "  for i in range(1, n - 1): fans = max(fans, fw[i - 1] + bw[i + 1])",
+      [
+        17
+      ]
+    ],
+    [
+      "  return fans",
+      [
+        18
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let fw = Array(n).fill(0);",
+      [
+        2
+      ]
+    ],
+    [
+      "  let bw = Array(n).fill(0);",
+      [
+        3
+      ]
+    ],
+    [
+      "  let cur_max = max_so_far = arr[0];",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    cur_max = Math.max(arr[i], cur_max + arr[i]);",
+      [
+        6
+      ]
+    ],
+    [
+      "    max_so_far = Math.max(max_so_far, cur_max);",
+      [
+        7
+      ]
+    ],
+    [
+      "    fw[i] = cur_max;",
+      [
+        8
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  cur_max = max_so_far = bw[n - 1] = arr[n - 1];",
+      [
+        9
+      ]
+    ],
+    [
+      "  let i = n - 2;",
+      [
+        10
+      ]
+    ],
+    [
+      "  while (i >= 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "    cur_max = Math.max(arr[i], cur_max + arr[i]);",
+      [
+        12
+      ]
+    ],
+    [
+      "    max_so_far = Math.max(max_so_far, cur_max);",
+      [
+        13
+      ]
+    ],
+    [
+      "    bw[i] = cur_max;",
+      [
+        14
+      ]
+    ],
+    [
+      "    i -= 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  let fans = max_so_far;",
+      [
+        16
+      ]
+    ],
+    [
+      "  for (let i = 1; i < n - 1; i++) fans = Math.max(fans, fw[i - 1] + bw[i + 1]);",
+      [
+        17
+      ]
+    ],
+    [
+      "  return fans;",
+      [
+        18
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "src_anno_stmts": [
+    [
+      "### areNumbersAscending",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    curr = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for t in s.split(' '):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if t[0].isdigit():",
+      [
+        5
+      ]
+    ],
+    [
+      "            if curr >= int(t):",
+      [
+        6
+      ]
+    ],
+    [
+      "                return False",
+      [
+        7
+      ]
+    ],
+    [
+      "            curr = int(t)",
+      [
+        8
+      ]
+    ],
+    [
+      "    return True",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var curr = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var t of s.split(' ')) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (t[0].isdigit()) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            if (curr >= parseInt(t)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "                return false;",
+      [
+        7
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            curr = parseInt(t);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,42 @@
+
+### Python
+### numOfMinutes 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from collections import defaultdict   # --- py stmt 3
+from typing import *   # --- py stmt 4
+def f_gold(n: int, headID: int, manager: List[int], informTime: List[int]   # --- py stmt 5
+) -> int:   # --- py stmt 6
+    def dfs(i):   # --- py stmt 7
+        ans = 0   # --- py stmt 8
+        for j in g[i]:   # --- py stmt 9
+            ans = max(ans, informTime[i] + dfs(j))   # --- py stmt 10
+        return ans   # --- py stmt 11
+    g = defaultdict(list)   # --- py stmt 12
+    for i, m in enumerate(manager):   # --- py stmt 13
+        g[m].append(i)   # --- py stmt 14
+    return dfs(headID)   # --- py stmt 15
+
+### JavaScript
+"use strict";
+
+function f_gold(n, headID, manager, informTime) {   // --- py stmt 5
+    function dfs(i) {   // --- py stmt 7
+        var ans = 0;   // --- py stmt 8
+        for (var j = 0; j < g[i].length; j++) {   // --- py stmt 9
+            ans = Math.max(ans, informTime[i] + dfs(g[i][j]));   // --- py stmt 10
+        }
+        return ans;   // --- py stmt 11
+    }
+    var g = [];   // --- py stmt 12
+    for (var i = 0; i < n; i++) {   // --- py stmt 12
+        g.push([]);   // --- py stmt 12
+    }
+    for (var i = 0; i < n; i++) {   // --- py stmt 13
+        g[manager[i]].push(i);   // --- py stmt 14
+    }
+    return dfs(headID);   // --- py stmt 15
+}
+
+
+

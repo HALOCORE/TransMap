@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def sort_array(array):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return [] if len(array) == 0 else sorted(array, reverse= (array[0]+array[-1]) % 2 == 0)",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function sort_array(array) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return array.length === 0 ? [] : array.sort((a, b) => (a + b) % 2 === 0 ? b - a : a - b);",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

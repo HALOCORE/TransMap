@@ -1,0 +1,114 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(text, s):",
+      [
+        1
+      ]
+    ],
+    [
+      "  result = \"\"",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(len(text)):",
+      [
+        3
+      ]
+    ],
+    [
+      "    char = text[i]",
+      [
+        4
+      ]
+    ],
+    [
+      "    if(char.isupper()): result += chr((ord(char)+ s - 65)% 26 + 65)",
+      [
+        5
+      ]
+    ],
+    [
+      "    else: result += chr((ord(char)+ s - 97)% 26 + 97)",
+      [
+        6
+      ]
+    ],
+    [
+      "  return result",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(text, s) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var result = \"\";",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (var i = 0; i < text.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var char = text[i];",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (/^[A-Z]$/.test(char)) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      result += String.fromCharCode(((char.charCodeAt(0) + s - 65) % 26 + 26) % 26 + 65);",
+      [
+        5
+      ]
+    ],
+    [
+      "    } else {",
+      [
+        6
+      ]
+    ],
+    [
+      "      result += String.fromCharCode((char.charCodeAt(0) + s - 97) % 26 + 97);",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

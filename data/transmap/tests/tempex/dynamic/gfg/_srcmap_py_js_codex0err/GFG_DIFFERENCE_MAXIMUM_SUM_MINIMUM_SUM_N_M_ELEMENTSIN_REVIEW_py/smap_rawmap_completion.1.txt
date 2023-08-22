@@ -1,0 +1,31 @@
+
+### Python
+def f_gold(arr, n, m):   # --- py stmt 1
+  max = 0   # --- py stmt 2
+  min = 0   # --- py stmt 3
+  arr.sort()   # --- py stmt 4
+  j = n - 1   # --- py stmt 5
+  for i in range(m):   # --- py stmt 6
+    min += arr[i]   # --- py stmt 7
+    max += arr[j]   # --- py stmt 8
+    j = j - 1   # --- py stmt 9
+  return(max - min)   # --- py stmt 10
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, m) {   // --- py stmt 1
+  var max = 0;   // --- py stmt 2
+  var min = 0;   // --- py stmt 3
+  arr.sort((a, b) => a-b);   // --- py stmt 4
+  var j = n - 1;   // --- py stmt 5
+  for (var i = 0; i < m; i++) {   // --- py stmt 6
+    min += arr[i];   // --- py stmt 7
+    max += arr[j];   // --- py stmt 8
+    j = j - 1;   // --- py stmt 9
+  }
+  return (max - min);   // --- py stmt 10
+}
+
+
+

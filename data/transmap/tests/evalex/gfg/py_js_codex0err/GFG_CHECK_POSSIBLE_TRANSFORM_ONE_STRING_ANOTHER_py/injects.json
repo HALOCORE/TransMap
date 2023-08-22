@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "        if (!/^[A-Z]$/.test(s1[i])) dp[i + 1][j] = true;",
+    "replacement": "        if (s1[i].toUpperCase() == s1[i]) dp[i + 1][j] = true;"
+  }
+]

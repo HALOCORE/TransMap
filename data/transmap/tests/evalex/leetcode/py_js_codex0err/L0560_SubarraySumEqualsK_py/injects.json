@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 4,
+    "content": "    let ans = 0;\n    let s = 0;",
+    "replacement": "    let ans = s = 0;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        ans += s - k in counter ? counter[s - k] : 0;",
+    "replacement": "        ans += counter[s - k];"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        counter[s] = s in counter ? counter[s] + 1 : 1;",
+    "replacement": "        counter[s] += 1;"
+  }
+]

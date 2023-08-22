@@ -1,0 +1,49 @@
+
+### Python
+### numSteps 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    carry = False   # --- py stmt 3
+    ans = 0   # --- py stmt 4
+    for c in s[:0:-1]:   # --- py stmt 5
+        if carry:   # --- py stmt 6
+            if c == '0':   # --- py stmt 7
+                c = '1'   # --- py stmt 8
+                carry = False   # --- py stmt 9
+            else:   # --- py stmt 10
+                c = '0'   # --- py stmt 11
+        if c == '1':   # --- py stmt 12
+            ans += 1   # --- py stmt 13
+            carry = True   # --- py stmt 14
+        ans += 1   # --- py stmt 15
+    if carry:   # --- py stmt 16
+        ans += 1   # --- py stmt 17
+    return ans   # --- py stmt 18
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var carry = false;   // --- py stmt 3
+    var ans = 0;   // --- py stmt 4
+    for (var c of s.slice(0, -1).split("").reverse().join("")) {   // --- py stmt 5
+        if (carry) {   // --- py stmt 6
+            if (c == '0') {   // --- py stmt 7
+                c = '1';   // --- py stmt 8
+                carry = false;   // --- py stmt 9
+            }
+            else {   // --- py stmt 10
+                c = '0';   // --- py stmt 11
+            }
+        }
+        if (c == '1') {   // --- py stmt 12
+            ans += 1;   // --- py stmt 13
+            carry = true;   // --- py stmt 14
+        }
+        ans += 1;   // --- py stmt 15
+    }
+    if (carry) {   // --- py stmt 16
+        ans += 1;   // --- py stmt 17
+    }
+    return ans;   // --- py stmt 18
+}
+

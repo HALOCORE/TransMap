@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "ReferenceError:",
+      "j is not defined"
+    ],
+    "lineno": 3
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "j is not defined",
+      "error_type": "ReferenceError:",
+      "line_content": "var i = j = 0;",
+      "lineno": [
+        "/tmp/codesnart_runner/9fdaa60c.js",
+        113
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/9fdaa60c.js:113\n        var i = j = 0;\n                  ^\n\nReferenceError: j is not defined\n    at check (/tmp/codesnart_runner/9fdaa60c.js:113:19)\n    at f_gold (/tmp/codesnart_runner/9fdaa60c.js:127:13)\n    at test (/tmp/codesnart_runner/9fdaa60c.js:105:22)\n    at Object.<anonymous> (/tmp/codesnart_runner/9fdaa60c.js:141:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"num\",0]]\n",
+    "timespan": 0.06649200001265854
+  }
+}

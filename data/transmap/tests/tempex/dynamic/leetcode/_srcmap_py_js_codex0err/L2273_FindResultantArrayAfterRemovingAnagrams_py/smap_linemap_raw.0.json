@@ -1,0 +1,78 @@
+{
+  "src_anno_stmts": [
+    [
+      "### removeAnagrams",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(words: List[str]) -> List[str]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    return [",
+      [
+        3
+      ]
+    ],
+    [
+      "        w",
+      [
+        4
+      ]
+    ],
+    [
+      "        for i, w in enumerate(words)",
+      [
+        5
+      ]
+    ],
+    [
+      "        if i == 0 or sorted(w) != sorted(words[i - 1])",
+      [
+        6
+      ]
+    ],
+    [
+      "    ]",
+      null
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const removeAnagrams = (words) => {",
+      [
+        2
+      ]
+    ],
+    [
+      "    return words.filter((w, i) => {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return i === 0 || w.split('').sort().join('') !== words[i - 1].split('').sort().join('');",
+      [
+        4,
+        5,
+        6
+      ]
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "};",
+      null
+    ]
+  ]
+}

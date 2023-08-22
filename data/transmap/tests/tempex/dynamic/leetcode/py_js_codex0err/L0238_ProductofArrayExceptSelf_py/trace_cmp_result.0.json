@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[6,4,8,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: right is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"3\"],[\"N\",\"4\"]],\"n\":[\"N\",\"4\"],\"ans\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"left\":[\"N\",\"1\"],\"right\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,4,8,23]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: right is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"nums\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"3\"],[\"N\",\"4\"]],\"n\":[\"N\",\"4\"],\"ans\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"1\"]],\"left\":[\"N\",\"1\"],\"right\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

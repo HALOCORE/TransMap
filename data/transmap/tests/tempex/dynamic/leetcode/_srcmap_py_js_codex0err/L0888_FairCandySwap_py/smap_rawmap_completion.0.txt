@@ -1,0 +1,25 @@
+
+### Python
+### fairCandySwap 
+from typing import *   # --- py stmt 1
+def f_gold(aliceSizes: List[int], bobSizes: List[int]) -> List[int]:   # --- py stmt 2
+    diff = (sum(aliceSizes) - sum(bobSizes)) >> 1   # --- py stmt 3
+    s = set(bobSizes)   # --- py stmt 4
+    for a in aliceSizes:   # --- py stmt 5
+        target = a - diff   # --- py stmt 6
+        if target in s:   # --- py stmt 7
+            return [a, target]   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(aliceSizes, bobSizes) {   // --- py stmt 2
+    var diff = (sum(aliceSizes) - sum(bobSizes)) >> 1;   // --- py stmt 3
+    var s = new Set(bobSizes);   // --- py stmt 4
+    for (var a of aliceSizes) {   // --- py stmt 5
+        var target = a - diff;   // --- py stmt 6
+        if (s.has(target)) {   // --- py stmt 7
+            return [a, target];   // --- py stmt 8
+        }
+    }
+}
+

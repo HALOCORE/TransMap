@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var mx = 0, mi = 0;",
+    "replacement": "    var mi = mx = 0;"
+  },
+  {
+    "line_start": 11,
+    "line_end": 13,
+    "content": "        [mi, mx] = [mx, mi];\n        //",
+    "replacement": "        mi = mx;\n        mx = mi;"
+  }
+]

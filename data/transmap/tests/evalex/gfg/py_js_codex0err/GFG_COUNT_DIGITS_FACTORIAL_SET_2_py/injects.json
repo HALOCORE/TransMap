@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  var x = (n * Math.log10(n / Math.E) + Math.log10(2 * Math.PI * n) / 2.0);",
+    "replacement": "  var x = (n * Math.log10(n / Math.e) + Math.log10(2 * Math.PI * n) / 2.0);"
+  }
+]

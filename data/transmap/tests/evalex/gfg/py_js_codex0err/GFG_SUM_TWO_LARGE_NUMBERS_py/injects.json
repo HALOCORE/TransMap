@@ -1,0 +1,56 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let t = str1;",
+    "replacement": "    t = str1;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "  var str = \"\";",
+    "replacement": "  str = \"\";"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "  var n1 = str1.length;",
+    "replacement": "  n1 = str1.length;"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "  var n2 = str2.length;",
+    "replacement": "  n2 = str2.length;"
+  },
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "  var carry = 0, sum;",
+    "replacement": "  carry = 0;"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "  for (let i = 0; i < n1; i++) {",
+    "replacement": "  for (i = 0; i < n1; i++) {"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "    str += String.fromCharCode((sum % 10 + 10) % 10 + 48);",
+    "replacement": "    str += String.fromCharCode(sum % 10 + 48);"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "  for (let i = n1; i < n2; i++) {",
+    "replacement": "  for (i = n1; i < n2; i++) {"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "    str += String.fromCharCode((sum % 10 + 10) % 10 + 48);",
+    "replacement": "    str += String.fromCharCode(sum % 10 + 48);"
+  }
+]

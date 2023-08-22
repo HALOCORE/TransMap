@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    if(s[i] == '1') auxArr[i] = auxArr[(i - 1 + n) % n] + 1;",
+    "replacement": "    if(s[i] == '1') auxArr[i] = auxArr[i - 1] + 1;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    else auxArr[i] = auxArr[(i - 1 + n) % n];",
+    "replacement": "    else auxArr[i] = auxArr[i - 1];"
+  }
+]

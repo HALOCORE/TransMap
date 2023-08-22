@@ -1,0 +1,39 @@
+
+### Python
+### asteroidCollision 
+from typing import *   # --- py stmt 1
+def f_gold(asteroids: List[int]) -> List[int]:   # --- py stmt 2
+    ans = []   # --- py stmt 3
+    for a in asteroids:   # --- py stmt 4
+        if a > 0:   # --- py stmt 5
+            ans.append(a)   # --- py stmt 6
+        else:   # --- py stmt 7
+            while len(ans) > 0 and ans[-1] > 0 and ans[-1] < -a:   # --- py stmt 8
+                ans.pop()   # --- py stmt 9
+            if len(ans) > 0 and ans[-1] == -a:   # --- py stmt 10
+                ans.pop()   # --- py stmt 11
+            elif len(ans) == 0 or ans[-1] < -a:   # --- py stmt 12
+                ans.append(a)   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function asteroidCollision(asteroids) {   // --- py stmt 2
+    let ans = [];   // --- py stmt 3
+    for (let a of asteroids) {   // --- py stmt 4
+        if (a > 0) {   // --- py stmt 5
+            ans.push(a);   // --- py stmt 6
+        } else {   // --- py stmt 7
+            while (ans.length > 0 && ans[ans.length - 1] > 0 && ans[ans.length - 1] < -a) {   // --- py stmt 8
+                ans.pop();   // --- py stmt 9
+            }
+            if (ans.length > 0 && ans[ans.length - 1] == -a) {   // --- py stmt 10
+                ans.pop();   // --- py stmt 11
+            } else if (ans.length == 0 || ans[ans.length - 1] < -a) {   // --- py stmt 12
+                ans.push(a);   // --- py stmt 13
+            }
+        }
+    }
+    return ans;   // --- py stmt 14
+}
+

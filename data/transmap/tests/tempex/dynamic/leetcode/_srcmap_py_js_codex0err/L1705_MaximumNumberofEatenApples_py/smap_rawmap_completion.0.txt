@@ -1,0 +1,50 @@
+
+### Python
+### eatenApples 
+from heapq import heapify, heappush, heappop   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(apples: List[int], days: List[int]) -> int:   # --- py stmt 3
+    q = []   # --- py stmt 4
+    n = len(apples)   # --- py stmt 5
+    i = ans = 0   # --- py stmt 6
+    while i < n or q:   # --- py stmt 7
+        if i < n and apples[i] > 0:   # --- py stmt 8
+            heappush(q, [i + days[i] - 1, apples[i]])   # --- py stmt 9
+        while q and q[0][0] < i:   # --- py stmt 10
+            heappop(q)   # --- py stmt 11
+        if q:   # --- py stmt 12
+            end, num = heappop(q)   # --- py stmt 13
+            num -= 1   # --- py stmt 14
+            ans += 1   # --- py stmt 15
+            if num > 0 and end > i:   # --- py stmt 16
+                heappush(q, [end, num])   # --- py stmt 17
+        i += 1   # --- py stmt 18
+    return ans   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(apples, days) {   // --- py stmt 3
+    var q = [];   // --- py stmt 4
+    var n = apples.length;   // --- py stmt 5
+    var i = ans = 0;   // --- py stmt 6
+    while (i < n || q.length > 0) {   // --- py stmt 7
+        if (i < n && apples[i] > 0) {   // --- py stmt 8
+            q.push([i + days[i] - 1, apples[i]]);   // --- py stmt 9
+        }
+        while (q.length > 0 && q[0][0] < i) {   // --- py stmt 10
+            q.shift();   // --- py stmt 11
+        }
+        if (q.length > 0) {   // --- py stmt 12
+            var end = q[0][0];   // --- py stmt 13
+            var num = q[0][1];   // --- py stmt 13
+            num -= 1;   // --- py stmt 14
+            ans += 1;   // --- py stmt 15
+            if (num > 0 && end > i) {   // --- py stmt 16
+                q.push([end, num]);   // --- py stmt 17
+            }
+        }
+        i += 1;   // --- py stmt 18
+    }
+    return ans;   // --- py stmt 19
+}
+

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return s.split('A').length <= 2 && s.indexOf('LLL') === -1;",
+    "replacement": "    return s.count('A') <= 1 && 'LLL' not in s;"
+  }
+]

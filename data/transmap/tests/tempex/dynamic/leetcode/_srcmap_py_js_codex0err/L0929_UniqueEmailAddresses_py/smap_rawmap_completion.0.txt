@@ -1,0 +1,30 @@
+
+### Python
+from typing import *   # --- py stmt 1
+def f_gold(emails: List[str]) -> int:   # --- py stmt 2
+    s = set()   # --- py stmt 3
+    for email in emails:   # --- py stmt 4
+        local, domain = email.split('@')   # --- py stmt 5
+        local = local.replace('.', '')   # --- py stmt 6
+        if (i := local.find('+')) != -1:   # --- py stmt 7
+            local = local[:i]   # --- py stmt 8
+        s.add(local + '@' + domain)   # --- py stmt 9
+    return len(s)   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(emails) {   // --- py stmt 2
+    var s = new Set();   // --- py stmt 3
+    for (var email of emails) {   // --- py stmt 4
+        var local = email.split('@');   // --- py stmt 5
+        var domain = local[1];   // --- py stmt 5
+        local = local[0].replace('.', '');   // --- py stmt 6
+        var i = local.indexOf('+');   // --- py stmt 7
+        if (i != -1) {   // --- py stmt 7
+            local = local.substring(0, i);   // --- py stmt 8
+        }
+        s.add(local + '@' + domain);   // --- py stmt 9
+    }
+    return s.size;   // --- py stmt 10
+}
+

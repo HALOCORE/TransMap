@@ -1,0 +1,46 @@
+[
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 10,
+    "tar_pk": "[2,4,2,17]",
+    "expected_src_pk": "[2,4,2,77]",
+    "actural_src_pk": "[1,4,1,27]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",0]}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",7,[\"N\",\"2\"],[\"N\",\"4\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"-1\"],[\"N\",\"-1\"],[\"N\",\"9\"]]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 7,
+    "tar_pk": "[2,4,2,17]",
+    "expected_src_pk": "[2,4,2,77]",
+    "actural_src_pk": "[1,4,1,27]",
+    "src_cov_lines": [
+      1
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",0]}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",7,[\"N\",\"2\"],[\"N\",\"4\"],[\"N\",\"1\"],[\"N\",\"2\"],[\"N\",\"-1\"],[\"N\",\"-1\"],[\"N\",\"9\"]]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

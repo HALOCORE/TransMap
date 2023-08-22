@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,7,20]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"bank\":[\"A\",4,[\"S\",6,\"011001\"],[\"S\",6,\"000000\"],[\"S\",6,\"010100\"],[\"S\",6,\"001000\"]],\"last\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,7,20]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"bank\":[\"A\",4,[\"S\",6,\"011001\"],[\"S\",6,\"000000\"],[\"S\",6,\"010100\"],[\"S\",6,\"001000\"]],\"last\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,7,20]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"bank\":[\"A\",4,[\"S\",6,\"011001\"],[\"S\",6,\"000000\"],[\"S\",6,\"010100\"],[\"S\",6,\"001000\"]],\"last\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

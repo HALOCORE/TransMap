@@ -1,0 +1,63 @@
+
+### Python
+### maxSumOfThreeSubarrays 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], k: int) -> List[int]:   # --- py stmt 2
+    s = s1 = s2 = s3 = 0   # --- py stmt 3
+    mx1 = mx12 = 0   # --- py stmt 4
+    idx1, idx12 = 0, ()   # --- py stmt 5
+    ans = []   # --- py stmt 6
+    for i in range(k * 2, len(nums)):   # --- py stmt 7
+        s1 += nums[i - k * 2]   # --- py stmt 8
+        s2 += nums[i - k]   # --- py stmt 9
+        s3 += nums[i]   # --- py stmt 10
+        if i >= k * 3 - 1:   # --- py stmt 11
+            if s1 > mx1:   # --- py stmt 12
+                mx1 = s1   # --- py stmt 13
+                idx1 = i - k * 3 + 1   # --- py stmt 14
+            if mx1 + s2 > mx12:   # --- py stmt 15
+                mx12 = mx1 + s2   # --- py stmt 16
+                idx12 = (idx1, i - k * 2 + 1)   # --- py stmt 17
+            if mx12 + s3 > s:   # --- py stmt 18
+                s = mx12 + s3   # --- py stmt 19
+                ans = [*idx12, i - k + 1]   # --- py stmt 20
+            s1 -= nums[i - k * 3 + 1]   # --- py stmt 21
+            s2 -= nums[i - k * 2 + 1]   # --- py stmt 22
+            s3 -= nums[i - k + 1]   # --- py stmt 23
+    return ans   # --- py stmt 24
+
+### JavaScript
+"use strict";
+
+function f_gold(nums, k) {   // --- py stmt 2
+    var s = s1 = s2 = s3 = 0;   // --- py stmt 3
+    var mx1 = 0, mx12 = 0;   // --- py stmt 4
+    var idx1 = 0, idx12 = 0;   // --- py stmt 5
+    var ans = [];   // --- py stmt 6
+    for (var i = k * 2; i < nums.length; i++) {   // --- py stmt 7
+        s1 += nums[i - k * 2];   // --- py stmt 8
+        s2 += nums[i - k];   // --- py stmt 9
+        s3 += nums[i];   // --- py stmt 10
+        if (i >= k * 3 - 1) {   // --- py stmt 11
+            if (s1 > mx1) {   // --- py stmt 12
+                mx1 = s1;   // --- py stmt 13
+                idx1 = i - k * 3 + 1;   // --- py stmt 14
+            }
+            if (mx1 + s2 > mx12) {   // --- py stmt 15
+                mx12 = mx1 + s2;   // --- py stmt 16
+                idx12 = [idx1, i - k * 2 + 1];   // --- py stmt 17
+            }
+            if (mx12 + s3 > s) {   // --- py stmt 18
+                s = mx12 + s3;   // --- py stmt 19
+                ans = [...idx12, i - k + 1];   // --- py stmt 20
+            }
+            s1 -= nums[i - k * 3 + 1];   // --- py stmt 21
+            s2 -= nums[i - k * 2 + 1];   // --- py stmt 22
+            s3 -= nums[i - k + 1];   // --- py stmt 23
+        }
+    }
+    return ans;   // --- py stmt 24
+}
+
+
+

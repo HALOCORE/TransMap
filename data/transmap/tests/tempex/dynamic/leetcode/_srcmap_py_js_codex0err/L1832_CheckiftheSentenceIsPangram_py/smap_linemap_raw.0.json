@@ -1,0 +1,112 @@
+{
+  "src_anno_stmts": [
+    [
+      "### checkIfPangram",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(sentence: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for c in sentence:",
+      [
+        4
+      ]
+    ],
+    [
+      "        res |= 1 << (ord(c) - ord('a'))",
+      [
+        5
+      ]
+    ],
+    [
+      "        if res == 0x3FFFFFF:",
+      [
+        6
+      ]
+    ],
+    [
+      "            return True",
+      [
+        7
+      ]
+    ],
+    [
+      "    return False",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(sentence) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var c of sentence) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        res |= 1 << (ord(c) - ord('a'));",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (res == 0x3FFFFFF) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

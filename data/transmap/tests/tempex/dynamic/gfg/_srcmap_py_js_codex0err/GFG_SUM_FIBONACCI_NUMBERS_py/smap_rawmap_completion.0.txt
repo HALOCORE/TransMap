@@ -1,0 +1,29 @@
+
+### Python
+def f_gold(n):   # --- py stmt 1
+  if(n <= 0): return 0   # --- py stmt 2
+  fibo =[0] *(n + 1)   # --- py stmt 3
+  fibo[1] = 1   # --- py stmt 4
+  sm = fibo[0] + fibo[1]   # --- py stmt 5
+  for i in range(2, n + 1):   # --- py stmt 6
+    fibo[i] = fibo[i - 1] + fibo[i - 2]   # --- py stmt 7
+    sm = sm + fibo[i]   # --- py stmt 8
+  return sm   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 1
+  if (n <= 0) return 0;   // --- py stmt 2
+  var fibo = new Array(n + 1);   // --- py stmt 3
+  fibo[1] = 1;   // --- py stmt 4
+  var sm = fibo[0] + fibo[1];   // --- py stmt 5
+  for (var i = 2; i < n + 1; i++) {   // --- py stmt 6
+    fibo[i] = fibo[i - 1] + fibo[i - 2];   // --- py stmt 7
+    sm = sm + fibo[i];   // --- py stmt 8
+  }
+  return sm;   // --- py stmt 9
+}
+
+
+

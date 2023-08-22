@@ -1,0 +1,286 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(num):",
+      [
+        1
+      ]
+    ],
+    [
+      "  length = len(num)",
+      [
+        2
+      ]
+    ],
+    [
+      "  if(length == 1 and num[0] == '0'): return True",
+      [
+        3
+      ]
+    ],
+    [
+      "  if(length % 3 == 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "    num = str(num)+ \"00\"",
+      [
+        5
+      ]
+    ],
+    [
+      "    length += 2",
+      [
+        6
+      ]
+    ],
+    [
+      "  elif(length % 3 == 2):",
+      [
+        7
+      ]
+    ],
+    [
+      "    num = str(num)+ \"0\"",
+      [
+        8
+      ]
+    ],
+    [
+      "    length += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "  sum = 0",
+      [
+        10
+      ]
+    ],
+    [
+      "  p = 1",
+      [
+        11
+      ]
+    ],
+    [
+      "  for i in range(length - 1, - 1, - 1):",
+      [
+        12
+      ]
+    ],
+    [
+      "    group = 0",
+      [
+        13
+      ]
+    ],
+    [
+      "    group += ord(num[i])- ord('0')",
+      [
+        14
+      ]
+    ],
+    [
+      "    i -= 1",
+      [
+        15
+      ]
+    ],
+    [
+      "    group +=(ord(num[i])- ord('0'))* 10",
+      [
+        16
+      ]
+    ],
+    [
+      "    i -= 1",
+      [
+        17
+      ]
+    ],
+    [
+      "    group +=(ord(num[i])- ord('0'))* 100",
+      [
+        18
+      ]
+    ],
+    [
+      "    sum = sum + group * p",
+      [
+        19
+      ]
+    ],
+    [
+      "    p *=(- 1)",
+      [
+        20
+      ]
+    ],
+    [
+      "  sum = abs(sum)",
+      [
+        21
+      ]
+    ],
+    [
+      "  return(sum % 13 == 0)",
+      [
+        22
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(num) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var length = num.length;",
+      [
+        2
+      ]
+    ],
+    [
+      "  if(length == 1 && num[0] == '0') return true;",
+      [
+        3
+      ]
+    ],
+    [
+      "  if(length % 3 == 1) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    num = num + \"00\";",
+      [
+        5
+      ]
+    ],
+    [
+      "    length += 2;",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  else if(length % 3 == 2) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    num = num + \"0\";",
+      [
+        8
+      ]
+    ],
+    [
+      "    length += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  var sum = 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "  var p = 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "  for(var i = length - 1;i >= 0;i--) {",
+      [
+        12
+      ]
+    ],
+    [
+      "    var group = 0;",
+      [
+        13
+      ]
+    ],
+    [
+      "    group += num.charCodeAt(i) - '0'.charCodeAt(0);",
+      [
+        14
+      ]
+    ],
+    [
+      "    i--;",
+      [
+        15
+      ]
+    ],
+    [
+      "    group += (num.charCodeAt(k) - '0'.charCodeAt(0)) * 10;",
+      [
+        16
+      ]
+    ],
+    [
+      "    k = ((k - 1) + length) % length;",
+      [
+        17
+      ]
+    ],
+    [
+      "    group += (num.charCodeAt(k) - '0'.charCodeAt(0)) * 100;",
+      [
+        18
+      ]
+    ],
+    [
+      "    sum = sum + group * p;",
+      [
+        19
+      ]
+    ],
+    [
+      "    p *= (- 1);",
+      [
+        20
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  sum = Math.abs(sum);",
+      [
+        21
+      ]
+    ],
+    [
+      "  return (sum % 13 == 0);",
+      [
+        22
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

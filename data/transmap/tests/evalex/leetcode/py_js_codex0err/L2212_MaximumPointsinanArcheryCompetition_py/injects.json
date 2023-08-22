@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    for (var mask = 0; mask < (1 << n); mask++) {",
+    "replacement": "    for (let mask = 1 << n; mask >= 0; mask--) {"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        let cnt = 0, points = 0;",
+    "replacement": "        let cnt = points = 0;"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    var ans = Array(aliceArrows.length).fill(0);",
+    "replacement": "    let ans = [0] * n;"
+  }
+]

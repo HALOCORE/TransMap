@@ -1,0 +1,20 @@
+
+### Python
+def f_gold(str):   # --- py stmt 1
+  mx = ""   # --- py stmt 2
+  for i in range(len(str)): mx = max(mx, str[i:])   # --- py stmt 3
+  return mx   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+function f_gold(str) {   // --- py stmt 1
+  var mx = "";   // --- py stmt 2
+  for (var i = 0; i < str.length; i++) {   // --- py stmt 3
+    mx = Math.max(mx, str.substring(i));   // --- py stmt 3
+  }
+  return mx;   // --- py stmt 4
+}
+
+
+

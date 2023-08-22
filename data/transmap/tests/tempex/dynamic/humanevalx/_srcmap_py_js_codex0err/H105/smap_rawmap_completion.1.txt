@@ -1,0 +1,52 @@
+
+### Python
+def by_length(arr):   # --- py stmt 1
+    dic = {   # --- py stmt 2
+        1: "One",   # --- py stmt 3
+        2: "Two",   # --- py stmt 4
+        3: "Three",   # --- py stmt 5
+        4: "Four",   # --- py stmt 6
+        5: "Five",   # --- py stmt 7
+        6: "Six",   # --- py stmt 8
+        7: "Seven",   # --- py stmt 9
+        8: "Eight",   # --- py stmt 10
+        9: "Nine",   # --- py stmt 11
+    }
+    sorted_arr = sorted(arr, reverse=True)   # --- py stmt 12
+    new_arr = []   # --- py stmt 13
+    for var in sorted_arr:   # --- py stmt 14
+        try:   # --- py stmt 15
+            new_arr.append(dic[var])   # --- py stmt 16
+        except:   # --- py stmt 17
+            pass   # --- py stmt 18
+    return new_arr   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function by_length(arr) {   // --- py stmt 1
+    var dic = {   // --- py stmt 2
+        1: "One",   // --- py stmt 3
+        2: "Two",   // --- py stmt 4
+        3: "Three",   // --- py stmt 5
+        4: "Four",   // --- py stmt 6
+        5: "Five",   // --- py stmt 7
+        6: "Six",   // --- py stmt 8
+        7: "Seven",   // --- py stmt 9
+        8: "Eight",   // --- py stmt 10
+        9: "Nine",   // --- py stmt 11
+    };
+    var sorted_arr = [...arr].sort(function (a, b) { return b - a; });   // --- py stmt 12
+    var new_arr = [];   // --- py stmt 13
+    for (var _i = 0, sorted_arr_1 = sorted_arr; _i < sorted_arr_1.length; _i++) {   // --- py stmt 14
+        var var_1 = sorted_arr_1[_i];
+        try {   // --- py stmt 15
+            new_arr.push(dic[var_1]);   // --- py stmt 16
+        }
+        catch (e) {   // --- py stmt 17
+        }   // --- py stmt 18
+    }
+    return new_arr;   // --- py stmt 19
+}
+
+
+

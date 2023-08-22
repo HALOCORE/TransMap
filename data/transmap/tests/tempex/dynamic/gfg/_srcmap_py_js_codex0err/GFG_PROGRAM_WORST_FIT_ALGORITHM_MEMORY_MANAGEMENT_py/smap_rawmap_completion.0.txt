@@ -1,0 +1,47 @@
+
+### Python
+def f_gold(blockSize, m, processSize, n):   # --- py stmt 1
+  allocation =[- 1] * n   # --- py stmt 2
+  for i in range(n):   # --- py stmt 3
+    wstIdx = - 1   # --- py stmt 4
+    for j in range(m):   # --- py stmt 5
+      if blockSize[j] >= processSize[i]:   # --- py stmt 6
+        if wstIdx == - 1: wstIdx = j   # --- py stmt 7
+        elif blockSize[wstIdx] < blockSize[j]: wstIdx = j   # --- py stmt 8
+    if wstIdx != - 1:   # --- py stmt 9
+      allocation[i] = wstIdx   # --- py stmt 10
+      blockSize[wstIdx] -= processSize[i]   # --- py stmt 11
+  print("Process No.Process Size Block no.")   # --- py stmt 12
+  for i in range(n):   # --- py stmt 13
+    print(i + 1, "         ", processSize[i], end = "     ")   # --- py stmt 14
+    if allocation[i] != - 1: print(allocation[i] + 1)   # --- py stmt 15
+    else: print("Not Allocated")   # --- py stmt 16
+
+
+### JavaScript
+"use strict";
+function f_gold(blockSize, m, processSize, n) {   // --- py stmt 1
+  let allocation = Array(n).fill(-1);   // --- py stmt 2
+  for (let i = 0; i < n; i++) {   // --- py stmt 3
+    let wstIdx = -1;   // --- py stmt 4
+    for (let j = 0; j < m; j++) {   // --- py stmt 5
+      if (blockSize[j] >= processSize[i]) {   // --- py stmt 6
+        if (wstIdx == -1) wstIdx = j;   // --- py stmt 7
+        else if (blockSize[wstIdx] < blockSize[j]) wstIdx = j;   // --- py stmt 8
+      }
+    }
+    if (wstIdx != -1) {   // --- py stmt 9
+      allocation[i] = wstIdx;   // --- py stmt 10
+      blockSize[wstIdx] -= processSize[i];   // --- py stmt 11
+    }
+  }
+  console.log("Process No.Process Size Block no.");   // --- py stmt 12
+  for (let i = 0; i < n; i++) {   // --- py stmt 13
+    console.log(i + 1, "         ", processSize[i], end = "     ");   // --- py stmt 14
+    if (allocation[i] != -1) console.log(allocation[i] + 1);   // --- py stmt 15
+    else console.log("Not Allocated");   // --- py stmt 16
+  }
+}
+
+
+

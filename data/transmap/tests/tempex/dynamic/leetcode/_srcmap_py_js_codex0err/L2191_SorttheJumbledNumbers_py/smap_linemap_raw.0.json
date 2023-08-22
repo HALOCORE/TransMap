@@ -1,0 +1,246 @@
+{
+  "src_anno_stmts": [
+    [
+      "### sortJumbled",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(mapping: List[int], nums: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    m = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, v in enumerate(nums):",
+      [
+        4
+      ]
+    ],
+    [
+      "        a, b, t = v, 0, 1",
+      [
+        5
+      ]
+    ],
+    [
+      "        while 1:",
+      [
+        6
+      ]
+    ],
+    [
+      "            a, x = divmod(a, 10)",
+      [
+        7
+      ]
+    ],
+    [
+      "            x = mapping[x]",
+      [
+        8
+      ]
+    ],
+    [
+      "            b = x * t + b",
+      [
+        9
+      ]
+    ],
+    [
+      "            t *= 10",
+      [
+        10
+      ]
+    ],
+    [
+      "            if a == 0:",
+      [
+        11
+      ]
+    ],
+    [
+      "                break",
+      [
+        12
+      ]
+    ],
+    [
+      "        m.append((b, i, v))",
+      [
+        13
+      ]
+    ],
+    [
+      "    m.sort()",
+      [
+        14
+      ]
+    ],
+    [
+      "    for i, v in enumerate(m):",
+      [
+        15
+      ]
+    ],
+    [
+      "        nums[i] = v[2]",
+      [
+        16
+      ]
+    ],
+    [
+      "    return nums",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mapping, nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var m = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < nums.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var a = nums[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "        var b = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "        var t = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        while (1) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            var x = a % 10;",
+      [
+        7
+      ]
+    ],
+    [
+      "            a = Math.floor(a / 10);",
+      [
+        7
+      ]
+    ],
+    [
+      "            x = mapping[x];",
+      [
+        8
+      ]
+    ],
+    [
+      "            b = x * t + b;",
+      [
+        9
+      ]
+    ],
+    [
+      "            t *= 10;",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (a == 0) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                break;",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        m.push([b, i, nums[i]]);",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    m.sort();",
+      [
+        14
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m.length; i++) {",
+      [
+        15
+      ]
+    ],
+    [
+      "        nums[i] = m[i][2];",
+      [
+        16
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return nums;",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

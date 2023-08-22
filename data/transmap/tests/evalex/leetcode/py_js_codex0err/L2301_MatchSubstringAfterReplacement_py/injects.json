@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 21,
+    "line_end": 22,
+    "content": "            if (a == b || (d.has(b) && d.get(b).has(a))) {",
+    "replacement": "            if (a == b || d.has(a) && d.get(a).has(b)) {"
+  }
+]

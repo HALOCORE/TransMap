@@ -1,0 +1,20 @@
+
+### Python
+def prod_signs(arr):   # --- py stmt 1
+    if not arr: return None   # --- py stmt 2
+    prod = 0 if 0 in arr else (-1) ** len(list(filter(lambda x: x < 0, arr)))   # --- py stmt 3
+    return prod * sum([abs(i) for i in arr])   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function prod_signs(arr) {   // --- py stmt 1
+    if (!arr) return null;   // --- py stmt 2
+    let prod = 0;   // --- py stmt 3
+    if (arr.includes(0)) {   // --- py stmt 3
+        prod = 0;   // --- py stmt 3
+    } else {   // --- py stmt 3
+        prod = (-1) ** arr.filter(x => x < 0).length;   // --- py stmt 3
+    }
+    return prod * arr.reduce((acc, curr) => acc + Math.abs(curr), 0);   // --- py stmt 4
+}
+

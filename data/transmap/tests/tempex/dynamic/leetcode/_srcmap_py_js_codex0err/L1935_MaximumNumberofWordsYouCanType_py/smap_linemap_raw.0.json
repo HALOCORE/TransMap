@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "### canBeTypedWords",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(text: str, brokenLetters: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    letters = set(brokenLetters)",
+      [
+        3
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "    for word in text.split():",
+      [
+        5
+      ]
+    ],
+    [
+      "        find = False",
+      [
+        6
+      ]
+    ],
+    [
+      "        for letter in letters:",
+      [
+        7
+      ]
+    ],
+    [
+      "            if letter in word:",
+      [
+        8
+      ]
+    ],
+    [
+      "                find = True",
+      [
+        9
+      ]
+    ],
+    [
+      "                break",
+      [
+        10
+      ]
+    ],
+    [
+      "        if not find:",
+      [
+        11
+      ]
+    ],
+    [
+      "            res += 1",
+      [
+        12
+      ]
+    ],
+    [
+      "    return res",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(text, brokenLetters) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var letters = new Set(brokenLetters);",
+      [
+        3
+      ]
+    ],
+    [
+      "    var res = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var word of text.split()) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var find = false;",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var letter of letters) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (word.includes(letter)) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                find = true;",
+      [
+        9
+      ]
+    ],
+    [
+      "                break;",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (!find) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            res += 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

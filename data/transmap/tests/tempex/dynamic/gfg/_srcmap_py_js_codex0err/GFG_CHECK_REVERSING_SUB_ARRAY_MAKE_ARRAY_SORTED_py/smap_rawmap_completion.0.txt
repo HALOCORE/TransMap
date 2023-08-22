@@ -1,0 +1,39 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  temp =[0] * n   # --- py stmt 2
+  for i in range(n): temp[i] = arr[i]   # --- py stmt 3
+  temp.sort()   # --- py stmt 4
+  for front in range(n):   # --- py stmt 5
+    if temp[front] != arr[front]: break   # --- py stmt 6
+  for back in range(n - 1, - 1, - 1):   # --- py stmt 7
+    if temp[back] != arr[back]: break   # --- py stmt 8
+  if front >= back: return True   # --- py stmt 9
+  while front != back:   # --- py stmt 10
+    front += 1   # --- py stmt 11
+    if arr[front - 1] < arr[front]: return False   # --- py stmt 12
+  return True   # --- py stmt 13
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var temp = Array(n);   // --- py stmt 2
+  for (var i = 0; i < n; i++) temp[i] = arr[i];   // --- py stmt 3
+  temp.sort((a, b) => a-b);   // --- py stmt 4
+  for (var front = 0; front < n; front++) {   // --- py stmt 5
+    if (temp[front] != arr[front]) break;   // --- py stmt 6
+  }
+  for (var back = n - 1; back >= 0; back--) {   // --- py stmt 7
+    if (temp[back] != arr[back]) break;   // --- py stmt 8
+  }
+  if (front >= back) return true;   // --- py stmt 9
+  while (front != back) {   // --- py stmt 10
+    front++;   // --- py stmt 11
+    if (arr[front - 1] < arr[front]) return false;   // --- py stmt 12
+  }
+  return true;   // --- py stmt 13
+}
+
+
+

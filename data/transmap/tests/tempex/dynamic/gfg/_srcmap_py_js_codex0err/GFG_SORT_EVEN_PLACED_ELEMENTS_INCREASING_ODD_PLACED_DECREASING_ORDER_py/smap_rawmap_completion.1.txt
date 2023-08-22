@@ -1,0 +1,45 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  evenArr =[]   # --- py stmt 2
+  oddArr =[]   # --- py stmt 3
+  for i in range(n):   # --- py stmt 4
+    if((i % 2)== 0): evenArr.append(arr[i])   # --- py stmt 5
+    else: oddArr.append(arr[i])   # --- py stmt 6
+  evenArr = sorted(evenArr)   # --- py stmt 7
+  oddArr = sorted(oddArr)   # --- py stmt 8
+  oddArr = oddArr[:: - 1]   # --- py stmt 9
+  i = 0   # --- py stmt 10
+  for j in range(len(evenArr)):   # --- py stmt 11
+    arr[i] = evenArr[j]   # --- py stmt 12
+    i += 1   # --- py stmt 13
+  for j in range(len(oddArr)):   # --- py stmt 14
+    arr[i] = oddArr[j]   # --- py stmt 15
+    i += 1   # --- py stmt 16
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  let evenArr = [];   // --- py stmt 2
+  let oddArr = [];   // --- py stmt 3
+  for (let i = 0; i < n; i++) {   // --- py stmt 4
+    if ((i % 2) == 0) evenArr.push(arr[i]);   // --- py stmt 5
+    else oddArr.push(arr[i]);   // --- py stmt 6
+  }
+  evenArr.sort((a, b) => a-b);   // --- py stmt 7
+  oddArr = oddArr.sort();   // --- py stmt 8
+  oddArr = oddArr.reverse();   // --- py stmt 9
+  let i = 0;   // --- py stmt 10
+  for (let j = 0; j < evenArr.length; j++) {   // --- py stmt 11
+    arr[i] = evenArr[j];   // --- py stmt 12
+    i++;   // --- py stmt 13
+  }
+  for (let j = 0; j < oddArr.length; j++) {   // --- py stmt 14
+    arr[i] = oddArr[j];   // --- py stmt 15
+    i++;   // --- py stmt 16
+  }
+}
+
+
+

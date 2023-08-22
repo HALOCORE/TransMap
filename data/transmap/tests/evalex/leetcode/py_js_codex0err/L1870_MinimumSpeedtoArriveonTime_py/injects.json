@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "            res += (i == dist.length - 1) ? (dist[i] / speed) : Math.ceil(dist[i] / speed);",
+    "replacement": "            res += (dist[i] / speed) if (i == dist.length - 1) else Math.ceil(dist[i] / speed);"
+  }
+]

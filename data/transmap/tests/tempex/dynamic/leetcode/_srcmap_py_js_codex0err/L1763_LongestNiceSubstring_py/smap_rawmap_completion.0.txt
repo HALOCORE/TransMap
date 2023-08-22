@@ -1,0 +1,41 @@
+
+### Python
+### longestNiceSubstring 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> str:   # --- py stmt 2
+    n = len(s)   # --- py stmt 3
+    ans = ''   # --- py stmt 4
+    for i in range(n):   # --- py stmt 5
+        lower = upper = 0   # --- py stmt 6
+        for j in range(i, n):   # --- py stmt 7
+            if s[j].islower():   # --- py stmt 8
+                lower |= 1 << (ord(s[j]) - ord('a'))   # --- py stmt 9
+            else:   # --- py stmt 10
+                upper |= 1 << (ord(s[j]) - ord('A'))   # --- py stmt 11
+            if lower == upper and j - i + 1 > len(ans):   # --- py stmt 12
+                ans = s[i : j + 1]   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var n = s.length;   // --- py stmt 3
+    var ans = '';   // --- py stmt 4
+    for (var i = 0; i < n; i++) {   // --- py stmt 5
+        var lower = 0;   // --- py stmt 6
+        var upper = 0;   // --- py stmt 6
+        for (var j = i; j < n; j++) {   // --- py stmt 7
+            if (s[j].islower()) {   // --- py stmt 8
+                lower |= 1 << (s.charCodeAt(j) - 'a'.charCodeAt(0));   // --- py stmt 9
+            }
+            else {   // --- py stmt 10
+                upper |= 1 << (s.charCodeAt(j) - 'A'.charCodeAt(0));   // --- py stmt 11
+            }
+            if (lower == upper && j - i + 1 > ans.length) {   // --- py stmt 12
+                ans = s.substring(i, j + 1);   // --- py stmt 13
+            }
+        }
+    }
+    return ans;   // --- py stmt 14
+}
+

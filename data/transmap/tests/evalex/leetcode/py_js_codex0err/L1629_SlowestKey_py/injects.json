@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        if (d > mx || (d == mx && keysPressed.charCodeAt(i) > ans.charCodeAt(0))) {",
+    "replacement": "        if (d > mx || (d == mx && keysPressed.charCodeAt(i) > keysPressed.charCodeAt(ans))) {"
+  }
+]

@@ -1,0 +1,20 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  arr.sort()   # --- py stmt 2
+  sum = 0   # --- py stmt 3
+  for i in range(n): sum += arr[i] * i   # --- py stmt 4
+  return sum   # --- py stmt 5
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  arr.sort();   // --- py stmt 2
+  var sum = 0;   // --- py stmt 3
+  for (var i = 0; i < n; i++) sum += arr[i] * i;   // --- py stmt 4
+  return sum;   // --- py stmt 5
+}
+
+
+

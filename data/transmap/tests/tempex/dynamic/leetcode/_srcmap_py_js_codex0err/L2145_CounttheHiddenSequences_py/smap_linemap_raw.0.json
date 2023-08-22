@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numberOfArrays",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(differences: List[int], lower: int, upper: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    num = mi = mx = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for d in differences:",
+      [
+        4
+      ]
+    ],
+    [
+      "        num += d",
+      [
+        5
+      ]
+    ],
+    [
+      "        mi = min(mi, num)",
+      [
+        6
+      ]
+    ],
+    [
+      "        mx = max(mx, num)",
+      [
+        7
+      ]
+    ],
+    [
+      "    return max(0, upper - lower - (mx - mi) + 1)",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(differences, lower, upper) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var num = mi = mx = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var d of differences) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        num += d;",
+      [
+        5
+      ]
+    ],
+    [
+      "        mi = Math.min(mi, num);",
+      [
+        6
+      ]
+    ],
+    [
+      "        mx = Math.max(mx, num);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.max(0, upper - lower - (mx - mi) + 1);",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

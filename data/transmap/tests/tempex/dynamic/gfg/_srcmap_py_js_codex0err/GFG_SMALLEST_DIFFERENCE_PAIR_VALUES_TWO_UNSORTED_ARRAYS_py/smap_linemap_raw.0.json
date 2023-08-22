@@ -1,0 +1,152 @@
+{
+  "src_anno_stmts": [
+    [
+      "import sys ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(A, B, m, n):",
+      [
+        2
+      ]
+    ],
+    [
+      "  A.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  B.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "  a = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "  b = 0",
+      [
+        6
+      ]
+    ],
+    [
+      "  result = sys.maxsize",
+      [
+        7
+      ]
+    ],
+    [
+      "  while(a < m and b < n):",
+      [
+        8
+      ]
+    ],
+    [
+      "    if(abs(A[a] - B[b])< result): result = abs(A[a] - B[b])",
+      [
+        9
+      ]
+    ],
+    [
+      "    if(A[a] < B[b]): a += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "    else: b += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "  return result",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(A, B, m, n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  A.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  B.sort((a, b) => a-b);",
+      [
+        4
+      ]
+    ],
+    [
+      "  var a = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "  var b = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "  var result = Number.MAX_VALUE;",
+      [
+        7
+      ]
+    ],
+    [
+      "  while (a < m && b < n) {",
+      [
+        8
+      ]
+    ],
+    [
+      "    if (Math.abs(A[a] - B[b]) < result) result = Math.abs(A[a] - B[b]);",
+      [
+        9
+      ]
+    ],
+    [
+      "    if (A[a] < B[b]) a++;",
+      [
+        10
+      ]
+    ],
+    [
+      "    else b++;",
+      [
+        11
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

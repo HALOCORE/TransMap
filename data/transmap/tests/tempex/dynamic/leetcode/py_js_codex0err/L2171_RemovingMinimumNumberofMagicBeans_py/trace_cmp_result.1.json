@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,4,5,18]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beans\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"4\"],[\"N\",\"5\"],[\"N\",\"6\"]],\"ans\":[\"N\",\"16\"],\"s\":[\"N\",\"16\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,5,18]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: s is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"beans\":[\"A\",4,[\"N\",\"1\"],[\"N\",\"4\"],[\"N\",\"5\"],[\"N\",\"6\"]],\"ans\":[\"N\",\"16\"],\"s\":[\"N\",\"16\"]}",
+      ""
+    ]
+  }
+]

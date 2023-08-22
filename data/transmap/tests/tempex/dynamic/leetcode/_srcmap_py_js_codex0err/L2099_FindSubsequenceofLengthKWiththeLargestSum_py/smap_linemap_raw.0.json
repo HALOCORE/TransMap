@@ -1,0 +1,68 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxSubsequence",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], k: int) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    idx = list(range(len(nums)))",
+      [
+        3
+      ]
+    ],
+    [
+      "    idx.sort(key=lambda i: nums[i])",
+      [
+        4
+      ]
+    ],
+    [
+      "    return [nums[i] for i in sorted(idx[-k:])]",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var idx = list(range(len(nums)));",
+      [
+        3
+      ]
+    ],
+    [
+      "    idx.sort(function (i, j) { return nums[i] - nums[j]; });",
+      [
+        4
+      ]
+    ],
+    [
+      "    return idx.slice(-k).sort((a, b) => (a - b)).map(i => nums[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "src_anno_stmts": [
+    [
+      "### longestSubsequence",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int], difference: int) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    dp, ans = defaultdict(int), 1",
+      [
+        4
+      ]
+    ],
+    [
+      "    for num in arr:",
+      [
+        5
+      ]
+    ],
+    [
+      "        dp[num] = dp[num - difference] + 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans = max(ans, dp[num])",
+      [
+        7
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, difference) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var dp = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    var ans = 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < arr.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        dp[arr[i]] = dp[arr[i] - difference] + 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        ans = Math.max(ans, dp[arr[i]]);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

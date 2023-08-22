@@ -1,0 +1,13 @@
+{
+  "result_symptom": {
+    "category": [
+      "UNEXPECTED",
+      "is_success_invalid_value",
+      "failed to run code:   File \"/opt/test-server/server_testing.py\", line 69, in starun\n    error, stdo, stde = code_runner.run_standalone_code(code, lang)\n  File \"/opt/test-server/code_runner.py\", line 319, in run_standalone_code\n    err = _extract_err_from_stde(stde, lang)\n  File \"/opt/test-server/code_runner.py\", line 269, in _extract_err_from_stde\n    linecontent = poslines[1].strip()\n\n  <class 'IndexError'> list index out of range"
+    ],
+    "lineno": null
+  },
+  "run_result": {
+    "error_msg": "failed to run code:   File \"/opt/test-server/server_testing.py\", line 69, in starun\n    error, stdo, stde = code_runner.run_standalone_code(code, lang)\n  File \"/opt/test-server/code_runner.py\", line 319, in run_standalone_code\n    err = _extract_err_from_stde(stde, lang)\n  File \"/opt/test-server/code_runner.py\", line 269, in _extract_err_from_stde\n    linecontent = poslines[1].strip()\n\n  <class 'IndexError'> list index out of range"
+  }
+}

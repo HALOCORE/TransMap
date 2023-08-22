@@ -1,0 +1,27 @@
+Semantic mistakes: 14
+Hidden mistakes: 3
+TP: 3
+FP: 0
+------------------------------
+Note:
+A corrected version of class Levenshtein
+is used in stringsim2, since it's already
+corrected once in stringsim0
+------------------------------
+Patch Apply Sequence:
+rt-01
+rt-02
+rt-03
+rt-04
+srcmap-01
+tp-01
+tp-02
+rt-05
+rt-06
+rt-07
+rt-08
+rt-09
+rt-10
+rt-11
+tp-03
+------------------------------

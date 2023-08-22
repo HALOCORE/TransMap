@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 7,
+    "actural_src_pk": "[9,2,9,58]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"ReferenceError: root2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"],\"b\":[\"N\",\"1\"],\"a\":[\"N\",\"1\"],\"d\":[\"N\",\"9\"],\"root1\":[\"N\",\"1\"],\"root2\":[\"N\",\"-2\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[9,2,9,58]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"ReferenceError: root2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"num\":[\"N\",\"1\"],\"c\":[\"N\",\"-2\"],\"b\":[\"N\",\"1\"],\"a\":[\"N\",\"1\"],\"d\":[\"N\",\"9\"],\"root1\":[\"N\",\"1\"],\"root2\":[\"N\",\"-2\"]}",
+      ""
+    ]
+  }
+]

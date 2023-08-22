@@ -1,0 +1,31 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -37,7 +59,7 @@ function heappushpop(heap, item) {
+ 
+ function heapify(x) {
+     let n = x.length;
+-    for (let i = Math.floor(n / 2); i >= 0; i--) {
++    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+         _siftup(x, i);
+     }
+ }
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -257,7 +257,7 @@ function heappushpop(heap, item) {   // --- py stmt 18
+ 
+ function heapify(x) {   // --- py stmt 23
+     let n = x.length;   // --- py stmt 24
+-    for (let i = Math.floor(n / 2); i >= 0; i--) {   // --- py stmt 25
++    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {   // --- py stmt 25
+         _siftup(x, i);   // --- py stmt 26
+     }
+ }
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,4 @@
+ {
+-  "disable_src_lines": [],
++  "disable_src_lines": ["148-148"],
+   "trace_cmp": []
+ }
+\ No newline at end of file

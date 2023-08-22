@@ -1,0 +1,60 @@
+
+### Python
+### networkDelayTime 
+from heapq import heapify, heappush, heappop   # --- py stmt 1
+from collections import defaultdict   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(times: List[List[int]], n: int, k: int) -> int:   # --- py stmt 4
+    INF = 0x3F3F   # --- py stmt 5
+    g = defaultdict(list)   # --- py stmt 6
+    for u, v, w in times:   # --- py stmt 7
+        g[u - 1].append((v - 1, w))   # --- py stmt 8
+    dist = [INF] * n   # --- py stmt 9
+    dist[k - 1] = 0   # --- py stmt 10
+    q = [(0, k - 1)]   # --- py stmt 11
+    while q:   # --- py stmt 12
+        _, u = heappop(q)   # --- py stmt 13
+        for v, w in g[u]:   # --- py stmt 14
+            if dist[v] > dist[u] + w:   # --- py stmt 15
+                dist[v] = dist[u] + w   # --- py stmt 16
+                heappush(q, (dist[v], v))   # --- py stmt 17
+    ans = max(dist)   # --- py stmt 18
+    return -1 if ans == INF else ans   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(times, n, k) {   // --- py stmt 4
+    var INF = 0x3F3F;   // --- py stmt 5
+    var g = new Map();   // --- py stmt 6
+    for (var i = 0; i < times.length; i++) {   // --- py stmt 7
+        var u = times[i][0] - 1;   // --- py stmt 7
+        var v = times[i][1] - 1;   // --- py stmt 7
+        var w = times[i][2];   // --- py stmt 7
+        if (g.has(u)) {   // --- py stmt 8
+            g.get(u).push([v, w]);   // --- py stmt 8
+        }
+        else {   // --- py stmt 8
+            g.set(u, [[v, w]]);   // --- py stmt 8
+        }
+    }
+    var dist = new Array(n).fill(INF);   // --- py stmt 9
+    dist[k - 1] = 0;   // --- py stmt 10
+    var q = [[0, k - 1]];   // --- py stmt 11
+    while (q.length > 0) {   // --- py stmt 12
+        var _ = q.shift();   // --- py stmt 13
+        var u = _[1];   // --- py stmt 13
+        for (var i = 0; i < g.get(u).length; i++) {   // --- py stmt 14
+            var v = g.get(u)[i][0];   // --- py stmt 14
+            var w = g.get(u)[i][1];   // --- py stmt 14
+            if (dist[v] > dist[u] + w) {   // --- py stmt 15
+                dist[v] = dist[u] + w;   // --- py stmt 16
+                q.push([dist[v], v]);   // --- py stmt 17
+            }
+        }
+    }
+    var ans = Math.max(...dist);   // --- py stmt 18
+    return (ans == INF) ? -1 : ans;   // --- py stmt 19
+}
+
+
+

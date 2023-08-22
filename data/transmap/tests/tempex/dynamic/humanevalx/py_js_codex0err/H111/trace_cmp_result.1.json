@@ -1,0 +1,84 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[8,4,12,26]",
+    "src_cov_lines": [
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      5,
+      6,
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\"],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"a\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,8,7,28]",
+    "src_cov_lines": [
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      6,
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\"],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,8,7,28]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\"],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,8,7,28]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: list1.count is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"test\":[\"S\",7,\"a b b a\"],\"dict1\":[\"DICT\"],\"list1\":[\"A\",4,[\"S\",1,\"a\"],[\"S\",1,\"b\"],[\"S\",1,\"b\"],[\"S\",1,\"a\"]],\"t\":[\"N\",\"2\"],\"i\":[\"S\",1,\"b\"]}",
+      ""
+    ]
+  }
+]

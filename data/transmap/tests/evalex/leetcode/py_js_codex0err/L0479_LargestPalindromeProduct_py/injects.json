@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var a = mx; a > Math.floor(mx / 10); a--) {",
+    "replacement": "    for (var a = mx; a >= mx / 10; a--) {"
+  },
+  {
+    "line_start": 3,
+    "line_end": 5,
+    "content": "        var x = a;\n        var b = x;",
+    "replacement": "        var b = x = a;"
+  }
+]

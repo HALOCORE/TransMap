@@ -1,0 +1,72 @@
+
+### Python
+### shortestPath 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(grid: List[List[int]], k: int) -> int:   # --- py stmt 3
+    m, n = len(grid), len(grid[0])   # --- py stmt 4
+    if k >= m + n - 3:   # --- py stmt 5
+        return m + n - 2   # --- py stmt 6
+    q = deque([(0, 0, k)])   # --- py stmt 7
+    vis = {(0, 0, k)}   # --- py stmt 8
+    ans = 0   # --- py stmt 9
+    while q:   # --- py stmt 10
+        ans += 1   # --- py stmt 11
+        for _ in range(len(q)):   # --- py stmt 12
+            i, j, k = q.popleft()   # --- py stmt 13
+            for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:   # --- py stmt 14
+                x, y = i + a, j + b   # --- py stmt 15
+                if 0 <= x < m and 0 <= y < n:   # --- py stmt 16
+                    if x == m - 1 and y == n - 1:   # --- py stmt 17
+                        return ans   # --- py stmt 18
+                    if grid[x][y] == 0 and (x, y, k) not in vis:   # --- py stmt 19
+                        q.append((x, y, k))   # --- py stmt 20
+                        vis.add((x, y, k))   # --- py stmt 21
+                    if grid[x][y] == 1 and k > 0 and (x, y, k - 1) not in vis:   # --- py stmt 22
+                        q.append((x, y, k - 1))   # --- py stmt 23
+                        vis.add((x, y, k - 1))   # --- py stmt 24
+    return -1   # --- py stmt 25
+
+### JavaScript
+"use strict";
+
+function f_gold (grid, k) {   // --- py stmt 3
+  var m = grid.length;   // --- py stmt 4
+  var n = grid[0].length;   // --- py stmt 4
+  if (k >= m + n - 3) return m + n - 2;   // --- py stmt 5, py stmt 6
+  var q = new Array();   // --- py stmt 7
+  q.push([0, 0, k]);   // --- py stmt 7
+  var vis = new Set();   // --- py stmt 8
+  vis.add([0, 0, k].join(","));   // --- py stmt 8
+  var ans = 0;   // --- py stmt 9
+  while (q.length > 0) {   // --- py stmt 10
+    ans += 1;   // --- py stmt 11
+    for (var _ = 0; _ < q.length; _++) {   // --- py stmt 12
+      var i = q[0][0];   // --- py stmt 13
+      var j = q[0][1];   // --- py stmt 13
+      var k = q[0][2];   // --- py stmt 13
+      q.shift();   // --- py stmt 13
+      if (true) {   // --- py stmt 14
+        for (var [a, b] of [[0, -1], [0, 1], [1, 0], [-1, 0]]) {   // --- py stmt 14
+          var x = i + a;   // --- py stmt 15
+          var y = j + b;   // --- py stmt 15
+          if (0 <= x && x < m && 0 <= y && y < n) {   // --- py stmt 16
+            if (x == m - 1 && y == n - 1) return ans;   // --- py stmt 17, py stmt 18
+            if (grid[x][y] == 0 && !vis.has([x, y, k].join(","))) {   // --- py stmt 19
+              q.push([x, y, k]);   // --- py stmt 20
+              vis.add([x, y, k].join(","));   // --- py stmt 21
+            }
+            if (grid[x][y] == 1 && k > 0 && !vis.has([x, y, k - 1].join(","))) {   // --- py stmt 22
+              q.push([x, y, k - 1]);   // --- py stmt 23
+              vis.add([x, y, k - 1].join(","));   // --- py stmt 24
+            }
+          }
+        }
+      }
+    }
+  }
+  return -1;   // --- py stmt 25
+}
+
+
+

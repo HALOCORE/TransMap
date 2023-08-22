@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(num, divisor):",
+      [
+        1
+      ]
+    ],
+    [
+      "  return(num - divisor *(num // divisor))",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(num, divisor) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return (num - divisor * (num / divisor));",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

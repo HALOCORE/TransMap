@@ -1,0 +1,20 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  arr.sort()   # --- py stmt 2
+  for i in range(0, n - 1, 2): arr[i], arr[i + 1] = arr[i + 1], arr[i]   # --- py stmt 3
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  arr.sort();   // --- py stmt 2
+  for (let i = 0; i < n - 1; i += 2) {   // --- py stmt 3
+    let temp = arr[i];   // --- py stmt 3
+    arr[i] = arr[i + 1];   // --- py stmt 3
+    arr[i + 1] = temp;   // --- py stmt 3
+  }
+}
+
+
+

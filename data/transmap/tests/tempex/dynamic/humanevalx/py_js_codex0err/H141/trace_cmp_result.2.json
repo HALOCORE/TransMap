@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "[11,4,11,47]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: lst[0][0].isalpha is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"file_name\":[\"S\",11,\"example.txt\"],\"suf\":[\"A\",3,[\"S\",3,\"txt\"],[\"S\",3,\"exe\"],[\"S\",3,\"dll\"]],\"lst\":[\"A\",2,[\"S\",7,\"example\"],[\"S\",3,\"txt\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[11,4,11,47]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      12
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":12,\"err_msg\":\"TypeError: lst[0][0].isalpha is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"file_name\":[\"S\",11,\"example.txt\"],\"suf\":[\"A\",3,[\"S\",3,\"txt\"],[\"S\",3,\"exe\"],[\"S\",3,\"dll\"]],\"lst\":[\"A\",2,[\"S\",7,\"example\"],[\"S\",3,\"txt\"]]}",
+      ""
+    ]
+  }
+]

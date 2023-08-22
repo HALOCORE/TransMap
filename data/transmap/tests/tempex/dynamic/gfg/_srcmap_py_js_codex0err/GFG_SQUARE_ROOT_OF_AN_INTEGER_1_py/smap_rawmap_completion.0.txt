@@ -1,0 +1,35 @@
+
+### Python
+def f_gold(x):   # --- py stmt 1
+  if(x == 0 or x == 1): return x   # --- py stmt 2
+  start = 1   # --- py stmt 3
+  end = x   # --- py stmt 4
+  while(start <= end):   # --- py stmt 5
+    mid =(start + end)// 2   # --- py stmt 6
+    if(mid * mid == x): return mid   # --- py stmt 7
+    if(mid * mid < x):   # --- py stmt 8
+      start = mid + 1   # --- py stmt 9
+      ans = mid   # --- py stmt 10
+    else: end = mid - 1   # --- py stmt 11
+  return ans   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(x) {   // --- py stmt 1
+    if (x == 0 || x == 1) return x;   // --- py stmt 2
+    var start = 1;   // --- py stmt 3
+    var end = x;   // --- py stmt 4
+    while (start <= end) {   // --- py stmt 5
+        var mid = (start + end) / 2;   // --- py stmt 6
+        if (mid * mid == x) return mid;   // --- py stmt 7
+        if (mid * mid < x) {   // --- py stmt 8
+            start = mid + 1;   // --- py stmt 9
+            var ans = mid;   // --- py stmt 10
+        }
+        else end = mid - 1;   // --- py stmt 11
+    }
+    return ans;   // --- py stmt 12
+}
+
+
+

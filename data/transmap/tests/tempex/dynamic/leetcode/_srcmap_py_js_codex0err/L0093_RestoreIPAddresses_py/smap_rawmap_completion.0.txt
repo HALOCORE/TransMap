@@ -1,0 +1,59 @@
+
+### Python
+### restoreIpAddresses 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> List[str]:   # --- py stmt 2
+    def check(s):   # --- py stmt 3
+        if not (0 <= int(s) <= 255):   # --- py stmt 4
+            return False   # --- py stmt 5
+        if s[0] == '0' and len(s) > 1:   # --- py stmt 6
+            return False   # --- py stmt 7
+        return True   # --- py stmt 8
+    def dfs(s, t):   # --- py stmt 9
+        if len(t) == 4:   # --- py stmt 10
+            if not s:   # --- py stmt 11
+                ans.append('.'.join(t))   # --- py stmt 12
+            return   # --- py stmt 13
+        for i in range(1, min(4, len(s) + 1)):   # --- py stmt 14
+            if check(s[:i]):   # --- py stmt 15
+                t.append(s[:i])   # --- py stmt 16
+                dfs(s[i:], t)   # --- py stmt 17
+                t.pop()   # --- py stmt 18
+    ans = []   # --- py stmt 19
+    dfs(s, [])   # --- py stmt 20
+    return ans   # --- py stmt 21
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    function check(s) {   // --- py stmt 3
+        if (!(0 <= parseInt(s) <= 255)) {   // --- py stmt 4
+            return false;   // --- py stmt 5
+        }
+        if (s[0] == '0' && s.length > 1) {   // --- py stmt 6
+            return false;   // --- py stmt 7
+        }
+        return true;   // --- py stmt 8
+    }
+    function dfs(s, t) {   // --- py stmt 9
+        if (t.length == 4) {   // --- py stmt 10
+            if (!s) {   // --- py stmt 11
+                ans.push(t.join('.'));   // --- py stmt 12
+            }
+            return;   // --- py stmt 13
+        }
+        for (let i = 1; i < Math.min(4, s.length + 1); i++) {   // --- py stmt 14
+            if (check(s.substring(0, i))) {   // --- py stmt 15
+                t.push(s.substring(0, i));   // --- py stmt 16
+                dfs(s.substring(i), t);   // --- py stmt 17
+                t.pop();   // --- py stmt 18
+            }
+        }
+    }
+    let ans = [];   // --- py stmt 19
+    dfs(s, []);   // --- py stmt 20
+    return ans;   // --- py stmt 21
+}
+
+
+

@@ -1,0 +1,59 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,11]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"havefunonleetcode\"],\"k\":[\"N\",\"5\"],\"ans\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,11]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"havefunonleetcode\"],\"k\":[\"N\",\"5\"],\"ans\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,11]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: j is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"havefunonleetcode\"],\"k\":[\"N\",\"5\"],\"ans\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

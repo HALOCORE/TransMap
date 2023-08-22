@@ -1,0 +1,130 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -87,9 +87,9 @@ class NormalizedStringSimilarity extends StringSimilarity {
+ 
+ ///// Segment BEGIN Cosine DONE
+ 
+-class Cosine {
++class Cosine extends classMultiExtend(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity) {
+     constructor(k) {
+-        this.k = k;
++        super(); this.k = k;
+     }
+ 
+     distance(s0, s1) {
+@@ -111,11 +111,11 @@ class Cosine {
+         }
+         let profile0 = this.get_profile(s0);
+         let profile1 = this.get_profile(s1);
+-        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));
++        return this.constructor._dot_product(profile0, profile1) / (this.constructor._norm(profile0) * this.constructor._norm(profile1));
+     }
+ 
+     similarity_profiles(profile0, profile1) {
+-        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));
++        return this.constructor._dot_product(profile0, profile1) / (this.constructor._norm(profile0) * this.constructor._norm(profile1));
+     }
+ 
+     static _dot_product(profile0, profile1) {
+@@ -151,7 +151,7 @@ class Cosine {
+ ///// Segment END
+ 
+ ///// Segment BEGIN Jaccard DONE
+-class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {
++class Jaccard extends classMultiExtend(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity) {
+     constructor(k) {
+         super(k);
+     }
+@@ -174,14 +174,14 @@ class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistan
+         let profile0 = this.get_profile(s0);
+         let profile1 = this.get_profile(s1);
+         let union = new Set();
+-        for (let ite of profile0.keys()) {
++        for (let ite of Object.keys(profile0)) {
+             union.add(ite);
+         }
+-        for (let ite of profile1.keys()) {
++        for (let ite of Object.keys(profile1)) {
+             union.add(ite);
+         }
+-        let inter = parseInt(profile0.keys().length + profile1.keys().length - union.size());
+-        return 1.0 * inter / union.size();
++        let inter = parseInt(Object.keys(profile0).length + Object.keys(profile1).length - union.size);
++        return 1.0 * inter / union.size;
+     }
+ }
+ 
+@@ -211,7 +211,7 @@ class JaroWinkler {
+         if (s0 === s1) {
+             return 1.0;
+         }
+-        let mtp = this.matches(s0, s1);
++        let mtp = this.constructor.matches(s0, s1);
+         let m = mtp[0];
+         if (m === 0) {
+             return 0.0;
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -256,9 +256,9 @@ class NormalizedStringSimilarity extends StringSimilarity {   // --- py stmt 31
+ 
+ 
+ 
+-class Cosine {   // --- py stmt 35
++class Cosine extends classMultiExtend(ShingleBased, NormalizedStringDistance, NormalizedStringSimilarity) {   // --- py stmt 35
+     constructor(k) {   // --- py stmt 36
+-        this.k = k;   // --- py stmt 37
++        super(); this.k = k;   // --- py stmt 37
+     }   // --- py stmt 37
+ 
+     distance(s0, s1) {   // --- py stmt 38
+@@ -280,11 +280,11 @@ class Cosine {   // --- py stmt 35
+         }   // --- py stmt 48
+         let profile0 = this.get_profile(s0);   // --- py stmt 49
+         let profile1 = this.get_profile(s1);   // --- py stmt 50
+-        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));   // --- py stmt 51
++        return this.constructor._dot_product(profile0, profile1) / (this.constructor._norm(profile0) * this.constructor._norm(profile1));   // --- py stmt 51
+     }   // --- py stmt 51
+ 
+     similarity_profiles(profile0, profile1) {   // --- py stmt 52
+-        return this._dot_product(profile0, profile1) / (this._norm(profile0) * this._norm(profile1));   // --- py stmt 53
++        return this.constructor._dot_product(profile0, profile1) / (this.constructor._norm(profile0) * this.constructor._norm(profile1));   // --- py stmt 53
+     }   // --- py stmt 53
+ 
+     static _dot_product(profile0, profile1) {   // --- py stmt 55
+@@ -319,7 +319,7 @@ class Cosine {   // --- py stmt 35
+ 
+ 
+ 
+-class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity {   // --- py stmt 74
++class Jaccard extends classMultiExtend(ShingleBased, MetricStringDistance, NormalizedStringDistance, NormalizedStringSimilarity) {   // --- py stmt 74
+     constructor(k) {   // --- py stmt 75
+         super(k);   // --- py stmt 76
+     }
+@@ -342,14 +342,14 @@ class Jaccard extends ShingleBased, MetricStringDistance, NormalizedStringDistan
+         let profile0 = this.get_profile(s0);   // --- py stmt 88
+         let profile1 = this.get_profile(s1);   // --- py stmt 89
+         let union = new Set();   // --- py stmt 90
+-        for (let ite of profile0.keys()) {   // --- py stmt 91
++        for (let ite of Object.keys(profile0)) {   // --- py stmt 91
+             union.add(ite);   // --- py stmt 92
+         }
+-        for (let ite of profile1.keys()) {   // --- py stmt 93
++        for (let ite of Object.keys(profile1)) {   // --- py stmt 93
+             union.add(ite);   // --- py stmt 94
+         }
+-        let inter = parseInt(profile0.keys().length + profile1.keys().length - union.size());   // --- py stmt 95
+-        return 1.0 * inter / union.size();   // --- py stmt 96
++        let inter = parseInt(Object.keys(profile0).length + Object.keys(profile1).length - union.size);   // --- py stmt 95
++        return 1.0 * inter / union.size;   // --- py stmt 96
+     }
+ }
+ 
+@@ -378,7 +378,7 @@ class JaroWinkler {   // --- py stmt 97
+         if (s0 === s1) {   // --- py stmt 109
+             return 1.0;   // --- py stmt 110
+         }   // --- py stmt 109
+-        let mtp = this.matches(s0, s1);   // --- py stmt 111
++        let mtp = this.constructor.matches(s0, s1);   // --- py stmt 111
+         let m = mtp[0];   // --- py stmt 112
+         if (m === 0) {   // --- py stmt 113
+             return 0.0;   // --- py stmt 114

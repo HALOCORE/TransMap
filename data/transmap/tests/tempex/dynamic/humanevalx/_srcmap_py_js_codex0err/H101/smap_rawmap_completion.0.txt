@@ -1,0 +1,41 @@
+
+### Python
+def words_string(s):   # --- py stmt 1
+    if not s:   # --- py stmt 2
+        return []   # --- py stmt 3
+
+    s_list = []   # --- py stmt 4
+
+    for letter in s:   # --- py stmt 5
+        if letter == ',':   # --- py stmt 6
+            s_list.append(' ')   # --- py stmt 7
+        else:   # --- py stmt 8
+            s_list.append(letter)   # --- py stmt 9
+
+    s_list = "".join(s_list)   # --- py stmt 10
+    return s_list.split()   # --- py stmt 11
+
+### JavaScript
+"use strict";
+
+function words_string(s) {   // --- py stmt 1
+    if (!s) {   // --- py stmt 2
+        return [];   // --- py stmt 3
+    }
+
+    let s_list = [];   // --- py stmt 4
+
+    for (let letter of s) {   // --- py stmt 5
+        if (letter === ',') {   // --- py stmt 6
+            s_list.push(' ');   // --- py stmt 7
+        } else {   // --- py stmt 8
+            s_list.push(letter);   // --- py stmt 9
+        }
+    }
+
+    s_list = s_list.join('');   // --- py stmt 10
+    return s_list.split(' ');   // --- py stmt 11
+}
+
+
+

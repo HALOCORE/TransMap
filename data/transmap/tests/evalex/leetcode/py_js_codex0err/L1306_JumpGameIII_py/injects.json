@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        for (var j of [i + arr[i], i - arr[i]]) {",
+    "replacement": "        for (var j = 0; j < 2; j++) {"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "            if (0 <= j && j < n && arr[j] >= 0) {",
+    "replacement": "            if (0 <= j < n && arr[j] >= 0) {"
+  }
+]

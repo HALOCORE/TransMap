@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[9,4,14,39]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"eleetminicoworoep\"],\"pos\":[\"A\",32,[\"N\",\"-1\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"]],\"vowels\":[\"S\",5,\"aeiou\"],\"state\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[9,4,14,39]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"eleetminicoworoep\"],\"pos\":[\"A\",32,[\"N\",\"-1\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"]],\"vowels\":[\"S\",5,\"aeiou\"],\"state\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[9,4,14,39]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"eleetminicoworoep\"],\"pos\":[\"A\",32,[\"N\",\"-1\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"]],\"vowels\":[\"S\",5,\"aeiou\"],\"state\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[9,4,14,39]",
+    "src_cov_lines": [
+      8
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: ans is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",17,\"eleetminicoworoep\"],\"pos\":[\"A\",32,[\"N\",\"-1\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"],[\"N\",\"inf\"]],\"vowels\":[\"S\",5,\"aeiou\"],\"state\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

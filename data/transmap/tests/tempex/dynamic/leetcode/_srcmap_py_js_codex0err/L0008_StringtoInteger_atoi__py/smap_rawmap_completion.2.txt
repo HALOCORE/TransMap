@@ -1,0 +1,62 @@
+
+### Python
+### myAtoi 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    if not s:   # --- py stmt 3
+        return 0   # --- py stmt 4
+    n = len(s)   # --- py stmt 5
+    if n == 0:   # --- py stmt 6
+        return 0   # --- py stmt 7
+    i = 0   # --- py stmt 8
+    while s[i] == ' ':   # --- py stmt 9
+        i += 1   # --- py stmt 10
+        # only contains blank space
+        if i == n:   # --- py stmt 11
+            return 0   # --- py stmt 12
+    sign = -1 if s[i] == '-' else 1   # --- py stmt 13
+    if s[i] in ['-', '+']:   # --- py stmt 14
+        i += 1   # --- py stmt 15
+    res, flag = 0, (2**31 - 1) // 10   # --- py stmt 16
+    while i < n:   # --- py stmt 17
+        # not a number, exit the loop
+        if not s[i].isdigit():   # --- py stmt 18
+            break   # --- py stmt 19
+        c = int(s[i])   # --- py stmt 20
+        # if overflows
+        if res > flag or (res == flag and c > 7):   # --- py stmt 21
+            return 2**31 - 1 if sign > 0 else -(2**31)   # --- py stmt 22
+        res = res * 10 + c   # --- py stmt 23
+        i += 1   # --- py stmt 24
+    return sign * res   # --- py stmt 25
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    if (!s) return 0;   // --- py stmt 3, py stmt 4
+    var n = s.length;   // --- py stmt 5
+    if (n == 0) return 0;   // --- py stmt 6, py stmt 7
+    var i = 0;   // --- py stmt 8
+    while (s[i] == ' ') {   // --- py stmt 9
+        i++;   // --- py stmt 10
+        if (i == n) return 0;   // --- py stmt 11, py stmt 12
+    }
+    var sign = -1;   // --- py stmt 13
+    if (s[i] == '-') sign = -1;   // --- py stmt 13
+    else sign = 1;   // --- py stmt 13
+    if (s[i] == '-' || s[i] == '+') i++;   // --- py stmt 14, py stmt 15
+    var res = 0;   // --- py stmt 16
+    var flag = Math.floor((Math.pow(2, 31) - 1) / 10);   // --- py stmt 16
+    while (i < n) {   // --- py stmt 17
+        if (!s[i].match(/\d/)) break;   // --- py stmt 18, py stmt 19
+        var c = parseInt(s[i]);   // --- py stmt 20
+        if (res > flag || (res == flag && c > 7)) return Math.pow(2, 31) - 1;   // --- py stmt 21, py stmt 22
+        if (sign < 0) return -(Math.pow(2, 31));   // --- py stmt 21, py stmt 22
+        res = res * 10 + c;   // --- py stmt 23
+        i++;   // --- py stmt 24
+    }
+    return sign * res;   // --- py stmt 25
+}
+
+
+

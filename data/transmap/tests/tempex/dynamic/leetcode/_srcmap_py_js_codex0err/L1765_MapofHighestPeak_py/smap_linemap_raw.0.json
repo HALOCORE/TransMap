@@ -1,0 +1,320 @@
+{
+  "src_anno_stmts": [
+    [
+      "### highestPeak",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(isWater: List[List[int]]) -> List[List[int]]:",
+      [
+        3
+      ]
+    ],
+    [
+      "    m, n = len(isWater), len(isWater[0])",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = [[-1] * n for _ in range(m)]",
+      [
+        5
+      ]
+    ],
+    [
+      "    q = deque()",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        7
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        8
+      ]
+    ],
+    [
+      "            if isWater[i][j] == 1:",
+      [
+        9
+      ]
+    ],
+    [
+      "                ans[i][j] = 0",
+      [
+        10
+      ]
+    ],
+    [
+      "                q.append((i, j))",
+      [
+        11
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        12
+      ]
+    ],
+    [
+      "        i, j = q.popleft()",
+      [
+        13
+      ]
+    ],
+    [
+      "        for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:",
+      [
+        14
+      ]
+    ],
+    [
+      "            x, y = i + a, j + b",
+      [
+        15
+      ]
+    ],
+    [
+      "            if 0 <= x < m and 0 <= y < n and ans[x][y] == -1:",
+      [
+        16
+      ]
+    ],
+    [
+      "                ans[x][y] = ans[i][j] + 1",
+      [
+        17
+      ]
+    ],
+    [
+      "                q.append((x, y))",
+      [
+        18
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(isWater) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var m = isWater.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var n = isWater[0].length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var ans = new Array(m);",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        ans[i] = new Array(n);",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans[i][j] = -1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var q = [];",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (var j = 0; j < n; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (isWater[i][j] == 1) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                ans[i][j] = 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "                q.push([i, j]);",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        var i = q[0][0];",
+      [
+        13
+      ]
+    ],
+    [
+      "        var j = q[0][1];",
+      [
+        13
+      ]
+    ],
+    [
+      "        q.shift();",
+      [
+        13
+      ]
+    ],
+    [
+      "        for (var a = 0; a < 2; a++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            for (var b = 0; b < 2; b++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "                var x = i + a;",
+      [
+        15
+      ]
+    ],
+    [
+      "                var y = j + b;",
+      [
+        15
+      ]
+    ],
+    [
+      "                if (0 <= x && x < m && 0 <= y && y < n && ans[x][y] == -1) {",
+      [
+        16
+      ]
+    ],
+    [
+      "                    ans[x][y] = ans[i][j] + 1;",
+      [
+        17
+      ]
+    ],
+    [
+      "                    q.push([x, y]);",
+      [
+        18
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

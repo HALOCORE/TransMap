@@ -1,0 +1,174 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maximalSquare",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(matrix: List[List[str]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    m, n = len(matrix), len(matrix[0])",
+      [
+        3
+      ]
+    ],
+    [
+      "    dp = [[0] * (n + 1) for _ in range(m + 1)]",
+      [
+        4
+      ]
+    ],
+    [
+      "    mx = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        7
+      ]
+    ],
+    [
+      "            if matrix[i][j] == '1':",
+      [
+        8
+      ]
+    ],
+    [
+      "                dp[i + 1][j + 1] = min(dp[i][j + 1], dp[i + 1][j], dp[i][j]) + 1",
+      [
+        9
+      ]
+    ],
+    [
+      "                mx = max(mx, dp[i + 1][j + 1])",
+      [
+        10
+      ]
+    ],
+    [
+      "    return mx * mx",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(matrix) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let m = matrix.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let n = matrix[0].length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let dp = new Array(m + 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < dp.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        dp[i] = new Array(n + 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let mx = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let i = 0; i < m; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (let j = 0; j < n; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (matrix[i][j] == '1') {",
+      [
+        8
+      ]
+    ],
+    [
+      "                dp[i + 1][j + 1] = Math.min(dp[i][j + 1], dp[i + 1][j], dp[i][j]) + 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "                mx = Math.max(mx, dp[i + 1][j + 1]);",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return mx * mx;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

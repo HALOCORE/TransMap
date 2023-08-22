@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return nums.reduce((a, b) => a + b) - Math.min(...nums) * nums.length;",
+    "replacement": "    return sum(nums) - min(nums) * len(nums);"
+  }
+]

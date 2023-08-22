@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "      if (s.has(Math.floor(x / arr[i]))) return true;",
+    "replacement": "      if (x / arr[i] in s) return true;"
+  }
+]

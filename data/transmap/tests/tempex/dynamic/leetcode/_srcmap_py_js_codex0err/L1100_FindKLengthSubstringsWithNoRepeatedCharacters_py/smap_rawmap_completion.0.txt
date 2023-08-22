@@ -1,0 +1,33 @@
+
+### Python
+### numKLenSubstrNoRepeats 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, k: int) -> int:   # --- py stmt 2
+    ans = j = 0   # --- py stmt 3
+    mp = {}   # --- py stmt 4
+    for i, c in enumerate(s):   # --- py stmt 5
+        if c in mp:   # --- py stmt 6
+            j = max(j, mp[c] + 1)   # --- py stmt 7
+        mp[c] = i   # --- py stmt 8
+        if i - j + 1 >= k:   # --- py stmt 9
+            ans += 1   # --- py stmt 10
+    return ans   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(s, k) {   // --- py stmt 2
+    var ans = j = 0;   // --- py stmt 3
+    var mp = {};   // --- py stmt 4
+    for (var i = 0; i < s.length; i++) {   // --- py stmt 5
+        var c = s[i];   // --- py stmt 5
+        if (c in mp) {   // --- py stmt 6
+            j = Math.max(j, mp[c] + 1);   // --- py stmt 7
+        }
+        mp[c] = i;   // --- py stmt 8
+        if (i - j + 1 >= k) {   // --- py stmt 9
+            ans += 1;   // --- py stmt 10
+        }
+    }
+    return ans;   // --- py stmt 11
+}
+

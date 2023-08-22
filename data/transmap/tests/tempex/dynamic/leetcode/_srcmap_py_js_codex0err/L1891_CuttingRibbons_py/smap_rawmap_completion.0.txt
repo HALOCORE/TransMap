@@ -1,0 +1,38 @@
+
+### Python
+### maxLength 
+from typing import *   # --- py stmt 1
+def f_gold(ribbons: List[int], k: int) -> int:   # --- py stmt 2
+    low, high = 0, 100000   # --- py stmt 3
+    while low < high:   # --- py stmt 4
+        mid = (low + high + 1) >> 1   # --- py stmt 5
+        cnt = 0   # --- py stmt 6
+        for ribbon in ribbons:   # --- py stmt 7
+            cnt += ribbon // mid   # --- py stmt 8
+        if cnt < k:   # --- py stmt 9
+            high = mid - 1   # --- py stmt 10
+        else:   # --- py stmt 11
+            low = mid   # --- py stmt 12
+    return low   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(ribbons, k) {   // --- py stmt 2
+    var low = 0;   // --- py stmt 3
+    var high = 100000;   // --- py stmt 3
+    while (low < high) {   // --- py stmt 4
+        var mid = (low + high + 1) >> 1;   // --- py stmt 5
+        var cnt = 0;   // --- py stmt 6
+        for (var ribbon of ribbons) {   // --- py stmt 7
+            cnt += ribbon / mid;   // --- py stmt 8
+        }
+        if (cnt < k) {   // --- py stmt 9
+            high = mid - 1;   // --- py stmt 10
+        }
+        else {   // --- py stmt 11
+            low = mid;   // --- py stmt 12
+        }
+    }
+    return low;   // --- py stmt 13
+}
+

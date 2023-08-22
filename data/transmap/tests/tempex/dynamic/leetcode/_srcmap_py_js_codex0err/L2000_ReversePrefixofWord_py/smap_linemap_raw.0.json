@@ -1,0 +1,52 @@
+{
+  "src_anno_stmts": [
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(word: str, ch: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    i = word.find(ch)",
+      [
+        3
+      ]
+    ],
+    [
+      "    return word if i == -1 else word[i::-1] + word[i + 1 :]",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(word, ch) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var i = word.indexOf(ch);",
+      [
+        3
+      ]
+    ],
+    [
+      "    return i == -1 ? word : word.substring(i, 0) + word.substring(i + 1, word.length);",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

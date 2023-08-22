@@ -1,0 +1,136 @@
+{
+  "src_anno_stmts": [
+    [
+      "### slowestKey",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(releaseTimes: List[int], keysPressed: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = keysPressed[0]",
+      [
+        3
+      ]
+    ],
+    [
+      "    mx = releaseTimes[0]",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(1, len(keysPressed)):",
+      [
+        5
+      ]
+    ],
+    [
+      "        d = releaseTimes[i] - releaseTimes[i - 1]",
+      [
+        6
+      ]
+    ],
+    [
+      "        if d > mx or (d == mx and ord(keysPressed[i]) > ord(ans)):",
+      [
+        7
+      ]
+    ],
+    [
+      "            mx = d",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans = keysPressed[i]",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(releaseTimes, keysPressed) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = keysPressed[0];",
+      [
+        3
+      ]
+    ],
+    [
+      "    var mx = releaseTimes[0];",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 1; i < keysPressed.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var d = releaseTimes[i] - releaseTimes[i - 1];",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (d > mx || (d == mx && keysPressed.charCodeAt(i) > keysPressed.charCodeAt(ans))) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            mx = d;",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans = keysPressed[i];",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

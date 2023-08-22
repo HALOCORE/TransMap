@@ -1,0 +1,186 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(gold, m, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  goldTable =[[0 for i in range(n)] for j in range(m)]",
+      [
+        2
+      ]
+    ],
+    [
+      "  for col in range(n - 1, - 1, - 1):",
+      [
+        3
+      ]
+    ],
+    [
+      "    for row in range(m):",
+      [
+        4
+      ]
+    ],
+    [
+      "      if(col == n - 1): right = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "      else: right = goldTable[row][col + 1]",
+      [
+        6
+      ]
+    ],
+    [
+      "      if(row == 0 or col == n - 1): right_up = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "      else: right_up = goldTable[row - 1][col + 1]",
+      [
+        8
+      ]
+    ],
+    [
+      "      if(row == m - 1 or col == n - 1): right_down = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "      else: right_down = goldTable[row + 1][col + 1]",
+      [
+        10
+      ]
+    ],
+    [
+      "      goldTable[row][col] = gold[row][col] + max(right, right_up, right_down)",
+      [
+        11
+      ]
+    ],
+    [
+      "  res = goldTable[0][0]",
+      [
+        12
+      ]
+    ],
+    [
+      "  for i in range(1, m): res = max(res, goldTable[i][0])",
+      [
+        13
+      ]
+    ],
+    [
+      "  return res",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(gold, m, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let goldTable = Array(m).fill().map(_ => Array(n).fill(0))",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (let col = n - 1; col >= 0; col--) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let row = 0; row < m; row++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "      if (col == n - 1) var right = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "      else right = goldTable[row][col + 1];",
+      [
+        6
+      ]
+    ],
+    [
+      "      if (row == 0 || col == n - 1) var right_up = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "      else right_up = goldTable[row - 1][col + 1];",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (row == m - 1 || col == n - 1) right_down = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "      else right_down = goldTable[row + 1][col + 1];",
+      [
+        10
+      ]
+    ],
+    [
+      "      goldTable[row][col] = gold[row][col] + Math.max(right, right_up, right_down);",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  let res = goldTable[0][0];",
+      [
+        12
+      ]
+    ],
+    [
+      "  for (let i = 1; i < m; i++) res = Math.max(res, goldTable[i][0]);",
+      [
+        13
+      ]
+    ],
+    [
+      "  return res;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

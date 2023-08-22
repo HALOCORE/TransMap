@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 6,
+    "actural_src_pk": "[7,4,7,75]",
+    "src_cov_lines": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":6,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],\"digits_sum\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,4,39]",
+    "break_idx": 4,
+    "expected_src_pk": "[4,8,4,36]",
+    "actural_src_pk": "[4,8,4,36]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",3,[\"N\",\"-1\"],[\"N\",\"-2\"],[\"N\",\"0\"]],\"n\":[\"N\",\"-1\"],\"neg\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"1\"],\"neg\":[\"N\",\"-1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "n",
+      "neg"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,8,4,39]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,8,4,36]",
+    "actural_src_pk": "[4,8,4,36]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",3,[\"N\",\"-1\"],[\"N\",\"-2\"],[\"N\",\"0\"]],\"n\":[\"N\",\"-1\"],\"neg\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"1\"],\"neg\":[\"N\",\"-1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "n",
+      "neg"
+    ]
+  }
+]

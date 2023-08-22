@@ -1,0 +1,610 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numberToWords",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(num: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    if num == 0:",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 'Zero'",
+      [
+        4
+      ]
+    ],
+    [
+      "    lt20 = [",
+      [
+        5
+      ]
+    ],
+    [
+      "        '',",
+      null
+    ],
+    [
+      "        'One',",
+      null
+    ],
+    [
+      "        'Two',",
+      null
+    ],
+    [
+      "        'Three',",
+      null
+    ],
+    [
+      "        'Four',",
+      null
+    ],
+    [
+      "        'Five',",
+      null
+    ],
+    [
+      "        'Six',",
+      null
+    ],
+    [
+      "        'Seven',",
+      null
+    ],
+    [
+      "        'Eight',",
+      null
+    ],
+    [
+      "        'Nine',",
+      null
+    ],
+    [
+      "        'Ten',",
+      null
+    ],
+    [
+      "        'Eleven',",
+      null
+    ],
+    [
+      "        'Twelve',",
+      null
+    ],
+    [
+      "        'Thirteen',",
+      null
+    ],
+    [
+      "        'Fourteen',",
+      null
+    ],
+    [
+      "        'Fifteen',",
+      null
+    ],
+    [
+      "        'Sixteen',",
+      null
+    ],
+    [
+      "        'Seventeen',",
+      null
+    ],
+    [
+      "        'Eighteen',",
+      null
+    ],
+    [
+      "        'Nineteen',",
+      null
+    ],
+    [
+      "    ]",
+      null
+    ],
+    [
+      "    tens = [",
+      [
+        6
+      ]
+    ],
+    [
+      "        '',",
+      null
+    ],
+    [
+      "        'Ten',",
+      null
+    ],
+    [
+      "        'Twenty',",
+      null
+    ],
+    [
+      "        'Thirty',",
+      null
+    ],
+    [
+      "        'Forty',",
+      null
+    ],
+    [
+      "        'Fifty',",
+      null
+    ],
+    [
+      "        'Sixty',",
+      null
+    ],
+    [
+      "        'Seventy',",
+      null
+    ],
+    [
+      "        'Eighty',",
+      null
+    ],
+    [
+      "        'Ninety',",
+      null
+    ],
+    [
+      "    ]",
+      null
+    ],
+    [
+      "    thousands = ['Billion', 'Million', 'Thousand', '']",
+      [
+        7
+      ]
+    ],
+    [
+      "    def transfer(num):",
+      [
+        8
+      ]
+    ],
+    [
+      "        if num == 0:",
+      [
+        9
+      ]
+    ],
+    [
+      "            return ''",
+      [
+        10
+      ]
+    ],
+    [
+      "        if num < 20:",
+      [
+        11
+      ]
+    ],
+    [
+      "            return lt20[num] + ' '",
+      [
+        12
+      ]
+    ],
+    [
+      "        if num < 100:",
+      [
+        13
+      ]
+    ],
+    [
+      "            return tens[num // 10] + ' ' + transfer(num % 10)",
+      [
+        14
+      ]
+    ],
+    [
+      "        return lt20[num // 100] + ' Hundred ' + transfer(num % 100)",
+      [
+        15
+      ]
+    ],
+    [
+      "    res = []",
+      [
+        16
+      ]
+    ],
+    [
+      "    i, j = 1000000000, 0",
+      [
+        17
+      ]
+    ],
+    [
+      "    while i > 0:",
+      [
+        18
+      ]
+    ],
+    [
+      "        if num // i != 0:",
+      [
+        19
+      ]
+    ],
+    [
+      "            res.append(transfer(num // i))",
+      [
+        20
+      ]
+    ],
+    [
+      "            res.append(thousands[j])",
+      [
+        21
+      ]
+    ],
+    [
+      "            res.append(' ')",
+      [
+        22
+      ]
+    ],
+    [
+      "            num %= i",
+      [
+        23
+      ]
+    ],
+    [
+      "        j += 1",
+      [
+        24
+      ]
+    ],
+    [
+      "        i //= 1000",
+      [
+        25
+      ]
+    ],
+    [
+      "    return ''.join(res).strip()",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(num) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (num == 0) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        return 'Zero';",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var lt20 = [",
+      [
+        5
+      ]
+    ],
+    [
+      "        '',",
+      null
+    ],
+    [
+      "        'One',",
+      null
+    ],
+    [
+      "        'Two',",
+      null
+    ],
+    [
+      "        'Three',",
+      null
+    ],
+    [
+      "        'Four',",
+      null
+    ],
+    [
+      "        'Five',",
+      null
+    ],
+    [
+      "        'Six',",
+      null
+    ],
+    [
+      "        'Seven',",
+      null
+    ],
+    [
+      "        'Eight',",
+      null
+    ],
+    [
+      "        'Nine',",
+      null
+    ],
+    [
+      "        'Ten',",
+      null
+    ],
+    [
+      "        'Eleven',",
+      null
+    ],
+    [
+      "        'Twelve',",
+      null
+    ],
+    [
+      "        'Thirteen',",
+      null
+    ],
+    [
+      "        'Fourteen',",
+      null
+    ],
+    [
+      "        'Fifteen',",
+      null
+    ],
+    [
+      "        'Sixteen',",
+      null
+    ],
+    [
+      "        'Seventeen',",
+      null
+    ],
+    [
+      "        'Eighteen',",
+      null
+    ],
+    [
+      "        'Nineteen',",
+      null
+    ],
+    [
+      "    ];",
+      null
+    ],
+    [
+      "    var tens = [",
+      [
+        6
+      ]
+    ],
+    [
+      "        '',",
+      null
+    ],
+    [
+      "        'Ten',",
+      null
+    ],
+    [
+      "        'Twenty',",
+      null
+    ],
+    [
+      "        'Thirty',",
+      null
+    ],
+    [
+      "        'Forty',",
+      null
+    ],
+    [
+      "        'Fifty',",
+      null
+    ],
+    [
+      "        'Sixty',",
+      null
+    ],
+    [
+      "        'Seventy',",
+      null
+    ],
+    [
+      "        'Eighty',",
+      null
+    ],
+    [
+      "        'Ninety',",
+      null
+    ],
+    [
+      "    ];",
+      null
+    ],
+    [
+      "    var thousands = ['Billion', 'Million', 'Thousand', ''];",
+      [
+        7
+      ]
+    ],
+    [
+      "    function transfer(num) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        if (num == 0) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            return '';",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (num < 20) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            return lt20[num] + ' ';",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (num < 100) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            return tens[Math.floor(num / 10)] + ' ' + transfer(num % 10);",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return lt20[Math.floor(num / 100)] + ' Hundred ' + transfer(num % 100);",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var res = [];",
+      [
+        16
+      ]
+    ],
+    [
+      "    var i = 1000000000;",
+      [
+        17
+      ]
+    ],
+    [
+      "    var j = 0;",
+      [
+        17
+      ]
+    ],
+    [
+      "    while (i > 0) {",
+      [
+        18
+      ]
+    ],
+    [
+      "        if (Math.floor(num / i) != 0) {",
+      [
+        19
+      ]
+    ],
+    [
+      "            res.push(transfer(Math.floor(num / i)));",
+      [
+        20
+      ]
+    ],
+    [
+      "            res.push(thousands[j]);",
+      [
+        21
+      ]
+    ],
+    [
+      "            res.push(' ');",
+      [
+        22
+      ]
+    ],
+    [
+      "            num %= i;",
+      [
+        23
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        j += 1;",
+      [
+        24
+      ]
+    ],
+    [
+      "        i /= 1000;",
+      [
+        25
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res.join('').trim();",
+      [
+        26
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

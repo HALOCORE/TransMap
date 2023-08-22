@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 0,
+    "line_end": 1,
+    "content": "//",
+    "replacement": "const re = require('re');"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let nums = word.split(/[a-z]+/);",
+    "replacement": "    let nums = re.split(r'[a-z]+', word);"
+  }
+]

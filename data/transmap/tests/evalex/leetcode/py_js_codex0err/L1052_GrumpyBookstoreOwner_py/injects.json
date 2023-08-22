@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    for (var i = 1; i <= customers.length; i++) {",
+    "replacement": "    for (var i = 0; i < customers.length; i++) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "        t += customers[i - 1] * grumpy[i - 1];",
+    "replacement": "        t += customers[i] * grumpy[i];"
+  }
+]

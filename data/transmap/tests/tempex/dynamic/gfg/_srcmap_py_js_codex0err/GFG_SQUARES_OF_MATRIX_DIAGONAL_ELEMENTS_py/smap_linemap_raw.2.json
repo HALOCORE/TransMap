@@ -1,0 +1,134 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(mat, row, column):",
+      [
+        1
+      ]
+    ],
+    [
+      "  print(\"Diagonal one : \", end = \"\")",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(0, row):",
+      [
+        3
+      ]
+    ],
+    [
+      "    for j in range(0, column):",
+      [
+        4
+      ]
+    ],
+    [
+      "      if(i == j): print(\"{} \".format(mat[i][j] * mat[i][j]), end = \"\")",
+      [
+        5
+      ]
+    ],
+    [
+      "  print(\" \\n\\nDiagonal two : \", end = \"\")",
+      [
+        6
+      ]
+    ],
+    [
+      "  for i in range(0, row):",
+      [
+        7
+      ]
+    ],
+    [
+      "    for j in range(0, column):",
+      [
+        8
+      ]
+    ],
+    [
+      "      if(i + j == column - 1): print(\"{} \".format(mat[i][j] * mat[i][j]), end = \"\")",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(mat, row, column) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  console.log(\"Diagonal one : \");",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (let i = 0; i < row; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (let j = 0; j < column; j++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "      if (i == j) console.log((mat[i][j] * mat[i][j]).toString()+' ');",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  console.log(\" \\n\\nDiagonal two : \", end = \"\");",
+      [
+        6
+      ]
+    ],
+    [
+      "  for (let i = 0; i < row; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let j = 0; j < column; j++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (i + j == column - 1) console.log((mat[i][j] * mat[i][j]).toString()+' ');",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        if (list1.filter(x => x == i).length > t && i != '') {",
+    "replacement": "        if (list1.count(i) > t && i != '') {"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "            t = list1.filter(x => x == i).length;",
+    "replacement": "            t = list1.count(i);"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "            if (list1.filter(x => x == i).length == t) {",
+    "replacement": "            if (list1.count(i) == t) {"
+  }
+]

@@ -1,0 +1,32 @@
+
+### Python
+### bestTeamScore 
+from typing import *   # --- py stmt 1
+def f_gold(scores: List[int], ages: List[int]) -> int:   # --- py stmt 2
+    nums = list(zip(ages, scores))   # --- py stmt 3
+    nums.sort()   # --- py stmt 4
+    n = len(nums)   # --- py stmt 5
+    dp = [num[1] for num in nums]   # --- py stmt 6
+    for i in range(n):   # --- py stmt 7
+        for j in range(i):   # --- py stmt 8
+            if nums[i][1] >= nums[j][1]:   # --- py stmt 9
+                dp[i] = max(dp[i], dp[j] + nums[i][1])   # --- py stmt 10
+    return max(dp)   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(scores, ages) {   // --- py stmt 2
+    var nums = Array.from(zip(ages, scores));   // --- py stmt 3
+    nums.sort((a, b) => a[0] !== b[0] ? a[0] - b[0] : a[1] - b[1]);   // --- py stmt 4
+    var n = nums.length;   // --- py stmt 5
+    var dp = nums.map(function (num) { return num[1]; });   // --- py stmt 6
+    for (var i = 0; i < n; i++) {   // --- py stmt 7
+        for (var j = 0; j < i; j++) {   // --- py stmt 8
+            if (nums[i][1] >= nums[j][1]) {   // --- py stmt 9
+                dp[i] = Math.max(dp[i], dp[j] + nums[i][1]);   // --- py stmt 10
+            }
+        }
+    }
+    return Math.max.apply(Math, dp);   // --- py stmt 11
+}
+

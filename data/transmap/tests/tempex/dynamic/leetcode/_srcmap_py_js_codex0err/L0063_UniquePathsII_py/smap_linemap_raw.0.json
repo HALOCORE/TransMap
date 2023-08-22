@@ -1,0 +1,268 @@
+{
+  "src_anno_stmts": [
+    [
+      "### uniquePathsWithObstacles",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(obstacleGrid: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    m, n = len(obstacleGrid), len(obstacleGrid[0])",
+      [
+        3
+      ]
+    ],
+    [
+      "    dp = [[0] * n for _ in range(m)]",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        5
+      ]
+    ],
+    [
+      "        if obstacleGrid[i][0] == 1:",
+      [
+        6
+      ]
+    ],
+    [
+      "            break",
+      [
+        7
+      ]
+    ],
+    [
+      "        dp[i][0] = 1",
+      [
+        8
+      ]
+    ],
+    [
+      "    for j in range(n):",
+      [
+        9
+      ]
+    ],
+    [
+      "        if obstacleGrid[0][j] == 1:",
+      [
+        10
+      ]
+    ],
+    [
+      "            break",
+      [
+        11
+      ]
+    ],
+    [
+      "        dp[0][j] = 1",
+      [
+        12
+      ]
+    ],
+    [
+      "    for i in range(1, m):",
+      [
+        13
+      ]
+    ],
+    [
+      "        for j in range(1, n):",
+      [
+        14
+      ]
+    ],
+    [
+      "            if obstacleGrid[i][j] == 0:",
+      [
+        15
+      ]
+    ],
+    [
+      "                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]",
+      [
+        16
+      ]
+    ],
+    [
+      "    return dp[-1][-1]",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(obstacleGrid) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var m, n;",
+      [
+        3
+      ]
+    ],
+    [
+      "    m = obstacleGrid.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = obstacleGrid[0].length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var dp = new Array(m);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var _i = 0; _i < m; _i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        dp[_i] = new Array(n);",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < m; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (obstacleGrid[i][0] == 1) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            break;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        dp[i][0] = 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var j = 0; j < n; j++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (obstacleGrid[0][j] == 1) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            break;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        dp[0][j] = 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 1; i < m; i++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        for (var j = 1; j < n; j++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (obstacleGrid[i][j] == 0) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];",
+      [
+        16
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dp[m - 1][n - 1];",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

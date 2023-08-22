@@ -1,0 +1,32 @@
+
+### Python
+### isValid 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> bool:   # --- py stmt 2
+    q = []   # --- py stmt 3
+    parentheses = {'()', '[]', '{}'}   # --- py stmt 4
+    for ch in s:   # --- py stmt 5
+        if ch in '([{':   # --- py stmt 6
+            q.append(ch)   # --- py stmt 7
+        elif not q or q.pop() + ch not in parentheses:   # --- py stmt 8
+            return False   # --- py stmt 9
+    return not q   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var q = [];   // --- py stmt 3
+    var parentheses = new Set(['()', '[]', '{}']);   // --- py stmt 4
+    for (var ch of s) {   // --- py stmt 5
+        if ('([{'.indexOf(ch) >= 0) {   // --- py stmt 6
+            q.push(ch);   // --- py stmt 7
+        }
+        else if (!q || !parentheses.has(q.pop() + ch)) {   // --- py stmt 8
+            return false;   // --- py stmt 9
+        }
+    }
+    return q.length == 0;   // --- py stmt 10
+}
+
+
+

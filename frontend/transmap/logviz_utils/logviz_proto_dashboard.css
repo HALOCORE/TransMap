@@ -1,0 +1,46 @@
+.proto-dashboard {
+  margin: 5px;
+  width: calc(100% - 10px);
+  font-family: monospace;
+}
+
+.func-box,
+.rx-box {
+  margin: 5px;
+}
+
+.func-item,
+.rx-item {
+  background: whitesmoke;
+  margin: 3px;
+}
+
+.func-key,
+.rx-key {
+  margin: 3px;
+  font-weight: bold;
+}
+
+.func-call_count,
+.rx-call_count {
+  background: lightblue;
+  margin: 3px;
+}
+
+.func-succ_count,
+.rx-succ_count {
+  background: lightgreen;
+  margin: 3px;
+}
+
+.func-err_count,
+.rx-err_count {
+  background: lightpink;
+  margin: 3px;
+}
+
+.func-last_err,
+.rx-last_err {
+  color: gray;
+  margin: 3px;
+}

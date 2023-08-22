@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "            [i, j] = [i + 1, j - 1];",
+    "replacement": "            i, j = i + 1, j - 1;"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "    var i = 0, j = s.length - 1;",
+    "replacement": "    var i, j = 0, len = s.length - 1;"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "        [i, j] = [i + 1, j - 1];",
+    "replacement": "        i, j = i + 1, j - 1;"
+  }
+]

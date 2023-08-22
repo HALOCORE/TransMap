@@ -1,0 +1,3 @@
+{
+  "0": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 47 ---\n            return tens[Math.floor(num / 10)] + ' ' + transfer(num % 10);\n            return tens[num / 10] + ' ' + transfer(num % 10);"
+}

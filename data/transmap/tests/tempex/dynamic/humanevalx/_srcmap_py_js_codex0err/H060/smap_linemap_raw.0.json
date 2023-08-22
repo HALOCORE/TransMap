@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def sum_to_n(n: int):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sum(range(n + 1))",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function sum_to_n(n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sum(range(n + 1));",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

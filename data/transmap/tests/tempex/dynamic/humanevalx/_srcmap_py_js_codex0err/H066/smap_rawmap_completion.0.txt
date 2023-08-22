@@ -1,0 +1,17 @@
+
+### Python
+def digitSum(s):   # --- py stmt 1
+    if s == "": return 0   # --- py stmt 2
+    return sum(ord(char) if char.isupper() else 0 for char in s)   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function digitSum(s) {   // --- py stmt 1
+    if (s === "") return 0;   // --- py stmt 2
+    return s.split("").reduce((acc, char) => {   // --- py stmt 3
+        return acc + (char.toUpperCase() === char ? char.charCodeAt(0) : 0);   // --- py stmt 3
+    }, 0);   // --- py stmt 3
+}
+
+
+

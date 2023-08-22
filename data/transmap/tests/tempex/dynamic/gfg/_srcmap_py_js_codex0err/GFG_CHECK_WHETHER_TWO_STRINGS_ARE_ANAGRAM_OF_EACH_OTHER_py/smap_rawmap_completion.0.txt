@@ -1,0 +1,29 @@
+
+### Python
+def f_gold(str1, str2):   # --- py stmt 1
+  n1 = len(str1)   # --- py stmt 2
+  n2 = len(str2)   # --- py stmt 3
+  if n1 != n2: return 0   # --- py stmt 4
+  str1 = sorted(str1)   # --- py stmt 5
+  str2 = sorted(str2)   # --- py stmt 6
+  for i in range(0, n1):   # --- py stmt 7
+    if str1[i] != str2[i]: return 0   # --- py stmt 8
+  return 1   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(str1, str2) {   // --- py stmt 1
+  var n1 = str1.length;   // --- py stmt 2
+  var n2 = str2.length;   // --- py stmt 3
+  if (n1 != n2) return 0;   // --- py stmt 4
+  str1 = str1.split("").sort().join("");   // --- py stmt 5
+  str2 = str2.sort((a, b) => a-b);   // --- py stmt 6
+  for (var i = 0; i < n1; i++) {   // --- py stmt 7
+    if (str1[i] != str2[i]) return 0;   // --- py stmt 8
+  }
+  return 1;   // --- py stmt 9
+}
+
+
+

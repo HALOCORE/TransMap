@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var imx = Math.max(...circles.map(x => x[0] + x[2]));",
+    "replacement": "    var imx = Math.max(x + r for (x, _, r) in circles);"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    var jmx = Math.max(...circles.map(x => x[1] + x[2]));",
+    "replacement": "    var jmx = Math.max(y + r for (_, y, r) in circles);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "            for (var [x, y, r] of circles) {",
+    "replacement": "            for (var x, y, r in circles) {"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "                [x, y] = [x - i, y - j];",
+    "replacement": "                x, y = x - i, y - j;"
+  }
+]

@@ -1,0 +1,230 @@
+{
+  "src_anno_stmts": [
+    [
+      "### equationsPossible",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(equations: List[str]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def find(x):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if p[x] != x:",
+      [
+        4
+      ]
+    ],
+    [
+      "            p[x] = find(p[x])",
+      [
+        5
+      ]
+    ],
+    [
+      "        return p[x]",
+      [
+        6
+      ]
+    ],
+    [
+      "    p = list(range(26))",
+      [
+        7
+      ]
+    ],
+    [
+      "    for e in equations:",
+      [
+        8
+      ]
+    ],
+    [
+      "        a, b = ord(e[0]) - ord('a'), ord(e[-1]) - ord('a')",
+      [
+        9
+      ]
+    ],
+    [
+      "        if e[1] == '=':",
+      [
+        10
+      ]
+    ],
+    [
+      "            p[find(a)] = find(b)",
+      [
+        11
+      ]
+    ],
+    [
+      "    for e in equations:",
+      [
+        12
+      ]
+    ],
+    [
+      "        a, b = ord(e[0]) - ord('a'), ord(e[-1]) - ord('a')",
+      [
+        13
+      ]
+    ],
+    [
+      "        if e[1] == '!' and find(a) == find(b):",
+      [
+        14
+      ]
+    ],
+    [
+      "            return False",
+      [
+        15
+      ]
+    ],
+    [
+      "    return True",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(equations) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function find(x) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (p[x] != x) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            p[x] = find(p[x]);",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return p[x];",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let p = Array.from(Array(26).keys());",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let e of equations) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        var a = ord(e[0]) - ord('a'), b = ord(e[-1]) - ord('a');",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (e[1] == '=') {",
+      [
+        10
+      ]
+    ],
+    [
+      "            p[find(a)] = find(b);",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let e of equations) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        let a = e.charCodeAt(0) - 'a'.charCodeAt(0);",
+      [
+        13
+      ]
+    ],
+    [
+      "        let b = e.charCodeAt(e.length - 1) - 'a'.charCodeAt(0);",
+      [
+        13
+      ]
+    ],
+    [
+      "        if (e[1] == '!' && find(a) == find(b)) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        15
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

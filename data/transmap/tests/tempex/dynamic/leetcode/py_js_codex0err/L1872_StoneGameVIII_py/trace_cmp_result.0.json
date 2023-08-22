@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,5,32]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: accumulate is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"stones\":[\"A\",5,[\"N\",\"-1\"],[\"N\",\"2\"],[\"N\",\"-3\"],[\"N\",\"4\"],[\"N\",\"-5\"]],\"pre_sum\":[\"A\",5,[\"N\",\"-1\"],[\"N\",\"1\"],[\"N\",\"-2\"],[\"N\",\"2\"],[\"N\",\"-3\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,5,32]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: accumulate is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"stones\":[\"A\",5,[\"N\",\"-1\"],[\"N\",\"2\"],[\"N\",\"-3\"],[\"N\",\"4\"],[\"N\",\"-5\"]],\"pre_sum\":[\"A\",5,[\"N\",\"-1\"],[\"N\",\"1\"],[\"N\",\"-2\"],[\"N\",\"2\"],[\"N\",\"-3\"]]}",
+      ""
+    ]
+  }
+]

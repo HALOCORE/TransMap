@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var idx = Array.from(Array(nums.length).keys());",
+    "replacement": "    var idx = list(range(len(nums)));"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    idx.sort(function (i, j) { return nums[i] - nums[j]; });",
+    "replacement": "    idx.sort(function (i) { return nums[i]; });"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    return idx.slice(-k).sort((a, b) => (a - b)).map(i => nums[i]);",
+    "replacement": "    return [nums[i] for (i in sorted(idx[-k:]))];"
+  }
+]

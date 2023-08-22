@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  arr1.sort((a, b) => a-b);",
+    "replacement": "  arr1.sort();"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "  arr2.sort((a, b) => a-b);",
+    "replacement": "  arr2.sort();"
+  }
+]

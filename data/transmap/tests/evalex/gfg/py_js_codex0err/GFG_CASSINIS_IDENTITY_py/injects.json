@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return (n & 1)? -1 : 1;",
+    "replacement": "    return -1 if (n & 1) else 1;"
+  }
+]

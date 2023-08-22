@@ -1,0 +1,140 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findMaxConsecutiveOnes",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = t = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for num in nums:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if num == 1:",
+      [
+        5
+      ]
+    ],
+    [
+      "            t += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        else:",
+      [
+        7
+      ]
+    ],
+    [
+      "            res = max(res, t)",
+      [
+        8
+      ]
+    ],
+    [
+      "            t = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "    return max(res, t)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = t = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var num of nums) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (num == 1) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            t += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            res = Math.max(res, t);",
+      [
+        8
+      ]
+    ],
+    [
+      "            t = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return Math.max(res, t);",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

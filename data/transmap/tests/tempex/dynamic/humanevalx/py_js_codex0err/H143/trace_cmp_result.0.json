@@ -1,0 +1,112 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[16,4,16,29]",
+    "break_idx": 2,
+    "expected_src_pk": "[11,4,11,28]",
+    "actural_src_pk": "[11,4,11,28]",
+    "src_cov_lines": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      12
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",1,[\"S\",2,\"is\"]],\"word\":[\"S\",4,\"test\"],\"flg\":[\"N\",\"1\"],\"i\":[\"N\",\"3\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "new_lst"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,3,20]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,8,3,15]",
+    "actural_src_pk": "[3,8,3,15]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0],\"word\":[\"S\",14,\"This is a test\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0],\"word\":[\"S\",4,\"This\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,3,20]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,8,3,15]",
+    "actural_src_pk": "[3,8,3,15]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0],\"word\":[\"S\",14,\"This is a test\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0],\"word\":[\"S\",4,\"This\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,3,20]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,8,3,15]",
+    "actural_src_pk": "[3,8,3,15]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0],\"word\":[\"S\",14,\"This is a test\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence\":[\"S\",14,\"This is a test\"],\"new_lst\":[\"A\",0],\"word\":[\"S\",4,\"This\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "word"
+    ]
+  }
+]

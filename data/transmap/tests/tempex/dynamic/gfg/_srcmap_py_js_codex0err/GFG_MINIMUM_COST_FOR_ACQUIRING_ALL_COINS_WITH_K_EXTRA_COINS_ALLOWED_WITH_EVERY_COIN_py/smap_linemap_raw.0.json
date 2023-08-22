@@ -1,0 +1,88 @@
+{
+  "src_anno_stmts": [
+    [
+      "import math ;",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(coin, n, k):",
+      [
+        2
+      ]
+    ],
+    [
+      "  coin.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  coins_needed = math.ceil(1.0 * n //(k + 1));",
+      [
+        4
+      ]
+    ],
+    [
+      "  ans = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "  for i in range(coins_needed - 1 + 1): ans += coin[i]",
+      [
+        6
+      ]
+    ],
+    [
+      "  return ans",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(coin, n, k) {",
+      [
+        2
+      ]
+    ],
+    [
+      "  coin.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  var coins_needed = Math.floor(1.0 * n / (k + 1));",
+      [
+        4
+      ]
+    ],
+    [
+      "  var ans = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "  for (var i = 0; i < coins_needed; i++) ans += coin[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "  return ans;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

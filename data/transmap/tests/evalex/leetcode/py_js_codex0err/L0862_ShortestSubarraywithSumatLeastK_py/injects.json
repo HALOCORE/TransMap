@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    var s = [0].concat(nums.map((sum => value => sum += value)(0)));",
+    "replacement": "    var s = [0].concat(nums.reduce(function (a, b) { return a + b; }));"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    var ans = Number.POSITIVE_INFINITY;",
+    "replacement": "    var ans = float('inf');"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "    return (ans == Number.POSITIVE_INFINITY) ? -1 : ans;",
+    "replacement": "    return -1 if ans == float('inf') else ans;"
+  }
+]

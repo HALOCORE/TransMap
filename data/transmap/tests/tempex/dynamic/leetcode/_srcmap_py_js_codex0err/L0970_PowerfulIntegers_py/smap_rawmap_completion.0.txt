@@ -1,0 +1,44 @@
+
+### Python
+### powerfulIntegers 
+from typing import *   # --- py stmt 1
+def f_gold(x: int, y: int, bound: int) -> List[int]:   # --- py stmt 2
+    s = set()   # --- py stmt 3
+    i = 1   # --- py stmt 4
+    while i < bound:   # --- py stmt 5
+        j = 1   # --- py stmt 6
+        while j < bound:   # --- py stmt 7
+            if i + j <= bound:   # --- py stmt 8
+                s.add(i + j)   # --- py stmt 9
+            if y == 1:   # --- py stmt 10
+                break   # --- py stmt 11
+            j *= y   # --- py stmt 12
+        if x == 1:   # --- py stmt 13
+            break   # --- py stmt 14
+        i *= x   # --- py stmt 15
+    return list(s)   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(x, y, bound) {   // --- py stmt 2
+    var s = new Set();   // --- py stmt 3
+    var i = 1;   // --- py stmt 4
+    while (i < bound) {   // --- py stmt 5
+        var j = 1;   // --- py stmt 6
+        while (j < bound) {   // --- py stmt 7
+            if (i + j <= bound) {   // --- py stmt 8
+                s.add(i + j);   // --- py stmt 9
+            }
+            if (y == 1) {   // --- py stmt 10
+                break;   // --- py stmt 11
+            }
+            j *= y;   // --- py stmt 12
+        }
+        if (x == 1) {   // --- py stmt 13
+            break;   // --- py stmt 14
+        }
+        i *= x;   // --- py stmt 15
+    }
+    return Array.from(s);   // --- py stmt 16
+}
+

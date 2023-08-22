@@ -1,0 +1,22 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  arr = sorted(arr)   # --- py stmt 2
+  diff = 10 ** 20   # --- py stmt 3
+  for i in range(n - 1):   # --- py stmt 4
+    if arr[i + 1] - arr[i] < diff: diff = arr[i + 1] - arr[i]   # --- py stmt 5
+  return diff   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+const f_gold = (arr, n) => {   // --- py stmt 1
+  arr = arr.sort();   // --- py stmt 2
+  let diff = 10 ** 20;   // --- py stmt 3
+  for (let i = 0; i < n - 1; i++) {   // --- py stmt 4
+    if (arr[i + 1] - arr[i] < diff) diff = arr[i + 1] - arr[i];   // --- py stmt 5
+  }
+  return diff;   // --- py stmt 6
+};
+
+

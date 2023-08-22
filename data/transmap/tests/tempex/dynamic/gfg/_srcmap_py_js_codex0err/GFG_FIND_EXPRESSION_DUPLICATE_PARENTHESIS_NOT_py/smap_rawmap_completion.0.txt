@@ -1,0 +1,36 @@
+
+### Python
+def f_gold(string):   # --- py stmt 1
+  Stack =[]   # --- py stmt 2
+  for ch in string:   # --- py stmt 3
+    if ch == ')':   # --- py stmt 4
+      top = Stack.pop()   # --- py stmt 5
+      elementsInside = 0   # --- py stmt 6
+      while top != '(':   # --- py stmt 7
+        elementsInside += 1   # --- py stmt 8
+        top = Stack.pop()   # --- py stmt 9
+      if elementsInside < 1: return True   # --- py stmt 10
+    else: Stack.append(ch)   # --- py stmt 11
+  return False   # --- py stmt 12
+
+
+### JavaScript
+"use strict";
+function f_gold(string) {   // --- py stmt 1
+  var Stack = [];   // --- py stmt 2
+  for (var ch in string) {   // --- py stmt 3
+    if (ch == ')') {   // --- py stmt 4
+      var top = Stack.pop();   // --- py stmt 5
+      var elementsInside = 0;   // --- py stmt 6
+      while (top != '(') {   // --- py stmt 7
+        elementsInside += 1;   // --- py stmt 8
+        top = Stack.pop();   // --- py stmt 9
+      }
+      if (elementsInside < 1) return true;   // --- py stmt 10
+    } else Stack.push(ch);   // --- py stmt 11
+  }
+  return false;   // --- py stmt 12
+}
+
+
+

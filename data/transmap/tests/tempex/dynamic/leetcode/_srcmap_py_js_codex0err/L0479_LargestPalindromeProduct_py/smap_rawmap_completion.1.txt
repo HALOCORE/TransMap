@@ -1,0 +1,39 @@
+
+### Python
+### largestPalindrome 
+from typing import *   # --- py stmt 1
+def f_gold(n: int) -> int:   # --- py stmt 2
+    mx = 10**n - 1   # --- py stmt 3
+    for a in range(mx, mx // 10, -1):   # --- py stmt 4
+        b = x = a   # --- py stmt 5
+        while b:   # --- py stmt 6
+            x = x * 10 + b % 10   # --- py stmt 7
+            b //= 10   # --- py stmt 8
+        t = mx   # --- py stmt 9
+        while t * t >= x:   # --- py stmt 10
+            if x % t == 0:   # --- py stmt 11
+                return x % 1337   # --- py stmt 12
+            t -= 1   # --- py stmt 13
+    return 9   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 2
+    var mx = Math.pow(10, n) - 1;   // --- py stmt 3
+    for (var a = mx; a > Math.floor(mx / 10); a--) {   // --- py stmt 4
+        var b = x = a;   // --- py stmt 5
+        while (b) {   // --- py stmt 6
+            x = x * 10 + b % 10;   // --- py stmt 7
+            b = Math.floor(b / 10);   // --- py stmt 8
+        }
+        var t = mx;   // --- py stmt 9
+        while (t * t >= x) {   // --- py stmt 10
+            if (x % t == 0) {   // --- py stmt 11
+                return x % 1337;   // --- py stmt 12
+            }
+            t -= 1;   // --- py stmt 13
+        }
+    }
+    return 9;   // --- py stmt 14
+}
+

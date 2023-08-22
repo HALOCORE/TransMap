@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### addRungs",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(rungs: List[int], dist: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    prev = res = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for rung in rungs:",
+      [
+        4
+      ]
+    ],
+    [
+      "        res += (rung - prev - 1) // dist",
+      [
+        5
+      ]
+    ],
+    [
+      "        prev = rung",
+      [
+        6
+      ]
+    ],
+    [
+      "    return res",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(rungs, dist) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var prev = 0, res = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var rung in rungs) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        res += Math.floor((rung - prev - 1) / dist);",
+      [
+        5
+      ]
+    ],
+    [
+      "        prev = rung;",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

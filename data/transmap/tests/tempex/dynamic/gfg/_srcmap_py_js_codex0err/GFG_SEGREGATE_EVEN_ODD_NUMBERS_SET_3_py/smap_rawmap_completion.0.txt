@@ -1,0 +1,33 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  i = - 1   # --- py stmt 2
+  j = 0   # --- py stmt 3
+  while(j != n):   # --- py stmt 4
+    if(arr[j] % 2 == 0):   # --- py stmt 5
+      i = i + 1   # --- py stmt 6
+      arr[i], arr[j] = arr[j], arr[i]   # --- py stmt 7
+    j = j + 1   # --- py stmt 8
+  for i in arr: print(str(i)+ " ", end = '')   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var i = - 1, j = 0;   // --- py stmt 2, py stmt 3
+  while(j != n) {   // --- py stmt 4
+    if(arr[j] % 2 == 0) {   // --- py stmt 5
+      i = i + 1;   // --- py stmt 6
+      var temp = arr[i];   // --- py stmt 7
+      arr[i] = arr[j];   // --- py stmt 7
+      arr[j] = temp;   // --- py stmt 7
+    }
+    j = j + 1;   // --- py stmt 8
+  }
+  for(var i_1 = 0;i_1 < arr.length;i_1++) {   // --- py stmt 9
+    console.log(arr[i_1] + " ", end = '');   // --- py stmt 9
+  }
+}
+
+
+

@@ -1,0 +1,140 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxPower",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = t = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for i, c in enumerate(s):",
+      [
+        4
+      ]
+    ],
+    [
+      "        if i == 0 or c == s[i - 1]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            t += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        else:",
+      [
+        7
+      ]
+    ],
+    [
+      "            t = 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        ans = max(ans, t)",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = t = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < s.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (i == 0 || s[i] == s[i - 1]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            t += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            t = 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans = Math.max(ans, t);",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

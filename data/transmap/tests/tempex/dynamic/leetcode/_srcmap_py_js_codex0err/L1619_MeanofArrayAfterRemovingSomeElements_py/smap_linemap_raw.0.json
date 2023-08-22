@@ -1,0 +1,98 @@
+{
+  "src_anno_stmts": [
+    [
+      "### trimMean",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> float:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(arr)",
+      [
+        3
+      ]
+    ],
+    [
+      "    start, end = int(n * 0.05), int(n * 0.95)",
+      [
+        4
+      ]
+    ],
+    [
+      "    arr.sort()",
+      [
+        5
+      ]
+    ],
+    [
+      "    t = arr[start:end]",
+      [
+        6
+      ]
+    ],
+    [
+      "    return round(sum(t) / len(t), 5)",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = arr.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var start = Math.floor(n * 0.05);",
+      [
+        4
+      ]
+    ],
+    [
+      "    var end = Math.floor(n * 0.95);",
+      [
+        4
+      ]
+    ],
+    [
+      "    arr.sort();",
+      [
+        5
+      ]
+    ],
+    [
+      "    var t = arr.slice(start, end);",
+      [
+        6
+      ]
+    ],
+    [
+      "    return Number((t.reduce((a, b) => a + b) / t.length).toFixed(5));",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[6,4,6,20]",
+    "expected_src_pk": "[7,4,7,15]",
+    "actural_src_pk": "[4,4,5,17]",
+    "src_cov_lines": [
+      4,
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"numbers\":[\"A\",0],\"delimeter\":[\"N\",\"7\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"numbers\":[\"A\",4,[\"N\",\"5\"],[\"N\",\"6\"],[\"N\",\"3\"],[\"N\",\"2\"]],\"delimeter\":[\"N\",\"8\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 1,
+    "tar_pk": "[6,4,6,20]",
+    "expected_src_pk": "[7,4,7,15]",
+    "actural_src_pk": "[5,8,5,17]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"numbers\":[\"A\",0],\"delimeter\":[\"N\",\"7\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"numbers\":[\"A\",0],\"delimeter\":[\"N\",\"7\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

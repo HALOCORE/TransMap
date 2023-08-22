@@ -1,0 +1,46 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        2
+      ]
+    ],
+    [
+      "  return(arr[n - 1] + arr[n - 2] + arr[n - 3])",
+      [
+        3
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "  return(arr[n - 1] + arr[n - 2] + arr[n - 3]);",
+      [
+        3
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

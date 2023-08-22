@@ -1,0 +1,223 @@
+{
+  "src_anno_stmts": [
+    [
+      "### longestIncreasingPath",
+      null
+    ],
+    [
+      "def cache(f): return f",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(matrix: List[List[int]]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    @cache",
+      [
+        4
+      ]
+    ],
+    [
+      "    def dfs(i, j):",
+      [
+        5
+      ]
+    ],
+    [
+      "        ans = 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        for a, b in [[-1, 0], [1, 0], [0, 1], [0, -1]]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            x, y = i + a, j + b",
+      [
+        8
+      ]
+    ],
+    [
+      "            if 0 <= x < m and 0 <= y < n and matrix[x][y] > matrix[i][j]:",
+      [
+        9
+      ]
+    ],
+    [
+      "                ans = max(ans, dfs(x, y) + 1)",
+      [
+        10
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        11
+      ]
+    ],
+    [
+      "    m, n = len(matrix), len(matrix[0])",
+      [
+        12
+      ]
+    ],
+    [
+      "    return max(dfs(i, j) for i in range(m) for j in range(n))",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function cache(f) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return f;",
+      [
+        1
+      ]
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "function f_gold(matrix) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var dfs = cache(function (i, j) {",
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      "        var ans = 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var _i = 0, _a = [[-1, 0], [1, 0], [0, 1], [0, -1]]; _i < _a.length; _i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            var a = _a[_i][0],",
+      null
+    ],
+    [
+      "                b = _a[_i][1];",
+      null
+    ],
+    [
+      "            var x = i + a,",
+      null
+    ],
+    [
+      "                y = j + b;",
+      [
+        8
+      ]
+    ],
+    [
+      "            if (0 <= x && x < m && 0 <= y && y < n && matrix[x][y] > matrix[i][j]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "                ans = Math.max(ans, dfs(x, y) + 1);",
+      [
+        10
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return ans;",
+      [
+        11
+      ]
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "    var m = matrix.length,",
+      null
+    ],
+    [
+      "        n = matrix[0].length;",
+      [
+        12
+      ]
+    ],
+    [
+      "    return Math.max.apply(Math, _toConsumableArray(Array.from(Array(m), function (_, i) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        return Array.from(Array(n), function (_, j) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            return dfs(i, j);",
+      [
+        13
+      ]
+    ],
+    [
+      "        });",
+      null
+    ],
+    [
+      "    }).flat()));",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

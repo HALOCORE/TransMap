@@ -1,0 +1,47 @@
+
+### Python
+### eventualSafeNodes 
+from collections import deque   # --- py stmt 1
+from collections import defaultdict   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(graph: List[List[int]]) -> List[int]:   # --- py stmt 4
+    n = len(graph)   # --- py stmt 5
+    outDegree = [len(vs) for vs in graph]   # --- py stmt 6
+    revGraph = defaultdict(list)   # --- py stmt 7
+    for u, vs in enumerate(graph):   # --- py stmt 8
+        for v in vs:   # --- py stmt 9
+            revGraph[v].append(u)   # --- py stmt 10
+    q = deque([i for i, d in enumerate(outDegree) if d == 0])   # --- py stmt 11
+    while q:   # --- py stmt 12
+        for u in revGraph[q.popleft()]:   # --- py stmt 13
+            outDegree[u] -= 1   # --- py stmt 14
+            if outDegree[u] == 0:   # --- py stmt 15
+                q.append(u)   # --- py stmt 16
+    return [i for i, d in enumerate(outDegree) if d == 0]   # --- py stmt 17
+
+### JavaScript
+"use strict";
+function f_gold(graph) {   // --- py stmt 4
+    let n = graph.length;   // --- py stmt 5
+    let outDegree = graph.map(vs => vs.length);   // --- py stmt 6
+    let revGraph = {};   // --- py stmt 7
+    for (let u = 0; u < graph.length; u++) {   // --- py stmt 8
+        for (let v of graph[u]) {   // --- py stmt 9
+            if (!revGraph[v]) revGraph[v] = [];   // --- py stmt 10
+            revGraph[v].push(u);   // --- py stmt 10
+        }
+    }
+    let q = [...Array(n).keys()].filter(i => outDegree[i] == 0);   // --- py stmt 11
+    while (q.length > 0) {   // --- py stmt 12
+        for (let u of revGraph[q.shift()]) {   // --- py stmt 13
+            outDegree[u] -= 1;   // --- py stmt 14
+            if (outDegree[u] == 0) {   // --- py stmt 15
+                q.push(u);   // --- py stmt 16
+            }
+        }
+    }
+    return [...Array(n).keys()].filter(i => outDegree[i] == 0);   // --- py stmt 17
+}
+
+
+

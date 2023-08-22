@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    return dp.reduce((a, b) => a + b) % MOD;",
+    "replacement": "    return sum(dp) % MOD;"
+  }
+]

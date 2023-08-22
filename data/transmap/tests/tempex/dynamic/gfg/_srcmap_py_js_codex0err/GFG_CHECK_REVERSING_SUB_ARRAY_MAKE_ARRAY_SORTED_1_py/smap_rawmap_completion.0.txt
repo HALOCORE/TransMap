@@ -1,0 +1,48 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  if(n == 1): return True   # --- py stmt 2
+  i = 1   # --- py stmt 3
+  for i in range(1, n):   # --- py stmt 4
+    if arr[i - 1] < arr[i]:   # --- py stmt 5
+      if(i == n): return True   # --- py stmt 6
+  j = i   # --- py stmt 7
+  while(arr[j] < arr[j - 1]):   # --- py stmt 8
+    if(i > 1 and arr[j] < arr[i - 2]): return False   # --- py stmt 9
+    j += 1   # --- py stmt 10
+  if(j == n): return True   # --- py stmt 11
+  k = j   # --- py stmt 12
+  if(arr[k] < arr[i - 1]): return False   # --- py stmt 13
+  while(k > 1 and k < n):   # --- py stmt 14
+    if(arr[k] < arr[k - 1]): return False   # --- py stmt 15
+    k += 1   # --- py stmt 16
+  return True   # --- py stmt 17
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  if(n == 1) return true;   // --- py stmt 2
+  var i = 1;   // --- py stmt 3
+  for(i = 1; i < n; i++) {   // --- py stmt 4
+    if(arr[i - 1] < arr[i]) {   // --- py stmt 5
+      if(i == n) return true;   // --- py stmt 6
+    }
+  }
+  var j = i;   // --- py stmt 7
+  while(arr[j] < arr[j - 1]) {   // --- py stmt 8
+    if(i > 1 && arr[j] < arr[i - 2]) return false;   // --- py stmt 9
+    j += 1;   // --- py stmt 10
+  }
+  if(j == n) return true;   // --- py stmt 11
+  var k = j;   // --- py stmt 12
+  if(arr[k] < arr[i - 1]) return false;   // --- py stmt 13
+  while(k > 1 && k < n) {   // --- py stmt 14
+    if(arr[k] < arr[k - 1]) return false;   // --- py stmt 15
+    k += 1;   // --- py stmt 16
+  }
+  return true;   // --- py stmt 17
+}
+
+
+

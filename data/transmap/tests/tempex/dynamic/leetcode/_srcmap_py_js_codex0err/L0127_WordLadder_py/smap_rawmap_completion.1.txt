@@ -1,0 +1,73 @@
+
+### Python
+### ladderLength 
+from collections import deque   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(beginWord: str, endWord: str, wordList: List[str]) -> int:   # --- py stmt 3
+    def extend(m1, m2, q):   # --- py stmt 4
+        for _ in range(len(q)):   # --- py stmt 5
+            s = q.popleft()   # --- py stmt 6
+            step = m1[s]   # --- py stmt 7
+            s = list(s)   # --- py stmt 8
+            for i in range(len(s)):   # --- py stmt 9
+                ch = s[i]   # --- py stmt 10
+                for j in range(26):   # --- py stmt 11
+                    s[i] = chr(ord('a') + j)   # --- py stmt 12
+                    t = ''.join(s)   # --- py stmt 13
+                    if t in m1 or t not in words:   # --- py stmt 14
+                        continue   # --- py stmt 15
+                    if t in m2:   # --- py stmt 16
+                        return step + 1 + m2[t]   # --- py stmt 17
+                    m1[t] = step + 1   # --- py stmt 18
+                    q.append(t)   # --- py stmt 19
+                s[i] = ch   # --- py stmt 20
+        return -1   # --- py stmt 21
+    words = set(wordList)   # --- py stmt 22
+    if endWord not in words:   # --- py stmt 23
+        return 0   # --- py stmt 24
+    q1, q2 = deque([beginWord]), deque([endWord])   # --- py stmt 25
+    m1, m2 = {beginWord: 0}, {endWord: 0}   # --- py stmt 26
+    while q1 and q2:   # --- py stmt 27
+        t = extend(m1, m2, q1) if len(q1) <= len(q2) else extend(m2, m1, q2)   # --- py stmt 28
+        if t != -1:   # --- py stmt 29
+            return t + 1   # --- py stmt 30
+    return 0   # --- py stmt 31
+
+### JavaScript
+"use strict";
+function f_gold (beginWord, endWord, wordList) {   // --- py stmt 3
+    function extend (m1, m2, q) {   // --- py stmt 4
+        for (var _ = 0, ql = q.length; _ < ql; _++) {   // --- py stmt 5
+            var s = q.shift();   // --- py stmt 6
+            var step = m1[s];   // --- py stmt 7
+            s = s.split('');   // --- py stmt 8
+            for (var i = 0; i < s.length; i++) {   // --- py stmt 9
+                var ch = s[i];   // --- py stmt 10
+                for (var j = 0; j < 26; j++) {   // --- py stmt 11
+                    s[i] = String.fromCharCode(97 + j);   // --- py stmt 12
+                    var t = s.join('');   // --- py stmt 13
+                    if (t in m1 || !(t in words)) continue;   // --- py stmt 14, py stmt 15
+                    if (t in m2) return step + 1 + m2[t];   // --- py stmt 16, py stmt 17
+                    m1[t] = step + 1;   // --- py stmt 18
+                    q.push(t);   // --- py stmt 19
+                }
+                s[i] = ch;   // --- py stmt 20
+            }
+        }
+        return -1;   // --- py stmt 21
+    }
+    var words = new Set(wordList);   // --- py stmt 22
+    if (!(words.has(endWord))) return 0;   // --- py stmt 23, py stmt 24
+    var q1 = [beginWord], q2 = [endWord];   // --- py stmt 25
+    var m1 = {}, m2 = {};   // --- py stmt 26
+    m1[beginWord] = 0;   // --- py stmt 26
+    m2[endWord] = 0;   // --- py stmt 26
+    while (q1.length > 0 && q2.length > 0) {   // --- py stmt 27
+        var t = q1.length <= q2.length ? extend(m1, m2, q1) : extend(m2, m1, q2);   // --- py stmt 28
+        if (t != -1) return t + 1;   // --- py stmt 29, py stmt 30
+    }
+    return 0;   // --- py stmt 31
+}
+
+
+

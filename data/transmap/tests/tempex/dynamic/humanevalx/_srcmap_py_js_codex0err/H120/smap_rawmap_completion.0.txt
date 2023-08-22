@@ -1,0 +1,23 @@
+
+### Python
+def maximum(arr, k):   # --- py stmt 1
+    if k == 0:   # --- py stmt 2
+        return []   # --- py stmt 3
+    arr.sort()   # --- py stmt 4
+    ans = arr[-k:]   # --- py stmt 5
+    return ans   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function maximum(arr, k) {   // --- py stmt 1
+    if (k === 0) {   // --- py stmt 2
+        return [];   // --- py stmt 3
+    }
+    arr.sort();   // --- py stmt 4
+    let ans = arr.slice(-k);   // --- py stmt 5
+    return ans;   // --- py stmt 6
+}
+
+
+

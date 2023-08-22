@@ -1,0 +1,127 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[21,4,21,31]",
+    "src_cov_lines": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24
+    ],
+    "tar_cov_lines": [
+      2,
+      5,
+      8,
+      9,
+      10,
+      31
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: d.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"pattern\":[\"S\",4,\"aaaa\"],\"s\":[\"S\",12,\"asdasdasdasd\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[4,8,5,23]",
+    "src_cov_lines": [
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16
+    ],
+    "tar_cov_lines": [
+      8,
+      9,
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: d.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"i\":[\"N\",\"1\"],\"j\":[\"N\",\"1\"],\"d\":[\"DICT\",[[\"S\",1,\"a\"],[\"S\",1,\"r\"]]],\"dfs\":\"UNKNOWN\",\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"14\"],\"pattern\":[\"S\",4,\"abab\"],\"s\":[\"S\",14,\"redblueredblue\"],\"vis\":[\"SET\",[\"S\",1,\"r\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[13,12,19,29]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: d.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"d\":[\"DICT\"],\"dfs\":\"UNKNOWN\",\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"14\"],\"pattern\":[\"S\",4,\"abab\"],\"s\":[\"S\",14,\"redblueredblue\"],\"vis\":[\"SET\"],\"k\":[\"N\",\"0\"],\"t\":[\"S\",1,\"r\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[13,12,19,29]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: d.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"d\":[\"DICT\"],\"dfs\":\"UNKNOWN\",\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"14\"],\"pattern\":[\"S\",4,\"abab\"],\"s\":[\"S\",14,\"redblueredblue\"],\"vis\":[\"SET\"],\"k\":[\"N\",\"0\"],\"t\":[\"S\",1,\"r\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[13,12,19,29]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":10,\"err_msg\":\"TypeError: d.get is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"0\"],\"d\":[\"DICT\"],\"dfs\":\"UNKNOWN\",\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"14\"],\"pattern\":[\"S\",4,\"abab\"],\"s\":[\"S\",14,\"redblueredblue\"],\"vis\":[\"SET\"],\"k\":[\"N\",\"0\"],\"t\":[\"S\",1,\"r\"]}",
+      ""
+    ]
+  }
+]

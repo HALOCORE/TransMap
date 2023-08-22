@@ -1,0 +1,19 @@
+
+### Python
+### minimumTime 
+from typing import *   # --- py stmt 1
+def f_gold(jobs: List[int], workers: List[int]) -> int:   # --- py stmt 2
+    jobs.sort()   # --- py stmt 3
+    workers.sort()   # --- py stmt 4
+    return max((a + b - 1) // b for a, b in zip(jobs, workers))   # --- py stmt 5
+
+### JavaScript
+"use strict";
+function f_gold(jobs, workers) {   // --- py stmt 2
+    jobs.sort();   // --- py stmt 3
+    workers.sort((a, b) => a - b);   // --- py stmt 4
+    return Math.max(...(jobs.map((a, i) => Math.floor((a + workers[i] - 1) / workers[i]))));   // --- py stmt 5
+}
+
+
+

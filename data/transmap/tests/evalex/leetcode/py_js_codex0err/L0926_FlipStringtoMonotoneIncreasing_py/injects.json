@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let left = new Array(n + 1).fill(0);",
+    "replacement": "    let left = new Array(n + 1);"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    let right = new Array(n + 1).fill(0);",
+    "replacement": "    let right = new Array(n + 1);"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        left[i] = left[i - 1] + (s[i - 1] == '1' ? 1 : 0);",
+    "replacement": "        left[i] = left[i - 1] + (1 if s[i - 1] == '1' else 0);"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        right[i] = right[i + 1] + ((s[i] == '0') ? 1 : 0);",
+    "replacement": "        right[i] = right[i + 1] + (1 if s[i] == '0' else 0);"
+  }
+]

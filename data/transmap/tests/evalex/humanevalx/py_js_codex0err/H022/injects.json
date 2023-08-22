@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    return values.filter(x => Number.isInteger(x));",
+    "replacement": "    return values.filter(x => typeof x === \"number\");"
+  }
+]

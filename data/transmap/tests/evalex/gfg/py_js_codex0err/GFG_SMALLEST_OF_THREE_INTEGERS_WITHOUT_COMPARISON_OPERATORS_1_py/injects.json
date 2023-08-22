@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  if(!(y / x)) return !(y / z)? y : z;",
+    "replacement": "  if(!(y / x)) return y if(!(y / z)) else z;"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  return (!(x / z))? x : z;",
+    "replacement": "  return x if(!(x / z)) else z;"
+  }
+]

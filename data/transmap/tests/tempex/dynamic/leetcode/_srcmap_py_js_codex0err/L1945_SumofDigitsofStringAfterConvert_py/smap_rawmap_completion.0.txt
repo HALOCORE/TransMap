@@ -1,0 +1,28 @@
+
+### Python
+### getLucky 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, k: int) -> int:   # --- py stmt 2
+    s = ''.join([str(ord(c) - ord('a') + 1) for c in s])   # --- py stmt 3
+    for _ in range(k):   # --- py stmt 4
+        t = 0   # --- py stmt 5
+        for c in s:   # --- py stmt 6
+            t += ord(c) - ord('0')   # --- py stmt 7
+        s = str(t)   # --- py stmt 8
+    return int(s)   # --- py stmt 9
+
+### JavaScript
+"use strict";
+function f_gold(s, k) {   // --- py stmt 2
+    s = s.split("").map(function (c) { return String.fromCharCode(c.charCodeAt(0) - "a".charCodeAt(0) + 1); }).join("");   // --- py stmt 3
+    for (var _ = 0; _ < k; _++) {   // --- py stmt 4
+        var t = 0;   // --- py stmt 5
+        for (var _i = 0, s_1 = s; _i < s_1.length; _i++) {   // --- py stmt 6
+            var c = s_1[_i];
+            t += c.charCodeAt(0) - "0".charCodeAt(0);   // --- py stmt 7
+        }
+        s = String(t);   // --- py stmt 8
+    }
+    return parseInt(s);   // --- py stmt 9
+}
+

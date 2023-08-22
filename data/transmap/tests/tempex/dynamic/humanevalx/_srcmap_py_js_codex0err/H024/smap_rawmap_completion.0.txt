@@ -1,0 +1,20 @@
+
+### Python
+def largest_divisor(n: int) -> int:   # --- py stmt 1
+    for i in reversed(range(n)):   # --- py stmt 2
+        if n % i == 0:   # --- py stmt 3
+            return i   # --- py stmt 4
+
+
+### JavaScript
+"use strict";
+function largest_divisor(n) {   // --- py stmt 1
+    for (var i = n; i >= 0; i--) {   // --- py stmt 2
+        if (n % i === 0) {   // --- py stmt 3
+            return i;   // --- py stmt 4
+        }
+    }
+}
+
+
+

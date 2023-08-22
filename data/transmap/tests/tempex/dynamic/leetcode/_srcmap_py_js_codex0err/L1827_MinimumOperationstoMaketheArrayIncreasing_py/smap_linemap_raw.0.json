@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minOperations",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    mx = ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for v in nums:",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans += max(0, mx + 1 - v)",
+      [
+        5
+      ]
+    ],
+    [
+      "        mx = max(mx + 1, v)",
+      [
+        6
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var mx = ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var v of nums) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        ans += Math.max(0, mx + 1 - v);",
+      [
+        5
+      ]
+    ],
+    [
+      "        mx = Math.max(mx + 1, v);",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

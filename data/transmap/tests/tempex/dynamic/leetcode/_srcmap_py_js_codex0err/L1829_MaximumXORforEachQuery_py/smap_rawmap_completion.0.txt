@@ -1,0 +1,39 @@
+
+### Python
+### getMaximumXor 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int], maximumBit: int) -> List[int]:   # --- py stmt 2
+    n = len(nums)   # --- py stmt 3
+    s = [0] * (n + 1)   # --- py stmt 4
+    for i, x in enumerate(nums):   # --- py stmt 5
+        s[i + 1] = s[i] ^ x   # --- py stmt 6
+    ans = []   # --- py stmt 7
+    for x in s[:0:-1]:   # --- py stmt 8
+        t = 0   # --- py stmt 9
+        for i in range(maximumBit):   # --- py stmt 10
+            if ((x >> i) & 1) == 0:   # --- py stmt 11
+                t |= 1 << i   # --- py stmt 12
+        ans.append(t)   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+const f_gold = (nums, maximumBit) => {   // --- py stmt 2
+    let n = nums.length;   // --- py stmt 3
+    let s = new Array(n + 1).fill(0);   // --- py stmt 4
+    for (let i = 0; i < nums.length; i++) {   // --- py stmt 5
+        s[i + 1] = s[i] ^ nums[i];   // --- py stmt 6
+    }
+    let ans = [];   // --- py stmt 7
+    for (let x of s.slice(0, 0).reverse()) {   // --- py stmt 8
+        let t = 0;   // --- py stmt 9
+        for (let i = 0; i < maximumBit; i++) {   // --- py stmt 10
+            if (((x >> i) & 1) == 0) {   // --- py stmt 11
+                t |= 1 << i;   // --- py stmt 12
+            }
+        }
+        ans.push(t);   // --- py stmt 13
+    }
+    return ans;   // --- py stmt 14
+}
+

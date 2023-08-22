@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var largest_digit = -1, second_largest_digit = -1;",
+    "replacement": "    var largest_digit = second_largest_digit = -1;"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        if (c.match(/^\\d+$/)) {",
+    "replacement": "        if (c.isdigit()) {"
+  }
+]

@@ -1,0 +1,148 @@
+{
+  "src_anno_stmts": [
+    [
+      "### decodeCiphertext",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(encodedText: str, rows: int) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    cols = len(encodedText) // rows",
+      [
+        4
+      ]
+    ],
+    [
+      "    for j in range(cols):",
+      [
+        5
+      ]
+    ],
+    [
+      "        x, y = 0, j",
+      [
+        6
+      ]
+    ],
+    [
+      "        while x < rows and y < cols:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans.append(encodedText[x * cols + y])",
+      [
+        8
+      ]
+    ],
+    [
+      "            x, y = x + 1, y + 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ''.join(ans).rstrip()",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(encodedText, rows) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    var cols = encodedText.length / rows;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var j = 0; j < cols; j++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var x = 0;",
+      [
+        6
+      ]
+    ],
+    [
+      "        var y = j;",
+      [
+        6
+      ]
+    ],
+    [
+      "        while (x < rows && y < cols) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans.push(encodedText[x * cols + y]);",
+      [
+        8
+      ]
+    ],
+    [
+      "            x = x + 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "            y = y + 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans.join('').trim();",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

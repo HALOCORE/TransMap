@@ -1,0 +1,36 @@
+
+### Python
+def f_gold(arr1, arr2, m, n):   # --- py stmt 1
+  i = 0   # --- py stmt 2
+  j = 0   # --- py stmt 3
+  if m < n: return 0   # --- py stmt 4
+  arr1.sort()   # --- py stmt 5
+  arr2.sort()   # --- py stmt 6
+  while i < n and j < m:   # --- py stmt 7
+    if arr1[j] < arr2[i]: j += 1   # --- py stmt 8
+    elif arr1[j] == arr2[i]:   # --- py stmt 9
+      j += 1   # --- py stmt 10
+      i += 1   # --- py stmt 11
+    elif arr1[j] > arr2[i]: return 0   # --- py stmt 12
+  return False if i < n else True   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(arr1, arr2, m, n) {   // --- py stmt 1
+  var i = 0, j = 0;   // --- py stmt 2, py stmt 3
+  if (m < n) return 0;   // --- py stmt 4
+  arr1.sort((a, b) => a-b);   // --- py stmt 5
+  arr2.sort();   // --- py stmt 6
+  while (i < n && j < m) {   // --- py stmt 7
+    if (arr1[j] < arr2[i]) j += 1;   // --- py stmt 8
+    else if (arr1[j] == arr2[i]) {   // --- py stmt 9
+      j += 1;   // --- py stmt 10
+      i += 1;   // --- py stmt 11
+    }
+    else if (arr1[j] > arr2[i]) return 0;   // --- py stmt 12
+  }
+  return i < n ? false : true;   // --- py stmt 13
+}
+
+
+

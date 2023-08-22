@@ -1,0 +1,152 @@
+{
+  "src_anno_stmts": [
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    counter = Counter(arr)",
+      [
+        4
+      ]
+    ],
+    [
+      "    ans = -1",
+      [
+        5
+      ]
+    ],
+    [
+      "    for num, n in counter.items():",
+      [
+        6
+      ]
+    ],
+    [
+      "        if num == n and ans < num:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = num",
+      [
+        8
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        9
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var counter = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    var ans = -1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < arr.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (counter[arr[i]] == undefined) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            counter[arr[i]] = 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      null
+    ],
+    [
+      "            counter[arr[i]] += 1;",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var num in counter) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (num == counter[num] && ans < num) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans = parseInt(num);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        9
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

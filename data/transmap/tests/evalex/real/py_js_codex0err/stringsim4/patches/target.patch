@@ -1,0 +1,77 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -46,10 +46,10 @@ class ShingleBased {
+ 
+     get_profile(string) {
+         let shingles = {};
+-        let no_space_str = _SPACE_PATTERN.sub(" ", string);
++        let no_space_str = string.replaceAll(/\s+/g, " ");
+         for (let i = 0; i < no_space_str.length - this.k + 1; i++) {
+             let shingle = no_space_str.substring(i, i + this.k);
+-            let old = shingles.get(shingle);
++            let old = shingles[shingle];
+             if (old) {
+                 shingles[shingle] = parseInt(old + 1);
+             } else {
+@@ -82,14 +82,14 @@ class SorensenDice extends ShingleBased {
+         let union = new Set();
+         let profile0 = this.get_profile(s0);
+         let profile1 = this.get_profile(s1);
+-        for (let k of profile0.keys()) {
++        for (let k of Object.keys(profile0)) {
+             union.add(k);
+         }
+-        for (let k of profile1.keys()) {
++        for (let k of Object.keys(profile1)) {
+             union.add(k);
+         }
+-        let inter = parseInt(profile0.keys().length + profile1.keys().length - union.size());
+-        return 2.0 * inter / (profile0.length + profile1.length);
++        let inter = parseInt(Object.keys(profile0).length + Object.keys(profile1).length - union.size);
++        return 2.0 * inter / (Object.keys(profile0).length + Object.keys(profile1).length);
+     }
+ }
+ 
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -165,10 +165,10 @@ class ShingleBased {   // --- py stmt 19
+ 
+     get_profile(string) {   // --- py stmt 24
+         let shingles = {};   // --- py stmt 25
+-        let no_space_str = _SPACE_PATTERN.sub(" ", string);   // --- py stmt 26
++        let no_space_str = string.replaceAll(/\s+/g, " ");   // --- py stmt 26
+         for (let i = 0; i < no_space_str.length - this.k + 1; i++) {   // --- py stmt 27
+             let shingle = no_space_str.substring(i, i + this.k);   // --- py stmt 28
+-            let old = shingles.get(shingle);   // --- py stmt 29
++            let old = shingles[shingle];   // --- py stmt 29
+             if (old) {   // --- py stmt 30
+                 shingles[shingle] = parseInt(old + 1);   // --- py stmt 31
+             } else {   // --- py stmt 32
+@@ -201,14 +201,14 @@ class SorensenDice extends ShingleBased {   // --- py stmt 35
+         let union = new Set();   // --- py stmt 47
+         let profile0 = this.get_profile(s0);   // --- py stmt 48
+         let profile1 = this.get_profile(s1);   // --- py stmt 48
+-        for (let k of profile0.keys()) {   // --- py stmt 49
++        for (let k of Object.keys(profile0)) {   // --- py stmt 49
+             union.add(k);   // --- py stmt 50
+         }
+-        for (let k of profile1.keys()) {   // --- py stmt 51
++        for (let k of Object.keys(profile1)) {   // --- py stmt 51
+             union.add(k);   // --- py stmt 52
+         }
+-        let inter = parseInt(profile0.keys().length + profile1.keys().length - union.size());   // --- py stmt 53
+-        return 2.0 * inter / (profile0.length + profile1.length);   // --- py stmt 54
++        let inter = parseInt(Object.keys(profile0).length + Object.keys(profile1).length - union.size);   // --- py stmt 53
++        return 2.0 * inter / (Object.keys(profile0).length + Object.keys(profile1).length);   // --- py stmt 54
+     }
+ }
+ 
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,4 @@
+ {
+-  "disable_src_lines": [],
++  "disable_src_lines": [5],
+   "trace_cmp": []
+ }
+\ No newline at end of file

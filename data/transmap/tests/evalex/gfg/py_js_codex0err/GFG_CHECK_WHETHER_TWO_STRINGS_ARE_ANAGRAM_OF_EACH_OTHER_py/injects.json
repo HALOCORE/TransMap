@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  str1 = str1.sort((a, b) => a-b);",
+    "replacement": "  str1 = str1.split(\"\").sort().join(\"\");"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "  str2 = str2.sort((a, b) => a-b);",
+    "replacement": "  str2 = str2.split(\"\").sort().join(\"\");"
+  }
+]

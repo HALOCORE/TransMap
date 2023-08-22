@@ -1,0 +1,118 @@
+{
+  "src_anno_stmts": [
+    [
+      "### missingRolls",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(rolls: List[int], mean: int, n: int) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    m = len(rolls)",
+      [
+        3
+      ]
+    ],
+    [
+      "    s = (n + m) * mean - sum(rolls)",
+      [
+        4
+      ]
+    ],
+    [
+      "    if s > n * 6 or s < n:",
+      [
+        5
+      ]
+    ],
+    [
+      "        return []",
+      [
+        6
+      ]
+    ],
+    [
+      "    ans = [s // n] * n",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(s % n):",
+      [
+        8
+      ]
+    ],
+    [
+      "        ans[i] += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(rolls, mean, n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let m = rolls.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let s = (n + m) * mean - rolls.reduce((a, b) => a + b);",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (s > n * 6 || s < n) return [];",
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      "    let ans = Array(n).fill(s / n);",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 0; i < s % n; i++) ans[i] += 1;",
+      [
+        8,
+        9
+      ]
+    ],
+    [
+      "    return ans;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

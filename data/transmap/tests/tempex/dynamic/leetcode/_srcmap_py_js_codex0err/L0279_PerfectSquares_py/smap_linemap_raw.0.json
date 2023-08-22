@@ -1,0 +1,154 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numSquares",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(n: int) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    dp = [0] * (n + 1)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(1, n + 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        j, mi = 1, float('inf')",
+      [
+        7
+      ]
+    ],
+    [
+      "        while j * j <= i:",
+      [
+        8
+      ]
+    ],
+    [
+      "            mi = min(mi, dp[i - j * j])",
+      [
+        9
+      ]
+    ],
+    [
+      "            j += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        dp[i] = mi + 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    return dp[-1]",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var dp = new Array(n + 1);",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 1; i <= n; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var j = 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        var mi = Number.POSITIVE_INFINITY;",
+      [
+        7
+      ]
+    ],
+    [
+      "        while (j * j <= i) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            mi = Math.min(mi, dp[i - j * j]);",
+      [
+        9
+      ]
+    ],
+    [
+      "            j += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        dp[i] = mi + 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dp[n];",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

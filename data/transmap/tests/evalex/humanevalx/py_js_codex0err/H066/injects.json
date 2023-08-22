@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        return acc + (/[A-Z]/.test(char) ? char.charCodeAt(0) : 0);",
+    "replacement": "        return acc + (char.toUpperCase() === char ? char.charCodeAt(0) : 0);"
+  }
+]

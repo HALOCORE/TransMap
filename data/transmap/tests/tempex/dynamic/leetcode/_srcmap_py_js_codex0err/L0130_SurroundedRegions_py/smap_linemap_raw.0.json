@@ -1,0 +1,320 @@
+{
+  "src_anno_stmts": [
+    [
+      "### solve",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(board: List[List[str]]) -> None:",
+      [
+        2
+      ]
+    ],
+    [
+      "    \"\"\"",
+      [
+        3
+      ]
+    ],
+    [
+      "    Do not return anything, modify board in-place instead.",
+      [
+        4
+      ]
+    ],
+    [
+      "    \"\"\"",
+      [
+        5
+      ]
+    ],
+    [
+      "    def dfs(i, j):",
+      [
+        6
+      ]
+    ],
+    [
+      "        board[i][j] = '.'",
+      [
+        7
+      ]
+    ],
+    [
+      "        for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:",
+      [
+        8
+      ]
+    ],
+    [
+      "            x, y = i + a, j + b",
+      [
+        9
+      ]
+    ],
+    [
+      "            if 0 <= x < m and 0 <= y < n and board[x][y] == 'O':",
+      [
+        10
+      ]
+    ],
+    [
+      "                dfs(x, y)",
+      [
+        11
+      ]
+    ],
+    [
+      "    m, n = len(board), len(board[0])",
+      [
+        12
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        13
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        14
+      ]
+    ],
+    [
+      "            if board[i][j] == 'O' and (",
+      [
+        15
+      ]
+    ],
+    [
+      "                i == 0 or i == m - 1 or j == 0 or j == n - 1",
+      null
+    ],
+    [
+      "            ):",
+      null
+    ],
+    [
+      "                dfs(i, j)",
+      [
+        16
+      ]
+    ],
+    [
+      "    for i in range(m):",
+      [
+        17
+      ]
+    ],
+    [
+      "        for j in range(n):",
+      [
+        18
+      ]
+    ],
+    [
+      "            if board[i][j] == 'O':",
+      [
+        19
+      ]
+    ],
+    [
+      "                board[i][j] = 'X'",
+      [
+        20
+      ]
+    ],
+    [
+      "            elif board[i][j] == '.':",
+      [
+        21
+      ]
+    ],
+    [
+      "                board[i][j] = 'O'",
+      [
+        22
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(board) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs(i, j) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        board[i][j] = '.';",
+      [
+        7
+      ]
+    ],
+    [
+      "        for (let a = 0; a < 2; a++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            for (let b = 0; b < 2; b++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                let x = i + a;",
+      [
+        9
+      ]
+    ],
+    [
+      "                let y = j + b;",
+      [
+        9
+      ]
+    ],
+    [
+      "                if (0 <= x < m && 0 <= y < n && board[x][y] == 'O') {",
+      [
+        10
+      ]
+    ],
+    [
+      "                    dfs(x, y);",
+      [
+        11
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let m = board.length;",
+      [
+        12
+      ]
+    ],
+    [
+      "    let n = board[0].length;",
+      [
+        12
+      ]
+    ],
+    [
+      "    for (let i = 0; i < m; i++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        for (let j = 0; j < n; j++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (board[i][j] == 'O' && (i == 0 || i == m - 1 || j == 0 || j == n - 1)) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                dfs(i, j);",
+      [
+        16
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (let i = 0; i < m; i++) {",
+      [
+        17
+      ]
+    ],
+    [
+      "        for (let j = 0; j < n; j++) {",
+      [
+        18
+      ]
+    ],
+    [
+      "            if (board[i][j] == 'O') {",
+      [
+        19
+      ]
+    ],
+    [
+      "                board[i][j] = 'X';",
+      [
+        20
+      ]
+    ],
+    [
+      "            } else if (board[i][j] == '.') {",
+      [
+        21
+      ]
+    ],
+    [
+      "                board[i][j] = 'O';",
+      [
+        22
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

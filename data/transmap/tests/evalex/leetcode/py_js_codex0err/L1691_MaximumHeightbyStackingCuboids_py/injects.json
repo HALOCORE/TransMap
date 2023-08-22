@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "        c.sort((a, b) => (a - b));",
+    "replacement": "        c.sort();"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "    cuboids.sort((ar, br) => {for (let i = 0; i < ar.length; i++) {if (ar[i] !== br[i]) return ar[i] - br[i]; return 0;}});",
+    "replacement": "    cuboids.sort();"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 25,
+    "line_end": 26,
+    "content": "                    var new_phrase = words.slice(0, words.length - 1).concat(phrases[j].split(\" \")).join(\" \");",
+    "replacement": "                    var new_phrase = words.slice(0, words.length - 1).join(\" \") + \" \" + phrases[j];"
+  },
+  {
+    "line_start": 31,
+    "line_end": 32,
+    "content": "    return Array.from(res).sort((a, b) => a.localeCompare(b));",
+    "replacement": "    return Array.from(res).sort();"
+  }
+]

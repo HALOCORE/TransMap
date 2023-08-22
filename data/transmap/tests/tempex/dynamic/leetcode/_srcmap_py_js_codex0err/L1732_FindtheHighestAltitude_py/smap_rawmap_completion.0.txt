@@ -1,0 +1,22 @@
+
+### Python
+### largestAltitude 
+from typing import *   # --- py stmt 1
+def f_gold(gain: List[int]) -> int:   # --- py stmt 2
+    res = t = 0   # --- py stmt 3
+    for h in gain:   # --- py stmt 4
+        t += h   # --- py stmt 5
+        res = max(res, t)   # --- py stmt 6
+    return res   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(gain) {   // --- py stmt 2
+    var res = t = 0;   // --- py stmt 3
+    for (var h of gain) {   // --- py stmt 4
+        t += h;   // --- py stmt 5
+        res = Math.max(res, t);   // --- py stmt 6
+    }
+    return res;   // --- py stmt 7
+}
+

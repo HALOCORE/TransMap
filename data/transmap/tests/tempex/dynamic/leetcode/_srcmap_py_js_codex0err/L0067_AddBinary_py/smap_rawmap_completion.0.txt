@@ -1,0 +1,15 @@
+
+### Python
+### addBinary 
+from typing import *   # --- py stmt 1
+def f_gold(a: str, b: str) -> str:   # --- py stmt 2
+    return bin(int(a, 2) + int(b, 2))[2:]   # --- py stmt 3
+
+### JavaScript
+"use strict";
+function f_gold(a, b) {   // --- py stmt 2
+    return (a + b).toString(2);   // --- py stmt 3
+}
+
+
+

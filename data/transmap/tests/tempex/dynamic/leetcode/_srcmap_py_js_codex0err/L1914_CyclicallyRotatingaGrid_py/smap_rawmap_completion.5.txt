@@ -1,0 +1,96 @@
+
+### Python
+### rotateGrid 
+from typing import *   # --- py stmt 1
+def f_gold(grid: List[List[int]], k: int) -> List[List[int]]:   # --- py stmt 2
+    def rotate(grid, s1, e1, s2, e2, k):   # --- py stmt 3
+        t = []   # --- py stmt 4
+        for j in range(e2, e1, -1):   # --- py stmt 5
+            t.append(grid[s1][j])   # --- py stmt 6
+        for i in range(s1, s2):   # --- py stmt 7
+            t.append(grid[i][e1])   # --- py stmt 8
+        for j in range(e1, e2):   # --- py stmt 9
+            t.append(grid[s2][j])   # --- py stmt 10
+        for i in range(s2, s1, -1):   # --- py stmt 11
+            t.append(grid[i][e2])   # --- py stmt 12
+        k %= len(t)   # --- py stmt 13
+        t = t[-k:] + t[:-k]   # --- py stmt 14
+        k = 0   # --- py stmt 15
+        for j in range(e2, e1, -1):   # --- py stmt 16
+            grid[s1][j] = t[k]   # --- py stmt 17
+            k += 1   # --- py stmt 18
+        for i in range(s1, s2):   # --- py stmt 19
+            grid[i][e1] = t[k]   # --- py stmt 20
+            k += 1   # --- py stmt 21
+        for j in range(e1, e2):   # --- py stmt 22
+            grid[s2][j] = t[k]   # --- py stmt 23
+            k += 1   # --- py stmt 24
+        for i in range(s2, s1, -1):   # --- py stmt 25
+            grid[i][e2] = t[k]   # --- py stmt 26
+            k += 1   # --- py stmt 27
+    m, n = len(grid), len(grid[0])   # --- py stmt 28
+    s1 = e1 = 0   # --- py stmt 29
+    s2, e2 = m - 1, n - 1   # --- py stmt 30
+    while s1 <= s2 and e1 <= e2:   # --- py stmt 31
+        rotate(grid, s1, e1, s2, e2, k)   # --- py stmt 32
+        s1 += 1   # --- py stmt 33
+        e1 += 1   # --- py stmt 34
+        s2 -= 1   # --- py stmt 35
+        e2 -= 1   # --- py stmt 36
+    return grid   # --- py stmt 37
+
+### JavaScript
+"use strict";
+
+function f_gold(grid, k) {   // --- py stmt 2
+    function rotate(grid, s1, e1, s2, e2, k) {   // --- py stmt 3
+        var t = [];   // --- py stmt 4
+        for (var j = e2; j > e1; j--) {   // --- py stmt 5
+            t.push(grid[s1][j]);   // --- py stmt 6
+        }
+        for (var i = s1; i < s2; i++) {   // --- py stmt 7
+            t.push(grid[i][e1]);   // --- py stmt 8
+        }
+        for (var j = e1; j < e2; j++) {   // --- py stmt 9
+            t.push(grid[s2][j]);   // --- py stmt 10
+        }
+        for (var i = s2; i > s1; i--) {   // --- py stmt 11
+            t.push(grid[i][e2]);   // --- py stmt 12
+        }
+        k %= t.length;   // --- py stmt 13
+        t = t.slice(-k).concat(t.slice(0, -k));   // --- py stmt 14
+        k = 0;   // --- py stmt 15
+        for (var j = e2; j > e1; j--) {   // --- py stmt 16
+            grid[s1][j] = t[k];   // --- py stmt 17
+            k++;   // --- py stmt 18
+        }
+        for (var i = s1; i <= s2; i++) {   // --- py stmt 19
+            grid[i][e1] = t[k];   // --- py stmt 20
+            k++;   // --- py stmt 21
+        }
+        for (var j = e1; j < e2; j++) {   // --- py stmt 22
+            grid[s2][j] = t[k];   // --- py stmt 23
+            k++;   // --- py stmt 24
+        }
+        for (var i = s2; i > s1; i--) {   // --- py stmt 25
+            grid[i][e2] = t[k];   // --- py stmt 26
+            k++;   // --- py stmt 27
+        }
+    }
+    var m = grid.length;   // --- py stmt 28
+    var n = grid[0].length;   // --- py stmt 28
+    var s1 = 0, e1 = 0;   // --- py stmt 29
+    var s2 = m - 1;   // --- py stmt 30
+    var e2 = n - 1;   // --- py stmt 30
+    while (s1 <= s2 && e1 <= e2) {   // --- py stmt 31
+        rotate(grid, s1, e1, s2, e2, k);   // --- py stmt 32
+        s1++;   // --- py stmt 33
+        e1++;   // --- py stmt 34
+        s2--;   // --- py stmt 35
+        e2--;   // --- py stmt 36
+    }
+    return grid;   // --- py stmt 37
+}
+
+
+

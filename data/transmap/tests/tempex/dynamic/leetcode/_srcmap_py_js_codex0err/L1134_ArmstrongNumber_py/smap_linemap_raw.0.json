@@ -1,0 +1,120 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isArmstrong",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(n: int) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    k = len(str(n))",
+      [
+        3
+      ]
+    ],
+    [
+      "    s, t = 0, n",
+      [
+        4
+      ]
+    ],
+    [
+      "    while t:",
+      [
+        5
+      ]
+    ],
+    [
+      "        t, v = divmod(t, 10)",
+      [
+        6
+      ]
+    ],
+    [
+      "        s += pow(v, k)",
+      [
+        7
+      ]
+    ],
+    [
+      "    return n == s",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(n) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var k = n.toString().length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var s = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var t = n;",
+      [
+        4
+      ]
+    ],
+    [
+      "    while (t) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var t = Math.floor(t / 10);",
+      [
+        6
+      ]
+    ],
+    [
+      "        var v = t % 10;",
+      [
+        6
+      ]
+    ],
+    [
+      "        s += Math.pow(v, k);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return n == s;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

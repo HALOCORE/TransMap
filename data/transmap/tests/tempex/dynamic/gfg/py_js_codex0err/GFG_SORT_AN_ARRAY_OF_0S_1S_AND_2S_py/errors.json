@@ -1,0 +1,8 @@
+{
+  "0": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 6 ---\n      let temp = a[lo];\n      a[lo] = a[lo] ^ a[mid];",
+  "1": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var lo = 0, hi = arr_size - 1, mid = 0;\n  var lo = 0;",
+  "2": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var lo = 0, hi = arr_size - 1, mid = 0;\n  var lo = 0;",
+  "3": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var lo = 0, hi = arr_size - 1, mid = 0;\n  var lo = 0;",
+  "4": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var lo = 0, hi = arr_size - 1, mid = 0;\n  var lo = 0;",
+  "5": "FAILED:Error: More than 0 line(s) of the translation are different from the source map: \n--- line 1 ---\n  var lo = 0, hi = arr_size - 1, mid = 0;\n  var lo = 0;"
+}

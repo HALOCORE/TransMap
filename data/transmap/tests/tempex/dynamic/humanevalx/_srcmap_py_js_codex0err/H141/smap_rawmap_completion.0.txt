@@ -1,0 +1,44 @@
+
+### Python
+def file_name_check(file_name):   # --- py stmt 1
+    suf = ['txt', 'exe', 'dll']   # --- py stmt 2
+    lst = file_name.split(sep='.')   # --- py stmt 3
+    if len(lst) != 2:   # --- py stmt 4
+        return 'No'   # --- py stmt 5
+    if not lst[1] in suf:   # --- py stmt 6
+        return 'No'   # --- py stmt 7
+    if len(lst[0]) == 0:   # --- py stmt 8
+        return 'No'   # --- py stmt 9
+    if not lst[0][0].isalpha():   # --- py stmt 10
+        return 'No'   # --- py stmt 11
+    t = len([x for x in lst[0] if x.isdigit()])   # --- py stmt 12
+    if t > 3:   # --- py stmt 13
+        return 'No'   # --- py stmt 14
+    return 'Yes'   # --- py stmt 15
+
+### JavaScript
+"use strict";
+function file_name_check(file_name) {   // --- py stmt 1
+    var suf = ['txt', 'exe', 'dll'];   // --- py stmt 2
+    var lst = file_name.split(sep='.');   // --- py stmt 3
+    if (lst.length != 2) {   // --- py stmt 4
+        return 'No';   // --- py stmt 5
+    }
+    if (!suf.includes(lst[1])) {   // --- py stmt 6
+        return 'No';   // --- py stmt 7
+    }
+    if (lst[0].length == 0) {   // --- py stmt 8
+        return 'No';   // --- py stmt 9
+    }
+    if(!/[a-zA-Z]/.test(lst[0][0])){   // --- py stmt 10
+        return 'No';   // --- py stmt 11
+    }
+    var t = lst[0].split('').filter(x => /[0-9]/.test(x)).length;   // --- py stmt 12
+    if (t > 3) {   // --- py stmt 13
+        return 'No';   // --- py stmt 14
+    }
+    return 'Yes';   // --- py stmt 15
+}
+
+
+

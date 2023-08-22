@@ -1,0 +1,41 @@
+
+### Python
+### getHint 
+from typing import *   # --- py stmt 1
+def f_gold(secret: str, guess: str) -> str:   # --- py stmt 2
+    x = y = 0   # --- py stmt 3
+    cnt1 = [0] * 10   # --- py stmt 4
+    cnt2 = [0] * 10   # --- py stmt 5
+    for i in range(len(secret)):   # --- py stmt 6
+        if secret[i] == guess[i]:   # --- py stmt 7
+            x += 1   # --- py stmt 8
+        else:   # --- py stmt 9
+            cnt1[int(secret[i])] += 1   # --- py stmt 10
+            cnt2[int(guess[i])] += 1   # --- py stmt 11
+    for i in range(10):   # --- py stmt 12
+        y += min(cnt1[i], cnt2[i])   # --- py stmt 13
+    return f'{x}A{y}B'   # --- py stmt 14
+
+### JavaScript
+"use strict";
+
+function f_gold(secret, guess) {   // --- py stmt 2
+    var x = y = 0;   // --- py stmt 3
+    var cnt1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];   // --- py stmt 4
+    var cnt2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];   // --- py stmt 5
+    for (var i = 0; i < secret.length; i++) {   // --- py stmt 6
+        if (secret[i] == guess[i]) {   // --- py stmt 7
+            x += 1;   // --- py stmt 8
+        } else {   // --- py stmt 9
+            cnt1[parseInt(secret[i])] += 1;   // --- py stmt 10
+            cnt2[parseInt(guess[i])] += 1;   // --- py stmt 11
+        }
+    }
+    for (var i = 0; i < 10; i++) {   // --- py stmt 12
+        y += Math.min(cnt1[i], cnt2[i]);   // --- py stmt 13
+    }
+    return x + "A" + y + "B";   // --- py stmt 14
+}
+
+
+

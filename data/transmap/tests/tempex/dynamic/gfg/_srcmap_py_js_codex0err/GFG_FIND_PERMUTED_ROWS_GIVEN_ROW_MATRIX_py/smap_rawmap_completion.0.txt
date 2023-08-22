@@ -1,0 +1,35 @@
+
+### Python
+def f_gold(mat, m, n, r):   # --- py stmt 1
+  s = set()   # --- py stmt 2
+  for j in range(n): s.add(mat[r][j])   # --- py stmt 3
+  for i in range(m):   # --- py stmt 4
+    if i == r: continue   # --- py stmt 5
+    for j in range(n):   # --- py stmt 6
+      if mat[i][j] not in s:   # --- py stmt 7
+        j = j - 2   # --- py stmt 8
+        break ;   # --- py stmt 9
+    if j + 1 != n: continue   # --- py stmt 10
+    print(i)   # --- py stmt 11
+
+
+### JavaScript
+"use strict";
+function f_gold(mat, m, n, r) {   // --- py stmt 1
+  let s = new Set();   // --- py stmt 2
+  for (let j = 0; j < n; j++) s.add(mat[r][j]);   // --- py stmt 3
+  for (let i = 0; i < m; i++) {   // --- py stmt 4
+    if (i == r) continue;   // --- py stmt 5
+    for (let j = 0; j < n; j++) {   // --- py stmt 6
+      if (!s.has(mat[i][j])) {   // --- py stmt 7
+        j = j - 2;   // --- py stmt 8
+        break;   // --- py stmt 9
+      }
+    }
+    if (j + 1 != n && j != n) continue;   // --- py stmt 10
+    console.log(i);   // --- py stmt 11
+  }
+}
+
+
+

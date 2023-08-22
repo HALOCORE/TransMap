@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 7,
+    "content": "    var arr = [];\n    for (let i = 0; i < present.length; i++) {\n        if (future[i] > present[i]) {\n            arr.push([present[i], future[i] - present[i]]);\n        }\n    }",
+    "replacement": "    var arr = [(a, b - a) for (a, b) in zip(present, future) if (b > a)];"
+  },
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "    var dp = Array(budget + 1).fill(0);",
+    "replacement": "    var dp = [0] * (budget + 1);"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    for (var [v, w] of arr) {",
+    "replacement": "    for (var v, w in arr) {"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    return dp.at(-1);",
+    "replacement": "    return dp[-1];"
+  }
+]

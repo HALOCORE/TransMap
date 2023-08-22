@@ -1,0 +1,57 @@
+
+### Python
+def f_gold(arr1, arr2, m, n, k):   # --- py stmt 1
+  sorted1 =[0] *(m + n)   # --- py stmt 2
+  i = 0   # --- py stmt 3
+  j = 0   # --- py stmt 4
+  d = 0   # --- py stmt 5
+  while(i < m and j < n):   # --- py stmt 6
+    if(arr1[i] < arr2[j]):   # --- py stmt 7
+      sorted1[d] = arr1[i]   # --- py stmt 8
+      i += 1   # --- py stmt 9
+    else:   # --- py stmt 10
+      sorted1[d] = arr2[j]   # --- py stmt 11
+      j += 1   # --- py stmt 12
+    d += 1   # --- py stmt 13
+  while(i < m):   # --- py stmt 14
+    sorted1[d] = arr1[i]   # --- py stmt 15
+    d += 1   # --- py stmt 16
+    i += 1   # --- py stmt 17
+  while(j < n):   # --- py stmt 18
+    sorted1[d] = arr2[j]   # --- py stmt 19
+    d += 1   # --- py stmt 20
+    j += 1   # --- py stmt 21
+  return sorted1[k - 1]   # --- py stmt 22
+
+### JavaScript
+"use strict";
+function f_gold(arr1, arr2, m, n, k) {   // --- py stmt 1
+  var sorted1 = [0] * (m + n);   // --- py stmt 2
+  var i = 0;   // --- py stmt 3
+  var j = 0;   // --- py stmt 4
+  var d = 0;   // --- py stmt 5
+  while (i < m && j < n) {   // --- py stmt 6
+    if (arr1[i] < arr2[j]) {   // --- py stmt 7
+      sorted1[d] = arr1[i];   // --- py stmt 8
+      i++;   // --- py stmt 9
+    } else {   // --- py stmt 10
+      sorted1[d] = arr2[j];   // --- py stmt 11
+      j++;   // --- py stmt 12
+    }
+    d++;   // --- py stmt 13
+  }
+  while (i < m) {   // --- py stmt 14
+    sorted1[d] = arr1[i];   // --- py stmt 15
+    d++;   // --- py stmt 16
+    i++;   // --- py stmt 17
+  }
+  while (j < n) {   // --- py stmt 18
+    sorted1[d] = arr2[j];   // --- py stmt 19
+    d++;   // --- py stmt 20
+    j++;   // --- py stmt 21
+  }
+  return sorted1[k - 1];   // --- py stmt 22
+}
+
+
+

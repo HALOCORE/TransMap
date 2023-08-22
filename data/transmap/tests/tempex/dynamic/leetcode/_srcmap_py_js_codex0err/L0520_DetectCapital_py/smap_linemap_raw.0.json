@@ -1,0 +1,100 @@
+{
+  "src_anno_stmts": [
+    [
+      "### detectCapitalUse",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(word: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    cnt = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    for c in word:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if c.isupper():",
+      [
+        5
+      ]
+    ],
+    [
+      "            cnt += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    return cnt == 0 or cnt == len(word) or (cnt == 1 and word[0].isupper())",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(word) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var cnt = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var c of word) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (c.isupper()) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            cnt += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return cnt == 0 || cnt == word.length || (cnt == 1 && word[0].isupper());",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

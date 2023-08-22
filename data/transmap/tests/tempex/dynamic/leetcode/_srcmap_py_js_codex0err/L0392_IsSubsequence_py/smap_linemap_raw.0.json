@@ -1,0 +1,118 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isSubsequence",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str, t: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    i, j, m, n = 0, 0, len(s), len(t)",
+      [
+        3
+      ]
+    ],
+    [
+      "    while i < m and j < n:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if s[i] == t[j]:",
+      [
+        5
+      ]
+    ],
+    [
+      "            i += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        j += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    return i == m",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, t) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var i, j, m, n;",
+      [
+        3
+      ]
+    ],
+    [
+      "    i = j = m = n = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    while (i < m && j < n) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (s[i] == t[j]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            i += 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        j += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return i == m;",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

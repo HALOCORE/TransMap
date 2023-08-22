@@ -1,0 +1,376 @@
+{
+  "src_anno_stmts": [
+    [
+      "### minWindow",
+      null
+    ],
+    [
+      "import math",
+      [
+        1
+      ]
+    ],
+    [
+      "from math import inf",
+      [
+        2
+      ]
+    ],
+    [
+      "from collections import Counter",
+      [
+        3
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        4
+      ]
+    ],
+    [
+      "def f_gold(s: str, t: str) -> str:",
+      [
+        5
+      ]
+    ],
+    [
+      "    ans = ''",
+      [
+        6
+      ]
+    ],
+    [
+      "    m, n = len(s), len(t)",
+      [
+        7
+      ]
+    ],
+    [
+      "    if m < n:",
+      [
+        8
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        9
+      ]
+    ],
+    [
+      "    need = Counter(t)",
+      [
+        10
+      ]
+    ],
+    [
+      "    window = Counter()",
+      [
+        11
+      ]
+    ],
+    [
+      "    i, cnt, mi = 0, 0, float('inf')",
+      [
+        12
+      ]
+    ],
+    [
+      "    for j, c in enumerate(s):",
+      [
+        13
+      ]
+    ],
+    [
+      "        window[c] += 1",
+      [
+        14
+      ]
+    ],
+    [
+      "        if need[c] >= window[c]:",
+      [
+        15
+      ]
+    ],
+    [
+      "            cnt += 1",
+      [
+        16
+      ]
+    ],
+    [
+      "        while cnt == n:",
+      [
+        17
+      ]
+    ],
+    [
+      "            if j - i + 1 < mi:",
+      [
+        18
+      ]
+    ],
+    [
+      "                mi = j - i + 1",
+      [
+        19
+      ]
+    ],
+    [
+      "                ans = s[i : j + 1]",
+      [
+        20
+      ]
+    ],
+    [
+      "            c = s[i]",
+      [
+        21
+      ]
+    ],
+    [
+      "            if need[c] >= window[c]:",
+      [
+        22
+      ]
+    ],
+    [
+      "                cnt -= 1",
+      [
+        23
+      ]
+    ],
+    [
+      "            window[c] -= 1",
+      [
+        24
+      ]
+    ],
+    [
+      "            i += 1",
+      [
+        25
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        26
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s, t) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    var ans = '';",
+      [
+        6
+      ]
+    ],
+    [
+      "    var m = s.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    var n = t.length;",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (m < n) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        return ans;",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var need = new Map();",
+      [
+        10
+      ]
+    ],
+    [
+      "    var window = new Map();",
+      [
+        11
+      ]
+    ],
+    [
+      "    var i = 0;",
+      [
+        12
+      ]
+    ],
+    [
+      "    var cnt = 0;",
+      [
+        12
+      ]
+    ],
+    [
+      "    var mi = Number.MAX_VALUE;",
+      [
+        12
+      ]
+    ],
+    [
+      "    for (var j = 0; j < m; j++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        var c = s.charAt(j);",
+      [
+        14
+      ]
+    ],
+    [
+      "        if (window.has(c)) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            window.set(c, window.get(c) + 1);",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        14
+      ]
+    ],
+    [
+      "            window.set(c, 1);",
+      [
+        14
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (need.has(c) && need.get(c) >= window.get(c)) {",
+      [
+        15
+      ]
+    ],
+    [
+      "            cnt++;",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        while (cnt == n) {",
+      [
+        17
+      ]
+    ],
+    [
+      "            if (j - i + 1 < mi) {",
+      [
+        18
+      ]
+    ],
+    [
+      "                mi = j - i + 1;",
+      [
+        19
+      ]
+    ],
+    [
+      "                ans = s.substring(i, j + 1);",
+      [
+        20
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            c = s.charAt(i);",
+      [
+        21
+      ]
+    ],
+    [
+      "            if (need.has(c) && need.get(c) >= window.get(c)) {",
+      [
+        22
+      ]
+    ],
+    [
+      "                cnt--;",
+      [
+        23
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            window.set(c, window.get(c) - 1);",
+      [
+        24
+      ]
+    ],
+    [
+      "            i++;",
+      [
+        25
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        26
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

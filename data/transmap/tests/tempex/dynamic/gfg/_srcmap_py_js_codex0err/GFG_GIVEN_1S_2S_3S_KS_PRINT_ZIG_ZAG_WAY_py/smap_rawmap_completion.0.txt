@@ -1,0 +1,56 @@
+
+### Python
+def f_gold(rows, columns, numbers):   # --- py stmt 1
+  k = 0   # --- py stmt 2
+  arr =[[0 for i in range(columns)] for j in range(rows)]   # --- py stmt 3
+  for i in range(rows):   # --- py stmt 4
+    if(i % 2 == 0):   # --- py stmt 5
+      j = 0   # --- py stmt 6
+      while j < columns and numbers[k] > 0:   # --- py stmt 7
+        arr[i][j] = k + 1   # --- py stmt 8
+        numbers[k] -= 1   # --- py stmt 9
+        if numbers[k] == 0: k += 1   # --- py stmt 10
+        j += 1   # --- py stmt 11
+    else:   # --- py stmt 12
+      j = columns - 1   # --- py stmt 13
+      while j >= 0 and numbers[k] > 0:   # --- py stmt 14
+        arr[i][j] = k + 1   # --- py stmt 15
+        numbers[k] -= 1   # --- py stmt 16
+        if numbers[k] == 0: k += 1   # --- py stmt 17
+        j -= 1   # --- py stmt 18
+  for i in arr:   # --- py stmt 19
+    for j in i: print(j, end = " ")   # --- py stmt 20
+    print()   # --- py stmt 21
+
+### JavaScript
+"use strict";
+function f_gold(rows, columns, numbers) {   // --- py stmt 1
+  var k = 0;   // --- py stmt 2
+  var arr = [[0]];   // --- py stmt 3
+  for (var i = 0; i < rows; i++) {   // --- py stmt 4
+    if (i % 2 == 0) {   // --- py stmt 5
+      var j = 0;   // --- py stmt 6
+      while (j < columns && numbers[k] > 0) {   // --- py stmt 7
+        arr[i][j] = k + 1;   // --- py stmt 8
+        numbers[k] -= 1;   // --- py stmt 9
+        if (numbers[k] == 0) k += 1;   // --- py stmt 10
+        j += 1;   // --- py stmt 11
+      }
+    } else {   // --- py stmt 12
+      var j = columns - 1;   // --- py stmt 13
+      while (j >= 0 && numbers[k] > 0) {   // --- py stmt 14
+        arr[i][j] = k + 1;   // --- py stmt 15
+        numbers[k] -= 1;   // --- py stmt 16
+        if (numbers[k] == 0) k += 1;   // --- py stmt 17
+        j -= 1;   // --- py stmt 18
+      }
+    }
+  }
+  for (let i of arr) {   // --- py stmt 19
+    for (var j = 0; j < i.length; j++) console.log(i[j]);   // --- py stmt 20
+    console.log();   // --- py stmt 21
+  }
+}
+
+
+

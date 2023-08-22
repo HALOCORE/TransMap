@@ -1,0 +1,122 @@
+{
+  "src_anno_stmts": [
+    [
+      "from collections import Counter",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(num: str) -> bool:",
+      [
+        3
+      ]
+    ],
+    [
+      "    cnt = Counter(num)",
+      [
+        4
+      ]
+    ],
+    [
+      "    return all(int(v) == cnt[str(i)] for i, v in enumerate(num))",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(num) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var cnt = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < num.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (cnt[num[i]] == undefined) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            cnt[num[i]] = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        5
+      ]
+    ],
+    [
+      "            cnt[num[i]] += 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < num.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (parseInt(num[i]) != cnt[i]) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return true;",
+      [
+        5
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

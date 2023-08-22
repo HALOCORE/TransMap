@@ -1,0 +1,68 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(str):",
+      [
+        1
+      ]
+    ],
+    [
+      "  mx = \"\"",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(len(str)): mx = max(mx, str[i:])",
+      [
+        3
+      ]
+    ],
+    [
+      "  return mx",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(str) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var mx = \"\";",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (var i = 0; i < str.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    mx = Math.max(mx, str.substring(i));",
+      [
+        3
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return mx;",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

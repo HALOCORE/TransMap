@@ -1,0 +1,22 @@
+
+### Python
+### addRungs 
+from typing import *   # --- py stmt 1
+def f_gold(rungs: List[int], dist: int) -> int:   # --- py stmt 2
+    prev = res = 0   # --- py stmt 3
+    for rung in rungs:   # --- py stmt 4
+        res += (rung - prev - 1) // dist   # --- py stmt 5
+        prev = rung   # --- py stmt 6
+    return res   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(rungs, dist) {   // --- py stmt 2
+    var prev = 0, res = 0;   // --- py stmt 3
+    for (var rung in rungs) {   // --- py stmt 4
+        res += Math.floor((rung - prev - 1) / dist);   // --- py stmt 5
+        prev = rung;   // --- py stmt 6
+    }
+    return res;   // --- py stmt 7
+}
+

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "    let start = 0, end = 0;",
+    "replacement": "    let start, end = 0, 0;"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "            start = i + 1, end = i + 1;",
+    "replacement": "            start, end = i + 1, i + 1;"
+  }
+]

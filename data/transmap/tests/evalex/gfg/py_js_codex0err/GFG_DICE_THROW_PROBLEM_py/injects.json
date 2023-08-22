@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  let table = Array(n+1).fill().map(_ => Array(x+1).fill(0));",
+    "replacement": "  let table = [[0] * (x + 1)];\n  for (let i = 0; i < n + 1; i++) {\n    table[i] = [0] * (x + 1);\n  }"
+  }
+]

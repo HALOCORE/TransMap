@@ -1,0 +1,24 @@
+
+### Python
+def unique_digits(x):   # --- py stmt 1
+    odd_digit_elements = []   # --- py stmt 2
+    for i in x:   # --- py stmt 3
+        if all (int(c) % 2 == 1 for c in str(i)):   # --- py stmt 4
+            odd_digit_elements.append(i)   # --- py stmt 5
+    return sorted(odd_digit_elements)   # --- py stmt 6
+
+
+### JavaScript
+"use strict";
+function unique_digits(x) {   // --- py stmt 1
+    let odd_digit_elements = [];   // --- py stmt 2
+    for (let i of x) {   // --- py stmt 3
+        if (Array.from(String(i), Number).every(c => c % 2 === 1)) {   // --- py stmt 4
+            odd_digit_elements.push(i);   // --- py stmt 5
+        }
+    }
+    return odd_digit_elements.sort();   // --- py stmt 6
+}
+
+
+

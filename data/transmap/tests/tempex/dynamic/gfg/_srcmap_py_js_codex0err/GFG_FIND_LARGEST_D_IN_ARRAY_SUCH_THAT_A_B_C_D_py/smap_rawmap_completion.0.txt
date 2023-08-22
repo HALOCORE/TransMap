@@ -1,0 +1,43 @@
+
+### Python
+def f_gold(S, n):   # --- py stmt 1
+  found = False   # --- py stmt 2
+  S.sort()   # --- py stmt 3
+  for i in range(n - 1, - 1, - 1):   # --- py stmt 4
+    for j in range(0, n):   # --- py stmt 5
+      if(i == j): continue   # --- py stmt 6
+      for k in range(j + 1, n):   # --- py stmt 7
+        if(i == k): continue   # --- py stmt 8
+        for l in range(k + 1, n):   # --- py stmt 9
+          if(i == l): continue   # --- py stmt 10
+          if(S[i] == S[j] + S[k] + S[l]):   # --- py stmt 11
+            found = True   # --- py stmt 12
+            return S[i]   # --- py stmt 13
+  if(found == False): return - 1   # --- py stmt 14
+
+
+### JavaScript
+"use strict";
+function f_gold(S, n) {   // --- py stmt 1
+  var found = false;   // --- py stmt 2
+  S.sort();   // --- py stmt 3
+  for (var i = n - 1; i >= 0; i--) {   // --- py stmt 4
+    for (var j = 0; j < n; j++) {   // --- py stmt 5
+      if (i == j) continue;   // --- py stmt 6
+      for (var k = j + 1; k < n; k++) {   // --- py stmt 7
+        if (i == k) continue;   // --- py stmt 8
+        for (var l = k + 1; l < n; l++) {   // --- py stmt 9
+          if (i == l) continue;   // --- py stmt 10
+          if (S[i] == S[j] + S[k] + S[l]) {   // --- py stmt 11
+            found = true;   // --- py stmt 12
+            return S[i];   // --- py stmt 13
+          }
+        }
+      }
+    }
+  }
+  if (found == false) return -1;   // --- py stmt 14
+}
+
+
+

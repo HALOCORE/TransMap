@@ -1,0 +1,30 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  count = 0   # --- py stmt 2
+  cummulative_sum = 0   # --- py stmt 3
+  arr.sort()   # --- py stmt 4
+  for i in range(n):   # --- py stmt 5
+    if arr[i] >= cummulative_sum:   # --- py stmt 6
+      count += 1   # --- py stmt 7
+      cummulative_sum += arr[i]   # --- py stmt 8
+  return count   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  let count = 0;   // --- py stmt 2
+  let cummulative_sum = 0;   // --- py stmt 3
+  arr.sort();   // --- py stmt 4
+  for (let i = 0; i < n; i++) {   // --- py stmt 5
+    if (arr[i] >= cummulative_sum) {   // --- py stmt 6
+      count += 1;   // --- py stmt 7
+      cummulative_sum += arr[i];   // --- py stmt 8
+    }
+  }
+  return count;   // --- py stmt 9
+}
+
+
+

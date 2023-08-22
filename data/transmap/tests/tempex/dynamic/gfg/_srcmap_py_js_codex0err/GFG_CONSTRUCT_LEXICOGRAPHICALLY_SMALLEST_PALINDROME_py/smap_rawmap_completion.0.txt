@@ -1,0 +1,54 @@
+
+### Python
+def f_gold(string, l):   # --- py stmt 1
+  string = list(string)   # --- py stmt 2
+  i = - 1   # --- py stmt 3
+  j = l   # --- py stmt 4
+  while i < j:   # --- py stmt 5
+    i += 1   # --- py stmt 6
+    j -= 1   # --- py stmt 7
+    if(string[i] == string[j] and string[i] != '*'): continue   # --- py stmt 8
+    elif(string[i] == string[j] and string[i] == '*'):   # --- py stmt 9
+      string[i] = 'a'   # --- py stmt 10
+      string[j] = 'a'   # --- py stmt 11
+      continue   # --- py stmt 12
+    elif string[i] == '*':   # --- py stmt 13
+      string[i] = string[j]   # --- py stmt 14
+      continue   # --- py stmt 15
+    elif string[j] == '*':   # --- py stmt 16
+      string[j] = string[i]   # --- py stmt 17
+      continue   # --- py stmt 18
+    print("Not Possible")   # --- py stmt 19
+    return ""   # --- py stmt 20
+  return ''.join(string)   # --- py stmt 21
+
+### JavaScript
+"use strict";
+function f_gold(string, l) {   // --- py stmt 1
+  string = string.split("");   // --- py stmt 2
+  var i = -1, j = l;   // --- py stmt 3, py stmt 4
+  while (i < j) {   // --- py stmt 5
+    i += 1;   // --- py stmt 6
+    j -= 1;   // --- py stmt 7
+    if (string[i] == string[j] && string[i] != '*') continue;   // --- py stmt 8
+    else if (string[i] == string[j] && string[i] == '*') {   // --- py stmt 9
+      string[i] = 'a';   // --- py stmt 10
+      string[j] = 'a';   // --- py stmt 11
+      continue;   // --- py stmt 12
+    }
+    else if (string[i] == '*') {   // --- py stmt 13
+      string[i] = string[j];   // --- py stmt 14
+      continue;   // --- py stmt 15
+    }
+    else if (string[j] == '*') {   // --- py stmt 16
+      string[j] = string[i];   // --- py stmt 17
+      continue;   // --- py stmt 18
+    }
+    console.log("Not Possible");   // --- py stmt 19
+    return "";   // --- py stmt 20
+  }
+  return string.join("");   // --- py stmt 21
+}
+
+
+

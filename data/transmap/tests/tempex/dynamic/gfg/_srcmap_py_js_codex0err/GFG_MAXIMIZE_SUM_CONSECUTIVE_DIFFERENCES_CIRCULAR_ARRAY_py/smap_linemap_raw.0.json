@@ -1,0 +1,98 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  sum = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(0, int(n / 2)):",
+      [
+        4
+      ]
+    ],
+    [
+      "    sum -=(2 * arr[i])",
+      [
+        5
+      ]
+    ],
+    [
+      "    sum +=(2 * arr[n - i - 1])",
+      [
+        6
+      ]
+    ],
+    [
+      "  return sum",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var sum = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < Math.floor(n / 2); i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    sum -= (2 * arr[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "    sum += (2 * arr[n - i - 1]);",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return sum;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

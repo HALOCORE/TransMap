@@ -1,0 +1,240 @@
+{
+  "src_anno_stmts": [
+    [
+      "### evalRPN",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(tokens: List[str]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    nums = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    for t in tokens:",
+      [
+        4
+      ]
+    ],
+    [
+      "        if len(t) > 1 or t.isdigit():",
+      [
+        5
+      ]
+    ],
+    [
+      "            nums.append(int(t))",
+      [
+        6
+      ]
+    ],
+    [
+      "        else:",
+      [
+        7
+      ]
+    ],
+    [
+      "            if t == \"+\":",
+      [
+        8
+      ]
+    ],
+    [
+      "                nums[-2] += nums[-1]",
+      [
+        9
+      ]
+    ],
+    [
+      "            elif t == \"-\":",
+      [
+        10
+      ]
+    ],
+    [
+      "                nums[-2] -= nums[-1]",
+      [
+        11
+      ]
+    ],
+    [
+      "            elif t == \"*\":",
+      [
+        12
+      ]
+    ],
+    [
+      "                nums[-2] *= nums[-1]",
+      [
+        13
+      ]
+    ],
+    [
+      "            else:",
+      [
+        14
+      ]
+    ],
+    [
+      "                nums[-2] = int(nums[-2] / nums[-1])",
+      [
+        15
+      ]
+    ],
+    [
+      "            nums.pop()",
+      [
+        16
+      ]
+    ],
+    [
+      "    return nums[0]",
+      [
+        17
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(tokens) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var nums = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var t of tokens) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        if (t.length > 1 || t.isdigit()) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            nums.push(parseInt(t));",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        7
+      ]
+    ],
+    [
+      "            if (t == \"+\") {",
+      [
+        8
+      ]
+    ],
+    [
+      "                nums[nums.length - 2] += nums[nums.length - 1];",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else if (t == \"-\") {",
+      [
+        10
+      ]
+    ],
+    [
+      "                nums[nums.length - 2] -= nums[nums.length - 1];",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else if (t == \"*\") {",
+      [
+        12
+      ]
+    ],
+    [
+      "                nums[nums.length - 2] *= nums[nums.length - 1];",
+      [
+        13
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            else {",
+      [
+        14
+      ]
+    ],
+    [
+      "                nums[nums.length - 2] = parseInt(nums[nums.length - 2] / nums[nums.length - 1]);",
+      [
+        15
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            nums.pop();",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return nums[0];",
+      [
+        17
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

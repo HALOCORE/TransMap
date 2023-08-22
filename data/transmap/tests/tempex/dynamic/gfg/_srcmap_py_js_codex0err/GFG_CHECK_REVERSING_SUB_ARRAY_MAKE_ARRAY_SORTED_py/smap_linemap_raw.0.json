@@ -1,0 +1,178 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  temp =[0] * n",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(n): temp[i] = arr[i]",
+      [
+        3
+      ]
+    ],
+    [
+      "  temp.sort()",
+      [
+        4
+      ]
+    ],
+    [
+      "  for front in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "    if temp[front] != arr[front]: break",
+      [
+        6
+      ]
+    ],
+    [
+      "  for back in range(n - 1, - 1, - 1):",
+      [
+        7
+      ]
+    ],
+    [
+      "    if temp[back] != arr[back]: break",
+      [
+        8
+      ]
+    ],
+    [
+      "  if front >= back: return True",
+      [
+        9
+      ]
+    ],
+    [
+      "  while front != back:",
+      [
+        10
+      ]
+    ],
+    [
+      "    front += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    if arr[front - 1] < arr[front]: return False",
+      [
+        12
+      ]
+    ],
+    [
+      "  return True",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var temp = Array(n);",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) temp[i] = arr[i];",
+      [
+        3
+      ]
+    ],
+    [
+      "  temp.sort((a, b) => a-b);",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (var front = 0; front < n; front++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (temp[front] != arr[front]) break;",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (var back = n - 1; back >= 0; back--) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (temp[back] != arr[back]) break;",
+      [
+        8
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  if (front >= back) return true;",
+      [
+        9
+      ]
+    ],
+    [
+      "  while (front != back) {",
+      [
+        10
+      ]
+    ],
+    [
+      "    front++;",
+      [
+        11
+      ]
+    ],
+    [
+      "    if (arr[front - 1] < arr[front]) return false;",
+      [
+        12
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return true;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+
+### Python
+def f_gold(a, b):   # --- py stmt 1
+  return(a // 2)+(b // 2)+((a % 2 + b % 2)// 2)   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function f_gold(a, b) {   // --- py stmt 1
+    return (a / 2) + (b / 2) + ((a % 2 + b % 2) / 2);   // --- py stmt 2
+}
+
+
+

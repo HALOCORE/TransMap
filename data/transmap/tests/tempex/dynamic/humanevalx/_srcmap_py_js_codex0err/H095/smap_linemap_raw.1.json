@@ -1,0 +1,298 @@
+{
+  "src_anno_stmts": [
+    [
+      "def check_dict_case(dict):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if len(dict.keys()) == 0:",
+      [
+        2
+      ]
+    ],
+    [
+      "        return False",
+      [
+        3
+      ]
+    ],
+    [
+      "    else:",
+      [
+        4
+      ]
+    ],
+    [
+      "        state = \"start\"",
+      [
+        5
+      ]
+    ],
+    [
+      "        for key in dict.keys():",
+      [
+        6
+      ]
+    ],
+    [
+      "",
+      null
+    ],
+    [
+      "            if isinstance(key, str) == False:",
+      [
+        7
+      ]
+    ],
+    [
+      "                state = \"mixed\"",
+      [
+        8
+      ]
+    ],
+    [
+      "                break",
+      [
+        9
+      ]
+    ],
+    [
+      "            if state == \"start\":",
+      [
+        10
+      ]
+    ],
+    [
+      "                if key.isupper():",
+      [
+        11
+      ]
+    ],
+    [
+      "                    state = \"upper\"",
+      [
+        12
+      ]
+    ],
+    [
+      "                elif key.islower():",
+      [
+        13
+      ]
+    ],
+    [
+      "                    state = \"lower\"",
+      [
+        14
+      ]
+    ],
+    [
+      "                else:",
+      [
+        15
+      ]
+    ],
+    [
+      "                    break",
+      [
+        16
+      ]
+    ],
+    [
+      "            elif (state == \"upper\" and not key.isupper()) or (state == \"lower\" and not key.islower()):",
+      [
+        17
+      ]
+    ],
+    [
+      "                    state = \"mixed\"",
+      [
+        18
+      ]
+    ],
+    [
+      "                    break",
+      [
+        19
+      ]
+    ],
+    [
+      "            else:",
+      [
+        20
+      ]
+    ],
+    [
+      "                break",
+      [
+        21
+      ]
+    ],
+    [
+      "        return state == \"upper\" or state == \"lower\"",
+      [
+        22
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function check_dict_case(dict) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (Object.keys(dict).length === 0) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return false;",
+      [
+        3
+      ]
+    ],
+    [
+      "    } else {",
+      [
+        4
+      ]
+    ],
+    [
+      "        var state = \"start\";",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var key in dict) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (typeof key !== \"string\") {",
+      [
+        7
+      ]
+    ],
+    [
+      "                state = \"mixed\";",
+      [
+        8
+      ]
+    ],
+    [
+      "                break;",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            if (state === \"start\") {",
+      [
+        10
+      ]
+    ],
+    [
+      "                if (/^[A-Z]+$/.test(key)) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                    state = \"upper\";",
+      [
+        12
+      ]
+    ],
+    [
+      "                } else if (key.islower()) {",
+      [
+        13
+      ]
+    ],
+    [
+      "                    state = \"lower\";",
+      [
+        14
+      ]
+    ],
+    [
+      "                } else {",
+      [
+        15
+      ]
+    ],
+    [
+      "                    break;",
+      [
+        16
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            } else if ((state === \"upper\" && !/^[A-Z]+$/.test(key)) || (state === \"lower\" && !/^[a-z]+$/.test(key))) {",
+      [
+        17
+      ]
+    ],
+    [
+      "                state = \"mixed\";",
+      [
+        18
+      ]
+    ],
+    [
+      "                break;",
+      [
+        19
+      ]
+    ],
+    [
+      "            } else {",
+      [
+        20
+      ]
+    ],
+    [
+      "                break;",
+      [
+        21
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return state === \"upper\" || state === \"lower\";",
+      [
+        22
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

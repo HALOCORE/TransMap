@@ -1,0 +1,25 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  sum = 0   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  for i in range(0, int(n / 2)):   # --- py stmt 4
+    sum -=(2 * arr[i])   # --- py stmt 5
+    sum +=(2 * arr[n - i - 1])   # --- py stmt 6
+  return sum   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var sum = 0;   // --- py stmt 2
+  arr.sort();   // --- py stmt 3
+  for (var i = 0; i < Math.floor(n / 2); i++) {   // --- py stmt 4
+    sum -= (2 * arr[i]);   // --- py stmt 5
+    sum += (2 * arr[n - i - 1]);   // --- py stmt 6
+  }
+  return sum;   // --- py stmt 7
+}
+
+
+

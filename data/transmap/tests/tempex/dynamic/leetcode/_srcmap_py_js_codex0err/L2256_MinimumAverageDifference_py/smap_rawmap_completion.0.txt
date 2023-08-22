@@ -1,0 +1,45 @@
+
+### Python
+### minimumAverageDifference 
+from itertools import accumulate   # --- py stmt 1
+import math   # --- py stmt 2
+from math import inf   # --- py stmt 3
+from typing import *   # --- py stmt 4
+def f_gold(nums: List[int]) -> int:   # --- py stmt 5
+    s = list(accumulate(nums))   # --- py stmt 6
+    ans, n = 0, len(nums)   # --- py stmt 7
+    mi = float('inf')   # --- py stmt 8
+    for i in range(n):   # --- py stmt 9
+        a = s[i] // (i + 1)   # --- py stmt 10
+        b = 0 if i == n - 1 else (s[-1] - s[i]) // (n - i - 1)   # --- py stmt 11
+        t = abs(a - b)   # --- py stmt 12
+        if mi > t:   # --- py stmt 13
+            ans = i   # --- py stmt 14
+            mi = t   # --- py stmt 15
+    return ans   # --- py stmt 16
+
+### JavaScript
+"use strict";
+
+function f_gold(nums) {   // --- py stmt 5
+    let s = nums.reduce((a, b) => a + b, 0);   // --- py stmt 6
+    let ans = 0;   // --- py stmt 7
+    let n = nums.length;   // --- py stmt 7
+    let mi = Number.MAX_VALUE;   // --- py stmt 8
+    for (let i = 0; i < n; i++) {   // --- py stmt 9
+        let a = Math.floor(s[i] / (i + 1));   // --- py stmt 10
+        let b = 0;   // --- py stmt 11
+        if (i != n - 1) {   // --- py stmt 11
+            b = Math.floor((s[s.length - 1] - s[i]) / (n - i - 1));   // --- py stmt 11
+        }
+        let t = Math.abs(a - b);   // --- py stmt 12
+        if (mi > t) {   // --- py stmt 13
+            ans = i;   // --- py stmt 14
+            mi = t;   // --- py stmt 15
+        }
+    }
+    return ans;   // --- py stmt 16
+}
+
+
+

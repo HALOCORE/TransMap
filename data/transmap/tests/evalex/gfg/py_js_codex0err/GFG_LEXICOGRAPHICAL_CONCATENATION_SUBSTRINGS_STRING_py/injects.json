@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "  var sub_count = Math.floor((n * (n + 1)) / 2);",
+    "replacement": "  var sub_count = (n * (n + 1)) / 2;"
+  },
+  {
+    "line_start": 6,
+    "line_end": 8,
+    "content": "    for (var j = 1; j < n - i + 1; j++) {arr[index] = s.substring(i, i + j);\n        index += 1;}",
+    "replacement": "    for (var j = 1; j < n - i + 1; j++) arr[index] = s.substring(i, i + j);\n    index += 1;"
+  }
+]

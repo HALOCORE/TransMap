@@ -1,0 +1,28 @@
+
+### Python
+def f_gold(arr1, arr2, m, n):   # --- py stmt 1
+  i = 0   # --- py stmt 2
+  j = 0   # --- py stmt 3
+  for i in range(n):   # --- py stmt 4
+    for j in range(m):   # --- py stmt 5
+      if(arr2[i] == arr1[j]): break   # --- py stmt 6
+    if(j == m): return 0   # --- py stmt 7
+  return 1   # --- py stmt 8
+
+
+### JavaScript
+"use strict";
+function f_gold(arr1, arr2, m, n) {   // --- py stmt 1
+  var i = 0;   // --- py stmt 2
+  var j = 0;   // --- py stmt 3
+  for (i = 0; i < n; i++) {   // --- py stmt 4
+    for (j = 0; j < m; j++) {   // --- py stmt 5
+      if (arr2[i] == arr1[j]) break;   // --- py stmt 6
+    }
+    if (j == m) return 0;   // --- py stmt 7
+  }
+  return 1;   // --- py stmt 8
+}
+
+
+

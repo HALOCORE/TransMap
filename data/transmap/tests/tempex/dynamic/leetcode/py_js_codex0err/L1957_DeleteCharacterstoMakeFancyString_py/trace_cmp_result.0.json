@@ -1,0 +1,77 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[8,4,8,24]",
+    "break_idx": 2,
+    "expected_src_pk": "[8,4,8,23]",
+    "actural_src_pk": "[8,4,8,23]",
+    "src_cov_lines": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      6
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",9,\"leeetcode\"],\"ans\":[\"A\",9,[\"S\",1,\"l\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"],[\"S\",1,\"t\"],[\"S\",1,\"c\"],[\"S\",1,\"o\"],[\"S\",1,\"d\"],[\"S\",1,\"e\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",9,\"leeetcode\"],\"ans\":[\"A\",8,[\"S\",1,\"l\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"],[\"S\",1,\"t\"],[\"S\",1,\"c\"],[\"S\",1,\"o\"],[\"S\",1,\"d\"],[\"S\",1,\"e\"]],\"c\":[\"S\",1,\"e\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "ans"
+    ]
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 8,
+    "tar_pk": "[6,8,6,20]",
+    "expected_src_pk": "[7,8,7,21]",
+    "actural_src_pk": "[5,8,6,20]",
+    "src_cov_lines": [
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",9,\"leeetcode\"],\"ans\":[\"A\",3,[\"S\",1,\"l\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"]],\"c\":[\"S\",1,\"e\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",9,\"leeetcode\"],\"ans\":[\"A\",3,[\"S\",1,\"l\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"]],\"c\":[\"S\",1,\"t\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  },
+  {
+    "reason": "Tracepoint MISMATCH",
+    "break_idx": 7,
+    "tar_pk": "[6,8,6,20]",
+    "expected_src_pk": "[7,8,7,21]",
+    "actural_src_pk": "[5,8,6,20]",
+    "src_cov_lines": [
+      5,
+      6
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",9,\"leeetcode\"],\"ans\":[\"A\",3,[\"S\",1,\"l\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"]],\"c\":[\"S\",1,\"e\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",9,\"leeetcode\"],\"ans\":[\"A\",3,[\"S\",1,\"l\"],[\"S\",1,\"e\"],[\"S\",1,\"e\"]],\"c\":[\"S\",1,\"t\"]}",
+      ""
+    ],
+    "mismatch_vnames": null
+  }
+]

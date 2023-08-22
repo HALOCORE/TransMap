@@ -1,0 +1,60 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[6,2,6,12]",
+    "src_cov_lines": [
+      4,
+      5
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: m.values is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"stri\":[\"A\",10,[\"S\",4,\"hate\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"hate\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"]],\"n\":[\"N\",\"10\"],\"m\":[\"DICT\",[[\"S\",4,\"hate\"],[\"N\",\"2\"]],[[\"S\",4,\"love\"],[\"N\",\"4\"]],[[\"S\",5,\"peace\"],[\"N\",\"4\"]]],\"i\":[\"N\",\"4\"],\"res\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,5,23]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: m.values is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"stri\":[\"A\",10,[\"S\",4,\"hate\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"hate\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"]],\"n\":[\"N\",\"10\"],\"m\":[\"DICT\",[[\"S\",4,\"hate\"],[\"N\",\"2\"]],[[\"S\",4,\"love\"],[\"N\",\"4\"]],[[\"S\",5,\"peace\"],[\"N\",\"4\"]]],\"i\":[\"N\",\"2\"],\"res\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,5,23]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"TypeError: m.values is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"stri\":[\"A\",10,[\"S\",4,\"hate\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"hate\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"],[\"S\",4,\"love\"],[\"S\",5,\"peace\"]],\"n\":[\"N\",\"10\"],\"m\":[\"DICT\",[[\"S\",4,\"hate\"],[\"N\",\"2\"]],[[\"S\",4,\"love\"],[\"N\",\"4\"]],[[\"S\",5,\"peace\"],[\"N\",\"4\"]]],\"i\":[\"N\",\"2\"],\"res\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

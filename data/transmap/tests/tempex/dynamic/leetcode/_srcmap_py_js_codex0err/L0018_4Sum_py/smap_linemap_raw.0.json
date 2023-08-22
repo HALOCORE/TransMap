@@ -1,0 +1,380 @@
+{
+  "src_anno_stmts": [
+    [
+      "### fourSum",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], target: int) -> List[List[int]]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n, res = len(nums), []",
+      [
+        3
+      ]
+    ],
+    [
+      "    if n < 4:",
+      [
+        4
+      ]
+    ],
+    [
+      "        return []",
+      [
+        5
+      ]
+    ],
+    [
+      "    nums.sort()",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(n - 3):",
+      [
+        7
+      ]
+    ],
+    [
+      "        if i > 0 and nums[i] == nums[i - 1]:",
+      [
+        8
+      ]
+    ],
+    [
+      "            continue",
+      [
+        9
+      ]
+    ],
+    [
+      "        for j in range(i + 1, n - 2):",
+      [
+        10
+      ]
+    ],
+    [
+      "            if j > i + 1 and nums[j] == nums[j - 1]:",
+      [
+        11
+      ]
+    ],
+    [
+      "                continue",
+      [
+        12
+      ]
+    ],
+    [
+      "            k, l = j + 1, n - 1",
+      [
+        13
+      ]
+    ],
+    [
+      "            while k < l:",
+      [
+        14
+      ]
+    ],
+    [
+      "                if nums[i] + nums[j] + nums[k] + nums[l] == target:",
+      [
+        15
+      ]
+    ],
+    [
+      "                    res.append([nums[i], nums[j], nums[k], nums[l]])",
+      [
+        16
+      ]
+    ],
+    [
+      "                    k += 1",
+      [
+        17
+      ]
+    ],
+    [
+      "                    l -= 1",
+      [
+        18
+      ]
+    ],
+    [
+      "                    while k < n and nums[k] == nums[k - 1]:",
+      [
+        19
+      ]
+    ],
+    [
+      "                        k += 1",
+      [
+        20
+      ]
+    ],
+    [
+      "                    while l > j and nums[l] == nums[l + 1]:",
+      [
+        21
+      ]
+    ],
+    [
+      "                        l -= 1",
+      [
+        22
+      ]
+    ],
+    [
+      "                elif nums[i] + nums[j] + nums[k] + nums[l] < target:",
+      [
+        23
+      ]
+    ],
+    [
+      "                    k += 1",
+      [
+        24
+      ]
+    ],
+    [
+      "                else:",
+      [
+        25
+      ]
+    ],
+    [
+      "                    l -= 1",
+      [
+        26
+      ]
+    ],
+    [
+      "    return res",
+      [
+        27
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, target) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = nums.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var res = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (n < 4) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return [];",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    nums.sort();",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n - 3; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i > 0 && nums[i] == nums[i - 1]) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            continue;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (var j = i + 1; j < n - 2; j++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            if (j > i + 1 && nums[j] == nums[j - 1]) {",
+      [
+        11
+      ]
+    ],
+    [
+      "                continue;",
+      [
+        12
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            var k = j + 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "            var l = n - 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "            while (k < l) {",
+      [
+        14
+      ]
+    ],
+    [
+      "                if (nums[i] + nums[j] + nums[k] + nums[l] == target) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                    res.push([nums[i], nums[j], nums[k], nums[l]]);",
+      [
+        16
+      ]
+    ],
+    [
+      "                    k += 1;",
+      [
+        17
+      ]
+    ],
+    [
+      "                    l -= 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "                    while (k < n && nums[k] == nums[k - 1]) {",
+      [
+        19
+      ]
+    ],
+    [
+      "                        k += 1;",
+      [
+        20
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                    while (l > j && nums[l] == nums[l + 1]) {",
+      [
+        21
+      ]
+    ],
+    [
+      "                        l -= 1;",
+      [
+        22
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                } else if (nums[i] + nums[j] + nums[k] + nums[l] < target) {",
+      [
+        23
+      ]
+    ],
+    [
+      "                    k += 1;",
+      [
+        24
+      ]
+    ],
+    [
+      "                } else {",
+      [
+        25
+      ]
+    ],
+    [
+      "                    l -= 1;",
+      [
+        26
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        27
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "        for ( var _ = 0, ql = q.length; _ < ql; _++ ) {",
+    "replacement": "        for ( var _ = 0; _ < q.length; _++ ) {"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "            [i, j] = q.shift();",
+    "replacement": "            i = q.shift()[0];\n            j = q.shift()[1];"
+  }
+]

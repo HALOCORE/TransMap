@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "        let s3 = (k-j > j)? s.substring(j, k - j) : '';",
+    "replacement": "        let s3 = s.substring(j, k - j);"
+  },
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        let s4 = (s.length - k > k)? s.substring(k, s.length - k) : '';",
+    "replacement": "        let s4 = s.substring(k, s.length - k);"
+  }
+]

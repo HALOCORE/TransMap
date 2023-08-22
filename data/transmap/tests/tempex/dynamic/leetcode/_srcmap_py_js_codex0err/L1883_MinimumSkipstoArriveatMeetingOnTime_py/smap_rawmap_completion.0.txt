@@ -1,0 +1,54 @@
+
+### Python
+### minSkips 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(dist: List[int], speed: int, hoursBefore: int) -> int:   # --- py stmt 4
+    n = len(dist)   # --- py stmt 5
+    dp = [[float('inf')] * (n + 1) for _ in range(n + 1)]   # --- py stmt 6
+    dp[0][0] = 0   # --- py stmt 7
+    for i in range(1, n + 1):   # --- py stmt 8
+        for j in range(i + 1):   # --- py stmt 9
+            if i != j:   # --- py stmt 10
+                dp[i][j] = min(   # --- py stmt 11
+                    dp[i][j],
+                    ((dp[i - 1][j] + dist[i - 1] - 1) // speed + 1) * speed,
+                )
+            if j > 0:   # --- py stmt 12
+                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + dist[i - 1])
+    for i in range(n + 1):   # --- py stmt 13
+        if dp[n][i] <= hoursBefore * speed:   # --- py stmt 14
+            return i
+    return -1   # --- py stmt 15
+
+### JavaScript
+"use strict";
+
+function f_gold(dist, speed, hoursBefore) {   // --- py stmt 4
+    let n = dist.length;   // --- py stmt 5
+    let dp = Array(n + 1).fill(0).map(() => Array(n + 1).fill(Number.POSITIVE_INFINITY));   // --- py stmt 6
+    dp[0][0] = 0;   // --- py stmt 7
+    for (let i = 1; i <= n; i++) {   // --- py stmt 8
+        for (let j = 0; j <= i; j++) {   // --- py stmt 9
+            if (i != j) {   // --- py stmt 10
+                dp[i][j] = Math.min(   // --- py stmt 11
+                    dp[i][j],
+                    ((dp[i - 1][j] + dist[i - 1] - 1) / speed + 1) * speed,
+                );
+            }
+            if (j > 0) {   // --- py stmt 12
+                dp[i][j] = Math.min(dp[i][j], dp[i - 1][j - 1] + dist[i - 1]);
+            }
+        }
+    }
+    for (let i = 0; i <= n; i++) {   // --- py stmt 13
+        if (dp[n][i] <= hoursBefore * speed) {   // --- py stmt 14
+            return i;
+        }
+    }
+    return -1;   // --- py stmt 15
+}
+
+
+

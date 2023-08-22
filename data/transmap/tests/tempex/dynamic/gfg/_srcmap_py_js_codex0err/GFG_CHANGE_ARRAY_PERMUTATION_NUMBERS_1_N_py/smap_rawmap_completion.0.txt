@@ -1,0 +1,37 @@
+
+### Python
+def f_gold(a, n):   # --- py stmt 1
+  count = dict()   # --- py stmt 2
+  for i in range(n):   # --- py stmt 3
+    if count.get(a[i]): count[a[i]] += 1   # --- py stmt 4
+    else: count[a[i]] = 1 ;   # --- py stmt 5
+  next_missing = 1   # --- py stmt 6
+  for i in range(n):   # --- py stmt 7
+    if count[a[i]] != 1 or a[i] > n or a[i] < 1:   # --- py stmt 8
+      count[a[i]] -= 1   # --- py stmt 9
+      while count.get(next_missing): next_missing += 1   # --- py stmt 10
+      a[i] = next_missing   # --- py stmt 11
+      count[next_missing] = 1   # --- py stmt 12
+
+
+### JavaScript
+"use strict";
+function f_gold(a, n) {   // --- py stmt 1
+  let count = {};   // --- py stmt 2
+  for (let i = 0; i < n; i++) {   // --- py stmt 3
+    if (count.get(a[i])) count[a[i]] += 1;   // --- py stmt 4
+    else count[a[i]] = 1;   // --- py stmt 5
+  }
+  let next_missing = 1;   // --- py stmt 6
+  for (let i = 0; i < n; i++) {   // --- py stmt 7
+    if (count[a[i]] != 1 || a[i] > n || a[i] < 1) {   // --- py stmt 8
+      count[a[i]] -= 1;   // --- py stmt 9
+      while (typeof(count[next_missing]) !== 'undefined') next_missing += 1;   // --- py stmt 10
+      a[i] = next_missing;   // --- py stmt 11
+      count[next_missing] = 1;   // --- py stmt 12
+    }
+  }
+}
+
+
+

@@ -1,0 +1,48 @@
+
+### Python
+### spiralMatrixIII 
+from typing import *   # --- py stmt 1
+def f_gold(rows: int, cols: int, rStart: int, cStart: int   # --- py stmt 2
+) -> List[List[int]]:   # --- py stmt 2
+    ans = [[rStart, cStart]]   # --- py stmt 3
+    if rows * cols == 1:   # --- py stmt 4
+        return ans   # --- py stmt 5
+    k = 1   # --- py stmt 6
+    while True:   # --- py stmt 7
+        for dr, dc, dk in [[0, 1, k], [1, 0, k], [0, -1, k + 1], [-1, 0, k + 1]]:   # --- py stmt 8
+            for _ in range(dk):   # --- py stmt 9
+                rStart += dr   # --- py stmt 10
+                cStart += dc   # --- py stmt 11
+                if 0 <= rStart < rows and 0 <= cStart < cols:   # --- py stmt 12
+                    ans.append([rStart, cStart])   # --- py stmt 13
+                    if len(ans) == rows * cols:   # --- py stmt 14
+                        return ans   # --- py stmt 15
+        k += 2   # --- py stmt 16
+
+### JavaScript
+"use strict";
+function f_gold(rows, cols, rStart, cStart) {   // --- py stmt 2
+    var ans = [[rStart, cStart]];   // --- py stmt 3
+    if (rows * cols == 1) {   // --- py stmt 4
+        return ans;   // --- py stmt 5
+    }
+    var k = 1;   // --- py stmt 6
+    while (true) {   // --- py stmt 7
+        for (var [dr, dc, dk] of [[0, 1, k], [1, 0, k], [0, -1, k + 1], [-1, 0, k + 1]]) {   // --- py stmt 8
+            for (var _ = 0; _ < dk; _++) {   // --- py stmt 9
+                rStart += dr;   // --- py stmt 10
+                cStart += dc;   // --- py stmt 11
+                if (0 <= rStart < rows && 0 <= cStart < cols) {   // --- py stmt 12
+                    ans.push([rStart, cStart]);   // --- py stmt 13
+                    if (ans.length == rows * cols) {   // --- py stmt 14
+                        return ans;   // --- py stmt 15
+                    }
+                }
+            }
+        }
+        k += 2;   // --- py stmt 16
+    }
+}
+
+
+

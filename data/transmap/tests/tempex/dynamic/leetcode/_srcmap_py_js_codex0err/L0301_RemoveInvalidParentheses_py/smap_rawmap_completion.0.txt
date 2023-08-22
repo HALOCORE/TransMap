@@ -1,0 +1,85 @@
+
+### Python
+### removeInvalidParentheses 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> List[str]:   # --- py stmt 2
+    def dfs(i, t, lcnt, rcnt, ldel, rdel):   # --- py stmt 3
+        nonlocal tdel, ans   # --- py stmt 4
+        if ldel * rdel < 0 or lcnt < rcnt or ldel + rdel > len(s) - i:   # --- py stmt 5
+            return   # --- py stmt 6
+        if ldel == 0 and rdel == 0:   # --- py stmt 7
+            if len(s) - len(t) == tdel:   # --- py stmt 8
+                ans.add(t)   # --- py stmt 9
+        if i == len(s):   # --- py stmt 10
+            return   # --- py stmt 11
+        if s[i] == '(':   # --- py stmt 12
+            dfs(i + 1, t, lcnt, rcnt, ldel - 1, rdel)   # --- py stmt 13
+            dfs(i + 1, t + '(', lcnt + 1, rcnt, ldel, rdel)   # --- py stmt 14
+        elif s[i] == ')':   # --- py stmt 15
+            dfs(i + 1, t, lcnt, rcnt, ldel, rdel - 1)   # --- py stmt 16
+            dfs(i + 1, t + ')', lcnt, rcnt + 1, ldel, rdel)   # --- py stmt 17
+        else:   # --- py stmt 18
+            dfs(i + 1, t + s[i], lcnt, rcnt, ldel, rdel)   # --- py stmt 19
+    ldel = rdel = 0   # --- py stmt 20
+    for c in s:   # --- py stmt 21
+        if c == '(':   # --- py stmt 22
+            ldel += 1   # --- py stmt 23
+        elif c == ')':   # --- py stmt 24
+            if ldel == 0:   # --- py stmt 25
+                rdel += 1   # --- py stmt 26
+            else:   # --- py stmt 27
+                ldel -= 1   # --- py stmt 28
+    tdel = ldel + rdel   # --- py stmt 29
+    ans = set()   # --- py stmt 30
+    dfs(0, '', 0, 0, ldel, rdel)   # --- py stmt 31
+    return list(ans)   # --- py stmt 32
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    function dfs(i, t, lcnt, rcnt, ldel, rdel) {   // --- py stmt 3
+        if (ldel * rdel < 0 || lcnt < rcnt || ldel + rdel > s.length - i) {   // --- py stmt 5
+            return;   // --- py stmt 6
+        }
+        if (ldel == 0 && rdel == 0) {   // --- py stmt 7
+            if (s.length - t.length == tdel) {   // --- py stmt 8
+                ans.add(t);   // --- py stmt 9
+            }
+        }
+        if (i == s.length) {   // --- py stmt 10
+            return;   // --- py stmt 11
+        }
+        if (s[i] == '(') {   // --- py stmt 12
+            dfs(i + 1, t, lcnt, rcnt, ldel - 1, rdel);   // --- py stmt 13
+            dfs(i + 1, t + '(', lcnt + 1, rcnt, ldel, rdel);   // --- py stmt 14
+        }
+        else if (s[i] == ')') {   // --- py stmt 15
+            dfs(i + 1, t, lcnt, rcnt, ldel, rdel - 1);   // --- py stmt 16
+            dfs(i + 1, t + ')', lcnt, rcnt + 1, ldel, rdel);   // --- py stmt 17
+        }
+        else {   // --- py stmt 18
+            dfs(i + 1, t + s[i], lcnt, rcnt, ldel, rdel);   // --- py stmt 19
+        }
+    }
+    ldel = rdel = 0;   // --- py stmt 20
+    for (let c of s) {   // --- py stmt 21
+        if (c == '(') {   // --- py stmt 22
+            ldel += 1;   // --- py stmt 23
+        }
+        else if (c == ')') {   // --- py stmt 24
+            if (ldel == 0) {   // --- py stmt 25
+                rdel += 1;   // --- py stmt 26
+            }
+            else {   // --- py stmt 27
+                ldel -= 1;   // --- py stmt 28
+            }
+        }
+    }
+    let tdel = ldel + rdel;   // --- py stmt 29
+    let ans = new Set();   // --- py stmt 30
+    dfs(0, '', 0, 0, ldel, rdel);   // --- py stmt 31
+    return Array.from(ans);   // --- py stmt 32
+}
+
+
+

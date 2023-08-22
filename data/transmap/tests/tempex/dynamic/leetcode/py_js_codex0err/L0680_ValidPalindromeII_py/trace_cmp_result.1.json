@@ -1,0 +1,102 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[11,4,16,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[10,4,13,27]",
+    "actural_src_pk": "[10,4,13,27]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":\"UNKNOWN\",\"j\":[\"N\",\"0\"],\"len\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"2\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i",
+      "j"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[11,4,16,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[10,4,13,27]",
+    "actural_src_pk": "[10,4,13,27]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":\"UNKNOWN\",\"j\":[\"N\",\"0\"],\"len\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"2\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i",
+      "j"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[11,4,16,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[10,4,13,27]",
+    "actural_src_pk": "[10,4,13,27]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":\"UNKNOWN\",\"j\":[\"N\",\"0\"],\"len\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"2\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i",
+      "j"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[11,4,16,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[10,4,13,27]",
+    "actural_src_pk": "[10,4,13,27]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      10
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aba\"],\"i\":\"UNKNOWN\",\"j\":[\"N\",\"0\"],\"len\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"check\":\"UNKNOWN\",\"i\":[\"N\",\"0\"],\"j\":[\"N\",\"2\"],\"s\":[\"S\",3,\"aba\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "i",
+      "j"
+    ]
+  }
+]

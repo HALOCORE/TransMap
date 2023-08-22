@@ -1,0 +1,212 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxProfit",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(k: int, prices: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(prices)",
+      [
+        3
+      ]
+    ],
+    [
+      "    if n < 2:",
+      [
+        4
+      ]
+    ],
+    [
+      "        return 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    dp = [[[0] * 2 for _ in range(k + 1)] for _ in range(n)]",
+      [
+        6
+      ]
+    ],
+    [
+      "    for i in range(1, k + 1):",
+      [
+        7
+      ]
+    ],
+    [
+      "        dp[0][i][1] = -prices[0]",
+      [
+        8
+      ]
+    ],
+    [
+      "    for i in range(1, n):",
+      [
+        9
+      ]
+    ],
+    [
+      "        for j in range(1, k + 1):",
+      [
+        10
+      ]
+    ],
+    [
+      "            dp[i][j][0] = max(dp[i - 1][j][1] + prices[i], dp[i - 1][j][0])",
+      [
+        11
+      ]
+    ],
+    [
+      "            dp[i][j][1] = max(dp[i - 1][j - 1][0] - prices[i], dp[i - 1][j][1])",
+      [
+        12
+      ]
+    ],
+    [
+      "    return dp[-1][k][0]",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (k, prices) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var n = prices.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (n < 2) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var dp = new Array(n);",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        dp[i] = new Array(k + 1);",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = 0; j < k + 1; j++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            dp[i][j] = new Array(2);",
+      [
+        6
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 1; i < k + 1; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        dp[0][i][1] = -prices[0];",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 1; i < n; i++) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        for (var j = 1; j < k + 1; j++) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            dp[i][j][0] = Math.max(dp[i - 1][j][1] + prices[i], dp[i - 1][j][0]);",
+      [
+        11
+      ]
+    ],
+    [
+      "            dp[i][j][1] = Math.max(dp[i - 1][j - 1][0] - prices[i], dp[i - 1][j][1]);",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return dp[n - 1][k][0];",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

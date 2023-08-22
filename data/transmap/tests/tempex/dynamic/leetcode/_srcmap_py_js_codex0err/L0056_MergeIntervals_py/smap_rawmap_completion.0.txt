@@ -1,0 +1,40 @@
+
+### Python
+### merge 
+from typing import *   # --- py stmt 1
+def f_gold(intervals: List[List[int]]) -> List[List[int]]:   # --- py stmt 2
+    intervals.sort()   # --- py stmt 3
+    ans = []   # --- py stmt 4
+    st, ed = intervals[0]   # --- py stmt 5
+    for s, e in intervals[1:]:   # --- py stmt 6
+        if ed < s:   # --- py stmt 7
+            ans.append([st, ed])   # --- py stmt 8
+            st, ed = s, e   # --- py stmt 9
+        else:   # --- py stmt 10
+            ed = max(ed, e)   # --- py stmt 11
+    ans.append([st, ed])   # --- py stmt 12
+    return ans   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(intervals) {   // --- py stmt 2
+    intervals.sort();   // --- py stmt 3
+    var ans = [];   // --- py stmt 4
+    var st = intervals[0][0];   // --- py stmt 5
+    var ed = intervals[0][1];   // --- py stmt 5
+    for (var i = 1; i < intervals.length; i++) {   // --- py stmt 6
+        var s = intervals[i][0];   // --- py stmt 6
+        var e = intervals[i][1];   // --- py stmt 6
+        if (ed < s) {   // --- py stmt 7
+            ans.push([st, ed]);   // --- py stmt 8
+            st = s;   // --- py stmt 9
+            ed = e;   // --- py stmt 9
+        }
+        else {   // --- py stmt 10
+            ed = Math.max(ed, e);   // --- py stmt 11
+        }
+    }
+    ans.push([st, ed]);   // --- py stmt 12
+    return ans;   // --- py stmt 13
+}
+

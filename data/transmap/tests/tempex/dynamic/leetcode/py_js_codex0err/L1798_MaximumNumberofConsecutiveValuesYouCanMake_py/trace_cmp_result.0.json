@@ -1,0 +1,80 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[8,4,8,15]",
+    "break_idx": 8,
+    "expected_src_pk": "[8,4,8,14]",
+    "actural_src_pk": "[8,4,8,14]",
+    "src_cov_lines": [
+      4,
+      5,
+      7
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "tar_data": [
+      "{\"coins\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"10\"],[\"N\",\"3\"],[\"N\",\"4\"]],\"res\":[\"N\",\"3\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"coins\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"4\"],[\"N\",\"10\"],[\"N\",\"3\"],[\"N\",\"1\"]],\"res\":[\"N\",\"20\"],\"coin\":[\"N\",\"10\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "coins",
+      "res"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,5,9]",
+    "break_idx": 16,
+    "expected_src_pk": "[5,8,6,17]",
+    "actural_src_pk": "[5,8,6,17]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"coins\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"10\"],[\"N\",\"3\"],[\"N\",\"4\"]],\"res\":[\"N\",\"1\"],\"coin\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"coins\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"4\"],[\"N\",\"10\"],[\"N\",\"3\"],[\"N\",\"1\"]],\"res\":[\"N\",\"1\"],\"coin\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "coins"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[3,8,5,9]",
+    "break_idx": 9,
+    "expected_src_pk": "[5,8,6,17]",
+    "actural_src_pk": "[5,8,6,17]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_data": [
+      "{\"coins\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"1\"],[\"N\",\"10\"],[\"N\",\"3\"],[\"N\",\"4\"]],\"res\":[\"N\",\"1\"],\"coin\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"coins\":[\"A\",5,[\"N\",\"1\"],[\"N\",\"4\"],[\"N\",\"10\"],[\"N\",\"3\"],[\"N\",\"1\"]],\"res\":[\"N\",\"1\"],\"coin\":[\"N\",\"1\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "coins"
+    ]
+  }
+]

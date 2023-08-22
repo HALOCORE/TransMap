@@ -1,0 +1,25 @@
+
+### Python
+def f_gold(arr, N, K):   # --- py stmt 1
+  arr.sort()   # --- py stmt 2
+  res = 2147483647   # --- py stmt 3
+  for i in range((N - K)+ 1):   # --- py stmt 4
+    curSeqDiff = arr[i + K - 1] - arr[i]   # --- py stmt 5
+    res = min(res, curSeqDiff)   # --- py stmt 6
+  return res   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, N, K) {   // --- py stmt 1
+  arr.sort();   // --- py stmt 2
+  var res = 2147483647;   // --- py stmt 3
+  for (var i = 0; i < (N - K) + 1; i++) {   // --- py stmt 4
+    var curSeqDiff = arr[i + K - 1] - arr[i];   // --- py stmt 5
+    res = Math.min(res, curSeqDiff);   // --- py stmt 6
+  }
+  return res;   // --- py stmt 7
+}
+
+
+

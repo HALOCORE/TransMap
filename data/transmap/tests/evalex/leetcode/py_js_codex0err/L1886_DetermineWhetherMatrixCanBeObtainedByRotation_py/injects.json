@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "        for (var i = 0; i < Math.floor(n / 2); i++) {",
+    "replacement": "        for (var i = 0; i < n / 2; i++) {"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "        if (JSON.stringify(mat) == JSON.stringify(target)) {",
+    "replacement": "        if (mat == target) {"
+  }
+]

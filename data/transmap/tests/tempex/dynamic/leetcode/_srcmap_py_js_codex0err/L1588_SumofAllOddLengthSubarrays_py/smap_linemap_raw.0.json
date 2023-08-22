@@ -1,0 +1,168 @@
+{
+  "src_anno_stmts": [
+    [
+      "### sumOddLengthSubarrays",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    n = len(arr)",
+      [
+        3
+      ]
+    ],
+    [
+      "    presum = [0] * (n + 1)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        5
+      ]
+    ],
+    [
+      "        presum[i + 1] = presum[i] + arr[i]",
+      [
+        6
+      ]
+    ],
+    [
+      "    res = 0",
+      [
+        7
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        8
+      ]
+    ],
+    [
+      "        for j in range(0, n, 2):",
+      [
+        9
+      ]
+    ],
+    [
+      "            if i + j < n:",
+      [
+        10
+      ]
+    ],
+    [
+      "                res += presum[i + j + 1] - presum[i]",
+      [
+        11
+      ]
+    ],
+    [
+      "    return res",
+      [
+        12
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    let n = arr.length;",
+      [
+        3
+      ]
+    ],
+    [
+      "    let presum = new Array(n + 1);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        presum[i + 1] = presum[i] + arr[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let res = 0;",
+      [
+        7
+      ]
+    ],
+    [
+      "    for (let i = 0; i < n; i++) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        for (let j = 0; j < n; j += 2) {",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (i + j < n) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                res += presum[i + j + 1] - presum[i];",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        12
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

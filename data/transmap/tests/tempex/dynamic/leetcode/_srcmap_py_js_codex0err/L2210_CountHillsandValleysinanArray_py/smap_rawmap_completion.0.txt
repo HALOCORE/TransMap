@@ -1,0 +1,35 @@
+
+### Python
+### countHillValley 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    ans = j = 0   # --- py stmt 3
+    for i in range(1, len(nums) - 1):   # --- py stmt 4
+        if nums[i] == nums[i + 1]:   # --- py stmt 5
+            continue   # --- py stmt 6
+        if nums[i] > nums[j] and nums[i] > nums[i + 1]:   # --- py stmt 7
+            ans += 1   # --- py stmt 8
+        if nums[i] < nums[j] and nums[i] < nums[i + 1]:   # --- py stmt 9
+            ans += 1   # --- py stmt 10
+        j = i   # --- py stmt 11
+    return ans   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var ans = j = 0;   // --- py stmt 3
+    for (var i = 1; i < nums.length - 1; i++) {   // --- py stmt 4
+        if (nums[i] == nums[i + 1]) {   // --- py stmt 5
+            continue;   // --- py stmt 6
+        }
+        if (nums[i] > nums[j] && nums[i] > nums[i + 1]) {   // --- py stmt 7
+            ans += 1;   // --- py stmt 8
+        }
+        if (nums[i] < nums[j] && nums[i] < nums[i + 1]) {   // --- py stmt 9
+            ans += 1;   // --- py stmt 10
+        }
+        j = i;   // --- py stmt 11
+    }
+    return ans;   // --- py stmt 12
+}
+

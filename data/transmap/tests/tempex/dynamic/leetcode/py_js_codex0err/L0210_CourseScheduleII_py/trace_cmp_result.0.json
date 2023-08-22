@@ -1,0 +1,94 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 7,
+    "actural_src_pk": "[22,4,22,48]",
+    "src_cov_lines": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "tar_cov_lines": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"numCourses\":[\"N\",\"2\"],\"prerequisites\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]]],\"edges\":[\"DICT\",[[\"N\",\"0\"],[\"A\",1,[\"N\",\"1\"]]],[[\"N\",\"1\"],[\"A\",0]]],\"indegree\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"a\":[\"N\",\"1\"],\"b\":[\"N\",\"1\"],\"q\":[\"A\",0],\"i\":[\"N\",\"1\"],\"ans\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 7,
+    "actural_src_pk": "[22,4,22,48]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      24,
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"numCourses\":[\"N\",\"2\"],\"prerequisites\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]]],\"edges\":[\"DICT\",[[\"N\",\"0\"],[\"A\",1,[\"N\",\"1\"]]],[[\"N\",\"1\"],[\"A\",0]]],\"indegree\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"a\":[\"N\",\"1\"],\"b\":[\"N\",\"1\"],\"q\":[\"A\",0],\"i\":[\"N\",\"1\"],\"ans\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[22,4,22,48]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      24,
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"numCourses\":[\"N\",\"2\"],\"prerequisites\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]]],\"edges\":[\"DICT\",[[\"N\",\"0\"],[\"A\",1,[\"N\",\"1\"]]],[[\"N\",\"1\"],[\"A\",0]]],\"indegree\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"a\":[\"N\",\"1\"],\"b\":[\"N\",\"1\"],\"q\":[\"A\",0],\"i\":[\"N\",\"1\"],\"ans\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[22,4,22,48]",
+    "src_cov_lines": [
+      18
+    ],
+    "tar_cov_lines": [
+      24,
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"numCourses\":[\"N\",\"2\"],\"prerequisites\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]]],\"edges\":[\"DICT\",[[\"N\",\"0\"],[\"A\",1,[\"N\",\"1\"]]],[[\"N\",\"1\"],[\"A\",0]]],\"indegree\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"0\"]],\"a\":[\"N\",\"1\"],\"b\":[\"N\",\"1\"],\"q\":[\"A\",0],\"i\":[\"N\",\"1\"],\"ans\":[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+
+### Python
+### floodFill 
+from typing import *   # --- py stmt 1
+def f_gold(image: List[List[int]], sr: int, sc: int, newColor: int   # --- py stmt 2
+) -> List[List[int]]:
+    def dfs(i, j, oc, nc):   # --- py stmt 3
+        if (   # --- py stmt 4
+            i < 0
+            or i >= len(image)
+            or j < 0
+            or j >= len(image[0])
+            or image[i][j] != oc
+            or image[i][j] == nc
+        ):
+            return   # --- py stmt 5
+        image[i][j] = nc   # --- py stmt 6
+        for x, y in [[0, 1], [0, -1], [1, 0], [-1, 0]]:   # --- py stmt 7
+            dfs(i + x, j + y, oc, nc)   # --- py stmt 8
+    dfs(sr, sc, image[sr][sc], newColor)   # --- py stmt 9
+    return image   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(image, sr, sc, newColor) {   // --- py stmt 2
+    function dfs(i, j, oc, nc) {   // --- py stmt 3
+        if (i < 0 || i >= image.length || j < 0 || j >= image[0].length || image[i][j] != oc || image[i][j] == nc) {   // --- py stmt 4
+            return;   // --- py stmt 5
+        }
+        image[i][j] = nc;   // --- py stmt 6
+        for (let x = 0; x < 2; x++) {   // --- py stmt 7
+            for (let y = 0; y < 2; y++) {   // --- py stmt 7
+                dfs(i + x, j + y, oc, nc);   // --- py stmt 8
+            }
+        }
+    }
+    dfs(sr, sc, image[sr][sc], newColor);   // --- py stmt 9
+    return image;   // --- py stmt 10
+}
+
+
+

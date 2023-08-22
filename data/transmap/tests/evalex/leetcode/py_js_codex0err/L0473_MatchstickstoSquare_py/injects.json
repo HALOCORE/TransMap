@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    let x = matchsticks.reduce((a, b) => a + b) / 4;",
+    "replacement": "    let x = sum(matchsticks) / 4;"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "    let mod = matchsticks.reduce((a, b) => a + b) % 4;",
+    "replacement": "    let mod = sum(matchsticks) % 4;"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "    if (mod || x < Math.max(matchsticks)) {",
+    "replacement": "    if (mod || x < max(matchsticks)) {"
+  },
+  {
+    "line_start": 23,
+    "line_end": 24,
+    "content": "    matchsticks.sort((a, b) => b - a);",
+    "replacement": "    matchsticks.sort(reverse = true);"
+  }
+]

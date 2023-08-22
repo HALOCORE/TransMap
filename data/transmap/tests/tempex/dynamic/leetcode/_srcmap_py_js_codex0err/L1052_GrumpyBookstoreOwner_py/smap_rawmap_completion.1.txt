@@ -1,0 +1,39 @@
+
+### Python
+### maxSatisfied 
+from typing import *   # --- py stmt 1
+def f_gold(customers: List[int], grumpy: List[int], minutes: int   # --- py stmt 2
+) -> int:
+    s = sum(a * b for a, b in zip(customers, grumpy))   # --- py stmt 3
+    cs = sum(customers)   # --- py stmt 4
+    t = ans = 0   # --- py stmt 5
+    for i, (a, b) in enumerate(zip(customers, grumpy), 1):   # --- py stmt 6
+        t += a * b   # --- py stmt 7
+        if (j := i - minutes) >= 0:   # --- py stmt 8
+            ans = max(ans, cs - (s - t))   # --- py stmt 9
+            t -= customers[j] * grumpy[j]   # --- py stmt 10
+    return ans   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(customers, grumpy, minutes) {   // --- py stmt 2
+    var s = 0;   // --- py stmt 3
+    for (var i = 0; i < customers.length; i++) {   // --- py stmt 3
+        s += customers[i] * grumpy[i];   // --- py stmt 3
+    }
+    var cs = 0;   // --- py stmt 4
+    for (var i = 0; i < customers.length; i++) {   // --- py stmt 4
+        cs += customers[i];   // --- py stmt 4
+    }
+    var t = 0;   // --- py stmt 5
+    var ans = 0;   // --- py stmt 5
+    for (var i = 1; i <= customers.length; i++) {   // --- py stmt 6
+        t += customers[i] * grumpy[i];   // --- py stmt 7
+        if (i - minutes >= 0) {   // --- py stmt 8
+            ans = Math.max(ans, cs - (s - t));   // --- py stmt 9
+            t -= customers[i - minutes] * grumpy[i - minutes];   // --- py stmt 10
+        }
+    }
+    return ans;   // --- py stmt 11
+}
+

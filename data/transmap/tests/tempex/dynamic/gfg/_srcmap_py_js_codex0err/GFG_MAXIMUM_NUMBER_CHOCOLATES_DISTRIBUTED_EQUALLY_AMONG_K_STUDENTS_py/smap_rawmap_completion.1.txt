@@ -1,0 +1,33 @@
+
+### Python
+def f_gold(arr, n, k):   # --- py stmt 1
+  um, curr_rem, maxSum = { }, 0, 0   # --- py stmt 2
+  sm =[0] * n   # --- py stmt 3
+  sm[0] = arr[0]   # --- py stmt 4
+  for i in range(1, n): sm[i] = sm[i - 1] + arr[i]   # --- py stmt 5
+  for i in range(n):   # --- py stmt 6
+    curr_rem = sm[i] % k   # --- py stmt 7
+    if(not curr_rem and maxSum < sm[i]): maxSum = sm[i]   # --- py stmt 8
+    elif(not curr_rem in um): um[curr_rem] = i   # --- py stmt 9
+    elif(maxSum <(sm[i] - sm[um[curr_rem]])): maxSum = sm[i] - sm[um[curr_rem]]   # --- py stmt 10
+  return maxSum // k   # --- py stmt 11
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n, k) {   // --- py stmt 1
+  var um = {}, curr_rem = 0, maxSum = 0;   // --- py stmt 2
+  var sm = Array(n);   // --- py stmt 3
+  sm[0] = arr[0];   // --- py stmt 4
+  for (var i = 1; i < n; i++) sm[i] = sm[i - 1] + arr[i];   // --- py stmt 5
+  for (var i = 0; i < n; i++) {   // --- py stmt 6
+    curr_rem = (sm[i] % k + k) % k;   // --- py stmt 7
+    if (!curr_rem && maxSum < sm[i]) maxSum = sm[i];   // --- py stmt 8
+    else if (!(curr_rem in um)) um[curr_rem] = i;   // --- py stmt 9
+    else if (maxSum < (sm[i] - sm[um[curr_rem]])) maxSum = sm[i] - sm[um[curr_rem]];   // --- py stmt 10
+  }
+  return Math.floor(maxSum / k);   // --- py stmt 11
+}
+
+
+

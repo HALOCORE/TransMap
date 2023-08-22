@@ -1,0 +1,302 @@
+{
+  "src_anno_stmts": [
+    [
+      "### networkDelayTime",
+      null
+    ],
+    [
+      "from heapq import heapify, heappush, heappop",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(times: List[List[int]], n: int, k: int) -> int:",
+      [
+        4
+      ]
+    ],
+    [
+      "    INF = 0x3F3F",
+      [
+        5
+      ]
+    ],
+    [
+      "    g = defaultdict(list)",
+      [
+        6
+      ]
+    ],
+    [
+      "    for u, v, w in times:",
+      [
+        7
+      ]
+    ],
+    [
+      "        g[u - 1].append((v - 1, w))",
+      [
+        8
+      ]
+    ],
+    [
+      "    dist = [INF] * n",
+      [
+        9
+      ]
+    ],
+    [
+      "    dist[k - 1] = 0",
+      [
+        10
+      ]
+    ],
+    [
+      "    q = [(0, k - 1)]",
+      [
+        11
+      ]
+    ],
+    [
+      "    while q:",
+      [
+        12
+      ]
+    ],
+    [
+      "        _, u = heappop(q)",
+      [
+        13
+      ]
+    ],
+    [
+      "        for v, w in g[u]:",
+      [
+        14
+      ]
+    ],
+    [
+      "            if dist[v] > dist[u] + w:",
+      [
+        15
+      ]
+    ],
+    [
+      "                dist[v] = dist[u] + w",
+      [
+        16
+      ]
+    ],
+    [
+      "                heappush(q, (dist[v], v))",
+      [
+        17
+      ]
+    ],
+    [
+      "    ans = max(dist)",
+      [
+        18
+      ]
+    ],
+    [
+      "    return -1 if ans == INF else ans",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(times, n, k) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var INF = 0x3F3F;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var g = new Map();",
+      [
+        6
+      ]
+    ],
+    [
+      "    for (var i = 0; i < times.length; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "        var u = times[i][0] - 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        var v = times[i][1] - 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        var w = times[i][2];",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (g.has(u)) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            g.get(u).push([v, w]);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        8
+      ]
+    ],
+    [
+      "            g.set(u, [[v, w]]);",
+      [
+        8
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var dist = new Array(n).fill(INF);",
+      [
+        9
+      ]
+    ],
+    [
+      "    dist[k - 1] = 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "    var q = [[0, k - 1]];",
+      [
+        11
+      ]
+    ],
+    [
+      "    while (q.length > 0) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        var _ = q.shift();",
+      [
+        13
+      ]
+    ],
+    [
+      "        var u = _[1];",
+      [
+        13
+      ]
+    ],
+    [
+      "        for (var i = 0; i < g.get(u).length; i++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "            var v = g.get(u)[i][0];",
+      [
+        14
+      ]
+    ],
+    [
+      "            var w = g.get(u)[i][1];",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (dist[v] > dist[u] + w) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                dist[v] = dist[u] + w;",
+      [
+        16
+      ]
+    ],
+    [
+      "                q.push([dist[v], v]);",
+      [
+        17
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = Math.max(...dist);",
+      [
+        18
+      ]
+    ],
+    [
+      "    return (ans == INF) ? -1 : ans;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

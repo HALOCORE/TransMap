@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let delta = new Array(1001).fill(0);",
+    "replacement": "    let delta = [0] * 1001;"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (let [num, start, end] of trips) {",
+    "replacement": "    for (let num, start, end of trips) {"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    return delta.map((sum => value => sum += value)(0)).every(x => x <= capacity);",
+    "replacement": "    return delta.reduce((acc, curr) => acc + curr, 0) <= capacity;"
+  }
+]

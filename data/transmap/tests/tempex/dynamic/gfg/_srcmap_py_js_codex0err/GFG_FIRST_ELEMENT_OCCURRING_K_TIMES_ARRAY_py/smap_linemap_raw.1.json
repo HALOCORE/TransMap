@@ -1,0 +1,138 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n, k):",
+      [
+        1
+      ]
+    ],
+    [
+      "  count_map = { } ;",
+      [
+        2
+      ]
+    ],
+    [
+      "  for i in range(0, n):",
+      [
+        3
+      ]
+    ],
+    [
+      "    if(arr[i] in count_map.keys()): count_map[arr[i]] += 1",
+      [
+        4
+      ]
+    ],
+    [
+      "    else: count_map[arr[i]] = 1",
+      [
+        5
+      ]
+    ],
+    [
+      "    i += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "  for i in range(0, n):",
+      [
+        7
+      ]
+    ],
+    [
+      "    if(count_map[arr[i]] == k): return arr[i]",
+      [
+        8
+      ]
+    ],
+    [
+      "    i += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "  return - 1",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n, k) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var count_map = {};",
+      [
+        2
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (arr[i] in count_map) count_map[arr[i]] += 1;",
+      [
+        4
+      ]
+    ],
+    [
+      "    else count_map[arr[i]] = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    i;",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (count_map[arr[i]] == k) return arr[i];",
+      [
+        8
+      ]
+    ],
+    [
+      "    i += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return -1;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

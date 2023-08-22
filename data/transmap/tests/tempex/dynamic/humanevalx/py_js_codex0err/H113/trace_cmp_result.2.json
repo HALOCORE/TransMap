@@ -1,0 +1,44 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,4,5,14]",
+    "src_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: str is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",1,[\"S\",7,\"1234567\"]],\"res\":[\"A\",1,[\"S\",56,\"the number of odd el\"]],\"arr\":[\"S\",7,\"1234567\"],\"n\":[\"N\",\"4\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[5,4,5,14]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      4
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":4,\"err_msg\":\"ReferenceError: str is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"lst\":[\"A\",1,[\"S\",7,\"1234567\"]],\"res\":[\"A\",1,[\"S\",56,\"the number of odd el\"]],\"arr\":[\"S\",7,\"1234567\"],\"n\":[\"N\",\"4\"]}",
+      ""
+    ]
+  }
+]

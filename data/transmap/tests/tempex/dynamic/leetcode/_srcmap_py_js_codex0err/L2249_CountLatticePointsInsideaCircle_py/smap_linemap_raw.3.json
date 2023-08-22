@@ -1,0 +1,180 @@
+{
+  "src_anno_stmts": [
+    [
+      "### countLatticePoints",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(circles: List[List[int]]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    imx = max(x + r for x, _, r in circles)",
+      [
+        4
+      ]
+    ],
+    [
+      "    jmx = max(y + r for _, y, r in circles)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(imx + 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        for j in range(jmx + 1):",
+      [
+        7
+      ]
+    ],
+    [
+      "            for x, y, r in circles:",
+      [
+        8
+      ]
+    ],
+    [
+      "                x, y = x - i, y - j",
+      [
+        9
+      ]
+    ],
+    [
+      "                if x * x + y * y <= r * r:",
+      [
+        10
+      ]
+    ],
+    [
+      "                    ans += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "                    break",
+      [
+        12
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(circles) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var imx = Math.max(...circles.map(x => x[0] + x[2]));",
+      [
+        4
+      ]
+    ],
+    [
+      "    var jmx = Math.max(...circles.map(x => x[1] + x[2]));",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i <= imx; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        for (var j = 0; j <= jmx; j++) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            for (var [x, y, r] of circles) {",
+      [
+        8
+      ]
+    ],
+    [
+      "                x, y = x - i, y - j;",
+      [
+        9
+      ]
+    ],
+    [
+      "                if (x * x + y * y <= r * r) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                    ans += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "                    break;",
+      [
+        12
+      ]
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

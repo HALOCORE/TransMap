@@ -1,0 +1,331 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxLength",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(arr: List[str]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def ones_count(x):",
+      [
+        3
+      ]
+    ],
+    [
+      "        c = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "        while x:",
+      [
+        5
+      ]
+    ],
+    [
+      "            x &= x - 1",
+      [
+        6
+      ]
+    ],
+    [
+      "            c += 1",
+      [
+        7
+      ]
+    ],
+    [
+      "        return c",
+      [
+        8
+      ]
+    ],
+    [
+      "    ans = 0",
+      [
+        9
+      ]
+    ],
+    [
+      "    masks = [0]",
+      [
+        10
+      ]
+    ],
+    [
+      "    for s in arr:",
+      [
+        11
+      ]
+    ],
+    [
+      "        mask = 0",
+      [
+        12
+      ]
+    ],
+    [
+      "        for ch in s:",
+      [
+        13
+      ]
+    ],
+    [
+      "            ch = ord(ch) - ord('a')",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (mask >> ch) & 1 == 1:",
+      [
+        15
+      ]
+    ],
+    [
+      "                mask = 0",
+      [
+        16
+      ]
+    ],
+    [
+      "                break",
+      [
+        17
+      ]
+    ],
+    [
+      "            mask |= 1 << ch",
+      [
+        18
+      ]
+    ],
+    [
+      "        if mask == 0:",
+      [
+        19
+      ]
+    ],
+    [
+      "            continue",
+      [
+        20
+      ]
+    ],
+    [
+      "        for m in masks:",
+      [
+        21
+      ]
+    ],
+    [
+      "            if m & mask == 0:",
+      [
+        22
+      ]
+    ],
+    [
+      "                masks.append(m | mask)",
+      [
+        23
+      ]
+    ],
+    [
+      "                ans = max(ans, ones_count(m | mask))",
+      [
+        24
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        25
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function ones_count(x) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var c = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "        while (x) {",
+      [
+        5
+      ]
+    ],
+    [
+      "            x &= x - 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "            c += 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return c;",
+      [
+        8
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = 0;",
+      [
+        9
+      ]
+    ],
+    [
+      "    var masks = [0];",
+      [
+        10
+      ]
+    ],
+    [
+      "    for (var s of arr) {",
+      [
+        11
+      ]
+    ],
+    [
+      "        var mask = 0;",
+      [
+        12
+      ]
+    ],
+    [
+      "        for (var ch of s) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            ch = ch.charCodeAt(0) - 'a'.charCodeAt(0);",
+      [
+        14
+      ]
+    ],
+    [
+      "            if ((mask >> ch) & 1 == 1) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                mask = 0;",
+      [
+        16
+      ]
+    ],
+    [
+      "                break;",
+      [
+        17
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            mask |= 1 << ch;",
+      [
+        18
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        if (mask == 0) continue;",
+      [
+        19,
+        20
+      ]
+    ],
+    [
+      "        for (var m of masks) {",
+      [
+        21
+      ]
+    ],
+    [
+      "            if (m & mask == 0) {",
+      [
+        22
+      ]
+    ],
+    [
+      "                masks.push(m | mask);",
+      [
+        23
+      ]
+    ],
+    [
+      "                ans = Math.max(ans, ones_count(m | mask));",
+      [
+        24
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        25
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

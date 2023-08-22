@@ -1,0 +1,21 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,4,32]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"TypeError: directions.lstrip is not a function\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"directions\":[\"S\",6,\"RLRSLL\"],\"d\":[\"S\",6,\"RLRSLL\"]}",
+      ""
+    ]
+  }
+]

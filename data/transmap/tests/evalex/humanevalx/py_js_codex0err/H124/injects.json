@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "        if (month < 1 || month > 12 || isNaN(month) || isNaN(day) || isNaN(year)) {",
+    "replacement": "        if (month < 1 || month > 12) {"
+  }
+]

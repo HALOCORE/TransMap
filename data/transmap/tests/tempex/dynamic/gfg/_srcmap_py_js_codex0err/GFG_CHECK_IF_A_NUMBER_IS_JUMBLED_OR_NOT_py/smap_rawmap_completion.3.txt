@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(num):   # --- py stmt 1
+  if(num // 10 == 0): return True   # --- py stmt 2
+  while(num != 0):   # --- py stmt 3
+    if(num // 10 == 0): return True   # --- py stmt 4
+    digit1 = num % 10   # --- py stmt 5
+    digit2 =(num // 10)% 10   # --- py stmt 6
+    if(abs(digit2 - digit1)> 1): return False   # --- py stmt 7
+    num = num // 10   # --- py stmt 8
+  return True   # --- py stmt 9
+
+
+### JavaScript
+"use strict";
+function f_gold(num) {   // --- py stmt 1
+    if (Math.floor(num / 10) == 0)   // --- py stmt 2
+        return true;   // --- py stmt 2
+    while (num != 0) {   // --- py stmt 3
+        if (Math.floor(num / 10) == 0)   // --- py stmt 4
+            return true;   // --- py stmt 4
+        var digit1 = num % 10;   // --- py stmt 5
+        var digit2 = (Math.floor(num / 10)) % 10;   // --- py stmt 6
+        if (Math.abs(digit2 - digit1) > 1)   // --- py stmt 7
+            return false;   // --- py stmt 7
+        num = num / 10;   // --- py stmt 8
+    }
+    return true;   // --- py stmt 9
+}
+
+
+

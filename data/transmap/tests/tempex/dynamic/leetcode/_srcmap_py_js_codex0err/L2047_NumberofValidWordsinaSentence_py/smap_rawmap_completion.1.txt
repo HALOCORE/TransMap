@@ -1,0 +1,45 @@
+
+### Python
+### countValidWords 
+from typing import *   # --- py stmt 1
+def f_gold(sentence: str) -> int:   # --- py stmt 2
+    def check(token):   # --- py stmt 3
+        hyphen = False   # --- py stmt 4
+        for i, c in enumerate(token):   # --- py stmt 5
+            if c.isdigit() or (c in '!.,' and i < len(token) - 1):   # --- py stmt 6
+                return False   # --- py stmt 7
+            if c == '-':   # --- py stmt 8
+                if (   # --- py stmt 9
+                    hyphen
+                    or i == 0
+                    or i == len(token) - 1
+                    or not token[i - 1].islower()
+                    or not token[i + 1].islower()
+                ):
+                    return False   # --- py stmt 10
+                hyphen = True   # --- py stmt 11
+        return True   # --- py stmt 12
+    return sum(check(token) for token in sentence.split())   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(sentence) {   // --- py stmt 2
+    function check(token) {   // --- py stmt 3
+        var hyphen = false;   // --- py stmt 4
+        for (var i = 0; i < token.length; i++) {   // --- py stmt 5
+            var c = token[i];   // --- py stmt 5
+            if (c.match(/^\d+$/) || ('!.,'.includes(c) && i < token.length - 1)) {   // --- py stmt 6
+                return false;   // --- py stmt 7
+            }
+            if (c == '-') {   // --- py stmt 8
+                if (hyphen || i == 0 || i == token.length - 1 || !token[i - 1].islower() || !token[i + 1].islower()) {   // --- py stmt 9
+                    return false;   // --- py stmt 10
+                }
+                hyphen = true;   // --- py stmt 11
+            }
+        }
+        return true;   // --- py stmt 12
+    }
+    return sentence.split(/\s+/).map(check).reduce((a, b) => a + b, 0);   // --- py stmt 13
+}
+

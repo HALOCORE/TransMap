@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  var lcs = Array(n+1).fill().map(_ => Array(m+1).fill(0));",
+    "replacement": "  var lcs = [[0], [0]];"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "  var cnt = Array(n+1).fill().map(_ => Array(m+1).fill(0));",
+    "replacement": "  var cnt = [[0], [0]];"
+  }
+]

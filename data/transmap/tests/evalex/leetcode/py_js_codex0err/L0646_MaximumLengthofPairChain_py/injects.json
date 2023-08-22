@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 6,
+    "content": "    pairs = Array.from(pairs);\n    pairs.sort((a, b) => a[1] - b[1]);\n    for (var i = 0; i < pairs.length; i++) {",
+    "replacement": "    for (var i = 0; i < pairs.length; i++) {"
+  }
+]

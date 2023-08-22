@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let [m, n] = [picture.length, picture[0].length];",
+    "replacement": "    let m, n = picture.length, picture[0].length;"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let [rows, cols] = [new Array(m).fill(0), new Array(n).fill(0)];",
+    "replacement": "    let rows, cols = [0] * m, [0] * n;"
+  }
+]

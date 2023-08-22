@@ -1,0 +1,62 @@
+{
+  "src_anno_stmts": [
+    [
+      "def monotonic(l: list):",
+      [
+        1
+      ]
+    ],
+    [
+      "    if l == sorted(l) or l == sorted(l, reverse=True):",
+      [
+        2
+      ]
+    ],
+    [
+      "        return True",
+      [
+        3
+      ]
+    ],
+    [
+      "    return False",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function monotonic(l) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    if (l === l.sort() || l === l.sort().reverse()) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return true;",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return false;",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

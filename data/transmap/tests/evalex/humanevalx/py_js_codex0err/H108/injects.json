@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        if (n < 0) { n = -1 * n, neg = -1; }",
+    "replacement": "        if (n < 0) { n, neg = -1 * n, -1; }"
+  }
+]

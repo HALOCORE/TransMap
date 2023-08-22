@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 14,
+    "line_end": 16,
+    "content": "            var [i, j] = q.shift();\n            ans.push([i, j]);",
+    "replacement": "            var i = q.shift();\n            ans.push(i);"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "            for (var k = 0; k < 4; k++) {",
+    "replacement": "            for (var j = 0; j < 4; j++) {"
+  },
+  {
+    "line_start": 19,
+    "line_end": 21,
+    "content": "                var x = i + a[k];\n                var y = j + b[k];",
+    "replacement": "                var x = i[0] + a[j];\n                var y = i[1] + b[j];"
+  },
+  {
+    "line_start": 21,
+    "line_end": 22,
+    "content": "                if (0 <= x && x < rows && 0 <= y && y < cols && !vis[x][y]) {",
+    "replacement": "                if (0 <= x < rows && 0 <= y < cols && !vis[x][y]) {"
+  }
+]

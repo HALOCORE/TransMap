@@ -1,0 +1,35 @@
+
+### Python
+### maxChunksToSorted 
+from typing import *   # --- py stmt 1
+def f_gold(arr: List[int]) -> int:   # --- py stmt 2
+    stk = []   # --- py stmt 3
+    for v in arr:   # --- py stmt 4
+        if not stk or v >= stk[-1]:   # --- py stmt 5
+            stk.append(v)   # --- py stmt 6
+        else:   # --- py stmt 7
+            mx = stk.pop()   # --- py stmt 8
+            while stk and stk[-1] > v:   # --- py stmt 9
+                stk.pop()   # --- py stmt 10
+            stk.append(mx)   # --- py stmt 11
+    return len(stk)   # --- py stmt 12
+
+### JavaScript
+"use strict";
+function f_gold(arr) {   // --- py stmt 2
+    let stk = [];   // --- py stmt 3
+    for (let v of arr) {   // --- py stmt 4
+        if (!stk || v >= stk[stk.length - 1]) {   // --- py stmt 5
+            stk.push(v);   // --- py stmt 6
+        }
+        else {   // --- py stmt 7
+            let mx = stk.pop();   // --- py stmt 8
+            while (stk && stk[stk.length - 1] > v) {   // --- py stmt 9
+                stk.pop();   // --- py stmt 10
+            }
+            stk.push(mx);   // --- py stmt 11
+        }
+    }
+    return stk.length;   // --- py stmt 12
+}
+

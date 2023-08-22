@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 0,
+    "line_end": 1,
+    "content": "const f_gold = (nums) => {",
+    "replacement": "const singleNonDuplicate = (nums) => {"
+  }
+]

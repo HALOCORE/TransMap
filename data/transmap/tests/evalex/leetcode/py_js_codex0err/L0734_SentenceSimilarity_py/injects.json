@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "        pairs.add([similarPairs[i][0], similarPairs[i][1]].join(\",\"));",
+    "replacement": "        pairs.add(similarPairs[i]);"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "        var similar = (pairs.has([sentence1[i], sentence2[i]].join(\",\")) || pairs.has([sentence2[i], sentence1[i]].join(\",\")) || sentence1[i] == sentence2[i]);",
+    "replacement": "        var similar = (pairs.has([sentence1[i], sentence2[i]]) || pairs.has([sentence2[i], sentence1[i]]) || sentence1[i] == sentence2[i]);"
+  }
+]

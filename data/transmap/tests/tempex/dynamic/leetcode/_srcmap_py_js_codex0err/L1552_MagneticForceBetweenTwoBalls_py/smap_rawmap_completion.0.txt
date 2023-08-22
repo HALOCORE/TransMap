@@ -1,0 +1,55 @@
+
+### Python
+### maxDistance 
+from typing import *   # --- py stmt 1
+def f_gold(position: List[int], m: int) -> int:   # --- py stmt 2
+    def check(f):   # --- py stmt 3
+        prev = position[0]   # --- py stmt 4
+        cnt = 1   # --- py stmt 5
+        for curr in position[1:]:   # --- py stmt 6
+            if curr - prev >= f:   # --- py stmt 7
+                prev = curr   # --- py stmt 8
+                cnt += 1   # --- py stmt 9
+        return cnt >= m   # --- py stmt 10
+    position.sort()   # --- py stmt 11
+    left, right = 1, position[-1]   # --- py stmt 12
+    while left < right:   # --- py stmt 13
+        mid = (left + right + 1) >> 1   # --- py stmt 14
+        if check(mid):   # --- py stmt 15
+            left = mid   # --- py stmt 16
+        else:   # --- py stmt 17
+            right = mid - 1   # --- py stmt 18
+    return left   # --- py stmt 19
+
+### JavaScript
+"use strict";
+
+function f_gold(position, m) {   // --- py stmt 2
+    function check(f) {   // --- py stmt 3
+        var prev = position[0];   // --- py stmt 4
+        var cnt = 1;   // --- py stmt 5
+        for (var curr of position.slice(1)) {   // --- py stmt 6
+            if (curr - prev >= f) {   // --- py stmt 7
+                prev = curr;   // --- py stmt 8
+                cnt += 1;   // --- py stmt 9
+            }
+        }
+        return cnt >= m;   // --- py stmt 10
+    }
+    position.sort();   // --- py stmt 11
+    var left = 1;   // --- py stmt 12
+    var right = position[position.length - 1];   // --- py stmt 12
+    while (left < right) {   // --- py stmt 13
+        var mid = (left + right + 1) >> 1;   // --- py stmt 14
+        if (check(mid)) {   // --- py stmt 15
+            left = mid;   // --- py stmt 16
+        }
+        else {   // --- py stmt 17
+            right = mid - 1;   // --- py stmt 18
+        }
+    }
+    return left;   // --- py stmt 19
+}
+
+
+

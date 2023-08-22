@@ -1,0 +1,242 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(str):",
+      [
+        1
+      ]
+    ],
+    [
+      "  i = len(str)- 1",
+      [
+        2
+      ]
+    ],
+    [
+      "  start = end = i + 1",
+      [
+        3
+      ]
+    ],
+    [
+      "  result = ''",
+      [
+        4
+      ]
+    ],
+    [
+      "  while i >= 0:",
+      [
+        5
+      ]
+    ],
+    [
+      "    if str[i] == ' ':",
+      [
+        6
+      ]
+    ],
+    [
+      "      start = i + 1",
+      [
+        7
+      ]
+    ],
+    [
+      "      while start != end:",
+      [
+        8
+      ]
+    ],
+    [
+      "        result += str[start]",
+      [
+        9
+      ]
+    ],
+    [
+      "        start += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "      result += ' '",
+      [
+        11
+      ]
+    ],
+    [
+      "      end = i",
+      [
+        12
+      ]
+    ],
+    [
+      "    i -= 1",
+      [
+        13
+      ]
+    ],
+    [
+      "  start = 0",
+      [
+        14
+      ]
+    ],
+    [
+      "  while start != end:",
+      [
+        15
+      ]
+    ],
+    [
+      "    result += str[start]",
+      [
+        16
+      ]
+    ],
+    [
+      "    start += 1",
+      [
+        17
+      ]
+    ],
+    [
+      "  return result",
+      [
+        18
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(str) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var i = str.length - 1;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var start = end = i + 1;",
+      [
+        3
+      ]
+    ],
+    [
+      "  var result = \"\";",
+      [
+        4
+      ]
+    ],
+    [
+      "  while (i >= 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "    if (str[i] == \" \") {",
+      [
+        6
+      ]
+    ],
+    [
+      "      start = i + 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "      while (start != end) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        result += str[start];",
+      [
+        9
+      ]
+    ],
+    [
+      "        start += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "      }",
+      null
+    ],
+    [
+      "      result += \" \";",
+      [
+        11
+      ]
+    ],
+    [
+      "      end = i;",
+      [
+        12
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    i -= 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  start = 0;",
+      [
+        14
+      ]
+    ],
+    [
+      "  while (start != end) {",
+      [
+        15
+      ]
+    ],
+    [
+      "    result += str[start];",
+      [
+        16
+      ]
+    ],
+    [
+      "    start += 1;",
+      [
+        17
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return result;",
+      [
+        18
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

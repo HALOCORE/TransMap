@@ -1,0 +1,50 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,2,4,27]",
+    "break_idx": 3,
+    "expected_src_pk": "[5,2,5,25]",
+    "actural_src_pk": "[5,2,5,25]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"56\"],\"x\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"56\"],\"x\":[\"N\",\"74.85122247344728\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "x"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[4,2,4,27]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,2,5,25]",
+    "actural_src_pk": "[5,2,5,25]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"56\"],\"x\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"56\"],\"x\":[\"N\",\"74.85122247344728\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "x"
+    ]
+  }
+]

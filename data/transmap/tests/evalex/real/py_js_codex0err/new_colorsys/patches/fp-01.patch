@@ -1,0 +1,33 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -68,7 +68,7 @@ function rgb_to_hls(r, g, b) {
+     } else {
+         h = 4.0 + gc - rc;
+     }
+-    h = (h / 6.0) % 1.0;
++    h = ((h / 6.0) % 1.0 + 1.0) % 1.0;
+     return [h, l, s];
+ }
+ 
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -207,7 +207,7 @@ function rgb_to_hls(r, g, b) {   // --- py stmt 1001
+     } else {
+         h = 4.0 + gc - rc;   // --- py stmt 1019
+     }
+-    h = (h / 6.0) % 1.0;   // --- py stmt 1020
++    h = ((h / 6.0) % 1.0 + 1.0) % 1.0;   // --- py stmt 1020
+     return [h, l, s];   // --- py stmt 1021
+ }
+ 
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,6 @@
+ {
+   "disable_src_lines": [],
+-  "trace_cmp": []
++  "trace_cmp": [
++      {"src_lines": ["102-103"], "vars_ignore": ["h"]}
++  ]
+ }
+\ No newline at end of file

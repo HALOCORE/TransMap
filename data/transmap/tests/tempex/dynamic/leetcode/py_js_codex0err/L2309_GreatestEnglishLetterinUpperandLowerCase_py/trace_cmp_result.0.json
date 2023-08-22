@@ -1,0 +1,61 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,15]",
+    "src_cov_lines": [
+      5,
+      6,
+      7
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: ascii_uppercase is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"arRAzFif\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[6,8,7,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: ascii_uppercase is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"lEeTcOdE\"],\"ss\":[\"SET\",[\"S\",1,\"d\"],[\"S\",1,\"E\"],[\"S\",1,\"T\"],[\"S\",1,\"c\"],[\"S\",1,\"e\"],[\"S\",1,\"l\"],[\"S\",1,\"O\"]],\"c\":[\"S\",1,\"Z\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[6,8,7,20]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      2
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":2,\"err_msg\":\"ReferenceError: ascii_uppercase is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",8,\"lEeTcOdE\"],\"ss\":[\"SET\",[\"S\",1,\"c\"],[\"S\",1,\"O\"],[\"S\",1,\"l\"],[\"S\",1,\"E\"],[\"S\",1,\"d\"],[\"S\",1,\"T\"],[\"S\",1,\"e\"]],\"c\":[\"S\",1,\"Z\"]}",
+      ""
+    ]
+  }
+]

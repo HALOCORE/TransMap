@@ -1,0 +1,33 @@
+
+### Python
+def f_gold(s):   # --- py stmt 1
+  n = len(s);   # --- py stmt 2
+  sub_count =(n *(n + 1))// 2 ;   # --- py stmt 3
+  arr =[0] * sub_count ;   # --- py stmt 4
+  index = 0 ;   # --- py stmt 5
+  for i in range(n):   # --- py stmt 6
+    for j in range(1, n - i + 1): arr[index] = s[i: i + j] ; index += 1 ;   # --- py stmt 7
+  arr.sort();   # --- py stmt 8
+  res = "" ;   # --- py stmt 9
+  for i in range(sub_count): res += arr[i] ;   # --- py stmt 10
+  return res ;   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 1
+  var n = s.length;   // --- py stmt 2
+  var sub_count = (n * (n + 1)) / 2;   // --- py stmt 3
+  var arr = Array(sub_count).fill(0);   // --- py stmt 4
+  var index = 0;   // --- py stmt 5
+  for (var i = 0; i < n; i++) {   // --- py stmt 6
+    for (var j = 1; j < n - i + 1; j++) {arr[index] = s.substring(i, i + j);   // --- py stmt 7
+        index += 1;}
+  }
+  arr.sort();   // --- py stmt 8
+  var res = "";   // --- py stmt 9
+  for (var i = 0; i < sub_count; i++) res += arr[i];   // --- py stmt 10
+  return res;   // --- py stmt 11
+}
+
+
+

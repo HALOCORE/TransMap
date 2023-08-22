@@ -1,0 +1,37 @@
+
+### Python
+### countLatticePoints 
+from typing import *   # --- py stmt 1
+def f_gold(circles: List[List[int]]) -> int:   # --- py stmt 2
+    ans = 0   # --- py stmt 3
+    imx = max(x + r for x, _, r in circles)   # --- py stmt 4
+    jmx = max(y + r for _, y, r in circles)   # --- py stmt 5
+    for i in range(imx + 1):   # --- py stmt 6
+        for j in range(jmx + 1):   # --- py stmt 7
+            for x, y, r in circles:   # --- py stmt 8
+                x, y = x - i, y - j   # --- py stmt 9
+                if x * x + y * y <= r * r:   # --- py stmt 10
+                    ans += 1   # --- py stmt 11
+                    break   # --- py stmt 12
+    return ans   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(circles) {   // --- py stmt 2
+    var ans = 0;   // --- py stmt 3
+    var imx = Math.max(...circles.map(x => x[0] + x[2]));   // --- py stmt 4
+    var jmx = Math.max(...circles.map(x => x[1] + x[2]));   // --- py stmt 5
+    for (var i = 0; i <= imx; i++) {   // --- py stmt 6
+        for (var j = 0; j <= jmx; j++) {   // --- py stmt 7
+            for (var [x, y, r] of circles) {   // --- py stmt 8
+                x, y = x - i, y - j;   // --- py stmt 9
+                if (x * x + y * y <= r * r) {   // --- py stmt 10
+                    ans += 1;   // --- py stmt 11
+                    break;   // --- py stmt 12
+                }
+            }
+        }
+    }
+    return ans;   // --- py stmt 13
+}
+

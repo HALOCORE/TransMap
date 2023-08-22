@@ -1,0 +1,17 @@
+
+### Python
+### totalMoney 
+from typing import *   # --- py stmt 1
+def f_gold(n: int) -> int:   # --- py stmt 2
+    a, b = divmod(n, 7)   # --- py stmt 3
+    return (28 + 28 + 7 * (a - 1)) * a // 2 + (a * 2 + b + 1) * b // 2   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 2
+    var a, b = divmod(n, 7);   // --- py stmt 3
+    return (28 + 28 + 7 * (a - 1)) * a / 2 + (a * 2 + b + 1) * b / 2;   // --- py stmt 4
+}
+
+
+

@@ -1,0 +1,40 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -154,7 +154,7 @@ class SIFT4Options {
+ class SIFT4 {
+     // As described in https://siderite.dev/blog/super-fast-and-accurate-string-distance.html/
+     distance(s1, s2, maxoffset = 5, options = null) {
+-        options = SIFT4Options(options);
++        options = new SIFT4Options(options);
+         let [t1, t2] = [options.tokenizer(s1), options.tokenizer(s2)];
+         let [l1, l2] = [t1.length, t2.length];
+         if (l1 == 0) {
+@@ -191,7 +191,7 @@ class SIFT4 {
+                     }
+                     else {
+                         if ((c1 > ofs['c2']) && (c2 > ofs['c1'])) {
+-                            offset_arr.pop(i);
++                            offset_arr.splice(i, 1);
+                         }
+                         else {
+                             i += 1;
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -337,7 +337,7 @@ class SIFT4Options {   // --- py stmt 10
+ class SIFT4 {   // --- py stmt 105
+     // As described in https://siderite.dev/blog/super-fast-and-accurate-string-distance.html/   // --- py stmt 106
+     distance(s1, s2, maxoffset = 5, options = null) {   // --- py stmt 107
+-        options = SIFT4Options(options);   // --- py stmt 108
++        options = new SIFT4Options(options);   // --- py stmt 108
+         let [t1, t2] = [options.tokenizer(s1), options.tokenizer(s2)];   // --- py stmt 109
+         let [l1, l2] = [t1.length, t2.length];   // --- py stmt 110
+         if (l1 == 0) {   // --- py stmt 111
+@@ -372,7 +372,7 @@ class SIFT4 {   // --- py stmt 105
+                     }
+                     else {   // --- py stmt 132
+                         if ((c1 > ofs['c2']) && (c2 > ofs['c1'])) {   // --- py stmt 133
+-                            offset_arr.pop(i);   // --- py stmt 134
++                            offset_arr.splice(i, 1);   // --- py stmt 134
+                         }
+                         else {   // --- py stmt 135
+                             i += 1;   // --- py stmt 136

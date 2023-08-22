@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(A, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  A.sort()",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(A, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    A.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

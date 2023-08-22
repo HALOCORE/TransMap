@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "            if (c.match(/^\\d+$/) || ('!.,'.includes(c) && i < token.length - 1)) {",
+    "replacement": "            if (c.isdigit() || (c in '!.,' && i < token.length - 1)) {"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "                if (hyphen || i == 0 || i == token.length - 1 || token[i - 1].toLowerCase() !== token[i - 1] || token[i + 1].toLowerCase() !== token[i + 1]) {",
+    "replacement": "                if (hyphen || i == 0 || i == token.length - 1 || !token[i - 1].islower() || !token[i + 1].islower()) {"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    return sentence.split(/\\s+/).map(check).reduce((a, b) => a + b, 0);",
+    "replacement": "    return sentence.split().map(check).reduce((a, b) => a + b, 0);"
+  }
+]

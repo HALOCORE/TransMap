@@ -1,0 +1,92 @@
+{
+  "src_anno_stmts": [
+    [
+      "### sortEvenOdd",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> List[int]:",
+      [
+        2
+      ]
+    ],
+    [
+      "    a = sorted(nums[::2])",
+      [
+        3
+      ]
+    ],
+    [
+      "    b = sorted(nums[1::2], reverse=True)",
+      [
+        4
+      ]
+    ],
+    [
+      "    nums[::2] = a",
+      [
+        5
+      ]
+    ],
+    [
+      "    nums[1::2] = b",
+      [
+        6
+      ]
+    ],
+    [
+      "    return nums",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var a = nums.filter((_, i) => i % 2 == 0).sort(function (a, b) { return a - b; });",
+      [
+        3
+      ]
+    ],
+    [
+      "    var b = nums.slice(1, nums.length).sort(function (a, b) { return b - a; });",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let i = 0; i < a.length; i++) nums[i * 2] = a[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (let i = 0; i < b.length; i++) nums[1 + i * 2] = b[i];",
+      [
+        6
+      ]
+    ],
+    [
+      "    return nums;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

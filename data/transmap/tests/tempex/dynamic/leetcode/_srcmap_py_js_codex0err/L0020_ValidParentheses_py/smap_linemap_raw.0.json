@@ -1,0 +1,140 @@
+{
+  "src_anno_stmts": [
+    [
+      "### isValid",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(s: str) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    q = []",
+      [
+        3
+      ]
+    ],
+    [
+      "    parentheses = {'()', '[]', '{}'}",
+      [
+        4
+      ]
+    ],
+    [
+      "    for ch in s:",
+      [
+        5
+      ]
+    ],
+    [
+      "        if ch in '([{':",
+      [
+        6
+      ]
+    ],
+    [
+      "            q.append(ch)",
+      [
+        7
+      ]
+    ],
+    [
+      "        elif not q or q.pop() + ch not in parentheses:",
+      [
+        8
+      ]
+    ],
+    [
+      "            return False",
+      [
+        9
+      ]
+    ],
+    [
+      "    return not q",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(s) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var q = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "    var parentheses = new Set(['()', '[]', '{}']);",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var ch of s) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (ch in '([{') {",
+      [
+        6
+      ]
+    ],
+    [
+      "            q.push(ch);",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else if (q.length == 0 || !parentheses.has(q.pop() + ch)) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            return false;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return q.length == 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

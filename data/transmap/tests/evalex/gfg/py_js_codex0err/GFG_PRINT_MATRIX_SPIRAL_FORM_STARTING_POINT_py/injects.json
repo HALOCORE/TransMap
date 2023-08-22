@@ -1,0 +1,26 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "      console.log(mat[low_row][i]);",
+    "replacement": "      console.log(mat[low_row][i], end = \" \");"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "      console.log(mat[(i+mat.length)%mat.length][(high_column+mat[0].length)%mat[0].length]);",
+    "replacement": "      console.log(mat[i][high_column], end = \" \");"
+  },
+  {
+    "line_start": 22,
+    "line_end": 23,
+    "content": "      console.log(mat[high_row][i]);",
+    "replacement": "      console.log(mat[high_row][i], end = \" \");"
+  },
+  {
+    "line_start": 28,
+    "line_end": 29,
+    "content": "      console.log(mat[i][low_column]);",
+    "replacement": "      console.log(mat[i][low_column], end = \" \");"
+  }
+]

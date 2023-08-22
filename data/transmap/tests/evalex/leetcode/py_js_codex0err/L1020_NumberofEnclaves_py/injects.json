@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "        for (let [a, b] of [[0, -1], [0, 1], [-1, 0], [1, 0]]) {",
+    "replacement": "        for (let a, b of [[0, -1], [0, 1], [-1, 0], [1, 0]]) {"
+  },
+  {
+    "line_start": 4,
+    "line_end": 5,
+    "content": "            let [x, y] = [i + a, j + b];",
+    "replacement": "            let x, y = i + a, j + b;"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "            if (0 <= x && x < m && 0 <= y && y < n && grid[x][y] == 1) {",
+    "replacement": "            if (0 <= x < m && 0 <= y < n && grid[x][y] == 1) {"
+  },
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "    let [m, n] = [grid.length, grid[0].length];",
+    "replacement": "    let m, n = grid.length, grid[0].length;"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "    return grid.reduce((a, b) => b.reduce((x, y) => x + y) + a, 0);",
+    "replacement": "    return sum(grid[i][j] for i in range(m) for j in range(n));"
+  }
+]

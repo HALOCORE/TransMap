@@ -1,0 +1,32 @@
+[
+  {
+    "line_start": 8,
+    "line_end": 9,
+    "content": "    let p = Array.from(Array(26).keys());",
+    "replacement": "    var p = list(range(26));"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    for (let e of equations) {",
+    "replacement": "    for (var e in equations) {"
+  },
+  {
+    "line_start": 10,
+    "line_end": 12,
+    "content": "        let a = e.charCodeAt(0) - 'a'.charCodeAt(0);\n        let b = e.charCodeAt(e.length - 1) - 'a'.charCodeAt(0);",
+    "replacement": "        var a = ord(e[0]) - ord('a'), b = ord(e[-1]) - ord('a');"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "    for (let e of equations) {",
+    "replacement": "    for (var e in equations) {"
+  },
+  {
+    "line_start": 17,
+    "line_end": 19,
+    "content": "        let a = e.charCodeAt(0) - 'a'.charCodeAt(0);\n        let b = e.charCodeAt(e.length - 1) - 'a'.charCodeAt(0);",
+    "replacement": "        var a = ord(e[0]) - ord('a'), b = ord(e[-1]) - ord('a');"
+  }
+]

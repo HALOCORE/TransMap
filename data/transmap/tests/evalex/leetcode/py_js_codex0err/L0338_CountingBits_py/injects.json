@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var ans = new Array(n + 1).fill(0);",
+    "replacement": "    var ans = new Array(n + 1);"
+  }
+]

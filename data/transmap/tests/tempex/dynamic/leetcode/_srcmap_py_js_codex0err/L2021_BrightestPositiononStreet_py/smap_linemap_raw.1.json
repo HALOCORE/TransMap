@@ -1,0 +1,204 @@
+{
+  "src_anno_stmts": [
+    [
+      "### brightestPosition",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(lights: List[List[int]]) -> int:",
+      [
+        3
+      ]
+    ],
+    [
+      "    d = defaultdict(int)",
+      [
+        4
+      ]
+    ],
+    [
+      "    for p, r in lights:",
+      [
+        5
+      ]
+    ],
+    [
+      "        d[p - r] += 1",
+      [
+        6
+      ]
+    ],
+    [
+      "        d[p + r + 1] -= 1",
+      [
+        7
+      ]
+    ],
+    [
+      "    s = mx = ans = 0",
+      [
+        8
+      ]
+    ],
+    [
+      "    for k in sorted(d):",
+      [
+        9
+      ]
+    ],
+    [
+      "        s += d[k]",
+      [
+        10
+      ]
+    ],
+    [
+      "        if s > mx:",
+      [
+        11
+      ]
+    ],
+    [
+      "            mx = s",
+      [
+        12
+      ]
+    ],
+    [
+      "            ans = k",
+      [
+        13
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(lights) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var d = {};",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var _i = 0, lights_1 = lights; _i < lights_1.length; _i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var _a = lights_1[_i], p = _a[0], r = _a[1];",
+      [
+        5
+      ]
+    ],
+    [
+      "        d[p - r] = (d[p - r] || 0) + 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "        d[p + r + 1] = (d[p + r + 1] || 0) - 1;",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var s = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    var mx = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        8
+      ]
+    ],
+    [
+      "    for (var [k, v] of Object.entries(d).sort((a, b) => (parseInt(a[0]) - parseInt(b[0])))) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        //",
+      null
+    ],
+    [
+      "        s += v;",
+      [
+        10
+      ]
+    ],
+    [
+      "        if (s > mx) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            mx = s;",
+      [
+        12
+      ]
+    ],
+    [
+      "            ans = k;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

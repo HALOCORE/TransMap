@@ -1,0 +1,40 @@
+
+### Python
+### longestWPI 
+from typing import *   # --- py stmt 1
+def f_gold(hours: List[int]) -> int:   # --- py stmt 2
+    ans = s = 0   # --- py stmt 3
+    seen = {}   # --- py stmt 4
+    for i, h in enumerate(hours):   # --- py stmt 5
+        s += 1 if h > 8 else -1   # --- py stmt 6
+        if s > 0:   # --- py stmt 7
+            ans = i + 1   # --- py stmt 8
+        else:   # --- py stmt 9
+            if s not in seen:   # --- py stmt 10
+                seen[s] = i   # --- py stmt 11
+            if s - 1 in seen:   # --- py stmt 12
+                ans = max(ans, i - seen[s - 1])   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(hours) {   // --- py stmt 2
+    let ans = s = 0;   // --- py stmt 3
+    let seen = {};   // --- py stmt 4
+    for (let i = 0; i < hours.length; i++) {   // --- py stmt 5
+        s += (hours[i] > 8) ? 1 : -1;   // --- py stmt 6
+        if (s > 0) {   // --- py stmt 7
+            ans = i + 1;   // --- py stmt 8
+        }
+        else {   // --- py stmt 9
+            if (!(s in seen)) {   // --- py stmt 10
+                seen[s] = i;   // --- py stmt 11
+            }
+            if (s - 1 in seen) {   // --- py stmt 12
+                ans = Math.max(ans, i - seen[s - 1]);   // --- py stmt 13
+            }
+        }
+    }
+    return ans;   // --- py stmt 14
+}
+

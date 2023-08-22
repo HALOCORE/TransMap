@@ -1,0 +1,47 @@
+
+### Python
+### findRotation 
+from typing import *   # --- py stmt 1
+def f_gold(mat: List[List[int]], target: List[List[int]]) -> bool:   # --- py stmt 2
+    def rotate(matrix):   # --- py stmt 3
+        n = len(matrix)   # --- py stmt 4
+        for i in range(n // 2):   # --- py stmt 5
+            for j in range(i, n - 1 - i):   # --- py stmt 6
+                t = matrix[i][j]   # --- py stmt 7
+                matrix[i][j] = matrix[n - j - 1][i]   # --- py stmt 8
+                matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1]   # --- py stmt 9
+                matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1]   # --- py stmt 10
+                matrix[j][n - i - 1] = t   # --- py stmt 11
+    for _ in range(4):   # --- py stmt 12
+        if mat == target:   # --- py stmt 13
+            return True   # --- py stmt 14
+        rotate(mat)   # --- py stmt 15
+    return False   # --- py stmt 16
+
+### JavaScript
+"use strict";
+
+function f_gold(mat, target) {   // --- py stmt 2
+    function rotate(matrix) {   // --- py stmt 3
+        var n = matrix.length;   // --- py stmt 4
+        for (var i = 0; i < Math.floor(n / 2); i++) {   // --- py stmt 5
+            for (var j = i; j < n - 1 - i; j++) {   // --- py stmt 6
+                var t = matrix[i][j];   // --- py stmt 7
+                matrix[i][j] = matrix[n - j - 1][i];   // --- py stmt 8
+                matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];   // --- py stmt 9
+                matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];   // --- py stmt 10
+                matrix[j][n - i - 1] = t;   // --- py stmt 11
+            }
+        }
+    }
+    for (var _ = 0; _ < 4; _++) {   // --- py stmt 12
+        if (mat == target) {   // --- py stmt 13
+            return true;   // --- py stmt 14
+        }
+        rotate(mat);   // --- py stmt 15
+    }
+    return false;   // --- py stmt 16
+}
+
+
+

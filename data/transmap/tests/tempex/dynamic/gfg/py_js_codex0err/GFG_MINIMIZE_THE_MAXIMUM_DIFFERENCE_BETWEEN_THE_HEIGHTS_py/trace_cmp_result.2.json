@@ -1,0 +1,74 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,2,10,3]",
+    "break_idx": 77,
+    "expected_src_pk": "[6,2,6,42]",
+    "actural_src_pk": "[6,2,6,42]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",1,[\"N\",\"2\"]],\"n\":[\"N\",\"0\"],\"k\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"small\":[\"N\",\"2\"],\"big\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",1,[\"N\",\"2\"]],\"n\":[\"N\",\"0\"],\"k\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"small\":[\"N\",\"2\"],\"big\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "big"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,2,10,3]",
+    "break_idx": 19,
+    "expected_src_pk": "[6,2,6,42]",
+    "actural_src_pk": "[6,2,6,42]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",1,[\"N\",\"2\"]],\"n\":[\"N\",\"0\"],\"k\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"small\":[\"N\",\"2\"],\"big\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",1,[\"N\",\"2\"]],\"n\":[\"N\",\"0\"],\"k\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"small\":[\"N\",\"2\"],\"big\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "big"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,2,10,3]",
+    "break_idx": 19,
+    "expected_src_pk": "[6,2,6,42]",
+    "actural_src_pk": "[6,2,6,42]",
+    "src_cov_lines": [
+      5
+    ],
+    "tar_cov_lines": [
+      5
+    ],
+    "tar_data": [
+      "{\"arr\":[\"A\",1,[\"N\",\"2\"]],\"n\":[\"N\",\"0\"],\"k\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"small\":[\"N\",\"2\"],\"big\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"arr\":[\"A\",1,[\"N\",\"2\"]],\"n\":[\"N\",\"0\"],\"k\":[\"N\",\"0\"],\"ans\":[\"N\",\"0\"],\"small\":[\"N\",\"2\"],\"big\":[\"N\",\"2\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "big"
+    ]
+  }
+]

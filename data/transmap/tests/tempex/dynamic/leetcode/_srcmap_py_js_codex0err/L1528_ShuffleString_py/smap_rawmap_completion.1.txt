@@ -1,0 +1,20 @@
+
+### Python
+### restoreString 
+from typing import *   # --- py stmt 1
+def f_gold(s: str, indices: List[int]) -> str:   # --- py stmt 2
+    ans = [0] * len(s)   # --- py stmt 3
+    for i, c in enumerate(s):   # --- py stmt 4
+        ans[indices[i]] = c   # --- py stmt 5
+    return ''.join(ans)   # --- py stmt 6
+
+### JavaScript
+"use strict";
+function f_gold(s, indices) {   // --- py stmt 2
+    var ans = [0].fill(s.length);   // --- py stmt 3
+    for (var i = 0; i < len(s); i++) {   // --- py stmt 4
+        ans[indices[i]] = s[i];   // --- py stmt 5
+    }
+    return ans.join('');   // --- py stmt 6
+}
+

@@ -1,0 +1,489 @@
+--- a/target.fixed.js
++++ b/target.fixed.js
+@@ -722,11 +736,11 @@ class HTMLParser extends ParserBase {
+     // true, force handling all data as if followed by EOF marker.
+     goahead(end) {
+         let rawdata = this.rawdata;
+-        let i = 0;
++        let i = 0; let j = 0;
+         let n = rawdata.length;
+         while (i < n) {
+             if (this.convert_charrefs && !this.cdata_elem) {
+-                let j = rawdata.indexOf('<', i);
++                j = rawdata.indexOf('<', i);
+                 if (j < 0) {
+                     // if we can't find the next <, either we are at the end
+                     // or there's more text incoming.  If the latter is True,
+@@ -744,12 +758,12 @@ class HTMLParser extends ParserBase {
+             } else {
+                 let match = this.interesting.exec(rawdata.slice(i));  // < or &
+                 if (match) {
+-                    let j = match.index + i;
++                    j = match.index + i;
+                 } else {
+                     if (this.cdata_elem) {
+                         break;
+                     }
+-                    let j = n;
++                    j = n;
+                 }
+             }
+             if (i < j) {
+@@ -1,5 +1,18 @@
+ ///// Segment IGNORE BEGIN
+ "use strict";
++
++let startsWithString = "";
++function startsWith(prefix, startIndex = 0) {
++    const slicedString = [...startsWithString].slice(startIndex, startIndex + prefix.length);
++    return slicedString.join('') == prefix;
++}
++
++function assert(condition, message) {
++    if (!condition) {
++      throw new Error(message || "Assertion failed");
++    }
++}
++
+ const name2codepoint = {
+     'AElig':    0x00c6, // latin capital letter AE = latin capital ligature AE, U+00C6 ISOlat1
+     // omitted
+@@ -761,21 +775,21 @@ class HTMLParser extends ParserBase {
+             }
+             i = this.updatepos(i, j);
+             if (i == n) break;
+-            let startswith = rawdata.startsWith;
++            let startswith = startsWith; startsWithString = rawdata; let k = 0;
+             if (startswith('<', i)) {
+-                if (starttagopen.test(rawdata.slice(i))) { // < + letter
+-                    let k = this.parse_starttag(i);
++                if (starttagopen.exec(rawdata.slice(i, i+2))) { // < + letter
++                    k = this.parse_starttag(i);
+                 } else if (startswith("</", i)) {
+-                    let k = this.parse_endtag(i);
++                    k = this.parse_endtag(i);
+                 } else if (startswith("<!--", i)) {
+-                    let k = this.parse_comment(i);
++                    k = this.parse_comment(i);
+                 } else if (startswith("<?", i)) {
+-                    let k = this.parse_pi(i);
++                    k = this.parse_pi(i);
+                 } else if (startswith("<!", i)) {
+-                    let k = this.parse_html_declaration(i);
++                    k = this.parse_html_declaration(i);
+                 } else if ((i + 1) < n) {
+                     this.handle_data("<");
+-                    let k = i + 1;
++                    k = i + 1;
+                 } else {
+                     break;
+                 }
+@@ -783,11 +797,11 @@ class HTMLParser extends ParserBase {
+                     if (!end) {
+                         break;
+                     }
+-                    let k = rawdata.indexOf('>', i + 1);
++                    k = rawdata.indexOf('>', i + 1);
+                     if (k < 0) {
+-                        let k = rawdata.indexOf('<', i + 1);
++                        k = rawdata.indexOf('<', i + 1);
+                         if (k < 0) {
+-                            let k = i + 1;
++                            k = i + 1;
+                         }
+                     } else {
+                         k += 1;
+@@ -804,7 +818,7 @@ class HTMLParser extends ParserBase {
+                 if (match) {
+                     let name = match[0].slice(2, -1);
+                     this.handle_charref(name);
+-                    let k = match.index + match[0].length;
++                    k = match.index + match[0].length;
+                     if (!startswith(';', k - 1)) {
+                         k = k - 1;
+                     }
+@@ -822,7 +836,7 @@ class HTMLParser extends ParserBase {
+                 if (match) {
+                     let name = match[1];
+                     this.handle_entityref(name);
+-                    let k = match.index + match[0].length;
++                    k = match.index + match[0].length;
+                     if (!startswith(';', k - 1)) {
+                         k = k - 1;
+                     }
+@@ -833,7 +847,7 @@ class HTMLParser extends ParserBase {
+                 if (match) {
+                     // match.group() will contain at least 2 chars
+                     if (end && match[0] == rawdata.slice(i)) {
+-                        let k = match.index + match[0].length;
++                        k = match.index + match[0].length;
+                         if (k <= i) {
+                             k = n;
+                         }
+@@ -350,15 +364,15 @@ class ParserBase {
+         if (rawdata.slice(i, i + 4) !== '<!--') {
+             throw new AssertionError('unexpected call to parse_comment()');
+         }
+-        let match = _commentclose.search(rawdata, i + 4);
++        const match = _commentclose.exec(rawdata.substring(i + 4));
+         if (!match) {
+             return -1;
+         }
+         if (report) {
+-            let j = match.start(0);
++            const j = match.index + (i + 4);
+             this.handle_comment(rawdata.slice(i + 4, j));
+         }
+-        return match.end(0);
++        return match.index + match[0].length + (i + 4);
+     }
+ ///// Segment END
+ ///// Segment BEGIN markupbase5 DONE
+@@ -638,7 +652,7 @@ class ParserBase {
+         if (i === n) {
+             return [null, -1];
+         }
+-        let m = _declname_match(rawdata, i);
++        let m = _declname_match.exec(rawdata.substring(i));
+         if (m) {
+             let s = m[0];
+             let name = s.trim();
+@@ -176,8 +189,8 @@ function unescape(s) {
+ }
+ ///// Segment END
+ ///// Segment BEGIN markupbase1 DONE
+-const _declname_match = /[a-zA-Z][-_.a-zA-Z0-9]*\s*/.exec;
++const _declname_match = /[a-zA-Z][-_.a-zA-Z0-9]*\s*/;
+ const _declstringlit_match = /(\'[^\']*\'|"[^"]*")\s*/.exec;
+ const _commentclose = /--\s*>/;
+ const _markedsectionclose = /]\s*]\s*>/;
+ const _msmarkedsectionclose = /]\s*>/;
+@@ -323,12 +336,13 @@ class ParserBase {
+         if (j < 0) {
+             return j;
+         }
++        let match = 0;
+         if (new Set(["temp", "cdata", "ignore", "include", "rcdata"]).has(sectName)) {
+             // look for standard ]]> ending
+-            match = _markedsectionclose.search(rawdata, i + 3);
++            match = _markedsectionclose.exec(rawdata.substring(i + 3));
+         } else if (new Set(["if", "else", "endif"]).has(sectName)) {
+             // look for MS Office ]> ending
+             match = _msmarkedsectionclose.search(rawdata, i + 3);
+         } else {
+             throw new AssertionError(
+                 `unknown status keyword ${rawdata.slice(i + 3, j)} in marked section`
+@@ -338,10 +352,10 @@ class ParserBase {
+             return -1;
+         }
+         if (report) {
+-            j = match.start(0);
++            j = match.index + (i + 3);
+             this.unknown_decl(rawdata.slice(i + 3, j));
+         }
+-        return match.end(0);
++        return match.index + match[0].length + (i + 3);
+     }
+ 
+     // Internal -- parse comment, return length or -1 if not terminated
+@@ -204,7 +217,7 @@ class ParserBase {
+             return j;
+         }
+         let rawdata = this.rawdata;
+-        let nlines = rawdata.split("\n").length - 1;
++        const nlines = rawdata.slice(i, j).split('\n').length - 1;
+         if (nlines) {
+             this.lineno += nlines;
+             let pos = rawdata.lastIndexOf("\n", j);
+@@ -669,11 +683,11 @@ const starttagopen = /<[a-zA-Z]/g;
+ const piclose = />/g;
+ const commentclose = /--\s*>/g;
+ 
+-const tagfind_tolerant = /([a-zA-Z][^\t\n\r\f />\x00]*)(?:\s|\/(?!>))*]/g;
++const tagfind_tolerant = /([a-zA-Z][^\t\n\r\f />\x00]*)(?:\s|\/(?!>))*/;
+-const attrfind_tolerant = /((?<=[\'"\s/])[^\s/>][^\s/=>]*)(\s*=+\s*('[^']*'|"[^"]*"|(?![\'"])[^>\s]*))?(?:\s|\/(?!>))*]/g;
++const attrfind_tolerant = /((?<=['"\s/])[^\s/>][^\s/=>]*)(\s*=+\s*('[^']*'|"[^"]*"|(?![\'"])[^>\s]*))?(?:\s|\/(?!>))*/;
+-const locatestarttagend_tolerant = /<[a-zA-Z][^\t\n\r\f />\x00]*(?:[\s/]*(?:(?<=['"\s/])[^\s/>][^\s/=>]*(?:\s*=+\s*(?:'[^']*'|"[^"]*"|(?!['"])[^>\s]*)\s*)?(?:\s|\/(?!>))*)*)?\s*/g;
++const locatestarttagend_tolerant = /<[a-zA-Z][^\t\n\r\f />\x00]*(?:[\s/]*(?:(?<=['"\s/])[^\s/>][^\s/=>]*(?:\s*=+\s*(?:'[^']*'|"[^"]*"|(?!['"])[^>\s]*)\s*)?(?:\s|\/(?!>))*)*)?\s*/;
+ const endendtag = />/g;
+ const endtagfind = /<\/\s*([a-zA-Z][-.a-zA-Z0-9:_]*)\s*>/g;
+ ///// Segment END
+ ///// Segment BEGIN htmlparser2 DONE
+ class HTMLParser extends ParserBase {
+@@ -938,12 +952,12 @@ class HTMLParser extends ParserBase {
+         if (!match) {
+             throw new Error('unexpected call to parse_starttag()');
+         }
+-        let k = match[0].length + 1;
++        let k = match[0].length + (i + 1);
+         this.lasttag = match[1].toLowerCase();
+         while (k < endpos) {
+-            let m = attrfind_tolerant.exec(rawdata.slice(k));
+-            if (!m) {
++            let m = rawdata.slice(k-1).match(attrfind_tolerant);
++            if (m[2] == undefined) {
+                 break;
+             }
+-            let [_, attrname, rest, attrvalue] = m;
++            let attrname = m[1]; let rest = m[2]; let attrvalue = m[3];
+             if (!rest) {
+@@ -124,8 +137,8 @@ const _invalid_codepoints = new Set([
+ ]);
+ ///// Segment END
+ ///// Segment BEGIN init4 DONE
+-function _replace_charref(s) {
+-    s = s.group(1);
++function _replace_charref(match, p1) {
++    let s = p1;
+     if (s[0] === '#') {
+         // numeric charref
+         let num;
+@@ -134,6 +147,6 @@ function _replace_charref(s) {
+         } else {
+             num = parseInt(s.slice(1, -1));
+         }
+-        if (_invalid_charrefs.includes(num)) {
++        if (num in _invalid_charrefs) {
+             return _invalid_charrefs[num];
+         }
+--- a/target.fixed.js.srcmap
++++ b/target.fixed.js.srcmap
+@@ -1680,11 +1681,11 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+     // true, force handling all data as if followed by EOF marker.
+     goahead(end) {   // --- py stmt 16001
+         let rawdata = this.rawdata;   // --- py stmt 16002
+-        let i = 0;   // --- py stmt 16003
++        let i = 0; let j = 0;   // --- py stmt 16003
+         let n = rawdata.length;   // --- py stmt 16004
+         while (i < n) {   // --- py stmt 16005
+             if (this.convert_charrefs && !this.cdata_elem) {   // --- py stmt 16006
+-                let j = rawdata.indexOf('<', i);   // --- py stmt 16007
++                j = rawdata.indexOf('<', i);   // --- py stmt 16007
+                 if (j < 0) {   // --- py stmt 16008
+                     // if we can't find the next <, either we are at the end
+                     // or there's more text incoming.  If the latter is True,
+@@ -1702,12 +1703,12 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+             } else {   // --- py stmt 16013
+                 let match = this.interesting.exec(rawdata.slice(i));  // < or &   // --- py stmt 16014
+                 if (match) {   // --- py stmt 16015
+-                    let j = match.index + i;   // --- py stmt 16016
++                    j = match.index + i;   // --- py stmt 16016
+                 } else {   // --- py stmt 16017
+                     if (this.cdata_elem) {   // --- py stmt 16018
+                         break;   // --- py stmt 16019
+                     }
+-                    let j = n;   // --- py stmt 16020
++                    j = n;   // --- py stmt 16020
+                 }
+             }
+             if (i < j) {   // --- py stmt 16021
+@@ -1719,21 +1720,21 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+             }
+             i = this.updatepos(i, j);   // --- py stmt 16026
+             if (i == n) break;   // --- py stmt 16027
+-            let startswith = rawdata.startsWith;   // --- py stmt 16028
++            let startswith = startsWith; startsWithString = rawdata; let k = 0;   // --- py stmt 16028
+             if (startswith('<', i)) {   // --- py stmt 16029
+-                if (starttagopen.test(rawdata.slice(i))) { // < + letter   // --- py stmt 16030
+-                    let k = this.parse_starttag(i);   // --- py stmt 16031
++                if (starttagopen.exec(rawdata.slice(i, i+2))) { // < + letter   // --- py stmt 16030
++                    k = this.parse_starttag(i);   // --- py stmt 16031
+                 } else if (startswith("</", i)) {   // --- py stmt 16032
+-                    let k = this.parse_endtag(i);   // --- py stmt 16033
++                    k = this.parse_endtag(i);   // --- py stmt 16033
+                 } else if (startswith("<!--", i)) {   // --- py stmt 16034
+-                    let k = this.parse_comment(i);   // --- py stmt 16035
++                    k = this.parse_comment(i);   // --- py stmt 16035
+                 } else if (startswith("<?", i)) {   // --- py stmt 16036
+-                    let k = this.parse_pi(i);   // --- py stmt 16037
++                    k = this.parse_pi(i);   // --- py stmt 16037
+                 } else if (startswith("<!", i)) {   // --- py stmt 16038
+-                    let k = this.parse_html_declaration(i);   // --- py stmt 16039
++                    k = this.parse_html_declaration(i);   // --- py stmt 16039
+                 } else if ((i + 1) < n) {   // --- py stmt 16040
+                     this.handle_data("<");   // --- py stmt 16041
+-                    let k = i + 1;   // --- py stmt 16042
++                    k = i + 1;   // --- py stmt 16042
+                 } else {   // --- py stmt 16043
+                     break;   // --- py stmt 16044
+                 }
+@@ -1741,11 +1742,11 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+                     if (!end) {   // --- py stmt 16046
+                         break;   // --- py stmt 16047
+                     }
+-                    let k = rawdata.indexOf('>', i + 1);   // --- py stmt 16048
++                    k = rawdata.indexOf('>', i + 1);   // --- py stmt 16048
+                     if (k < 0) {   // --- py stmt 16049
+-                        let k = rawdata.indexOf('<', i + 1);   // --- py stmt 16050
++                        k = rawdata.indexOf('<', i + 1);   // --- py stmt 16050
+                         if (k < 0) {   // --- py stmt 16051
+-                            let k = i + 1;   // --- py stmt 16052
++                            k = i + 1;   // --- py stmt 16052
+                         }
+                     } else {   // --- py stmt 16053
+                         k += 1;   // --- py stmt 16054
+@@ -1762,7 +1763,7 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+                 if (match) {   // --- py stmt 16062
+                     let name = match[0].slice(2, -1);   // --- py stmt 16063
+                     this.handle_charref(name);   // --- py stmt 16064
+-                    let k = match.index + match[0].length;   // --- py stmt 16065
++                    k = match.index + match[0].length;   // --- py stmt 16065
+                     if (!startswith(';', k - 1)) {   // --- py stmt 16066
+                         k = k - 1;   // --- py stmt 16067
+                     }
+@@ -1780,7 +1781,7 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+                 if (match) {   // --- py stmt 16077
+                     let name = match[1];   // --- py stmt 16078
+                     this.handle_entityref(name);   // --- py stmt 16079
+-                    let k = match.index + match[0].length;   // --- py stmt 16080
++                    k = match.index + match[0].length;   // --- py stmt 16080
+                     if (!startswith(';', k - 1)) {   // --- py stmt 16081
+                         k = k - 1;   // --- py stmt 16082
+                     }
+@@ -1791,7 +1792,7 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+                 if (match) {   // --- py stmt 16086
+                     // match.group() will contain at least 2 chars
+                     if (end && match[0] == rawdata.slice(i)) {   // --- py stmt 16087
+-                        let k = match.index + match[0].length;   // --- py stmt 16088
++                        k = match.index + match[0].length;   // --- py stmt 16088
+                         if (k <= i) {   // --- py stmt 16089
+                             k = n;   // --- py stmt 16090
+                         }
+@@ -1316,15 +1317,15 @@ class ParserBase {   // --- py stmt 6001
+         if (rawdata.slice(i, i + 4) !== '<!--') {   // --- py stmt 8020
+             throw new AssertionError('unexpected call to parse_comment()');   // --- py stmt 8021
+         }
+-        let match = _commentclose.search(rawdata, i + 4);   // --- py stmt 8022
++        const match = _commentclose.exec(rawdata.substring(i + 4));   // --- py stmt 8022
+         if (!match) {   // --- py stmt 8023
+             return -1;   // --- py stmt 8024
+         }
+         if (report) {   // --- py stmt 8025
+-            let j = match.start(0);   // --- py stmt 8026
++            const j = match.index + (i + 4);   // --- py stmt 8026
+             this.handle_comment(rawdata.slice(i + 4, j));   // --- py stmt 8027
+         }
+-        return match.end(0);   // --- py stmt 8028
++        return match.index + match[0].length + (i + 4);   // --- py stmt 8028
+     }
+ 
+     // TRANSLATION NOTE: this function is inside a class `ParserBase.`
+@@ -1599,7 +1600,7 @@ class ParserBase {   // --- py stmt 6001
+         if (i === n) {   // --- py stmt 13003
+             return [null, -1];   // --- py stmt 13004
+         }
+-        let m = _declname_match(rawdata, i);   // --- py stmt 13005
++        let m = _declname_match.exec(rawdata.substring(i));   // --- py stmt 13005
+         if (m) {   // --- py stmt 13006
+             let s = m[0];   // --- py stmt 13007
+             let name = s.trim();   // --- py stmt 13008
+@@ -1146,7 +1146,7 @@ function unescape(s) {
+ }
+ 
+-const _declname_match = /[a-zA-Z][-_.a-zA-Z0-9]*\s*/.exec;   // --- py stmt 5002
++const _declname_match = /[a-zA-Z][-_.a-zA-Z0-9]*\s*/;   // --- py stmt 5002
+ const _declstringlit_match = /(\'[^\']*\'|"[^"]*")\s*/.exec;   // --- py stmt 5003
+ const _commentclose = /--\s*>/;   // --- py stmt 5004
+ const _markedsectionclose = /]\s*]\s*>/;   // --- py stmt 5005
+ const _msmarkedsectionclose = /]\s*>/;   // --- py stmt 5006
+@@ -1289,12 +1289,13 @@ class ParserBase {   // --- py stmt 6001
+         if (j < 0) {   // --- py stmt 8005
+             return j;   // --- py stmt 8006
+         }
++        let match = 0;
+         if (new Set(["temp", "cdata", "ignore", "include", "rcdata"]).has(sectName)) {   // --- py stmt 8007
+             // look for standard ]]> ending
+-            match = _markedsectionclose.search(rawdata, i + 3);   // --- py stmt 8008
++            match = _markedsectionclose.exec(rawdata.substring(i + 3));   // --- py stmt 8008
+         } else if (new Set(["if", "else", "endif"]).has(sectName)) {   // --- py stmt 8009
+             // look for MS Office ]> ending
+             match = _msmarkedsectionclose.search(rawdata, i + 3);   // --- py stmt 8010
+         } else {
+             throw new AssertionError(
+                 `unknown status keyword ${rawdata.slice(i + 3, j)} in marked section`
+@@ -1304,10 +1305,10 @@ class ParserBase {   // --- py stmt 6001
+             return -1;   // --- py stmt 8013
+         }
+         if (report) {   // --- py stmt 8014
+-            j = match.start(0);   // --- py stmt 8015
++            j = match.index + (i + 3);   // --- py stmt 8015
+             this.unknown_decl(rawdata.slice(i + 3, j));   // --- py stmt 8016
+         }
+-        return match.end(0);   // --- py stmt 8017
++        return match.index + match[0].length + (i + 3);   // --- py stmt 8017
+     }
+ 
+     // Internal -- parse comment, return length or -1 if not terminated
+@@ -1172,7 +1172,7 @@ class ParserBase {   // --- py stmt 6001
+             return j;   // --- py stmt 6011
+         }
+         let rawdata = this.rawdata;   // --- py stmt 6012
+-        let nlines = rawdata.split("\n").length - 1;   // --- py stmt 6013
++        const nlines = rawdata.slice(i, j).split('\n').length - 1;   // --- py stmt 6013
+         if (nlines) {   // --- py stmt 6014
+             this.lineno += nlines;   // --- py stmt 6015
+             let pos = rawdata.lastIndexOf("\n", j);   // --- py stmt 6016
+@@ -1629,11 +1630,11 @@ const starttagopen = /<[a-zA-Z]/g;   // --- py stmt 14009
+ const piclose = />/g;   // --- py stmt 14010
+ const commentclose = /--\s*>/g;   // --- py stmt 14011
+ 
+-const tagfind_tolerant = /([a-zA-Z][^\t\n\r\f />\x00]*)(?:\s|\/(?!>))*]/g;   // --- py stmt 14012
++const tagfind_tolerant = /([a-zA-Z][^\t\n\r\f />\x00]*)(?:\s|\/(?!>))*/;   // --- py stmt 14012
+-const attrfind_tolerant = /((?<=[\'"\s/])[^\s/>][^\s/=>]*)(\s*=+\s*('[^']*'|"[^"]*"|(?![\'"])[^>\s]*))?(?:\s|\/(?!>))*]/g;   // --- py stmt 14013
++const attrfind_tolerant = /((?<=['"\s/])[^\s/>][^\s/=>]*)(\s*=+\s*('[^']*'|"[^"]*"|(?![\'"])[^>\s]*))?(?:\s|\/(?!>))*/;   // --- py stmt 14013
+-const locatestarttagend_tolerant = /<[a-zA-Z][^\t\n\r\f />\x00]*(?:[\s/]*(?:(?<=['"\s/])[^\s/>][^\s/=>]*(?:\s*=+\s*(?:'[^']*'|"[^"]*"|(?!['"])[^>\s]*)\s*)?(?:\s|\/(?!>))*)*)?\s*/g;   // --- py stmt 14014
++const locatestarttagend_tolerant = /<[a-zA-Z][^\t\n\r\f />\x00]*(?:[\s/]*(?:(?<=['"\s/])[^\s/>][^\s/=>]*(?:\s*=+\s*(?:'[^']*'|"[^"]*"|(?!['"])[^>\s]*)\s*)?(?:\s|\/(?!>))*)*)?\s*/;   // --- py stmt 14014
+ const endendtag = />/g;   // --- py stmt 14015
+ const endtagfind = /<\/\s*([a-zA-Z][-.a-zA-Z0-9:_]*)\s*>/g;   // --- py stmt 14016
+ 
+ class HTMLParser extends ParserBase {   // --- py stmt 15001
+     CDATA_CONTENT_ELEMENTS = ["script", "style"];   // --- py stmt 15002
+@@ -1894,12 +1895,12 @@ class HTMLParser extends ParserBase {   // --- py stmt 15001
+         if (!match) {   // --- py stmt 18010
+             throw new Error('unexpected call to parse_starttag()');   // --- py stmt 18010
+         }
+-        let k = match[0].length + 1;   // --- py stmt 18011
++        let k = match[0].length + (i + 1);   // --- py stmt 18011
+         this.lasttag = match[1].toLowerCase();   // --- py stmt 18012
+         while (k < endpos) {   // --- py stmt 18013
+-            let m = attrfind_tolerant.exec(rawdata.slice(k));   // --- py stmt 18014
+-            if (!m) {   // --- py stmt 18015
++            let m = rawdata.slice(k-1).match(attrfind_tolerant);   // --- py stmt 18014
++            if (m[2] == undefined) {   // --- py stmt 18015
+                 break;   // --- py stmt 18016
+             }
+-            let [_, attrname, rest, attrvalue] = m;   // --- py stmt 18017
++            let attrname = m[0]; let rest = m[1]; let attrvalue = m[2];   // --- py stmt 18017
+             if (!rest) {   // --- py stmt 18018
+@@ -1094,8 +1094,8 @@ const _invalid_codepoints = new Set([   // --- py stmt 3001
+     0x10fffe, 0x10ffff
+ ]);
+ 
+-function _replace_charref(s) {
+-    s = s.group(1);   // --- py stmt 4001
++function _replace_charref(match, p1) {
++    let s = p1;   // --- py stmt 4001
+     if (s[0] === '#') {   // --- py stmt 4002
+         // numeric charref
+         let num;
+@@ -1104,6 +1104,6 @@ function _replace_charref(s) {
+         } else {
+             num = parseInt(s.slice(1, -1));   // --- py stmt 4005
+         }
+-        if (_invalid_charrefs.includes(num)) {   // --- py stmt 4006
++        if (num in _invalid_charrefs) {   // --- py stmt 4006
+             return _invalid_charrefs[num];   // --- py stmt 4007
+         }
+--- a/target.fixed.js.traceconfig.json
++++ b/target.fixed.js.traceconfig.json
+@@ -1,4 +1,7 @@
+ {
+-  "disable_src_lines": [],
+-  "trace_cmp": []
++  "disable_src_lines": [167,627,630,706,741,968,211,682,683,691],
++  "trace_cmp": [
++    {"src_lines": ["948-977"], "vars_ignore": ["m"]},
++    {"src_lines": ["909-939"], "vars_ignore": ["match", "m"]}
++  ]
+ }
+\ No newline at end of file

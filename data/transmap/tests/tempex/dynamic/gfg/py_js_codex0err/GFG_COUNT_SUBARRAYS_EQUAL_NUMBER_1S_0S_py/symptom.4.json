@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "TypeError:",
+      "um.get is not a function"
+    ],
+    "lineno": 13
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "um.get is not a function",
+      "error_type": "TypeError:",
+      "line_content": "if (um.get(0)) count += um[0];",
+      "lineno": [
+        "/tmp/codesnart_runner/84379dcc.js",
+        147
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/84379dcc.js:147\n  if (um.get(0)) count += um[0];\n         ^\n\nTypeError: um.get is not a function\n    at f_gold (/tmp/codesnart_runner/84379dcc.js:147:10)\n    at test (/tmp/codesnart_runner/84379dcc.js:129:22)\n    at Object.<anonymous> (/tmp/codesnart_runner/84379dcc.js:156:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "\n[\"MYLOGAP:0\",[\"list\",10,[\"list\",2,[\"list\",26,[\"num\",2],[\"num\",12]],[\"num\",24]],[\"list\",2,[\"list\",37,[\"num\",10],[\"num\",70]],[\"num\",24]]]]\n\n[\"MYLOGEX:1\",[\"num\",0]]\n",
+    "timespan": 0.03538389998720959
+  }
+}

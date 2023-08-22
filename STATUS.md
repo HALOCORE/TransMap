@@ -1,0 +1,1 @@
+We are applying for Reusable, Functional and Available badge.

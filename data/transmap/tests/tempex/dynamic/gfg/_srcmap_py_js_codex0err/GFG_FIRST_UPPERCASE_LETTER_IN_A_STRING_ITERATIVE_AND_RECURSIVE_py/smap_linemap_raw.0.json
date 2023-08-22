@@ -1,0 +1,72 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(str):",
+      [
+        1
+      ]
+    ],
+    [
+      "  for i in range(0, len(str)):",
+      [
+        2
+      ]
+    ],
+    [
+      "    if(str[i].istitle()): return str[i]",
+      [
+        3
+      ]
+    ],
+    [
+      "  return 0",
+      [
+        4
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(str) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  for (var i = 0; i < str.length; i++) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    if (str[i] === str[i].toUpperCase()) {",
+      [
+        3
+      ]
+    ],
+    [
+      "      return str[i];",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

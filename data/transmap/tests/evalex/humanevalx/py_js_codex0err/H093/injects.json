@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 5,
+    "content": "    let vowels_replace = {};\n    vowels.split(\"\").forEach((value) => vowels_replace[value] = String.fromCharCode(value.charCodeAt(0) + 2))",
+    "replacement": "    let vowels_replace = new Map([[i, String.fromCharCode(i.charCodeAt(0) + 2)] for (i of vowels)]);"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "    message = message.split(\"\").map(i => /[A-Z]/.test(i) ? i.toLowerCase() : i.toUpperCase()).join(\"\");",
+    "replacement": "    message = message.split(\"\").map(i => i.toUpperCase() === i ? i.toLowerCase() : i.toUpperCase()).join(\"\");"
+  },
+  {
+    "line_start": 6,
+    "line_end": 7,
+    "content": "    return [...message].map(i => typeof(vowels_replace[i]) !== 'undefined' ? vowels_replace[i] : i).join(\"\");",
+    "replacement": "}"
+  }
+]

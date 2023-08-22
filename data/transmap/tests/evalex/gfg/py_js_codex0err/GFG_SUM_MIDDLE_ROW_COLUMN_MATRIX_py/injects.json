@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  for (var i = 0; i < n; i++) row_sum += mat[Math.floor(n / 2)][i];",
+    "replacement": "  for (var i = 0; i < n; i++) row_sum += mat[n / 2][i];"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "  for (var i = 0; i < n; i++) col_sum += mat[i][Math.floor(n / 2)];",
+    "replacement": "  for (var i = 0; i < n; i++) col_sum += mat[i][n / 2];"
+  }
+]

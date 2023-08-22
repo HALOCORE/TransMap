@@ -1,0 +1,23 @@
+
+### Python
+### largestGoodInteger 
+from typing import *   # --- py stmt 1
+def f_gold(num: str) -> str:   # --- py stmt 2
+    for i in range(9, -1, -1):   # --- py stmt 3
+        t = str(i) * 3   # --- py stmt 4
+        if t in num:   # --- py stmt 5
+            return t   # --- py stmt 6
+    return ''   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(num) {   // --- py stmt 2
+    for (let i = 9; i >= 0; i--) {   // --- py stmt 3
+        let t = String(i) * 3;   // --- py stmt 4
+        if (num.includes(t)) {   // --- py stmt 5
+            return t;   // --- py stmt 6
+        }
+    }
+    return '';   // --- py stmt 7
+}
+

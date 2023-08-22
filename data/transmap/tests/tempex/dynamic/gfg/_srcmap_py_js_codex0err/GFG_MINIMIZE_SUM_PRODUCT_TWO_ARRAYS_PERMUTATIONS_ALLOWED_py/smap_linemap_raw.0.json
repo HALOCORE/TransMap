@@ -1,0 +1,82 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(A, B, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  sorted(A)",
+      [
+        2
+      ]
+    ],
+    [
+      "  sorted(B)",
+      [
+        3
+      ]
+    ],
+    [
+      "  result = 0",
+      [
+        4
+      ]
+    ],
+    [
+      "  for i in range(n): result +=(A[i] * B[n - i - 1])",
+      [
+        5
+      ]
+    ],
+    [
+      "  return result",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(A, B, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  A.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "  [...B];",
+      [
+        3
+      ]
+    ],
+    [
+      "  let result = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) result += (A[i] * B[n - i - 1]);",
+      [
+        5
+      ]
+    ],
+    [
+      "  return result;",
+      [
+        6
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "src_anno_stmts": [
+    [
+      "def same_chars(s0: str, s1: str):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return set(s0) == set(s1)",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function same_chars(s0, s1) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return new Set(s0) == new Set(s1);",
+      [
+        2
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

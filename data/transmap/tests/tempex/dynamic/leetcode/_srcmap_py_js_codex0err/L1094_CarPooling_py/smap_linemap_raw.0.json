@@ -1,0 +1,98 @@
+{
+  "src_anno_stmts": [
+    [
+      "from itertools import accumulate",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(trips: List[List[int]], capacity: int) -> bool:",
+      [
+        3
+      ]
+    ],
+    [
+      "    delta = [0] * 1001",
+      [
+        4
+      ]
+    ],
+    [
+      "    for num, start, end in trips:",
+      [
+        5
+      ]
+    ],
+    [
+      "        delta[start] += num",
+      [
+        6
+      ]
+    ],
+    [
+      "        delta[end] -= num",
+      [
+        7
+      ]
+    ],
+    [
+      "    return all(s <= capacity for s in accumulate(delta))",
+      [
+        8
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const f_gold = (trips, capacity) => {",
+      [
+        3
+      ]
+    ],
+    [
+      "    let delta = [0] * 1001;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (let [num, start, end] of trips) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        delta[start] += num;",
+      [
+        6
+      ]
+    ],
+    [
+      "        delta[end] -= num;",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return delta.map((sum => value => sum += value)(0)).every(x => x <= capacity);",
+      [
+        8
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  for (i = 0; i <= high; i++) {",
+    "replacement": "  for (i = low; i <= high; i++) {"
+  }
+]

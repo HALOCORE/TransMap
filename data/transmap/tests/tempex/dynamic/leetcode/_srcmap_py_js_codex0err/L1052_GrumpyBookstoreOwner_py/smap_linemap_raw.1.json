@@ -1,0 +1,190 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxSatisfied",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(customers: List[int], grumpy: List[int], minutes: int",
+      [
+        2
+      ]
+    ],
+    [
+      ") -> int:",
+      null
+    ],
+    [
+      "    s = sum(a * b for a, b in zip(customers, grumpy))",
+      [
+        3
+      ]
+    ],
+    [
+      "    cs = sum(customers)",
+      [
+        4
+      ]
+    ],
+    [
+      "    t = ans = 0",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i, (a, b) in enumerate(zip(customers, grumpy), 1):",
+      [
+        6
+      ]
+    ],
+    [
+      "        t += a * b",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (j := i - minutes) >= 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans = max(ans, cs - (s - t))",
+      [
+        9
+      ]
+    ],
+    [
+      "            t -= customers[j] * grumpy[j]",
+      [
+        10
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(customers, grumpy, minutes) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var s = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var i = 0; i < customers.length; i++) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        s += customers[i] * grumpy[i];",
+      [
+        3
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var cs = 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < customers.length; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        cs += customers[i];",
+      [
+        4
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var t = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var ans = 0;",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 1; i <= customers.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        t += customers[i] * grumpy[i];",
+      [
+        7
+      ]
+    ],
+    [
+      "        if (i - minutes >= 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            ans = Math.max(ans, cs - (s - t));",
+      [
+        9
+      ]
+    ],
+    [
+      "            t -= customers[i - minutes] * grumpy[i - minutes];",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

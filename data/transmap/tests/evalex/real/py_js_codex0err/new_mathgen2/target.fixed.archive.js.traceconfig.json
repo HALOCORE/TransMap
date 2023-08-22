@@ -1,0 +1,8 @@
+{
+  "disable_src_lines": [],
+  "trace_cmp": [
+    {"src_lines": ["91-94"], "vars_ignore": ["problem"]},
+    {"src_lines": ["115-117"], "vars_ignore": ["solution"]},
+    {"src_lines": ["154-157"], "vars_ignore": ["problem", "solution"]}
+  ]
+}

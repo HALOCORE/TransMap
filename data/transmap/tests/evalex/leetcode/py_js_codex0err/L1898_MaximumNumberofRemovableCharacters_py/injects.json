@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "        var i = 0, j = 0;",
+    "replacement": "        var i = j = 0;"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    var m = s.length, n = p.length;",
+    "replacement": "    var m, n = s.length, p.length;"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    var left = 0, right = removable.length;",
+    "replacement": "    var left, right = 0, removable.length;"
+  }
+]

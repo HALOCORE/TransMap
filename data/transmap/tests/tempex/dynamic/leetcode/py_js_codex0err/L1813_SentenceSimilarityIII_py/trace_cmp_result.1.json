@@ -1,0 +1,52 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[15,4,15,14]",
+    "break_idx": 5,
+    "expected_src_pk": "[11,4,11,13]",
+    "actural_src_pk": "[11,4,11,13]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13,
+      14
+    ],
+    "tar_data": [
+      "{\"sentence1\":[\"S\",16,\"My name is Haley\"],\"sentence2\":[\"S\",8,\"My Haley\"],\"n1\":[\"N\",\"16\"],\"n2\":[\"N\",\"8\"],\"words1\":[\"A\",1,[\"S\",16,\"My name is Haley\"]],\"words2\":[\"A\",2,[\"S\",2,\"My\"],[\"S\",5,\"Haley\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence1\":[\"S\",16,\"My name is Haley\"],\"sentence2\":[\"S\",8,\"My Haley\"],\"n1\":[\"N\",\"16\"],\"n2\":[\"N\",\"8\"],\"words1\":[\"A\",4,[\"S\",2,\"My\"],[\"S\",4,\"name\"],[\"S\",2,\"is\"],[\"S\",5,\"Haley\"]],\"words2\":[\"A\",2,[\"S\",2,\"My\"],[\"S\",5,\"Haley\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "words1"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[15,4,15,14]",
+    "break_idx": 1,
+    "expected_src_pk": "[11,4,11,13]",
+    "actural_src_pk": "[11,4,11,13]",
+    "src_cov_lines": [
+      10
+    ],
+    "tar_cov_lines": [
+      13,
+      14
+    ],
+    "tar_data": [
+      "{\"sentence1\":[\"S\",16,\"My name is Haley\"],\"sentence2\":[\"S\",8,\"My Haley\"],\"n1\":[\"N\",\"16\"],\"n2\":[\"N\",\"8\"],\"words1\":[\"A\",1,[\"S\",16,\"My name is Haley\"]],\"words2\":[\"A\",2,[\"S\",2,\"My\"],[\"S\",5,\"Haley\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"sentence1\":[\"S\",16,\"My name is Haley\"],\"sentence2\":[\"S\",8,\"My Haley\"],\"n1\":[\"N\",\"16\"],\"n2\":[\"N\",\"8\"],\"words1\":[\"A\",4,[\"S\",2,\"My\"],[\"S\",4,\"name\"],[\"S\",2,\"is\"],[\"S\",5,\"Haley\"]],\"words2\":[\"A\",2,[\"S\",2,\"My\"],[\"S\",5,\"Haley\"]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "words1"
+    ]
+  }
+]

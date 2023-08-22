@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    return (text !== '')? require('crypto').createHash('md5').update(text).digest('hex') : null;",
+    "replacement": "    return require('crypto').createHash('md5').update(text).digest('hex');"
+  }
+]

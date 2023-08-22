@@ -1,0 +1,214 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  evenArr =[]",
+      [
+        2
+      ]
+    ],
+    [
+      "  oddArr =[]",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n):",
+      [
+        4
+      ]
+    ],
+    [
+      "    if((i % 2)== 0): evenArr.append(arr[i])",
+      [
+        5
+      ]
+    ],
+    [
+      "    else: oddArr.append(arr[i])",
+      [
+        6
+      ]
+    ],
+    [
+      "  evenArr = sorted(evenArr)",
+      [
+        7
+      ]
+    ],
+    [
+      "  oddArr = sorted(oddArr)",
+      [
+        8
+      ]
+    ],
+    [
+      "  oddArr = oddArr[:: - 1]",
+      [
+        9
+      ]
+    ],
+    [
+      "  i = 0",
+      [
+        10
+      ]
+    ],
+    [
+      "  for j in range(len(evenArr)):",
+      [
+        11
+      ]
+    ],
+    [
+      "    arr[i] = evenArr[j]",
+      [
+        12
+      ]
+    ],
+    [
+      "    i += 1",
+      [
+        13
+      ]
+    ],
+    [
+      "  for j in range(len(oddArr)):",
+      [
+        14
+      ]
+    ],
+    [
+      "    arr[i] = oddArr[j]",
+      [
+        15
+      ]
+    ],
+    [
+      "    i += 1",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  let evenArr = [];",
+      [
+        2
+      ]
+    ],
+    [
+      "  let oddArr = [];",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if ((i % 2) == 0) evenArr.push(arr[i]);",
+      [
+        5
+      ]
+    ],
+    [
+      "    else oddArr.push(arr[i]);",
+      [
+        6
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  evenArr = evenArr.sort();",
+      [
+        7
+      ]
+    ],
+    [
+      "  oddArr.sort((a, b) => a-b);",
+      [
+        8
+      ]
+    ],
+    [
+      "  oddArr = oddArr.reverse();",
+      [
+        9
+      ]
+    ],
+    [
+      "  let i = 0;",
+      [
+        10
+      ]
+    ],
+    [
+      "  for (let j = 0; j < evenArr.length; j++) {",
+      [
+        11
+      ]
+    ],
+    [
+      "    arr[i] = evenArr[j];",
+      [
+        12
+      ]
+    ],
+    [
+      "    i++;",
+      [
+        13
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  for (let j = 0; j < oddArr.length; j++) {",
+      [
+        14
+      ]
+    ],
+    [
+      "    arr[i] = oddArr[j];",
+      [
+        15
+      ]
+    ],
+    [
+      "    i++;",
+      [
+        16
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

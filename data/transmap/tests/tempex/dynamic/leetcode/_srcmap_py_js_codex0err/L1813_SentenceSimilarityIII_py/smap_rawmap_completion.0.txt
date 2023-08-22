@@ -1,0 +1,56 @@
+
+### Python
+### areSentencesSimilar 
+from typing import *   # --- py stmt 1
+def f_gold(sentence1: str, sentence2: str) -> bool:   # --- py stmt 2
+    if sentence1 == sentence2:   # --- py stmt 3
+        return True   # --- py stmt 4
+    n1, n2 = len(sentence1), len(sentence2)   # --- py stmt 5
+    if n1 == n2:   # --- py stmt 6
+        return False   # --- py stmt 7
+    if n1 < n2:   # --- py stmt 8
+        sentence1, sentence2 = sentence2, sentence1   # --- py stmt 9
+    words1, words2 = sentence1.split(), sentence2.split()   # --- py stmt 10
+    i = j = 0   # --- py stmt 11
+    n1, n2 = len(words1), len(words2)   # --- py stmt 12
+    while i < n2 and words1[i] == words2[i]:   # --- py stmt 13
+        i += 1   # --- py stmt 14
+    if i == n2:   # --- py stmt 15
+        return True   # --- py stmt 16
+    while j < n2 and words1[n1 - 1 - j] == words2[n2 - 1 - j]:   # --- py stmt 17
+        j += 1   # --- py stmt 18
+    return j == n2 or i + j == n2   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(sentence1, sentence2) {   // --- py stmt 2
+    if (sentence1 == sentence2) {   // --- py stmt 3
+        return true;   // --- py stmt 4
+    }
+    var n1 = sentence1.length;   // --- py stmt 5
+    var n2 = sentence2.length;   // --- py stmt 5
+    if (n1 == n2) {   // --- py stmt 6
+        return false;   // --- py stmt 7
+    }
+    if (n1 < n2) {   // --- py stmt 8
+        sentence1 = sentence2;   // --- py stmt 9
+        sentence2 = sentence1;   // --- py stmt 9
+    }
+    var words1 = sentence1.split(/\s+/);   // --- py stmt 10
+    var words2 = sentence2.split(/\s+/);   // --- py stmt 10
+    var i = 0;   // --- py stmt 11
+    var j = 0;   // --- py stmt 11
+    var n1 = words1.length;   // --- py stmt 12
+    var n2 = words2.length;   // --- py stmt 12
+    while (i < n2 && words1[i] == words2[i]) {   // --- py stmt 13
+        i++;   // --- py stmt 14
+    }
+    if (i == n2) {   // --- py stmt 15
+        return true;   // --- py stmt 16
+    }
+    while (j < n2 && words1[n1 - 1 - j] == words2[n2 - 1 - j]) {   // --- py stmt 17
+        j++;   // --- py stmt 18
+    }
+    return j == n2 || i + j == n2;   // --- py stmt 19
+}
+

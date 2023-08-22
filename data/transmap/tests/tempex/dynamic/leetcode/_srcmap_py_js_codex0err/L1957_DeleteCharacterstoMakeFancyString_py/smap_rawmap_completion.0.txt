@@ -1,0 +1,25 @@
+
+### Python
+### makeFancyString 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> str:   # --- py stmt 2
+    ans = []   # --- py stmt 3
+    for c in s:   # --- py stmt 4
+        if len(ans) > 1 and ans[-1] == ans[-2] == c:   # --- py stmt 5
+            continue   # --- py stmt 6
+        ans.append(c)   # --- py stmt 7
+    return ''.join(ans)   # --- py stmt 8
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var ans = [];   // --- py stmt 3
+    for (var c of s) {   // --- py stmt 4
+        if (ans.length > 1 && ans[ans.length - 1] == ans[ans.length - 2] == c) {   // --- py stmt 5
+            continue;   // --- py stmt 6
+        }
+        ans.push(c);   // --- py stmt 7
+    }
+    return ans.join('');   // --- py stmt 8
+}
+

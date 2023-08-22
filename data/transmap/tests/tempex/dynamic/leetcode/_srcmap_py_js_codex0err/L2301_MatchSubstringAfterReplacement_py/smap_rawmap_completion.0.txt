@@ -1,0 +1,63 @@
+
+### Python
+### matchReplacement 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(s: str, sub: str, mappings: List[List[str]]) -> bool:   # --- py stmt 3
+    d = defaultdict(set)   # --- py stmt 4
+    for a, b in mappings:   # --- py stmt 5
+        d[a].add(b)   # --- py stmt 6
+    n, k = len(s), len(sub)   # --- py stmt 7
+    for i in range(n - k + 1):   # --- py stmt 8
+        flag = True   # --- py stmt 9
+        for j in range(k):   # --- py stmt 10
+            a, b = s[i + j], sub[j]   # --- py stmt 11
+            if a == b or a in d[b]:   # --- py stmt 12
+                continue   # --- py stmt 13
+            else:   # --- py stmt 14
+                flag = False   # --- py stmt 15
+                break   # --- py stmt 16
+        if flag:   # --- py stmt 17
+            return True   # --- py stmt 18
+    return False   # --- py stmt 19
+
+### JavaScript
+"use strict";
+function f_gold(s, sub, mappings) {   // --- py stmt 3
+    let d = new Map();   // --- py stmt 4
+    for (let i = 0; i < mappings.length; i++) {   // --- py stmt 5
+        let a = mappings[i][0];   // --- py stmt 5
+        let b = mappings[i][1];   // --- py stmt 5
+        if (d.has(a)) {   // --- py stmt 6
+            d.get(a).add(b);   // --- py stmt 6
+        }
+        else {   // --- py stmt 6
+            let set = new Set();   // --- py stmt 6
+            set.add(b);   // --- py stmt 6
+            d.set(a, set);   // --- py stmt 6
+        }
+    }
+    let n = s.length;   // --- py stmt 7
+    let k = sub.length;   // --- py stmt 7
+    for (let i = 0; i < n - k + 1; i++) {   // --- py stmt 8
+        let flag = true;   // --- py stmt 9
+        for (let j = 0; j < k; j++) {   // --- py stmt 10
+            let a = s[i + j];   // --- py stmt 11
+            let b = sub[j];   // --- py stmt 11
+            if (a == b || d.has(a) && d.get(a).has(b)) {   // --- py stmt 12
+                continue;   // --- py stmt 13
+            }
+            else {   // --- py stmt 14
+                flag = false;   // --- py stmt 15
+                break;   // --- py stmt 16
+            }
+        }
+        if (flag) {   // --- py stmt 17
+            return true;   // --- py stmt 18
+        }
+    }
+    return false;   // --- py stmt 19
+}
+
+
+

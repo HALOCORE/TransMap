@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var ans = [0].fill(s.length);",
+    "replacement": "    var ans = [0].fill(len(s));"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    for (var i = 0; i < s.length; i++) {",
+    "replacement": "    for (var i = 0; i < len(s); i++) {"
+  }
+]

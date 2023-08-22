@@ -1,0 +1,317 @@
+##### ///// Segment yiqrgb Idx 0
+
+### Python
+```python
+# Some floating point constants   # --- py stmt 1
+
+ONE_THIRD = 1.0/3.0   # --- py stmt 2
+ONE_SIXTH = 1.0/6.0   # --- py stmt 3
+TWO_THIRD = 2.0/3.0   # --- py stmt 4
+
+# YIQ: used by composite video signals (linear combinations of RGB)
+# Y: perceived grey level (0.0 == black, 1.0 == white)
+# I, Q: color components
+#
+# There are a great many versions of the constants used in these formulae.
+# The ones in this library uses constants from the FCC version of NTSC.
+
+def rgb_to_yiq(r, g, b):   # --- py stmt 5
+    y = 0.30*r + 0.59*g + 0.11*b   # --- py stmt 6
+    i = 0.74*(r-y) - 0.27*(b-y)   # --- py stmt 7
+    q = 0.48*(r-y) + 0.41*(b-y)   # --- py stmt 8
+    return (y, i, q)   # --- py stmt 9
+
+def yiq_to_rgb(y, i, q):   # --- py stmt 10
+    # r = y + (0.27*q + 0.41*i) / (0.74*0.41 + 0.27*0.48)
+    # b = y + (0.74*q - 0.48*i) / (0.74*0.41 + 0.27*0.48)
+    # g = y - (0.30*(r-y) + 0.11*(b-y)) / 0.59
+
+    r = y + 0.9468822170900693*i + 0.6235565819861433*q   # --- py stmt 11
+    g = y - 0.27478764629897834*i - 0.6356910791873801*q   # --- py stmt 12
+    b = y - 1.1085450346420322*i + 1.7090069284064666*q   # --- py stmt 13
+
+    if r < 0.0:   # --- py stmt 14
+        r = 0.0   # --- py stmt 15
+    if g < 0.0:   # --- py stmt 16
+        g = 0.0   # --- py stmt 17
+    if b < 0.0:   # --- py stmt 18
+        b = 0.0   # --- py stmt 19
+    if r > 1.0:   # --- py stmt 20
+        r = 1.0   # --- py stmt 21
+    if g > 1.0:   # --- py stmt 22
+        g = 1.0   # --- py stmt 23
+    if b > 1.0:   # --- py stmt 24
+        b = 1.0   # --- py stmt 25
+    return (r, g, b)   # --- py stmt 26
+
+```
+
+### JavaScript
+```javascript
+const ONE_THIRD = 1.0/3.0;   // --- py stmt 2
+const ONE_SIXTH = 1.0/6.0;   // --- py stmt 3
+const TWO_THIRD = 2.0/3.0;   // --- py stmt 4
+
+function rgb_to_yiq(r, g, b) {   // --- py stmt 5
+    const y = 0.30*r + 0.59*g + 0.11*b;   // --- py stmt 6
+    const i = 0.74*(r-y) - 0.27*(b-y);   // --- py stmt 7
+    const q = 0.48*(r-y) + 0.41*(b-y);   // --- py stmt 8
+    return [y, i, q];   // --- py stmt 9
+}
+
+function yiq_to_rgb(y, i, q) {   // --- py stmt 10
+    let r = y + 0.9468822170900693*i + 0.6235565819861433*q;   // --- py stmt 11
+    let g = y - 0.27478764629897834*i - 0.6356910791873801*q;   // --- py stmt 12
+    let b = y - 1.1085450346420322*i + 1.7090069284064666*q;   // --- py stmt 13
+
+    if (r < 0.0) {   // --- py stmt 14
+        r = 0.0;   // --- py stmt 15
+    }
+    if (g < 0.0) {   // --- py stmt 16
+        g = 0.0;   // --- py stmt 17
+    }
+    if (b < 0.0) {   // --- py stmt 18
+        b = 0.0;   // --- py stmt 19
+    }
+    if (r > 1.0) {   // --- py stmt 20
+        r = 1.0;   // --- py stmt 21
+    }
+    if (g > 1.0) {   // --- py stmt 22
+        g = 1.0;   // --- py stmt 23
+    }
+    if (b > 1.0) {   // --- py stmt 24
+        b = 1.0;   // --- py stmt 25
+    }
+    return [r, g, b];   // --- py stmt 26
+}
+```
+
+
+##### ///// Segment rgbhls Idx 1000
+
+### Python
+```python
+# HLS: Hue, Luminance, Saturation
+# H: position in the spectrum
+# L: color lightness
+# S: color saturation
+
+def rgb_to_hls(r, g, b):   # --- py stmt 1001
+    maxc = max(r, g, b)   # --- py stmt 1002
+    minc = min(r, g, b)   # --- py stmt 1003
+    sumc = (maxc+minc)   # --- py stmt 1004
+    rangec = (maxc-minc)   # --- py stmt 1005
+    l = sumc/2.0   # --- py stmt 1006
+    if minc == maxc:   # --- py stmt 1007
+        return 0.0, l, 0.0   # --- py stmt 1008
+    if l <= 0.5:   # --- py stmt 1009
+        s = rangec / sumc   # --- py stmt 1010
+    else:
+        s = rangec / (2.0-sumc)   # --- py stmt 1011
+    rc = (maxc-r) / rangec   # --- py stmt 1012
+    gc = (maxc-g) / rangec   # --- py stmt 1013
+    bc = (maxc-b) / rangec   # --- py stmt 1014
+    if r == maxc:   # --- py stmt 1015
+        h = bc-gc   # --- py stmt 1016
+    elif g == maxc:   # --- py stmt 1017
+        h = 2.0+rc-bc   # --- py stmt 1018
+    else:
+        h = 4.0+gc-rc   # --- py stmt 1019
+    h = (h/6.0) % 1.0   # --- py stmt 1020
+    return h, l, s   # --- py stmt 1021
+
+def hls_to_rgb(h, l, s):   # --- py stmt 1022
+    if s == 0.0:   # --- py stmt 1023
+        return l, l, l   # --- py stmt 1024
+    if l <= 0.5:   # --- py stmt 1025
+        m2 = l * (1.0+s)   # --- py stmt 1026
+    else:
+        m2 = l+s-(l*s)   # --- py stmt 1027
+    m1 = 2.0*l - m2   # --- py stmt 1028
+    return (_v(m1, m2, h+ONE_THIRD), _v(m1, m2, h), _v(m1, m2, h-ONE_THIRD))   # --- py stmt 1029
+
+def _v(m1, m2, hue):   # --- py stmt 1030
+    hue = hue % 1.0   # --- py stmt 1031
+    if hue < ONE_SIXTH:   # --- py stmt 1032
+        return m1 + (m2-m1)*hue*6.0   # --- py stmt 1033
+    if hue < 0.5:   # --- py stmt 1034
+        return m2   # --- py stmt 1035
+    if hue < TWO_THIRD:   # --- py stmt 1036
+        return m1 + (m2-m1)*(TWO_THIRD-hue)*6.0   # --- py stmt 1037
+    return m1   # --- py stmt 1038
+
+```
+
+### JavaScript
+```javascript
+function rgb_to_hls(r, g, b) {   // --- py stmt 1001
+    const maxc = Math.max(r, g, b);   // --- py stmt 1002
+    const minc = Math.min(r, g, b);   // --- py stmt 1003
+    const sumc = (maxc + minc);   // --- py stmt 1004
+    const rangec = (maxc - minc);   // --- py stmt 1005
+    const l = sumc / 2.0;   // --- py stmt 1006
+    if (minc === maxc) {   // --- py stmt 1007
+        return [0.0, l, 0.0];   // --- py stmt 1008
+    }
+    let s;
+    if (l <= 0.5) {   // --- py stmt 1009
+        s = rangec / sumc;   // --- py stmt 1010
+    } else {
+        s = rangec / (2.0 - sumc);   // --- py stmt 1011
+    }
+    const rc = (maxc - r) / rangec;   // --- py stmt 1012
+    const gc = (maxc - g) / rangec;   // --- py stmt 1013
+    const bc = (maxc - b) / rangec;   // --- py stmt 1014
+    let h;
+    if (r === maxc) {   // --- py stmt 1015
+        h = bc - gc;   // --- py stmt 1016
+    } else if (g === maxc) {   // --- py stmt 1017
+        h = 2.0 + rc - bc;   // --- py stmt 1018
+    } else {
+        h = 4.0 + gc - rc;   // --- py stmt 1019
+    }
+    h = (h / 6.0) % 1.0;   // --- py stmt 1020
+    return [h, l, s];   // --- py stmt 1021
+}
+
+function hls_to_rgb(h, l, s) {   // --- py stmt 1022
+    if (s === 0.0) {   // --- py stmt 1023
+        return [l, l, l];   // --- py stmt 1024
+    }
+    let m2;
+    if (l <= 0.5) {   // --- py stmt 1025
+        m2 = l * (1.0 + s);   // --- py stmt 1026
+    } else {
+        m2 = l + s - (l * s);   // --- py stmt 1027
+    }
+    const m1 = 2.0 * l - m2;   // --- py stmt 1028
+    return [_v(m1, m2, h + ONE_THIRD), _v(m1, m2, h), _v(m1, m2, h - ONE_THIRD)];   // --- py stmt 1029
+}
+
+function _v(m1, m2, hue) {   // --- py stmt 1030
+    hue = hue % 1.0;   // --- py stmt 1031
+    if (hue < ONE_SIXTH) {   // --- py stmt 1032
+        return m1 + (m2 - m1) * hue * 6.0;   // --- py stmt 1033
+    }
+    if (hue < 0.5) {   // --- py stmt 1034
+        return m2;   // --- py stmt 1035
+    }
+    if (hue < TWO_THIRD) {   // --- py stmt 1036
+        return m1 + (m2 - m1) * (TWO_THIRD - hue) * 6.0;   // --- py stmt 1037
+    }
+    return m1;   // --- py stmt 1038
+}
+```
+
+
+##### ///// Segment rgbhsv Idx 2000
+
+### Python
+```python
+# HSV: Hue, Saturation, Value
+# H: position in the spectrum
+# S: color saturation ("purity")
+# V: color brightness
+
+def rgb_to_hsv(r, g, b):   # --- py stmt 2001
+    maxc = max(r, g, b)   # --- py stmt 2002
+    minc = min(r, g, b)   # --- py stmt 2003
+    rangec = (maxc-minc)   # --- py stmt 2004
+    v = maxc   # --- py stmt 2005
+    if minc == maxc:   # --- py stmt 2006
+        return 0.0, 0.0, v   # --- py stmt 2007
+    s = rangec / maxc   # --- py stmt 2008
+    rc = (maxc-r) / rangec   # --- py stmt 2009
+    gc = (maxc-g) / rangec   # --- py stmt 2010
+    bc = (maxc-b) / rangec   # --- py stmt 2011
+    if r == maxc:   # --- py stmt 2012
+        h = bc-gc   # --- py stmt 2013
+    elif g == maxc:   # --- py stmt 2014
+        h = 2.0+rc-bc   # --- py stmt 2015
+    else:   # --- py stmt 2016
+        h = 4.0+gc-rc   # --- py stmt 2017
+    h = (h/6.0) % 1.0   # --- py stmt 2018
+    return h, s, v   # --- py stmt 2019
+
+def hsv_to_rgb(h, s, v):   # --- py stmt 2020
+    if s == 0.0:   # --- py stmt 2021
+        return v, v, v   # --- py stmt 2022
+    i = int(h*6.0) # XXX assume int() truncates!   # --- py stmt 2023
+    f = (h*6.0) - i   # --- py stmt 2024
+    p = v*(1.0 - s)   # --- py stmt 2025
+    q = v*(1.0 - s*f)   # --- py stmt 2026
+    t = v*(1.0 - s*(1.0-f))   # --- py stmt 2027
+    i = i%6   # --- py stmt 2028
+    if i == 0:   # --- py stmt 2029
+        return v, t, p   # --- py stmt 2030
+    if i == 1:   # --- py stmt 2031
+        return q, v, p   # --- py stmt 2032
+    if i == 2:   # --- py stmt 2033
+        return p, v, t   # --- py stmt 2034
+    if i == 3:   # --- py stmt 2035
+        return p, q, v   # --- py stmt 2036
+    if i == 4:   # --- py stmt 2037
+        return t, p, v   # --- py stmt 2038
+    if i == 5:   # --- py stmt 2039
+        return v, p, q   # --- py stmt 2040
+    # Cannot get here   # --- py stmt 2041
+
+```
+
+### JavaScript
+```javascript
+function rgb_to_hsv(r, g, b) {   // --- py stmt 2001
+    let maxc = Math.max(r, g, b);   // --- py stmt 2002
+    let minc = Math.min(r, g, b);   // --- py stmt 2003
+    let rangec = (maxc - minc);   // --- py stmt 2004
+    let v = maxc;   // --- py stmt 2005
+    if (minc === maxc) {   // --- py stmt 2006
+        return [0.0, 0.0, v];   // --- py stmt 2007
+    }
+    let s = rangec / maxc;   // --- py stmt 2008
+    let rc = (maxc - r) / rangec;   // --- py stmt 2009
+    let gc = (maxc - g) / rangec;   // --- py stmt 2010
+    let bc = (maxc - b) / rangec;   // --- py stmt 2011
+    let h;
+    if (r === maxc) {   // --- py stmt 2012
+        h = bc - gc;   // --- py stmt 2013
+    } else if (g === maxc) {   // --- py stmt 2014
+        h = 2.0 + rc - bc;   // --- py stmt 2015
+    } else {   // --- py stmt 2016
+        h = 4.0 + gc - rc;   // --- py stmt 2017
+    }
+    h = (h / 6.0) % 1.0;   // --- py stmt 2018
+    return [h, s, v];   // --- py stmt 2019
+}
+
+function hsv_to_rgb(h, s, v) {   // --- py stmt 2020
+    if (s === 0.0) {   // --- py stmt 2021
+        return [v, v, v];   // --- py stmt 2022
+    }
+    let i = parseInt(h * 6.0);   // --- py stmt 2023
+    let f = (h * 6.0) - i;   // --- py stmt 2024
+    let p = v * (1.0 - s);   // --- py stmt 2025
+    let q = v * (1.0 - s * f);   // --- py stmt 2026
+    let t = v * (1.0 - s * (1.0 - f));   // --- py stmt 2027
+    i = i % 6;   // --- py stmt 2028
+    if (i === 0) {   // --- py stmt 2029
+        return [v, t, p];   // --- py stmt 2030
+    }
+    if (i === 1) {   // --- py stmt 2031
+        return [q, v, p];   // --- py stmt 2032
+    }
+    if (i === 2) {   // --- py stmt 2033
+        return [p, v, t];   // --- py stmt 2034
+    }
+    if (i === 3) {   // --- py stmt 2035
+        return [p, q, v];   // --- py stmt 2036
+    }
+    if (i === 4) {   // --- py stmt 2037
+        return [t, p, v];   // --- py stmt 2038
+    }
+    if (i === 5) {   // --- py stmt 2039
+        return [v, p, q];   // --- py stmt 2040
+    }
+    // Cannot get here   // --- py stmt 2041
+}
+```

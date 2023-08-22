@@ -1,0 +1,63 @@
+
+### Python
+### maxSumMinProduct 
+from itertools import accumulate   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(nums: List[int]) -> int:   # --- py stmt 3
+    mod = int(1e9) + 7   # --- py stmt 4
+    n = len(nums)   # --- py stmt 5
+    left = [-1] * n   # --- py stmt 6
+    right = [n] * n   # --- py stmt 7
+    stk = []   # --- py stmt 8
+    for i, v in enumerate(nums):   # --- py stmt 9
+        while stk and nums[stk[-1]] >= v:   # --- py stmt 10
+            stk.pop()   # --- py stmt 11
+        if stk:   # --- py stmt 12
+            left[i] = stk[-1]   # --- py stmt 13
+        stk.append(i)   # --- py stmt 14
+    stk = []   # --- py stmt 15
+    for i in range(n - 1, -1, -1):   # --- py stmt 16
+        while stk and nums[stk[-1]] > nums[i]:   # --- py stmt 17
+            stk.pop()   # --- py stmt 18
+        if stk:   # --- py stmt 19
+            right[i] = stk[-1]   # --- py stmt 20
+        stk.append(i)   # --- py stmt 21
+    s = [0] + list(accumulate(nums))   # --- py stmt 22
+    ans = max(v * (s[right[i]] - s[left[i] + 1]) for i, v in enumerate(nums))   # --- py stmt 23
+    return ans % mod   # --- py stmt 24
+
+### JavaScript
+"use strict";
+
+function f_gold(nums) {   // --- py stmt 3
+    var mod = Math.pow(10, 9) + 7;   // --- py stmt 4
+    var n = nums.length;   // --- py stmt 5
+    var left = Array(n).fill(-1);   // --- py stmt 6
+    var right = Array(n).fill(n);   // --- py stmt 7
+    var stk = [];   // --- py stmt 8
+    for (var i = 0; i < n; i++) {   // --- py stmt 9
+        while (stk.length > 0 && nums[stk[stk.length - 1]] >= nums[i]) {   // --- py stmt 10
+            stk.pop();   // --- py stmt 11
+        }
+        if (stk.length > 0) {   // --- py stmt 12
+            left[i] = stk[stk.length - 1];   // --- py stmt 13
+        }
+        stk.push(i);   // --- py stmt 14
+    }
+    stk = [];   // --- py stmt 15
+    for (var i = n - 1; i >= 0; i--) {   // --- py stmt 16
+        while (stk.length > 0 && nums[stk[stk.length - 1]] > nums[i]) {   // --- py stmt 17
+            stk.pop();   // --- py stmt 18
+        }
+        if (stk.length > 0) {   // --- py stmt 19
+            right[i] = stk[stk.length - 1];   // --- py stmt 20
+        }
+        stk.push(i);   // --- py stmt 21
+    }
+    var s = [0].concat(nums.reduce(function (a, b) { return a + b; }));   // --- py stmt 22
+    var ans = Math.max.apply(Math, nums.map(function (v, i) { return v * (s[right[i]] - s[left[i] + 1]); }));   // --- py stmt 23
+    return ans % mod;   // --- py stmt 24
+}
+
+
+

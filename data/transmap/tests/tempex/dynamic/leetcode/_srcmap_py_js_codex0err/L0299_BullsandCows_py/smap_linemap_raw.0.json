@@ -1,0 +1,188 @@
+{
+  "src_anno_stmts": [
+    [
+      "### getHint",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(secret: str, guess: str) -> str:",
+      [
+        2
+      ]
+    ],
+    [
+      "    x = y = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    cnt1 = [0] * 10",
+      [
+        4
+      ]
+    ],
+    [
+      "    cnt2 = [0] * 10",
+      [
+        5
+      ]
+    ],
+    [
+      "    for i in range(len(secret)):",
+      [
+        6
+      ]
+    ],
+    [
+      "        if secret[i] == guess[i]:",
+      [
+        7
+      ]
+    ],
+    [
+      "            x += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "        else:",
+      [
+        9
+      ]
+    ],
+    [
+      "            cnt1[int(secret[i])] += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "            cnt2[int(guess[i])] += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    for i in range(10):",
+      [
+        12
+      ]
+    ],
+    [
+      "        y += min(cnt1[i], cnt2[i])",
+      [
+        13
+      ]
+    ],
+    [
+      "    return f'{x}A{y}B'",
+      [
+        14
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(secret, guess) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var x = y = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var cnt1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];",
+      [
+        4
+      ]
+    ],
+    [
+      "    var cnt2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < secret.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (secret[i] == guess[i]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            x += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "        } else {",
+      [
+        9
+      ]
+    ],
+    [
+      "            cnt1[parseInt(secret[i])] += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "            cnt2[parseInt(guess[i])] += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < 10; i++) {",
+      [
+        12
+      ]
+    ],
+    [
+      "        y += Math.min(cnt1[i], cnt2[i]);",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return x + \"A\" + y + \"B\";",
+      [
+        14
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

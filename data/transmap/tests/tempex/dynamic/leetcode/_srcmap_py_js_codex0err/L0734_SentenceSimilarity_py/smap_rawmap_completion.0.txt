@@ -1,0 +1,40 @@
+
+### Python
+### areSentencesSimilar 
+from typing import *   # --- py stmt 1
+def f_gold(sentence1: List[str], sentence2: List[str], similarPairs: List[List[str]]   # --- py stmt 2
+) -> bool:
+    if len(sentence1) != len(sentence2):   # --- py stmt 3
+        return False   # --- py stmt 4
+    pairs = {(word1, word2) for word1, word2 in similarPairs}   # --- py stmt 5
+    for i in range(len(sentence1)):   # --- py stmt 6
+        similar = (   # --- py stmt 7
+            (sentence1[i], sentence2[i]) in pairs   # --- py stmt 8
+            or (sentence2[i], sentence1[i]) in pairs   # --- py stmt 9
+            or sentence1[i] == sentence2[i]   # --- py stmt 10
+        )
+        if not similar:   # --- py stmt 11
+            return False   # --- py stmt 12
+    return True   # --- py stmt 13
+
+### JavaScript
+"use strict";
+function f_gold(sentence1, sentence2, similarPairs) {   // --- py stmt 2
+    if (sentence1.length != sentence2.length) {   // --- py stmt 3
+        return false;   // --- py stmt 4
+    }
+    var pairs = new Set();   // --- py stmt 5
+    for (var i = 0; i < similarPairs.length; i++) {   // --- py stmt 6
+        pairs.add(similarPairs[i]);   // --- py stmt 5
+    }
+    for (var i = 0; i < sentence1.length; i++) {   // --- py stmt 6
+        var similar = (pairs.has([sentence1[i], sentence2[i]].join(",")) || pairs.has([sentence2[i], sentence1[i]].join(",")) || sentence1[i] == sentence2[i]);   // --- py stmt 7, py stmt 8, py stmt 9, py stmt 10
+        if (!similar) {   // --- py stmt 11
+            return false;   // --- py stmt 12
+        }
+    }
+    return true;   // --- py stmt 13
+}
+
+
+

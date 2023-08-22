@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    var sorted_arr = [...arr].sort(function (a, b) { return b - a; });",
+    "replacement": "    var sorted_arr = arr.sort(function (a, b) { return b - a; });"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "            if(typeof(dic[var_1]) !== \"undefined\") new_arr.push(dic[var_1]);",
+    "replacement": "            new_arr.push(dic[var_1]);"
+  }
+]

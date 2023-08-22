@@ -1,0 +1,52 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,2,5,12]",
+    "break_idx": 2,
+    "expected_src_pk": "[3,2,3,11]",
+    "actural_src_pk": "[3,2,3,11]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"str\":[\"S\",10,\"HCoAefoaan\"],\"mx\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",10,\"HCoAefoaan\"],\"mx\":[\"S\",4,\"oaan\"],\"i\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "mx"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[5,2,5,12]",
+    "break_idx": 1,
+    "expected_src_pk": "[3,2,3,11]",
+    "actural_src_pk": "[3,2,3,11]",
+    "src_cov_lines": [
+      2
+    ],
+    "tar_cov_lines": [
+      2,
+      3
+    ],
+    "tar_data": [
+      "{\"str\":[\"S\",10,\"HCoAefoaan\"],\"mx\":[\"N\",\"NaN\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"str\":[\"S\",10,\"HCoAefoaan\"],\"mx\":[\"S\",4,\"oaan\"],\"i\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "mx"
+    ]
+  }
+]

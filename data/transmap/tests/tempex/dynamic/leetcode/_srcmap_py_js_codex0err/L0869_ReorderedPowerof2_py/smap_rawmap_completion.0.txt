@@ -1,0 +1,42 @@
+
+### Python
+### reorderedPowerOf2 
+from typing import *   # --- py stmt 1
+def f_gold(n: int) -> bool:   # --- py stmt 2
+    def convert(n):   # --- py stmt 3
+        counter = [0] * 10   # --- py stmt 4
+        while n > 0:   # --- py stmt 5
+            counter[n % 10] += 1   # --- py stmt 6
+            n //= 10   # --- py stmt 7
+        return counter   # --- py stmt 8
+    i, s = 1, convert(n)   # --- py stmt 9
+    while i <= 10**9:   # --- py stmt 10
+        if convert(i) == s:   # --- py stmt 11
+            return True   # --- py stmt 12
+        i <<= 1   # --- py stmt 13
+    return False   # --- py stmt 14
+
+### JavaScript
+"use strict";
+function f_gold(n) {   // --- py stmt 2
+    function convert(n) {   // --- py stmt 3
+        var counter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];   // --- py stmt 4
+        while (n > 0) {   // --- py stmt 5
+            counter[n % 10] += 1;   // --- py stmt 6
+            n = Math.floor(n / 10);   // --- py stmt 7
+        }
+        return counter;   // --- py stmt 8
+    }
+    var i = 1;   // --- py stmt 9
+    var s = convert(n);   // --- py stmt 9
+    while (i <= 1000000000) {   // --- py stmt 10
+        if (convert(i) == s) {   // --- py stmt 11
+            return true;   // --- py stmt 12
+        }
+        i <<= 1;   // --- py stmt 13
+    }
+    return false;   // --- py stmt 14
+}
+
+
+

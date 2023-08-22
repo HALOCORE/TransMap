@@ -1,0 +1,8 @@
+[
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "        for (var j = 0; j < g[i]?.length; j++) {",
+    "replacement": "        for (var j = 0; j < g[i].length; j++) {"
+  }
+]

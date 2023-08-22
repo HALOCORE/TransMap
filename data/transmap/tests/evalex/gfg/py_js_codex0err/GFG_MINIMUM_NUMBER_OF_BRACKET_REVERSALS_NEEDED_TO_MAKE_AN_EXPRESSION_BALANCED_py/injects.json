@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 7,
+    "line_end": 8,
+    "content": "      else s.unshift(expr[i]);",
+    "replacement": "      else s.insert(0, expr[i]);"
+  },
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "    else s.unshift(expr[i]);",
+    "replacement": "    else s.insert(0, expr[i]);"
+  }
+]

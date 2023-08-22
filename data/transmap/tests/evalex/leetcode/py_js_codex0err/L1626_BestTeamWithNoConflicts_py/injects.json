@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    var nums = Array.from(Array(scores.length), (_, k) => [ages[k], scores[k]]);",
+    "replacement": "    var nums = Array.from(zip(ages, scores));"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    nums.sort((a, b) => a[0] !== b[0] ? a[0] - b[0] : a[1] - b[1]);",
+    "replacement": "    nums.sort();"
+  }
+]

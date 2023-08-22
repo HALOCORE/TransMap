@@ -1,0 +1,212 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numSubarraysWithSum",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int], goal: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    i1 = i2 = s1 = s2 = j = ans = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = len(nums)",
+      [
+        4
+      ]
+    ],
+    [
+      "    while j < n:",
+      [
+        5
+      ]
+    ],
+    [
+      "        s1 += nums[j]",
+      [
+        6
+      ]
+    ],
+    [
+      "        s2 += nums[j]",
+      [
+        7
+      ]
+    ],
+    [
+      "        while i1 <= j and s1 > goal:",
+      [
+        8
+      ]
+    ],
+    [
+      "            s1 -= nums[i1]",
+      [
+        9
+      ]
+    ],
+    [
+      "            i1 += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "        while i2 <= j and s2 >= goal:",
+      [
+        11
+      ]
+    ],
+    [
+      "            s2 -= nums[i2]",
+      [
+        12
+      ]
+    ],
+    [
+      "            i2 += 1",
+      [
+        13
+      ]
+    ],
+    [
+      "        ans += i2 - i1",
+      [
+        14
+      ]
+    ],
+    [
+      "        j += 1",
+      [
+        15
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums, goal) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var i1 = i2 = s1 = s2 = j = ans = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = nums.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    while (j < n) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        s1 += nums[j];",
+      [
+        6
+      ]
+    ],
+    [
+      "        s2 += nums[j];",
+      [
+        7
+      ]
+    ],
+    [
+      "        while (i1 <= j && s1 > goal) {",
+      [
+        8
+      ]
+    ],
+    [
+      "            s1 -= nums[i1];",
+      [
+        9
+      ]
+    ],
+    [
+      "            i1 += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        while (i2 <= j && s2 >= goal) {",
+      [
+        11
+      ]
+    ],
+    [
+      "            s2 -= nums[i2];",
+      [
+        12
+      ]
+    ],
+    [
+      "            i2 += 1;",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans += i2 - i1;",
+      [
+        14
+      ]
+    ],
+    [
+      "        j += 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

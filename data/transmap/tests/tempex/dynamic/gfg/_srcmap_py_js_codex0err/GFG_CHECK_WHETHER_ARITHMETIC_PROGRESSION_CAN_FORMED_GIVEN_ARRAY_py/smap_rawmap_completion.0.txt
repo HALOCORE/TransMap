@@ -1,0 +1,25 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  if(n == 1): return True   # --- py stmt 2
+  arr.sort()   # --- py stmt 3
+  d = arr[1] - arr[0]   # --- py stmt 4
+  for i in range(2, n):   # --- py stmt 5
+    if(arr[i] - arr[i - 1] != d): return False   # --- py stmt 6
+  return True   # --- py stmt 7
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  if (n == 1) return true;   // --- py stmt 2
+  arr.sort();   // --- py stmt 3
+  var d = arr[1] - arr[0];   // --- py stmt 4
+  for (var i = 2; i < n; i++) {   // --- py stmt 5
+    if (arr[i] - arr[i - 1] != d) return false;   // --- py stmt 6
+  }
+  return true;   // --- py stmt 7
+}
+
+
+

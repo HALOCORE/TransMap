@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 3,
+    "line_end": 5,
+    "content": "        var t;\n        [n, t] = [Math.floor(n / k), n % k];",
+    "replacement": "        n = Math.floor(n / k);"
+  },
+  {
+    "line_start": 5,
+    "line_end": 6,
+    "content": "        res += t;",
+    "replacement": "        res += n % k;"
+  }
+]

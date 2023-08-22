@@ -1,0 +1,44 @@
+
+### Python
+### maxNumberOfFamilies 
+from collections import defaultdict   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(n: int, reservedSeats: List[List[int]]) -> int:   # --- py stmt 3
+    m = defaultdict(int)   # --- py stmt 4
+    for i, j in reservedSeats:   # --- py stmt 5
+        m[i] = m[i] | (1 << (10 - j))   # --- py stmt 6
+    masks = (0b0111100000, 0b0000011110, 0b0001111000)   # --- py stmt 7
+    ans = (n - len(m)) << 1   # --- py stmt 8
+    for v in m.values():   # --- py stmt 9
+        for mask in masks:   # --- py stmt 10
+            if (v & mask) == 0:   # --- py stmt 11
+                v |= mask   # --- py stmt 12
+                ans += 1   # --- py stmt 13
+    return ans   # --- py stmt 14
+
+### JavaScript
+"use strict";
+
+function f_gold(n, reservedSeats) {   // --- py stmt 3
+    var m = new Map();   // --- py stmt 4
+    for (var i = 0; i < reservedSeats.length; i++) {   // --- py stmt 5
+        var j = reservedSeats[i];   // --- py stmt 5
+        if (m.has(i)) {   // --- py stmt 6
+            m.set(i, m.get(i) | (1 << (10 - j)));   // --- py stmt 6
+        } else {   // --- py stmt 6
+            m.set(i, (1 << (10 - j)));   // --- py stmt 6
+        }
+    }
+    var masks = [0b0111100000, 0b0000011110, 0b0001111000];   // --- py stmt 7
+    var ans = (n - m.size) << 1;   // --- py stmt 8
+    for (var v of m.values()) {   // --- py stmt 9
+        for (var mask of masks) {   // --- py stmt 10
+            if ((v & mask) == 0) {   // --- py stmt 11
+                v |= mask;   // --- py stmt 12
+                ans += 1;   // --- py stmt 13
+            }
+        }
+    }
+    return ans;   // --- py stmt 14
+}
+

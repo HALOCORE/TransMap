@@ -1,0 +1,23 @@
+
+### Python
+### detectCapitalUse 
+from typing import *   # --- py stmt 1
+def f_gold(word: str) -> bool:   # --- py stmt 2
+    cnt = 0   # --- py stmt 3
+    for c in word:   # --- py stmt 4
+        if c.isupper():   # --- py stmt 5
+            cnt += 1   # --- py stmt 6
+    return cnt == 0 or cnt == len(word) or (cnt == 1 and word[0].isupper())   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function f_gold(word) {   // --- py stmt 2
+    var cnt = 0;   // --- py stmt 3
+    for (var c of word) {   // --- py stmt 4
+        if (c.isupper()) {   // --- py stmt 5
+            cnt += 1;   // --- py stmt 6
+        }
+    }
+    return cnt == 0 || cnt == word.length || (cnt == 1 && word[0].isupper());   // --- py stmt 7
+}
+

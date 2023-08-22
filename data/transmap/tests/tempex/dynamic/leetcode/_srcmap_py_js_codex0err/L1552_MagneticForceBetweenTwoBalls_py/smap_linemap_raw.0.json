@@ -1,0 +1,266 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxDistance",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(position: List[int], m: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def check(f):",
+      [
+        3
+      ]
+    ],
+    [
+      "        prev = position[0]",
+      [
+        4
+      ]
+    ],
+    [
+      "        cnt = 1",
+      [
+        5
+      ]
+    ],
+    [
+      "        for curr in position[1:]:",
+      [
+        6
+      ]
+    ],
+    [
+      "            if curr - prev >= f:",
+      [
+        7
+      ]
+    ],
+    [
+      "                prev = curr",
+      [
+        8
+      ]
+    ],
+    [
+      "                cnt += 1",
+      [
+        9
+      ]
+    ],
+    [
+      "        return cnt >= m",
+      [
+        10
+      ]
+    ],
+    [
+      "    position.sort()",
+      [
+        11
+      ]
+    ],
+    [
+      "    left, right = 1, position[-1]",
+      [
+        12
+      ]
+    ],
+    [
+      "    while left < right:",
+      [
+        13
+      ]
+    ],
+    [
+      "        mid = (left + right + 1) >> 1",
+      [
+        14
+      ]
+    ],
+    [
+      "        if check(mid):",
+      [
+        15
+      ]
+    ],
+    [
+      "            left = mid",
+      [
+        16
+      ]
+    ],
+    [
+      "        else:",
+      [
+        17
+      ]
+    ],
+    [
+      "            right = mid - 1",
+      [
+        18
+      ]
+    ],
+    [
+      "    return left",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(position, m) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function check(f) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        var prev = position[0];",
+      [
+        4
+      ]
+    ],
+    [
+      "        var cnt = 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "        for (var curr of position.slice(1)) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (curr - prev >= f) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                prev = curr;",
+      [
+        8
+      ]
+    ],
+    [
+      "                cnt += 1;",
+      [
+        9
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return cnt >= m;",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    position.sort();",
+      [
+        11
+      ]
+    ],
+    [
+      "    var left = 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "    var right = position[position.length - 1];",
+      [
+        12
+      ]
+    ],
+    [
+      "    while (left < right) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        var mid = (left + right + 1) >> 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "        if (check(mid)) {",
+      [
+        15
+      ]
+    ],
+    [
+      "            left = mid;",
+      [
+        16
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        else {",
+      [
+        17
+      ]
+    ],
+    [
+      "            right = mid - 1;",
+      [
+        18
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return left;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,42 @@
+
+### Python
+### thirdMax 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(nums: List[int]) -> int:   # --- py stmt 4
+    m1 = m2 = m3 = float('-inf')   # --- py stmt 5
+    for num in nums:   # --- py stmt 6
+        if num in [m1, m2, m3]:   # --- py stmt 7
+            continue   # --- py stmt 8
+        if num > m1:   # --- py stmt 9
+            m3, m2, m1 = m2, m1, num   # --- py stmt 10
+        elif num > m2:   # --- py stmt 11
+            m3, m2 = m2, num   # --- py stmt 12
+        elif num > m3:   # --- py stmt 13
+            m3 = num   # --- py stmt 14
+    return m3 if m3 != float('-inf') else m1   # --- py stmt 15
+
+### JavaScript
+"use strict";
+
+function f_gold(nums) {   // --- py stmt 4
+    var m1 = m2 = m3 = -Infinity;   // --- py stmt 5
+    for (var num of nums) {   // --- py stmt 6
+        if ([m1, m2, m3].includes(num)) continue;   // --- py stmt 7, py stmt 8
+        if (num > m1) {   // --- py stmt 9
+            m3 = m2;   // --- py stmt 10
+            m2 = m1;   // --- py stmt 10
+            m1 = num;   // --- py stmt 10
+        } else if (num > m2) {   // --- py stmt 11
+            m3 = m2;   // --- py stmt 12
+            m2 = num;   // --- py stmt 12
+        } else if (num > m3) {   // --- py stmt 13
+            m3 = num;   // --- py stmt 14
+        }
+    }
+    return m3 != -Infinity ? m3 : m1;   // --- py stmt 15
+}
+
+
+

@@ -1,0 +1,64 @@
+
+### Python
+### romanToInt 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> int:   # --- py stmt 2
+    nums = {   # --- py stmt 3
+        'M': 1000,   # --- py stmt 4
+        'CM': 900,   # --- py stmt 5
+        'D': 500,   # --- py stmt 6
+        'CD': 400,   # --- py stmt 7
+        'C': 100,   # --- py stmt 8
+        'XC': 90,   # --- py stmt 9
+        'L': 50,   # --- py stmt 10
+        'XL': 40,   # --- py stmt 11
+        'X': 10,   # --- py stmt 12
+        'IX': 9,   # --- py stmt 13
+        'V': 5,   # --- py stmt 14
+        'IV': 4,   # --- py stmt 15
+        'I': 1,   # --- py stmt 16
+    }
+    i = res = 0   # --- py stmt 17
+    while i < len(s):   # --- py stmt 18
+        if i + 1 < len(s) and s[i : i + 2] in nums:   # --- py stmt 19
+            res += nums[s[i : i + 2]]   # --- py stmt 20
+            i += 2   # --- py stmt 21
+        else:   # --- py stmt 22
+            res += nums[s[i : i + 1]]   # --- py stmt 23
+            i += 1   # --- py stmt 24
+    return res   # --- py stmt 25
+
+### JavaScript
+"use strict";
+
+function f_gold(s) {   // --- py stmt 2
+    let nums = {   // --- py stmt 3
+        'M': 1000,   // --- py stmt 4
+        'CM': 900,   // --- py stmt 5
+        'D': 500,   // --- py stmt 6
+        'CD': 400,   // --- py stmt 7
+        'C': 100,   // --- py stmt 8
+        'XC': 90,   // --- py stmt 9
+        'L': 50,   // --- py stmt 10
+        'XL': 40,   // --- py stmt 11
+        'X': 10,   // --- py stmt 12
+        'IX': 9,   // --- py stmt 13
+        'V': 5,   // --- py stmt 14
+        'IV': 4,   // --- py stmt 15
+        'I': 1,   // --- py stmt 16
+    };
+    let i = res = 0;   // --- py stmt 17
+    while (i < s.length) {   // --- py stmt 18
+        if (i + 1 < s.length && s.substring(i, i + 2) in nums) {   // --- py stmt 19
+            res += nums[s.substring(i, i + 2)];   // --- py stmt 20
+            i += 2;   // --- py stmt 21
+        } else {   // --- py stmt 22
+            res += nums[s.substring(i, i + 1)];   // --- py stmt 23
+            i += 1;   // --- py stmt 24
+        }
+    }
+    return res;   // --- py stmt 25
+}
+
+
+

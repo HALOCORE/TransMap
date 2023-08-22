@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,7,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: mx is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"differences\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"-3\"],[\"N\",\"4\"]],\"lower\":[\"N\",\"1\"],\"upper\":[\"N\",\"6\"],\"num\":[\"N\",\"0\"],\"mi\":[\"N\",\"0\"],\"mx\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[4,4,7,25]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":1,\"err_msg\":\"ReferenceError: mx is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"differences\":[\"A\",3,[\"N\",\"1\"],[\"N\",\"-3\"],[\"N\",\"4\"]],\"lower\":[\"N\",\"1\"],\"upper\":[\"N\",\"6\"],\"num\":[\"N\",\"0\"],\"mi\":[\"N\",\"0\"],\"mx\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[14,4,14,14]",
+    "src_cov_lines": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13
+    ],
+    "tar_cov_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"ReferenceError: ord is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"YazaAay\"],\"n\":[\"N\",\"7\"],\"ans\":[\"S\",3,\"aAa\"],\"i\":[\"N\",\"6\"],\"lower\":[\"N\",\"16777216\"],\"upper\":[\"N\",\"0\"],\"j\":[\"N\",\"6\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[6,8,6,25]",
+    "src_cov_lines": [
+      7,
+      8,
+      9,
+      11,
+      12
+    ],
+    "tar_cov_lines": [
+      6,
+      7,
+      8,
+      11,
+      13
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"ReferenceError: ord is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"YazaAay\"],\"n\":[\"N\",\"7\"],\"ans\":[\"S\",0,\"\"],\"i\":[\"N\",\"1\"],\"lower\":[\"N\",\"50331649\"],\"upper\":[\"N\",\"16777217\"],\"j\":[\"N\",\"6\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[12,12,13,34]",
+    "src_cov_lines": [
+      8,
+      9
+    ],
+    "tar_cov_lines": [
+      7,
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"ReferenceError: ord is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"YazaAay\"],\"n\":[\"N\",\"7\"],\"ans\":[\"S\",0,\"\"],\"i\":[\"N\",\"0\"],\"lower\":[\"N\",\"1\"],\"upper\":[\"N\",\"16777216\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[12,12,13,34]",
+    "src_cov_lines": [
+      9
+    ],
+    "tar_cov_lines": [
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"ReferenceError: ord is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",7,\"YazaAay\"],\"n\":[\"N\",\"7\"],\"ans\":[\"S\",0,\"\"],\"i\":[\"N\",\"0\"],\"lower\":[\"N\",\"1\"],\"upper\":[\"N\",\"16777216\"],\"j\":[\"N\",\"1\"]}",
+      ""
+    ]
+  }
+]

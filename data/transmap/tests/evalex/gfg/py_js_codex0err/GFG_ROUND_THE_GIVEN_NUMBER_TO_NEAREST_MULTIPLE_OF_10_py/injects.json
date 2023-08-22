@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "  var a = Math.floor(n / 10) * 10;",
+    "replacement": "  var a = (n / 10) * 10;"
+  },
+  {
+    "line_start": 3,
+    "line_end": 4,
+    "content": "  return (n - a > b - n)? b : a;",
+    "replacement": "  return (b if n - a > b - n else a);"
+  }
+]

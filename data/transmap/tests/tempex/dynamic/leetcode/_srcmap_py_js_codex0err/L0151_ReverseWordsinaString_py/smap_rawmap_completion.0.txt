@@ -1,0 +1,15 @@
+
+### Python
+### reverseWords 
+from typing import *   # --- py stmt 1
+def f_gold(s: str) -> str:   # --- py stmt 2
+    words = s.strip().split()   # --- py stmt 3
+    return ' '.join(words[::-1])   # --- py stmt 4
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 2
+    var words = s.trim().split();   // --- py stmt 3
+    return words.reverse().join(' ');   // --- py stmt 4
+}
+

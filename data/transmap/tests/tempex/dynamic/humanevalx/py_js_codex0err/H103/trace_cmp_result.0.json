@@ -1,0 +1,40 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 4,
+    "actural_src_pk": "[1,4,2,17]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"7\"],\"m\":[\"N\",\"13\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[1,4,2,17]",
+    "src_cov_lines": [
+      6
+    ],
+    "tar_cov_lines": [
+      8
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":8,\"err_msg\":\"Error: MyLogError MISMATCH\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"7\"],\"m\":[\"N\",\"13\"]}",
+      ""
+    ]
+  }
+]

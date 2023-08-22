@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 9,
+    "line_end": 10,
+    "content": "                if (!s.has(x + \",\" + y)) {",
+    "replacement": "                if (!s.has([x, y])) {"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "        s.add(dig[i].join(\",\"));",
+    "replacement": "        s.add(dig[i]);"
+  }
+]

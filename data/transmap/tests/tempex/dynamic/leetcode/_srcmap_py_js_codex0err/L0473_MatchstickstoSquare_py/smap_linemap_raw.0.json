@@ -1,0 +1,266 @@
+{
+  "src_anno_stmts": [
+    [
+      "### makesquare",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(matchsticks: List[int]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    def dfs(u):",
+      [
+        3
+      ]
+    ],
+    [
+      "        if u == len(matchsticks):",
+      [
+        4
+      ]
+    ],
+    [
+      "            return True",
+      [
+        5
+      ]
+    ],
+    [
+      "        for i in range(4):",
+      [
+        6
+      ]
+    ],
+    [
+      "            if i > 0 and edges[i - 1] == edges[i]:",
+      [
+        7
+      ]
+    ],
+    [
+      "                continue",
+      [
+        8
+      ]
+    ],
+    [
+      "            edges[i] += matchsticks[u]",
+      [
+        9
+      ]
+    ],
+    [
+      "            if edges[i] <= x and dfs(u + 1):",
+      [
+        10
+      ]
+    ],
+    [
+      "                return True",
+      [
+        11
+      ]
+    ],
+    [
+      "            edges[i] -= matchsticks[u]",
+      [
+        12
+      ]
+    ],
+    [
+      "        return False",
+      [
+        13
+      ]
+    ],
+    [
+      "    x, mod = divmod(sum(matchsticks), 4)",
+      [
+        14
+      ]
+    ],
+    [
+      "    if mod or x < max(matchsticks):",
+      [
+        15
+      ]
+    ],
+    [
+      "        return False",
+      [
+        16
+      ]
+    ],
+    [
+      "    edges = [0] * 4",
+      [
+        17
+      ]
+    ],
+    [
+      "    matchsticks.sort(reverse=True)",
+      [
+        18
+      ]
+    ],
+    [
+      "    return dfs(0)",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(matchsticks) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    function dfs(u) {",
+      [
+        3
+      ]
+    ],
+    [
+      "        if (u == matchsticks.length) {",
+      [
+        4
+      ]
+    ],
+    [
+      "            return true;",
+      [
+        5
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let i = 0; i < 4; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            if (i > 0 && edges[i - 1] == edges[i]) {",
+      [
+        7
+      ]
+    ],
+    [
+      "                continue;",
+      [
+        8
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            edges[i] += matchsticks[u];",
+      [
+        9
+      ]
+    ],
+    [
+      "            if (edges[i] <= x && dfs(u + 1)) {",
+      [
+        10
+      ]
+    ],
+    [
+      "                return true;",
+      [
+        11
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "            edges[i] -= matchsticks[u];",
+      [
+        12
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        return false;",
+      [
+        13
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let x = sum(matchsticks) / 4;",
+      [
+        14
+      ]
+    ],
+    [
+      "    let mod = matchsticks.reduce((a, b) => a + b) % 4;",
+      [
+        14
+      ]
+    ],
+    [
+      "    if (mod || x < Math.max(matchsticks)) {",
+      [
+        15
+      ]
+    ],
+    [
+      "        return false;",
+      [
+        16
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let edges = [0, 0, 0, 0];",
+      [
+        17
+      ]
+    ],
+    [
+      "    matchsticks.sort((a, b) => b - a);",
+      [
+        18
+      ]
+    ],
+    [
+      "    return dfs(0);",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

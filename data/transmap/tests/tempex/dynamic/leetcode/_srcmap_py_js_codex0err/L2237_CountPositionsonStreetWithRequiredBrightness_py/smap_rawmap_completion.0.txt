@@ -1,0 +1,30 @@
+
+### Python
+### meetRequirement 
+from itertools import accumulate   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(n: int, lights: List[List[int]], requirement: List[int]   # --- py stmt 3
+) -> int:   # --- py stmt 4
+    d = [0] * 100010   # --- py stmt 5
+    for p, r in lights:   # --- py stmt 6
+        i, j = max(0, p - r), min(n - 1, p + r)   # --- py stmt 7
+        d[i] += 1   # --- py stmt 8
+        d[j + 1] -= 1   # --- py stmt 9
+    return sum(s >= r for s, r in zip(accumulate(d), requirement))   # --- py stmt 10
+
+### JavaScript
+"use strict";
+
+const f_gold = (n, lights, requirement) => {   // --- py stmt 3
+    let d = Array(100010).fill(0);   // --- py stmt 5
+    for (let [p, r] of lights) {   // --- py stmt 6
+        let i = Math.max(0, p - r);   // --- py stmt 7
+        let j = Math.min(n - 1, p + r);   // --- py stmt 7
+        d[i] += 1;   // --- py stmt 8
+        d[j + 1] -= 1;   // --- py stmt 9
+    }
+    return [...d].reduce((a, b) => a + b) >= requirement;   // --- py stmt 10
+};
+
+
+

@@ -1,0 +1,154 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n, x):",
+      [
+        1
+      ]
+    ],
+    [
+      "  if n < 2: return False",
+      [
+        2
+      ]
+    ],
+    [
+      "  s = set()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(0, n):",
+      [
+        4
+      ]
+    ],
+    [
+      "    if arr[i] == 0:",
+      [
+        5
+      ]
+    ],
+    [
+      "      if x == 0: return True",
+      [
+        6
+      ]
+    ],
+    [
+      "      else: continue",
+      [
+        7
+      ]
+    ],
+    [
+      "    if x % arr[i] == 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "      if x // arr[i] in s: return True",
+      [
+        9
+      ]
+    ],
+    [
+      "      s.add(arr[i])",
+      [
+        10
+      ]
+    ],
+    [
+      "  return False",
+      [
+        11
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n, x) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  if (n < 2) return false;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var s = new Set();",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (arr[i] == 0) {",
+      [
+        5
+      ]
+    ],
+    [
+      "      if (x == 0) return true;",
+      [
+        6
+      ]
+    ],
+    [
+      "      else continue;",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (x % arr[i] == 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (x / arr[i] in s) return true;",
+      [
+        9
+      ]
+    ],
+    [
+      "      s.add(arr[i]);",
+      [
+        10
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return false;",
+      [
+        11
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr1, arr2, m, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  i = 0",
+      [
+        2
+      ]
+    ],
+    [
+      "  j = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "  if m < n: return 0",
+      [
+        4
+      ]
+    ],
+    [
+      "  arr1.sort()",
+      [
+        5
+      ]
+    ],
+    [
+      "  arr2.sort()",
+      [
+        6
+      ]
+    ],
+    [
+      "  while i < n and j < m:",
+      [
+        7
+      ]
+    ],
+    [
+      "    if arr1[j] < arr2[i]: j += 1",
+      [
+        8
+      ]
+    ],
+    [
+      "    elif arr1[j] == arr2[i]:",
+      [
+        9
+      ]
+    ],
+    [
+      "      j += 1",
+      [
+        10
+      ]
+    ],
+    [
+      "      i += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "    elif arr1[j] > arr2[i]: return 0",
+      [
+        12
+      ]
+    ],
+    [
+      "  return False if i < n else True",
+      [
+        13
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr1, arr2, m, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var i = 0;",
+      [
+        2
+      ]
+    ],
+    [
+      "  var j = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "  if (m < n) return 0;",
+      [
+        4
+      ]
+    ],
+    [
+      "  arr1.sort();",
+      [
+        5
+      ]
+    ],
+    [
+      "  arr2.sort((a, b) => a-b);",
+      [
+        6
+      ]
+    ],
+    [
+      "  while (i < n && j < m) {",
+      [
+        7
+      ]
+    ],
+    [
+      "    if (arr1[j] < arr2[i]) j += 1;",
+      [
+        8
+      ]
+    ],
+    [
+      "    else if (arr1[j] == arr2[i]) {",
+      [
+        9
+      ]
+    ],
+    [
+      "      j += 1;",
+      [
+        10
+      ]
+    ],
+    [
+      "      i += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    else if (arr1[j] > arr2[i]) return 0;",
+      [
+        12
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return i < n ? false : true;",
+      [
+        13
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,620 @@
+{
+  "src_anno_stmts": [
+    [
+      "### findLadders",
+      null
+    ],
+    [
+      "from collections import deque",
+      [
+        1
+      ]
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        2
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        3
+      ]
+    ],
+    [
+      "def f_gold(beginWord: str, endWord: str, wordList: List[str]",
+      [
+        4
+      ]
+    ],
+    [
+      ") -> List[List[str]]:",
+      [
+        5
+      ]
+    ],
+    [
+      "    def dfs(path, cur):",
+      [
+        6
+      ]
+    ],
+    [
+      "        if cur == beginWord:",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans.append(path[::-1])",
+      [
+        8
+      ]
+    ],
+    [
+      "            return",
+      [
+        9
+      ]
+    ],
+    [
+      "        for precursor in prev[cur]:",
+      [
+        10
+      ]
+    ],
+    [
+      "            path.append(precursor)",
+      [
+        11
+      ]
+    ],
+    [
+      "            dfs(path, precursor)",
+      [
+        12
+      ]
+    ],
+    [
+      "            path.pop()",
+      [
+        13
+      ]
+    ],
+    [
+      "    ans = []",
+      [
+        14
+      ]
+    ],
+    [
+      "    words = set(wordList)",
+      [
+        15
+      ]
+    ],
+    [
+      "    if endWord not in words:",
+      [
+        16
+      ]
+    ],
+    [
+      "        return ans",
+      [
+        17
+      ]
+    ],
+    [
+      "    words.discard(beginWord)",
+      [
+        18
+      ]
+    ],
+    [
+      "    dist = {beginWord: 0}",
+      [
+        19
+      ]
+    ],
+    [
+      "    prev = defaultdict(set)",
+      [
+        20
+      ]
+    ],
+    [
+      "    q = deque([beginWord])",
+      [
+        21
+      ]
+    ],
+    [
+      "    found = False",
+      [
+        22
+      ]
+    ],
+    [
+      "    step = 0",
+      [
+        23
+      ]
+    ],
+    [
+      "    while q and not found:",
+      [
+        24
+      ]
+    ],
+    [
+      "        step += 1",
+      [
+        25
+      ]
+    ],
+    [
+      "        for i in range(len(q), 0, -1):",
+      [
+        26
+      ]
+    ],
+    [
+      "            p = q.popleft()",
+      [
+        27
+      ]
+    ],
+    [
+      "            s = list(p)",
+      [
+        28
+      ]
+    ],
+    [
+      "            for i in range(len(s)):",
+      [
+        29
+      ]
+    ],
+    [
+      "                ch = s[i]",
+      [
+        30
+      ]
+    ],
+    [
+      "                for j in range(26):",
+      [
+        31
+      ]
+    ],
+    [
+      "                    s[i] = chr(ord('a') + j)",
+      [
+        32
+      ]
+    ],
+    [
+      "                    t = ''.join(s)",
+      [
+        33
+      ]
+    ],
+    [
+      "                    if dist.get(t, 0) == step:",
+      [
+        34
+      ]
+    ],
+    [
+      "                        prev[t].add(p)",
+      [
+        35
+      ]
+    ],
+    [
+      "                    if t not in words:",
+      [
+        36
+      ]
+    ],
+    [
+      "                        continue",
+      [
+        37
+      ]
+    ],
+    [
+      "                    prev[t].add(p)",
+      [
+        38
+      ]
+    ],
+    [
+      "                    words.discard(t)",
+      [
+        39
+      ]
+    ],
+    [
+      "                    q.append(t)",
+      [
+        40
+      ]
+    ],
+    [
+      "                    dist[t] = step",
+      [
+        41
+      ]
+    ],
+    [
+      "                    if endWord == t:",
+      [
+        42
+      ]
+    ],
+    [
+      "                        found = True",
+      [
+        43
+      ]
+    ],
+    [
+      "                s[i] = ch",
+      [
+        44
+      ]
+    ],
+    [
+      "    if found:",
+      [
+        45
+      ]
+    ],
+    [
+      "        path = [endWord]",
+      [
+        46
+      ]
+    ],
+    [
+      "        dfs(path, endWord)",
+      [
+        47
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        48
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (beginWord, endWord, wordList) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    function dfs (path, cur) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (cur == beginWord) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            ans.push(path.slice().reverse());",
+      [
+        8
+      ]
+    ],
+    [
+      "            return;",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        for (let precursor of prev[cur]) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            path.push(precursor);",
+      [
+        11
+      ]
+    ],
+    [
+      "            dfs(path, precursor);",
+      [
+        12
+      ]
+    ],
+    [
+      "            path.pop();",
+      [
+        13
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    let ans = [];",
+      [
+        14
+      ]
+    ],
+    [
+      "    let words = new Set(wordList);",
+      [
+        15
+      ]
+    ],
+    [
+      "    if (!words.has(endWord)) {",
+      [
+        16
+      ]
+    ],
+    [
+      "        return ans;",
+      [
+        17
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    words.delete(beginWord);",
+      [
+        18
+      ]
+    ],
+    [
+      "    let dist = {};",
+      [
+        19
+      ]
+    ],
+    [
+      "    dist[beginWord] = 0;",
+      [
+        19
+      ]
+    ],
+    [
+      "    let prev = {};",
+      [
+        20
+      ]
+    ],
+    [
+      "    let q = [beginWord];",
+      [
+        21
+      ]
+    ],
+    [
+      "    let found = false;",
+      [
+        22
+      ]
+    ],
+    [
+      "    let step = 0;",
+      [
+        23
+      ]
+    ],
+    [
+      "    while (q.length > 0 && !found) {",
+      [
+        24
+      ]
+    ],
+    [
+      "        step += 1;",
+      [
+        25
+      ]
+    ],
+    [
+      "        for (let i = q.length - 1; i >= 0; i--) {",
+      [
+        26
+      ]
+    ],
+    [
+      "            let p = q.shift();",
+      [
+        27
+      ]
+    ],
+    [
+      "            let s = p.split('');",
+      [
+        28
+      ]
+    ],
+    [
+      "            for (let i = 0; i < s.length; i++) {",
+      [
+        29
+      ]
+    ],
+    [
+      "                let ch = s[i];",
+      [
+        30
+      ]
+    ],
+    [
+      "                for (let j = 0; j < 26; j++) {",
+      [
+        31
+      ]
+    ],
+    [
+      "                    s[i] = String.fromCharCode(97 + j);",
+      [
+        32
+      ]
+    ],
+    [
+      "                    let t = s.join('');",
+      [
+        33
+      ]
+    ],
+    [
+      "                    if (dist[t] == step) {",
+      [
+        34
+      ]
+    ],
+    [
+      "                        prev[t].add(p);",
+      [
+        35
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                    if (!words.has(t)) {",
+      [
+        36
+      ]
+    ],
+    [
+      "                        continue;",
+      [
+        37
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                    prev[t].add(p);",
+      [
+        38
+      ]
+    ],
+    [
+      "                    words.delete(t);",
+      [
+        39
+      ]
+    ],
+    [
+      "                    q.push(t);",
+      [
+        40
+      ]
+    ],
+    [
+      "                    dist[t] = step;",
+      [
+        41
+      ]
+    ],
+    [
+      "                    if (endWord == t) {",
+      [
+        42
+      ]
+    ],
+    [
+      "                        found = true;",
+      [
+        43
+      ]
+    ],
+    [
+      "                    }",
+      null
+    ],
+    [
+      "                }",
+      null
+    ],
+    [
+      "                s[i] = ch;",
+      [
+        44
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (found) {",
+      [
+        45
+      ]
+    ],
+    [
+      "        let path = [endWord];",
+      [
+        46
+      ]
+    ],
+    [
+      "        dfs(path, endWord);",
+      [
+        47
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        48
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

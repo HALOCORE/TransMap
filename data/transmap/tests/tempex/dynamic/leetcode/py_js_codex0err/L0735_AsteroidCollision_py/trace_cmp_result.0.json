@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      0
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":0,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"asteroids\":[\"A\",3,[\"N\",\"5\"],[\"N\",\"10\"],[\"N\",\"-5\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      0
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":0,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"asteroids\":[\"A\",3,[\"N\",\"5\"],[\"N\",\"10\"],[\"N\",\"-5\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      0
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":0,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"asteroids\":[\"A\",3,[\"N\",\"5\"],[\"N\",\"10\"],[\"N\",\"-5\"]]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 0,
+    "actural_src_pk": "[3,4,3,12]",
+    "src_cov_lines": [
+      1,
+      2
+    ],
+    "tar_cov_lines": [
+      0
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":0,\"err_msg\":\"ReferenceError: f_gold is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"asteroids\":[\"A\",3,[\"N\",\"5\"],[\"N\",\"10\"],[\"N\",\"-5\"]]}",
+      ""
+    ]
+  }
+]

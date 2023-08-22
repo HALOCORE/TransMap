@@ -1,0 +1,25 @@
+{
+  "result_symptom": {
+    "category": [
+      "RUNTIME_ERR",
+      "TypeError:",
+      "list1.count is not a function"
+    ],
+    "lineno": 7
+  },
+  "run_result": {
+    "error": {
+      "error_msg": "list1.count is not a function",
+      "error_type": "TypeError:",
+      "line_content": "if (list1.count(i) > t && i != '') {",
+      "lineno": [
+        "/tmp/codesnart_runner/04d678d9.js",
+        7
+      ]
+    },
+    "is_success": false,
+    "stderr": "/tmp/codesnart_runner/04d678d9.js:7\n        if (list1.count(i) > t && i != '') {\n                  ^\n\nTypeError: list1.count is not a function\n    at histogram (/tmp/codesnart_runner/04d678d9.js:7:19)\n    at test (/tmp/codesnart_runner/04d678d9.js:27:20)\n    at Object.<anonymous> (/tmp/codesnart_runner/04d678d9.js:57:1)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47\n",
+    "stdout": "",
+    "timespan": 0.06683520099613816
+  }
+}

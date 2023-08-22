@@ -1,0 +1,86 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr = sorted(arr)",
+      [
+        2
+      ]
+    ],
+    [
+      "  diff = 10 ** 20",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(n - 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "    if arr[i + 1] - arr[i] < diff: diff = arr[i + 1] - arr[i]",
+      [
+        5
+      ]
+    ],
+    [
+      "  return diff",
+      [
+        6
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "const f_gold = (arr, n) => {",
+      [
+        1
+      ]
+    ],
+    [
+      "  arr = arr.sort();",
+      [
+        2
+      ]
+    ],
+    [
+      "  let diff = 10 ** 20;",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (let i = 0; i < n - 1; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    if (arr[i + 1] - arr[i] < diff) diff = arr[i + 1] - arr[i];",
+      [
+        5
+      ]
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return diff;",
+      [
+        6
+      ]
+    ],
+    [
+      "};",
+      null
+    ]
+  ]
+}

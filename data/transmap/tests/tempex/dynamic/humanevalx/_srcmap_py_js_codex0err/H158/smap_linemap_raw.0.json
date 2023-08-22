@@ -1,0 +1,42 @@
+{
+  "src_anno_stmts": [
+    [
+      "def find_max(words):",
+      [
+        1
+      ]
+    ],
+    [
+      "    return sorted(words, key = lambda x: (-len(set(x)), x))[0]",
+      [
+        2
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function find_max(words) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    return words.sort(function (a, b) {",
+      [
+        2
+      ]
+    ],
+    [
+      "        return b.length - a.length || a.localeCompare(b);",
+      null
+    ],
+    [
+      "    })[0];",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

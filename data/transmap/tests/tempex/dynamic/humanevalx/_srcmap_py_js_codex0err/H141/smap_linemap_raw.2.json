@@ -1,0 +1,210 @@
+{
+  "src_anno_stmts": [
+    [
+      "def file_name_check(file_name):",
+      [
+        1
+      ]
+    ],
+    [
+      "    suf = ['txt', 'exe', 'dll']",
+      [
+        2
+      ]
+    ],
+    [
+      "    lst = file_name.split(sep='.')",
+      [
+        3
+      ]
+    ],
+    [
+      "    if len(lst) != 2:",
+      [
+        4
+      ]
+    ],
+    [
+      "        return 'No'",
+      [
+        5
+      ]
+    ],
+    [
+      "    if not lst[1] in suf:",
+      [
+        6
+      ]
+    ],
+    [
+      "        return 'No'",
+      [
+        7
+      ]
+    ],
+    [
+      "    if len(lst[0]) == 0:",
+      [
+        8
+      ]
+    ],
+    [
+      "        return 'No'",
+      [
+        9
+      ]
+    ],
+    [
+      "    if not lst[0][0].isalpha():",
+      [
+        10
+      ]
+    ],
+    [
+      "        return 'No'",
+      [
+        11
+      ]
+    ],
+    [
+      "    t = len([x for x in lst[0] if x.isdigit()])",
+      [
+        12
+      ]
+    ],
+    [
+      "    if t > 3:",
+      [
+        13
+      ]
+    ],
+    [
+      "        return 'No'",
+      [
+        14
+      ]
+    ],
+    [
+      "    return 'Yes'",
+      [
+        15
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function file_name_check(file_name) {",
+      [
+        1
+      ]
+    ],
+    [
+      "    var suf = ['txt', 'exe', 'dll'];",
+      [
+        2
+      ]
+    ],
+    [
+      "    var lst = file_name.split('.');",
+      [
+        3
+      ]
+    ],
+    [
+      "    if (lst.length != 2) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        return 'No';",
+      [
+        5
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (!suf.includes(lst[1])) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        return 'No';",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (lst[0].length == 0) {",
+      [
+        8
+      ]
+    ],
+    [
+      "        return 'No';",
+      [
+        9
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    if (!lst[0][0].isalpha()) {",
+      [
+        10
+      ]
+    ],
+    [
+      "        return 'No';",
+      [
+        11
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var t = lst[0].split('').filter(x => /[0-9]/.test(x)).length;",
+      [
+        12
+      ]
+    ],
+    [
+      "    if (t > 3) {",
+      [
+        13
+      ]
+    ],
+    [
+      "        return 'No';",
+      [
+        14
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return 'Yes';",
+      [
+        15
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

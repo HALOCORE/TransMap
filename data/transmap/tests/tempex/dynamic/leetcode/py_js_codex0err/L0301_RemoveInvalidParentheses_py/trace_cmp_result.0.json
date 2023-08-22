@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[21,4,28,25]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"ReferenceError: rdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"0\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[21,4,28,25]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"ReferenceError: rdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"0\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[21,4,28,25]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"ReferenceError: rdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"0\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[21,4,28,25]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      25
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":25,\"err_msg\":\"ReferenceError: rdel is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"dfs\":\"UNKNOWN\",\"ldel\":[\"N\",\"0\"],\"rdel\":[\"N\",\"0\"],\"s\":[\"S\",7,\"()())()\"]}",
+      ""
+    ]
+  }
+]

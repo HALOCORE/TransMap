@@ -1,0 +1,94 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 5,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":34,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"m\":[\"N\",\"3\"],\"guards\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]]],\"walls\":[\"A\",4,[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]],[\"A\",2,[\"N\",\"2\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]]],\"n\":[\"N\",\"3\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":34,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"m\":[\"N\",\"3\"],\"guards\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]]],\"walls\":[\"A\",4,[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]],[\"A\",2,[\"N\",\"2\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]]],\"n\":[\"N\",\"3\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":34,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"m\":[\"N\",\"3\"],\"guards\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]]],\"walls\":[\"A\",4,[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]],[\"A\",2,[\"N\",\"2\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]]],\"n\":[\"N\",\"3\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[4,4,4,38]",
+    "src_cov_lines": [
+      20
+    ],
+    "tar_cov_lines": [
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":34,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'length')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"m\":[\"N\",\"3\"],\"guards\":[\"A\",1,[\"A\",2,[\"N\",\"1\"],[\"N\",\"1\"]]],\"walls\":[\"A\",4,[\"A\",2,[\"N\",\"0\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"0\"]],[\"A\",2,[\"N\",\"2\"],[\"N\",\"1\"]],[\"A\",2,[\"N\",\"1\"],[\"N\",\"2\"]]],\"n\":[\"N\",\"3\"]}",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+
+### Python
+def f_gold(arr, n):   # --- py stmt 1
+  temp = n *[None]   # --- py stmt 2
+  small, large = 0, n - 1   # --- py stmt 3
+  flag = True   # --- py stmt 4
+  for i in range(n):   # --- py stmt 5
+    if flag is True:   # --- py stmt 6
+      temp[i] = arr[large]   # --- py stmt 7
+      large -= 1   # --- py stmt 8
+    else:   # --- py stmt 9
+      temp[i] = arr[small]   # --- py stmt 10
+      small += 1   # --- py stmt 11
+    flag = bool(1 - flag)   # --- py stmt 12
+  for i in range(n): arr[i] = temp[i]   # --- py stmt 13
+  return arr   # --- py stmt 14
+
+
+### JavaScript
+"use strict";
+function f_gold(arr, n) {   // --- py stmt 1
+  var temp = n * [null];   // --- py stmt 2
+  var small = 0;   // --- py stmt 3
+  var large = n - 1;   // --- py stmt 3
+  var flag = true;   // --- py stmt 4
+  for (var i = 0; i < n; i++) {   // --- py stmt 5
+    if (flag === true) {   // --- py stmt 6
+      temp[i] = arr[large];   // --- py stmt 7
+      large -= 1;   // --- py stmt 8
+    } else {   // --- py stmt 9
+      temp[i] = arr[small];   // --- py stmt 10
+      small += 1;   // --- py stmt 11
+    }
+    flag = Boolean(1 - flag);   // --- py stmt 12
+  }
+  for (var i = 0; i < n; i++) arr[i] = temp[i];   // --- py stmt 13
+  return arr;   // --- py stmt 14
+}
+
+
+

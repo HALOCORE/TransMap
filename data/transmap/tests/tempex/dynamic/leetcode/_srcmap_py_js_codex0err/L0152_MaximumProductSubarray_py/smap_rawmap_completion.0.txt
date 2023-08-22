@@ -1,0 +1,28 @@
+
+### Python
+### maxProduct 
+import math   # --- py stmt 1
+from math import inf   # --- py stmt 2
+from typing import *   # --- py stmt 3
+def f_gold(nums: List[int]) -> int:   # --- py stmt 4
+    maxf = minf = res = nums[0]   # --- py stmt 5
+    for num in nums[1:]:   # --- py stmt 6
+        m, n = maxf, minf   # --- py stmt 7
+        maxf = max(num, m * num, n * num)   # --- py stmt 8
+        minf = min(num, m * num, n * num)   # --- py stmt 9
+        res = max(res, maxf)   # --- py stmt 10
+    return res   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 4
+    let maxf = minf = res = nums[0];   // --- py stmt 5
+    for (let num of nums.slice(1)) {   // --- py stmt 6
+        let m = maxf, n = minf;   // --- py stmt 7
+        maxf = Math.max(num, m * num, n * num);   // --- py stmt 8
+        minf = Math.min(num, m * num, n * num);   // --- py stmt 9
+        res = Math.max(res, maxf);   // --- py stmt 10
+    }
+    return res;   // --- py stmt 11
+}
+

@@ -1,0 +1,282 @@
+{
+  "src_anno_stmts": [
+    [
+      "### loudAndRich",
+      null
+    ],
+    [
+      "from collections import defaultdict",
+      [
+        1
+      ]
+    ],
+    [
+      "from typing import *",
+      [
+        2
+      ]
+    ],
+    [
+      "def f_gold(richer: List[List[int]], quiet: List[int]) -> List[int]:",
+      [
+        3
+      ]
+    ],
+    [
+      "    n = len(quiet)",
+      [
+        4
+      ]
+    ],
+    [
+      "    g = defaultdict(list)",
+      [
+        5
+      ]
+    ],
+    [
+      "    for a, b in richer:",
+      [
+        6
+      ]
+    ],
+    [
+      "        g[b].append(a)",
+      [
+        7
+      ]
+    ],
+    [
+      "    ans = [-1] * n",
+      [
+        8
+      ]
+    ],
+    [
+      "    def dfs(i):",
+      [
+        9
+      ]
+    ],
+    [
+      "        if ans[i] != -1:",
+      [
+        10
+      ]
+    ],
+    [
+      "            return",
+      [
+        11
+      ]
+    ],
+    [
+      "        ans[i] = i",
+      [
+        12
+      ]
+    ],
+    [
+      "        for j in g[i]:",
+      [
+        13
+      ]
+    ],
+    [
+      "            dfs(j)",
+      [
+        14
+      ]
+    ],
+    [
+      "            if quiet[ans[j]] < quiet[ans[i]]:",
+      [
+        15
+      ]
+    ],
+    [
+      "                ans[i] = ans[j]",
+      [
+        16
+      ]
+    ],
+    [
+      "    for i in range(n):",
+      [
+        17
+      ]
+    ],
+    [
+      "        dfs(i)",
+      [
+        18
+      ]
+    ],
+    [
+      "    return ans",
+      [
+        19
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold (richer, quiet) {",
+      [
+        3
+      ]
+    ],
+    [
+      "    var n = quiet.length;",
+      [
+        4
+      ]
+    ],
+    [
+      "    var g = {};",
+      [
+        5
+      ]
+    ],
+    [
+      "    for (var i = 0; i < richer.length; i++) {",
+      [
+        6
+      ]
+    ],
+    [
+      "        var a = richer[i][0];",
+      [
+        6
+      ]
+    ],
+    [
+      "        var b = richer[i][1];",
+      [
+        6
+      ]
+    ],
+    [
+      "        if (g[b] == undefined) {",
+      [
+        7
+      ]
+    ],
+    [
+      "            g[b] = [];",
+      [
+        7
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        g[b].push(a);",
+      [
+        7
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    var ans = new Array(n).fill(-1);",
+      [
+        8
+      ]
+    ],
+    [
+      "    function dfs (i) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        if (ans[i] != -1) {",
+      [
+        10
+      ]
+    ],
+    [
+      "            return;",
+      [
+        11
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "        ans[i] = i;",
+      [
+        12
+      ]
+    ],
+    [
+      "        for (var j = 0; j < g[i].length; j++) {",
+      [
+        13
+      ]
+    ],
+    [
+      "            dfs(g[i][j]);",
+      [
+        14
+      ]
+    ],
+    [
+      "            if (quiet[ans[g[i][j]]] < quiet[ans[i]]) {",
+      [
+        15
+      ]
+    ],
+    [
+      "                ans[i] = ans[g[i][j]];",
+      [
+        16
+      ]
+    ],
+    [
+      "            }",
+      null
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    for (var i = 0; i < n; i++) {",
+      [
+        17
+      ]
+    ],
+    [
+      "        dfs(i);",
+      [
+        18
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return ans;",
+      [
+        19
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

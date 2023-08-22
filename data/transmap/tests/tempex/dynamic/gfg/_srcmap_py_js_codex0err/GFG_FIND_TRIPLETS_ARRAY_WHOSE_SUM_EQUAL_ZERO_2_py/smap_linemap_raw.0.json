@@ -1,0 +1,210 @@
+{
+  "src_anno_stmts": [
+    [
+      "def f_gold(arr, n):",
+      [
+        1
+      ]
+    ],
+    [
+      "  found = False",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort()",
+      [
+        3
+      ]
+    ],
+    [
+      "  for i in range(0, n - 1):",
+      [
+        4
+      ]
+    ],
+    [
+      "    l = i + 1",
+      [
+        5
+      ]
+    ],
+    [
+      "    r = n - 1",
+      [
+        6
+      ]
+    ],
+    [
+      "    x = arr[i]",
+      [
+        7
+      ]
+    ],
+    [
+      "    while(l < r):",
+      [
+        8
+      ]
+    ],
+    [
+      "      if(x + arr[l] + arr[r] == 0):",
+      [
+        9
+      ]
+    ],
+    [
+      "        print(x, arr[l], arr[r])",
+      [
+        10
+      ]
+    ],
+    [
+      "        l += 1",
+      [
+        11
+      ]
+    ],
+    [
+      "        r -= 1",
+      [
+        12
+      ]
+    ],
+    [
+      "        found = True",
+      [
+        13
+      ]
+    ],
+    [
+      "      elif(x + arr[l] + arr[r] < 0): l += 1",
+      [
+        14
+      ]
+    ],
+    [
+      "      else: r -= 1",
+      [
+        15
+      ]
+    ],
+    [
+      "  if(found == False): print(\" No Triplet Found\")",
+      [
+        16
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(arr, n) {",
+      [
+        1
+      ]
+    ],
+    [
+      "  var found = false;",
+      [
+        2
+      ]
+    ],
+    [
+      "  arr.sort();",
+      [
+        3
+      ]
+    ],
+    [
+      "  for (var i = 0; i < n - 1; i++) {",
+      [
+        4
+      ]
+    ],
+    [
+      "    var l = i + 1;",
+      [
+        5
+      ]
+    ],
+    [
+      "    var r = n - 1;",
+      [
+        6
+      ]
+    ],
+    [
+      "    var x = arr[i];",
+      [
+        7
+      ]
+    ],
+    [
+      "    while (l < r) {",
+      [
+        8
+      ]
+    ],
+    [
+      "      if (x + arr[l] + arr[r] == 0) {",
+      [
+        9
+      ]
+    ],
+    [
+      "        console.log(x, arr[l], arr[r]);",
+      [
+        10
+      ]
+    ],
+    [
+      "        l += 1;",
+      [
+        11
+      ]
+    ],
+    [
+      "        r -= 1;",
+      [
+        12
+      ]
+    ],
+    [
+      "        found = true;",
+      [
+        13
+      ]
+    ],
+    [
+      "      } else if (x + arr[l] + arr[r] < 0) l += 1;",
+      [
+        14
+      ]
+    ],
+    [
+      "      else r -= 1;",
+      [
+        15
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  if (found == false) console.log(\" No Triplet Found\");",
+      [
+        16
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

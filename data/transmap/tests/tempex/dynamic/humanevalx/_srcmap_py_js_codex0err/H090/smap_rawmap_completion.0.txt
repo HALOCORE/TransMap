@@ -1,0 +1,16 @@
+
+### Python
+def next_smallest(lst):   # --- py stmt 1
+    lst = sorted(set(lst))   # --- py stmt 2
+    return None if len(lst) < 2 else lst[1]   # --- py stmt 3
+
+
+### JavaScript
+"use strict";
+function next_smallest(lst) {   // --- py stmt 1
+    lst = Array.from(new Set(lst)).sort();   // --- py stmt 2
+    return lst.length < 2 ? null : lst[1];   // --- py stmt 3
+}
+
+
+

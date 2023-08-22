@@ -1,0 +1,78 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 2,
+    "actural_src_pk": "[5,4,10,33]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: c2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s1\":[\"S\",4,\"bank\"],\"s2\":[\"S\",4,\"kanb\"],\"cnt\":[\"N\",\"0\"],\"n\":[\"N\",\"4\"],\"c1\":\"UNKNOWN\",\"c2\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,10,33]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: c2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s1\":[\"S\",4,\"bank\"],\"s2\":[\"S\",4,\"kanb\"],\"cnt\":[\"N\",\"0\"],\"n\":[\"N\",\"4\"],\"c1\":\"UNKNOWN\",\"c2\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,10,33]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: c2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s1\":[\"S\",4,\"bank\"],\"s2\":[\"S\",4,\"kanb\"],\"cnt\":[\"N\",\"0\"],\"n\":[\"N\",\"4\"],\"c1\":\"UNKNOWN\",\"c2\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[5,4,10,33]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      3
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":3,\"err_msg\":\"ReferenceError: c2 is not defined\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"s1\":[\"S\",4,\"bank\"],\"s2\":[\"S\",4,\"kanb\"],\"cnt\":[\"N\",\"0\"],\"n\":[\"N\",\"4\"],\"c1\":\"UNKNOWN\",\"c2\":\"UNKNOWN\"}",
+      ""
+    ]
+  }
+]

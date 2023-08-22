@@ -1,0 +1,34 @@
+
+### Python
+### addToArrayForm 
+from typing import *   # --- py stmt 1
+def f_gold(num: List[int], k: int) -> List[int]:   # --- py stmt 2
+    i, carry = len(num) - 1, 0   # --- py stmt 3
+    ans = []   # --- py stmt 4
+    while i >= 0 or k or carry:   # --- py stmt 5
+        carry += (0 if i < 0 else num[i]) + (k % 10)   # --- py stmt 6
+        carry, v = divmod(carry, 10)   # --- py stmt 7
+        ans.append(v)   # --- py stmt 8
+        k //= 10   # --- py stmt 9
+        i -= 1   # --- py stmt 10
+    return ans[::-1]   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(num, k) {   // --- py stmt 2
+    var i = num.length - 1;   // --- py stmt 3
+    var carry = 0;   // --- py stmt 3
+    var ans = [];   // --- py stmt 4
+    while (i >= 0 || k || carry) {   // --- py stmt 5
+        carry += (i < 0 ? 0 : num[i]) + (k % 10);   // --- py stmt 6
+        var v;   // --- py stmt 7
+        [carry, v] = [Math.floor(carry / 10), carry % 10];   // --- py stmt 7
+        ans.push(v);   // --- py stmt 8
+        k = Math.floor(k / 10);   // --- py stmt 9
+        i -= 1;   // --- py stmt 10
+    }
+    return ans.reverse();   // --- py stmt 11
+}
+
+
+

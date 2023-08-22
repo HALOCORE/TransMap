@@ -1,0 +1,154 @@
+{
+  "src_anno_stmts": [
+    [
+      "### mergeTriplets",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(triplets: List[List[int]], target: List[int]) -> bool:",
+      [
+        2
+      ]
+    ],
+    [
+      "    maxA = maxB = maxC = 0",
+      [
+        3
+      ]
+    ],
+    [
+      "    tA, tB, tC = target",
+      [
+        4
+      ]
+    ],
+    [
+      "    for a, b, c in triplets:",
+      [
+        5
+      ]
+    ],
+    [
+      "        if a <= tA and b <= tB and c <= tC:",
+      [
+        6
+      ]
+    ],
+    [
+      "            maxA = max(maxA, a)",
+      [
+        7
+      ]
+    ],
+    [
+      "            maxB = max(maxB, b)",
+      [
+        8
+      ]
+    ],
+    [
+      "            maxC = max(maxC, c)",
+      [
+        9
+      ]
+    ],
+    [
+      "    return (maxA, maxB, maxC) == (tA, tB, tC)",
+      [
+        10
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(triplets, target) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var maxA = 0, maxB = 0, maxC = 0;",
+      [
+        3
+      ]
+    ],
+    [
+      "    var [tA, tB, tC] = target;",
+      [
+        4
+      ]
+    ],
+    [
+      "    for (var i = 0; i < triplets.length; i++) {",
+      [
+        5
+      ]
+    ],
+    [
+      "        var a = triplets[i][0];",
+      [
+        5
+      ]
+    ],
+    [
+      "        var b = triplets[i][1];",
+      [
+        5
+      ]
+    ],
+    [
+      "        var c = triplets[i][2];",
+      [
+        5
+      ]
+    ],
+    [
+      "        if (a <= tA && b <= tB && c <= tC) {",
+      [
+        6
+      ]
+    ],
+    [
+      "            maxA = Math.max(maxA, a);",
+      [
+        7
+      ]
+    ],
+    [
+      "            maxB = Math.max(maxB, b);",
+      [
+        8
+      ]
+    ],
+    [
+      "            maxC = Math.max(maxC, c);",
+      [
+        9
+      ]
+    ],
+    [
+      "        }",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return [maxA, maxB, maxC] == [tA, tB, tC];",
+      [
+        10
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

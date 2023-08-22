@@ -1,0 +1,20 @@
+[
+  {
+    "line_start": 10,
+    "line_end": 11,
+    "content": "      for(var i = n;i > l - 1;i--) stk.push(a[m][i]);",
+    "replacement": "      for(var i = n;i >= l - 1;i--) stk.push(a[m][i]);"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "      for(var i = m;i > k - 1;i--) stk.push(a[i][l]);",
+    "replacement": "      for(var i = m;i >= k - 1;i--) stk.push(a[i][l]);"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "    console.log(stk[stk.length - 1].toString());",
+    "replacement": "    console.log(stk[stk.length - 1], end = \" \");"
+  }
+]

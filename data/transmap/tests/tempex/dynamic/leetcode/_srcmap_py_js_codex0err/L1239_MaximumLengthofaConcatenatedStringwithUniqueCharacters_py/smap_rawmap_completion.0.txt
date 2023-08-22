@@ -1,0 +1,66 @@
+
+### Python
+### maxLength 
+from typing import *   # --- py stmt 1
+def f_gold(arr: List[str]) -> int:   # --- py stmt 2
+    def ones_count(x):   # --- py stmt 3
+        c = 0   # --- py stmt 4
+        while x:   # --- py stmt 5
+            x &= x - 1   # --- py stmt 6
+            c += 1   # --- py stmt 7
+        return c   # --- py stmt 8
+    ans = 0   # --- py stmt 9
+    masks = [0]   # --- py stmt 10
+    for s in arr:   # --- py stmt 11
+        mask = 0   # --- py stmt 12
+        for ch in s:   # --- py stmt 13
+            ch = ord(ch) - ord('a')   # --- py stmt 14
+            if (mask >> ch) & 1 == 1:   # --- py stmt 15
+                mask = 0   # --- py stmt 16
+                break   # --- py stmt 17
+            mask |= 1 << ch   # --- py stmt 18
+        if mask == 0:   # --- py stmt 19
+            continue   # --- py stmt 20
+        for m in masks:   # --- py stmt 21
+            if m & mask == 0:   # --- py stmt 22
+                masks.append(m | mask)   # --- py stmt 23
+                ans = max(ans, ones_count(m | mask))   # --- py stmt 24
+    return ans   # --- py stmt 25
+
+### JavaScript
+"use strict";
+
+function f_gold(arr) {   // --- py stmt 2
+    function ones_count(x) {   // --- py stmt 3
+        var c = 0;   // --- py stmt 4
+        while (x) {   // --- py stmt 5
+            x &= x - 1;   // --- py stmt 6
+            c += 1;   // --- py stmt 7
+        }
+        return c;   // --- py stmt 8
+    }
+    var ans = 0;   // --- py stmt 9
+    var masks = [0];   // --- py stmt 10
+    for (var s of arr) {   // --- py stmt 11
+        var mask = 0;   // --- py stmt 12
+        for (var ch of s) {   // --- py stmt 13
+            ch = ch.charCodeAt(0) - 'a'.charCodeAt(0);   // --- py stmt 14
+            if ((mask >> ch) & 1 == 1) {   // --- py stmt 15
+                mask = 0;   // --- py stmt 16
+                break;   // --- py stmt 17
+            }
+            mask |= 1 << ch;   // --- py stmt 18
+        }
+        if (mask == 0) continue;   // --- py stmt 19, py stmt 20
+        for (var m of masks) {   // --- py stmt 21
+            if (m & mask == 0) {   // --- py stmt 22
+                masks.push(m | mask);   // --- py stmt 23
+                ans = Math.max(ans, ones_count(m | mask));   // --- py stmt 24
+            }
+        }
+    }
+    return ans;   // --- py stmt 25
+}
+
+
+

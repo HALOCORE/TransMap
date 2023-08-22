@@ -1,0 +1,50 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,6,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,7,15]",
+    "actural_src_pk": "[4,4,7,15]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"3\"],\"bits\":\"UNKNOWN\",\"t\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"3\"],\"bits\":[\"N\",\"1\"],\"t\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "bits"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[2,4,6,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[4,4,7,15]",
+    "actural_src_pk": "[4,4,7,15]",
+    "src_cov_lines": [
+      3
+    ],
+    "tar_cov_lines": [
+      1
+    ],
+    "tar_data": [
+      "{\"n\":[\"N\",\"3\"],\"bits\":\"UNKNOWN\",\"t\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "src_data": [
+      "{\"n\":[\"N\",\"3\"],\"bits\":[\"N\",\"1\"],\"t\":[\"N\",\"9\"]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "bits"
+    ]
+  }
+]

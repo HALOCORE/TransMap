@@ -1,0 +1,14 @@
+[
+  {
+    "line_start": 1,
+    "line_end": 2,
+    "content": "    let [a, b] = x.split(\"/\");",
+    "replacement": "    let a, b = x.split(\"/\");"
+  },
+  {
+    "line_start": 2,
+    "line_end": 3,
+    "content": "    let [c, d] = n.split(\"/\");",
+    "replacement": "    let c, d = n.split(\"/\");"
+  }
+]

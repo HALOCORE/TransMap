@@ -1,0 +1,32 @@
+
+### Python
+def f_gold(tree, k):   # --- py stmt 1
+  level = - 1   # --- py stmt 2
+  sum = 0   # --- py stmt 3
+  n = len(tree)   # --- py stmt 4
+  for i in range(n):   # --- py stmt 5
+    if(tree[i] == '('): level += 1   # --- py stmt 6
+    elif(tree[i] == ')'): level -= 1   # --- py stmt 7
+    else:   # --- py stmt 8
+      if(level == k): sum +=(ord(tree[i])- ord('0'))   # --- py stmt 9
+  return sum   # --- py stmt 10
+
+
+### JavaScript
+"use strict";
+function f_gold(tree, k) {   // --- py stmt 1
+  var level = - 1;   // --- py stmt 2
+  var sum = 0;   // --- py stmt 3
+  var n = tree.length;   // --- py stmt 4
+  for (var i = 0; i < n; i++) {   // --- py stmt 5
+    if (tree[i] == '(') level += 1;   // --- py stmt 6
+    else if (tree[i] == ')') level -= 1;   // --- py stmt 7
+    else {   // --- py stmt 8
+      if (level == k) sum += (tree[i].charCodeAt(0) - tree[i].charCodeAt(0));   // --- py stmt 9
+    }
+  }
+  return sum;   // --- py stmt 10
+}
+
+
+

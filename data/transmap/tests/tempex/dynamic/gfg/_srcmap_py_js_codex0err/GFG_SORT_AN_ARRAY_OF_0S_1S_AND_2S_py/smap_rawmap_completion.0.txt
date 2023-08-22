@@ -1,0 +1,43 @@
+
+### Python
+def f_gold(a, arr_size):   # --- py stmt 1
+  lo = 0   # --- py stmt 2
+  hi = arr_size - 1   # --- py stmt 3
+  mid = 0   # --- py stmt 4
+  while mid <= hi:   # --- py stmt 5
+    if a[mid] == 0:   # --- py stmt 6
+      a[lo], a[mid] = a[mid], a[lo]   # --- py stmt 7
+      lo = lo + 1   # --- py stmt 8
+      mid = mid + 1   # --- py stmt 9
+    elif a[mid] == 1: mid = mid + 1   # --- py stmt 10
+    else:   # --- py stmt 11
+      a[mid], a[hi] = a[hi], a[mid]   # --- py stmt 12
+      hi = hi - 1   # --- py stmt 13
+
+
+### JavaScript
+"use strict";
+function f_gold(a, arr_size) {   // --- py stmt 1
+  var lo = 0;   // --- py stmt 2
+  var hi = arr_size - 1;   // --- py stmt 3
+  var mid = 0;   // --- py stmt 4
+  while (mid <= hi) {   // --- py stmt 5
+    if (a[mid] == 0) {   // --- py stmt 6
+      let temp = a[lo];   // --- py stmt 7
+      a[lo] = a[lo] ^ a[mid];   // --- py stmt 7
+      a[mid] = a[lo];   // --- py stmt 7
+      a[lo] = temp;   // --- py stmt 7
+      lo = lo + 1;   // --- py stmt 8
+      mid = mid + 1;   // --- py stmt 9
+    } else if (a[mid] == 1) mid = mid + 1;   // --- py stmt 10
+    else {   // --- py stmt 11
+      let temp = a[hi];   // --- py stmt 12
+      a[hi] = a[mid];   // --- py stmt 12
+      a[mid] = temp;   // --- py stmt 12
+      hi = hi - 1;   // --- py stmt 13
+    }
+  }
+}
+
+
+

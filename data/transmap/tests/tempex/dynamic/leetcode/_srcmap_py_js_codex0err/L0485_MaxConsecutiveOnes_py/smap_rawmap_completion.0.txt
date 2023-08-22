@@ -1,0 +1,30 @@
+
+### Python
+### findMaxConsecutiveOnes 
+from typing import *   # --- py stmt 1
+def f_gold(nums: List[int]) -> int:   # --- py stmt 2
+    res = t = 0   # --- py stmt 3
+    for num in nums:   # --- py stmt 4
+        if num == 1:   # --- py stmt 5
+            t += 1   # --- py stmt 6
+        else:   # --- py stmt 7
+            res = max(res, t)   # --- py stmt 8
+            t = 0   # --- py stmt 9
+    return max(res, t)   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(nums) {   // --- py stmt 2
+    var res = t = 0;   // --- py stmt 3
+    for (var num of nums) {   // --- py stmt 4
+        if (num == 1) {   // --- py stmt 5
+            t += 1;   // --- py stmt 6
+        }
+        else {   // --- py stmt 7
+            res = Math.max(res, t);   // --- py stmt 8
+            t = 0;   // --- py stmt 9
+        }
+    }
+    return Math.max(res, t);   // --- py stmt 10
+}
+

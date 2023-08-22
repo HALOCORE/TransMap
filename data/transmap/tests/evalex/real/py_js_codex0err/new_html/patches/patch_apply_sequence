@@ -1,0 +1,37 @@
+Semantic mistakes: 25
+Hidden mistakes: 10
+TP: 9
+FP: 4
+------------------------------
+Patch Apply Sequence:
+srcmap-01
+rt-01
+rt-02
+tp-01
+rt-03
+rt-04
+rt-05
+rt-06
+rt-07
+rt-08
+rt-09
+rt-10
+rt-11
+tp-02
+tp-03
+fp-01
+tp-04
+fp-02
+tp-05
+tp-06
+rt-12
+rt-13
+rt-14
+fp-03
+tp-07
+tp-08
+fp-04
+miss-01
+rt-15
+tp-09
+------------------------------

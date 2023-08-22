@@ -1,0 +1,25 @@
+
+### Python
+def rounded_avg(n, m):   # --- py stmt 1
+    if m < n:   # --- py stmt 2
+        return -1   # --- py stmt 3
+    summation = 0   # --- py stmt 4
+    for i in range(n, m+1):   # --- py stmt 5
+        summation += i   # --- py stmt 6
+    return bin(round(summation/(m - n + 1)))   # --- py stmt 7
+
+### JavaScript
+"use strict";
+function rounded_avg(n, m) {   // --- py stmt 1
+    if (m < n) {   // --- py stmt 2
+        return -1;   // --- py stmt 3
+    }
+    let summation = 0;   // --- py stmt 4
+    for (let i = n; i <= m; i++) {   // --- py stmt 5
+        summation += i;   // --- py stmt 6
+    }
+    return summation / (m - n + 1);   // --- py stmt 7
+}
+
+
+

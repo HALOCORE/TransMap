@@ -1,0 +1,34 @@
+
+### Python
+def f_gold(s):   # --- py stmt 1
+  if(len(s)>= 10): return True   # --- py stmt 2
+  for i in range(1, len(s)):   # --- py stmt 3
+    for j in range(i + 1, len(s)):   # --- py stmt 4
+      for k in range(j + 1, len(s)):   # --- py stmt 5
+        s1 = s[0: i]   # --- py stmt 6
+        s2 = s[i: j - i]   # --- py stmt 7
+        s3 = s[j: k - j]   # --- py stmt 8
+        s4 = s[k: len(s)- k]   # --- py stmt 9
+        if(s1 != s2 and s1 != s3 and s1 != s4 and s2 != s3 and s2 != s4 and s3 != s4): return True   # --- py stmt 10
+  return False   # --- py stmt 11
+
+### JavaScript
+"use strict";
+function f_gold(s) {   // --- py stmt 1
+  if (s.length >= 10) return true;   // --- py stmt 2
+  for (let i = 1; i < s.length; i++) {   // --- py stmt 3
+    for (let j = i + 1; j < s.length; j++) {   // --- py stmt 4
+      for (let k = j + 1; k < s.length; k++) {   // --- py stmt 5
+        let s1 = s.substring(0, i);   // --- py stmt 6
+        let s2 = s.substring(i, j - i);   // --- py stmt 7
+        let s3 = (k-j > j)? s.substring(j, k - j) : '';   // --- py stmt 8
+        let s4 = s.substring(k, s.length - k);   // --- py stmt 9
+        if (s1 != s2 && s1 != s3 && s1 != s4 && s2 != s3 && s2 != s4 && s3 != s4) return true;   // --- py stmt 10
+      }
+    }
+  }
+  return false;   // --- py stmt 11
+}
+
+
+

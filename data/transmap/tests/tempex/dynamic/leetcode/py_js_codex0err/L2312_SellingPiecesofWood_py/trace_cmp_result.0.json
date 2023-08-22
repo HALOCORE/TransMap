@@ -1,0 +1,68 @@
+[
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[13,4,13,25]",
+    "src_cov_lines": [
+      1,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      16
+    ],
+    "tar_cov_lines": [
+      7,
+      21
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'get')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"m\":[\"N\",\"4\"],\"n\":[\"N\",\"6\"],\"prices\":[\"A\",3,[\"A\",3,[\"N\",\"3\"],[\"N\",\"2\"],[\"N\",\"10\"]],[\"A\",3,[\"N\",\"1\"],[\"N\",\"4\"],[\"N\",\"2\"]],[\"A\",3,[\"N\",\"4\"],[\"N\",\"1\"],[\"N\",\"3\"]]],\"dfs\":\"UNKNOWN\"}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 3,
+    "actural_src_pk": "[8,8,9,53]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'get')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"h\":[\"N\",\"3\"],\"w\":[\"N\",\"5\"],\"d\":[\"DICT\",[[\"N\",\"1\"],[\"DICT\",[[\"N\",\"4\"],[\"N\",\"2\"]]]],[[\"N\",\"2\"],[\"DICT\",[[\"N\",\"2\"],[\"N\",\"7\"]],[[\"N\",\"1\"],[\"N\",\"3\"]]]],[[\"N\",\"3\"],[\"DICT\"]]],\"dfs\":\"UNKNOWN\",\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  },
+  {
+    "reason": "EXCEPTION",
+    "break_idx": 1,
+    "actural_src_pk": "[8,8,9,53]",
+    "src_cov_lines": [
+      7
+    ],
+    "tar_cov_lines": [
+      7
+    ],
+    "tar_err_data": [
+      "{\"last_lineno\":7,\"err_msg\":\"TypeError: Cannot read properties of undefined (reading 'get')\"}",
+      ""
+    ],
+    "src_data": [
+      "{\"h\":[\"N\",\"3\"],\"w\":[\"N\",\"5\"],\"d\":[\"DICT\",[[\"N\",\"1\"],[\"DICT\",[[\"N\",\"4\"],[\"N\",\"2\"]]]],[[\"N\",\"2\"],[\"DICT\",[[\"N\",\"2\"],[\"N\",\"7\"]],[[\"N\",\"1\"],[\"N\",\"3\"]]]],[[\"N\",\"3\"],[\"DICT\"]]],\"dfs\":\"UNKNOWN\",\"ans\":[\"N\",\"0\"]}",
+      ""
+    ]
+  }
+]

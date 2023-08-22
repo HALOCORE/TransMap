@@ -1,0 +1,62 @@
+[
+  {
+    "line_start": 11,
+    "line_end": 12,
+    "content": "    cnt[0] = counter.get('z') ?? 0;",
+    "replacement": "    cnt[0] = counter.get('z');"
+  },
+  {
+    "line_start": 12,
+    "line_end": 13,
+    "content": "    cnt[2] = counter.get('w') ?? 0;",
+    "replacement": "    cnt[2] = counter.get('w');"
+  },
+  {
+    "line_start": 13,
+    "line_end": 14,
+    "content": "    cnt[4] = counter.get('u') ?? 0;",
+    "replacement": "    cnt[4] = counter.get('u');"
+  },
+  {
+    "line_start": 14,
+    "line_end": 15,
+    "content": "    cnt[6] = counter.get('x') ?? 0;",
+    "replacement": "    cnt[6] = counter.get('x');"
+  },
+  {
+    "line_start": 15,
+    "line_end": 16,
+    "content": "    cnt[8] = counter.get('g') ?? 0;",
+    "replacement": "    cnt[8] = counter.get('g');"
+  },
+  {
+    "line_start": 16,
+    "line_end": 17,
+    "content": "    cnt[3] = (counter.get('h') ?? 0) - cnt[8];",
+    "replacement": "    cnt[3] = counter.get('h') - cnt[8];"
+  },
+  {
+    "line_start": 17,
+    "line_end": 18,
+    "content": "    cnt[5] = (counter.get('f') ?? 0) - cnt[4];",
+    "replacement": "    cnt[5] = counter.get('f') - cnt[4];"
+  },
+  {
+    "line_start": 18,
+    "line_end": 19,
+    "content": "    cnt[7] = (counter.get('s') ?? 0) - cnt[6];",
+    "replacement": "    cnt[7] = counter.get('s') - cnt[6];"
+  },
+  {
+    "line_start": 19,
+    "line_end": 20,
+    "content": "    cnt[1] = (counter.get('o') ?? 0) - cnt[0] - cnt[2] - cnt[4];",
+    "replacement": "    cnt[1] = counter.get('o') - cnt[0] - cnt[2] - cnt[4];"
+  },
+  {
+    "line_start": 20,
+    "line_end": 21,
+    "content": "    cnt[9] = (counter.get('i') ?? 0) - cnt[5] - cnt[6] - cnt[8];",
+    "replacement": "    cnt[9] = counter.get('i') - cnt[5] - cnt[6] - cnt[8];"
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "src_anno_stmts": [
+    [
+      "### numberOfDays",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(year: int, month: int) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)",
+      [
+        3
+      ]
+    ],
+    [
+      "    days = [0, 31, 29 if leap else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]",
+      [
+        4
+      ]
+    ],
+    [
+      "    return days[month]",
+      [
+        5
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(year, month) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);",
+      [
+        3
+      ]
+    ],
+    [
+      "    var days = [0, 31, 29, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];",
+      [
+        4
+      ]
+    ],
+    [
+      "    return days[month];",
+      [
+        5
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}

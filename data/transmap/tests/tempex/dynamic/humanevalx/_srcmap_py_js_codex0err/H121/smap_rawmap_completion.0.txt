@@ -1,0 +1,14 @@
+
+### Python
+def solution(lst):   # --- py stmt 1
+    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])   # --- py stmt 2
+
+
+### JavaScript
+"use strict";
+function solution(lst) {   // --- py stmt 1
+    return lst.filter((x, idx) => idx % 2 === 0 && x % 2 === 1).reduce((a, b) => a + b);   // --- py stmt 2
+}
+
+
+

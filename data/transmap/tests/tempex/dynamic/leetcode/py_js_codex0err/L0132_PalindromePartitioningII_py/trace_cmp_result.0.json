@@ -1,0 +1,132 @@
+[
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,10,5]",
+    "break_idx": 2,
+    "expected_src_pk": "[5,4,7,73]",
+    "actural_src_pk": "[5,4,7,73]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp1"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,4,7,73]",
+    "actural_src_pk": "[5,4,7,73]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp1"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,4,7,73]",
+    "actural_src_pk": "[5,4,7,73]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp1"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,4,7,73]",
+    "actural_src_pk": "[5,4,7,73]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp1"
+    ]
+  },
+  {
+    "reason": "Tracepoint Variable DIFFERENT VAL",
+    "tar_pk": "[6,4,10,5]",
+    "break_idx": 1,
+    "expected_src_pk": "[5,4,7,73]",
+    "actural_src_pk": "[5,4,7,73]",
+    "src_cov_lines": [
+      4
+    ],
+    "tar_cov_lines": [
+      2,
+      3,
+      4
+    ],
+    "tar_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"],[\"A\",3,\"UNKNOWN\",\"UNKNOWN\",\"UNKNOWN\"]]}",
+      ""
+    ],
+    "src_data": [
+      "{\"s\":[\"S\",3,\"aab\"],\"n\":[\"N\",\"3\"],\"dp1\":[\"A\",3,[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]],[\"A\",3,[\"B\",\"F\"],[\"B\",\"F\"],[\"B\",\"F\"]]]}",
+      ""
+    ],
+    "mismatch_vars": [
+      "dp1"
+    ]
+  }
+]

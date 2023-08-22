@@ -1,0 +1,26 @@
+
+### Python
+from collections import Counter   # --- py stmt 1
+from typing import *   # --- py stmt 2
+def f_gold(nums: List[int], k: int) -> int:   # --- py stmt 3
+    counter = Counter({0: 1})   # --- py stmt 4
+    ans = s = 0   # --- py stmt 5
+    for num in nums:   # --- py stmt 6
+        s += num   # --- py stmt 7
+        ans += counter[s - k]   # --- py stmt 8
+        counter[s] += 1   # --- py stmt 9
+    return ans   # --- py stmt 10
+
+### JavaScript
+"use strict";
+function f_gold(nums, k) {   // --- py stmt 3
+    let counter = { 0: 1 };   // --- py stmt 4
+    let ans = s = 0;   // --- py stmt 5
+    for (let num of nums) {   // --- py stmt 6
+        s += num;   // --- py stmt 7
+        ans += s - k in counter ? counter[s - k] : 0;   // --- py stmt 8
+        counter[s] = s in counter ? counter[s] + 1 : 1;   // --- py stmt 9
+    }
+    return ans;   // --- py stmt 10
+}
+

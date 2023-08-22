@@ -1,0 +1,96 @@
+{
+  "src_anno_stmts": [
+    [
+      "### maxSubArray",
+      null
+    ],
+    [
+      "from typing import *",
+      [
+        1
+      ]
+    ],
+    [
+      "def f_gold(nums: List[int]) -> int:",
+      [
+        2
+      ]
+    ],
+    [
+      "    res = f = nums[0]",
+      [
+        3
+      ]
+    ],
+    [
+      "    for num in nums[1:]:",
+      [
+        4
+      ]
+    ],
+    [
+      "        f = num + max(f, 0)",
+      [
+        5
+      ]
+    ],
+    [
+      "        res = max(res, f)",
+      [
+        6
+      ]
+    ],
+    [
+      "    return res",
+      [
+        7
+      ]
+    ]
+  ],
+  "tar_anno_stmts": [
+    [
+      "function f_gold(nums) {",
+      [
+        2
+      ]
+    ],
+    [
+      "    var res = f = nums[0];",
+      [
+        3
+      ]
+    ],
+    [
+      "    for (var num of nums.slice(1)) {",
+      [
+        4
+      ]
+    ],
+    [
+      "        f = num + Math.max(f, 0);",
+      [
+        5
+      ]
+    ],
+    [
+      "        res = Math.max(res, f);",
+      [
+        6
+      ]
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    return res;",
+      [
+        7
+      ]
+    ],
+    [
+      "}",
+      null
+    ]
+  ]
+}
