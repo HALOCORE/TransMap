@@ -2,6 +2,8 @@
 
 > Paper: **TransMap: Pinpointing Mistakes in Neural Code Translation** in ESEC/FSE 2023
 
+![transmap-ui](./pics/transmap-casestudy-first.png)
+
 ## License
 
 Main part of the code is under MIT license. Some source dependencies have special licenses See [`LICENSE`](./LICENSE) and [`DEPENDENCY.md`](./DEPENDENCY.md) for details.
@@ -14,10 +16,6 @@ This artifact `TransMap` is a tool to pinpoint mistakes in neural code translati
 It takes a standalone Python program as input, and then obtain its JavaScript translation and generating a source mapping between statements in the target program and the source program, using Codex or chatGPT.
 
 Next, it uses the source mapping to aid tracing the execution of the translated program and comparing against the source reference program to pinpoint the mistakes in the translation.
-
-A screenshot of TransMap (Case Study Web UI):
-
-![transmap-ui](./pics/transmap-motiv.png)
 
 ## Evaluation Overview
 
@@ -154,11 +152,16 @@ Please run the following in order:
 
 After running the above commands, you can open `automations/transmap/source_map_additional_exp.ipynb` and run all the cells one by one. It will print out the statistics for part B (including stats in Section 6.5 and Table 4).
 
+## Reusability: Use TransMap on Your Own Python Program
+
+Please see [HOW_TO_USE](./HOW_TO_USE.md).
+
 ## Repo Structure
 
 TransMap's core logic is implemented in JavaScript while necessary file access and program execution are delegated by Python backend. `TransMap` has a dependency named `LogViz` that is provided in a different tarball.
 
 - `.devcontainer`: Resource for building development container
+- `automations/transmap/`: Jupyter Notebooks for showing aggregate results
 - `backend`
   - `file-server`: Delegate File I/O for TransMap
   - `test-server`: Delegate testing for TransMap
@@ -172,4 +175,5 @@ TransMap's core logic is implemented in JavaScript while necessary file access a
   - `codemap`: related to the source mapping experiments
   - `tests/evalex/<gfg|leetcode|humanevalx>`: microbenchmarks
   - `tests/evalex/real`: case studies
+  - `tests/cases`: some scripts for case studies
   - `tests/tempex`: outputs of TransMap on microbenchmarks
