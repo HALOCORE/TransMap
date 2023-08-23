@@ -1017,6 +1017,19 @@ if (window._DEBUG_FLAG) {
     }
   ];
 
+  function case_optiongen(name) {
+    return {
+      "match": name,
+      "handler": {
+        "handler_type": "UI_UPDATE",
+        "updates": [
+          {"key": "bench_id", "constant": name},
+          {"key": "target_filename", "constant": "target.fixed.js"},
+        ]
+      }
+    };
+  }
+
   await logvizSETJSONAsync("com-transmex:dynamic_casestudy.ui", {
     "version": [0, 1],
     "uikey": "dynamic_casestudy",
@@ -1045,11 +1058,12 @@ if (window._DEBUG_FLAG) {
               "type": "select",
               "key": "preset",
               "value": "-- unset --",
-              "options": ["-- unset --", "new_html", "new_mathgen0", "new_mathgen1", "new_mathgen2", "new_mathgen3", "new_heapq", "new_colorsys"],
+              "options": ["-- unset --", "_playground", "new_html", "new_mathgen0", "new_mathgen1", "new_mathgen2", "new_mathgen3", "new_heapq", "new_colorsys", "stringsim0", "stringsim1", "stringsim2", "stringsim3", "stringsim4"],
               "on_change": {
                 "handler_type": "SWITCH",
                 "switch_key": "preset",
                 "switch_cases": [
+                  case_optiongen("_playground"),
                   {
                     "match": "new_html",
                     "handler": {
@@ -1120,6 +1134,11 @@ if (window._DEBUG_FLAG) {
                       ]
                     }
                   },
+                  case_optiongen("stringsim0"),
+                  case_optiongen("stringsim1"),
+                  case_optiongen("stringsim2"),
+                  case_optiongen("stringsim3"),
+                  case_optiongen("stringsim4"),
                   {
                     "match": "-- unset --",
                     "handler": {

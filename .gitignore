@@ -1,6 +1,8 @@
 *.*.pdf
 *.*.pdf
 
+_venv
+
 *.private.js 
 *.private.json
 

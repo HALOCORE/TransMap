@@ -168,9 +168,9 @@ Please refer to the `Post Installation` section in the end about setting up the 
 
 ## Post Installation: Set OpenAI API Key
 
-(same as `Additional Requirements 2`). 
+Run `python3 setapikey.py` and then enter a OpenAI API key follow the prompt. It will save the key at the following list of locations:
 
-More specifically, you need to create two files at: `~/TransMap/backend/codex-server/drvtry` and `~/TransMap/backend/codex-server/drvtry-beta` with the API key quoted as a JSON string as the content:
-```json
-"sk-XXXXXX....."
-```
+- `./backend/codex-server/drvtry` 
+- `./backend/codex-server/drvtry-beta`
+- `./data/transmap/cases/openai.key`
+- `./data/transmap/codemap/openai.key`
