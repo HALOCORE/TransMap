@@ -36,6 +36,7 @@ After `TransMap` is booted, open Chrome browser and open the following URLs in t
 - TransMap UI for User Study  
   http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_userstudy&sbar=disabled&theme=white  
 
+**NOTE: No matter how many Web UI web pages are open, there should be one and only one Prototype Library page kept open in the same window. All the user interfaces will share the TransMap library.**
 
 ![transmapvm](./pics/transmap-vm.png)
 

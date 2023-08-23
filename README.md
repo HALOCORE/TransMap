@@ -15,8 +15,21 @@ It takes a standalone Python program as input, and then obtain its JavaScript tr
 
 Next, it uses the source mapping to aid tracing the execution of the translated program and comparing against the source reference program to pinpoint the mistakes in the translation.
 
+A screenshot of TransMap (Case Study Web UI):
+
+![transmap-ui](./pics/transmap-motiv.png)
+
 ## Evaluation Overview
-### A. Micro Benchmarks
+
+TransMap is evaluated in four aspects:  
+- Part A: performance compared to the baseline approach (Table 1),
+- Part B: source mapping accuracy on micro benchmarks and additional experiments (Section 6.5 para 2, para 3, and Table 4),
+- Part C: case studies on real-world programs (Table 3),
+- Part D: user study on 24 participants (Table 2).
+
+Besides, there are benchmark statistics (Table 1 left, figure 6 and figure 2). These statistics are produced by Part A also.
+
+### A. Micro Benchmarks Evaluation
 
 The three sets of micro benchmarks for pinpointing translation mistakes with manually validated list of mistakes are at: 
 
@@ -37,7 +50,7 @@ Please see the section `Step-by-Step Instructions for A and B` below for how to 
 
 ### B. Source Mapping Accuracy
 
-We evaluate source mapping accuracy from two aspects:
+We evaluate source mapping accuracy on micro benchmarks and additional experiments:
 
 - Source Mapping Accuracy on Micro Benchmarks: Same files as above.
 - Source Mapping Accuracy under different styles of code: `data/transmap/codemap/`
@@ -73,9 +86,9 @@ First follow Step 1 to open one and exactly one web page of TransMap Prototyping
 
 **LeetCode Benchmarks**
 
-1. *Initialize.* Open TransMap UI (refer to Step 1). Choose `pre-leetcode` in the drop-down menu at the top.  Click `INIT & Load Bench IDs`.   
+1. *Initialize.* Open TransMap UI (refer to [INSTALLATION](./INSTALL.md)). Choose `pre-leetcode` in the drop-down menu at the top.  Click `INIT & Load Bench IDs`.   
 
-2. *Run TransMap and Baseline.* Click `AUTO-N` once to run all benchmarks.   
+2. *Run TransMap and Baseline.* Click `AUTO-N` **once and only once** to run all benchmarks.   
   **NOTE:** If you accidently click `AUTO-N` twice, two concurrent scripts will conflict and the results will be messed up. However, you can simply reload the webpage and start again to overwrite.
 3. *Export Generated Source Maps.* Click `AUTO-MAP-N` once to export all generated source maps.   
   **NOTE:** Similarly, please click it only once.
@@ -83,43 +96,63 @@ First follow Step 1 to open one and exactly one web page of TransMap Prototyping
 
 The evaluation results (TransMap and baseline) are saved to `data/transmap/tests/tempex/dynamic/leetcode/py_js_codex0err`. 
 
-The 
+The exported source maps are saved to `data/transmap/tests/tempex/dynamic/leetcode/_srcmap_py_js_codex0err`.
 
 **GFG Benchmarks**  
 
-    Open or reload TransMap UI (refer to Step 1). Choose `pre-gfg` in the drop-down menu at the top. Click `INIT & Load Bench IDs`. Click `AUTO-N` once to run all benchmarks.
+Similar as above. Though unecessary, it is suggested to refresh the TransMap prototyping library and the TransMap UI webpage to trigger a browser memory cleanup. 
 
-    The outputs (for both TransMap and the baseline approach) are saved to `data/transmap/tests/tempex/dynamic/baseline/gfg/py_js_codex0err`.
+Choose `pre-gfg` in the drop-down menu at the top. The rest is the same as above. 
+
+The files will be saved to `.../gfg/py_js_codex0err` and `.../gfg/_srcmap_py_js_codex0err`.
 
 **HumanEvalX benchmarks**
 
-    Open or reload TransMap UI (refer to Step 1). Choose `pre-humanevalx` in the dropdown menu at the top. Click `INIT & Load Bench IDs`. Click `AUTO-N` once to run all benchmarks.
+Similar as above. Choose `pre-humanevalx` in the drop-down menu at the top this time.
 
-    The outputs are saved to `data/transmap/tests/tempex/dynamic/humanevalx/py_js_codex0err`.
+The files will be saved to `.../humanevalx/py_js_codex0err` and `.../humanevalx/_srcmap_py_js_codex0err`.
 
 ### **Step 3: Collect the Benchmark Statistics and Evalation Results for TransMap and the Baseline Approach**
 
-1. Results Collection.
+1. Results Collection.  
+    Open the `UI for Collecting Results for Micro-benchmarks` according to [INSTALLATION](./INSTALL.md). Choose `leetcode` in the dropdown menu and click `Load IDs`. Then click `Collect Summary` once and wait until the metadata is displayed below the button. After that, click `Collect Summary Per Mistake` and wait until the metadata is displayed below the button. Repeat the same steps for `gfg` and `humanevalx`.
+  
 
-    TODO
+2. Compute Statistics.  
+    Open the jupyter notebook at `automations/transmap/transmap_tabfigshort.ipynb` in vscode (select the `_venv` environment mentioned in [INSTALLATION](./INSTALL.md)). Run all the cells one by one. 
 
-2. Compute Statistics.
-
-    TODO
+    All the statistics for part A and benchmark statistics are printed, including Table 1, Figure 6.    
+    
+    **NOTE:**  Figure 6 vector graph is generated by `automations/transmap/micro_benchmark_pie.ipynb`. Figure 2 is manually drawn (From the data in Figure 6 and Table 1, we can draw Figure 2).
 
 ### **Step 4: Validate Source Map Generations for Micro-benchmarks**
+
+For this step, we directly open `automations/transmap/source_map_microbenchmark.ipynb` and run all the cells one by one. It will print out the statistics for part B. 
+
+**NOTE:** The correctness of some source maps are manually checked. The manually checked cases are recorded in the notebook as a literal Python dictionary.
 
 
 ### **Step 5: Additional Source Mapping Experiments**
 
 For additional experiments, the scripts are provided in `data/transmap/codemap/`.  
 
+Please run the following in order:
+
+```
+./all_gen.sh
+./all_query.sh
+./all_stats.sh
+```
+
+**NOTE 1:** Below explains the purpose of the Python scipts involved (you don't need to run them manually).
 - `cm_0_shuffle_copy.py`: to copy micro-benchmark programs to the current folder for further steps.
 - `cm_script*.py`: to generate different styles of translations.
 - `cm_1_mapall.py`: to get the source mapping for all styles of translations.
 - `cm_3_counterr.py`: to perform sanity checks on the source mapping.
-5. We manually inspect all the cases that failed sanity checks to classify them into 3 types of failures.
-6. We use `stats.ipynb` to compute the statistics.
+
+**NOTE 2:** Some of the source maps are manually checked. The manually checked cases are recorded at `cm_3_counterr.*.ERRMANUAL.log`. After you run the above commands, you can diff it with `cm_3_counterr.*.ERROR.log` to see the cases that are different after manual inspection.
+
+After running the above commands, you can open `automations/transmap/source_map_additional_exp.ipynb` and run all the cells one by one. It will print out the statistics for part B (including stats in Section 6.5 and Table 4).
 
 ## Repo Structure
 
