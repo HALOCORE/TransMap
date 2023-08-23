@@ -1,11 +1,13 @@
 
 ## TransMap Installation Option A: VirtualBox VM
 
-The easiest way to start `TransMap` is to use the VM we provided. The VM is a virtual box machine.
+The easiest way to start `TransMap` is to use the VM (`ova` file) we provided. The VM is a virtual box machine.
 
 Username: `transmap`. Password: `123456`.
 
 The only additional configuration is to provide a real OpenAI API key if you want to test it on your own Python program. Please refer to the section `Set OpenAI API Key` in the end.
+
+**NOTE:** You may want to set port forwarding (forward the SSH port 22 of the VM to the host 3022). This is not required but will be useful if you want to remotely connect to the VM in vscode or ssh. In VirtualBox, after import the VM, you can set it at `Machine`->`Settings`->`Network`->`Advanced`->`Port Forwarding`, and add a rule with `Host Port` as `3022` and `Guest Port` as `22`. Then, you can use `ssh transmap@127.0.0.1 -p 3022` on host to connect to it.
 
 ### **Step 1: start LogViz and TransMap Backend**
 

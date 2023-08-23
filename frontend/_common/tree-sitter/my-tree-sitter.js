@@ -1,3 +1,6 @@
+// This file is not from the original tree-sitter project.
+// It is a wrapper for tree-sitter by the authors of TransMap.
+
 window._TS_LANGUAGE_BASE_URL = "../_common/tree-sitter/lang/";
 window._TS_LANG_TO_SUFFIX = {
   "py": "python",
