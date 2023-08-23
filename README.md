@@ -4,7 +4,7 @@
 
 ## License
 
-Main part of the code is under MIT license. See [`LICENSE`](./LICENSE) for details.
+Main part of the code is under MIT license. Some source dependencies have special licenses See [`LICENSE`](./LICENSE) and [`DEPENDENCY.md`](./DEPENDENCY.md) for details.
 
  
 ## Introduction
