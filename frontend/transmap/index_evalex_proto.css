@@ -1,0 +1,15 @@
+#operation-log {
+  height:200px; 
+  border: 2px solid gray; 
+  border-radius: 3px; 
+  overflow-y: auto; 
+  max-width: 500px;
+}
+
+.caselink {
+  font-family: monospace;
+}
+
+#user-id {
+  font-family: monospace;
+}
