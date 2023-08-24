@@ -13,7 +13,7 @@ dir = os.path.dirname(os.path.abspath(__file__))
 with open("./backend/codex-server/drvtry", "w") as f:
     json.dump(api_key, f)
 
-with open("./backend/codex-server/drvtry-beta", "r") as f:
+with open("./backend/codex-server/drvtry-beta", "w") as f:
     json.dump(api_key, f)
 
 with open("./data/transmap/cases/openai.key", "w") as f:

@@ -17,7 +17,6 @@ The only additional configuration is to provide a real OpenAI API key if you wan
 
 After booting the VM, you need to open two terminals, one under `~/Desktop/FSEArtifact/TransMap` and one under `~/Desktop/FSEArtifact/LogViz`.
 
-
 You need to first start `LogViz`. Inside the folder `.../LogViz`, run `./docker-start.sh`. 
 
 After the `LogViz` is successfully booted, open `.../TransMap` and run `./main-host-start.sh`.
@@ -36,7 +35,7 @@ After `TransMap` is booted, open Chrome browser and open the following URLs in t
 - UI for Collecting Results for Micro-benchmarks  
   http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_summary&sbar=disabled&theme=white  
 - TransMap UI for Case Studies   
-  http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_casestudy&sbar=disabled&theme=white
+  http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_casestudy&sbar=disabled&theme=white  
 - TransMap UI for User Study  
   http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_userstudy&sbar=disabled&theme=white  
 
@@ -48,7 +47,7 @@ After `TransMap` is booted, open Chrome browser and open the following URLs in t
 
 Some part of the evaluation needs Python scripts and Jupyter Notebooks. You can open vscode in the VM and choose to use `./_venv`. 
 
-### **Step 4 (Optional for testing it on new programs)**
+### **Step 4: Set OpenAI API Key**
 
 Please refer to the `Post Installation` section in the end about setting up the OpenAI API key.
 
@@ -168,7 +167,7 @@ python3 --version
 ```
 Then, you should be able to enter this venv environment by executing `source _venv/bin/activate` and exit by executing `deactivate`. You should also be able to choose this Python environment in VSCode for Jupyter Notebooks at `./automations/transmap/*.ipynb`.
 
-### **Step 8 (Optional for testing it on new programs)**
+### **Step 8: Set OpenAI API Key**
 
 Please refer to the `Post Installation` section in the end about setting up the OpenAI API key.
 
@@ -181,3 +180,5 @@ Run `python3 setapikey.py` and then enter a OpenAI API key follow the prompt. It
 - `./backend/codex-server/drvtry-beta`
 - `./data/transmap/cases/openai.key`
 - `./data/transmap/codemap/openai.key`
+
+**NOTE:** If you don't want to try it on new programs, you can fill in any string as the API key, such as `sk-deadbeef`. Most of the API calls for the evaluation are cached. A real API key is required if you test it on new programs (which will cause a cache miss and actually call OpenAI API). 
