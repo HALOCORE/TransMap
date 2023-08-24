@@ -1,7 +1,9 @@
 
 ## TransMap Installation Option A: VirtualBox VM
 
-The easiest way to start `TransMap` is to use the VM (`ova` file) we provided. The VM is a virtual box machine.
+The easiest way to start `TransMap` is to use the VM (`ova` file) we provided. The VM is a virtual box machine. You can download THE `.ova` file from here:  
+
+https://drive.google.com/drive/folders/1c_2neMZXmZdZweBBnsPf3KEXX2ndbW7o?usp=drive_link
 
 Username: `transmap`. Password: `123456`.
 
@@ -13,12 +15,12 @@ The only additional configuration is to provide a real OpenAI API key if you wan
 
 **NOTE:** Although dependencies are built, internet connection is required to start `TransMap` due to build-and-start script talking to docker/npm etc and for OpenAI API calls.
 
-After booting the VM, you need to open two terminals, one under `~/TransMap` and one under `~/LogViz`.
+After booting the VM, you need to open two terminals, one under `~/Desktop/FSEArtifact/TransMap` and one under `~/Desktop/FSEArtifact/LogViz`.
 
 
-You need to first start `LogViz`. Inside the folder `~/LogViz`, run `./docker-start.sh`. 
+You need to first start `LogViz`. Inside the folder `.../LogViz`, run `./docker-start.sh`. 
 
-After the `LogViz` is successfully booted, open `~/TransMap` and run `./main-host-start.sh`.
+After the `LogViz` is successfully booted, open `.../TransMap` and run `./main-host-start.sh`.
 
 ### **Step 2: Load TransMap in the Browser**
 
@@ -42,9 +44,9 @@ After `TransMap` is booted, open Chrome browser and open the following URLs in t
 
 ![transmapvm](./pics/transmap-vm.png)
 
-### **Step 3: Open `vscode` and choose conda environment `py39`**
+### **Step 3: Open `vscode` and choose the `./_venv`  Python environment**
 
-Some part of the evaluation needs Python scripts and Jupyter Notebooks. You can open vscode in the VM and choose the conda environment `py39`. 
+Some part of the evaluation needs Python scripts and Jupyter Notebooks. You can open vscode in the VM and choose to use `./_venv`. 
 
 ### **Step 4 (Optional for testing it on new programs)**
 
@@ -125,15 +127,18 @@ Notice that the `TransMap` is exposed at `127.0.0.1:18000`. Open the browser to 
   
 ### **Step 5: Install LogViz (The User Interface of TransMap)**
 
+1. Please install the specific version of `LogViz` from the tarball `LogViz-vTransMap.FSE2023.tar.gz`. You can download it from here:  
 
-1. Please install the specific version of `LogViz` from the other tarball `LogViz-XXX.tar.gz` provided in the artifact.  
-    **After installing LogViz:** Please check if there exists  `./frontend/_api/xapi_logviz.private.js`. If this file doesn't exist, need to create one with the following content:
-    ```json
-    window._LOGVIZ_CONFIG = {
-      "WEBDIS_API_ENDPOINT": "http://<logviz-hostname>/<webdis-path>/",
-      "LOGVIZ_API_ENDPOINT": "http://<logviz-hostname>/<logviz-path>/api/"
-    };
-    ```
+https://drive.google.com/drive/folders/1c_2neMZXmZdZweBBnsPf3KEXX2ndbW7o?usp=drive_link
+
+**After installing LogViz:** Please check if there exists  `./frontend/_api/xapi_logviz.private.js`. If this file doesn't exist, need to create one with the following content:
+
+```json
+window._LOGVIZ_CONFIG = {
+  "WEBDIS_API_ENDPOINT": "http://<logviz-hostname>/<webdis-path>/",
+  "LOGVIZ_API_ENDPOINT": "http://<logviz-hostname>/<logviz-path>/api/"
+};
+```
 
 ### **Step 6: Go to TransMap debugging UI in LogViz**
 
