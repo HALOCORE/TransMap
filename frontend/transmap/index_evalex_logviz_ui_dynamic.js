@@ -970,7 +970,7 @@ if (window._DEBUG_FLAG) {
             },
             {
               "type": "hoverbox",
-              "text": "Tests (py/js)",
+              "text": "Tests",
               "child": {
                 "type": "horizontal",
                 "children": [
@@ -991,7 +991,7 @@ if (window._DEBUG_FLAG) {
             },
             { /////////////////// Embedded Linemap Begin ///////////////////
               "type": "hoverbox",
-              "text": "Linemap",
+              "text": "Map",
               "inner_style": {"left": "5%", "right": "5%", "top": "7%", "bottom": "7%", "width": "90%", "height": "86%"},
               "child": {
                 "type": "horizontal",
@@ -1227,7 +1227,7 @@ if (window._DEBUG_FLAG) {
             {
               "type": "button",
               "bkey": "b_apply_errinject_basic",
-              "text": "Apply Inj Basic",
+              "text": "Apply Inj",
               "on_click": {
                 "handler_type": "SEQ",
                 "child_handlers": [
@@ -1257,7 +1257,7 @@ if (window._DEBUG_FLAG) {
             {
               "type": "button",
               "bkey": "b_gen_stmtmap",
-              "text": "Generate Stmtmap",
+              "text": "Gen Map",
               "on_click": {
                 "handler_type": "SEQ",
                 "child_handlers": [
@@ -1828,7 +1828,7 @@ if (window._DEBUG_FLAG) {
                     {
                       "type": "button",
                       "bkey": "b_js_tracepoints",
-                      "text": "(2) js tracepoints",
+                      "text": "(2) js traceps",
                       "on_click": {
                         "handler_type": "SEND",
                         "params": [
