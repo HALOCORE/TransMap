@@ -21,6 +21,10 @@ You need to first start `LogViz`. Inside the folder `.../LogViz`, run `./docker-
 
 After the `LogViz` is successfully booted, open `.../TransMap` and run `./main-host-start.sh`.
 
+Keep the two terminals open like below:
+
+![transmapvm](./pics/transmap-vm.png)
+
 ### **Step 2: Load TransMap in the Browser**
 
 After `TransMap` is booted, open Chrome browser and open the following URLs in two tabs in one window in order to load TransMap library and TransMap UI for Micro Benchmarks:
@@ -29,6 +33,10 @@ After `TransMap` is booted, open Chrome browser and open the following URLs in t
   http://127.0.0.1:18000/frontend/transmap/index_evalex_proto.html?debug=true
 - TransMap UI for Micro-benchmarks   
   http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_micros&sbar=disabled&theme=white
+
+The two browser tabs should look like this:  
+
+![transmap-vm-micro](./pics/transmap-vm-micro.png)
 
 **NOTE: There are some other Web UIs that will be useful later:**  
 
@@ -39,13 +47,18 @@ After `TransMap` is booted, open Chrome browser and open the following URLs in t
 - TransMap UI for User Study  
   http://127.0.0.1:8109/logvizft/ui/logviz_viewer.html?query=com-transmex%3A*.ui&sprefix=com-transmex%3Adynamic_userstudy&sbar=disabled&theme=white  
 
+
 **NOTE: No matter how many Web UI web pages are open, there should be one and only one Prototype Library page kept open in the same window. All the user interfaces will share the TransMap library.**
 
-![transmapvm](./pics/transmap-vm.png)
+For exmaple, below is a screenshot of the TransMap UI for Case Studies. Notice that only one Prototype Library page is open in the same window but there are multiple UIs open in different tabs.
+
+![transmap-vm-case](./pics/transmap-vm-case.png)
 
 ### **Step 3: Open `vscode` and choose the `./_venv`  Python environment**
 
-Some part of the evaluation needs Python scripts and Jupyter Notebooks. You can open vscode in the VM and choose to use `./_venv`. 
+Some part of the evaluation needs Python scripts and Jupyter Notebooks. You can open vscode in the VM and choose to use `./_venv`.
+
+![transmap-vm-vscode](./pics/transmap-vm-vscode.png)
 
 ### **Step 4: Set OpenAI API Key**
 

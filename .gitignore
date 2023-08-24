@@ -2,6 +2,13 @@
 *.*.pdf
 
 _venv
+__pycache__
+node_modules
+openai.key
+input_leet
+output_leet
+drvtry
+drvtry-beta
 
 *.private.js 
 *.private.json
