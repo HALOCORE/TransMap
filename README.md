@@ -1,4 +1,4 @@
-# TransMap: Debugging Code Translation by Codex & chatGPT
+# TransMap: Debugging Code Translation by Codex & ChatGPT
 
 > Paper: **TransMap: Pinpointing Mistakes in Neural Code Translation** in ESEC/FSE 2023
 
@@ -11,11 +11,11 @@ Main part of the code is under MIT license. Some source dependencies have specia
  
 ## Introduction
 
-This artifact `TransMap` is a tool to pinpoint mistakes in neural code translation by Codex or chatGPT. More specifically, it focuses on Python to JavaScript code translation. 
+This artifact `TransMap` is a tool to pinpoint mistakes in neural code translation by Codex or ChatGPT. More specifically, it focuses on Python to JavaScript code translation. 
 
-It takes a standalone Python program as input, and then obtain its JavaScript translation and generating a source mapping between statements in the target program and the source program, using Codex or chatGPT.
+It takes a standalone Python program as input, and then obtains its JavaScript translation and generates a source mapping between statements in the target program and the source program, using Codex or ChatGPT.
 
-Next, it uses the source mapping to aid tracing the execution of the translated program and comparing against the source reference program to pinpoint the mistakes in the translation.
+Next, it uses the source mapping to aid in tracing the execution of the translated program and comparing it against the source reference program to pinpoint the mistakes in the translation.
 
 ## Evaluation Overview
 

@@ -1,6 +1,6 @@
 # TransMap Case Study
 
-The details about the case study can be found in the paper (section 6.3) and the supplementary material (section 6). Here we explain the related files, the steps to conduct the case study, and the evaluation results.
+The details about the case study can be found in the paper (section 6.3) and the supplementary material (section 6). Here we explain the related files and the steps to conduct the case study.
 
 ## Overview
 
@@ -125,7 +125,6 @@ We do the same for other case studies, such as `colorsys`, `html`, etc. This res
 ## Details about the files and preprocessing
 
 - `source.py`: A standalone Python program. We split this code into segments (using comments in the code) with lengths of around 50 lines while preserving the boundaries of classes and functions. Each segment can be a normal segment or an ignore segment (will not be translated automatically). A normal segment is a segment noted with `##### Segment BEGIN <segment_name>` and `##### Segment END`. An ignore segment is a segment noted with `##### Segment IGNORE BEGIN` and `##### Segment END`.
-- `target_fixed.js`: supplementary material (section 6.2); maybe note the path of translating script.
 - `source_test.py` and `target_test.js`: The wrapper code to run the source and target programs, similar to the micro benchmarks. However, for case studies, we put the tests in the source code and the target code. Thus, the wrappers are empty.
 - `target_tmpl.js`: The template file for generating the translated JavaScript. It contains the tests and empty segments to be filled by translating from the corresponding segments in `source.py`. 
 - `target.fixed.js` and `target.fixed.archive.js`: The JavaScript program to be fixed and the archive of the fixed JavaScript program. TransMap will work on `target.fixed.js` and update it. Eventually the fully fixed code will be the same as `target.fixed.archive.js`.   

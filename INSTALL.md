@@ -139,11 +139,11 @@ Notice that the `TransMap` is exposed at `127.0.0.1:18000`. Open the browser to 
   
 ### **Step 5: Install LogViz (The User Interface of TransMap)**
 
-1. Please install the specific version of `LogViz` from the tarball `LogViz-vTransMap.FSE2023.tar.gz`. You can download it from here:  
+1. Please install the specific version of `LogViz` from the tarball `LogViz-vTransMap.FSE2023.tar.gz` besides the tarball of `TransMap`. Alternatively, you can download the specific version of `LogViz` from here:  
 
 https://drive.google.com/drive/folders/1c_2neMZXmZdZweBBnsPf3KEXX2ndbW7o?usp=drive_link
 
-**After installing LogViz:** Please check if there exists  `./frontend/_api/xapi_logviz.private.js`. If this file doesn't exist, need to create one with the following content:
+**After installing LogViz:** Please check if there exists  `./frontend/_api/xapi_logviz.private.js`. If this file doesn't exist, need to create one with the following content (see the values of default `<logviz-hostname>` and default `<logviz-path>` below):
 
 ```json
 window._LOGVIZ_CONFIG = {
