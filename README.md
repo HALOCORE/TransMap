@@ -22,8 +22,8 @@ Next, it uses the source mapping to aid tracing the execution of the translated 
 TransMap is evaluated in four aspects:  
 - Part A: performance compared to the baseline approach (Table 1),
 - Part B: source mapping accuracy on micro benchmarks and additional experiments (Section 6.5 para 2, para 3, and Table 4),
-- Part C: case studies on real-world programs (Table 3),
-- Part D: user study on 24 participants (Table 2).
+- Part C: case studies on real-world programs (Table 2),
+- Part D: user study on 24 participants (Table 3).
 
 Besides, there are benchmark statistics (Table 1 left, figure 6 and figure 2). These statistics are produced by Part A also.
 

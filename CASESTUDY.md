@@ -119,7 +119,7 @@ Then you can simply go to the reported line number at the bottom by the test run
 
 After fixing all the mistakes, the final `target.fixed.js` will pass the tests (`is_success: true` in the test result). For all the hidden semantic mistakes, we count the number of them that TransMap successfully find as TP and the mistakes that spotted by TransMap but actually not a mistake (due to unsupported types) as FP. 
 
-We do the same for other case studies, such as `colorsys`, `html`, etc. This results in Table 3 of the paper.
+We do the same for other case studies, such as `colorsys`, `html`, etc. This results in Table 2 of the paper.
 
 
 ## Details about the files and preprocessing
