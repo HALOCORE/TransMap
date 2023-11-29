@@ -1,4 +1,4 @@
-# TransMap: Debugging Code Translation by Codex & ChatGPT
+# TransMap: Pinpointing Mistakes in Code Translation by Codex & ChatGPT
 
 > Paper: **TransMap: Pinpointing Mistakes in Neural Code Translation** in ESEC/FSE 2023
 
@@ -6,16 +6,16 @@
 
 ## License
 
-Main part of the code is under MIT license. Some source dependencies have special licenses See [`LICENSE`](./LICENSE) and [`DEPENDENCY.md`](./DEPENDENCY.md) for details.
+The main part of the code is under MIT license. Some source dependencies have special licenses See [`LICENSE`](./LICENSE) and [`DEPENDENCY.md`](./DEPENDENCY.md) for details.
 
  
 ## Introduction
 
 This artifact `TransMap` is a tool to pinpoint mistakes in neural code translation by Codex or ChatGPT. More specifically, it focuses on Python to JavaScript code translation. 
 
-It takes a standalone Python program as input, and then obtains its JavaScript translation and generates a source mapping between statements in the target program and the source program, using Codex or ChatGPT.
+It takes a standalone Python program as input, and then obtains its JavaScript translation, and generates a source mapping between statements in the target program and the source program, using Codex or ChatGPT.
 
-Next, it uses the source mapping to aid in tracing the execution of the translated program and comparing it against the source reference program to pinpoint the mistakes in the translation.
+Next, it uses source mapping to aid in tracing the execution of the translated program and comparing it against the source reference program to pinpoint the mistakes in the translation.
 
 ## Evaluation Overview
 
@@ -25,11 +25,11 @@ TransMap is evaluated in four aspects:
 - Part C: case studies on real-world programs (Table 2),
 - Part D: user study on 24 participants (Table 3).
 
-Besides, there are benchmark statistics (Table 1 left, figure 6 and figure 2). These statistics are produced by Part A also.
+Besides, there are benchmark statistics (Table 1 left, figure 6, and figure 2). These statistics are produced by Part A also.
 
 ### A. Micro Benchmarks Evaluation
 
-The three sets of micro benchmarks for pinpointing translation mistakes with manually validated list of mistakes are at: 
+The three sets of microbenchmarks for pinpointing translation mistakes with a manually validated list of mistakes are at: 
 
 - GeeksForGeeks: `data/transmap/tests/evalex/gfg`
 - LeetCode: `data/transmap/tests/evalex/leetcode`
@@ -79,7 +79,7 @@ Please refer to [INSTALLATION](./INSTALL.md).
 
 ### **Step 2: Evaluate TransMap and Baseline Approaches on 3 sets of Micro Benchmarks, export generated source maps**
 
-First follow Step 1 to open one and exactly one web page of TransMap Prototyping Library. Then, open the TransMap UI for micro-benchmarks (mentioned in Step 1). 
+First, follow Step 1 to open exactly one web page of TransMap Prototyping Library. Then, open the TransMap UI for micro-benchmarks (mentioned in Step 1). 
 
 
 **LeetCode Benchmarks**
@@ -87,7 +87,7 @@ First follow Step 1 to open one and exactly one web page of TransMap Prototyping
 1. *Initialize.* Open TransMap UI (refer to [INSTALLATION](./INSTALL.md)). Choose `pre-leetcode` in the drop-down menu at the top.  Click `INIT & Load Bench IDs`.   
 
 2. *Run TransMap and Baseline.* Click `AUTO-N` **once and only once** to run all benchmarks.   
-  **NOTE:** If you accidently click `AUTO-N` twice, two concurrent scripts will conflict and the results will be messed up. However, you can simply reload the webpage and start again to overwrite.
+  **NOTE:** If you accidentally click `AUTO-N` twice, two concurrent scripts will conflict and the results will be messed up. However, you can simply reload the webpage and start again to overwrite.
 3. *Export Generated Source Maps.* Click `AUTO-MAP-N` once to export all generated source maps.   
   **NOTE:** Similarly, please click it only once.
 
@@ -98,7 +98,7 @@ The exported source maps are saved to `data/transmap/tests/tempex/dynamic/leetco
 
 **GFG Benchmarks**  
 
-Similar as above. Though unecessary, it is suggested to refresh the TransMap prototyping library and the TransMap UI webpage to trigger a browser memory cleanup. 
+Similar to the above. Though unnecessary, it is suggested to refresh the TransMap prototyping library and the TransMap UI webpage to trigger a browser memory cleanup. 
 
 Choose `pre-gfg` in the drop-down menu at the top. The rest is the same as above. 
 
@@ -106,11 +106,11 @@ The files will be saved to `.../gfg/py_js_codex0err` and `.../gfg/_srcmap_py_js_
 
 **HumanEvalX benchmarks**
 
-Similar as above. Choose `pre-humanevalx` in the drop-down menu at the top this time.
+Similar to the above. Choose `pre-humanevalx` in the drop-down menu at the top this time.
 
 The files will be saved to `.../humanevalx/py_js_codex0err` and `.../humanevalx/_srcmap_py_js_codex0err`.
 
-### **Step 3: Collect the Benchmark Statistics and Evalation Results for TransMap and the Baseline Approach**
+### **Step 3: Collect the Benchmark Statistics and evaluation results for TransMap and the Baseline Approach**
 
 1. Results Collection.  
     Open the `UI for Collecting Results for Micro-benchmarks` according to [INSTALLATION](./INSTALL.md). Choose `leetcode` in the dropdown menu and click `Load IDs`. Then click `Collect Summary` once and wait until the metadata is displayed below the button. After that, click `Collect Summary Per Mistake` and wait until the metadata is displayed below the button. Repeat the same steps for `gfg` and `humanevalx`.
@@ -127,7 +127,7 @@ The files will be saved to `.../humanevalx/py_js_codex0err` and `.../humanevalx/
 
 For this step, we directly open `automations/transmap/source_map_microbenchmark.ipynb` and run all the cells one by one. It will print out the statistics for part B. 
 
-**NOTE:** The correctness of some source maps are manually checked. The manually checked cases are recorded in the notebook as a literal Python dictionary.
+**NOTE:** The correctness of some source maps is manually checked. The manually checked cases are recorded in the notebook as a literal Python dictionary.
 
 
 ### **Step 5: Additional Source Mapping Experiments**
@@ -142,7 +142,7 @@ Please run the following in order:
 ./all_stats.sh
 ```
 
-**NOTE 1:** Below explains the purpose of the Python scipts involved (you don't need to run them manually).
+**NOTE 1:** Below explains the purpose of the Python scripts involved (you don't need to run them manually).
 - `cm_0_shuffle_copy.py`: to copy micro-benchmark programs to the current folder for further steps.
 - `cm_script*.py`: to generate different styles of translations.
 - `cm_1_mapall.py`: to get the source mapping for all styles of translations.
@@ -158,7 +158,7 @@ Please see [HOW_TO_USE](./HOW_TO_USE.md).
 
 ## Repo Structure
 
-TransMap's core logic is implemented in JavaScript while necessary file access and program execution are delegated by Python backend. `TransMap` has a dependency named `LogViz` that is provided in a different tarball.
+TransMap's core logic is implemented in JavaScript while necessary file access and program execution are delegated by the Python backend. `TransMap` has a dependency named `LogViz` that is provided in a different tarball.
 
 - `.devcontainer`: Resource for building development container
 - `automations/transmap/`: Jupyter Notebooks for showing aggregate results
@@ -168,7 +168,7 @@ TransMap's core logic is implemented in JavaScript while necessary file access a
   - `codex-server`: Delegate Codex for TransMap
 - `docker` Resource for building the images for TransMap
 - `frontend`
-  - `_api`: Wrapping backend APIs as functions in frontend
+  - `_api`: Wrapping backend APIs as functions in the frontend
   - `_common`: Libraries for TransMap (tree-sitter)
   - `transmap`: TransMap Prototyping Library (core functionalities)
 - `data`
