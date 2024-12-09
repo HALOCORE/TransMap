@@ -139,11 +139,12 @@ Notice that the `TransMap` is exposed at `127.0.0.1:18000`. Open the browser to 
   
 ### **Step 5: Install LogViz (The User Interface of TransMap)**
 
-1. Please install the specific version of `LogViz` from the tarball `LogViz-vTransMap.FSE2023.tar.gz` besides the tarball of `TransMap`. Alternatively, you can download the specific version of `LogViz` from here:  
+1. Please install the specific version of `LogViz` from the tarball `LogViz-vTransMap.FSE2023.tar.gz` besides the tarball of `TransMap`.
+   - The tarball `LogViz-vTransMap.FSE2023.tar.gz` can be obtained from Zenodo: https://zenodo.org/records/8283633.  It is not stored in this GitHub repository due to its size. 
+   - Alternatively, you can also download `LogViz-vTransMap.FSE2023.tar.gz` from here: https://drive.google.com/drive/folders/1c_2neMZXmZdZweBBnsPf3KEXX2ndbW7o?usp=drive_link
+   - The installation steps for LogViz are explained separately in the tarball.
 
-https://drive.google.com/drive/folders/1c_2neMZXmZdZweBBnsPf3KEXX2ndbW7o?usp=drive_link
-
-**After installing LogViz:** Please check if there exists  `./frontend/_api/xapi_logviz.private.js`. If this file doesn't exist, need to create one with the following content (see the values of default `<logviz-hostname>` and default `<logviz-path>` below):
+**After installing LogViz:** Please check if there exists  `./frontend/_api/xapi_logviz.private.js`. If this file doesn't exist, you need to create one with the following content (see the values of default `<logviz-hostname>` and default `<logviz-path>` below):
 
 ```json
 window._LOGVIZ_CONFIG = {
@@ -154,7 +155,7 @@ window._LOGVIZ_CONFIG = {
 
 ### **Step 6: Go to TransMap debugging UI in LogViz**
 
-Assuming the LogViz service (Seperated from TransMap) is already up and running (referring to `Additional Installation Requirement`). Load TransMap UI using the following link:
+Assuming the LogViz service (Separated from TransMap) is already up and running (referring to `Additional Installation Requirement`). Load TransMap UI using the following link:
 
 ```
 http://<logviz-hostname>/<logviz-path>/ui/logviz_viewer.html?query=com-transmex:dynamic*&sbar=disabled
@@ -171,7 +172,7 @@ You should be able to see TransMap UI like this:
 
 **IMPORTANT:** You must keep **one and only one** TransMap prototyping library open (mentioned in step 4, `http://127.0.0.1:18000/frontend/transmap/index_evalex_proto.html?debug=true`) in the same browser window (a different tab from `LogViz`). `LogViz` will communicate with `TransMap` through browser's message broadcast.
 
-### **Step 7: Create a Python venv Environemnt for Running Python Scripts**
+### **Step 7: Create a Python `venv` Environemnt for Running Python Scripts**
 
 Make sure you have python3.8+ (we tested on Python 3.8) installed. 
 ```
@@ -187,7 +188,7 @@ Please refer to the `Post Installation` section in the end about setting up the 
 
 ## Post Installation: Set OpenAI API Key
 
-Run `python3 setapikey.py` and then enter a OpenAI API key follow the prompt. It will save the key at the following list of locations:
+Run `python3 setapikey.py` and then enter an OpenAI API key follow the prompt. It will save the key at the following list of locations:
 
 - `./backend/codex-server/drvtry` 
 - `./backend/codex-server/drvtry-beta`
